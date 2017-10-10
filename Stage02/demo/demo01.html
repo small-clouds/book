@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <link rel="stylesheet" href="../css/sec.css" />
+    <title>java第二阶段学习</title>
+</head>
+
+<body>
+    <h1>html</h1>
+    <div class="demoMain">
+        <h2>表格布局</h2>
+        <div class="none">
+            <div>表格类 table tr td </div>
+            <div>有序列表 ol li </div>
+            <div>无序列表  ul  li</div>
+        </div>
+        <h2>form表单 属性  action  method </h2>
+        <div class="none">
+            <div>标签input textarea(文本域)  select也能够表单提交</div>
+            <div>类型(type)很多hidden text password  checkbox radio file submit reset   </div>
+            <div>注 button标签提交为 submit </div>
+        </div>
+        <h2>锚点</h2>
+        <div class="none"> 注 两个地方都是 a标签  href="#name"  name="name"</div>
+        <h2>框架 不要被吓到  iframe frameset</h2>
+        <div class="none">
+            <h3>用法请看源码  反正用的不多</h3>
+            <div calss="none">
+                <pre> frame 不能脱离frameset存在 必须没有body
+                frameset rows="50%，*"
+                    farame name="farame1" src = "demo1.html"
+                    farame name="farame2" src = "demo2.html"
+                /frameset
+                </pre>
+            
+             <pre>  必须在body里面 也许不准确 测试就可知
+                 body
+                frameset rows="50%，*"
+                    ifarame name="farame1" src = "demo1.html"
+                    ifarame name="farame2" src = "demo2.html"
+                /frameset
+                /body
+            </pre>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+<script src='../js/jquery.min.js'></script>
+<script src='../js/sec.js'></script>

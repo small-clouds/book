@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <link rel="stylesheet" href="../css/fir.css" />
+    <title>java第一阶段学习 面向对象二</title>
+</head>
+
+<body>
+    <h1>面向对象二</h1>
+
+    <div class="demoMain">
+        <h2>方法/函数</h2>
+        <div class="none">
+            <div>public void 方法名(参数){}</div>
+            <div>main主方法 必须用static修饰</div>
+            <div>分类：有参/无参，有返回值/无返回值 四类</div>
+            <h3>关于返回值</h3>
+            <div class="none">
+                <div>有返回值的方法 必须有return 有且只能有一个</div>
+                <div>返回值的类型 必须与定义的类型一致</div>
+                <div>返回值的个数 有且只能有一个</div>
+            </div>
+            <h3>构造函数/构造方法</h3>
+            <div class="none">
+                <div> 每个类 都有一个默认的无参构造方法 <span class="remark">没有返回值类型 所以也没有返回值</span></div>
+                <div>作用： 用于创建对象</div>
+                <div>分类:有参构造 / 无参构造</div>
+                <div>在类中如果不显示的写出任何构造器 那么类默认提供一个无参构造方法</div>
+                <div>当类中编写了有参构造方法是 不默认提供无参构造方法 所有 最好提供一个无参构造方法</div>
+            </div>
+            <h3>重载</h3>
+            <div class="none">
+                <div>方法名相同 参数列表（个数和类型）不同的  方法之间互称 重载 <span class="remark">与返回值和修饰符没有关系</span></div>
+            </div>
+            <h3>重写</h3>
+            <div class="none">
+                <div>子类与父类方法  相同 那么子类的方法的优先级高首先引用  本类的方法 不再引用父类的方法了   这就是方法的重写   </div>
+                <div>super 子类中直接父类的引用</div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
+<script src='../js/jquery.min.js'></script>
+<script src='../js/first.js'></script>

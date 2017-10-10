@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <link rel="stylesheet" href="../css/sec.css" />
+    <title>java第二阶段学习-JAVAEE、myEclipse和Tomcat</title>
+</head>
+
+<body>
+    <h1>JAVAEE、myEclipse和Tomcat</h1>
+    <div class="demoMain">
+        <h2>JAVAEE</h2>
+        <div class="none">
+            <div>十三种技术规范只学习前五个</div>
+            <div><span class="remark">JDBC, JNDI, JSP, Java servlets, XML</span>,EJBs, RMI, JMS, Java IDL, JTS, JTA, JavaMail
+                和 JAF。</div>
+        </div>
+        <h2>java服务器分类 javaee服务器/web服务器</h2>
+        <div class="none">
+            <h3>javaee服务器</h3>
+            <div class="none">
+                <div>13种技术规范全部实现的服务器叫做javaee服务器</div>
+                <div> WebLogic BEA 被Oracle收购 付费的 </div>
+                <div>Websphere IBM （银行） 付费的</div>
+                <div>JBoss 免费的</div>
+                <div>GlassFish SUN</div>
+                <div>Oracle Application Server</div>
+                <div>Geronimo 免费的（ 实际上就是Websphere）</div>
+            </div>
+            <h3>web服务器</h3>
+            <div class="none">
+                <div>实现十三种技术规范的部分要求的服务器叫做web服务器</div>
+                <div>tomcat 和Jetty</div>
+            </div>
+        </div>
+        <h2>Tomcat</h2>
+        <div class="none">
+            <div>验证tomcat是否完整 http://locathost:8080</div>
+            <div>开发过程中：一个项目 一个工作区 一个tomcat</div>
+            <div>每次修改后台代码都需要重启Tomcat？为什么</div>
+            <h3>Tomcat目录结构</h3>
+            <div class="none">
+                <div>bin->tomcat命令</div>
+                <div>conf->配置文件</div>
+                <div>lib->存放jar包</div>
+                <div>logs->tomcat日志</div>
+                <div>temp->tomcat临时文件</div>
+                <div>webapps->tomcat部署项目的路径</div>
+                <div>work->tomcat存放二进制文件(.class)</div>
+                <div>bin->tomcat命令</div>
+            </div>
+            <h3>conf文件重要内容</h3>
+            <div class="none">
+                <div>context.xml <span class="remark">Tomcat项目中指定根目录web工程的根目录</span>
+                    <pre>
+        WatchedResource WEB-INF/web.xml /WatchedResource
+                        </pre> </div>
+                <div>server.xml
+                    <pre>
+        端口/协议/超时/重定向端口/编码格式 
+        Connector port="8080" 
+        protocol="HTTP/1.1" 
+        connectionTimeout="20000" 
+        redirectPort="8443"
+        URIEncoding="utf-8"/
+
+        Host<span class="remark">配置虚拟主机</span> 
+                    </pre>
+                </div>
+                <div>web.xml 最重要的就是对后缀解析</div>
+            </div>
+        </div>
+        <h2>myEclipse</h2>
+        <div class="none">
+            <div>配置jdk Tomcat 还有jsp 在window->preference->直接搜索</div>
+        </div>
+        <h2>新建简单的web流程</h2>
+        <div class="none">
+            <div>
+                new->web project
+            </div>
+            <div>webRoot/WEB-INF/web.xml <span class="remark">Servlet的核心配置文件</span></div>
+            <div>Url-pattern 访问路径</div>
+            <div>Servlet-name 是标记 只要与 上面的 servlet 中的 servlet-name 一致即可只是用来找到处理类的 servlet-class 必须是全名称</div>
+            <div>在src下面新建servlet 会在核心配置文件生成配置 </div>
+            <div>新建一个servlet mapping url 后缀加.do 目的是为了区分 POJO(project old java Object) mapping url是访问该servlet 的地址</div>
+        </div>
+    </div>
+</body>
+
+</html>
+<script src='../js/jquery.min.js'></script>
+<script src='../js/sec.js'></script>

@@ -1,0 +1,49 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <link rel="stylesheet" href="../css/fir.css" />
+    <title>javascript</title>
+</head>
+<style>
+.color{color:red;font-size:12px;}
+</style>
+<body>
+    <div id="app">
+        <input type="text" v-model="message">{{message}}
+        <div><input type="text" v-model="name"><span class="color" v-if="name.length<6">请输入用户名</span></div>
+        <ul>
+            <li v-for="(study,index) in arr1"> {{index}} --{{study.text}} </li>
+        </ul>
+        <div>------------------------分割线------------------------------------------------</div>
+        <ul>
+            <template v-for="(study,index) in arr1">
+                <li>{{study.text}} -- {{index}} </li>
+                <li>××××××××××××××××××分割模板××××××××××××××××××××××××</li>
+            </template>
+        </ul>
+    </div>
+    <div id="app2">    
+        <span v-bind:title = "message">鼠标悬停此处查看动态绑定的提示信息</span>
+    </div>
+    <div id="app5">  
+        <p>{{message}}</p>
+        <input type="button" value="逆转消息" v-on:click="reverseMessage">    
+    </div>
+    <div id="app7">
+        <ol>
+            <todo-item 
+            v-for ="item in grocerylist"
+            v-bind:todo = "item"
+            v-bind:key="item.id">
+
+            </todo-item>
+        </ol>
+    </div>
+</body>
+
+</html>
+<script type="text/javascript" src='vue.min.js'></script>
+<script type="text/javascript" src='js.js'></script>

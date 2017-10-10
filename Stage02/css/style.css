@@ -1,0 +1,10 @@
+* { margin: 0px;padding: 0px;}
+ul,li{list-style: none;}
+a{text-decoration: none;}
+
+.none { display: none;}
+
+.stageTitle{ text-align: center;}
+.Stage_ul{margin-left:20px;}
+.Stage_ul li{ margin:5px 5px;}
+.Stage_ul li a{ color:#000;}

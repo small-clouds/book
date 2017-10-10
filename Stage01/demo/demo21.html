@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <link rel="stylesheet" href="../css/fir.css" />
+    <title>java第一阶段学习 设计模式</title>
+</head>
+
+<body>
+    <h1>设计模式</h1>
+
+    <div class="demoMain">
+        <h2>单例模式</h2>
+        <div class="none">
+            <div><span class="remark">A对象加载到内存当中 所以判断内存当中 只能有一个</span></div>
+            <h3>懒汉式</h3>
+            <div class="none">
+                <div>
+                    <pre>
+public class A{
+    private static A a;
+    private A(){
+        super();
+    }
+    public static A getInstance(){
+        if(a ==null){
+            a = new A();
+        }
+        return a;
+    }
+}
+                    </pre>
+                </div>
+            </div>
+            <h3>饿汉式</h3>
+            <div class="none">
+                <div>
+                    <pre>
+public class B{
+    private static B b = new b();
+    private B(){
+        super();
+    }
+    public static B getInstance(){
+        return b;
+    }
+}
+                    </pre>
+                </div>
+            </div>
+        </div>
+        <h2>工厂模式</h2>
+        <div class="none">
+            <div>暂无案例</div>
+        </div>
+        <h2>抽象工厂</h2>
+        <div class="none">
+            <div>暂无案例</div>
+        </div>
+        <h2> 适配器模式</h2>
+        <div class="none">
+            <div>暂无案例</div>
+        </div>
+        <h2>策略模式</h2>
+        <div class="none">
+            <div>暂无案例</div>
+        </div>
+    </div>
+</body>
+
+</html>
+<script src='../js/jquery.min.js'></script>
+<script src='../js/first.js'></script>

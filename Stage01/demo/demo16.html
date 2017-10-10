@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <link rel="stylesheet" href="../css/fir.css" />
+    <title>java第一阶段学习 数据库</title>
+</head>
+
+<body>
+    <h1>数据库</h1>
+
+    <div class="demoMain">
+        <h2>数据库基本知识</h2>
+        <div class="none">
+            <div>一个管理数据的软件 增删改查</div>
+            <div>开发项目就是帮助用户使用数据库 关系型数据库 二维数据表 行列</div>
+        </div>
+        <h2>常见的数据库</h2>
+        <div class="none">
+            <div>常见数据库 DB2 oracle mysql</div>
+            <div>大型收费的 oracle(甲骨文) db2(IBM)</div>
+            <div>中性收费 SQlserver(微软) sybase(实际开发用的很少)</div>
+            <div>小型免费数据库 mysql(甲骨文) -> sql6 (开始收费了) postgresql() SQLite 手机端 可以植入到手机里的</div>
+            <div>在java使用最多的 oracle DB2 mysql</div>
+        </div>
+        <h2>数据库的数据类型</h2>
+        <div class="none">
+            <div> 字符串型 varchar char varchar(20) 变化的字符串 最多存20 省空间 效率低 / char(12) 定长字符串 费空间效率高</div>
+            <div> 大数据类型 ：以前 blob 字节型大数据 存二进制文件 / text 字符型大数据 存文档 不能存图片 文字</div>
+            <div> 数值型 ： int / tinyint / smallint / int/ bigint / double / double / float</div>
+            <div> 日期型 ：date 年月日 / time 时分秒 / datetime 年月日时分秒 / timestamp年月日时分秒的时间戳</div>
+        </div>
+        <h2>数据库约束</h2>
+        <div class="none">
+            <div>主键约束： 包含非空约束 和唯一性约束(主键的唯一性和非空性) </div>
+            <div>非空约束 </div>
+            <div>唯一性约束 不能重复 但是两个都是空 </div>
+        </div>
+        <h2>DML 增删改</h2>
+        <div class="none">
+            <div>增：insert into 表名(id,name, male,age) values (); / insert into 表名 values（）;</div>
+            <div>成倍增长： insert into users (name,brith,salary,remark) select name,brith,salary,remark from users;</div>
+            <div>改：update user set name=‘王五’ where age =9 and male =0; 没有条件将更改所有</div>
+            <div>删：delele from 表名 where 条件</div>
+            <div>截断表: truncate table user 清空表 但是数据从头开始的</div>
+        </div>
+        <h2>DQL</h2>
+        <div class="none">
+            <div>简单查表：select name, age from user;</div>
+            <div>起别名： select u.name u.age, u.male from user (as) u； // 表其别名</div>
+            <div>区间查找一：select name ， chinese from in　（20,19）；</div>
+            <div>区间查找二：select name chinese from __ between __ and__ ;</div>
+            <div>模糊查询(like)：select * from user where name like '-明%'; ////// % 任意位置 </div>
+            <div>空数据： select name ， chinese from user is (not) null</div>
+            <div>排序： select * from order by (desc); (order by 放到语句的最后)</div>
+        </div>
+        <h2>多表查询</h2>
+        <div class="none">
+            <div>
+<pre>
+查    所有         学生
+select * from student s 
+            表名              id等于id的
+INNER JOIN  md_stu_cls md on s.s_id=md.s_id
+INNER JOIN  class_table cls ON cls.c_id= md.c_id           
+where s.s_name ='钱二';
+                                    </pre>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
+<script src='../js/jquery.min.js'></script>
+<script src='../js/first.js'></script>

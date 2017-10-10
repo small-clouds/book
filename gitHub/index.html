@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <link rel="stylesheet" href="../css/fir.css" />
+    <title>javascript</title>
+</head>
+
+<body>
+    <div>
+        <p>$ git config --global user.name "Your Name"</p>
+        <p>$ git config --global user.email "email@example.com"</p>
+        <p> 因为Git是分布式版本控制系统，所以，每个机器都必须自报家门：你的名字和Email地址。你也许会担心，如果有人故意冒充别人怎么办？这个不必担心，首先我们相信大家都是善良无知的群众，其次，真的有冒充的也是有办法可查的。 注意git
+            config命令的--global参数，用了这个参数，表示你这台机器上所有的Git仓库都会使用这个配置，当然也可以对某个仓库指定不同的用户名和Email地址。
+        </p>
+        <p>$ mkdir learngit 创建目录</p>
+        <p>$ cd learngit  进入目录</p>
+        <p>$ pwd 显示当前目录</p>
+        <p>/Users/michael/learngit</p>
+        <p>git init 命令把这个目录变成Git可以管理的仓库</p>
+        <p>git add告诉Git，把文件添加到仓库：</p>
+        <p>git commit告诉Git，把文件提交到仓库</p>
+        <p>为什么Git添加文件需要add，commit一共两步呢？因为commit可以一次提交很多文件，所以你可以多次add不同的文件</p>
+        <p>git status命令可以让我们时刻掌握仓库当前的状态</p>
+        <p>git diff顾名思义就是查看difference，显示的格式正是Unix通用的diff格式</p>
+        <p>git log  --pretty=oneline命令查看历史记录</p>
+        <p>git reset  --hard HEAD^  HEAD~100回退到上一版本</p>
+        <p>cat 文件名 查看文件内容</p>
+        <p>git reflog用来记录你的每一次命令  回到未来</p>
+        <p>git checkout -- file可以丢弃工作区的修改</p>
+        <p>git checkout -- file命令中的--很重要，没有--，就变成了“切换到另一个分支</p>
+        <p>git reset HEAD file可以把暂存区的修改撤销掉</p>
+        <p>rm test.txt 从工作区删除</p>
+        <p>git rm删掉，并且git commit 确实要从版本库中删除该文件</p>
+        <p>$ git checkout -- test.txt从版本库中检出到工作区</p>
+        <p>$ ssh-keygen -t rsa -C "youremail@example.com"生成公钥和密钥</p>
+        <p>$ git remote add origin git@github.com:github帐户名/库名.git</p>
+        <p>git push -u origin master第一次推送master分支的所有内容</p>
+        <p>git push origin master推送最新修改</p>
+        <p>git remote rm origin删除远程库的关联</p>
+    </div>
+</body>
+
+</html>

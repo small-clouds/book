@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <link rel="stylesheet" href="../css/sec.css" />
+    <title>java第二阶段学习-servlet</title>
+</head>
+
+<body>
+    <h1>servlet</h1>
+    <div class="demoMain">
+        <h2>servelet</h2>
+        <div class="none">
+            <div>每一个servlet都会继承HttpServlet</div>
+            <div>并且会在web.xml下面形成对应的配置文件</div>
+        </div>
+        <h2>servlet的一些方法</h2>
+        <div class="none">
+            <div>request.getParameter("username") 获取前台的username</div>
+            <div>request.setAttribute("username", name); 向request添加键值对 供前台访问</div>
+            <div>request.getRequestDispatcher("error.jsp").forward(request, response); 请求转发到error页面</div>
+            <div><%=request.getAttribute("username") %> jsp页面获取后台发送的username</div>
+            <div>response.sendRedirect("index.jsp"); 重定向到index.jsp</div>
+        </div>
+        <h2></h2>
+        <div class="none">
+            <div></div>
+            <div></div>
+        </div>
+        <h2></h2>
+        <div class="none">
+            <div></div>
+            <div></div>
+        </div>
+    </div>
+</body>
+
+</html>
+<script src='../js/jquery.min.js'></script>
+<script src='../js/sec.js'></script>

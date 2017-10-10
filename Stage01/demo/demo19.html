@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <link rel="stylesheet" href="../css/fir.css" />
+    <title>java第一阶段学习 I/O流 input output stream</title>
+</head>
+
+<body>
+    <h1>I/O流 input output stream</h1>
+    <div class="demoMain">
+        <h2>File类</h2>
+        <div class="none">
+            <div>
+                <pre>
+File f = new File("c:");
+if (f.exists()) {
+    System.out.println("文件存在");
+} else {
+    f.mkdir();// 创建目录 s 多层目录 创建文件夹
+    System.out.println("文件夹 创建成功");
+}
+
+File f2 = new File("c:/temp/test.txt");
+if (f2.exists()) {
+    System.out.println("文件存在");
+} else {
+    try {
+        f2.createNewFile(); // 创建文件
+        System.out.println(f2.getAbsolutePath()); // 获取绝对路径
+        System.out.println(f2.getName());// 获取当前文件名
+        System.out.println(f2.getParent()); // 获取上一节点 f2 是test。txt
+        System.out.println(f2.getPath());
+        System.out.println(f2.isDirectory()); // 是不是目录
+        System.out.println(f2.isFile()); // 是不是文件
+        System.out.println(f2.length()); // 文件内容的长度
+        // System.out.println(f2.list().toString());//
+
+        // f2.delete(); //删除文件
+    } catch (IOException e) {
+        // TODO Auto-generated catch block
+        e.printStackTrace();
+    }
+}
+
+File f3 = new File("D:");
+String[] arr = f3.list();
+for (String s : arr) {
+    System.out.println(s);
+}
+System.out.println("-----------------------------------");
+File f4 = new File("C:");
+String[] arr1 = f4.list();
+
+for (String s : arr1) {
+    System.out.println(s);
+}
+System.out.println("---------------------------------");
+File[] arr2 = f4.listFiles();
+for (File s : arr2) {
+    System.out.println(s.getName());
+}
+                </pre>
+            </div>
+        </div>
+        <h2>字节流</h2>
+        <div class="none">
+            <div><span class="remark">InputStream is = new FileInputStream(f5); 字节流和文件流</span></div>
+            <div>
+                <pre>
+//File f5 = new File("c:temp/test.txt");
+File f5 = new File("c:/1.jpg");
+File f6 = new File("d:/8.jpg");
+//FileInputStream is = null;  // 输入字节流
+//FileOutputStream  os =null;  //输入文件
+InputStream is = null;  // 输入字节流
+OutputStream  os =null;  //输入文件
+// 从文件 读到程序中   ------  输入 
+try {
+    // ------------输入-------------------
+    is = new FileInputStream(f5);
+    os =new FileOutputStream(f6);
+    System.out.println("这是什么" + is.available()); // 文件有多少东西
+    //byte[] b = new byte[is.available()]; // 读入字符的容器 中间转换量
+    byte[] b = new byte[1024];
+    //-----字符流---1----------
+    //is.read(b, 0, b.length); // 从内存当中 想程序读  读到b里面  从0 读到length
+    //System.out.println(Arrays.toString(b));
+    //-----字符流---1--------
+    //----------------字节流1-------
+    int len =0;
+    while((len=is.read(b)) != -1){  // 字节流输入
+        os.write(b); // 字节流输出
+    }
+    //----------------字节流1-----
+    // -----------输出----------------------
+    //os.write(b);  // 字符流输出
+    
+} catch (IOException e1) {
+    e1.printStackTrace();
+}finally{
+    try {
+        os.close();
+        is.close();  // 关流
+    } catch (IOException e1) {
+        e1.printStackTrace();
+    }
+}
+                </pre>
+            </div>
+        </div>
+        <h2>字符流</h2>
+        <div class="none">
+            <div><span class="remark">Writer w=new OutputStreamWriter(new FileOutputStream(f6)) ; 字符流的格式</span></div>
+            <div>
+                <pre>
+File f5 = new File("c:/temp/test.txt","utf-8"); //只有字符流有  字节没意义
+File f6 = new File("d:/test.txt");
+Reader r =null;
+Writer w =null;
+try {
+        r = new InputStreamReader(new FileInputStream(f5)) ;
+        w=new OutputStreamWriter(new FileOutputStream(f6)) ;
+    char[] b = new char[1024];
+    int len =0;
+    while((len=r.read(b)) != -1){ 
+        System.out.println(Arrays.toString(b));
+        w.write(b,0,len);
+    }
+} catch (FileNotFoundException e) {
+    e.printStackTrace();
+} catch (IOException e) {
+    // TODO Auto-generated catch block
+    e.printStackTrace();
+}finally{
+    try {
+        w.close();
+        r.close();
+    } catch (IOException e) {
+        // TODO Auto-generated catch block
+        e.printStackTrace();
+    }
+    
+}
+                </pre>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
+<script src='../js/jquery.min.js'></script>
+<script src='../js/first.js'></script>
