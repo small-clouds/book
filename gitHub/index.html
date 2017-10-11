@@ -16,7 +16,7 @@
             config命令的--global参数，用了这个参数，表示你这台机器上所有的Git仓库都会使用这个配置，当然也可以对某个仓库指定不同的用户名和Email地址。
         </p>
         <p>$ mkdir learngit 创建目录</p>
-        <p>$ cd learngit  进入目录</p>
+        <p>$ cd learngit 进入目录</p>
         <p>$ pwd 显示当前目录</p>
         <p>/Users/michael/learngit</p>
         <p>git init 命令把这个目录变成Git可以管理的仓库</p>
@@ -25,10 +25,10 @@
         <p>为什么Git添加文件需要add，commit一共两步呢？因为commit可以一次提交很多文件，所以你可以多次add不同的文件</p>
         <p>git status命令可以让我们时刻掌握仓库当前的状态</p>
         <p>git diff顾名思义就是查看difference，显示的格式正是Unix通用的diff格式</p>
-        <p>git log  --pretty=oneline命令查看历史记录</p>
-        <p>git reset  --hard HEAD^  HEAD~100回退到上一版本</p>
+        <p>git log --pretty=oneline命令查看历史记录</p>
+        <p>git reset --hard HEAD^ HEAD~100回退到上一版本</p>
         <p>cat 文件名 查看文件内容</p>
-        <p>git reflog用来记录你的每一次命令  回到未来</p>
+        <p>git reflog用来记录你的每一次命令 回到未来</p>
         <p>git checkout -- file可以丢弃工作区的修改</p>
         <p>git checkout -- file命令中的--很重要，没有--，就变成了“切换到另一个分支</p>
         <p>git reset HEAD file可以把暂存区的修改撤销掉</p>
@@ -49,7 +49,15 @@
         <p>$ git branch -d dev 删除分支</p>
         <p>git push origin :dev 删除远程分支dev，origin和:dev之间有空格</p>
         <p>$ git log --graph --pretty=oneline --abbrev-commit 查看分支合并情况</p>
-        
+
+    </div>
+    <h2>c错误集锦</h2>
+    <div>
+        <h3>提交错误</h3>
+        <p>error: failed to push some refs to 'git@github.com:xxx/xxx.git' </p>
+        <p> 原因：GitHub远程仓库中的README.md文件不在本地仓库中。</p>
+        <p>方案：$ git pull --rebase origin master 完成后在提交
+$ git push -u origin master</p>
     </div>
 </body>
 
