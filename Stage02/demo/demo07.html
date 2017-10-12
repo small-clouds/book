@@ -5,31 +5,110 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <link rel="stylesheet" href="../css/sec.css" />
-    <title>java第二阶段学习-javascript基础知识</title>
+    <title>java第二阶段学习-请求方式、响应方式（重定向和转发）、中文乱码、上传下载</title>
 </head>
 
 <body>
-    <h1>javascript基础知识</h1>
+    <h1>请求方式、响应方式（重定向和转发）、中文乱码、上传下载</h1>
     <div class="demoMain">
-        <h2></h2>
+        <h2>请求的方式POST/GET</h2>
         <div class="none">
-            <div></div>
-            <div></div>
+            <div>GET 地址栏直接访问；超链接；form表单method为get的</div>
+            <div>POST form表单method为post提交的</div>
+            <div>都可以携带数据</div>
+            <div>get 地址栏显示数据，数据在请求头中携带，存储有限，一般是字符串</div>
+            <div>post 数据可以任意类型 可以携带大量数据 在请求体中携带</div>
         </div>
-        <h2></h2>
+        <h2>响应方式 重定向/转发</h2>
         <div class="none">
-            <div></div>
-            <div></div>
+            <div><span class="remark">一次请求只对应一个响应 当对应多个响应的时候会报异常</span></div>
+            <div>Cannot call sendRedirect() after the response has been committed</div>
+            <div>携带数据就一定要用请求转发，不携带数据使用重定向，清除request中的内容</div>
+            <div><span class="remark">请求转发：</span>request.getRequestDispatcher("error.jsp").forward(request, response);</div>
+            <div><span class="remark">重定向：</span>response.sendRedirect("index.jsp"); // </div>
+            <div>&nbsp;&nbsp;&nbsp;&nbsp;response.setStatus(302); response.addHeader("Location", "index.jsp");</div>
+            <div>两者关系</div>
+            <div>转发：能够携带数据；地址栏不发生变化；一次请求；先转发完成后在回来执行代码（似调用方法）</div>
+            <div>重定向：不能携带数据；地址栏变化；两次请求；先走完自己的转发请求，之后的和自己没有关系；</div>
         </div>
-        <h2></h2>
+        <h2>中文乱码</h2>
         <div class="none">
-            <div></div>
-            <div></div>
+            <div><span class="remark">解决方案不能过多否则对对为错</span></div>
+            <h3>响应乱码</h3>
+            <div class="none">
+                <div>response.setContentType("text/html;charset=utf-8");</div>
+                <div>2.字符流</div>
+                <div>response.setCharacterEncoding("UTF-8");</div>
+                <div>response.addHeader("Content-Type","text/html;charset=utf-8");</div>
+                <div>3.字节流 </div>
+                <div>out.write("中文".getBytes("UTF-8")); </div>
+                <div>//response中的乱码问题 </div>
+            </div>
+            <h3>请求乱码</h3>
+            <div class="none">
+                <div>request.setCharacterEncoding("utf-8"); //post请求</div>
+                <div>5.String newName = new String(name.getBytes("iso-8859-1"),"UTF-8");</div>
+                <div>6.服务器server.xml -> Connector port="8888" URIEncoding="UTF-8" </div>
+            </div>
         </div>
-        <h2></h2>
+        <h2>上传下载</h2>
         <div class="none">
-            <div></div>
-            <div></div>
+            <h3>下载</h3>
+            <div class="none">
+                <div><span class="remark">用流的形式进行下载</span></div>
+                <div>
+                   <pre>
+public void download(HttpServletRequest request, HttpServletResponse response) {
+    InputStream is = null;
+    OutputStream os = null;
+    try {
+        // 获取下载文件名
+        String filename = request.getParameter("name");
+        // 获取上下文对象
+        ServletContext sc = this.getServletContext();
+        // 获取download绝对路径
+        String path = sc.getRealPath("download");
+        // 响应头的第三方
+        //firefox
+        String userAgent = request.getHeader("User-Agent");
+        System.out.println(userAgent);
+        
+        if (userAgent.contains("Firefox")) {
+            response.addHeader("Content-Disposition","attachment;filename="+ new String(filename.getBytes(), "iso-8859-1"));
+            // new String(fileName.getBytes("iso-8859-1"),"utf-8");
+        } else {
+            response.addHeader("Content-Disposition","attachment;filename="+ URLEncoder.encode(filename, "UTF-8"));
+        }
+        
+        File file = new File(path + "/" + filename);
+
+        is = new FileInputStream(file);
+
+        os = response.getOutputStream();
+
+        int len = 0;
+        byte[] b = new byte[1024];
+        while ((len = is.read(b)) != -1) {
+            os.write(b);
+        }
+
+    } catch (IOException e) {
+        e.printStackTrace();
+    } finally {
+        try {
+            os.close();
+            is.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+}
+
+                   </pre>
+                   </div>
+            </div>
+            <h3>上传</h3>
+            <div class="none"></div>
         </div>
     </div>
 </body>
