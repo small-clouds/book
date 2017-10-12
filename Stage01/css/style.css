@@ -4,7 +4,7 @@ a{text-decoration: none;}
 
 .none { display: none;}
 
-.stageTitle{ text-align: center; font-size:16px;font-style: }
+.stageTitle{ text-align: center; font-size:16px;}
 .Stage_ul{margin:0px 20px; font-size:12px;}
 .Stage_ul li{ margin:5px 5px; background:#4fc3b9;}
 .Stage_ul li:hover{ background:#5a8831;}
