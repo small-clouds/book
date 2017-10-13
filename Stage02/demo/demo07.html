@@ -28,8 +28,8 @@
             <div><span class="remark">重定向：</span>response.sendRedirect("index.jsp"); // </div>
             <div>&nbsp;&nbsp;&nbsp;&nbsp;response.setStatus(302); response.addHeader("Location", "index.jsp");</div>
             <div>两者关系</div>
-            <div>转发：能够携带数据；地址栏不发生变化；一次请求；先转发完成后在回来执行代码（似调用方法）</div>
-            <div>重定向：不能携带数据；地址栏变化；两次请求；先走完自己的转发请求，之后的和自己没有关系；</div>
+            <div>转发：能够携带数据；地址栏不发生变化；一次请求；先转发完成后在回来执行代码（似调用方法）;转发只能在项目中</div>
+            <div>重定向：不能携带数据；地址栏变化；两次请求；先走完自己的转发请求，之后的和自己没有关系；重定向能到定位的到本项目中的外部资源</div>
         </div>
         <h2>中文乱码</h2>
         <div class="none">

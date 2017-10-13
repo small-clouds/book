@@ -5,16 +5,59 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <link rel="stylesheet" href="../css/fir.css" />
-    <title>phpstudy-- 基本数据类型</title>
+    <title>phpstudy-- 数据类型</title>
 </head>
 
 <body>
-    <h1>基本数据类型</h1>
+    <h1>数据类型</h1>
     
     <div class="demoMain">
-        <h2></h2>
+        <h2>基本数据类型-字符串(String)</h2>
+        <div class="none">
+           <div>字符串声明有两种方式 单引号和双引号</div>
+           <div>字符串的拼接用的是   . </div>
+           <div>单引号 按照字符串输出 单引号系统不做复杂的转义 单引号变量反应更快</div>
+           <div>双引号 把变量解析出来 可以利用转义字符进行 对$转义</div>
+           <div>转义字符 \ 可以解决使用特殊符号问题</div>
+           <div>特殊的\n(换行) \r(回车) \t(制表) \v(竖直方向) \f(换页) \$(美元标记)</div>
+           <h3>函数</h3>
+           <div class="none">
+               <div>Strlen($str) 返回字符串字节数  utf8中文占三个  gbk2个</div>
+               <div>mb_strlen($str,'utf-8') 返回字符串的个数</div>
+               <div>strpos($str,search,int) 查找字符串位置函数 从int开始查找 search字符串 第一次出现的位置</div>
+               <div>stripos($str,search,int) 查找字符串位置函数 从int开始查找 search字符串 最后一次出现的位置</div>
+           </div>
+        </div>
+        <h2>基本数据类型-整型(int)</h2>
+        <div class="none">
+           <div>整型值可以 二进制(0b) 八进制(0) 十进制 十六进制(0x) 所有的整型都是有符号的</div>
+           <div>最大值PHP_INT_MAX  最小值 PHP_INT_MIN 超过这个值 被解释称 float</div>
+           <div>运算符能够自动对类型进行转换</div>
+        </div>
+        <h2>基本数据类型-浮点型(float)</h2>
+        <div class="none">
+            <div><span class="remark">永远也不要相信浮点数的精度</span></div>
+            <div>精度： 从左边开始 非0实数 14位数字 具体保留多少位 不知道</div>
+           <div>双精度(double) 1位符号 11位指数 52位小数 8字节64位</div>
+           <div>单精度(float) 1位符号 8位指数 23位小数 4字节32位</div>
+        </div>
+        <h2>基本数据类型-布尔(boolean)</h2>
+        <div class="none">
+           <div>布尔值有两个值  true/false 且不区分大小写</div>
+           <div>通常运算符返回的boolean会被传递给控制流程</div>
+           <div>被认为false的值： false(boolean)；0(int)；0.0(float)；""(String) "0"(String)；Array()空；null； 空标记对象</div>
+        </div>
+        <h2>复合数据类型-数组</h2>
         <div class="none">
            <div> </div>
+        </div>
+        <h2>复合数据类型-对象</h2>
+        <div class="none">
+           <div> </div>
+        </div>
+        <h2>特殊的数据类型-null/资源</h2>
+        <div class="none">
+            <div></div>
         </div>
     </div>
 </body>
