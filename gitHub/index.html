@@ -49,15 +49,18 @@
         <p>$ git branch -d dev 删除分支</p>
         <p>git push origin :dev 删除远程分支dev，origin和:dev之间有空格</p>
         <p>$ git log --graph --pretty=oneline --abbrev-commit 查看分支合并情况</p>
-
+        <p>ESC 大写ZZ 便可以退出 编辑模式</p>
+        <P>按Esc 就可以进入命令行模式也是系统默认模式 </P>
+        <P>输入模式可以按 o i a 都可以进入 退出可以进入末行和命令行模式</P>
+        <P>末行模式可以按ctrl+；它的主要功能是退出编辑器 也可以保存退出文档</P>
+        <p>用wq的时候，要先esc，然后按住shift键，出现下面这个界面时才可以输入命令</p>
     </div>
     <h2>错误集锦</h2>
     <div>
         <h3>提交错误</h3>
         <p>error: failed to push some refs to 'git@github.com:xxx/xxx.git' </p>
         <p> 原因：GitHub远程仓库中的README.md文件不在本地仓库中。</p>
-        <p>方案：$ git pull --rebase origin master 完成后在提交
-$ git push -u origin master</p>
+        <p>方案：$ git pull --rebase origin master 完成后在提交 $ git push -u origin master</p>
     </div>
 </body>
 

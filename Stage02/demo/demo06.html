@@ -9,7 +9,7 @@
 </head>
 
 <body>
-    <h1>Servlet 重点  生命周期和访问流程</h1>
+    <h1>Servlet 重点 生命周期和访问流程</h1>
     <div class="demoMain">
         <h2>Servelet</h2>
         <div class="none">
@@ -25,8 +25,8 @@
             <div>子类的方法优先级比父级高</div>
             <h3>Servlet抽象类</h3>
             <div class="none">
-                <div>abstract init()  初始化</div>
-                <div>abstract getServletConfig()  获取对象</div>
+                <div>abstract init() 初始化</div>
+                <div>abstract getServletConfig() 获取对象</div>
                 <div>abstract service() 服务 核心方法</div>
                 <div>abstract getServletInfo() 获取信息的方法</div>
                 <div>abstract destroy() 销毁方法</div>
@@ -35,7 +35,8 @@
             <div class="none">
                 <div>destroy(){} 毛线没写</div>
                 <div>String getInitParameter(){} 获取初始化参数</div>
-                <div>Enumeration< String > getInitParameterNames(){} 获取初始化参数名称的方法</div>
+                <div>Enumeration
+                    < String> getInitParameterNames(){} 获取初始化参数名称的方法</div>
                 <div>getServletConfig(){} 获取初始化对象的</div>
                 <div>ServletContext getServletContext(){} 获取上下文对象的方法</div>
                 <div>String getServletInfo(){return "";}</div>
@@ -58,15 +59,15 @@
             <div>就可以去servlet-name</div>
             <div>找 servlet中的 servlet-name</div>
             <div>拿到servlet-class中的 全名 全名</div>
-            <div>之后用映射的方式创建 HttpServlet h =  class.forName()</div>
+            <div>之后用映射的方式创建 HttpServlet h = class.forName()</div>
             <div>打点调用方法 eg： h.doGet()</div>
         </div>
         <h2>Servlet的生命周期</h2>
         <div class="none">
             <div>任何一个自定义的servlet都有直接父类 HttpServlet</div>
             <div>当第一次访问的时候 服务器创建servlet有且只有一个 所以是单例模式</div>
-            <div>再次访问不会被创建 开启新的线程  每次访问都会调用service方法</div>
-            <div>init()  初始化 第一次访问的时候被初始化 只有一次</div>
+            <div>再次访问不会被创建 开启新的线程 每次访问都会调用service方法</div>
+            <div>init() 初始化 第一次访问的时候被初始化 只有一次</div>
             <div>service() 来自父类的 每次访问都会被调用</div>
             <div>destroy() 只有服务器正常关闭前 会执行一次</div>
         </div>
@@ -83,10 +84,10 @@
                 <div>}</div>
             </div>
             <h3>ServletContext(重要) 获取上下文对象 作用域对象</h3>
-            <div class="none"> 
+            <div class="none">
                 <div>ServletContext st = this.getServletContext(); //初始化context对象</div>
                 <div>String path = st.getRealPath("upload"); //相对路径转绝对路径 （重要）</div>
-                <div>st.setAttribute("name","张三"); //全局容器  随着服务器一直存在 （重要）</div>
+                <div>st.setAttribute("name","张三"); //全局容器 随着服务器一直存在 （重要）</div>
                 <div>st.getInitParameter("cloud");//获取全局初始化参数</div>
                 <div>Enumeration e = st.getInitParameterNames(); //获取所有初始化参数名称</div>
                 <div>while(e.hasMoreElements()){</div>
@@ -97,15 +98,39 @@
                 <div> st.getMinorVersion() // 获取附加信息</div>
             </div>
         </div>
-        <h2>HttpServletRequest request对象；HttpServletResponse response对象</h2>
+        <h2>作用域对象 HttpServletRequest对象；HttpServletResponse对象</h2>
         <div class="none">
             <h3>request 对象方法</h3>
             <div class="none">
-                <div></div>
+                <div>Servlet中请求中的所有内容，都会被封装成一个 HttpServletRequest request对象并作为 doGet 或 doPost的参数 (谁做的封装？--- 服务器)</div>
+                 <div><span class="remark">以下内容必会</span></div>
+                <div>String str = request.getQueryString(); // get请求携带数据问号参数 问号后面的字符串</div>
+                <div> String name = request.getParameter("name");// get参数</div>
+                <div> String[] aStr = request.getParameterValues("hobby"); // checkbox的values</div>
+                <div>request.setAttribute("username", name);</div>
+                <div>request.getRequestDispatcher("error.jsp").forward(request, response); // 转发</div>
+                <div>--------------------了解------以下-------------------------------</div>
+                <div>String userAhent = request.getHeader("user-Agent"); // 客户端品牌信息</div>
+                <div>String Referer =request.getHeader("Referer") ;// 得到的是请求来源 可以用来做防盗链</div>
+                <div>String method = request.getMethod(); //post/get</div>
+                <div>String contextpath = request.getContextPath();// 部署时的项目名称</div>
+                <div>String ServerName = request.getServerName(); // 服务器名称</div>
+                <div>String protocal = request.getProtocol(); // 获得协议 HTTP/1.1</div>
+                <div>int Serverport = request.getServerPort();//端口号</div>
+                <div>String uri = request.getRequestURI();// 统一资源定位符 /1208/RequestTest.do</div>
+                <div>StringBuffer url = request.getRequestURL();// 资源标识符 http://localhost:8080/1208/RequestTest.do</div>
+                <div>//获取所有请求头的key</div>
+                <div> Enumeration e = request.getHeaderNames();//获取所有key</div>
+                <div>String ip =request.getRemoteAddr();//客户端ip地址 </div>
+                <div>while(e.hasMoreElements()){</div>
+                <div> String name = (String)e.nextElement();</div>
+                <div> System.out.print(name);</div>
+                <div> }</div>
             </div>
             <h3>response 对象方法</h3>
             <div class="none">
-                <div></div>
+                <div>Servlet中请求中的所有内容，都会被封装成一个 HttpServletResponse</div>
+                <div>response.sendRedirect("index.jsp"); //重定向</div>
             </div>
         </div>
     </div>
