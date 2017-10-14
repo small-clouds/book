@@ -5,19 +5,78 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <link rel="stylesheet" href="../css/fir.css" />
-    <title>phpstudy-- 基本数据类型</title>
+    <title>phpstudy-- 函数和变量</title>
 </head>
 
 <body>
-    <h1>基本数据类型</h1>
-    
+    <h1>函数和变量</h1>
+
     <div class="demoMain">
-        <h2></h2>
+        <h2>变量的的定义</h2>
         <div class="none">
-           <div> </div>
+            <div>变量：变量是存储信息的容器</div>
+            <div>$a= 10;</div>
+        </div>
+        <h2>变量的规则</h2>
+        <div class="none">
+            <div>变量以 $ 符号开头，其后是变量的名称</div>
+            <div>变量名称必须以字母或下划线开头</div>
+            <div>变量名称不能以数字开头</div>
+            <div>变量名称只能包含字母数字字符和下划线（A-z、0-9 以及 _）</div>
+            <div>变量名称对大小写敏感（$y 与 $Y 是两个不同的变量）</div>
+            <div>注<span class="remark">PHP 变量名称对大小写敏感！</span></div>
+        </div>
+        <h2>变量的作用域</h2>
+        <div class="none">
+            <div>php中变量是弱类型语言 通过赋值 才能决定变量的数据类型</div>
+            <div>php变量有三种作用域(local(局部) global(全局) static(静态))</div>
+            <div>global(全局) 函数之外声明的变量拥有Global作用域</div>
+            <div>关键词用于访问函数内的全局变量。 要做到这一点，请在（函数内部）变量前面使用 global 关键词 global $x,$y;(函数内使用)</div>
+            <div>local(局部) 函数之内声明的变量拥有LOCAL作用域</div>
+            <div>注：???<span class="remark">您可以在不同的函数中创建名称相同的局部变量，因为局部变量只能被在其中创建它的函数识别。</span></div>
+            <div>static 关键词 通常，当函数完成/执行后，会删除所有变量。不过，有时我需要不删除某个局部变量。实现这一点需要更进一步的工作。 要完成这一点，请在您首次声明变量时使用 static 关键词</div>
+            <div>注： <span class="remark">该变量仍然是函数的局部变量。</span></div>
+        </div>
+        <h2>常量</h2>
+        <div class="none">
+            <div>常量类似变量，但是常量一旦被定义就无法更改或撤销定义。</div>
+            <div>注释：<span class="remark">与变量不同，常量贯穿整个脚本是自动全局的</span></div>
+            <div>如需设置常量，请使用 define() 函数 - 它使用三个参数：define("GREETING", "Welcome to W3School.com.cn!",true);</div>
+            <div>首个参数定义常量的名称</div>
+            <div>第二个参数定义常量的值</div>
+            <div>可选的第三个参数规定常量名是否对大小写不敏感。默认是 false。</div>
+            <div>也可以这样定义： const MIN_NUM = 0;</div>
+        </div>
+        <h2>函数</h2>
+        <div class="none">
+            <div>function funName(参数列表){</div>
+            <div> 函数体(必须有);</div>
+            <div> return(可有可无)；</div>
+            <div> }</div>
+            <div><span class="none"> 细节：</span></div>
+            <div>参数列表：只是形式参数 简称形参</div>
+            <div>不可以同时引入两个function 否则会报重名错误</div>
+            <div><span class="remark">程序看到函数 就会开辟一个新栈 各栈间的变量是相互独立的</span></div>
+            <div>return 能够返回结果 没有renturn 也返回 只是没有返回值</div>
+            <div>function abc($n) { if ($n > 2) { abc( --$n); } echo $n; } abc(4); //开辟新栈 真有意思 2 2 3 对值 --了 所以 第二次变成了2 所以没有4</div>
+            <div>错误级别 notice最轻的 warn 警告 error 致命的</div>
+            <div><span class="none">函数的深入使用   </span></div>
+            <div> // 参数可以多个 </div>
+            <div> // 可以php支持的任意类型 </div>
+            <div> // 函数名不区分大小写 function abc 和function ABC 同一个函数</div>
+            <div>函数内局部变量</div>
+            <div> function abc2($b, $a = 2) 默认值  不传为2  传值为穿进去的值</div>
+        </div>
+        <h2>系统函数</h2>
+        <div class="none">
+            <div>$_REQUEST["num1"]; // 获取前台表单数据</div>
+            <div>require_once("func,php"); //后台引入文件 这个常用</div>
+            <div>require "func.php";</div>
+            <div>include("func.php");</div>
         </div>
     </div>
 </body>
+
 </html>
 <script src='../js/jquery.min.js'></script>
 <script src='../js/first.js'></script>
