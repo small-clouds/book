@@ -5,19 +5,35 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <link rel="stylesheet" href="../css/fir.css" />
-    <title>phpstudy-- 基本数据类型</title>
+    <title>phpstudy-- 数组 排序</title>
 </head>
 
 <body>
-    <h1>基本数据类型</h1>
-    
+    <h1>数组 排序</h1>
+
     <div class="demoMain">
-        <h2></h2>
+        <h2>数组array()</h2>
         <div class="none">
-           <div> </div>
+            <h3>定义方式</h3>
+            <div class="none">
+                <div>数组能够在单一变量名中存储许多值，并且您能够通过引用下标号来访问某个值。</div>
+                <div>$a=array(1,2,4,5,6); (1)</div>
+                <div>$a[0]=0;$a[1]=1;$a[2]=2;$a[3]=3;(2)</div>
+                <div>$a=array(key1=>value1,key2=>value2,key3=>value3); (3)</div>
+                <div>$a[key1]=value1; $a[key2]=value2; (4)</div>
+                <div>$data = ['start_time' => '123', 'end_time' =>'456' ]; (5) (5.4以上) </div>
+            </div>
+            <h3>分类</h3>
+            <div class="none">
+                <div>索引数组： 带有数字索引的数组  定义方式1</div>
+                <div>关联数组： 带有指定键的数组</div>
+                <div>多维数组： 包含一个或多个数组的数组</div>
+            </div>
         </div>
+        <h2>排序</h2>
     </div>
 </body>
+
 </html>
 <script src='../js/jquery.min.js'></script>
 <script src='../js/first.js'></script>
