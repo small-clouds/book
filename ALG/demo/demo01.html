@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <link rel="stylesheet" href="../css/fir.css" />
+    <title>算法基础</title>
+</head>
+
+<body>
+    <h1>算法</h1>
+
+    <div class="demoMain">
+        <h2>指数</h2>
+        <div class="none">
+            <div>X^a*X^b = X^(a+b)</div>
+            <div>X^a/X^b = X^(a-b)</div>
+            <div>(X^a)^b = x^ab</div>
+            <div>X^n+X^n = 2X^n</div>
+            <div>2^n+2^n=2^(n+1)</div>
+        </div>
+        <h2>对数</h2>
+        <div class="none">
+            <div>对数定义：X^a=B => logxB=A</div>
+            <div>logaB = logcB/logcA A,B,C>0 ;a!=1</div>
+            <div>logAB =logA+logB A,B>0</div>
+            <div>logA/B =logA-logB</div>
+            <div>log(A^b) = blogA</div>
+            <div>logX
+                < X 对所有的 X>0 都成立</div>
+            <div>log1=0； log2=1；log1024=10；log1048576=20；</div>
+        </div>
+        <h2>级数</h2>
+        <div class="none">
+            <div>1) 【(n)sum(i=0)】2^i = 2^(n+1) - 1 //解释 []大E西格玛 前面为变量 后面为初始值 求和</div>
+            <div>2) 【(n)sum(i=0)】A^i = (A^(n+1)-1)/(A-1)</div>
+            <div>第二个公式中如果0 &lt; A&lt; 1 ; 【(n)sum(i=0)】A^i &lt;=1 /(1-A) </div>
+            <div>当n趋向于 无穷时 和趋向于1/(1-A) 这些公式是 <span class="remark">几何级数</span></div>
+            <div><span class="remark">证明1</span></div>
+            <div>S=1+A^1+A^2+A^3+A^4....</div>
+            <div><span class="remark">所以：</span>AS=A+A^2+A^3+A^4....</div>
+            <div><span class="remark">相减:</span>S-AS=1 => S=1/(1-A)</div>
+            <div><span class="remark">证明2：</span></div>
+            <div>【(无穷)sum(i=1)】(i/2^i); => S=1/2 + 2/2^2 + 3/2^3..... </div>
+            <div>2S = 1+ 2/2 +3/2^2 + 4/2^3....;</div>
+            <div><span class="remark">相减：</span>S=1+1/2+1/2^2+1/2^3..=> S=2</div>
+            <div><span class="remark">基本公式：</span>【(N)sum(i=1)】i = N(N+1)/2 ~= N^2/2</div>
+        </div>
+        <h2>模运算</h2>
+        <div class="none">
+            <div><span class="remark">定理：</span>如果N整除A-B 那么就说 A与B模N同余 ；A三B(mod N)</div>
+            <div>注：<span class="remark">很多定理适用于模运算 其中有些特别需要数论证明 我们将尽量少用模运算 这样前面的定理够了</span></div>
+        </div>
+        <h2>证明方法</h2>
+        <div class="none">
+            <h3>归纳法</h3>
+            <div class="none">
+                <div> 1.证明基准情形；2.进行归纳假设（假设定理对到某个有限的数k的所有情况都是成立的 然后使用这个证明 对<span class="remark">k+1</span>是成立的 至此定理得证）</div>
+                <div><span class="remark">证明k成立  只要证明出k+1成立 说明她就成立</span></div>
+                <div>eg:证明： 【(N)sum(i=1)】i^2 = N(N+1)(2N+1) / 6</div>
+                <div>假设成立：【(N+1)sum(i=1)】(i+1)^2 = 【(N)sum(i=1)】i^2 +(N+1)^2</div>
+                <div>结果：【(N+1)sum(i=1)】(i+1)^2 = (N+1)（(N+1)+1）（2(N+1)+1） / 6 所以上面的成立</div>
+            </div>
+            <h3>反证法</h3>
+            <div class="none">
+                <div>反证法是通过证明假设定理不成立 然后证明假设导致某个已知的性质不成立 从而证明假设是错误的</div>
+                <div>经典案例：证明存在无穷多个素数？</div>
+                <div>假设不成立  那么最大的素数是Pn</div>
+                <div>令 N=P1×P2×P3×P4×P5×Pn+1</div>
+                <div>所有的数都不能整除N 余数是1 所以假设Pn是最大的素数不成立；所以定理成立</div>
+            </div>
+        </div>
+        <h2>递归简论</h2>
+        <div class="none">
+            <div>当一个函数用它自己来定义时 就成为是递归 程序中允许函数使用递归 只是遵循的是递归思想</div>
+            <div>常见问题</div>
+            <div>递归是狗就是循环推理？ 是。</div>
+            <div>基本法则</div>
+            <div>基准情形：不用递归就能求解的值</div>
+            <div>不断推进：对于需要递归求解的情形 每一次递归调用都必须要是状况朝向一种基准情形</div>
+            <div>设计法则：假设所有的递归调用都能运行</div>
+            <div>合成效益法则：</div>
+            <div> <span class="remark">递归不应该作为简单for循环的代替物  递归涉及到系统开销</span></div>
+        </div>
+    </div>
+</body>
+
+</html>
+<script src='../js/jquery.min.js'></script>
+<script src='../js/first.js'></script>

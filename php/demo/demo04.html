@@ -58,13 +58,13 @@
             <div>不可以同时引入两个function 否则会报重名错误</div>
             <div><span class="remark">程序看到函数 就会开辟一个新栈 各栈间的变量是相互独立的</span></div>
             <div>return 能够返回结果 没有renturn 也返回 只是没有返回值</div>
-            <div>function abc($n) { if ($n > 2) { abc( --$n); } echo $n; } abc(4); //开辟新栈 真有意思 2 2 3 对值 --了 所以 第二次变成了2 所以没有4</div>
-            <div>错误级别 notice最轻的 warn 警告 error 致命的</div>
-            <div><span class="none">函数的深入使用   </span></div>
             <div> // 参数可以多个 </div>
             <div> // 可以php支持的任意类型 </div>
             <div> // 函数名不区分大小写 function abc 和function ABC 同一个函数</div>
             <div>函数内局部变量</div>
+            <div>function abc($n) { if ($n > 2) { abc( --$n); } echo $n; } abc(4); //开辟新栈 真有意思 2 2 3 对值 --了 所以 第二次变成了2 所以没有4</div>
+            <div>错误级别 notice最轻的 warn 警告 error 致命的</div>
+            <div><span class="none">函数的深入使用   </span></div>
             <div> function abc2($b, $a = 2) 默认值  不传为2  传值为穿进去的值</div>
         </div>
         <h2>系统函数</h2>

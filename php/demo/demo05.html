@@ -5,19 +5,46 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <link rel="stylesheet" href="../css/fir.css" />
-    <title>phpstudy-- 基本数据类型</title>
+    <title>phpstudy-- 位运算</title>
 </head>
 
 <body>
-    <h1>基本数据类型</h1>
-    
+    <h1>位运算</h1>
+
     <div class="demoMain">
-        <h2></h2>
+
+        <h2>源码，反码，补码</h2>
         <div class="none">
-           <div> </div>
+            <div><span class="remark">计算机运算时 都是以补码的方式来运算的</span></div>
+            <div>0的反码补码都是0</div>
+            <div>用二进制表示的数 这个数就是源码 </div>
+            <div>正数的源码 反码 补码都一样</div>
+            <div>负数的反码 符号位不变 其余全部取反</div>
+            <div>负数的补码 为 他的反码 +1</div>
         </div>
-    </div>
+        <h2>位运算符&(与) |(或) ~(非) ^(异或)
+            <<(位左移)>>(位右移)</h2>
+        <div class="none">
+            <div>&(与): 两位全1 结果为1</div>
+            <div>|(位或): 有1 为1</div>
+            <div>^(异或): 一个为0 一个为1 为1</div>
+            <div>~(位非): 0变1 1变0 </div>
+            <div><<(位左移): 符号位不变 低位补0</div>
+            <div>>>(位右移): 低位溢出 符号位不变 符号位不溢出的高位</div>
+                <div>例题：</div>
+                <div> //～-5</div>
+                <div> //源码 10000000 00000000 00000000 00000101</div>
+                <div> //反码 11111111 11111111 11111111 11111010 </div>
+                <div> //补码 11111111 11111111 11111111 11111011</div>
+                <div> //取反 00000000 00000000 00000000 00001000 补码 正数 4</div>
+            </div>
+            <h2>补码</h2>
+            <div class="none">
+
+            </div>
+        </div>
 </body>
+
 </html>
 <script src='../js/jquery.min.js'></script>
 <script src='../js/first.js'></script>
