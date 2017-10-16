@@ -5,23 +5,67 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <link rel="stylesheet" href="../css/sec.css" />
-    <title>java第二阶段学习-javascript基础知识</title>
+    <title>java第二阶段学习-会话跟踪技术Cookie / Session</title>
 </head>
 
 <body>
-    <h1>javascript基础知识</h1>
+    <h1>会话跟踪技术Cookie / Session</h1>
     <div class="demoMain">
-        <h2></h2>
+        <h2>会话跟踪技术简介 会话和会话跟踪</h2>
         <div class="none">
-            <div></div>
-            <div></div>
+            <div>什么是一次会话 从打开浏览器发送请求 开始 一直到关闭浏览器 </div>
+            <div>为什么要有会话跟踪？ 因为HTTP协议是无状态协议 FTP(有状态)</div>
         </div>
-        <h2></h2>
+        <h2>COOKIE(客户端技术)</h2>
         <div class="none">
-            <div></div>
-            <div></div>
+            <div>服务器端创建Cookie对象 通过响应带给客户端</div>
+            <h3>cookie的使用</h3>
+            <div class="none">
+                <div>
+                    <pre>
+//1、创建cookie
+Cookie c = new Cookie("username","zhangsan");
+Cookie c2 = new Cookie("pwd","123");
+//获取
+c.getName()
+c.getValue()
+//4、持久化
+c.setMaxAge(60*60*24*7);
+
+//2、将cookie对象加入到 response
+response.addCookie(c);
+response.addCookie(c2);
+
+//3、转发
+//		request.getRequestDispatcher("cookie.jsp").forward(request, response);
+		response.sendRedirect("cookie.jsp");
+//获取
+Cookie[] cs = request.getCookies()	;
+    if(cs!=null){
+        for(Cookie c:cs){
+            if(){
+            
+            }
+        }
+    }
+//设置cookie路径
+c.setPath("http://www.baidu.com"); 设置Cookie的有效路径
+只有访问http://www.baidu.com路径时才会带有这个Cookie
+
+访问  http://map.baidu.com 时不会带有这个Cookie
+
+c.setDomain("http://www.baidu.com") 
+那么访问  http://map.baidu.com   也会带有这个Cookie
+        </pre>
+                </div>
+            </div>
+            <h3>查看持久化cookie的保存路径</h3>
+            <div class="none">
+                <div>IE： C:\Users\Administrator\AppData\Roaming\Microsoft\Windows\Cookies</div>
+                <div> Firefox： 工具---选项---隐私---使用自定义历史设置里面查看 </div>
+            </div>
         </div>
-        <h2></h2>
+        <h2>SESSION(服务端技术)</h2>
         <div class="none">
             <div></div>
             <div></div>

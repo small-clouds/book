@@ -5,31 +5,36 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <link rel="stylesheet" href="../css/sec.css" />
-    <title>java第二阶段学习-javascript基础知识</title>
+    <title>java第二阶段学习-JSP</title>
 </head>
 
 <body>
-    <h1>javascript基础知识</h1>
+    <h1>JSP</h1>
     <div class="demoMain">
-        <h2></h2>
+        <h2>定义</h2>
         <div class="none">
-            <div></div>
-            <div></div>
+            <div>JAVA SERVER PAGE 是java服务端页面 其动态语法部分完全是java规范</div>
+            <div>是一种动态网页编程技术</div>
         </div>
-        <h2></h2>
+        <h2>JSP和Servlet的异同</h2>
         <div class="none">
-            <div></div>
-            <div></div>
+            <div> 1 JSP和Servlet都是动态资源 -- JSP最后也是会被编程成Servlet</div>
+            <div> 2 编程Servlet是在编写程序代码 而编写jsp时更多感觉是在编写HTML页面 </div>
+            <div> 3 存放的位置不同 servlet 放在src下/ jsp放在webroot下 </div>
+            <div> 4 访问方式不同 Servlet需要 在web.xml中配置 而jsp可以直接访问</div>
+            <div><span class="remark">从本质上来说，JSP就是Servlet 只是在编写 和 存放的位置上 是不同的</span></div>
         </div>
-        <h2></h2>
+        <h2>jsp访问流程</h2>
         <div class="none">
-            <div></div>
-            <div></div>
+            <div>JSP 是在第一次访问这个jsp是 会被服务器的jsp引擎（软件模块）编译成一个 jsp文件名_jsp.java的文件</div>
+            <div>(当然 .java文件还会被 编译成 .class文件)--- 文件保存在Tomcat的work目录下</div>
         </div>
-        <h2></h2>
+        <h2>JSP中嵌入java代码</h2>
         <div class="none">
-            <div></div>
-            <div></div>
+            <div>< %! % > 声明标签 声明的变量和方法将会成为 jsp编译成的Servlet 的<span class="remark">成员变量方法</span><span class="remark">声明标签，一般不用</span> </div>
+            <div>< % % > 局部变量 脚本标签中写的内容将会出现在 service方法中</div>
+            <div>< %=% > 赋值标签 out.print(); 赋值标签中的内容将会显示在页面上
+            </div>
         </div>
     </div>
 </body>
