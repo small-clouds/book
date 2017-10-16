@@ -65,7 +65,12 @@
             <div>function abc($n) { if ($n > 2) { abc( --$n); } echo $n; } abc(4); //开辟新栈 真有意思 2 2 3 对值 --了 所以 第二次变成了2 所以没有4</div>
             <div>错误级别 notice最轻的 warn 警告 error 致命的</div>
             <div><span class="none">函数的深入使用   </span></div>
-            <div> function abc2($b, $a = 2) 默认值  不传为2  传值为穿进去的值</div>
+            <div> function abc2($b, $a = 2) 默认值 不传为2 传值为穿进去的值</div>
+        </div>
+        <h2>函数传参数 地址与值</h2>
+        <div class="none">
+            <div>在php中如果传递的是数组  在默认情况下传递的是值  重新拷贝了一份数组 </div>
+            <div>&$a 在变量前加上&符 传递的将是地址 就可能改变原来的值</div>
         </div>
         <h2>系统函数</h2>
         <div class="none">
