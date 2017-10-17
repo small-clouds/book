@@ -5,16 +5,44 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <link rel="stylesheet" href="../css/fir.css" />
-    <title>java第一阶段学习 数据库</title>
+    <title>java第一阶段学习 经典题</title>
 </head>
 
 <body>
-    <h1>数据库</h1>
+    <h1>经典题</h1>
 
     <div class="demoMain">
-        <h2> </h2>
+        <h2>函数传参</h2>
         <div class="none">
-            <div></div>
+            <h3>String int array integer对函数参数的传参</h3>
+            <div>
+                <div></div>
+                <pre>  
+package com.java.demo01;
+import org.junit.Test;
+public class Test01 {	
+	//String str = new String("abcd");
+	String str ="abcd";
+	int a = 10;
+	Integer b=10;
+	Integer c = new Integer(10);
+	char[] cArr = {'a','b','c','d'};
+	public static void main(String[] args) {
+		Test01 t = new Test01();
+		t.abc(t.str, t.cArr,t.a,t.c);
+		
+		System.out.println(t.str+"   "+t.cArr[0]+"   "+t.a+"   "+t.c);//abcd   w   10   10
+	}
+	public void abc(String str,char ch[],int a,Integer c){
+		str = "1234";
+		a=5;
+		c=new Integer(5);
+		System.out.println(c);
+		ch[0]='w';
+	}
+}
+ </pre>
+            </div>
         </div>
         
     </div>

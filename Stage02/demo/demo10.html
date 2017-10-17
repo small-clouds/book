@@ -39,15 +39,20 @@ response.addCookie(c2);
 //3、转发
 //		request.getRequestDispatcher("cookie.jsp").forward(request, response);
 		response.sendRedirect("cookie.jsp");
-//获取
-Cookie[] cs = request.getCookies()	;
-    if(cs!=null){
-        for(Cookie c:cs){
-            if(){
-            
-            }
-        }
-    }
+//获取  jsp页面获取
+< %
+		Cookie[] c = request.getCookies();
+		if(c!=null){
+			for(int i = 0;i< c.length;i++){
+				if("username".equals(c[i].getName())){
+					%>
+					<%=c[i].getValue() %>
+					<%
+					break;
+				}
+			}
+		}
+	 % >
 //设置cookie路径
 c.setPath("http://www.baidu.com"); 设置Cookie的有效路径
 只有访问http://www.baidu.com路径时才会带有这个Cookie
@@ -67,13 +72,25 @@ c.setDomain("http://www.baidu.com")
         </div>
         <h2>SESSION(服务端技术)</h2>
         <div class="none">
-            <div></div>
-            <div></div>
+            <div>创建session：HttpSession s= Request.getSession();/Request.getSession();</div>
+            <div>存储session：s.setAttribute("name","value");</div>
+            <div>取值：s.getAttribute("name");</div>
+            <div>移除：s.removeAttribute("name");</div>
+            <div><span class="remark">基于一次会话：</span></div>
+            <div>1.当关闭浏览器相当于被销毁/</div>
+            <div>2. 当浏览器关闭 存储JsessionID的 cookie被销毁 所以找不到存储键值对的session</div>
+            <div><span class="remark">session的生命周期</span></div>
+            <div>i. Session是服务器端对象 由服务器管理 当request.getSession()时创建session对象，</div>
+            <div> 销毁： 1. 非正常关闭 a) 当服务器正常关闭时，服务器会将session对象以文件的形式序列化到磁盘上；当再次启动服务器时，会将文件反序列化到内存中，上次存储的session对象还原</div>
+            <div>2. Session的生命周期到时， 默认是30分钟 修改session对象的生命周期 在tomcat 的 web.xml -》session-config session-timeout</div>
+            <div>清空session对象：s.invalidate();</div>
         </div>
-        <h2></h2>
+        <h2>java后台作用域对象</h2>
         <div class="none">
-            <div></div>
-            <div></div>
+            <div> // Request： 基于一次请求</div>
+            <div> // Session： 基于一次会话</div>
+            <div> // servletContext: 基于一次服务 服务器启动 就创建 服务器关闭销毁 与服务器共存亡</div>
+            <div> <span class="remark">使用作用域对象 能用小范围的 就不用大范围的</span></div>
         </div>
     </div>
 </body>
