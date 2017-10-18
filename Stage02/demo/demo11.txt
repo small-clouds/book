@@ -1,5 +1,5 @@
-
-    EL ±í´ïÊ½  expression language     JSTL ±êÇ©¿â C±êÇ© fmt fn
+ï»¿
+    EL è¡¨è¾¾å¼  expression language     JSTL æ ‡ç­¾åº“ Cæ ‡ç­¾ fmt fn
 	
 	J2EE   servlet    jsp
 	 
@@ -9,24 +9,24 @@
 	6.0      3.0     2.2   
 	 
 	
-	4 ¸ö×÷ÓÃÓò¶ÔÏó£º
+	4 ä¸ªä½œç”¨åŸŸå¯¹è±¡ï¼š
 	
-	     1 ·ÃÎÊ×÷ÓÃµÄÖµ  (pageContext  request  session  application)
+	     1 è®¿é—®ä½œç”¨çš„å€¼  (pageContext  request  session  application)
  
              setAttribute(key,value)
 
-		Óï·¨:
+		è¯­æ³•:
 			${}
 			 
-         ${×÷ÓÃÓòµÄkeyÖµ}  ---- ¸ù¾İkey »ñµÃvalue
+         ${ä½œç”¨åŸŸçš„keyå€¼}  ---- æ ¹æ®key è·å¾—value
 		 
-		    °´ÕÕ pageContext request session application µÄ×÷ÓÃÓò´ÓĞ¡µ½´óµÄË³Ğò²éÕÒ ¶ÔÓ¦µÄkey 
+		    æŒ‰ç…§ pageContext request session application çš„ä½œç”¨åŸŸä»å°åˆ°å¤§çš„é¡ºåºæŸ¥æ‰¾ å¯¹åº”çš„key 
 			
-			     ÕÒµ½ÎªÖ¹  Èç¹ûÕÒ²»µ½ ·µ»Ø "" (getAttribute("") ÕÒ²»µ½Ê± ·µ»Ønull)
+			     æ‰¾åˆ°ä¸ºæ­¢  å¦‚æœæ‰¾ä¸åˆ° è¿”å› "" (getAttribute("") æ‰¾ä¸åˆ°æ—¶ è¿”å›null)
 
-			½¨ÒéÊ¹ÓÃ ×÷ÓÃÓò¶ÔÏó µ÷ÓÃ Ğ§ÂÊ¸ß Ô­Òò²»ÓÃÈ¥ÆäËû×÷ÓÃÓò Öğ¸ö¼ìË÷
+			å»ºè®®ä½¿ç”¨ ä½œç”¨åŸŸå¯¹è±¡ è°ƒç”¨ æ•ˆç‡é«˜ åŸå› ä¸ç”¨å»å…¶ä»–ä½œç”¨åŸŸ é€ä¸ªæ£€ç´¢
         
-		Ê¹ÓÃelÈ¡×÷ÓÃÓòÖĞµÄÖµÊ±£¬¿ÉÒÔÖ¸¶¨´ÓÄÄ¸ö×÷ÓÃÓòÖĞ²éÕÒ
+		ä½¿ç”¨elå–ä½œç”¨åŸŸä¸­çš„å€¼æ—¶ï¼Œå¯ä»¥æŒ‡å®šä»å“ªä¸ªä½œç”¨åŸŸä¸­æŸ¥æ‰¾
 		
 		 ${pageScope.key}
 		 ${requestScope.}
@@ -34,7 +34,7 @@
 		 ${applicationScope.}
 		 
 		 
-		 ×÷ÓÃÓòÖĞ´æ·ÅµÄÊÇ¶ÔÏóÀàĞÍµÄÊı¾İ ¿ÉÒÔÊ¹ÓÃelÖ±½Ó·ÃÎÊ¶ÔÏóµÄÊôĞÔÖµ
+		 ä½œç”¨åŸŸä¸­å­˜æ”¾çš„æ˜¯å¯¹è±¡ç±»å‹çš„æ•°æ® å¯ä»¥ä½¿ç”¨elç›´æ¥è®¿é—®å¯¹è±¡çš„å±æ€§å€¼
 		 
 		 request.setAttribute("user",user);
 		 
@@ -43,78 +43,78 @@
          ${requestScope.user.age }
          ${requestScope.user.birthday }
 		 
-		 EL±í´ïÊ½ÖĞrequest.getAttr
+		 ELè¡¨è¾¾å¼ä¸­request.getAttr
 		 
-		 id name age birthday ²¢²»ÄÜËµÊÇ userµÄÊôĞÔ ¶øÊÇ ¸ú ¶ÔÓ¦µÄÊôĞÔµÄget·½·¨ÓĞ¹Ø
-		 Èç¹ûÊôĞÔÃ»ÓĞÏàÓ¦µÄget·½·¨ Ôò
+		 id name age birthday å¹¶ä¸èƒ½è¯´æ˜¯ userçš„å±æ€§ è€Œæ˜¯ è·Ÿ å¯¹åº”çš„å±æ€§çš„getæ–¹æ³•æœ‰å…³
+		 å¦‚æœå±æ€§æ²¡æœ‰ç›¸åº”çš„getæ–¹æ³• åˆ™
 		 javax.el.PropertyNotFoundException: Property 'id' not readable on type User
 
 
-    EL±í´ïÊ½Ò²¿ÉÒÔ·ÃÎÊ¼¯ºÏÀàĞÍ£¨list map  Êı×é£©µÄ¶ÔÏó
+    ELè¡¨è¾¾å¼ä¹Ÿå¯ä»¥è®¿é—®é›†åˆç±»å‹ï¼ˆlist map  æ•°ç»„ï¼‰çš„å¯¹è±¡
 	
-	   *****µ«EL Ã»ÓĞ±éÀú¼¯ºÏµÄÄÜÁ¦*****
+	   *****ä½†EL æ²¡æœ‰éå†é›†åˆçš„èƒ½åŠ›*****
 	   
-	   µ± ÊôĞÔÃû  »ò   keyÖµÖĞÓĞÌØÊâ×Ö·ûÊ±£¬ 
-	   ¿ÉÒÔÊ¹ÓÃ${requestScope.map['aaa-bbb'] } »ñÈ¡
+	   å½“ å±æ€§å  æˆ–   keyå€¼ä¸­æœ‰ç‰¹æ®Šå­—ç¬¦æ—¶ï¼Œ 
+	   å¯ä»¥ä½¿ç”¨${requestScope.map['aaa-bbb'] } è·å–
 
-    2 ×öÊıÑ§ÔËËã(******)
+    2 åšæ•°å­¦è¿ç®—(******)
 	
 	  ${5+3}
-			ËãÊõÔËËã·û ±È½ÏÔËËã·û Ò»¶¨Òª·ÅÔÚ${}ÀïÃæ ·ÅÍâÃæ½ĞÕ¹ÏÖ
+			ç®—æœ¯è¿ç®—ç¬¦ æ¯”è¾ƒè¿ç®—ç¬¦ ä¸€å®šè¦æ”¾åœ¨${}é‡Œé¢ æ”¾å¤–é¢å«å±•ç°
 			${requestScope.aa > bb}
 
-    3 Ê¹ÓÃEL±í´ïÊ½²Ù×÷ ³£ÓÃµÄweb ¶ÔÏó    11¸öÄÚÖÃ¶ÔÏó
+    3 ä½¿ç”¨ELè¡¨è¾¾å¼æ“ä½œ å¸¸ç”¨çš„web å¯¹è±¡    11ä¸ªå†…ç½®å¯¹è±¡
 		******
 	    pageScope
 		requestScope  
 		sessionScope
 		application 
-		 ------------------------------ÓÃÀ´·ÃÎÊ×÷ÓÃÓòÖĞÖµ
+		 ------------------------------ç”¨æ¥è®¿é—®ä½œç”¨åŸŸä¸­å€¼
 		 
 		param   ----------------------   request.getParameter("");
 		paramValues ------------------   request.getParameterValues("")
 		
-		×ª·¢ºÍÖØ¶¨ÏòÊÇ¿ÉÒÔ´«£¿²ÎÊıµÄ(*****)
+		è½¬å‘å’Œé‡å®šå‘æ˜¯å¯ä»¥ä¼ ï¼Ÿå‚æ•°çš„(*****)
 		//request.getRequestDispatcher("5.jsp?name=wangwu").forward(request, response);
 		response.sendRedirect("5.jsp?name=wangwu");
 		
-	×¢Òâ:request ²»ÊÇEL±í´ïÊ½µÄÄÚÖÃ¶ÔÏó(*****)
+	æ³¨æ„:request ä¸æ˜¯ELè¡¨è¾¾å¼çš„å†…ç½®å¯¹è±¡(*****)
 		pageContext 
 		             ${pageContext.request.method}
                      ${pageContext.request.contextPath }
                      ${pageContext.session.creationTime }
                      ${pageContext.servletContext.serverInfo }
 					
-		initParam   ÓÃÀ´»ñµÃÈ«¾Ö³õÊ¼»¯²ÎÊı	
+		initParam   ç”¨æ¥è·å¾—å…¨å±€åˆå§‹åŒ–å‚æ•°	
 					${initParam.aaa }
 
-        header        ÓÃÀ´»ñÈ¡ÇëÇóÍ·²¿ĞÅÏ¢	 -----  request.getHeader("User-Agent")
+        header        ç”¨æ¥è·å–è¯·æ±‚å¤´éƒ¨ä¿¡æ¯	 -----  request.getHeader("User-Agent")
                       ${header['User-Agent']}
      			  
-		headerValues   request.getHeaders("") --- ÓÃÀ´»ñµÃ headerÖĞÒ»¸ökey¶ÔÓ¦¶à¸övalueµÄÇé¿ö
+		headerValues   request.getHeaders("") --- ç”¨æ¥è·å¾— headerä¸­ä¸€ä¸ªkeyå¯¹åº”å¤šä¸ªvalueçš„æƒ…å†µ
 		
 		
-        cookie    ${cookie.cookieµÄnameÖµ.name}
-		          ${cookie.cookieµÄnameÖµ.value}
+        cookie    ${cookie.cookieçš„nameå€¼.name}
+		          ${cookie.cookieçš„nameå€¼.value}
 
 		          ${cookie.aaa.name } ---- ${cookie.aaa.value }
 			
-	4 ÓÃÀ´·ÃÎÊjavaÀàÖĞµÄ·½·¨ (ÒÔºó½²)  
+	4 ç”¨æ¥è®¿é—®javaç±»ä¸­çš„æ–¹æ³• (ä»¥åè®²)  
 
 ---------------------------------------------------------------------------------------
 
-    JSTL    Jsp Standard Tag Library   Jsp ±ê×¼±êÇ©¿â
+    JSTL    Jsp Standard Tag Library   Jsp æ ‡å‡†æ ‡ç­¾åº“
 	
-	     °æ±¾ £º  1.0   J2EE 1.3 ÒÔÇ°  -----   JSTLÖĞ²»ÄÜÊ¹ÓÃEL±í´ïÊ½
+	     ç‰ˆæœ¬ ï¼š  1.0   J2EE 1.3 ä»¥å‰  -----   JSTLä¸­ä¸èƒ½ä½¿ç”¨ELè¡¨è¾¾å¼
 		 
 		          1.1   J2EE1.3
 				  
 				  1.2  
 				  
-			 jar°ü  ---- JavaEE5.0 µÄÏîÄ¿ ²»ĞèÒªµ¼ÈëjstlµÄjar°üÁË	
+			 jaråŒ…  ---- JavaEE5.0 çš„é¡¹ç›® ä¸éœ€è¦å¯¼å…¥jstlçš„jaråŒ…äº†	
 
 
-        c  --- core ºËĞÄ±êÇ©¿â
+        c  --- core æ ¸å¿ƒæ ‡ç­¾åº“
         fmt
         fn
 		
@@ -122,36 +122,36 @@
 		sql
 		
 		
-	ÔÚjspÖĞÊ¹ÓÃjstl±êÇ©¿â  ĞèÒªÔÚÒ³ÃæÖĞµ¼Èë
+	åœ¨jspä¸­ä½¿ç”¨jstlæ ‡ç­¾åº“  éœ€è¦åœ¨é¡µé¢ä¸­å¯¼å…¥
 
     <@taglib  prefix="" uri="" %>	
 	<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 	
-	C±êÇ©£º
+	Cæ ‡ç­¾ï¼š
 	
-	     <c:if>  Ö»ÄÜ×öifÅĞ¶Ï   Ã»ÓĞif else ½á¹¹
+	     <c:if>  åªèƒ½åšifåˆ¤æ–­   æ²¡æœ‰if else ç»“æ„
 		        
 		     <c:if test="${}">
-			     Èç¹ûtestÖĞµÄ½á¹ûÊÇtrue   c:ifÖĞ¼Ğº¬µÄ´úÂë¾Í»á±»Ö´ĞĞ
+			     å¦‚æœtestä¸­çš„ç»“æœæ˜¯true   c:ifä¸­å¤¹å«çš„ä»£ç å°±ä¼šè¢«æ‰§è¡Œ
 			 
 			 </c:if>
 		 
-		 <c:forEach items="Òª±éÀúµÄ¼¯ºÏ½á¹¹" var="¸ø¼¯ºÏÖĞµÄÃ¿¸öÔªËØÆğÃû×Ö" varStatus="">
+		 <c:forEach items="è¦éå†çš„é›†åˆç»“æ„" var="ç»™é›†åˆä¸­çš„æ¯ä¸ªå…ƒç´ èµ·åå­—" varStatus="">
 		   
-		     items : Òª±éÀúµÄ¼¯ºÏ   ÒªÓÃ${}
-			 var   : ¸ø¼¯ºÏÖĞµÄÃ¿¸öÔªËØÆğÃû×Ö -- Ñ­»·Ò»´ÎÈ¡³öµÄÔªËØ ¸³¸øÕâ¸öÖµ
-		     varStatus£º×öĞòºÅ  varStatus="num"
+		     items : è¦éå†çš„é›†åˆ   è¦ç”¨${}
+			 var   : ç»™é›†åˆä¸­çš„æ¯ä¸ªå…ƒç´ èµ·åå­— -- å¾ªç¯ä¸€æ¬¡å–å‡ºçš„å…ƒç´  èµ‹ç»™è¿™ä¸ªå€¼
+		     varStatusï¼šåšåºå·  varStatus="num"
 			  
-			                    num.index   --- ´Ó0¿ªÊ¼
-								num.count ----  ´Ó1¿ªÊ¼
+			                    num.index   --- ä»0å¼€å§‹
+								num.count ----  ä»1å¼€å§‹
 								num.first ----
 								num.last ----
 								num.even ----
 								num.odd ----
 			            
-		     begin:  ´Ó¼¸¿ªÊ¼
-             end     µ½¼¸½áÊø
-             step    ²½³¤			 
+		     begin:  ä»å‡ å¼€å§‹
+             end     åˆ°å‡ ç»“æŸ
+             step    æ­¥é•¿			 
 			
 		 <c:choose>  -------- switch
 		     <c:when>
@@ -163,28 +163,28 @@
 		 
 		 
 		  <c:choose> 
-		     <c:when test="${requestScope.user.sex=='ÄĞ'}">
-			     <input type="radio" value="ÄĞ" name="sex" checked="checked" />ÄĞ 
-				 <input type="radio" value="Å®" name="sex" />Å®
+		     <c:when test="${requestScope.user.sex=='ç”·'}">
+			     <input type="radio" value="ç”·" name="sex" checked="checked" />ç”· 
+				 <input type="radio" value="å¥³" name="sex" />å¥³
 			 </c:when>
 			 
 			 
 		     <c:otherwise>
-			     <input type="radio" value="ÄĞ" name="sex" />ÄĞ 
-				 <input type="radio" value="Å®" name="sex" checked="checked" />Å®
+			     <input type="radio" value="ç”·" name="sex" />ç”· 
+				 <input type="radio" value="å¥³" name="sex" checked="checked" />å¥³
 			 </c:otherwise>
 		 </c:choose>
 		 
 		
     <c:set>
-	     var      ÊôĞÔÃû
+	     var      å±æ€§å
 		 
-		 value    ÊôĞÔÖµ
+		 value    å±æ€§å€¼
 
-         scope    ·ÅÔÚÄÄ¸ö×÷ÓÃÓò   Ä¬ÈÏÊÇµ±Ç°Ò³Ãæ  page request session		 
+         scope    æ”¾åœ¨å“ªä¸ªä½œç”¨åŸŸ   é»˜è®¤æ˜¯å½“å‰é¡µé¢  page request session		 
 
 
-    <c:out value="${}" default="">//È¡²»µ½Ê± ¾Í»áÓÃÄ¬ÈÏÖµ
+    <c:out value="${}" default="">//å–ä¸åˆ°æ—¶ å°±ä¼šç”¨é»˜è®¤å€¼
 
 	<c:catch var="e">
           <%
@@ -194,23 +194,23 @@
 	    
 	${e}	
 		
-				Ïà¶ÔÂ·¾¶ 			¾ø¶ÔÂ·¾¶ ¹¤³ÌÃû
-	<c:import url="/index.jsp" context="/1229jstl"></c:import> ÓÃÀ´ÔÚÒ³ÃæÖĞµ¼ÈëÆäËû×ÊÔ´
-      ÀàËÆÓÚ  <jsp:include page="" />   ¶¯Ì¬°üº¬
+				ç›¸å¯¹è·¯å¾„ 			ç»å¯¹è·¯å¾„ å·¥ç¨‹å
+	<c:import url="/index.jsp" context="/1229jstl"></c:import> ç”¨æ¥åœ¨é¡µé¢ä¸­å¯¼å…¥å…¶ä»–èµ„æº
+      ç±»ä¼¼äº  <jsp:include page="" />   åŠ¨æ€åŒ…å«
 
 
     <c:url  value="/aaa.jsp" context="/1229jstl"></c:url>  
 	
-    <c:redirect context="/1229jstl" url="/error.jsp"></c:redirect> ÖØ¶¨Ïò	
+    <c:redirect context="/1229jstl" url="/error.jsp"></c:redirect> é‡å®šå‘	
 		
-		·Ö¸î×Ö·û´®
+		åˆ†å‰²å­—ç¬¦ä¸²
        <c:forTokens items="aaa#bbb#ccc" delims="#" var="s">		
           ${s }
        </c:forTokens>	
 		
-	 param±êÇ©£ºÓëÓĞÂ·¾¶µÄ±êÇ©Ò»ÆğÊ¹ÓÃ.ÏòÆäËûÒ³Ãæ´«µİ²ÎÊı
-					* name		:²ÎÊıÃû
-					* value		:²ÎÊıÖµ
+	 paramæ ‡ç­¾ï¼šä¸æœ‰è·¯å¾„çš„æ ‡ç­¾ä¸€èµ·ä½¿ç”¨.å‘å…¶ä»–é¡µé¢ä¼ é€’å‚æ•°
+					* name		:å‚æ•°å
+					* value		:å‚æ•°å€¼
 					
 				 <c:url>
 				    <c:param></c:param>
@@ -223,16 +223,16 @@
 		
 		 request.setAttribute("user",user)
 		 request.getRequestDispatcher("sss.jsp").forward(request,response);
-		 // ×ª·¢Ê± £¬¿ÉÒÔÊ¹ÓÃrequest.setAttribute·½Ê½´øÖµµ½ÏÂÒ»¸ö×ÊÔ´
+		 // è½¬å‘æ—¶ ï¼Œå¯ä»¥ä½¿ç”¨request.setAttributeæ–¹å¼å¸¦å€¼åˆ°ä¸‹ä¸€ä¸ªèµ„æº
 		
-		 ÖØ¶¨ÏòÊÇ²»ÄÜ´ø¶ÔÏó µ½ÏÂÒ»¸ö×ÊÔ´ £¬Ö»ÄÜ´øÊı×Ö»ò×Ö·û´®
+		 é‡å®šå‘æ˜¯ä¸èƒ½å¸¦å¯¹è±¡ åˆ°ä¸‹ä¸€ä¸ªèµ„æº ï¼Œåªèƒ½å¸¦æ•°å­—æˆ–å­—ç¬¦ä¸²
 		 response.sendRedirect("sss.jsp?name=zrgk");
 		 
 		 
-			<c:remove>±êÇ©£º´ÓÄ³Ò»¸ö·¶Î§ÄÚÉ¾³ıÒ»¸ö±äÁ¿¡£Óï·¨¸ñÊ½ÈçÏÂ£º
-             <c:remove var=¡±¡± scope=¡±¡±/>
-           ÀıÈç£º
-             <c:remove var=¡±user¡± scope=¡±session¡±/>
+			<c:remove>æ ‡ç­¾ï¼šä»æŸä¸€ä¸ªèŒƒå›´å†…åˆ é™¤ä¸€ä¸ªå˜é‡ã€‚è¯­æ³•æ ¼å¼å¦‚ä¸‹ï¼š
+             <c:remove var=â€â€ scope=â€â€/>
+           ä¾‹å¦‚ï¼š
+             <c:remove var=â€userâ€ scope=â€sessionâ€/>
 
 		 
 	----------------------------------------------------------------------------------
@@ -245,18 +245,18 @@
     <fmt:formatDate value="${requestScope.date }" pattern="yyyy-MM-dd hh:mm:ss" />
 	
 	
-	jstlÖĞ×î³£ÓÃµÄ±êÇ©£º
+	jstlä¸­æœ€å¸¸ç”¨çš„æ ‡ç­¾ï¼š
 	
 	  <c:if >  <c:forEach>  <c:choose> <c:when> <c:otherwise>  <c:set>
 	  <fmt:formatDate>
 	
 	
 --------------------------------------------------------------------------------------	
-	 fn   function(º¯Êı)
+	 fn   function(å‡½æ•°)
 	 
-	 »ù±¾¶¼ÊÇ¶Ô×Ö·û´®´¦ÀíµÄº¯Êı
+	 åŸºæœ¬éƒ½æ˜¯å¯¹å­—ç¬¦ä¸²å¤„ç†çš„å‡½æ•°
 	 
-	 Ê¹ÓÃ:${fn:contains("abc","a")}
+	 ä½¿ç”¨:${fn:contains("abc","a")}
 		
 	 
 ----------------------------------------------------------------------------------	 
