@@ -5,19 +5,43 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <link rel="stylesheet" href="../css/fir.css" />
-    <title>phpstudy-- 基本数据类型</title>
+    <title>phpstudy-- static关键字</title>
 </head>
 
 <body>
-    <h1>基本数据类型</h1>
-    
+    <h1>static 关键字</h1>
+
     <div class="demoMain">
-        <h2></h2>
+        <h2>static 静态关键字</h2>
         <div class="none">
-           <div> </div>
+            <div>静态变量和全局变量本质上是没有区别的 </div>
+            <div>静态变量只能在类里面进行使用 体现了面向对象的封装性</div>
+            <div>静态变量 是放在类中或者 函数里面的</div>
+        </div>
+        <h2>存在方式</h2>
+        <div class="none">
+            <div>存在于静态常量去 不再堆区存地址了</div>
+            <div>public static $num = 0; //定义并初始化了 静态变量 加做 $num 空间存在的是地址 值在静态常量去 所以能够引用</div>
+        </div>
+        <h2>访问</h2>
+        <div class="none">
+            <div>
+                <pre>
+self :: $num += 1; // 去使用静态变量
+// Child::$num 类中这样也可以   离开只能这种
+                </pre>
+            </div>
+            <div> $p1 ->num; 报错 不允许这样访问静态变量 但是java可以</div>
+        </div>
+        <h2>细节</h2>
+        <div class="none">
+            <div>/当我们操作静态变量的时候 我们考虑使用静态方法 比如统计 所有学生交的学费 </div>
+            <div> // 静态对象属于 所有对象实例的 不区分对象 在我们变成中 往往使用静态方法操作变量 </div>
+            <div> // 静态方法不能操作非静态属性</div>
         </div>
     </div>
 </body>
+
 </html>
 <script src='../js/jquery.min.js'></script>
 <script src='../js/first.js'></script>

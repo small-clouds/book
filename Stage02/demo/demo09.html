@@ -56,9 +56,9 @@
             </div>
 
             <h3>
-                <%@taglib prefix="前缀" uri="地址" %> : 用来导入标签库</h3>
+                <%@taglib prefix="前缀" uri="地址" %> : 用来导入标签库 <span class="remark">最常用的c标签</span></h3>
             <div class="none">
-                <div>此内容很多 暂缺 可以加很多标签</div>
+                <div>c：标签</div>
             </div>
             <h3>
                 <%@include file="" %> ：用来包含页面 (在一个jsp中包含其他jsp)</h3>
@@ -105,6 +105,65 @@
             <div>jsp:useBean</div>
             <div>jsp:setProperty</div>
             <div>jsp:getProperty</div>
+        </div>
+        <h2>JSTL 标签库 C标签 fmt fn(Jsp Standard Tag Library Jsp 标准标签库)</h2>
+        <div class="none">
+            <div>JavaEE5.0 的项目 不需要导入jstl的jar包了</div>
+            <h3>c --- core 核心标签库</h3>
+            <div class="none">
+                <div>页面导入 前提条件
+                    <@taglib prefix="" uri="" %>-----------------
+                        <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+                </div>
+                <div><span class="remark">c标签</span></div>
+                <div>
+                    < c:if> 只能做if判断 没有if else 结构 <span class="remark">标签成对出现</span></div>
+                <div>
+                    < c:if test="${}">
+                        如果test中的结果是true c:if中夹含的代码就会被执行
+                        < /c:if>
+                </div>
+                <div>
+                    < c:forEach items="要遍历的集合结构" var="给集合中的每个元素起名字" varStatus="">
+                </div>
+                <div> items : 要遍历的集合 要用${} </div>
+                <div>var : 给集合中的每个元素起名字 -- 循环一次取出的元素 赋给这个值 </div>
+                <div>varStatus：做序号 varStatus="num" num.index --- 从0开始</div>
+                <div>
+                    < c:choose> -------- switch
+                        < c:when>
+                            < c:when>
+                                < c:when>
+                                    ...
+                                    < c:otherwise>
+                                        < /c:choose>
+
+
+                                            <c:choose>
+                                                <c:when test="${requestScope.user.sex=='男'}">
+                                                    <input type="radio" value="男" name="sex" checked="checked" />男
+                                                    <input type="radio" value="女" name="sex" />女
+                                                </c:when>
+
+
+                                                <c:otherwise>
+                                                    <input type="radio" value="男" name="sex" />男
+                                                    <input type="radio" value="女" name="sex" checked="checked" />女
+                                                </c:otherwise>
+                                            </c:choose>
+                </div>
+                <div>常用标签jstl中最常用的标签： < c:if>
+                        < c:forEach>
+                            < c:choose>
+                                < c:when> < c:otherwise>
+                                        < c:set>
+                                            < fmt:formatDate>
+                </div>
+            </div>
+        </div>
+        <h2>jsp自定义标签</h2>
+        <div class="none">
+          <a href="demo09.txt">jsp自定义标签详情</a>
         </div>
     </div>
 </body>
