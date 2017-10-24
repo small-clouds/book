@@ -86,7 +86,7 @@ try {
         <h2>JDBC预装态通道 展示</h2>
         <div class="none">
             <div><span class="remark">预装态通道需要用sql语句打开</span></div>
-           
+
             <div>
                 <pre>
  List< Object> list = new ArrayList< Object>();
@@ -155,9 +155,9 @@ try {
 }
                 </pre>
             </div>
-             <div><span class="remark">问号参数可以用方法拼接</span></div>
-             <div>
-                 <pre>
+            <div><span class="remark">问号参数可以用方法拼接</span></div>
+            <div>
+                <pre>
 public void bind(List< Object> params){
     for (int i = 0; i < params.size(); i++) {
         try {
@@ -168,7 +168,23 @@ public void bind(List< Object> params){
     }
 }
                  </pre>
-             </div>
+            </div>
+        </div>
+        <h2>DBCP 数据库连接池 DataBase Connection Poll</h2>
+        <div class="none">
+            <div>存在意义 为了代替jdbc</div>
+            <div><span class="remark">步骤</span></div>
+            <div>1.倒包 2个 commons-pool1.5.6 / commons-dbcp1.4</div>
+            <div>2.dao层 创建dbcp的连接池对象 </div>
+            <div>static BasicDataSource bds = new BasicDataSource();// 创建对象</div>
+            <div>static{  </div>
+            <div> bds.setDriverClassName(DRIVER);</div>
+            <div> bds.setUsername(USERNAME);</div>
+            <div> bds.setUrl(URL);</div>
+            <div> bds.setPassword(PASSWORD);</div>
+            <div> }</div>
+            <div> conn =bds.getConnection();// dbcp获取conn  </div>
+            <div>   <span class="remark">以下内容和jdbc一样</span></div>
         </div>
     </div>
 </body>
