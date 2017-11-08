@@ -12,9 +12,92 @@
     <h1>基本数据类型</h1>
     
     <div class="demoMain">
-        <h2></h2>
+        <h2>回头整理</h2>
         <div class="none">
-           <div> </div>
+           <div>
+<pre>
+//http协议是建立在tcp/ip协议之上的
+        //web开发 的数据传输都是 依赖于 http协议
+        //http协议是 超文本传输协议  文本 还有 图片 下载  都是依赖于 二进制文件 
+        //http1.1 长连接  现在的都是 1.1的长连接
+        //http 请求   
+        // 请求行  消息头   消息体
+        //referer  告诉我是哪里来的
+        //user-agent  浏览器内核
+        //host 主机 默认 80端口
+//         connection  keep alive 表示不要立即断掉
+        // 我想知道 http协议的头 如何获取   $_SERVER 可以获取到所有的消息头
+        // print_r($_SERVER);
+//         foreach ($_SERVER as $k =>$v){
+//             echo "$k -----$v<br>";
+//         }
+        echo "你的ip地址是" . $_SERVER["REMOTE_ADDR"];
+        echo "你的根目录是" . $_SERVER["DOCUMENT_ROOT"];
+        // post 和get的总结
+        //相同点  都是可以向服务器法数据
+        //不同点   
+        //    安全性  get请求的数据会显示到地址栏上面   post请求的数据放在了http协议的消息体里面的
+        //    数据大小   http协议本身并没有去限制数据的大小   浏览器在限制get和post请求做限制
+        //             get  2k+35   post 没有限制
+        //     方便性      get能够添加到收藏夹  post做不到  get能够直接添加到书签
+        //防盗链 // 直接打开的 也不行  只能跳转
+        if (isset($_SERVER["REMOTE_REFERE"])) {
+            if (strpos($_SERVER["REMOTE_REFERE"], "http://localhost") == 0) {
+                echo "你可以看";
+            }
+        } else {
+            echo "直接打开的";
+        }
+--------------------------------------------------------------------------------------------
+  echo "第八十五讲 http协议深度剖析 http响应  302  304的应用";
+        //302状态码  浏览器去找的
+        //  自动重定向到 ingdex1.php页面
+        //header("Location: index1.php");  //告诉浏览器 重新访问  index1.php页面  302 没成功
+        //404 状态码   该页面不存在
+        //304 告诉浏览器 资源没有修改 可以从缓存中读取  读缓存
+--------------------------------------------------------------------------------------------
+  echo "第八十六讲 http协议深度剖析 禁用缓存机制";
+
+        die; //目前没成功
+        //三个头  
+        //获取文件的大小
+//         $file_size= 1;
+//         header("Content-type: application/octat-stream");
+//         header("Accept-Length:$file_size");  
+//         header("Content-Disposition:attactment;filename=".$file_name);
+        // 文件下载    任何操作 都是在内存里面玩
+        // 文件类型  文本txt  二进制文件 img 视频 音频
+        //操作原理  浏览器请求下载  判断文件是否存在  打开文件$fp("a.txt",rw)    读入   在写回给浏览器  浏览器在写入到用户指定位置
+        $filename = "aaa.xlsx";
+        //中文转码问题
+        //$file_name =iconv("utf-8", "GB2312",$filename)
+        //$fp($filename,r);
+        if (!file_exists($filename)) { //判断文件存在不存在
+            $fp = fopen($filename, "r"); //打开
+            $file_size = filesize($filename); //获取大小
+            echo "文件大小" . $file_size;
+        } else {
+            echo "文件不存在";
+            return;
+        }
+        $filedata = fread($fp); //读
+        $buffer = 1024;
+        while (!feof($fp)) { // 下载
+            $file_data = fread($fp, $buffer);
+            echo $file_data;
+        }
+        fclose($fp); //关闭文件
+        die;
+        // 禁用缓存
+        header("Expries: -1");
+        header("Cache-Control: no_cache");
+        header("Pragma: no-cache");
+        die;
+        header("Refresh: 3; url=index1.php"); //更改消息头 用header   间隔三秒重定向到 指定页面 可以到外网
+        die;
+</pre>
+
+           </div>
         </div>
     </div>
 </body>

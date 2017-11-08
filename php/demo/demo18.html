@@ -5,16 +5,93 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <link rel="stylesheet" href="../css/fir.css" />
-    <title>phpstudy-- 基本数据类型</title>
+    <title>phpstudy-- php文件编程 I/O流</title>
 </head>
 
 <body>
-    <h1>基本数据类型</h1>
+    <h1>php文件编程 I/O流</h1>
     
     <div class="demoMain">
-        <h2></h2>
+        <h2>文件编程</h2>
         <div class="none">
-           <div> </div>
+           <div><pre> 
+                  echo "第一二四讲 文件编程 文件编程上传讨论";
+        // 只能用post提交  form enctype = "multipart/form-data"
+        // 有时候上传不上去 可能是php.ini限制大小 2m upload
+        // 主要利用超全局数组  $_FILES;  
+        //点击上传的时候 会临时存在  $_FILES['myfile']['tmp_name'] 文件夹下面
+        //is_uploaded_file($_FILES['myfile']['tmp_name']); // 是不是上传上来了
+        //$mypath= $_SERVER['DOCUMENT_ROOT']."/file/up/".$_FILES['myfile']['name'];
+        //move_uploaded_file($_FILES['myfile']['tmp_name'], $mypath); // 把源文件移动到指定文件目录(file/up)下面
+        //上传细节讨论
+        // 控制上传大小  $file_size > 2*1024*1024  2m 限制大小
+        // 获取文件类型  $FILE['myfile']['type'] != 'image/jpg' && 'image/pjpeg'
+        // 如何防止用户图片覆盖问题 一个用户一个文件 存一下新的名字 放到数据库
+        // 动态产生文件夹
+        // iconv("utf-8","gb2312",filename) 转编码utf8 -》 gb2312
+
+        echo "第一二二讲 文件编程 I/O流";
+        // 输入流和输出流 是针对 内存来说的    
+        // 文件- 》 内存  输入（input）     内存-》文件   输出流（output）
+        // 获取文件信息
+        //1. 打开文件   fopen($filename, $mode);   
+        //文件名//相对路径 和绝对路径   
+        //模式 读写？ r 只读  r+重写  a+(文件不存在 创建)追加 append 
+        //返回指向文件的指针
+        $fp = fopen("myError.txt", "a+");
+        if ($fp) {
+            
+        } else {
+            echo "打开文件失败";
+        }
+        //2.fstat()
+        $file_info = fstat($fp);
+        echo "<br>文件大小是{$file_info['size']}";
+        echo "<br>上次修改的时间为" . date("Y-m-d H:i:s", $file_info['mtime']); //警告
+        echo "<pre>";
+        print_r($file_info); // 返回可获取的数组 
+        //atime  上一次访问时间   mtime  上一次内容修改时间按    ctime 文件所有者 文件所在组  被修改
+        echo "</pre>";
+        // 3.关闭文件 关闭文件很重要
+        //fclose($fp); //
+        //  第二种方式获取文件信息
+        // echo filesize("myError.txt");
+        //***  读取文件  默认输出到浏览器 不会换行
+        /*  $contents =fread($fp,$file_info['size']);
+          $contents = str_replace("\r\n", "<br>", $contents);
+          echo $contents;
+          fclose($fp);
+         */
+
+        //第二种读取方式   一下都读下来 队服务器冲击比较大
+        /*  $contents = file_get_contents("myError.txt");
+          // 此种方法可以拼接好字符串然后在读进文件
+          $contents = str_replace("\r\n", "<br>", $contents); // 利用那个这种方式 不要用循环读取  因为这个方法包括打开和关闭的动作
+          echo $contents; */
+        //第三种 循环读取  对付大文件
+        $buffer = 1024; // 每次都1024字节
+        $str = "";
+        //一边读 一边判断是否到文件末尾
+        while (!feof($fp)) {
+            $str .= fread($fp, $buffer);
+        }
+        $str = str_replace("\r\n", "<br>", $str);
+        echo "第三种" . $str;
+        fclose($fp);
+
+        $arr1 = parse_ini_file("db_ini"); //返回数组 键值的那种数组
+//         db_ini
+//         host = 127.0.0.1
+        //user =root
+        /* 拷贝文件boolean copy(from,to) */
+        /* 创建文件夹  mkdir("d:/mkdir"); is_file() is_dir() */
+        /* 创建多级目录 mkdir("d:/1/2/3/4",0777,true) */
+        /* 删除文件夹  rmdir("d:/123); 只能删除空文件夹 */
+        /* 创建文件 写入helloword */
+        $fp12 = fopen("c:/te.txt", "w+"); //
+        fwrite($fp12, "hello world");
+        fclose($fp12);
+        /* 删除文件unlink("c:/te.txt"); */</pre></div>
         </div>
     </div>
 </body>

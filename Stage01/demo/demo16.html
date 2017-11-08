@@ -68,6 +68,7 @@ INNER JOIN  class_table cls ON cls.c_id= md.c_id
 where s.s_name ='钱二';
                                     </pre>
             </div>
+            <div>SELECT r.room_name from room r WHERE r.id in (SELECT roomid FROM apply WHERE end_time<"2017-10-14 17:00:00" and begin_time>"2017-10-14 15:00:00");</div>
         </div>
     </div>
 </body>

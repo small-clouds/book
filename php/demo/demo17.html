@@ -12,9 +12,110 @@
     <h1>基本数据类型</h1>
     
     <div class="demoMain">
-        <h2></h2>
+        <h2>COOKIE</h2>
         <div class="none">
-           <div> </div>
+           <div><pre>
+               echo "第一一四讲 COOKIE的原理介绍";
+        //echo date("h-m-d h:i:s");
+        //1 当浏览器访问页面的时候 服务器会以超全局变量的形式传给页面
+        //2 如果不设置该时间 则只会储存到会话结束并不会保存到客户端
+        //3cookie只能保存字符串的信息
+        //4cookie 可以保存多个键值对
+        //5 cookie 可以有多个键值对 可以给不同的兼职 指定不同的有效时间
+        setcookie("address1", "beijing", time() + 3000); //单位s 保存
+        echo "<br> 设置成功";
+        $name = $_COOKIE['address1']; // 取值
+        echo $name;
+        //更新就是重新设置
+        //删除 指定删除 删除所有
+        //setcookie("address","", time()-200); // 把时间-s数 大小不限
+        // 遍历删除 本网站的cookie
+        foreach ($_COOKIE as $k => $v) {
+            setcookie($k, "", time() - 10);
+        } </pre></div>
+        </div>
+        <h2>SESSION</h2>
+        <div class="none">
+            <div><pre>
+                     // 是服务端技术  可以为每个用户的浏览器创建一个独享的session文件
+//        session_start();// session 初始化
+//        $_SESSION["name"] ="尹栋力";  // 在phpstudy tem下面 默认路径  服务器端
+        ////name|s:9:"尹栋力";  name  键  s 是类型 字符串   i整形 b布尔 a数组 d浮点型  o对象 你得先创建对象
+        // sesion 文件可以保存 double integer bool array object
+        // 键值对
+        //对象的获取 比较特殊 必须在start之前 引入对象的class  存储的时候会丢失类
+        //session更新
+        // 先初始化 session_start
+        //$SESSION["name"]= "yindongli";
+        session_destroy(); // 删除session 一个会话 一个session文件  会删除当前浏览器的session文件 
+        //每一次会话对应一个文件 下次就没了 文件存在
+        //默认24分钟失效    1440s
+        echo "第一一四讲 COOKIE的原理介绍";
+        //echo date("h-m-d h:i:s");
+        //1 当浏览器访问页面的时候 服务器会以超全局变量的形式传给页面
+        //2 如果不设置该时间 则只会储存到会话结束并不会保存到客户端
+        //3cookie只能保存字符串的信息
+        //4cookie 可以保存多个键值对
+        //5 cookie 可以有多个键值对 可以给不同的兼职 指定不同的有效时间
+        setcookie("address1", "beijing", time() + 3000); //单位s 保存
+        echo "<br> 设置成功";
+        $name = $_COOKIE['address1']; // 取值
+        echo $name;
+        //更新就是重新设置
+        //删除 指定删除 删除所有
+        //setcookie("address","", time()-200); // 把时间-s数 大小不限
+        // 遍历删除 本网站的cookie
+        foreach ($_COOKIE as $k => $v) {
+            setcookie($k, "", time() - 10);
+        }
+
+           echo "第一一七讲 SESSION的原理介绍";
+        //客户端禁用cookie 的话 session将无法保存文件
+        //每次session_start的时候将会从新生成session文件 不能访问到原来的
+        //第一种方案
+        ////可以手动设置 session_id("aaa");
+        // session_start();
+        //注解  当有session_id的时候 就不会创建新的session文件
+        //没有的时候  才会start一个新的文件  解决了 禁用cookie的问题
+        // 超链接上面 加上 PHPSESSID=sessionId
+        //第二种方案
+        //SID  常量 默认给的 session地址  常量 在结尾拼接
+        //第三种方案  不推荐   action  超连接  location支持   但是 javascript不支持
+        // 版本支持有关系 所以不推荐
+//        //        是否启用透明的session
+//        session.use_trans_sid=1;  php.ini里面配置
+
+  echo "第一二零讲 SESSION的应用 验证码";
+        //extension=php_gd2.dll  php绘图库
+        // 必须有验证码啊  否则 恶意攻击 不好玩啊
+        //  直接找 有很多的  保存到session里面 在取出来
+        // 思路 后台生成 处理成图片  返回到页面
+                
+                </pre></div>
+        </div>
+        <h2> SESSION和COOKIE的配置问题</h2>
+        <div class="none">
+            <div>
+                 echo "第一二一讲 SESSION和COOKIE的配置问题";
+        //session和cookie对比  
+        //cookie 客户端    session是服务端
+        //安全性  session高一点
+        //网络传输量   session 服务端 不需要传输了
+        // 生命周期  cookie  是累计的 20分钟 就是20分钟    session是 间隔的 最后一次访问时间 到时间才会被回收 每次 都会重新计算
+        // php。ini
+        // session.name()   session的名字
+        //session.use_trans_sid   0;  // 设置 默认加上  SID
+        //session.save_path  // 绝对路径
+        // session.gc_maxlifetime  =1440 垃圾回收的发呆时间
+        //session.gc_probability =1;  调用哪个的概率是 千分之一
+        //session.gc_divisor=1000;
+        //网站越大  概率越小 就行
+        //session.use_cookie
+        //session.cookie_lifetime = 0 关闭浏览器  cookie  失效
+        // setcookie(mingzi   val  time()+3000)  不设置 就是一次会话
+        //session自定义会话处理器
+        //session.sava_handler = [files\user]  去找配置文件  然后找这个方法 然后复制下来 重写一份
+            </div>
         </div>
     </div>
 </body>
