@@ -12,9 +12,112 @@
     <h1>基本数据类型</h1>
     
     <div class="demoMain">
-        <h2></h2>
+        <h2>mysql</h2>
         <div class="none">
-           <div> </div>
+           <div> 
+               <pre>
+               
+                      echo "第九十一讲 php数据库编程";
+        // crud 操作 增删改
+        //$sql = "update user set name='小明' where id=1;";
+        $sql = "select * from user";
+        $a = new SqlTool();
+        // $b =$a->udm_dml($sql);
+
+        $c = $a->s_dql($sql);
+        while ($row = mysql_fetch_row($c)) {
+            foreach ($row as $k => $v) {
+                echo "$k -- $v <br>";
+            }
+        }
+        //行列总数
+        //mysql_affected_rows($con);// 行数
+        //mysql_num_fields($c); // 列数
+        // 去select 的字段名字
+        while ($row = mysql_fetch_field($c)) {
+            echo '<br>' . $row->name;
+        }
+        //echo "<br>这是什么".$b;
+        mysql_free_result($c);
+        die();
+
+        $con = mysql_connect("127.0.0.1", 'root', '1234');
+        mysql_select_db("phpsql");
+        // $sql = "insert into user(name)values('name');"; // dml操作 返回布尔值 添加
+        //$sql = "delete from user where id =5;";  // 删除
+        $sql = "update user set name='小明' where id=1;";  //改
+        $res = mysql_query($sql, $con);
+        if ($res) {
+            echo "成功";
+        } else {
+            echo "失败" . mysql_error();
+        }
+        die();
+
+        $con = mysql_connect("127.0.0.1", 'root', '1234');
+        mysql_select_db("phpsql");
+        $sql = "select * from user";
+        $res = mysql_query($sql, $con); //dml语句返回的是布尔类型添加修改删除  dql语句返回的是结果select；
+//        $row = mysql_fetch_row($res); //返回索引数组  效率高 推荐这个 $row[0]
+//        $row = mysql_fetch_assoc($res); //返回关联数组  用这个也可以 $row['id']
+//        $row = mysql_fetch_array($res);// 返回关联和索引数组
+//        $row = mysql_fetch_object($res); //返回对象 $row->id;
+        mysql_free_result($res); // 释放内存××××××××××××××××××××××
+        die();
+        echo "第九十讲 php数据库编程";
+//          数据库操作步骤
+//          1获取连接
+//          2选择数据库
+//         3 设置操作编码（建议有）
+//          4发送sql指令（ddl数据定义语言 dml数据操作语言 update insert delete dql数据查询select dtl数据事务语句）
+//          5接受返回的结果 并处理 
+//          6释放资源 关闭连接
+//          使用完之后 一定要及时释放资源 mysql_free_result($res);// 释放内存
+//          close  不能立马关闭 有没有关系不大  但是还是写上点好
+//          
+//          1获取连接 
+        $con = mysql_connect("127.0.0.1", 'root', '1234');
+        if (!$con) {
+            die("连接失败" . mysql_error());
+        } else {
+            echo "连接成功";
+        }
+        // 2选择数据库
+        mysql_select_db("phpsql");
+        //3 设置操作编码（建议有）mysql_query("set names utf8");
+//          4发送sql指令（ddl数据定义语言 dml数据操作语言 update insert delete dql数据查询select dtl数据事务语句）
+        $sql = "select * from user";
+        // 结果集  可以理解为一张表
+        $res = mysql_query($sql, $con);
+        var_dump($res); // 资源类型
+        //mysql_fetch_row 会依次取出结果集的下一行数据 会赋值给 $row[数组]
+        while ($row = mysql_fetch_row($res)) {
+            //第一种取法
+//             echo "<br>$row[0]--$row[1]"; //和列数相等 多少都不行
+//             echo "haha";
+//             var_dump($row);
+//             第二种取法
+            foreach ($row as $key => $val) {
+                echo "$key = $val";
+            }
+            echo "<br>";
+        }
+//          5接受返回的结果 并处理 
+//          6释放资源 关闭连接
+        mysql_free_result($res); // 释放内存
+        mysql_close($con); // 关闭连接 可有可无 会在脚本自动关闭
+        die;
+        echo "第八十九讲 php数据库编程";
+//         php有三种方式 操作数据库   mysql扩展库   mysqli  pdo
+        //mysql扩展库 和mysal数据库的区别
+        //mysql扩展库是php提供的函数来操作数据库
+        //mysql数据库 是服务器 存放数据的地方
+        //
+         
+         // 环境搭建  
+        //启用mysql扩展库  在我们的php.ini文件中   extension=php_mysql.dll  extension=php_mysqli.dll
+        // phpinfo();</pre>
+ </div>
         </div>
     </div>
 </body>

@@ -5,18 +5,117 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <link rel="stylesheet" href="../css/fir.css" />
-    <title>phpstudy-- 基本数据类型</title>
+    <title>phpstudy-- php ajax技术</title>
 </head>
 
 <body>
-    <h1>基本数据类型</h1>
+    <h1>php ajax技术</h1>
     
     <div class="demoMain">
-        <h2></h2>
+        <h2>ajax技术</h2>
         <div class="none">
-           <div> </div>
+           <div> 利用echo 就能返回到页面上</div>
         </div>
+         <h2>json  php转json</h2>
+        <div class="none">
+           <div><span class="remark">5.2以上支持 json_encode()编码 json_decode()解码  </span> </div>
+           <h3>数组转换实例</h3>
+           <div class="none">
+               <div>关联数组</div>
+               <div>$arr=array('a'=>1,'b'=>2,'c'=>3,'d'=>4,'e'=>5); 利用echo json_encode($arr)</div>
+               <div>结果为<span class="remark">对象</span>：{"a":1,"b":2,"c":3,"d":4,"e":5}</div>
+               <div>索引数组</div>
+               <div>$arr = Array('one', 'two', 'three'); echo json_encode($arr);</div>
+               <div>结果为<span class="remark">数组</span>  ["one","two","three"] </div>
+               <div><span class="remark">强制转换对象</span>　　json_encode( (object)$arr )</div>
+           </div>
+           
+           <h3>对象转换实例</h3>
+           <div class="none">
+               <div>
+<pre>
+    $obj->body           = 'another post';　
+　　$obj->id             = 21;　
+　　$obj->approved       = true;　　
+　　$obj->favorite_count = 1;　　
+　　$obj->status         = NULL;　　
+　　echo json_encode($obj);
+</pre>
+<pre>
+    结果为
+{
+　"body":"another post",
+　"id":21,
+　"approved":true,
+  "favorite_count":1,　
+　"status":null
+　　} 
+</pre>
+               </div>
+           </div>
+           <h3>类的强制转换</h3>
+           <div class="none">
+               <div>
+                   <pre>
+class Foo {　　
+　　　　const     ERROR_CODE = '404';　
+　　　　public    $public_ex = 'this is public';　
+　　　　private   $private_ex = 'this is private!';　
+　　　　protected $protected_ex = 'this should be protected'; 　　
+　　　　public function getErrorCode() {　　
+　　　　　　return self::ERROR_CODE;　　
+　　　　}　　
+　　}</pre>
+               </div>
+               <div>
+  <pre>
+     $foo = new Foo;　
+　　$foo_json = json_encode($foo);　
+　　echo $foo_json;</pre>
+               </div>
+               <div>{"public_ex":"this is public"}  <span class="remark">只有public的才能输出来</span></div>
+           </div>
+        </div>
+        <h2>json  json 转php</h2>
+        <div class="none">
+            <div>通常返回的是json的对象</div>
+            <div>
+                <pre>
+    $json = '{"foo": 12345}';
+　　$obj = json_decode($json);
+　　print $obj->{'foo'}; // 12345</pre>
+        </div>
+        <div>$json = '{"a":1,"b":2,"c":3,"d":4,"e":5}';
+　　var_dump(json_decode($json))</div>
+<div>生成了对象</div>
+<div>
+    <pre>
+　　object(stdClass)#1 (5) {
+　　　　["a"] => int(1)
+　　　　["b"] => int(2)
+　　　　["c"] => int(3)
+　　　　["d"] => int(4)
+　　　　["e"] => int(5)
+　　}</pre>
+</div>
+<div>强制生成关联数组</div>
+<div>
+    <pre>
+        　$json = '{"a":1,"b":2,"c":3,"d":4,"e":5}';
+　　var_dump(json_decode($json,true)); true 很关键
+生成如下
+array(5) {
+　　 　　["a"] => int(1)
+　　 　　["b"] => int(2)
+　　 　　["c"] => int(3)
+　　 　　["d"] => int(4)
+　　 　　["e"] => int(5)
+　　}
+    </pre>
+</div>
     </div>
+    <div><span class="remark">json只能用来表示对象（object）和数组（array），如果对一个字符串或数值使用json_decode()，将会返回null。</span></div>
+     </div>
 </body>
 </html>
 <script src='../js/jquery.min.js'></script>
