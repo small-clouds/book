@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.cloud.dao.UsersMapper.xml">
+	<!-- 二次查询  -->
+	<resultMap type="Users" id="users_role">
+		<id  column="id" property="id"/>
+		<!--association 返回单条 column="传入的参数名"  property="在对象存的变量名" select="查询的语句的id"-->
+		<association column="roleid"  property="role" select="Rolebyroleid"></association>
+	</resultMap>
+	<select id="selectUsersRoleByUsers" parameterType="Users" resultMap="users_role">
+		select * from users where id=#{id}
+	</select>
+	<select id="Rolebyroleid" parameterType="string" resultType="Role">
+		select * from role where role_id=#{roleid}
+	</select>
+	<!-- 二次查询 -->
+	<!-- 两表连查 -->
+	<resultMap type="Users" id="UsersRole">
+		<id  column="id" property="id"/>
+		<result column="loginname" property="loginname" />
+		<!--返回单条 存的变量名 变量类型这里用javaType-->
+		<association property="role" javaType="Role">
+		<!--这里存多少能取多少-->
+			<id column="role_id" property="role_id"/>
+			<result column="role_name" property="role_name"/>
+		</association>
+	</resultMap>
+	<select id="selectUsersRoleWithUser"  parameterType="Users"   resultMap="UsersRole">
+		select * from users inner join role on users.roleid=role.role_id where users.id=#{id}
+	</select>
+	<!-- 两表连查 -->
+</mapper>

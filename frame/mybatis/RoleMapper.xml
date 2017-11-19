@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.cloud.dao.RoleMapper.xml">
+	<!-- 角色id查权限  二次查询 -->
+	<resultMap type="Role" id="RoleMenu">
+			<id column="role_id" property="role_id"/>
+			<!--集合的标识符 property=对象存的变量名 传入的参数  查询的id-->
+			<collection property="menu" column="role_id" select="selectRoleMenu"></collection>
+	</resultMap>
+	<select id="selectRoleMenuByRoleId" parameterType="Role" resultMap="RoleMenu">
+		select * from role where role_id =#{role_id}
+	</select>
+	<select id="selectRoleMenu" parameterType="int"  resultType="Menu">
+		select * from  role_menu,menu where role_menu.menuid=menu.menu_id and role_menu.roleid = #{roleid}
+	</select>
+	<!-- 连接查询 -->
+	<select id="selectRoleMenuWithId"  parameterType="Role" resultMap="RoleMenu1">
+	select * from role r inner join role_menu rm on r.role_id =rm.roleid inner join menu m on rm.menuid=m.menu_id where r.role_id =#{role_id}
+	</select>
+	<resultMap type="Role" id="RoleMenu1">
+		<id column="role_id" property="role_id"/>
+		<!--集合  对象中的变量名  对象的类型-->
+		<collection property="menu" ofType="Menu">
+			<id column="menu_id" property="menu_id"/>
+			<result column="menu_name" property="menu_name"/>
+		</collection>
+	</resultMap>
+</mapper>
