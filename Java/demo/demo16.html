@@ -5,7 +5,7 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <link rel="stylesheet" href="../css/fir.css" />
-    <title>java第一阶段学习 数据库</title>
+    <title>mysql数据库</title>
 </head>
 
 <body>
@@ -24,6 +24,40 @@
             <div>中性收费 SQlserver(微软) sybase(实际开发用的很少)</div>
             <div>小型免费数据库 mysql(甲骨文) -> sql6 (开始收费了) postgresql() SQLite 手机端 可以植入到手机里的</div>
             <div>在java使用最多的 oracle DB2 mysql</div>
+        </div>
+        <h2>数据库的安装</h2>
+        <div class="none">
+            <div><span class="remark">安装</span></div>
+            <div>傻瓜式安装</div>
+            <div>Typical(默认安装) custom(自定义安装) 区别能否修改安装路径</div>
+            <div>自定义安装时<span class="remark">路径不能有中文</span></div>
+            <div><span class="remark">配置</span></div>
+            <div>这个最容易出问题</div>
+            <div>应用类型 3个电脑主机图标</div>
+            <div>developer(开发模式占用少了内存)  server(web中等数量内存) dedicated(数据库服务器全部内存) <span class="remark">开发模式就可以</span></div>
+            <div>数据库用途 3个数据库图标</div>
+            <div>Multifunctional(多功能用途) Transactional(只用于事务处理) Non-Transactional(非事务处理) <span class="remark">选择第一个</span></div>
+            <div>数据存放位置 默认即可</div>
+            <div>数据库最大连接数： 第一种 20 第二500 第三 自定义</div>
+            <div>数据库的端口 3306(默认)  3307(备用) 3308(备用) </div>
+            <div>设置编码：Latin1是ISO-8859-1的别名(支持中文) 选择utf8吧国际中文编码(<span class="remark">用这个对这个熟</span>)</div>
+            <div>设置密码：不多说</div>
+            <div>安装成功：不成功请看下面的文章</div>
+        </div>
+        <h2>数据库的卸载</h2>
+        <div class="none">
+            <div><span class="remark">一定要删除干净</span></div>
+            <div>停止mysql服务： 任务管理器服务 mysql停止</div>
+            <div>卸载mysql相关的程序</div>
+            <div>删除注册表</div>
+            <div>&nbsp; &nbsp;  运行->regedit-> HKEY_LOCAL_MACHINE-> SESTEM</div>
+            <div>&nbsp; &nbsp;  -> controlset001-> services-> eventlog-> applications-> MySQL 删除</div>
+            <div>&nbsp; &nbsp;  -> controlset002-> services-> eventlog-> applications-> MySQL 删除</div>
+            <div>&nbsp; &nbsp;  -> currentcontrolset-> services-> eventlog-> applications-> MySQL 删除</div>
+            <div>以上文件有可能是隐藏的 需要设置文件夹选项</div>
+            <div>在C:盘搜索mysql文件 主要是ProgramData下面的mysql文件 删除 安装目录删除</div>
+            <div>重启计算机</div>
+            <div>重新安装</div>
         </div>
         <h2>数据库的数据类型</h2>
         <div class="none">
