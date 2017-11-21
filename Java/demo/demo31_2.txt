@@ -1,23 +1,23 @@
-×îÏêÏ¸µÄLog4jÊ¹ÓÃ½Ì³Ì
-ÈÕÖ¾ÊÇÓ¦ÓÃÈí¼şÖĞ²»¿ÉÈ±ÉÙµÄ²¿·Ö£¬ApacheµÄ¿ªÔ´ÏîÄ¿log4jÊÇÒ»¸ö¹¦ÄÜÇ¿´óµÄÈÕÖ¾×é¼ş,Ìá¹©·½±ãµÄÈÕÖ¾¼ÇÂ¼¡£ÔÚapacheÍøÕ¾£ºjakarta.apache.org/log4j?¿ÉÒÔÃâ·ÑÏÂÔØµ½Log4j×îĞÂ°æ±¾µÄÈí¼ş°ü¡£
-Ò»¡¢ÈëÃÅÊµÀı
-1.ĞÂ½¨Ò»¸öJava¹¤³Ì£¬µ¼Èë°ülog4j-1.2.17.jar£¬Õû¸ö¹¤³Ì×îÖÕÄ¿Â¼ÈçÏÂ
+ï»¿æœ€è¯¦ç»†çš„Log4jä½¿ç”¨æ•™ç¨‹
+æ—¥å¿—æ˜¯åº”ç”¨è½¯ä»¶ä¸­ä¸å¯ç¼ºå°‘çš„éƒ¨åˆ†ï¼ŒApacheçš„å¼€æºé¡¹ç›®log4jæ˜¯ä¸€ä¸ªåŠŸèƒ½å¼ºå¤§çš„æ—¥å¿—ç»„ä»¶,æä¾›æ–¹ä¾¿çš„æ—¥å¿—è®°å½•ã€‚åœ¨apacheç½‘ç«™ï¼šjakarta.apache.org/log4j?å¯ä»¥å…è´¹ä¸‹è½½åˆ°Log4jæœ€æ–°ç‰ˆæœ¬çš„è½¯ä»¶åŒ…ã€‚
+ä¸€ã€å…¥é—¨å®ä¾‹
+1.æ–°å»ºä¸€ä¸ªJavaå·¥ç¨‹ï¼Œå¯¼å…¥åŒ…log4j-1.2.17.jarï¼Œæ•´ä¸ªå·¥ç¨‹æœ€ç»ˆç›®å½•å¦‚ä¸‹
 
-2¡¢srcÍ¬¼¶´´½¨²¢ÉèÖÃlog4j.properties
- ### ÉèÖÃ###
+2ã€srcåŒçº§åˆ›å»ºå¹¶è®¾ç½®log4j.properties
+ ### è®¾ç½®###
 log4j.rootLogger = debug,stdout,D,E
 
-### Êä³öĞÅÏ¢µ½¿ØÖÆÌ§ ###
-#Ê¹ÓÃÄÄÒ»¸öÊä³öÀà
+### è¾“å‡ºä¿¡æ¯åˆ°æ§åˆ¶æŠ¬ ###
+#ä½¿ç”¨å“ªä¸€ä¸ªè¾“å‡ºç±»
 log4j.appender.stdout = org.apache.log4j.ConsoleAppender
-#ÅäÖÃÊä³öÁ÷
+#é…ç½®è¾“å‡ºæµ
 log4j.appender.stdout.Target = System.out
-#Êä³öÈÕÖ¾µÄÑùÊ½ ¸ñÊ½
+#è¾“å‡ºæ—¥å¿—çš„æ ·å¼ æ ¼å¼
 log4j.appender.stdout.layout = org.apache.log4j.PatternLayout
-#ÅäÖÃÈÕÖ¾µÄÑùÊ½
+#é…ç½®æ—¥å¿—çš„æ ·å¼
 log4j.appender.stdout.layout.ConversionPattern = [%-5p] %d{yyyy-MM-dd HH:mm:ss,SSS} method:%l%n%m%n
 
-### Êä³öDEBUG ¼¶±ğÒÔÉÏµÄÈÕÖ¾µ½=E://logs/error.log ###
+### è¾“å‡ºDEBUG çº§åˆ«ä»¥ä¸Šçš„æ—¥å¿—åˆ°=E://logs/error.log ###
 log4j.appender.D = org.apache.log4j.DailyRollingFileAppender
 log4j.appender.D.File = E://logs/log.log
 log4j.appender.D.Append = true
@@ -25,19 +25,19 @@ log4j.appender.D.Threshold = DEBUG
 log4j.appender.D.layout = org.apache.log4j.PatternLayout
 log4j.appender.D.layout.ConversionPattern = %-d{yyyy-MM-dd HH:mm:ss}  [ %t:%r ] - [ %p ]  %m%n
 
-### Êä³öERROR ¼¶±ğÒÔÉÏµÄÈÕÖ¾µ½=E://logs/error.log ###
+### è¾“å‡ºERROR çº§åˆ«ä»¥ä¸Šçš„æ—¥å¿—åˆ°=E://logs/error.log ###
 log4j.appender.E = org.apache.log4j.DailyRollingFileAppender
 log4j.appender.E.File =E://logs/error.log 
 log4j.appender.E.Append = true
 log4j.appender.E.Threshold = ERROR 
 log4j.appender.E.layout = org.apache.log4j.PatternLayout
 log4j.appender.E.layout.ConversionPattern = %-d{yyyy-MM-dd HH:mm:ss}  [ %t:%r ] - [ %p ]  %m%n
-3¡¢ÉèÖÃÈÕÖ¾ÄÚÈİ
+3ã€è®¾ç½®æ—¥å¿—å†…å®¹
 package com.mucfc;
 import org.apache.log4j.Logger;
 /**
  *@author linbingwen
- *@2015Äê5ÔÂ18ÈÕ9:14:21
+ *@2015å¹´5æœˆ18æ—¥9:14:21
  */
 public class Test {
 	private static Logger logger = Logger.getLogger(Test.class);  
@@ -48,98 +48,98 @@ public class Test {
     public static void main(String[] args) {  
         // System.out.println("This is println message.");  
 
-        // ¼ÇÂ¼debug¼¶±ğµÄĞÅÏ¢  
+        // è®°å½•debugçº§åˆ«çš„ä¿¡æ¯  
         logger.debug("This is debug message.");  
-        // ¼ÇÂ¼info¼¶±ğµÄĞÅÏ¢  
+        // è®°å½•infoçº§åˆ«çš„ä¿¡æ¯  
         logger.info("This is info message.");  
-        // ¼ÇÂ¼error¼¶±ğµÄĞÅÏ¢  
+        // è®°å½•errorçº§åˆ«çš„ä¿¡æ¯  
         logger.error("This is error message.");  
     }  
 
 }
-4¡¢Êä³ö½á¹û
-£¨1£©Ê×ÏÈÊÇ¿ØÖÆÌ¨µÄĞÅÏ¢
+4ã€è¾“å‡ºç»“æœ
+ï¼ˆ1ï¼‰é¦–å…ˆæ˜¯æ§åˆ¶å°çš„ä¿¡æ¯
 
-£¨2£©ÔÙÀ´¿´Êä³öµÄÎÄ¼ş
+ï¼ˆ2ï¼‰å†æ¥çœ‹è¾“å‡ºçš„æ–‡ä»¶
 
-ÄÚÈİÈçÏÂ£¬·¢ÏÖÒÑ°´ÕÕÒªÇóÊä³öµ½¶ÔÓ¦µÄÎÄµµÖĞÈ¥ÁË¡£
+å†…å®¹å¦‚ä¸‹ï¼Œå‘ç°å·²æŒ‰ç…§è¦æ±‚è¾“å‡ºåˆ°å¯¹åº”çš„æ–‡æ¡£ä¸­å»äº†ã€‚
 
 
-¶ş¡¢Log4j»ù±¾Ê¹ÓÃ·½·¨
-Log4jÓÉÈı¸öÖØÒªµÄ×é¼ş¹¹³É£ºÈÕÖ¾ĞÅÏ¢µÄÓÅÏÈ¼¶£¬ÈÕÖ¾ĞÅÏ¢µÄÊä³öÄ¿µÄµØ£¬ÈÕÖ¾ĞÅÏ¢µÄÊä³ö¸ñÊ½¡£ÈÕÖ¾ĞÅÏ¢µÄÓÅÏÈ¼¶´Ó¸ßµ½µÍÓĞERROR¡¢WARN¡¢ INFO¡¢DEBUG£¬·Ö±ğÓÃÀ´Ö¸¶¨ÕâÌõÈÕÖ¾ĞÅÏ¢µÄÖØÒª³Ì¶È£»ÈÕÖ¾ĞÅÏ¢µÄÊä³öÄ¿µÄµØÖ¸¶¨ÁËÈÕÖ¾½«´òÓ¡µ½¿ØÖÆÌ¨»¹ÊÇÎÄ¼şÖĞ£»¶øÊä³ö¸ñÊ½Ôò¿ØÖÆÁËÈÕÖ¾ĞÅÏ¢µÄÏÔ Ê¾ÄÚÈİ¡£
-2.1¡¢¶¨ÒåÅäÖÃÎÄ¼ş
-ÆäÊµÄúÒ²¿ÉÒÔÍêÈ«²»Ê¹ÓÃÅäÖÃÎÄ¼ş£¬¶øÊÇÔÚ´úÂëÖĞÅäÖÃLog4j»·¾³¡£µ«ÊÇ£¬Ê¹ÓÃÅäÖÃÎÄ¼ş½«Ê¹ÄúµÄÓ¦ÓÃ³ÌĞò¸ü¼ÓÁé»î¡£Log4jÖ§³ÖÁ½ÖÖÅäÖÃÎÄ¼ş¸ñÊ½£¬Ò»ÖÖÊÇXML¸ñÊ½µÄÎÄ¼ş£¬Ò»ÖÖÊÇJavaÌØĞÔÎÄ¼ş£¨¼ü=Öµ£©¡£ÏÂÃæÎÒÃÇ½éÉÜÊ¹ÓÃJavaÌØĞÔÎÄ¼ş×öÎªÅäÖÃÎÄ¼şµÄ·½·¨£º
-1.ÅäÖÃ¸ùLogger£¬ÆäÓï·¨Îª£º
-log4j.rootLogger = [ level ] , appenderName, appenderName, ¡­
-ÆäÖĞ£¬level ÊÇÈÕÖ¾¼ÇÂ¼µÄÓÅÏÈ¼¶£¬·ÖÎªOFF¡¢FATAL¡¢ERROR¡¢WARN¡¢INFO¡¢DEBUG¡¢ALL»òÕßÄú¶¨ÒåµÄ¼¶±ğ¡£Log4j½¨ÒéÖ»Ê¹ÓÃËÄ¸ö¼¶±ğ£¬ÓÅ ÏÈ¼¶´Ó¸ßµ½µÍ·Ö±ğÊÇERROR¡¢WARN¡¢INFO¡¢DEBUG¡£Í¨¹ıÔÚÕâÀï¶¨ÒåµÄ¼¶±ğ£¬Äú¿ÉÒÔ¿ØÖÆµ½Ó¦ÓÃ³ÌĞòÖĞÏàÓ¦¼¶±ğµÄÈÕÖ¾ĞÅÏ¢µÄ¿ª¹Ø¡£±ÈÈçÔÚÕâÀï¶¨ ÒåÁËINFO¼¶±ğ£¬ÔòÓ¦ÓÃ³ÌĞòÖĞËùÓĞDEBUG¼¶±ğµÄÈÕÖ¾ĞÅÏ¢½«²»±»´òÓ¡³öÀ´¡£ appenderName¾ÍÊÇÖ¸BÈÕÖ¾ĞÅÏ¢Êä³öµ½ÄÄ¸öµØ·½¡£Äú¿ÉÒÔÍ¬Ê±Ö¸¶¨¶à¸öÊä³öÄ¿µÄµØ¡£
-2.ÅäÖÃÈÕÖ¾ĞÅÏ¢Êä³öÄ¿µÄµØAppender£¬ÆäÓï·¨Îª£º
+äºŒã€Log4jåŸºæœ¬ä½¿ç”¨æ–¹æ³•
+Log4jç”±ä¸‰ä¸ªé‡è¦çš„ç»„ä»¶æ„æˆï¼šæ—¥å¿—ä¿¡æ¯çš„ä¼˜å…ˆçº§ï¼Œæ—¥å¿—ä¿¡æ¯çš„è¾“å‡ºç›®çš„åœ°ï¼Œæ—¥å¿—ä¿¡æ¯çš„è¾“å‡ºæ ¼å¼ã€‚æ—¥å¿—ä¿¡æ¯çš„ä¼˜å…ˆçº§ä»é«˜åˆ°ä½æœ‰ERRORã€WARNã€ INFOã€DEBUGï¼Œåˆ†åˆ«ç”¨æ¥æŒ‡å®šè¿™æ¡æ—¥å¿—ä¿¡æ¯çš„é‡è¦ç¨‹åº¦ï¼›æ—¥å¿—ä¿¡æ¯çš„è¾“å‡ºç›®çš„åœ°æŒ‡å®šäº†æ—¥å¿—å°†æ‰“å°åˆ°æ§åˆ¶å°è¿˜æ˜¯æ–‡ä»¶ä¸­ï¼›è€Œè¾“å‡ºæ ¼å¼åˆ™æ§åˆ¶äº†æ—¥å¿—ä¿¡æ¯çš„æ˜¾ ç¤ºå†…å®¹ã€‚
+2.1ã€å®šä¹‰é…ç½®æ–‡ä»¶
+å…¶å®æ‚¨ä¹Ÿå¯ä»¥å®Œå…¨ä¸ä½¿ç”¨é…ç½®æ–‡ä»¶ï¼Œè€Œæ˜¯åœ¨ä»£ç ä¸­é…ç½®Log4jç¯å¢ƒã€‚ä½†æ˜¯ï¼Œä½¿ç”¨é…ç½®æ–‡ä»¶å°†ä½¿æ‚¨çš„åº”ç”¨ç¨‹åºæ›´åŠ çµæ´»ã€‚Log4jæ”¯æŒä¸¤ç§é…ç½®æ–‡ä»¶æ ¼å¼ï¼Œä¸€ç§æ˜¯XMLæ ¼å¼çš„æ–‡ä»¶ï¼Œä¸€ç§æ˜¯Javaç‰¹æ€§æ–‡ä»¶ï¼ˆé”®=å€¼ï¼‰ã€‚ä¸‹é¢æˆ‘ä»¬ä»‹ç»ä½¿ç”¨Javaç‰¹æ€§æ–‡ä»¶åšä¸ºé…ç½®æ–‡ä»¶çš„æ–¹æ³•ï¼š
+1.é…ç½®æ ¹Loggerï¼Œå…¶è¯­æ³•ä¸ºï¼š
+log4j.rootLogger = [ level ] , appenderName, appenderName, â€¦
+å…¶ä¸­ï¼Œlevel æ˜¯æ—¥å¿—è®°å½•çš„ä¼˜å…ˆçº§ï¼Œåˆ†ä¸ºOFFã€FATALã€ERRORã€WARNã€INFOã€DEBUGã€ALLæˆ–è€…æ‚¨å®šä¹‰çš„çº§åˆ«ã€‚Log4jå»ºè®®åªä½¿ç”¨å››ä¸ªçº§åˆ«ï¼Œä¼˜ å…ˆçº§ä»é«˜åˆ°ä½åˆ†åˆ«æ˜¯ERRORã€WARNã€INFOã€DEBUGã€‚é€šè¿‡åœ¨è¿™é‡Œå®šä¹‰çš„çº§åˆ«ï¼Œæ‚¨å¯ä»¥æ§åˆ¶åˆ°åº”ç”¨ç¨‹åºä¸­ç›¸åº”çº§åˆ«çš„æ—¥å¿—ä¿¡æ¯çš„å¼€å…³ã€‚æ¯”å¦‚åœ¨è¿™é‡Œå®š ä¹‰äº†INFOçº§åˆ«ï¼Œåˆ™åº”ç”¨ç¨‹åºä¸­æ‰€æœ‰DEBUGçº§åˆ«çš„æ—¥å¿—ä¿¡æ¯å°†ä¸è¢«æ‰“å°å‡ºæ¥ã€‚ appenderNameå°±æ˜¯æŒ‡Bæ—¥å¿—ä¿¡æ¯è¾“å‡ºåˆ°å“ªä¸ªåœ°æ–¹ã€‚æ‚¨å¯ä»¥åŒæ—¶æŒ‡å®šå¤šä¸ªè¾“å‡ºç›®çš„åœ°ã€‚
+2.é…ç½®æ—¥å¿—ä¿¡æ¯è¾“å‡ºç›®çš„åœ°Appenderï¼Œå…¶è¯­æ³•ä¸ºï¼š
 log4j.appender.appenderName = fully.qualified.name.of.appender.class  
 log4j.appender.appenderName.option1 = value1  
-¡­  
+â€¦  
 log4j.appender.appenderName.option = valueN
-ÆäÖĞ£¬Log4jÌá¹©µÄappenderÓĞÒÔÏÂ¼¸ÖÖ£º
-org.apache.log4j.ConsoleAppender£¨¿ØÖÆÌ¨£©£¬  
-org.apache.log4j.FileAppender£¨ÎÄ¼ş£©£¬  
-org.apache.log4j.DailyRollingFileAppender£¨Ã¿Ìì²úÉúÒ»¸öÈÕÖ¾ÎÄ¼ş£©£¬  
-org.apache.log4j.RollingFileAppender£¨ÎÄ¼ş´óĞ¡µ½´ïÖ¸¶¨³ß´çµÄÊ±ºò²úÉúÒ»¸öĞÂµÄÎÄ¼ş£©£¬  
-org.apache.log4j.WriterAppender£¨½«ÈÕÖ¾ĞÅÏ¢ÒÔÁ÷¸ñÊ½·¢ËÍµ½ÈÎÒâÖ¸¶¨µÄµØ·½£©
-3.ÅäÖÃÈÕÖ¾ĞÅÏ¢µÄ¸ñÊ½£¨²¼¾Ö£©£¬ÆäÓï·¨Îª£º
+å…¶ä¸­ï¼ŒLog4jæä¾›çš„appenderæœ‰ä»¥ä¸‹å‡ ç§ï¼š
+org.apache.log4j.ConsoleAppenderï¼ˆæ§åˆ¶å°ï¼‰ï¼Œ  
+org.apache.log4j.FileAppenderï¼ˆæ–‡ä»¶ï¼‰ï¼Œ  
+org.apache.log4j.DailyRollingFileAppenderï¼ˆæ¯å¤©äº§ç”Ÿä¸€ä¸ªæ—¥å¿—æ–‡ä»¶ï¼‰ï¼Œ  
+org.apache.log4j.RollingFileAppenderï¼ˆæ–‡ä»¶å¤§å°åˆ°è¾¾æŒ‡å®šå°ºå¯¸çš„æ—¶å€™äº§ç”Ÿä¸€ä¸ªæ–°çš„æ–‡ä»¶ï¼‰ï¼Œ  
+org.apache.log4j.WriterAppenderï¼ˆå°†æ—¥å¿—ä¿¡æ¯ä»¥æµæ ¼å¼å‘é€åˆ°ä»»æ„æŒ‡å®šçš„åœ°æ–¹ï¼‰
+3.é…ç½®æ—¥å¿—ä¿¡æ¯çš„æ ¼å¼ï¼ˆå¸ƒå±€ï¼‰ï¼Œå…¶è¯­æ³•ä¸ºï¼š
 log4j.appender.appenderName.layout = fully.qualified.name.of.layout.class  
 log4j.appender.appenderName.layout.option1 = value1  
-¡­  
+â€¦  
 log4j.appender.appenderName.layout.option = valueN
-²¼¾Ö
-ÆäÖĞ£¬Log4jÌá¹©µÄlayoutÓĞÒÔe¼¸ÖÖ£º
-org.apache.log4j.HTMLLayout£¨ÒÔHTML±í¸ñĞÎÊ½²¼¾Ö£©£¬  
-org.apache.log4j.PatternLayout£¨¿ÉÒÔÁé»îµØÖ¸¶¨²¼¾ÖÄ£Ê½£©£¬  
-org.apache.log4j.SimpleLayout£¨°üº¬ÈÕÖ¾ĞÅÏ¢µÄ¼¶±ğºÍĞÅÏ¢×Ö·û´®£©£¬  
-org.apache.log4j.TTCCLayout£¨°üº¬ÈÕÖ¾²úÉúµÄÊ±¼ä¡¢Ïß³Ì¡¢Àà±ğµÈµÈĞÅÏ¢£©
-¸ñÊ½»¯×Ö·û
-Log4J²ÉÓÃÀàËÆCÓïÑÔÖĞµÄprintfº¯ÊıµÄ´òÓ¡¸ñÊ½¸ñÊ½»¯ÈÕÖ¾ĞÅÏ¢£¬´òÓ¡²ÎÊıÈçÏÂ£º %m Êä³ö´úÂëÖĞÖ¸¶¨µÄÏûÏ¢
-%p Êä³öÓÅÏÈ¼¶£¬¼´DEBUG£¬INFO£¬WARN£¬ERROR£¬FATAL  
-%r Êä³ö×ÔÓ¦ÓÃÆô¶¯µ½Êä³ö¸ÃlogĞÅÏ¢ºÄ·ÑµÄºÁÃëÊı  
-%c Êä³öËùÊôµÄÀàÄ¿£¬Í¨³£¾ÍÊÇËùÔÚÀàµÄÈ«Ãû  
-%t Êä³ö²úÉú¸ÃÈÕÖ¾ÊÂ¼şµÄÏß³ÌÃû  
-%n Êä³öÒ»¸ö»Ø³µ»»ĞĞ·û£¬WindowsÆ½Ì¨Îª¡°rn¡±£¬UnixÆ½Ì¨Îª¡°n¡±  
-%d Êä³öÈÕÖ¾Ê±¼äµãµÄÈÕÆÚ»òÊ±¼ä£¬Ä¬ÈÏ¸ñÊ½ÎªISO8601£¬Ò²¿ÉÒÔÔÚÆäºóÖ¸¶¨¸ñÊ½£¬±ÈÈç£º%d{yyy MMM dd HH:mm:ss,SSS}£¬Êä³öÀàËÆ£º2002Äê10ÔÂ18ÈÕ 22£º10£º28£¬921  
-%l Êä³öÈÕÖ¾ÊÂ¼şµÄ·¢ÉúÎ»ÖÃ£¬°üÀ¨ÀàÄ¿Ãû¡¢·¢ÉúµÄÏß³Ì£¬ÒÔ¼°ÔÚ´úÂëÖĞµÄĞĞÊı¡£¾ÙÀı£ºTestlog4.main(TestLog4.java:10)
-2.2¡¢ÔÚ´úÂëÖĞÊ¹ÓÃLog4j
-1¡¢»ñÈ¡Logger¶ÔÏó
-Ê¹ÓÃLog4j£¬µÚÒ»²½¾ÍÊÇ»ñÈ¡ÈÕÖ¾¼ÇÂ¼Æ÷£¬Õâ¸ö¼ÇÂ¼Æ÷½«¸ºÔğ¿ØÖÆÈÕÖ¾ĞÅÏ¢¡£ÆäÓï·¨Îª£º
+å¸ƒå±€
+å…¶ä¸­ï¼ŒLog4jæä¾›çš„layoutæœ‰ä»¥eå‡ ç§ï¼š
+org.apache.log4j.HTMLLayoutï¼ˆä»¥HTMLè¡¨æ ¼å½¢å¼å¸ƒå±€ï¼‰ï¼Œ  
+org.apache.log4j.PatternLayoutï¼ˆå¯ä»¥çµæ´»åœ°æŒ‡å®šå¸ƒå±€æ¨¡å¼ï¼‰ï¼Œ  
+org.apache.log4j.SimpleLayoutï¼ˆåŒ…å«æ—¥å¿—ä¿¡æ¯çš„çº§åˆ«å’Œä¿¡æ¯å­—ç¬¦ä¸²ï¼‰ï¼Œ  
+org.apache.log4j.TTCCLayoutï¼ˆåŒ…å«æ—¥å¿—äº§ç”Ÿçš„æ—¶é—´ã€çº¿ç¨‹ã€ç±»åˆ«ç­‰ç­‰ä¿¡æ¯ï¼‰
+æ ¼å¼åŒ–å­—ç¬¦
+Log4Jé‡‡ç”¨ç±»ä¼¼Cè¯­è¨€ä¸­çš„printfå‡½æ•°çš„æ‰“å°æ ¼å¼æ ¼å¼åŒ–æ—¥å¿—ä¿¡æ¯ï¼Œæ‰“å°å‚æ•°å¦‚ä¸‹ï¼š %m è¾“å‡ºä»£ç ä¸­æŒ‡å®šçš„æ¶ˆæ¯
+%p è¾“å‡ºä¼˜å…ˆçº§ï¼Œå³DEBUGï¼ŒINFOï¼ŒWARNï¼ŒERRORï¼ŒFATAL  
+%r è¾“å‡ºè‡ªåº”ç”¨å¯åŠ¨åˆ°è¾“å‡ºè¯¥logä¿¡æ¯è€—è´¹çš„æ¯«ç§’æ•°  
+%c è¾“å‡ºæ‰€å±çš„ç±»ç›®ï¼Œé€šå¸¸å°±æ˜¯æ‰€åœ¨ç±»çš„å…¨å  
+%t è¾“å‡ºäº§ç”Ÿè¯¥æ—¥å¿—äº‹ä»¶çš„çº¿ç¨‹å  
+%n è¾“å‡ºä¸€ä¸ªå›è½¦æ¢è¡Œç¬¦ï¼ŒWindowså¹³å°ä¸ºâ€œrnâ€ï¼ŒUnixå¹³å°ä¸ºâ€œnâ€  
+%d è¾“å‡ºæ—¥å¿—æ—¶é—´ç‚¹çš„æ—¥æœŸæˆ–æ—¶é—´ï¼Œé»˜è®¤æ ¼å¼ä¸ºISO8601ï¼Œä¹Ÿå¯ä»¥åœ¨å…¶åæŒ‡å®šæ ¼å¼ï¼Œæ¯”å¦‚ï¼š%d{yyy MMM dd HH:mm:ss,SSS}ï¼Œè¾“å‡ºç±»ä¼¼ï¼š2002å¹´10æœˆ18æ—¥ 22ï¼š10ï¼š28ï¼Œ921  
+%l è¾“å‡ºæ—¥å¿—äº‹ä»¶çš„å‘ç”Ÿä½ç½®ï¼ŒåŒ…æ‹¬ç±»ç›®åã€å‘ç”Ÿçš„çº¿ç¨‹ï¼Œä»¥åŠåœ¨ä»£ç ä¸­çš„è¡Œæ•°ã€‚ä¸¾ä¾‹ï¼šTestlog4.main(TestLog4.java:10)
+2.2ã€åœ¨ä»£ç ä¸­ä½¿ç”¨Log4j
+1ã€è·å–Loggerå¯¹è±¡
+ä½¿ç”¨Log4jï¼Œç¬¬ä¸€æ­¥å°±æ˜¯è·å–æ—¥å¿—è®°å½•å™¨ï¼Œè¿™ä¸ªè®°å½•å™¨å°†è´Ÿè´£æ§åˆ¶æ—¥å¿—ä¿¡æ¯ã€‚å…¶è¯­æ³•ä¸ºï¼š
 public static Logger getLogger( String name)
-Í¨¹ıÖ¸¶¨µÄÃû×Ö»ñµÃ¼ÇÂ¼Æ÷£¬Èç¹û±ØÒªµÄ»°£¬ÔòÎªÕâ¸öÃû×Ö´´½¨Ò»¸öĞÂµÄ¼ÇÂ¼Æ÷¡£NameÒ»°ãÈ¡±¾ÀàµÄÃû×Ö£¬±ÈÈç£º
+é€šè¿‡æŒ‡å®šçš„åå­—è·å¾—è®°å½•å™¨ï¼Œå¦‚æœå¿…è¦çš„è¯ï¼Œåˆ™ä¸ºè¿™ä¸ªåå­—åˆ›å»ºä¸€ä¸ªæ–°çš„è®°å½•å™¨ã€‚Nameä¸€èˆ¬å–æœ¬ç±»çš„åå­—ï¼Œæ¯”å¦‚ï¼š
 static Logger logger = Logger.getLogger ( ServerWithLog4j.class.getName () )
-2¡¢¶ÁÈ¡ÅäÖÃÎÄ¼ş
-µ±»ñµÃÁËÈÕÖ¾¼ÇÂ¼Æ÷Ö®ºó£¬µÚ¶ş²½½«ÅäÖÃLog4j»·¾³£¬ÆäÓï·¨Îª£º
-BasicConfigurator.configure ()£º ×Ô¶¯¿ìËÙµØÊ¹ÓÃÈ±Ê¡Log4j»·¾³¡£  
-PropertyConfigurator.configure ( String configFilename) £º¶ÁÈ¡Ê¹ÓÃJavaµÄÌØĞÔÎÄ¼ş±àĞ´µÄÅäÖÃÎÄ¼ş¡£  
-DOMConfigurator.configure ( String filename ) £º¶ÁÈ¡XMLĞÎÊ½µÄÅäÖÃÎÄ¼ş¡£
-3.²åÈë¼ÇÂ¼ĞÅÏ¢£¨¸ñÊ½»¯ÈÕÖ¾ĞÅÏ¢£©
-µ±ÉÏÁ½¸ö±ØÒª²½ÖèÖ´ĞĞÍê±Ï£¬Äú¾Í¿ÉÒÔÇáËÉµØÊ¹ÓÃ²»Í¬ÓÅÏÈ¼¶±ğµÄÈÕÖ¾¼ÇÂ¼Óï¾ä²åÈëµ½ÄúÏë¼ÇÂ¼ÈÕÖ¾µÄÈÎºÎµØ·½£¬ÆäÓï·¨ÈçÏÂ£º
+2ã€è¯»å–é…ç½®æ–‡ä»¶
+å½“è·å¾—äº†æ—¥å¿—è®°å½•å™¨ä¹‹åï¼Œç¬¬äºŒæ­¥å°†é…ç½®Log4jç¯å¢ƒï¼Œå…¶è¯­æ³•ä¸ºï¼š
+BasicConfigurator.configure ()ï¼š è‡ªåŠ¨å¿«é€Ÿåœ°ä½¿ç”¨ç¼ºçœLog4jç¯å¢ƒã€‚  
+PropertyConfigurator.configure ( String configFilename) ï¼šè¯»å–ä½¿ç”¨Javaçš„ç‰¹æ€§æ–‡ä»¶ç¼–å†™çš„é…ç½®æ–‡ä»¶ã€‚  
+DOMConfigurator.configure ( String filename ) ï¼šè¯»å–XMLå½¢å¼çš„é…ç½®æ–‡ä»¶ã€‚
+3.æ’å…¥è®°å½•ä¿¡æ¯ï¼ˆæ ¼å¼åŒ–æ—¥å¿—ä¿¡æ¯ï¼‰
+å½“ä¸Šä¸¤ä¸ªå¿…è¦æ­¥éª¤æ‰§è¡Œå®Œæ¯•ï¼Œæ‚¨å°±å¯ä»¥è½»æ¾åœ°ä½¿ç”¨ä¸åŒä¼˜å…ˆçº§åˆ«çš„æ—¥å¿—è®°å½•è¯­å¥æ’å…¥åˆ°æ‚¨æƒ³è®°å½•æ—¥å¿—çš„ä»»ä½•åœ°æ–¹ï¼Œå…¶è¯­æ³•å¦‚ä¸‹ï¼š
 Logger.debug ( Object message ) ;  
 Logger.info ( Object message ) ;  
 Logger.warn ( Object message ) ;  
 Logger.error ( Object message ) ;
-2.3¡¢ÈÕÖ¾¼¶±ğ
-Ã¿¸öLogger¶¼±»ÁËÒ»¸öÈÕÖ¾¼¶±ğ£¨log level£©£¬ÓÃÀ´¿ØÖÆÈÕÖ¾ĞÅÏ¢µÄÊä³ö¡£ÈÕÖ¾¼¶±ğ´Ó¸ßµ½µÍ·ÖÎª£º
-A£ºoff ×î¸ßµÈ¼¶£¬ÓÃÓÚ¹Ø±ÕËùÓĞÈÕÖ¾¼ÇÂ¼¡£
-B£ºfatal Ö¸³öÃ¿¸öÑÏÖØµÄ´íÎóÊÂ¼ş½«»áµ¼ÖÂÓ¦ÓÃ³ÌĞòµÄÍË³ö¡£
-C£ºerror Ö¸³öËäÈ»·¢Éú´íÎóÊÂ¼ş£¬µ«ÈÔÈ»²»Ó°ÏìÏµÍ³µÄ¼ÌĞøÔËĞĞ¡£
-D£ºwarm ±íÃ÷»á³öÏÖÇ±ÔÚµÄ´íÎóÇéĞÎ¡£
-E£ºinfo Ò»°ãºÍÔÚ´ÖÁ£¶È¼¶±ğÉÏ£¬Ç¿µ÷Ó¦ÓÃ³ÌĞòµÄÔËĞĞÈ«³Ì¡£
-F£ºdebug Ò»°ãÓÃÓÚÏ¸Á£¶È¼¶±ğÉÏ£¬¶Ôµ÷ÊÔÓ¦ÓÃ³ÌĞò·Ç³£ÓĞ°ïÖú¡£
-G£ºall ×îµÍµÈ¼¶£¬ÓÃÓÚ´ò¿ªËùÓĞÈÕÖ¾¼ÇÂ¼¡£
-ÉÏÃæÕâĞ©¼¶±ğÊÇ¶¨ÒåÔÚorg.apache.log4j.LevelÀàÖĞ¡£Log4jÖ»½¨ÒéÊ¹ÓÃ4¸ö¼¶±ğ£¬ÓÅÏÈ¼¶´Ó¸ßµ½µÍ·Ö±ğÊÇerror,warn,infoºÍdebug¡£Í¨¹ıÊ¹ÓÃÈÕÖ¾¼¶±ğ£¬¿ÉÒÔ¿ØÖÆÓ¦ÓÃ³ÌĞòÖĞÏàÓ¦¼¶±ğÈÕÖ¾ĞÅÏ¢µÄÊä³ö¡£ÀıÈç£¬Èç¹ûÊ¹ÓÃbÁËinfo¼¶±ğ£¬ÔòÓ¦ÓÃ³ÌĞòÖĞËùÓĞµÍÓÚinfo¼¶±ğµÄÈÕÖ¾ĞÅÏ¢(Èçdebug)½«²»»á±»´òÓ¡³öÀ´¡£
-Èı¡¢WebÏîÄ¿ÖĞÊ¹ÓÃLog4jÊµÀı
-ÉÏÃæ´úÂëÃèÊöÁËLog4jµÄ¼òµ¥Ó¦ÓÃ£¬ÆäÊµÊ¹ÓÃLog4jÒ²¾ÍÊÇÕâÑù¼òµ¥·½±ã¡£µ±È»³ıÁËÉÏÃæµÄÅäÖÃ·½·¨£¬»¹ÓĞÆäËü£¬±ÈÈç×öÒ»¸öJ2EEÓ¦ÓÃ£¬ÔÚJ2EEÓ¦ÓÃÊ¹ÓÃLog4j£¬±ØĞëÏÈÔÚÆô¶¯·şÎñÊ±¼ÓÔØLog4jµÄÅäÖÃÎÄ¼ş½øĞĞ³õÊ¼»¯£¬¿ÉÒÔÔÚweb.xmlÖĞ½øĞĞ¡£
-1¡¢webÓ¦ÓÃµÄlog4jÊ¹ÓÃ»ù±¾ÉÏ¶¼²ÉÓÃ£ºĞÂ½¨Ò»¸öservlet£¬Õâ¸öservletÔÚinitº¯ÊıÖĞÎªlog4jÖ´ĞĞÅäÖÃ¡£Ò»°ã¾ÍÊÇ¶ÁÈëÅäÖÃÎÄ¼ş¡£ËùÒÔĞèÒªÔÚweb.xmlÖĞÎªÕâ¸öservletÅäÖÃ£¬Í¬Ê±Éè¶¨load-on-startupÎª1¡£
-2¡¢Õâ¸öservletÅäÖÃlog4j¾ÍÊÇ¶Á³öÅäÖÃÎÄ¼ş£¬È»ºóµ÷ÓÃconfigureº¯Êı¡£ÕâÀïÓĞÁ½¸öÎÊÌâ£ºÒ»¡¢ĞèÒªÖªµÀÎÄ¼şÔÚÄÄÀï£»¶ş¡¢ĞèÒªÕıÈ·µÄÎÄ¼şÀàĞÍ
-3¡¢ÅäÖÃÎÄ¼şÎ»ÖÃÔÚweb.xmlÖĞÅäÖÃÒ»¸öparam¼´¿É£¬Â·¾¶Ò»°ãÊÇÏà¶ÔÓÚwebµÄrootÄ¿Â¼
-4¡¢ÎÄ¼şÀàĞÍÒ»°ãÓĞÁ½ÖÖ£¬Ò»¸öÊÇJavaµÄpropertyÎÄ¼ş£¬ÁíÒ»ÖÖÊÇxmlÎÄ¼ş
-ÅäÖÃÎÄ¼şµÄ´óÖÂÄÚÈİ£ºlog4j¿ÉÒÔÖ¸¶¨Êä³öµÄlog¼¶±ğµÄ×îµÍµÈ¼¶£¬ÒÔ¼°logµÄÊä³öÅäÖÃ¸ñÊ½£¬Ã¿¸ölog¿ÉÒÔÖ¸¶¨¶à¸öÊä³ö·½Ê½
-£¨1£©´´½¨Web¹¤³Ì£¬Õû¸ö¹¤³Ì×îºóÄ¿Â¼ÈçÏÂ
+2.3ã€æ—¥å¿—çº§åˆ«
+æ¯ä¸ªLoggeréƒ½è¢«äº†ä¸€ä¸ªæ—¥å¿—çº§åˆ«ï¼ˆlog levelï¼‰ï¼Œç”¨æ¥æ§åˆ¶æ—¥å¿—ä¿¡æ¯çš„è¾“å‡ºã€‚æ—¥å¿—çº§åˆ«ä»é«˜åˆ°ä½åˆ†ä¸ºï¼š
+Aï¼šoff æœ€é«˜ç­‰çº§ï¼Œç”¨äºå…³é—­æ‰€æœ‰æ—¥å¿—è®°å½•ã€‚
+Bï¼šfatal æŒ‡å‡ºæ¯ä¸ªä¸¥é‡çš„é”™è¯¯äº‹ä»¶å°†ä¼šå¯¼è‡´åº”ç”¨ç¨‹åºçš„é€€å‡ºã€‚
+Cï¼šerror æŒ‡å‡ºè™½ç„¶å‘ç”Ÿé”™è¯¯äº‹ä»¶ï¼Œä½†ä»ç„¶ä¸å½±å“ç³»ç»Ÿçš„ç»§ç»­è¿è¡Œã€‚
+Dï¼šwarm è¡¨æ˜ä¼šå‡ºç°æ½œåœ¨çš„é”™è¯¯æƒ…å½¢ã€‚
+Eï¼šinfo ä¸€èˆ¬å’Œåœ¨ç²—ç²’åº¦çº§åˆ«ä¸Šï¼Œå¼ºè°ƒåº”ç”¨ç¨‹åºçš„è¿è¡Œå…¨ç¨‹ã€‚
+Fï¼šdebug ä¸€èˆ¬ç”¨äºç»†ç²’åº¦çº§åˆ«ä¸Šï¼Œå¯¹è°ƒè¯•åº”ç”¨ç¨‹åºéå¸¸æœ‰å¸®åŠ©ã€‚
+Gï¼šall æœ€ä½ç­‰çº§ï¼Œç”¨äºæ‰“å¼€æ‰€æœ‰æ—¥å¿—è®°å½•ã€‚
+ä¸Šé¢è¿™äº›çº§åˆ«æ˜¯å®šä¹‰åœ¨org.apache.log4j.Levelç±»ä¸­ã€‚Log4jåªå»ºè®®ä½¿ç”¨4ä¸ªçº§åˆ«ï¼Œä¼˜å…ˆçº§ä»é«˜åˆ°ä½åˆ†åˆ«æ˜¯error,warn,infoå’Œdebugã€‚é€šè¿‡ä½¿ç”¨æ—¥å¿—çº§åˆ«ï¼Œå¯ä»¥æ§åˆ¶åº”ç”¨ç¨‹åºä¸­ç›¸åº”çº§åˆ«æ—¥å¿—ä¿¡æ¯çš„è¾“å‡ºã€‚ä¾‹å¦‚ï¼Œå¦‚æœä½¿ç”¨bäº†infoçº§åˆ«ï¼Œåˆ™åº”ç”¨ç¨‹åºä¸­æ‰€æœ‰ä½äºinfoçº§åˆ«çš„æ—¥å¿—ä¿¡æ¯(å¦‚debug)å°†ä¸ä¼šè¢«æ‰“å°å‡ºæ¥ã€‚
+ä¸‰ã€Webé¡¹ç›®ä¸­ä½¿ç”¨Log4jå®ä¾‹
+ä¸Šé¢ä»£ç æè¿°äº†Log4jçš„ç®€å•åº”ç”¨ï¼Œå…¶å®ä½¿ç”¨Log4jä¹Ÿå°±æ˜¯è¿™æ ·ç®€å•æ–¹ä¾¿ã€‚å½“ç„¶é™¤äº†ä¸Šé¢çš„é…ç½®æ–¹æ³•ï¼Œè¿˜æœ‰å…¶å®ƒï¼Œæ¯”å¦‚åšä¸€ä¸ªJ2EEåº”ç”¨ï¼Œåœ¨J2EEåº”ç”¨ä½¿ç”¨Log4jï¼Œå¿…é¡»å…ˆåœ¨å¯åŠ¨æœåŠ¡æ—¶åŠ è½½Log4jçš„é…ç½®æ–‡ä»¶è¿›è¡Œåˆå§‹åŒ–ï¼Œå¯ä»¥åœ¨web.xmlä¸­è¿›è¡Œã€‚
+1ã€webåº”ç”¨çš„log4jä½¿ç”¨åŸºæœ¬ä¸Šéƒ½é‡‡ç”¨ï¼šæ–°å»ºä¸€ä¸ªservletï¼Œè¿™ä¸ªservletåœ¨initå‡½æ•°ä¸­ä¸ºlog4jæ‰§è¡Œé…ç½®ã€‚ä¸€èˆ¬å°±æ˜¯è¯»å…¥é…ç½®æ–‡ä»¶ã€‚æ‰€ä»¥éœ€è¦åœ¨web.xmlä¸­ä¸ºè¿™ä¸ªservleté…ç½®ï¼ŒåŒæ—¶è®¾å®šload-on-startupä¸º1ã€‚
+2ã€è¿™ä¸ªservleté…ç½®log4jå°±æ˜¯è¯»å‡ºé…ç½®æ–‡ä»¶ï¼Œç„¶åè°ƒç”¨configureå‡½æ•°ã€‚è¿™é‡Œæœ‰ä¸¤ä¸ªé—®é¢˜ï¼šä¸€ã€éœ€è¦çŸ¥é“æ–‡ä»¶åœ¨å“ªé‡Œï¼›äºŒã€éœ€è¦æ­£ç¡®çš„æ–‡ä»¶ç±»å‹
+3ã€é…ç½®æ–‡ä»¶ä½ç½®åœ¨web.xmlä¸­é…ç½®ä¸€ä¸ªparamå³å¯ï¼Œè·¯å¾„ä¸€èˆ¬æ˜¯ç›¸å¯¹äºwebçš„rootç›®å½•
+4ã€æ–‡ä»¶ç±»å‹ä¸€èˆ¬æœ‰ä¸¤ç§ï¼Œä¸€ä¸ªæ˜¯Javaçš„propertyæ–‡ä»¶ï¼Œå¦ä¸€ç§æ˜¯xmlæ–‡ä»¶
+é…ç½®æ–‡ä»¶çš„å¤§è‡´å†…å®¹ï¼šlog4jå¯ä»¥æŒ‡å®šè¾“å‡ºçš„logçº§åˆ«çš„æœ€ä½ç­‰çº§ï¼Œä»¥åŠlogçš„è¾“å‡ºé…ç½®æ ¼å¼ï¼Œæ¯ä¸ªlogå¯ä»¥æŒ‡å®šå¤šä¸ªè¾“å‡ºæ–¹å¼
+ï¼ˆ1ï¼‰åˆ›å»ºWebå·¥ç¨‹ï¼Œæ•´ä¸ªå·¥ç¨‹æœ€åç›®å½•å¦‚ä¸‹
 
-£¨2£©web.xmlÅäÖÃÈçÏÂ£º
+ï¼ˆ2ï¼‰web.xmlé…ç½®å¦‚ä¸‹ï¼š
 <?xml version="1.0" encoding="UTF-8"?>  
 <web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"  
     xmlns="http://java.sun.com/xml/ns/javaee"  
@@ -152,7 +152,7 @@ G£ºall ×îµÍµÈ¼¶£¬ÓÃÓÚ´ò¿ªËùÓĞÈÕÖ¾¼ÇÂ¼¡£
         <servlet-class>com.mucfc.Log4JTestServlet</servlet-class>  
     </servlet>  
 
-    <!--ÓÃÀ´Æô¶¯ log4jConfigLocationµÄservlet -->  
+    <!--ç”¨æ¥å¯åŠ¨ log4jConfigLocationçš„servlet -->  
     <servlet>  
         <servlet-name>Log4JInitServlet</servlet-name>  
         <servlet-class>com.mucfc.Log4JInitServlet</servlet-class>  
@@ -169,7 +169,7 @@ G£ºall ×îµÍµÈ¼¶£¬ÓÃÓÚ´ò¿ªËùÓĞÈÕÖ¾¼ÇÂ¼¡£
     </servlet-mapping>  
 
 </web-app>
-£¨3£©ÅäÖÃÎÄ¼şlog4j.properties
+ï¼ˆ3ï¼‰é…ç½®æ–‡ä»¶log4j.properties
  ### set log levels ###  
 log4j.rootLogger = debug,stdout,D,E  
 
@@ -191,7 +191,7 @@ log4j.appender.E.Append = true
 log4j.appender.E.Threshold = ERROR   
 log4j.appender.E.layout = org.apache.log4j.PatternLayout  
 log4j.appender.E.layout.ConversionPattern = %-d{yyyy-MM-dd HH:mm:ss}  [ %t:%r ] - [ %p ]  %m%n
-£¨4£©webÈİÆ÷Ò»À´¾Í³õÊ¼»¯µÄservlet
+ï¼ˆ4ï¼‰webå®¹å™¨ä¸€æ¥å°±åˆå§‹åŒ–çš„servlet
 Log4JInitServlet.java
 package com.mucfc;  
 
@@ -228,23 +228,23 @@ public class Log4JInitServlet extends HttpServlet {
      * @see Servlet#init(ServletConfig) 
      */  
     public void init(ServletConfig config) throws ServletException {  
-        System.out.println("Log4JInitServlet ÕıÔÚ³õÊ¼»¯ log4jÈÕÖ¾ÉèÖÃĞÅÏ¢");  
+        System.out.println("Log4JInitServlet æ­£åœ¨åˆå§‹åŒ– log4jæ—¥å¿—è®¾ç½®ä¿¡æ¯");  
         String log4jLocation = config.getInitParameter("log4j-properties-location");  
 
         ServletContext sc = config.getServletContext();  
 
         if (log4jLocation == null) {  
-            System.err.println("*** Ã»ÓĞ log4j-properties-location ³õÊ¼»¯µÄÎÄ¼ş, ËùÒÔÊ¹ÓÃ BasicConfigurator³õÊ¼»¯");  
+            System.err.println("*** æ²¡æœ‰ log4j-properties-location åˆå§‹åŒ–çš„æ–‡ä»¶, æ‰€ä»¥ä½¿ç”¨ BasicConfiguratoråˆå§‹åŒ–");  
             BasicConfigurator.configure();  
         } else {  
             String webAppPath = sc.getRealPath("/");  
             String log4jProp = webAppPath + log4jLocation;  
             File yoMamaYesThisSaysYoMama = new File(log4jProp);  
             if (yoMamaYesThisSaysYoMama.exists()) {  
-                System.out.println("Ê¹ÓÃ: " + log4jProp+"³õÊ¼»¯ÈÕÖ¾ÉèÖÃĞÅÏ¢");  
+                System.out.println("ä½¿ç”¨: " + log4jProp+"åˆå§‹åŒ–æ—¥å¿—è®¾ç½®ä¿¡æ¯");  
                 PropertyConfigurator.configure(log4jProp);  
             } else {  
-                System.err.println("*** " + log4jProp + " ÎÄ¼şÃ»ÓĞÕÒµ½£¬ ËùÒÔÊ¹ÓÃ BasicConfigurator³õÊ¼»¯");  
+                System.err.println("*** " + log4jProp + " æ–‡ä»¶æ²¡æœ‰æ‰¾åˆ°ï¼Œ æ‰€ä»¥ä½¿ç”¨ BasicConfiguratoråˆå§‹åŒ–");  
                 BasicConfigurator.configure();  
             }  
         }  
@@ -266,7 +266,7 @@ public class Log4JInitServlet extends HttpServlet {
     }  
 
 }
-£¨5£©µ÷ÓÃÈÕÖ¾Log4JTestServlet,java
+ï¼ˆ5ï¼‰è°ƒç”¨æ—¥å¿—Log4JTestServlet,java
 package com.mucfc;  
 
 import java.io.IOException;  
@@ -307,11 +307,11 @@ public class Log4JTestServlet extends HttpServlet {
      * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response) 
      */  
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {  
-        // ¼ÇÂ¼debug¼¶±ğµÄĞÅÏ¢    
+        // è®°å½•debugçº§åˆ«çš„ä¿¡æ¯    
         logger.debug("This is debug message.");    
-        // ¼ÇÂ¼info¼¶±ğµÄĞÅÏ¢    
+        // è®°å½•infoçº§åˆ«çš„ä¿¡æ¯    
         logger.info("This is info message.");    
-        // ¼ÇÂ¼error¼¶±ğµÄĞÅÏ¢    
+        // è®°å½•errorçº§åˆ«çš„ä¿¡æ¯    
         logger.error("This is error message.");    
     }  
 
@@ -323,20 +323,20 @@ public class Log4JTestServlet extends HttpServlet {
     }  
 
 }
-£¨6£©ÔËĞĞ½á¹û£º
-1¡¢¿ØÖÆÌ¨
+ï¼ˆ6ï¼‰è¿è¡Œç»“æœï¼š
+1ã€æ§åˆ¶å°
 
-2¡¢ÎÄ¼ş
-
-
-
-ËÄ¡¢SpringÖĞÊ¹ÓÃLog4j
-£¨1£©ÕâÀïÒªÊµÏÖwebÏîÄ¿ÖĞÀûÓÃSpringÀ´Ê¹ÓÃLog4j
-½ÓÉÏÃæµÄ¹¤³Ì£¬È»ºóÔÙµ¼ÈëSpringµÄ°ü
+2ã€æ–‡ä»¶
 
 
-£¨2£©web.xmlÔö¼Ó
-<!-- ÉèÖÃ¸ùÄ¿Â¼ -->  
+
+å››ã€Springä¸­ä½¿ç”¨Log4j
+ï¼ˆ1ï¼‰è¿™é‡Œè¦å®ç°webé¡¹ç›®ä¸­åˆ©ç”¨Springæ¥ä½¿ç”¨Log4j
+æ¥ä¸Šé¢çš„å·¥ç¨‹ï¼Œç„¶åå†å¯¼å…¥Springçš„åŒ…
+
+
+ï¼ˆ2ï¼‰web.xmlå¢åŠ 
+<!-- è®¾ç½®æ ¹ç›®å½• -->  
    <context-param>    
        <param-name>webAppRootKey</param-name>    
        <param-value>webapp.root</param-value>    
@@ -346,7 +346,7 @@ public class Log4JTestServlet extends HttpServlet {
     <param-name>log4jConfigLocation</param-name>  
     <param-value>/WEB-INF/classes/log4j.properties</param-value>  
 </context-param>  
-<!-- 3000±íÊ¾ ¿ªÒ»ÌõwatchdogÏß³ÌÃ¿60ÃëÉ¨ÃèÒ»ÏÂÅäÖÃÎÄ¼şµÄ±ä»¯;ÕâÑù±ãÓÚÈÕÖ¾´æ·ÅÎ»ÖÃµÄ¸Ä±ä -->  
+<!-- 3000è¡¨ç¤º å¼€ä¸€æ¡watchdogçº¿ç¨‹æ¯60ç§’æ‰«æä¸€ä¸‹é…ç½®æ–‡ä»¶çš„å˜åŒ–;è¿™æ ·ä¾¿äºæ—¥å¿—å­˜æ”¾ä½ç½®çš„æ”¹å˜ -->  
 <context-param>    
         <param-name>log4jRefreshInterval</param-name>    
         <param-value>3000</param-value>    
@@ -354,7 +354,7 @@ public class Log4JTestServlet extends HttpServlet {
 <listener>  
     <listener-class>org.springframework.web.util.Log4jConfigListener</listener-class>  
 </listener>
-Õû¸öÄÚÈİÈçÏÂ£º
+æ•´ä¸ªå†…å®¹å¦‚ä¸‹ï¼š
 <?xml version="1.0" encoding="UTF-8"?>  
 <web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"  
     xmlns="http://java.sun.com/xml/ns/javaee"  
@@ -367,7 +367,7 @@ public class Log4JTestServlet extends HttpServlet {
         <servlet-class>com.mucfc.Log4JTestServlet</servlet-class>  
     </servlet>  
 
-    <!--ÓÃÀ´Æô¶¯ log4jConfigLocationµÄservlet -->  
+    <!--ç”¨æ¥å¯åŠ¨ log4jConfigLocationçš„servlet -->  
 <!--     <servlet>  
         <servlet-name>Log4JInitServlet</servlet-name>  
         <servlet-class>com.mucfc.Log4JInitServlet</servlet-class>  
@@ -383,7 +383,7 @@ public class Log4JTestServlet extends HttpServlet {
         <url-pattern>/test</url-pattern>  
     </servlet-mapping>   
 
-        <!-- Spring ÈİÆ÷¼ÓÔØ -->  
+        <!-- Spring å®¹å™¨åŠ è½½ -->  
     <listener>  
         <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>  
     </listener>  
@@ -392,7 +392,7 @@ public class Log4JTestServlet extends HttpServlet {
         <param-value>classpath:applicationContext.xml</param-value>  
     </context-param>   
 
-    <!-- ÉèÖÃ¸ùÄ¿Â¼ -->  
+    <!-- è®¾ç½®æ ¹ç›®å½• -->  
     <context-param>    
         <param-name>webAppRootKey</param-name>    
         <param-value>webapp.root</param-value>    
@@ -402,7 +402,7 @@ public class Log4JTestServlet extends HttpServlet {
         <param-name>log4jConfigLocation</param-name>  
         <param-value>/WEB-INF/classes/log4j.properties</param-value>  
     </context-param>  
-    <!-- 3000±íÊ¾ ¿ªÒ»ÌõwatchdogÏß³ÌÃ¿60ÃëÉ¨ÃèÒ»ÏÂÅäÖÃÎÄ¼şµÄ±ä»¯;ÕâÑù±ãÓÚÈÕÖ¾´æ·ÅÎ»ÖÃµÄ¸Ä±ä -->  
+    <!-- 3000è¡¨ç¤º å¼€ä¸€æ¡watchdogçº¿ç¨‹æ¯60ç§’æ‰«æä¸€ä¸‹é…ç½®æ–‡ä»¶çš„å˜åŒ–;è¿™æ ·ä¾¿äºæ—¥å¿—å­˜æ”¾ä½ç½®çš„æ”¹å˜ -->  
     <context-param>    
          <param-name>log4jRefreshInterval</param-name>    
          <param-value>3000</param-value>    
@@ -412,9 +412,9 @@ public class Log4JTestServlet extends HttpServlet {
     </listener>   
 
 </web-app>
-ÕâÀïLog4JInitServlet.java¾ÍÏàµ±ÓÚÃ»ÓÃµ½ÁË¡£
-£¨3£©applicationContext.xml
-Ã»ÓĞÄÚÈİ£º
+è¿™é‡ŒLog4JInitServlet.javaå°±ç›¸å½“äºæ²¡ç”¨åˆ°äº†ã€‚
+ï¼ˆ3ï¼‰applicationContext.xml
+æ²¡æœ‰å†…å®¹ï¼š
 <?xml version="1.0" encoding="UTF-8"?>  
 <beans xmlns="http://www.springframework.org/schema/beans"  
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"  
@@ -437,15 +437,15 @@ http://www.springframework.org/schema/context
 
            http://www.springframework.org/schema/context/spring-context-3.2.xsd">  
 </beans>
-£¨4£©ÕâÑùÈÕÖ¾¾Í¸úËæSpring´°¿ÚÆô¶¯¶øÆô¶¯ÁË
-³ÌĞòÒ»ÔËĞĞ£¬¾Í»á×Ô¶¯°ÑÈÕÖ¾´òÓ¡
+ï¼ˆ4ï¼‰è¿™æ ·æ—¥å¿—å°±è·ŸéšSpringçª—å£å¯åŠ¨è€Œå¯åŠ¨äº†
+ç¨‹åºä¸€è¿è¡Œï¼Œå°±ä¼šè‡ªåŠ¨æŠŠæ—¥å¿—æ‰“å°
 
 log.log
 
-error.logÎª¿Õ£¬ÒòÎªËüÖ»´òÓ¡error¼¶±ğÒÔÉÏµÄĞÅÏ¢
-ä¯ÀÀÆ÷ÊäÈëhttp://localhost:8080/LogLearning2/test
+error.logä¸ºç©ºï¼Œå› ä¸ºå®ƒåªæ‰“å°errorçº§åˆ«ä»¥ä¸Šçš„ä¿¡æ¯
+æµè§ˆå™¨è¾“å…¥http://localhost:8080/LogLearning2/test
 
-È»ºó´ò¿ªÎÄ¼ş
+ç„¶åæ‰“å¼€æ–‡ä»¶
 
 
 
