@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <title> New Document </title>
+    <style type="text/css">
+        body,ul,li{
+            margin:0;
+            padding:0;
+        }
+        ul{
+            list-style:none;
+        }
+        #J-Slide{
+            width:600px;
+            height:400px;
+            position:relative;
+            margin:50px auto;
+            overflow:hidden;
+        }
+        #J-Slide .JSlide-list{
+            position:absolute;
+            width:3000px;
+            left:0;
+            top:0;
+        }
+        #J-Slide .JSlide-list li{
+            float:left;
+        }
+        #J-Slide .JSlide-list li img{
+            width:600px;
+            height:400px;
+        }
+        #J-Slide .JSlide-num{
+            position:absolute;
+            left:0;
+            bottom:0;
+            height:30px;
+            padding:5px;
+            width:100%;
+            z-index:10;
+        }
+        #J-Slide .JSlide-num li{
+            width:30px;
+            height:30px;
+            margin-left:10px;
+            float:left;
+            font-size:16px;
+            color:white;
+            background:#716584;
+            line-height:30px;
+            text-align:center;
+            cursor:pointer;
+            border-radius:15px;
+        }
+        #J-Slide .JSlide-mask{
+            position:absolute;
+            left:0;
+            background:black;
+            bottom:0;
+            width:100%;
+            height:40px;
+            opacity:0.3;
+            filter:Alpha(opacity = 30);
+            z-index:1;
+        }
+        #J-Slide .JSlide-num .current{
+            background:#B91919;
+        }
+    </style>
+    <script>
+        (function(){
+            /*
+            *参数说明:
+            *id 必须
+            *picwidth 可选
+            *speed 可选
+            *
+            *作者:artwl
+            *出处:http://artwl.cnblogs.com
+            */
+            var JCP_Slide=function(id,picwidth,speed){
+                if(!(this instanceof JCP_Slide))
+                    return new JCP_Slide(id,picwidth,speed);
+                var obj=document.getElementById(id),
+                    childs=obj.getElementsByTagName("ul");
+                this.author="artwl";
+                this.jslideList=childs[0];
+                this.jslideNums=childs[1].children;
+                this.speed= speed || 5000;
+                this.picwidth= picwidth || (obj.currentStyle ? parseFloat(obj.currentStyle.width) : parseFloat(document.defaultView.getComputedStyle(obj,null).width));
+                this.currentIndex=0;
+                this.distance=this.picwidth;
+                this.currentLeftPos=0;
+                this.runHandle=null;
+                this.len=this.jslideNums.length;
+            }
+
+            JCP_Slide.prototype={
+                bindMouse:function(){
+                    var self=this;
+                    for(var i=0;i<this.len;i++){
+                        this.jslideNums[i].onmouseover=(function(index){
+                            return function(){
+                                self.currentIndex=index;
+                                clearInterval(self.runHandle);
+                                var prev=-1;
+                                for(var k=0;k<self.len;k++){
+                                    if(self.jslideNums[k].className === "current")
+                                        prev = k;
+                                    self.jslideNums[k].className = k === index ? "current" : "" ;
+                                }
+                                if(prev != index){
+                                    self.distance=(prev - index)*self.picwidth;
+                                    self.currentLeftPos = -prev * self.picwidth;
+                                    self.transition(self.jslideList,{field:'left',begin:self.currentLeftPos,change:self.distance,ease:self.easeOutCirc})
+                                }
+                            }
+                        })(i);
+                        this.jslideNums[i].onmouseout=function(){
+                            self.autoRun();
+                        }
+                    }
+                },
+                autoRun:function(){
+                    var self=this;
+                    this.runHandle=setInterval(function(){
+                        self.distance=-self.picwidth;
+                        for(var k=0;k<self.len;k++){
+                            self.jslideNums[k].className = "" ;
+                        }
+                        self.currentIndex++;
+                        self.currentIndex%=5;
+                        self.jslideNums[self.currentIndex].className = "current";
+                        self.currentLeftPos = -(self.currentIndex-1) * self.picwidth;
+                        if(self.currentIndex == 0){
+                            self.distance = (self.len-1)*self.picwidth;
+                            self.currentLeftPos = -self.distance;
+                        }
+                        self.transition(self.jslideList,{field:'left',begin:self.currentLeftPos,change:self.distance,ease:self.easeOutCirc});
+                    },self.speed);
+                },
+                easeOutCirc:function(pos){
+                    return Math.sqrt(1 - Math.pow((pos-1), 2))
+                },
+                transition:function(el){
+                    el.style.position = "absolute";
+                    var options = arguments[1] || {},
+                    begin =  options.begin,
+                    change = options.change,
+                    duration = options.duration || 500,
+                    field = options.field,
+                    ftp = options.ftp || 50,
+                    onStart = options.onStart || function(){},
+                    onEnd = options.onEnd || function(){},
+                    ease = options.ease,
+                    end = begin + change,
+                    startTime = new Date().getTime();
+                    onStart();
+                    (function(){
+                        setTimeout(function(){
+                            var newTime = new Date().getTime(),
+                            timestamp = newTime - startTime,
+                            delta = ease(timestamp / duration);
+                            el.style[field] = Math.ceil(begin + delta * change) + "px";
+                            if(duration <= timestamp){
+                                el.style[field] = end + "px";
+                                onEnd();
+                            } else {
+                                setTimeout(arguments.callee,1000/ftp);
+                            }
+                        },1000/ftp);
+                    })();
+                },
+                play:function(){
+                    this.bindMouse();
+                    this.autoRun();
+                }
+            };
+
+            window.JCP_Slide=JCP_Slide;
+        })();
+
+        window.onload=function(){
+            JCP_Slide("J-Slide").play();
+        };
+    </script>
+</head>
+<body>
+<div id="J-Slide">
+    <ul class="JSlide-list">
+        <li><img src="http://images.cnblogs.com/cnblogs_com/artwl/357654/o_01.jpg" alt=""/></li>
+        <li><img src="http://images.cnblogs.com/cnblogs_com/artwl/357654/o_02.jpg" alt=""/></li>
+        <li><img src="http://images.cnblogs.com/cnblogs_com/artwl/357654/o_03.jpg" alt=""/></li>
+        <li><img src="http://images.cnblogs.com/cnblogs_com/artwl/357654/o_04.jpg" alt=""/></li>
+        <li><img src="http://images.cnblogs.com/cnblogs_com/artwl/357654/o_05.jpg" alt=""/></li>
+    </ul>
+    <ul class="JSlide-num">
+        <li class="current">1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+        <li>5</li>
+    </ul>
+    <div class="JSlide-mask"></div>
+</div>
+</body>
+</html>

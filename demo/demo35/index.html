@@ -1,0 +1,60 @@
+<div>
+ <p style="float:left;">
+  <select multiple="multiple" id="src" style="width:100px;height:120px">
+   <option value="xh">Ñ§ºÅ</option>
+   <option value="xm">ÐÕÃû</option>
+  </select>
+ </p>
+ <p style="float:left;width:34px">
+  <button style="width:30px;height:28px" onclick="javascript:add ('src','dest',1,'showSelect');">&gt;&gt;</button>
+  <button style="width:30px;height:28px" onclick="javascript:add('dest','src',0,'showSelect');">&lt;&lt;</button>
+  <button style="width:30px;height:29px" onclick="javascript:addAll('src','dest',1,'showSelect');">&gt;&gt;&gt;</button>
+  <button style="width:30px;height:29px" onclick="javascript:addAll('dest','src',0,'showSelect');">&lt;&lt;&lt;</button>
+ </p>
+ <p style="float:left;">
+  <select multiple="multiple" id="dest" style="width:100px;height:120px">
+  </select>
+ </p>
+ <input type="hidden" value="" name="showSelect" id="showSelect">
+ <script type="text/javascript">
+ function add(srcid,destid,type,saveid) {
+  var src = document.getElementById(srcid);
+  var dest = document.getElementById(destid);
+  for (var i = src.length - 1; i >= 0; i--) {
+   if (src.options[i].selected == true) {
+    dest.options.add(new Option(src.options[i].text,src.options[i].value));
+    src.options.remove(i);
+   }
+  }
+  choiceSave(srcid,destid,type,saveid);
+ };
+ 
+ function addAll(srcid,destid,type,saveid) {
+  var src = document.getElementById(srcid);
+  var dest = document.getElementById(destid);
+  for (var i = 0; i < src.length; i++) {
+   dest.options.add(new Option(src.options[i].text,src.options[i].value));
+  }
+  src.length = 0;
+  choiceSave(srcid,destid,type,saveid);
+ };
+ function choiceSave(srcid,destid,type,saveid) {
+  if (type == 1){
+   saveSelect(destid,saveid);
+  } else {
+   saveSelect(srcid,saveid);
+  }
+ };
+ function saveSelect(showid,saveid) {
+  var show = document.getElementById(showid);
+  var save = document.getElementById(saveid);
+  save.value = "";
+  if (show.length > 0) {
+   for (var i = 0; i < show.length; i++) {
+    save.value += (show.options[i].value + ",");
+   }
+   save.value = save.value.substring(0,save.value.length - 1);
+  }
+ };
+ </script>
+</div>

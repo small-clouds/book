@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+    <canvas id="canvas" style="display:block;margin:50px auto;border:#000 1px solid">
+        当前浏览器不支持Canvas，请更换浏览器后再试
+    </canvas>
+    <script>
+    digit =
+    [
+        [
+            [0,0,1,1,1,0,0],
+            [0,1,1,0,1,1,0],
+            [1,1,0,0,0,1,1],
+            [1,1,0,0,0,1,1],
+            [1,1,0,0,0,1,1],
+            [1,1,0,0,0,1,1],
+            [1,1,0,0,0,1,1],
+            [1,1,0,0,0,1,1],
+            [0,1,1,0,1,1,0],
+            [0,0,1,1,1,0,0]
+        ],//0
+        [
+            [0,0,0,1,1,0,0],
+            [0,1,1,1,1,0,0],
+            [0,0,0,1,1,0,0],
+            [0,0,0,1,1,0,0],
+            [0,0,0,1,1,0,0],
+            [0,0,0,1,1,0,0],
+            [0,0,0,1,1,0,0],
+            [0,0,0,1,1,0,0],
+            [0,0,0,1,1,0,0],
+            [1,1,1,1,1,1,1]
+        ],//1
+        [
+            [0,1,1,1,1,1,0],
+            [1,1,0,0,0,1,1],
+            [0,0,0,0,0,1,1],
+            [0,0,0,0,1,1,0],
+            [0,0,0,1,1,0,0],
+            [0,0,1,1,0,0,0],
+            [0,1,1,0,0,0,0],
+            [1,1,0,0,0,0,0],
+            [1,1,0,0,0,1,1],
+            [1,1,1,1,1,1,1]
+        ],//2
+        [
+            [1,1,1,1,1,1,1],
+            [0,0,0,0,0,1,1],
+            [0,0,0,0,1,1,0],
+            [0,0,0,1,1,0,0],
+            [0,0,1,1,1,0,0],
+            [0,0,0,0,1,1,0],
+            [0,0,0,0,0,1,1],
+            [0,0,0,0,0,1,1],
+            [1,1,0,0,0,1,1],
+            [0,1,1,1,1,1,0]
+        ],//3
+        [
+            [0,0,0,0,1,1,0],
+            [0,0,0,1,1,1,0],
+            [0,0,1,1,1,1,0],
+            [0,1,1,0,1,1,0],
+            [1,1,0,0,1,1,0],
+            [1,1,1,1,1,1,1],
+            [0,0,0,0,1,1,0],
+            [0,0,0,0,1,1,0],
+            [0,0,0,0,1,1,0],
+            [0,0,0,1,1,1,1]
+        ],//4
+        [
+            [1,1,1,1,1,1,1],
+            [1,1,0,0,0,0,0],
+            [1,1,0,0,0,0,0],
+            [1,1,1,1,1,1,0],
+            [0,0,0,0,0,1,1],
+            [0,0,0,0,0,1,1],
+            [0,0,0,0,0,1,1],
+            [0,0,0,0,0,1,1],
+            [1,1,0,0,0,1,1],
+            [0,1,1,1,1,1,0]
+        ],//5
+        [
+            [0,0,0,0,1,1,0],
+            [0,0,1,1,0,0,0],
+            [0,1,1,0,0,0,0],
+            [1,1,0,0,0,0,0],
+            [1,1,0,1,1,1,0],
+            [1,1,0,0,0,1,1],
+            [1,1,0,0,0,1,1],
+            [1,1,0,0,0,1,1],
+            [1,1,0,0,0,1,1],
+            [0,1,1,1,1,1,0]
+        ],//6
+        [
+            [1,1,1,1,1,1,1],
+            [1,1,0,0,0,1,1],
+            [0,0,0,0,1,1,0],
+            [0,0,0,0,1,1,0],
+            [0,0,0,1,1,0,0],
+            [0,0,0,1,1,0,0],
+            [0,0,1,1,0,0,0],
+            [0,0,1,1,0,0,0],
+            [0,0,1,1,0,0,0],
+            [0,0,1,1,0,0,0]
+        ],//7
+        [
+            [0,1,1,1,1,1,0],
+            [1,1,0,0,0,1,1],
+            [1,1,0,0,0,1,1],
+            [1,1,0,0,0,1,1],
+            [0,1,1,1,1,1,0],
+            [1,1,0,0,0,1,1],
+            [1,1,0,0,0,1,1],
+            [1,1,0,0,0,1,1],
+            [1,1,0,0,0,1,1],
+            [0,1,1,1,1,1,0]
+        ],//8
+        [
+            [0,1,1,1,1,1,0],
+            [1,1,0,0,0,1,1],
+            [1,1,0,0,0,1,1],
+            [1,1,0,0,0,1,1],
+            [0,1,1,1,0,1,1],
+            [0,0,0,0,0,1,1],
+            [0,0,0,0,0,1,1],
+            [0,0,0,0,1,1,0],
+            [0,0,0,1,1,0,0],
+            [0,1,1,0,0,0,0]
+        ],//9
+        [
+            [0,0,0,0],
+            [0,0,0,0],
+            [0,1,1,0],
+            [0,1,1,0],
+            [0,0,0,0],
+            [0,0,0,0],
+            [0,1,1,0],
+            [0,1,1,0],
+            [0,0,0,0],
+            [0,0,0,0]
+        ]//:
+    ];
+
+
+var WINDOW_WIDTH = 1000;
+var WINDOW_HEIGHT = 500;
+var RADIUS = 6;
+var MARGIN_TOP = 60;
+var MARGIN_LEFT = 130;
+ 
+var nowTime = new Date();
+var curhours= nowTime.getHours();
+var curminutes = nowTime.getMinutes();
+var curseconds = nowTime.getSeconds();
+ 
+var hours=curhours;
+var minutes=curminutes;
+var seconds=curseconds;
+ 
+var balls=[];
+const colors=["pink","blue","yellow","#FF5588","green","orange","#FF0088","#006699"];
+ 
+window.onload = function(){
+ 
+    var canvas = document.getElementById('canvas');
+    var context = canvas.getContext("2d");
+ 
+    canvas.width = WINDOW_WIDTH;
+    canvas.height = WINDOW_HEIGHT;
+ 
+    setInterval(function(){
+    render( context );
+    update();
+},50)
+}
+
+
+ 
+function update(){
+    var nextTime = new Date();
+    var nexthours = nextTime.getHours();
+    var nextminutes = nextTime.getMinutes();
+    var nextseconds = nextTime.getSeconds();
+ 
+    if(nexthours!=curhours){
+        hours=nexthours;
+        if(parseInt(nexthours/10)!=parseInt(curhours/10)){
+        addBalls(MARGIN_LEFT , MARGIN_TOP , parseInt(hours/10))}
+        if(parseInt(nexthours%10)!=parseInt(curhours%10)){
+        addBalls(MARGIN_LEFT + 15*(RADIUS+1) , MARGIN_TOP , parseInt(hours%10))}
+    }
+    if(nextminutes!=curminutes){
+        minutes=nextminutes;
+        if(parseInt(nextminutes/10)!=parseInt(curminutes/10)){
+        addBalls(MARGIN_LEFT + 39*(RADIUS+1) , MARGIN_TOP , parseInt(minutes/10))}
+        if(parseInt(nextminutes%10)!=parseInt(curminutes%10)){
+        addBalls(MARGIN_LEFT + 54*(RADIUS+1) , MARGIN_TOP , parseInt(minutes%10))}
+    }
+    if(nextseconds!=curseconds){
+        seconds=nextseconds;
+        if(parseInt(nextseconds/10)!=parseInt(curseconds/10)){
+        addBalls(MARGIN_LEFT + 78*(RADIUS+1) , MARGIN_TOP , parseInt(seconds/10))}
+        if(parseInt(nextseconds%10)!=parseInt(curseconds%10)){
+        addBalls(MARGIN_LEFT + 93*(RADIUS+1) , MARGIN_TOP , parseInt(seconds%10))}
+
+    }
+ 
+    getNewCurTime();
+   updateBalls();
+}
+
+function getNewCurTime(){
+    var newTime = new Date();
+    curhours=newTime.getHours();
+    curminutes=newTime.getMinutes();
+    curseconds=newTime.getSeconds();
+
+}
+function updateBalls(){
+    for(var i=0;i<balls.length;i++){
+        balls[i].x += balls[i].vx;
+        balls[i].y += balls[i].vy;
+        balls[i].vy += balls[i].g;
+        
+
+
+        if(balls[i].y>=WINDOW_HEIGHT - RADIUS){
+            balls[i].y=WINDOW_HEIGHT - RADIUS;
+            balls[i].vy = -balls[i].vy * 0.5;
+        }
+
+        if(balls[i].x>=WINDOW_WIDTH-RADIUS){
+            balls[i].vx = -balls[i].vx;
+        }
+ 
+
+    }
+}
+ 
+function addBalls(x,y,num){
+ 
+    for(var i=0; i<digit[num].length; i++){
+        for(var j=0; j<digit[num][i].length; j++){
+            if(digit[num][i][j]==1){
+                var aBall = {
+                    x:x+j*2*(RADIUS+1)+(RADIUS+1) ,
+                    y:y+i*2*(RADIUS+1)+(RADIUS+1) ,
+                    g: 1.5+Math.random(),
+                    vx: Math.pow(-1,Math.ceil(Math.random()*1000))*5,
+                    vy: Math.pow(-1,Math.ceil(Math.random()*1000))*-5,
+                    color: colors[ Math.floor(Math.random()*colors.length) ]
+                }
+ 
+                balls.push(aBall)
+            }
+        }
+    }
+}
+ 
+function render( cxt ){
+ 
+ 
+ 
+    cxt.clearRect(0,0,WINDOW_WIDTH,WINDOW_HEIGHT);
+ 
+    renderDigit( MARGIN_LEFT , MARGIN_TOP , parseInt(hours/10) , cxt );
+    renderDigit( MARGIN_LEFT + 15*(RADIUS+1) , MARGIN_TOP , parseInt(hours%10) , cxt );
+    renderDigit( MARGIN_LEFT + 30*(RADIUS+1) , MARGIN_TOP , 10 , cxt );
+    renderDigit( MARGIN_LEFT + 39*(RADIUS+1) , MARGIN_TOP , parseInt(minutes/10) , cxt);
+    renderDigit( MARGIN_LEFT + 54*(RADIUS+1) , MARGIN_TOP , parseInt(minutes%10) , cxt);
+    renderDigit( MARGIN_LEFT + 69*(RADIUS+1) , MARGIN_TOP , 10 , cxt);
+    renderDigit( MARGIN_LEFT + 78*(RADIUS+1) , MARGIN_TOP , parseInt(seconds/10) , cxt);
+    renderDigit( MARGIN_LEFT + 93*(RADIUS+1) , MARGIN_TOP , parseInt(seconds%10) , cxt);
+ 
+    for(var i=0;i<balls.length;i++){
+        cxt.fillStyle = balls[i].color;
+ 
+        cxt.beginPath();
+        cxt.arc(balls[i].x , balls[i].y , RADIUS , 0 , 2*Math.PI , true)
+        cxt.closePath();
+ 
+        cxt.fill();
+    }
+}
+ 
+function renderDigit( x , y , num , cxt ){
+     
+    cxt.fillStyle = "rgb(0,102,153)";
+ 
+    for( var i = 0 ; i < digit[num].length ; i ++ )
+        for(var j = 0 ; j < digit[num][i].length ; j ++ )
+            if( digit[num][i][j] == 1 ){
+                cxt.beginPath();
+                cxt.arc( x+j*2*(RADIUS+1)+(RADIUS+1) , y+i*2*(RADIUS+1)+(RADIUS+1) , RADIUS , 0 , 2*Math.PI );
+                cxt.closePath();
+ 
+                cxt.fill();
+            }
+}</script>
+</body>
+</html>

@@ -1,0 +1,89 @@
+﻿/*
+*author rocalee
+*弹出框样式
+*/	
+	.reveal-modal-bg { 
+		position: fixed; 
+		height: 100%;
+		width: 100%;
+		background:url(../images/cc.png) repeat;
+		z-index: 100;
+		display: none;
+		top: 0;
+		left: 0; 
+		}
+	
+	.reveal-modal {
+		visibility:hidden;
+		top:50px; 
+		left: 50%;
+		margin-left: -300px;
+		width: 359px;
+		background:#fff;
+		position: absolute;
+		z-index: 101;
+		padding: 10px 20px 0px;padding-bottom:20px;
+		}
+	.reveal-modal p{font-size:20px;font-weight:bold;color:#303030;height:50px;line-height:50px;text-align:left;}
+	.reveal-modal div{text-align:center;padding-bottom:18px;}	
+	.reveal-modal input{background:url(../images/bt.png) no-repeat;border:none;width:62px;height:29px;color:#fff;cursor:pointer;font-size:14px;}
+	.reveal-modal textarea{width:343px;height:165px;border:1px solid #9d9d9d;background:#fff;}
+	.reveal-modal.small 		{ width: 200px; margin-left: -140px;}
+	.reveal-modal.medium 		{ width: 400px; margin-left: -240px;}
+	.reveal-modal.large 		{ width: 600px; margin-left: -340px;}
+	.reveal-modal.xlarge 		{ width: 800px; margin-left: -440px;}
+	
+	.reveal-modal a.close-reveal-modal {
+		width:16px;height:16px;
+		font-size: 22px;
+		position: absolute;
+		top: 8px;
+		right: 11px;
+		color: #9d9d9d;
+		text-shadow: 0 -1px 1px rbga(0,0,0,.6);
+		font-weight: bold;
+		cursor: pointer;
+		} 
+.reveal-modal input.text{background:none;border:1px solid #d9d9d9;width:136px;height:25px;color:#303030;cursor:auto;}
+.reveal-modal .order_myModal div{text-align:left;padding-bottom:10px;}
+.reveal-modal .order_myModal div span{color:#fc4516;font-weight:bold;}
+.reveal-modal .order_myModal div.myModal_button{text-align:center;}
+.reveal-modal input.quxiao{background:url(../images/eatery_ad19.png) no-repeat;margin-left:39px;}
+
+/************************添加地址的弹出框样式*****开始******************************/
+.buyer_address_add_popup_content p{
+    width:400px;
+    height:45px;
+    line-height:45px;
+    font-weight:inherit;
+    font-size:14px;
+}
+.buyer_address_add_popup_content p span{
+    width:82px;
+    display:inline-block;
+}
+.buyer_address_add_popup_content p input{
+    width:236px;
+    height:21px;
+    background:none;
+    color:#000;
+    border:1px solid #ccc;
+    
+}
+#buyer_address_add_popup_button{
+    text-align:center;
+}
+#buyer_address_add_popup_button input{
+    font-size: 14px;
+    color: #fff;
+    background: #FB4516;
+    width: 63px;
+    height: 29px;
+    border: none;
+    cursor: pointer;
+}
+#buyer_address_add_popup_button input:hover{
+    background:#303030;
+}
+
+/************************添加地址的弹出框样式*****结束******************************/

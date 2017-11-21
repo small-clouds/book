@@ -1,0 +1,111 @@
+<!DOCTYPE>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Eatery 乐享美食 就在这！</title>
+<meta name="keywords" content="" >
+<meta name="description" content="">
+<meta name="viewport" content="width=device-width, initial-scale=1">  
+<link rel="stylesheet" type="text/css" href="personal.css">
+<link rel="stylesheet" type="text/css" href="reveal.css">
+<script type="text/javascript" src="jquery.1.8.3.js"></script> 
+
+<style>
+    li.gbic10{ background-image:url("/PUBLIC/IMAGES/eatery_ad21.png");background-repeat: no-repeat;width:213px;}
+    li.gbic10 h2{ background-image: url("/PUBLIC/IMAGES/eatery_ad22.png");}
+    li.gbic10 h2 a{color:#fff;}
+    li.personal_li_ul_address a{ text-decoration:underline; color: #FB5C3C;}
+    select{width:50px;}
+</style>
+</head>
+<body>
+    <div class='personal_center_right'>
+        <div class="buyer_center">  
+            
+                     <h2>地址管理</h2>
+					   <div class="buyer_address">
+                     <h2>地址管理</h2>
+                     <p><span class="address_name">程序员</span><span class="address_adress">中国<span class="shengfen">河北省</span>保定市 莲池区</span><span class="address_detailed_address">朝阳大街路238号</span><span class="address_tel">3715458</span><span class="address_modify"><a class="edit" data-reveal-id="myModal" data-animation="none" href="">修改</a> <a href="">删除</a></span></p>
+                      <p><span class="address_name">程序员</span><span class="address_adress">中国<span class="shengfen">山西省</span>保定市 莲池区</span><span class="address_detailed_address">朝阳大街路238号</span><span class="address_tel">3715458</span><span class="address_modify"><a class="edit" data-reveal-id="myModal" data-animation="none" href="">修改</a> <a href="">删除</a></span></p>
+                     <p><span class="address_name">马兰花</span><span class="address_adress">中国<span  class="shengfen">保定省</span>保定市 竞秀区</span><span class="address_detailed_address">百花路238号</span><span class="address_tel">1234567891014</span><span class="address_modify"><a class="edit" data-reveal-id="myModal" data-animation="none" href="">修改</a> <a href="">删除</a></span></p>
+                
+					 <p class="address_add"><a href="javascript:void(0);" data-reveal-id="myModal" class="add" data-animation="none"> +添加新地址</a></p>
+                     
+                  
+                </div>
+        </div>
+ <div id="myModal" class="reveal-modal">
+             <div class="buyer_address_add_popup">
+                 <p>添加新地址</p>
+                 <a class="close-reveal-modal">×</a>
+				 <form method="post" action="address_add">
+                  <div class="buyer_address_add_popup_content">
+                      <p><span>收货人姓名:</span><input type="text" name="contacts"></p>
+                      <p>
+                           <span>所在区域:</span>
+                           <select id='country' name='address_id1'><option value='1' selected>中国</option></select>
+                   <select id='province' name='address_id2' style="width:100px;">
+                            <option value=''>请选择</option>
+                            <option  value="1">河北省</option>
+                            <option  value="2">保定省</option>  
+                            <option  value="3">山西省</option>                                                                                                                                                                                      
+                    </select>
+                    <select id='city' name='addressid3'>
+                        <option value=''>请选择</option>
+
+                        <volist name="address_city" id="city_">  
+                            <option  <eq name="shop.address_id3" value="$city_['id']" >selected</eq> value="<{$city_['id']}>"><{$city_['name']}></option>
+                        </volist>
+
+                    </select>
+                    <select id='area' name='address_id4'>
+                        <option value=''>请选择</option>
+                        <volist name="address_area" id="area_">  
+                            <option  <eq name="shop.address_id4" value="$area_['id']" >selected</eq> value="<{$area_['id']}>"><{$area_['name']}></option>
+                        </volist>
+
+                    </select>
+                        </p>
+                        <p><span>详细地址:</span><input type="text" name="address"></p>
+                        <p><span>手机号码:</span><input type="text" name="telphone"></p>
+						<p><span>邮政编码:</span><input type="text" name="postcode"></p>
+                        <p id="buyer_address_add_popup_button"><input type="submit"  value="提交"> <input  type="reset" value="取消"></p>
+                  </div>
+				  </form>
+                  
+                  
+                  
+              </div>
+          </div>
+       </div><!--center-right-->
+       
+       <script type="text/javascript" src="jquery.reveal.js"></script> 
+        <script type="text/javascript">                
+            $(".edit").click(function(){
+                var shengfen = $(this).parents("p").find(".shengfen").html(); //取到了 内容姓名   
+                var select = document.getElementById("province");  //此处必须是  不知道什么原因
+               // var select = $("#province");
+                var name = $(this).parents("p").find(".address_name").html(); //取到了 内容姓名         
+                var detailed = $(this).parents("p").find(".address_detailed_address").html(); //取到了 内容姓名
+                var tel = $(this).parents("p").find(".address_tel").html(); //取到了 内容姓名
+                $("input[name='contacts']").val(name);
+                $("input[name='address']").val(detailed);
+                $("input[name='telphone']").val(tel);
+                $("input[name='postcode']").val("");
+                                               
+              
+                for(var i=0; i < select.options.length; i++){
+                    if(select.options[i].innerHTML == shengfen){
+                        select.options[i].selected = true;  
+                        //alert($(this).val());
+                    }                                                               
+                }
+                            
+                    
+            });
+            
+            
+        </script>  
+
+</body>
+</html>

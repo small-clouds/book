@@ -1,0 +1,76 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<title>js版天气预报</title>
+
+<link href="prviate.css" rel="stylesheet" type="text/css">
+<script src="jquery.js"></script>
+<script src="weather.js" language="javascript" type="text/javascript" charset="UTF-8"></script>
+</head>
+<body>
+<div class="clear_36"></div>
+<form action="#" onSubmit="return false;">
+    <dl class="weather_case">
+        <dt class="weather_search_def"><a href="http://daluzai.net/"><img src="./skin/dalz.jpg"></a></dt>
+        <dd class="weather_search_v form_val" id="weather_search"><input name="city" type="text" />    
+        </dd>
+        <dd  class="common_front weather_conn form_sub" id="weather_sub">
+            <input name="call" type="button" value="查询" title="查询天气预报" />
+        </dd>
+        <dd class="weather_author" id="weather_author"><p>查看源码</p></dd>
+		<p style='color:#f0f'>天气查询小帮手</p>
+    </dl>
+</form>
+<div class="clear_13"></div>
+<div class="weather_res_case common_hide" id="weather_res_case">
+    <dl class="weather_res_item weather_res_stoday">
+        <dd><b id="city"></b></dd>
+        <dd>实时气温:<span id="temperature"></span></dd>
+        <dd>天气情况:<span id="weather"></span></dd>
+        <dd>风向:<span id="direction"></span></dd>
+        <dd>风力情况:<span id="wind"></span></dd>
+    </dl>
+    <dl class="weather_res_item weather_res_today">
+        <dd class="weather_res_dis_img" id="T_weather_img"></dd>
+        <dd>
+            <h2>今天</h2>
+        </dd>
+        <dd>天气情况:<span id="T_weather"></span></dd>
+        <dd>气温:<span id="T_temperature"></span></dd>
+        <dd>风向:<span id="T_direction"></span></dd>
+    </dl>
+    <dl class="weather_res_item weather_res_tmw">
+        <dd class="weather_res_dis_img" id="M_weather_img"></dd>
+        <dd>
+            <h2>明天</h2>
+        </dd>
+        <dd>天气情况:<span id="M_weather"></span></dd>
+        <dd>气温:<span id="M_temperature"></span></dd>
+        <dd>风向:<span id="M_direction"></span></dd>
+    </dl>
+    <dl class="weather_res_item weather_res_aftmw">
+        <dd class="weather_res_dis_img"  id="L_weather_img"></dd>
+        <dd>
+            <h2>后天</h2>
+        </dd>
+        <dd>天气情况:<span id="L_weather"></span></dd>
+        <dd>气温:<span id="L_temperature"></span></dd>
+        <dd>风向:<span id="L_direction"></span></dd>
+    </dl>
+    <div class="clear_debug"></div>
+</div>
+<div class="clear_13"></div>
+<script type="text/javascript">
+//创建天气预报核心对象
+var weather_=new weather();
+
+//输入框的默认提示
+def_value('weather_search','请输入要查询的城市天气');
+
+//监听用户事件
+onEvent.onEvent();
+
+</script>
+</body>
+</html>

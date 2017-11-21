@@ -1,0 +1,366 @@
+*{margin:0px; padding:0px}
+html{font-family:simsun;}
+li{list-style: none}
+a{text-decoration: none}
+
+.fr{float:right;}
+.fl{float:left}
+.clear{clear:both}
+.more{
+	display:block;
+	width:73px;
+	font-size:14px;
+	background:url(../images/more.jpg) no-repeat center right;;
+}
+.more a{
+	color:rgba(229,77,38,1)
+}
+
+
+#top{
+	width:100%;
+	height:90px; 
+	background:rgba(21,27,31,0.8);
+	position:fixed; top:0px; z-index:2;
+	}
+	
+#nav,#logo{
+	margin-top:30px;
+	}	
+
+#logo{
+	margin-left:20%;
+	}
+#nav{
+	margin-right:10%;
+	}
+#nav li{
+	width:76px;
+	height:40px;
+	line-height:40px;
+	text-align:center;
+	float:left;
+
+	}
+	
+#nav li:hover{
+	background:rgba(218,103,82,1)
+	}
+#nav li a{
+	color:#fff
+	}
+	
+#banner{
+	width:100%
+	}
+	
+#banner img{
+	width:100%
+	}
+
+#product_name{
+
+	height:293px;
+	background:rgba(246,246,246,1);
+
+}
+#product_name ul{
+	width:750px;
+	margin:auto;
+	padding-top:38px;
+	
+}
+#product_name ul li{
+	width:250px;
+	height:200px;
+	text-align:center;
+	float:left;
+}
+
+#product_name ul li h3{
+	height:34px;
+	line-height:34px;
+}
+#product_name ul li p{
+	width:200px;
+	margin:auto;
+	font-size:13px;
+	text-align:center;
+}
+#product_name ul li a{
+	margin:auto;
+	margin-top:8px;
+	display:block;
+	width:110px;
+	height:30px;
+	line-height:30px;
+	background:rgba(218,103,82,1);
+	color:rgba(255,255,255,1)
+}
+#product_name ul li a:hover{
+	background:rgba(85,85,85,1);
+}
+
+
+#product_img{
+	height:346px;
+	background:rgba(53,67,78,1);
+	border-top:8px solid rgba(48,60,72,1)
+}
+
+#product_img ul{
+	width:820px;
+	margin:auto;
+	margin-top:100px;
+}
+#product_img ul li{
+	margin-left:20px;
+	width:94px;
+	height:94px;
+	background:rgba(218,103,82,1);
+	border-radius:83px;
+	text-align:center;
+	float:left;
+	padding:26px;
+	border:10px solid rgba(225,133,118,1);	
+}
+
+
+
+#product_img ul li:hover{
+	padding:36px;
+	border:none;
+}
+#product_characteristics,#case{
+		background:rgba(246,246,246,1);		
+		padding:40px 0px;
+}
+
+#product_characteristics ul{
+	width:900px;
+	margin:auto;
+	background:rgba(246,246,246,1);		
+}
+#product_characteristics li{
+	width:210px;
+	height:150px;
+	text-align:center;
+	float:left;
+	margin-left:5px;
+	
+}
+
+#product_characteristics li h3{
+	height:40px;
+	line-height:40px;
+	font-size:16px;
+	color:rgba(144,144,144,1);
+}
+#product_characteristics li p{
+	color:rgba(144,144,144,1);
+	font-size:12px;
+	line-height:22px;
+}
+
+#product_characteristics hr{
+	width:850px;
+	margin:auto;
+	height:2px;
+	border:none;
+	border-top:2px dotted rgba(234,234,234,1);
+}
+
+#case{
+	margin-top:20px;
+	height:430px;
+}
+
+#case h2{
+	height:53px;
+	line-height:30px;
+	font-size:18px;
+	color:rgba(86,86,86,1);
+}
+
+#case li{
+	float:left;
+	margin-left:13px;
+	height:350px;
+	position:relative;
+}
+
+#case li img{
+	width:210px;
+	height:265px;
+}
+
+.case_shadow{
+	display:none;
+	width:210px;
+	height:265px;
+	/*background-color:rgba(210,210,210,0.8);*/
+	position:absolute; top:0px; left:0px; z-index:1;
+	filter:alpha(opacity=80); 
+	-moz-opacity:0.8; 
+	-khtml-opacity: 0.8; 
+	opacity: 0.8;
+}
+
+#case li:hover .case_shadow{
+	display:block
+}
+
+#Introduction{
+	width:900px;
+	margin:auto;
+	height:320px;
+}
+
+#about h2,#news h2,#problem h2{
+	line-height:18px;
+	height:40px;
+	font-size:18px;
+	color:rgba(86,86,86,1);
+}
+
+#about{
+	width:242px;
+}
+#about img{
+	width:242px;
+}
+
+#about p{
+	font-size:12px;
+	line-height:18px;
+	color:rgba(86,86,86,1);
+}
+
+
+#news{
+	margin-left:80px;
+}
+
+#news ul li h3{
+	font-size:14px;;
+	height:18px;	
+	line-height:18px;
+}
+
+#news ul{
+	width:300px;
+}
+#news ul li{
+	margin-top:15px;
+	width:100%;
+	height:75px;
+	border-bottom:2px dotted rgba(234,234,234,1);
+}
+#news ul li img{
+	float:left;
+}
+
+#problem,#problem ul{
+	width:240px;
+}
+
+#problem ul li{
+	text-align:left;
+	font-size:12px;
+	font-weight:bold;
+	height:38px;
+	width:243px;
+	line-height:46px;
+	background:url(../images/plus.jpg) no-repeat center right;
+	border-bottom:2px dotted rgba(234,234,234,1);
+	float:none;
+}
+#problem ul li a{
+	color:rgba(86,86,86,1)
+}
+	
+#foot{
+	height:300px;
+	background:rgba(53,67,78,1);
+}	
+	
+#foot_nav,#honor{
+	width:190px;
+	float:left;
+	margin-left:18px;
+}
+#foot_main{
+	width:940px;
+	margin:auto;
+	padding-top:30px;
+}
+#foot_nav h3,#honor h3,#foot_news>h3,#contact h3{
+	font-size:14px;
+	height:30px;
+	line-height:40px;
+	color:#fff;
+	border-bottom:1px dotted rgba(234,234,234,1);
+	
+}
+
+#foot_nav li,#honor li{
+	margin-top:10px;
+	font-size:12px;
+	height:20px;
+	list-style-image: url(../images/more_f.jpg);
+	margin-left:20px;
+}
+
+#foot_nav li a,#honor li a{
+	color:#fff;
+}
+
+#foot_news{
+	width:275px;
+	float:left;
+	margin-left:20px;
+}
+
+#foot_news li{
+	height:60px;
+	margin-top:10px;
+}
+
+#foot_news li img{
+	float:left;
+}
+#foot_news li h3{
+	font-size:12px;
+	color:#fff;
+	margin-left:75px;
+}
+#foot_news li p{
+	font-size:12px;
+	color:#FFF;
+	margin-left:75px;
+	line-height:16px;
+}
+
+#contact{
+	width:190px;
+	margin-left:18px;
+	float:left;
+}
+
+#contact li{
+	margin-top:30px;
+	color:#fff;
+	font-size:12px;
+	height:0px;
+	line-height:20px;
+	font-weight:bold;
+}
+
+#record{
+	height:50px;
+	background:rgba(218,103,82,1);
+	text-align:center;
+	line-height:50px;
+	font-size:12px;
+	color:#fff;
+}

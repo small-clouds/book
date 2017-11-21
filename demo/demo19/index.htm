@@ -1,0 +1,72 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title> dt和 dd的显示隐藏菜单 js </title>
+</head>
+
+<body>
+        <div class="ContainerLeft">  
+        <dl>  
+            <dt id="dt1"><a onclick="showmenu(this,1)">一级菜单</a></dt>  
+                    <dd><a href="#" >二级菜单</a></dd>  
+                    <dd><a href="#" >二级菜单</a></dd>  
+                    <dd><a href="#" >二级菜单</a></dd>  
+                    <dd><a href="#" >二级菜单</a></dd>  
+            <dt id="dt2"><a onclick="showmenu(this,2)">一级菜单</a></dt>  
+                    <dd><a href="#" >二级菜单</a></dd>  
+                    <dd><a href="#" >二级菜单</a></dd>  
+                    <dd><a href="#" >二级菜单</a></dd>  
+                    <dd><a href="#" >二级菜单</a></dd> 
+            <dt id="dt3"><a onclick="showmenu(this,3)">一级菜单</a></dt>  
+                    <dd><a href="#" >二级菜单</a></dd>  
+                    <dd><a href="#" >二级菜单</a></dd>  
+                    <dd><a href="#" >二级菜单</a></dd>  
+                    <dd><a href="#" >二级菜单</a></dd>                     
+            <dt id="dt4"><a onclick="showmenu(this,4)">一级菜单</a></dt>  
+                    <dd><a href="#" >二级菜单</a></dd>  
+                    <dd><a href="#" >二级菜单</a></dd>  
+                    <dd><a href="#" >二级菜单</a></dd>  
+                    <dd><a href="#" >二级菜单</a></dd>                                                                          
+        </dl>  
+        <div class="LineHeight">  
+        </div>  
+    </div>  
+  
+    <script type="text/javascript">  
+        var dtid = 0;  //记录当前显示的ID  
+        function showmenu(o,id){  
+            var obj = o.parentNode;  
+            var oNode = obj.nextSibling;  
+            if(parseInt(dtid) > 0) {  
+                hidemenu(dtid,'none');  
+            }  
+            if(dtid == id) dtid = 0;  
+            else {  
+                hidemenu(id);  
+                dtid = id;  
+            }  
+        }  
+          
+        function hidemenu(id,none) {  
+            var o = document.getElementById("dt"+id);  
+            var j = 0 ; //防止死循环  
+            var oNode = o.nextSibling;  
+            while(oNode != null && oNode.tagName != "DT" && j<8) {  
+                if(oNode.tagName == "DD") {  
+                    if(none == null) oNode.style.display = "";  
+                    else oNode.style.display=none;                  
+                }  
+                j++;  
+                oNode = oNode.nextSibling;  
+            }  
+        }  
+        function menuiload() {  
+            for(var i = 1;i<9;i++)  
+                hidemenu(i,'none');  
+        }  
+        setTimeout(menuiload,1)  
+      
+ </script>  
+</body>
+</html>

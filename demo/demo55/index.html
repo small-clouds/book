@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0" />
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="../lib/css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="../css/base.css" />
+    <link rel="stylesheet" type="text/css" href="../css/upload.css" />
+    <title></title>
+    <style>
+body{
+  background:#eee; 
+  font-size:0.55rem;}
+.container {
+}
+.container .row{
+  width:95%;
+   margin:auto;
+  }
+  .row >div{
+    text-align: left;
+    margin-bottom: 0.5rem;
+  }
+.tishi{ 
+  color:#BF0D13;
+   }
+   .tishi p{
+    text-align: left;
+    padding-left: 0.8rem;
+   }
+.container>div{
+  text-align:center;
+   padding:0.3rem 0;
+  }
+.row input[type='text']{ 
+  border:1px solid #aaa;
+   background:none;
+   }
+.row input[type='file']{
+  width:100%; font-size:0.6rem;
+    }
+.row input[type='button'],.row input[type='submit']{ 
+  padding:0.25rem 0.5rem; 
+  background:none;
+  border:1px solid #cd0301;
+  margin: 0.5rem;
+  border-radius: 5px;
+  color: #cd0301;
+}
+.zhizhao{
+  clear:both; 
+  padding:0.5rem 0rem;
+  }
+#previewId img,#preview img{ 
+  width:80%; 
+  margin:auto;
+  }
+  .row input[type="checkbox"]{
+    vertical-align: middle;
+
+  }
+.shopTreaty{
+  color: #cd0301;
+  text-decoration: underline;
+}
+    </style>
+
+  </head>
+  <body>
+    <div class="titleTea">
+      <a href="../index.html">
+        <span class="glyphicon glyphicon-menu-left"></span>
+      </a>
+      <h3>商户入驻</h3>
+    </div>
+    <form id="imageform" name='imageform'>
+      <div class="container">
+        <div class='tishi'> <p>商户联系人用于接受茶未来反馈通知，请正确填写。</p>
+        <p>注意事项：上传图片格式为jpg，图片大小超过1M</p></div>
+        <input name='uid' type='hidden' class='userid'>
+        <div class='container upload '>
+          <div class='row'>
+            <div class='col-xs-4'>营业执照:</div>
+            <div class='col-xs-8'> <input class='shopname' type="file" name='img[]'></div>
+          </div>
+          <div class='row'>
+            <div class='col-xs-4'>运营者手持身份证:</div>
+            <div class='col-xs-8'> <input class='shopname' type="file" name='img[]'></div>
+          </div>
+        </div>
+        <div class='row agreement'>
+          <input type="checkbox"><a href="#" class="shopTreaty">&lt;&lt;商家在入驻协议&gt;&gt;</a>
+        </div>
+        <div class='row'><input type="button" value="取消申请" class="cancel">
+        <input type="button" class='upload_sub' value="提交申请"></div>
+        
+      </div> </form>
+    </body>
+    <script src="../lib/js/jquery-1.12.4.js"></script>  
+    <script>
+    // 需要引入jquery 我并没有引入
+$('.upload_sub').on('click', function() {
+  // 前端验证
+    var tag1 = $('.shopname');
+    for (var i = 0; i < tag1.length; i++) {
+      if (tag1[i].value == '') {
+        alert('资质内容填写不全，请检查')
+        return false;
+      }
+    }
+    if ($('.agreement input').prop('checked')) {
+      //var url = 'http://www.teaweilai.com/app/Admin/AppIcon/IconUpload'
+      var url = 'http://www.teaweilai.com/app/Admin/AppSb/sbUpload'
+      //从这里开始上传 获取表单
+      var form = document.getElementById('imageform');
+      var formdata = new FormData(form);
+      $.ajax({
+        url: url,
+        type: 'POST',
+        dataType: 'json',
+        data: formdata,
+        cache: false,
+        processData: false,
+        contentType: false
+      }).done(function(data) {
+        console.log(data)
+        // return false;
+        if (data.code == '200') {
+          window.location.href = "../index.html";
+          //提交成功  返回首页      
+        }
+      })
+    } else {
+      alert('请同意用户协议')
+      return false;
+    }
+
+  })
+
+
+    </script>
+  </html>
