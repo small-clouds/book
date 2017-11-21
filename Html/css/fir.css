@@ -1,0 +1,23 @@
+* { margin: 0px;padding: 0px;}
+ul,li{list-style: none;}
+
+body{font-size:14px;}      
+.none { display: none;}
+span.remark{color:red}
+
+h1{text-align:center;font-size:14px;}
+.demoMain {max-width:1200px; margin:auto; }
+.demoMain >div{ margin-left:50px;}
+.demoMain h2{
+    font-size:16px;
+    text-indent:2em;
+    background:#9ff;
+    margin:5px 0px;
+}
+.demoMain h3{
+    font-size:14px;
+    background:#00F5FF;
+    margin:3px 0px;
+    
+}
+.demoMain div div img{max-width:100%}
