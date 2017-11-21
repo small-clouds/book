@@ -1,10 +1,17 @@
 * { margin: 0px;padding: 0px;}
 ul,li{list-style: none;}
-
+a{text-decoration: none;}
 body{font-size:14px;}      
 .none { display: none;}
 span.remark{color:red}
 
+/*目录*/
+.stageTitle{ text-align: center; font-size:16px;font-style: }
+.Stage_ul{margin:0px 20px; font-size:12px;}
+.Stage_ul li{ margin:5px 5px; background:#4fc3b9;}
+.Stage_ul li:hover{ background:#5a8831;}
+.Stage_ul li a{ color:#000;}
+/*内容*/
 h1{text-align:center;font-size:14px;}
 .demoMain {max-width:1200px; margin:auto; }
 .demoMain >div{ margin-left:50px;}
@@ -21,3 +28,6 @@ h1{text-align:center;font-size:14px;}
     
 }
 .demoMain div div img{max-width:100%}
+
+
+
