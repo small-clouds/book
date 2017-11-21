@@ -28,7 +28,7 @@
 			</dataSource>
 		</environment>
 	</environments>
-	<!-- 映射信息 -->
+	<!-- 映射信息 相当于引入资源 -->
 	<mappers>
 		<mapper resource="com/cloud/dao/UsersMapper.xml" />
 		<mapper resource="com/cloud/dao/UserMapper.xml" />

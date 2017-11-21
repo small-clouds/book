@@ -56,26 +56,49 @@
         <h2>关于Spring配置文件</h2>
         <div class="none">
             <div>
-                <pre>
-
-&lt;?xml version="1.0" encoding="UTF-8"? &gt;
-&lt;beans xmlns="http://www.springframework.org/schema/beans"
-	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:p="http://www.springframework.org/schema/p"
-	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd" &gt;
-
-	<!--  非单例模式prototype  singleton单例模式 只有一个 -->
-	&lt;bean class="com.zrgk.bean.Users" id="users" scope="prototype" &gt; &lt;/bean &gt;
-&lt;/beans &gt;
-</pre>
+                <a href="applicationContext.xml">基础配置文件倒包/外部文件引入Jdbc</a><br>
+                <a href="config/applicationContext_ioc.xml">基础配置使用</a><br>
+                <a href="config/applicationContext_aop.xml">aop联盟配置文件</a><br>
+                <a href="config/applicationContext_aopJ.xml">aopJ切面配置</a><br>
+                
             </div>
         </div>
         
-        <h2>关于Spring的使用</h2>
+        <h2>关于Spring的配置使用 基础</h2>
         <div class="none">
-            <div>使用</div>
-                <div> ApplicationContext ac = new ClassPathXmlApplicationContext("applicationContext.xml"); </div>
-                <div>Users u= ac.getBean("users",Users.class); </div>
-                <div>System.out.println(u);
+            <div><a href="UsersTest.java">基础使用方法 和JDBC</a></div>
+            <div><a href="UsersTest1.java">AOP联盟方式的使用</a></div>
+            <div><a href="AopJ.java">AOPJ使用</a></div>
+        </div>
+        <h2>AOP方式的配置与使用</h2>
+        <div class="none">
+            <h3>AOP联盟方式的配置</h3>
+            <div class="none">
+                <div><a href="config/applicationContext_aop.xml">aop联盟配置文件</a></div>
+            </div>
+            <h3>AOP联盟方式使用方法</h3>
+            <div class="none">
+                <div><a href="UsersTest1.java">AOP使用</a></div>
+            </div>
+            <h3>AOPJ方式的配置</h3>
+            <div class="none">
+                <div><a href="config/applicationContext_aopJ.xml">AOPJ配置文件</a></div>
+            </div>
+            <h3>AOP？方式使用方法</h3>
+            <div class="none">
+                <div><a href="AopJ.java">AOPJ使用</a></div>
+            </div>
+        </div>
+        <h2>IOC方式的配置与使用</h2>
+        <div class="none">
+            <h3>IOC方式配置文件</h3>
+            <div class="none">
+                <div> <a href="applicationContext.xml">基础配置文件倒包/外部文件引入Jdbc</a></div>
+                <div> <a href="config/applicationContext_ioc.xml">基础配置使用</a></div>
+            </div>
+            <h3>IOC使用方法</h3>
+            <div class="none">
+                 <div><a href="UsersTest.java">ioc基础使用和JDBC</a></div>
             </div>
         </div>
     </div>

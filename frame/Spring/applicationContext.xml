@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+ 	<!--建议利用逆向工程方式建立配置文件 这样写代码有提示 -->
+ 	<!-- 引入方式 -->
+ 	
+ 	<!--内部xml引入的引入 -->
+	<import resource="config/applicationContext_ioc.xml"/> <!-- ioc 用法 基础-->
+	<import resource="config/applicationContext_aop.xml"/> <!-- aop用法 面向切面 -->
+	<import resource="config/applicationContext_aopJ.xml"/> <!-- aopJ用法 这个用的多 -->
+	
+<!-- 	ApplicationContext ac = new ClassPathXmlApplicationContext("applicationContext_*.xml"); 通配符 -->
+<!-- ApplicationContext ac = new ClassPathXmlApplicationContext("applicationContext.xml","applicationContext_user"); 多参数 -->
+
+
+	<!-- 引入jdbc的配置文件 -->
+	<bean class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+		<property name="locations">
+			<list>
+				<value>classpath:dbconfig.properties</value><!-- 这里是集合注意啊 -->
+			</list>
+		</property>
+	</bean>
+	<!--  UsersTest Main03 前提在上面引入 配置文件 还要有jdbc的类-->
+	<bean id="db" class="com.zrgk.test.JdbcTest">
+		<property name="driverClass" value="${driverClass}"></property>
+		<property name="url" value="${url}"></property>
+		<property name="username" value="${username}"></property>
+		<property name="password" value="${password}"></property>
+	</bean>
+	
+</beans>
