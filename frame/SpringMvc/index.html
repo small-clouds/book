@@ -35,7 +35,7 @@
             <div>(4)(5)调用业务处理和返回结果：Controller调用业务逻辑处理后，返回ModelAndView。 </div>
             <div>(6)(7)处理视图映射并返回模型： DispatcherServlet查询一个或多个ViewResoler视图解析器，找到ModelAndView指定的视图。</div>
             <div>(8) Http响应：视图负责将结果显示到客户端。</div>
-            <div><img src="springMvc_1.png" alt="springmvc运行原理"></div>
+            <div><img src="config/springMvc_1.png" alt="springmvc运行原理"></div>
         </div>
         <h2>Mvc注解方式配置</h2>
         <div class="none">
@@ -52,13 +52,13 @@
         <h2>Spring MVC的配置方式配置</h2>
         <div class="none">
             <div>倒包一堆</div>
-            <div><a href="web.xml">web.xml</a> 在配置中设置applicationContex.xml的路径充当拦截器的作用</div>
-            <div><a href="applicationContext.xml">applicationContext.xml</a> SpringMVC的核心配置解析器</div>
+            <div><a href="config/web.xml">web.xml</a> 在配置中设置applicationContex.xml的路径充当拦截器的作用</div>
+            <div><a href="config/applicationContext.xml">applicationContext.xml</a> SpringMVC的核心配置解析器</div>
         </div>
         <h2>Spring MVC的配置方式使用</h2>
         <div class="none">
-            <div><a href="LoginController.java">LoginController.java</a>控制器 <span class="remark">实现</span>implements Controller -》 public ModelAndView handleRequest()的方法</div>
-            <div><a href="login.jsp">login.jsp</a>页面</div>
+            <div><a href="java/LoginController.java">LoginController.java</a>控制器 <span class="remark">实现</span>implements Controller -》 public ModelAndView handleRequest()的方法</div>
+            <div><a href="jsp/login.jsp">login.jsp</a>页面</div>
         </div>
     </div>
 </body>

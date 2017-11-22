@@ -20,7 +20,7 @@
 	<link href="css/nigran.datepicker.css" rel="stylesheet">
 	<link href="css/melon.datepicker.css" rel="stylesheet">
 
-	<script src="js/jquery-1.9.1.js"></script>
+	<script type="text/javascript" src="../../other/jquery.min.js"></script>
 	<script src="js/jquery-ui-1.10.1.min.js"></script>
 	<script>
 
@@ -132,12 +132,19 @@
 	</style>
 </head>
 <body>
-
-	<a href="https://github.com/rtsinani/jquery-datepicker-skins"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_red_aa0000.png" alt="Fork me on GitHub"></a>
-
-	<h1>jQuery datepicker skins</h1>
-
 	<article>
+		<div>
+			<input type="text" id="date-picker-input-1" />
+		</div>
+		<script>
+		$(function() {
+			$( "#date-picker-input-1" ).datepicker({
+				inline: true,
+				showOtherMonths: true
+			})
+			.datepicker('widget').wrap('<div class="ll-skin-lugo"/>');
+		});
+	</script>
 		<table class="datepickers-cont">
 			<tr>
 				<td class="part">
@@ -218,9 +225,5 @@
 
 		</table>
 	</article>
-	
-	<footer>
-		<a href="https://github.com/rtsinani">rtsinani</a>. Built with <a href="https://github.com/rtsinani/jquery-datepicker-skins/raw/master/js/jquery-1.9.1.js">jquery-1.9.1</a> and <a href="https://github.com/rtsinani/jquery-datepicker-skins/raw/master/js/jquery-ui-1.10.1.min.js">jquery-ui-1.10.1</a>. Designs by <a href="http://365psd.com/" target="_blank">365psd.com</a>
-	</footer>
 </body>
 </html>
