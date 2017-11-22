@@ -1,68 +1,212 @@
-[
-{
-region:{
-name:'北京市',
-code:'11',
-state:[
-{
-name:'北京',
-code:'01',
-city:[
-{name:'东城区',code:'01'},
-{name:'西城区',code:'02'},
-{name:'崇文区',code:'03'},
-{name:'宣武区',code:'04'},
-{name:'朝阳区',code:'05'},
-{name:'丰台区',code:'06'},
-{name:'石景山区',code:'07'},
-{name:'海淀区',code:'08'},
-{name:'门头沟区',code:'09'},
-{name:'房山区',code:'11'},
-{name:'通州区',code:'12'},
-{name:'顺义区',code:'13'},
-{name:'昌平区',code:'14'},
-{name:'大兴区',code:'15'},
-{name:'怀柔区',code:'16'},
-{name:'平谷区',code:'17'},
-{name:'密云县',code:'28'},
-{name:'延庆县',code:'29'}
-]
-}
-]
-}
-},
-{
-region:{
-name:'天津市',
-code:'12',
-state:[
-{
-name:'天津',
-code:'01',
-city:[
-{name:'和平区',code:'01'},
-{name:'河东区',code:'02'},
-{name:'河西区',code:'03'},
-{name:'南开区',code:'04'},
-{name:'河北区',code:'05'},
-{name:'红桥区',code:'06'},
-{name:'塘沽区',code:'07'},
-{name:'汉沽区',code:'08'},
-{name:'大港区',code:'09'},
-{name:'东丽区',code:'10'},
-{name:'西青区',code:'11'},
-{name:'津南区',code:'12'},
-{name:'北辰区',code:'13'},
-{name:'武清区',code:'14'},
-{name:'宝坻区',code:'15'},
-{name:'宁河县',code:'21'},
-{name:'静海县',code:'23'},
-{name:'蓟县',code:'25'}
-]
-}
-]
-}
-},
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0" />
+    <!-- 微信强制清除缓存-->
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="Expires" content="0" />
+    <meta charset="UTF-8">
+    <!--<link rel="icon" type="text/css" href=""/>-->
+  </head>
+  <body>
+    <div id="app">
+       <div> 时间： {{ message }}------{{ aaaa }} </div>
+     <div> <input v-model="aaaa" class='message'></div>
+     <div>{{ reversedMessage() }}</div>
+      <div><input type="button" v-on:click="greet(aaaa)" value='vueButton'></div>
+<div>
+  <ul >
+    <li v-for="item in cityList" style='border:1px solid #ccc;' v-if="item.region.code != 11" v-bind:data-id='item.region.code'> 
+      省名称：  {{ item.region.name }} 
+      <div style='margin-left:20px;' v-for="items in item.region.state"  v-bind:data-id='items.code'> 
+        市名称 : {{ items.name }} 
+        <div style='margin-left:40px;'>区名称:
+          <span style='padding:0 20px' v-for="QuName in items.city" v-bind:data-id='QuName.code'>{{ QuName.name }}</span>
+        </div>
+      </div>
+     </li>
+  </ul>
+</div>
+
+    </div>  
+    <div id="app111" style='display:none'>
+       <div> 时间： {{ message }}------{{ aaaa }} </div>
+     <div> <input v-model="aaaa" class='message'></div>
+      <div><input type="button" v-on:click="greet(aaaa)" value='vueButton'></div>
+    </div>
+  </body>
+</html>
+<script src="vue.min.js"></script>
+<script src="../../other/jquery.min.js"></script>
+<!-- 轮播图小圆点 -->
+<script type="text/javascript" >
+var datatime=1495855690000
+var cityList
+$(function(argument) {
+  console.log(cityList)
+  var demo = new Vue({
+    el:'#app',
+    data: {
+        message:datatime,
+        aaaa:'测试我容易吗',
+        cityList:cityList
+    },
+    methods: {
+        greet: function(b) {
+            // // 方法内 `this` 指向 vm
+            //alert(this.aaaa)
+            alert(QuName.name)
+            //alert(b)
+        },
+        reversedMessage: function () {
+          // `this` points to the vm instance
+          //return this.message.split('').reverse().join('')
+            var a = this.message;
+            var date = new Date(a);
+            var Y = date.getFullYear() + '-';
+            M = (date.getMonth() + 1 < 10 ? '0' + (date.getMonth() + 1) : date.getMonth() + 1) + '-';
+            D = (date.getDate() < 10 ? '0' + date.getDate() : date.getDate()) + ' ';
+            h = (date.getHours() < 10 ? '0' + date.getHours() : date.getHours()) + ':';
+            m = (date.getMinutes() < 10 ? '0' + date.getMinutes() : date.getMinutes()) + ':';
+            s = (date.getSeconds() < 10 ? '0' + date.getSeconds() : date.getSeconds());
+            var time_new_xu = Y + M + D + h + m + s;
+            return time_new_xu;
+        }
+      },
+    computed: {
+    // a computed getter
+        reversedMessage1: function () {
+          // `this` points to the vm instance
+          //return this.message.split('').reverse().join('')
+            var a = this.message;
+            var date = new Date(a);
+            var Y = date.getFullYear() + '-';
+            M = (date.getMonth() + 1 < 10 ? '0' + (date.getMonth() + 1) : date.getMonth() + 1) + '-';
+            D = (date.getDate() < 10 ? '0' + date.getDate() : date.getDate()) + ' ';
+            h = (date.getHours() < 10 ? '0' + date.getHours() : date.getHours()) + ':';
+            m = (date.getMinutes() < 10 ? '0' + date.getMinutes() : date.getMinutes()) + ':';
+            s = (date.getSeconds() < 10 ? '0' + date.getSeconds() : date.getSeconds());
+            var time_new_xu = Y + M + D + h + m + s;
+            return time_new_xu;
+        }
+      }
+  }); 
+
+var Message = new Vue({
+    el:'#app111',
+    data: {
+        message:0,
+        aaaa:'测试我容易吗??????????????????'
+    }
+  }); 
+
+
+  //  new Vue({
+  //   el:'#app',
+  //   data: {
+  //       message:'Hello World!'
+  //   }
+  // }); 
+  // 
+  // 
+  // 
+  // 
+  // Date.prototype.format=function(fmt){
+// fmt=fmt||
+
+// }
+
+// Date.prototype.format = function (fmt) {
+//     fmt=fmt||"yyyy-MM-dd h:mm:ss"
+//     var o = {
+//         "M+": this.getMonth() + 1, //月份
+//         "d+": this.getDate(), //日
+//         "h+": this.getHours(), //小时
+//         "m+": this.getMinutes(), //分
+//         "s+": this.getSeconds(), //秒
+//         "q+": Math.floor((this.getMonth() + 3) / 3), //季度
+//         "S": this.getMilliseconds() //毫秒
+//     };
+//     if (/(y+)/.test(fmt)) fmt = fmt.replace(RegExp.$1, (this.getFullYear() + "").substr(4 - RegExp.$1.length));
+//     for (var k in o)
+//     if (new RegExp("(" + k + ")").test(fmt)) fmt = fmt.replace(RegExp.$1, (RegExp.$1.length == 1) ? (o[k]) : (("00" + o[k]).substr(("" + o[k]).length)));
+//     return fmt;
+// }
+
+// new Date().format()
+// new Date().format("yyyy年mm月dd日")
+// new Date().format("yy年m月d日")
+// new Date().format("yyy年")
+
+})
+</script>
+<script>
+cityList=[
+  {
+    region:{
+      name:'北京市',
+      code:'11',
+      state:[
+        {
+          name:'北京',
+          code:'01',
+          city:[
+            {name:'东城区',code:'01'},
+            {name:'西城区',code:'02'},
+            {name:'崇文区',code:'03'},
+            {name:'宣武区',code:'04'},
+            {name:'朝阳区',code:'05'},
+            {name:'丰台区',code:'06'},
+            {name:'石景山区',code:'07'},
+            {name:'海淀区',code:'08'},
+            {name:'门头沟区',code:'09'},
+            {name:'房山区',code:'11'},
+            {name:'通州区',code:'12'},
+            {name:'顺义区',code:'13'},
+            {name:'昌平区',code:'14'},
+            {name:'大兴区',code:'15'},
+            {name:'怀柔区',code:'16'},
+            {name:'平谷区',code:'17'},
+            {name:'密云县',code:'28'},
+            {name:'延庆县',code:'29'}
+          ]
+        }
+      ]
+    }
+  },
+  {
+    region:{
+      name:'天津市',
+      code:'12',
+      state:[
+        {
+          name:'天津',
+          code:'01',
+          city:[
+            {name:'和平区',code:'01'},
+            {name:'河东区',code:'02'},
+            {name:'河西区',code:'03'},
+            {name:'南开区',code:'04'},
+            {name:'河北区',code:'05'},
+            {name:'红桥区',code:'06'},
+            {name:'塘沽区',code:'07'},
+            {name:'汉沽区',code:'08'},
+            {name:'大港区',code:'09'},
+            {name:'东丽区',code:'10'},
+            {name:'西青区',code:'11'},
+            {name:'津南区',code:'12'},
+            {name:'北辰区',code:'13'},
+            {name:'武清区',code:'14'},
+            {name:'宝坻区',code:'15'},
+            {name:'宁河县',code:'21'},
+            {name:'静海县',code:'23'},
+            {name:'蓟县',code:'25'}
+          ]
+        }
+      ]
+    }
+  },
 {
 region:{
 name:'河北省',
@@ -5345,3 +5489,5 @@ city:[
 }
 }
 ];
+
+</script>
