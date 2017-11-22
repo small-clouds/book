@@ -39,9 +39,11 @@ class MyAspect {
 	}
 
 	// 环绕切割
-	public void around() {
+	public void around(ProceedingJoinPoint pjp){
 		try {
-
+			System.out.println("aspect ... around ... 1");
+			pjp.proceed();
+			System.out.println("aspect ... around ... 2");
 		} catch (Throwable e) {
 			e.printStackTrace();
 		}

@@ -25,10 +25,11 @@
             <div>处理器映射：选择使用那个控制器来处理请求</div>
             <div>视图解析器：选择结果应该如何渲染</div>
             <div>通过以上两点，Spring MVC保证了如何选择控制处理请求和如何选择视图展现输出之间的松耦合</div>
+            <div>用controler替代了servlet</div>
         </div>
         <h2>运行原理</h2>
         <div class="none">
-            <div>(1) Http请求：客户端请求提交到DispatcherServlet。 </div>
+            <div>(1) Http请求：在web.xml拦截 客户端将请求提交到DispatcherServlet。 </div>
             <div>(2) 寻找处理器：由DispatcherServlet控制器查询一个或多个HandlerMapping，找到处理请求的Controller。 </div>
             <div>(3) 调用处理器：DispatcherServlet将请求提交到Controller。 </div>
             <div>(4)(5)调用业务处理和返回结果：Controller调用业务逻辑处理后，返回ModelAndView。 </div>
@@ -36,17 +37,28 @@
             <div>(8) Http响应：视图负责将结果显示到客户端。</div>
             <div><img src="springMvc_1.png" alt="springmvc运行原理"></div>
         </div>
-        <h2>Spring MVC的配置</h2>
+        <h2>Mvc注解方式配置</h2>
         <div class="none">
             <div>倒包一堆</div>
-            <div><a href="">web.xml</a>在配置中设置applicationContex.xml的路径</div>
+            <div><a href="">web.xml</a>在配置中设置applicationContex.xml的路径充当拦截器的作用</div>
             <div><a href="">applicationContext.xml</a>主要是开启注解功能、配置试图解析器</div>
         </div>
-        <h2>Spring MVC的使用</h2>
+        <h2>Mvc注解方式使用</h2>
         <div class="none">
             <div><a href="">LoginContraller.java</a>控制器 各种使用的方法</div>
             <div><a href="">Users</a>实体类</div>
             <div><a href="">login</a>页面</div>
+        </div>
+        <h2>Spring MVC的配置方式配置</h2>
+        <div class="none">
+            <div>倒包一堆</div>
+            <div><a href="web.xml">web.xml</a> 在配置中设置applicationContex.xml的路径充当拦截器的作用</div>
+            <div><a href="applicationContext.xml">applicationContext.xml</a> SpringMVC的核心配置解析器</div>
+        </div>
+        <h2>Spring MVC的配置方式使用</h2>
+        <div class="none">
+            <div><a href="LoginController.java">LoginController.java</a>控制器 <span class="remark">实现</span>implements Controller -》 public ModelAndView handleRequest()的方法</div>
+            <div><a href="login.jsp">login.jsp</a>页面</div>
         </div>
     </div>
 </body>
