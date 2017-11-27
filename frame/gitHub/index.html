@@ -18,65 +18,75 @@
             </p>
             <p>$ git config --global user.name "Your Name"</p>
             <p>$ git config --global user.email "email@example.com"</p>
-            <p>$ git init 命令把这个目录变成Git可以管理的仓库</p>
-            <p>$ ssh-keygen -t rsa -C "youremail@example.com"生成公钥和密钥</p>
-            <p>$ git remote add origin git@github.com:github帐户名/库名.git</p>
-            <p>$ git clone git@github.com:small-clouds/name.git 想要克隆东西 必须知道地址</p>
-            <p>ESC 大写ZZ 便可以退出 编辑模式</p>
-            <P>按Esc 就可以进入命令行模式也是系统默认模式 </P>
-            <P>输入模式可以按 o i a 都可以进入 退出可以进入末行和命令行模式</P>
-            <P>末行模式可以按ctrl+；它的主要功能是退出编辑器 也可以保存退出文档</P>
-            <p>用wq的时候，要先esc，然后按住shift键，出现下面这个界面时才可以输入命令</p>
+            <p><span class="remark">初始化仓库</span>$ git init</p>
+            <p><span class="remark">生成公私钥</span>$ ssh-keygen -t rsa -C "youremail@example.com"</p>
+            <p><span class="remark">关联远程库</span>$ git remote add origin git@github.com:github帐户名/库名.git  </p>
+            <p><span class="remark">克隆远程库</span>$ git clone git@github.com:small-clouds/name.git</p>
+            <p><span class="remark"></span>ESC 大写ZZ 便可以退出 编辑模式</p>
+            <P><span class="remark"></span>按Esc 就可以进入命令行模式也是系统默认模式 </P>
+            <P><span class="remark"></span>输入模式可以按 o i a 都可以进入 退出可以进入末行和命令行模式</P>
+            <P><span class="remark"></span>末行模式可以按ctrl+；它的主要功能是退出编辑器 也可以保存退出文档</P>
+            <p><span class="remark"></span>用wq的时候，要先esc，然后按住shift键，出现下面这个界面时才可以输入命令</p>
         </div>
         <h2>git操作</h2>
         <div class="none">
             <h3>增</h3>
             <div class="none">
-                <p>创建目录 $ mkdir learngit </p>
-                <p>git add告诉Git，把文件添加到仓库：</p>
-                <p>git commit告诉Git，把文件提交到仓库</p>
-                <p>为什么Git添加文件需要add，commit一共两步呢？因为commit可以一次提交很多文件，所以你可以多次add不同的文件</p>
-                <p>git push -u origin master第一次推送master分支的所有内容</p>
-                <p>git push origin master推送最新修改</p>
-                <p>$ git checkout -b dev我们创建dev分支，然后切换到dev分支：</p>
-                <p>$ git branch dev； 创建分支</p>
+                <p><span class="remark">目录</span>$ mkdir learngit </p>
+                <p><span class="remark">暂存区</span>git add</p>
+                <p><span class="remark">版本库</span>git commit</p>
+                <p><span class="remark">远程库</span>git push -u origin master第一次推送master分支的所有内容</p>
+                <p><span class="remark"></span>git push origin master推送最新修改</p>
+                <p><span class="remark"></span>git push origin &lt;name&gt;   推送其他分支</p>
+                <p><span class="remark">分支</span>$ git checkout -b dev我们创建dev分支，然后切换到dev分支：</p>
+                <p><span class="remark"></span>$ git branch dev； 创建分支</p>
+                <p><span class="remark">标签</span>$ git tag v0.9 (commitId)  打标签  最近一次打标签 </p>
+                <p><span class="remark"></span>$ git tag -a v0.1 -m "version 0.1 released" 3628164  创建带有说明的标签</p>
+                <p><span class="remark"></span>$ git push origin (--tags)/(tagname) 一次性推送（所有/指定标签）标签到远程</p>
             </div>
             <h3>删</h3>
             <div class="none">
-                <p>rm test.txt 从工作区删除</p>
-                <p>git rm删掉，并且git commit 确实要从版本库中删除该文件</p>
-                <p>git remote rm origin删除远程库的关联</p>
-                <p>$ git branch -d dev 删除分支</p>
-                <p>git push origin :dev 删除远程分支dev，origin和:dev之间有空格</p>
+                <p><span class="remark">文件</span>git rm test.txt 后需要提交一下 </p>
+                <p><span class="remark">远程库关联</span>git remote rm origin</p>
+                <p><span class="remark">分支</span>$ git branch -d dev 删除分支</p>
+                <p><span class="remark"></span>git push origin :dev 删除远程分支dev，origin和:dev之间有空格</p>
+                <p><span class="remark">标签</span>$ git tag -d v0.1  删除标签</p>
+                <p><span class="remark"></span>删除远程标签 $ git push origin :refs/tags/v0.9</p>
+               
             </div>
             <h3>改</h3>
             <div class="none">
-                <p>git reset --hard HEAD^ HEAD~100回退到上一版本</p>
-                <p>git checkout -- file可以丢弃工作区的修改</p>
-                <p>git checkout -- file命令中的--很重要，没有--，就变成了“切换到另一个分支</p>
-                <p>git reset HEAD file可以把暂存区的修改撤销掉</p>
-                <p>$ git checkout -- test.txt从版本库中检出到工作区</p>
-                <p>$ git checkout -b dev我们创建dev分支，然后切换到dev分支：</p>
-                <p>$ git checkout dev 切换分支</p>
-                <p>git merge 分支name 命令用于合并指定分支到当前分支</p>
+                <p><span class="remark">暂存区回退</span>git reset --hard HEAD^ HEAD~100回退到上一版本</p>
+                <p><span class="remark">放弃修改</span>git checkout -- file可以丢弃工作区的修改 从版本库还原到工作区 <span class="remark">--很重要(没有就是分支)</span></p>
+                <p><span class="remark">暂存区</span>git reset HEAD file可以把暂存区的修改撤销掉</p>
+                <p><span class="remark">远程库回退</span>$ git checkout -- test.txt从版本库中检出到工作区</p>
+                <p><span class="remark">分支</span>$ git checkout -b dev我们创建dev分支，然后切换到dev分支：</p>
+                <p><span class="remark"></span>$ git checkout dev 切换分支</p>
+                <p><span class="remark"></span>git merge 分支name 命令用于合并指定分支到当前分支</p>
+                <p><span class="remark">更新</span>git pull抓取远程新提交</p>
+                <p><span class="remark">分支关联</span>git branch --set-upstream branch-name origin/branch-name 建立本地和远程分支关联</p>
             </div>
             <h3>查</h3>
             <div class="none">
-                <p>$ pwd 显示当前目录</p>
-                <p>$ cd learngit 进入目录</p>
-                <p>git status命令可以让我们时刻掌握仓库当前的状态</p>
-                <p>git diff顾名思义就是查看difference，显示的格式正是Unix通用的diff格式</p>
-                <p>git log --pretty=oneline命令查看历史记录</p>
-                <p>cat 文件名 查看文件内容</p>
-                <p>git reflog用来记录你的每一次命令 回到未来</p>
-                <p>git branch 命令会列出所有分支，当前分支前面会标一个*号</p>
-                <p>$ git log --graph --pretty=oneline --abbrev-commit 查看分支合并情况</p>
+                <p><span class="remark">目录</span>$ pwd 显示当前目录</p>
+                <p><span class="remark">进入</span>$ cd learngit 进入目录</p>
+                <p><span class="remark">仓库状态</span>git status命令可以让我们时刻掌握仓库当前的状态</p>
+                <p><span class="remark">查看不同</span>git diff顾名思义就是查看difference，显示的格式正是Unix通用的diff格式</p>
+                <p><span class="remark">历史记录</span>git log --pretty=oneline命令查看历史记录</p>
+                <p><span class="remark">文件内容</span>cat 文件名 查看文件内容</p>
+                <p><span class="remark"></span>git reflog用来记录你的每一次命令 回到未来</p>
+                <p><span class="remark">分支</span>git branch 命令会列出所有分支，当前分支前面会标一个*号</p>
+                <p><span class="remark">日志</span>$ git log --graph --pretty=oneline --abbrev-commit 查看分支合并情况</p>
+                <p><span class="remark">远程库</span>查看远程仓库 git remote (-v)</p>
+                <p><span class="remark">标签</span>git tag 查看所有标签 按照字母排序</p>
+                <p><span class="remark">标签详情</span>git show (tagname) 查看标签信息</p>
             </div>
         </div>
         <h2>git说明</h2>
         <div class="none">
-            <div>工作区</div>
-            <div>暂存区</div>
+            <div>工作区 add</div>
+            <div>暂存区 commit</div>
+            <div>版本库 push </div>
             <div>远程库</div>
             <div>分支</div>
         </div>
@@ -86,6 +96,11 @@
             <div class="none">
                 <p> 原因：GitHub远程仓库中的README.md文件不在本地仓库中。</p>
                 <p>方案：$ git pull --rebase origin master 完成后在提交 $ git push -u origin master</p>
+            </div>
+            <h3>抓取远程文件错误：no tracking information</h3>
+            <div class="none">
+                <p>原因：本地分支和远程分支的链接关系没有创建</p>
+                <p>方案：git branch --set-upstream branch-name origin/branch-name  创建本地分支与远程分支关联关联</p>
             </div>
         </div>
     </div>
