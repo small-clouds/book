@@ -4,64 +4,94 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <link rel="stylesheet" href="../css/fir.css" />
-    <title>javascript</title>
+    <link rel="stylesheet" href="../../other/base.css">
+    <title>GitHub</title>
 </head>
 
 <body>
-    <div>
-        <p>$ git config --global user.name "Your Name"</p>
-        <p>$ git config --global user.email "email@example.com"</p>
-        <p> 因为Git是分布式版本控制系统，所以，每个机器都必须自报家门：你的名字和Email地址。你也许会担心，如果有人故意冒充别人怎么办？这个不必担心，首先我们相信大家都是善良无知的群众，其次，真的有冒充的也是有办法可查的。 注意git
-            config命令的--global参数，用了这个参数，表示你这台机器上所有的Git仓库都会使用这个配置，当然也可以对某个仓库指定不同的用户名和Email地址。
-        </p>
-        <p>$ mkdir learngit 创建目录</p>
-        <p>$ cd learngit 进入目录</p>
-        <p>$ pwd 显示当前目录</p>
-        <p>/Users/michael/learngit</p>
-        <p>git init 命令把这个目录变成Git可以管理的仓库</p>
-        <p>git add告诉Git，把文件添加到仓库：</p>
-        <p>git commit告诉Git，把文件提交到仓库</p>
-        <p>为什么Git添加文件需要add，commit一共两步呢？因为commit可以一次提交很多文件，所以你可以多次add不同的文件</p>
-        <p>git status命令可以让我们时刻掌握仓库当前的状态</p>
-        <p>git diff顾名思义就是查看difference，显示的格式正是Unix通用的diff格式</p>
-        <p>git log --pretty=oneline命令查看历史记录</p>
-        <p>git reset --hard HEAD^ HEAD~100回退到上一版本</p>
-        <p>cat 文件名 查看文件内容</p>
-        <p>git reflog用来记录你的每一次命令 回到未来</p>
-        <p>git checkout -- file可以丢弃工作区的修改</p>
-        <p>git checkout -- file命令中的--很重要，没有--，就变成了“切换到另一个分支</p>
-        <p>git reset HEAD file可以把暂存区的修改撤销掉</p>
-        <p>rm test.txt 从工作区删除</p>
-        <p>git rm删掉，并且git commit 确实要从版本库中删除该文件</p>
-        <p>$ git checkout -- test.txt从版本库中检出到工作区</p>
-        <p>$ ssh-keygen -t rsa -C "youremail@example.com"生成公钥和密钥</p>
-        <p>$ git remote add origin git@github.com:github帐户名/库名.git</p>
-        <p>git push -u origin master第一次推送master分支的所有内容</p>
-        <p>git push origin master推送最新修改</p>
-        <p>git remote rm origin删除远程库的关联</p>
-        <p>$ git clone git@github.com:small-clouds/name.git 想要克隆东西 必须知道地址</p>
-        <p>$ git checkout -b dev我们创建dev分支，然后切换到dev分支：</p>
-        <p>$ git branch dev； 创建分支</p>
-        <p>$ git checkout dev 切换分支</p>
-        <p>git branch 命令会列出所有分支，当前分支前面会标一个*号</p>
-        <p>git merge 分支name 命令用于合并指定分支到当前分支</p>
-        <p>$ git branch -d dev 删除分支</p>
-        <p>git push origin :dev 删除远程分支dev，origin和:dev之间有空格</p>
-        <p>$ git log --graph --pretty=oneline --abbrev-commit 查看分支合并情况</p>
-        <p>ESC 大写ZZ 便可以退出 编辑模式</p>
-        <P>按Esc 就可以进入命令行模式也是系统默认模式 </P>
-        <P>输入模式可以按 o i a 都可以进入 退出可以进入末行和命令行模式</P>
-        <P>末行模式可以按ctrl+；它的主要功能是退出编辑器 也可以保存退出文档</P>
-        <p>用wq的时候，要先esc，然后按住shift键，出现下面这个界面时才可以输入命令</p>
+    <h1>GitHub</h1>
+    <div class="demoMain">
+        <h2>git管理</h2>
+        <div class="none">
+            <p> 因为Git是分布式版本控制系统，所以，每个机器都必须自报家门：你的名字和Email地址。你也许会担心，如果有人故意冒充别人怎么办？这个不必担心，首先我们相信大家都是善良无知的群众，其次，真的有冒充的也是有办法可查的。
+                注意git config命令的--global参数，用了这个参数，表示你这台机器上所有的Git仓库都会使用这个配置，当然也可以对某个仓库指定不同的用户名和Email地址。
+            </p>
+            <p>$ git config --global user.name "Your Name"</p>
+            <p>$ git config --global user.email "email@example.com"</p>
+            <p>$ git init 命令把这个目录变成Git可以管理的仓库</p>
+            <p>$ ssh-keygen -t rsa -C "youremail@example.com"生成公钥和密钥</p>
+            <p>$ git remote add origin git@github.com:github帐户名/库名.git</p>
+            <p>$ git clone git@github.com:small-clouds/name.git 想要克隆东西 必须知道地址</p>
+            <p>ESC 大写ZZ 便可以退出 编辑模式</p>
+            <P>按Esc 就可以进入命令行模式也是系统默认模式 </P>
+            <P>输入模式可以按 o i a 都可以进入 退出可以进入末行和命令行模式</P>
+            <P>末行模式可以按ctrl+；它的主要功能是退出编辑器 也可以保存退出文档</P>
+            <p>用wq的时候，要先esc，然后按住shift键，出现下面这个界面时才可以输入命令</p>
+        </div>
+        <h2>git操作</h2>
+        <div class="none">
+            <h3>增</h3>
+            <div class="none">
+                <p>创建目录 $ mkdir learngit </p>
+                <p>git add告诉Git，把文件添加到仓库：</p>
+                <p>git commit告诉Git，把文件提交到仓库</p>
+                <p>为什么Git添加文件需要add，commit一共两步呢？因为commit可以一次提交很多文件，所以你可以多次add不同的文件</p>
+                <p>git push -u origin master第一次推送master分支的所有内容</p>
+                <p>git push origin master推送最新修改</p>
+                <p>$ git checkout -b dev我们创建dev分支，然后切换到dev分支：</p>
+                <p>$ git branch dev； 创建分支</p>
+            </div>
+            <h3>删</h3>
+            <div class="none">
+                <p>rm test.txt 从工作区删除</p>
+                <p>git rm删掉，并且git commit 确实要从版本库中删除该文件</p>
+                <p>git remote rm origin删除远程库的关联</p>
+                <p>$ git branch -d dev 删除分支</p>
+                <p>git push origin :dev 删除远程分支dev，origin和:dev之间有空格</p>
+            </div>
+            <h3>改</h3>
+            <div class="none">
+                <p>git reset --hard HEAD^ HEAD~100回退到上一版本</p>
+                <p>git checkout -- file可以丢弃工作区的修改</p>
+                <p>git checkout -- file命令中的--很重要，没有--，就变成了“切换到另一个分支</p>
+                <p>git reset HEAD file可以把暂存区的修改撤销掉</p>
+                <p>$ git checkout -- test.txt从版本库中检出到工作区</p>
+                <p>$ git checkout -b dev我们创建dev分支，然后切换到dev分支：</p>
+                <p>$ git checkout dev 切换分支</p>
+                <p>git merge 分支name 命令用于合并指定分支到当前分支</p>
+            </div>
+            <h3>查</h3>
+            <div class="none">
+                <p>$ pwd 显示当前目录</p>
+                <p>$ cd learngit 进入目录</p>
+                <p>git status命令可以让我们时刻掌握仓库当前的状态</p>
+                <p>git diff顾名思义就是查看difference，显示的格式正是Unix通用的diff格式</p>
+                <p>git log --pretty=oneline命令查看历史记录</p>
+                <p>cat 文件名 查看文件内容</p>
+                <p>git reflog用来记录你的每一次命令 回到未来</p>
+                <p>git branch 命令会列出所有分支，当前分支前面会标一个*号</p>
+                <p>$ git log --graph --pretty=oneline --abbrev-commit 查看分支合并情况</p>
+            </div>
+        </div>
+        <h2>git说明</h2>
+        <div class="none">
+            <div>工作区</div>
+            <div>暂存区</div>
+            <div>远程库</div>
+            <div>分支</div>
+        </div>
+        <h2>常见错误</h2>
+        <div class="none">
+            <h3>提交错误：failed to push some refs to 'git@github.com:xxx/xxx.git'</h3>
+            <div class="none">
+                <p> 原因：GitHub远程仓库中的README.md文件不在本地仓库中。</p>
+                <p>方案：$ git pull --rebase origin master 完成后在提交 $ git push -u origin master</p>
+            </div>
+        </div>
     </div>
-    <h2>错误集锦</h2>
-    <div>
-        <h3>提交错误</h3>
-        <p>error: failed to push some refs to 'git@github.com:xxx/xxx.git' </p>
-        <p> 原因：GitHub远程仓库中的README.md文件不在本地仓库中。</p>
-        <p>方案：$ git pull --rebase origin master 完成后在提交 $ git push -u origin master</p>
-    </div>
+
 </body>
 
 </html>
+<script type="text/javascript" src='../../other/jquery.min.js'></script>
+<script type="text/javascript" src='../../other/base.js'></script>
