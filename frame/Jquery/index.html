@@ -51,6 +51,37 @@
                 <div>.empty() 清空内容</div>
                 <div>.remove() 移除元素</div>
             </div>
+            <h3>事件</h3>
+            <div class="none">
+                <div>.bind("事件名"，function(){})</div>
+                <div>.bind("事件",{'msg':'hello'},function(e){ console.log(e.data.msg)})</div>
+                <div>.triger()触发器</div>
+                <div>mouseover</div>
+                <div>click</div>
+                <div>$(function(){ //onload })</div>
+                <div>$().ready(function(){ })</div>
+                <div>$(document).ready(function(){ })</div>
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+        </div>
+        <h2>foreach</h2>
+        <div class="none">
+            <div>$.each([1,2,3,4],function(key,value){ console.log(key+":"+value)})</div>
+        </div>
+        <h2>ajax封装</h2>
+        <div class="none">
+            <div>$.get( "url.do", { "username": "zhangsan", "pwd": "12345" }, function (data) { console.log(data); })
+            </div>
+            <div>$.post( "url.do", { "username": "zhangsan", "pwd": "12345" }, function (data) { console.log(data); })
+            </div>
+            <div> var obj = eval('('+str+')') //js方式</div>
+            <div> var obj =$.parseJSON(str) // jquery的方式</div>
+        </div>
+        <h2>验证框架</h2>
+        <div class="none">
+            <div></div>
         </div>
     </div>
 </body>
