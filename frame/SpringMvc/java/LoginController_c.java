@@ -76,7 +76,7 @@ public class LoginController_c {
 		mav.setViewName("index.jsp");
 		return mav;
 	}
-	// 存session
+	// 存session 不能和实体类重名
 	@RequestMapping("login6.do") 
 	public String login06(@ModelAttribute Users user,HttpSession session){
 		ModelMap mm = new ModelMap();

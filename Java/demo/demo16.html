@@ -12,7 +12,7 @@
     <h1>数据库</h1>
 
     <div class="demoMain">
-        <h2>数据库基本知识</h2>
+        <h2>数据库基本知识 虚表  dual</h2>
         <div class="none">
             <div>一个管理数据的软件 增删改查</div>
             <div>开发项目就是帮助用户使用数据库 关系型数据库 二维数据表 行列</div>
@@ -80,7 +80,7 @@
             <div>删：delele from 表名 where 条件</div>
             <div>截断表: truncate table user 清空表 但是数据从头开始的</div>
         </div>
-        <h2>DQL</h2>
+        <h2>DQL 查</h2>
         <div class="none">
             <div>简单查表：select name, age from user;</div>
             <div>起别名： select u.name u.age, u.male from user (as) u； // 表其别名</div>
@@ -104,6 +104,8 @@ where s.s_name ='钱二';
             </div>
             <div>SELECT r.room_name from room r WHERE r.id in (SELECT roomid FROM apply WHERE end_time<"2017-10-14 17:00:00" and begin_time>"2017-10-14 15:00:00");</div>
         </div>
+        <h2>DDL 数据定义语言 创建数据库对象的</h2>
+        <h2>DCL 数据控制语言</h2>
     </div>
 </body>
 
