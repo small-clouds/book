@@ -108,7 +108,9 @@ where s.s_name ='钱二';
         <h2>DCL 数据控制语言</h2>
         <h2>常用语句</h2>
         <div class="none">
-            <div>按照月份分组 select count(*),u.* from users u GROUP BY DATE_FORMAT(u.brith,'%Y-%m')</div>
+            <div>按照月份分组 select count(*),u.* from users u GROUP BY DATE_FORMAT(u.brith,'%Y-%m'),u.name ORDER BY count(*) desc</div>
+            <div>组表查询 连表月份  辅助表先分组 在连查 select IFNULL(eg.num,0) from month_aux m LEFT JOIN (select count(*) num,e.* from enterprise_aud e  where e.user_id=#{user_id} GROUP BY DATE_FORMAT(cooperativetime,'%Y%m')) eg  on m.m_id = DATE_FORMAT(eg.cooperativetime,'%m')  
+	</div>
         </div>
     </div>
 </body>
