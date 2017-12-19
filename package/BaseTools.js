@@ -1,4 +1,5 @@
 var BaseTools = {
+	//
     colorRandom: function () {
         return "#" + Math.floor(Math.random() * 16777215).toString(16);
     },
@@ -22,7 +23,7 @@ var BaseTools = {
 }
 
 
-/*
+
 var y_arr1=[
     {'name':'ceshi1','c_name':'测试','Ename':'ceshizi11','C_Ename':'测试子11','value':'yyy11'},
     {'name':'ceshi1','c_name':'测试','Ename':'ceshizi12','C_Ename':'测试子12','value':'yyy12'},
@@ -31,21 +32,10 @@ var y_arr1=[
     {'name':'ceshi3','c_name':'测试3','Ename':'ceshizi3','C_Ename':'测试子3','value':'yyy3'},
     {'name':'ceshi4','c_name':'测试4','Ename':'ceshizi4','C_Ename':'测试子4','value':'yyy4'}
   ]
-
+/*
 var  target =[
 {'name':'ceshi1','c_name':'测试','children':[{'Ename':'ceshizi11','C_Ename':'测试子11','value':'yyy11'},{'Ename':'ceshizi12','C_Ename':'测试子12','value':'yyy12'}]},
-
-]
-
-
-var y_arr2=[
-    {'name':'ceshi','c_name':'测试','Ename':'ceshizi','C_Ename':'测试子','value':'yyy'},
-    {'name':'ceshi','c_name':'测试','Ename':'ceshizi1','C_Ename':'测试子1','value':'yyy'},
-    {'name':'ceshi2','c_name':'测试2','Ename':'ceshizi','C_Ename':'测试子','value':'yyy'},
-    {'name':'ceshi2','c_name':'测试2','Ename':'ceshizi1','C_Ename':'测试子1','value':'yyy'},
-    {'name':'ceshi3','c_name':'测试3','Ename':'ceshizi','C_Ename':'测试子','value':'yyy'},
-    {'name':'ceshi4','c_name':'测试4','Ename':'ceshizi','C_Ename':'测试子','value':'yyy'}
-  ]
+]*/
 function chai(obj){
   var y_arr=[]
   for(var i=0 ;i<obj.length;i++){
@@ -111,8 +101,7 @@ var target =[]
 console.time(2);
 y_arr1.forEach(function(x){
   var i =getCNameIndex(x,target);
-  console.log(i)
   addChild(x,target,i)
 })
+console.log(target);
 console.timeEnd(2)
-*/
