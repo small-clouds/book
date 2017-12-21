@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <link rel="stylesheet" href="other/base.css" />
+    <title></title>
+</head>
+
+<body>
+      <div class="demoMain" id="demoMain">
+		<h1 class="stageTitle">{{title}}</h1>
+		 <template v-for="msg in data">
+            <h2>{{msg.title}}</h2>
+            <div class="none">
+                <div  v-for="msg1 in msg.data" v-html="msg1.context">{{msg1.context}}
+                    <template v-if="msg1.title">
+                    <h3>{{msg1.title}}</h3>
+                    <div class="none">
+                        <div  v-for="msg3 in msg1.data">{{msg3.context}} </div>
+                    </div>
+                    </template>
+                </div>
+            </div>
+        </template>
+		</div>
+	</body>
+</html>
+<script src='other/jquery.min.js'></script>
+<script src='other/base.js'></script>
+<script src='other/vue.min.js'></script>
