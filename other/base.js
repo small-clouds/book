@@ -13,20 +13,21 @@ var loadJs = function (src) {
     document.head.appendChild(script);
 }
 loadJs(file);
-setTimeout(function () {
-    try {
-        var app1 = new Vue({
-            el: '#demoMain',
-            data: data[i]
-        });
-    } catch (e) {
-        console.log(e);
-    }
-    $('.demoMain').on('click', function (e) {
-        ($(e.target)[0].tagName == 'H2' || $(e.target)[0].tagName == 'H3') ? $(e.target).next().toggle(500) : false;
-    })
-}, 1000)
-
+$(function () {
+    setTimeout(function () {
+        try {
+            var app1 = new Vue({
+                el: '#demoMain',
+                data: data[i]
+            });
+        } catch (e) {
+            console.log(e);
+        }
+        $('.demoMain').on('click', function (e) {
+            ($(e.target)[0].tagName == 'H2' || $(e.target)[0].tagName == 'H3') ? $(e.target).next().toggle(500) : false;
+        })
+    }, 1000)
+})
 /*
 var demo ={
     title: "页面标题",
