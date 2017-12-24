@@ -94,6 +94,74 @@ var demo01={
             {context:"<span class='remark'> error </span>表示恢复不是不可能但很困难的情况下的一种严重问题。比如说内存溢出。不可能指望程序能处理这样的情况。 "},
             {context:"<span class='remark'> exception </span>表示一种设计或实现问题。也就是说，它表示如果程序运行正常，从不会发生的情况。"}
         ]
+    },{
+        title:"List, Set, Map是否继承自Collection接口：",
+        data:[
+            {context:"List，Set是。"},
+            {context:"Map不是。"}
+        ]
+    },{
+        title:"abstract class和interface有什么区别： ",
+        data:[
+            {context:"&nbsp;&nbsp;  声明方法的存在而不去实现它的类被叫做抽象类（abstract class），它用于要创建一个体现某些基本行为的类，并为该类声明方法，但不能在该类中实现该类的情况。不能创建abstract 类的实例。然而可以创建一个变量，其类型是一个抽象类，并让它指向具体子类的一个实例。不能有抽象构造函数或抽象静态方法。Abstract 类的子类为它们父类中的所有抽象方法提供实现，否则它们也是抽象类为。取而代之，在子类中实现该方法。知道其行为的其它类可以在类中实现这些方法。"},
+            {context:"&nbsp;&nbsp;   接口（interface）是抽象类的变体。在接口中，所有方法都是抽象的。多继承性可通过实现这样的接口而获得。接口中的所有方法都是抽象的，没有一个有程序体。接口只可以定义static final成员变量。接口的实现与子类相似，除了该实现类不能从接口定义中继承行为。当类实现特殊接口时，它定义（即将程序体给予）所有这种接口的方法。然后，它可以在实现了该接口的类的任何对象上调用接口的方法。由于有抽象类，它允许使用接口名作为引用变量的类型。通常的动态联编将生效。引用可以转换到接口类型或从接口类型转换，instanceof 运算符可以用来决定某对象的类是否实现了接口。"}
+        ]
+    },{
+        title:"接口 抽象类 接口之间的关系",
+        data:[
+            {context:"接口可以继承接口。抽象类可以实现(implements)接口，抽象类是否可继承实体类，但前提是实体类必须有明确的构造函数。"}
+        ]
+    },{
+        title:"启动一个线程是用run()还是start()：",
+        data:[
+            {context:"启动一个线程是调用start()方法，使线程所代表的虚拟处理机处于可运行状态，这意味着它可以由JVM调度并执行。"},
+            {context:"这并不意味着线程就会立即运行。run()方法可以产生必须退出的标志来停止一个线程"}
+        ]
+    },{
+        title:"构造器Constructor是否可被override：",
+        data:[
+            {context:"构造器Constructor不能被继承，因此不能重写Override，但可以被重载Overloading。"}
+        ]
+    },{
+        title:"try {}里有一个return语句，那么紧跟在这个try后的finally {}里的code会不会被执行，什么时候被执行，在return前还是后：",
+        data:[
+            {context:"　会执行，在return前执行。"}
+        ]
+    },{
+        title:"两个对象值相同(x.equals(y) == true)，但却可有不同的hash code，这句话对不对：",
+        data:[
+            {context:"不对，有相同的hash code。"}
+        ]
+    },{
+        title:"当一个对象被当作参数传递到一个方法后，此方法可改变这个对象的属性，并可返回变化后的结果，那么这里到底是值传递还是引用传递： ",
+        data:[
+            {context:"　是值传递。Java 编程语言只由值传递参数。当一个对象实例作为一个参数被传递到方法中时，参数的值就是对该对象的引用。对象的内容可以在被调用的方法中改变，但对象的引用是永远不会改变的。"}
+        ]
+    },{
+        title:"swtich是否能作用在byte上，是否能作用在long上，是否能作用在String上：",
+        data:[
+            {context:"switch（expr1）中，expr1是一个整数表达式。因此传递给 switch 和 case 语句的参数应该是 int、 short、 char 或者 byte。long 都不能作用于swtich。"},
+            {context:"<span class='remark'>在java1.7以上 支持string 但是效率不高 编译器回吧string转换成hashcode</span>"}
+        ]
+    },{
+        title:"Hashtable和HashMap的区别：",
+        data:[
+            {context:"Hashtable继承自Dictionary类，而HashMap是Java1.2引进的Map interface的一个实现 "},
+            {context:"HashMap允许将null作为一个entry的key或者value，而Hashtable不允许 "},
+            {context:"还有就是，HashMap把Hashtable的contains方法去掉了，改成containsvalue和containsKey。因为contains方法容易让人引起误解。"},
+            {context:"　最大的不同是，Hashtable的方法是Synchronize的，而HashMap不是，在 多个线程访问Hashtable时，不需要自己为它的方法实现同步，而HashMap 就必须为之提供外同步。"},
+            {context:"Hashtable和HashMap采用的hash/rehash算法都大概一样，所以性能不会有很大的差异"}
+        ]
+    },{
+        title:"",
+        data:[
+            {context:""}
+        ]
+    },{
+        title:"",
+        data:[
+            {context:""}
+        ]
     }
     ]
 }
