@@ -31,7 +31,7 @@ $(function () {
         $(".pop").on("click", function () {
             $(".pop_w").toggle();
         })
-    }, 1000)
+    }, 5000)
 })
 /*
 var demo ={
