@@ -4,6 +4,7 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <link rel="stylesheet" href="other/base.css">
     <title>学习记录</title>
     <script type="text/javascript" src='other/jquery.min.js'></script>
     <script type="text/javascript" src="other/base.js"></script>
@@ -12,7 +13,8 @@
     a{text-decoration: none; color:#9B30FF;}
     h1 {text-align: center;font-size: 14px;}
     div.list > div{background:#98F5FF; margin:5px; padding:2px;}
-    div.list > div> a { font-weight: bold;}
+    div.list > div> a { font-weight: bold;}l
+    div.pop_w{ width:50%; display: none; position: absolute; top:20%; left:25%; z-index: 1; background: #fff;}
 </style>
 
 <body>
@@ -22,6 +24,8 @@
         <div><a :href=msg.url>{{msg.context}}</a></div>
     </template>
     </div>
+    <div class="pop">弹出frame</div> 
+    <div class="pop_w none"><iframe src="list.html" frameborder="0" class="true" style="width:100%;"></iframe></div>
 </body>
 </html>
 <script type="text/javascript" src="other/vue.min.js"></script>
