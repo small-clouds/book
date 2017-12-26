@@ -17,7 +17,7 @@
     div.pop_w{ width:50%; display: none; position: absolute; top:20%; left:25%; z-index: 1; background: #fff;}
 </style>
 
-<body>
+<body onload="onloadvue()">
     <div class="list" id="demoMain">   
     <h1>{{title}}</h1>
     <template v-for="msg in data">

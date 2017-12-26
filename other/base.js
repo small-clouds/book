@@ -13,26 +13,20 @@ var loadJs = function (src) {
     document.head.appendChild(script);
 }
 loadJs(file);
-$(function () {
-    setTimeout(function () {
-        try {
-            var app1 = new Vue({
-                el: '#demoMain',
-                data: data[i]
-            });
-        } catch (e) {
-            console.log(e);
-        }
-        //下拉选框
-        $('.demoMain').on('click', function (e) {
-            ($(e.target)[0].tagName == 'H2' || $(e.target)[0].tagName == 'H3') ? $(e.target).next().toggle(500) : false;
-        })
-        //弹窗显示
-        $(".pop").on("click", function () {
-            $(".pop_w").toggle();
-        })
-    }, 500)
-})
+function onloadvue() {
+    var app1 = new Vue({
+        el: '#demoMain',
+        data: data[i]
+    });
+    //下拉选框
+    $('.demoMain').on('click', function (e) {
+        ($(e.target)[0].tagName == 'H2' || $(e.target)[0].tagName == 'H3') ? $(e.target).next().toggle(500) : false;
+    })
+    //弹窗显示
+    $(".pop").on("click", function () {
+        $(".pop_w").toggle();
+    })
+}
 /*
 var demo ={
     title: "页面标题",
