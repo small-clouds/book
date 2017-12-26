@@ -25,6 +25,9 @@
                 </div>
             </div>
         </template>
+        <div v-if="this.supdata" >
+            <div v-for="msg in supdata" v-html="msg.context">{{msg.context}}</div>
+        </div>
 		</div>
 	</body>
 </html>
