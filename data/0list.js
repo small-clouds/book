@@ -36,12 +36,16 @@ var demo04 = {
         { url: "detail.html?data/java01.js&03", context: "基本数据类型", },
         { url: "detail.html?data/java01.js&04", context: "运算符/逻辑运算符/位运算符/标识符/分隔符", },
         { url: "detail.html?data/java01.js&05", context: "变量 成员变量 局部变量 常量", },
-        { context: "代码块 静态static 初始化代码块", url: "Java/demo/demo06.html" },
-        { context: "数组", url: "Java/demo/demo07.html" },
-        { context: "面向对象 类和对象", url: "Java/demo/demo08.html" },
-        { context: "函数/方法", url: "Java/demo/demo09.html" },
-        { context: "修饰符", url: "Java/demo/demo10.html" },
-        { context: "工具类---没有东西", url: "Java/demo/demo11.html" },
+        { url: "detail.html?data/java01.js&06", context: "代码块 静态static 初始化代码块", },
+        { url: "detail.html?data/java01.js&07", context: "数组", },
+        { url: "detail.html?data/java01.js&08", context: "面向对象 类和对象", },
+        { url: "detail.html?data/java01.js&10", context: "修饰符", },
+        { url: "detail.html?data/java01.js&11", context: "类之间的关系", },
+        { url: "detail.html?data/java01.js&13", context: "内部类 垃圾回收 异常", },
+        { url: "detail.html?data/java01.js&14", context: "容器和集合", },
+        { url: "detail.html?data/java01.js&15", context: "JDBC 数据库连接 java database connect  和DBCP", },
+        { url: "detail.html?data/java01.js&16", context: "I/O流", },
+        { url: "detail.html?data/java01.js&17", context: "多线程", },
         { context: "继承和接口 类和类之间的关系", url: "Java/demo/demo12.html" },
         { context: "包装类 类型强转", url: "Java/demo/demo13.html" },
         { context: "内部类 垃圾回收 异常", url: "Java/demo/demo14.html" },
@@ -67,7 +71,7 @@ var demo04 = {
         { url: "Java/demo/demo33.html", context: "过滤器和监听器" }
     ]
 }
-
+// 文章目录
 var demo05 = {
     title: "文章收集",
     name: "文章收集",
@@ -75,6 +79,7 @@ var demo05 = {
         { url: "detail.html?data/article01.js&01", context: "鬼谷子全集" },
         { url: "detail.html?data/article01.js&02", context: "左传部分" },
         { url: "detail.html?data/article01.js&03", context: "现代文章" },
+        { url: "detail.html?data/article01.js&04", context: "孙子兵法全集" },
     ]
 }
-data = [demo01, demo02, demo03, demo04,demo05]
+data = [demo01, demo02, demo03, demo04, demo05]

@@ -15,14 +15,14 @@
 		 <template v-for="msg in data">
             <h2>{{msg.title}}</h2>
             <div class="none">
-                <div  v-for="msg1 in msg.data" v-html="msg1.context">{{msg1.context}}
-                    <template v-if="msg1.title">
-                    <h3>{{msg1.title}}</h3>
-                    <div class="none">
-                        <div  v-for="msg3 in msg1.data">{{msg3.context}} </div>
-                    </div>
-                    </template>
+                <!-- v-html="msg1.context"-->
+                <div  v-for="msg1 in msg.data" v-html="msg1.context">{{msg1.context}}</div>
+                <template v-if="msg1.title"  v-for="msg1 in msg.data">
+                <h3>{{msg1.title}}</h3>
+                <div class="none">
+                    <div  v-for="msg3 in msg1.data" v-html="msg3.context">{{msg3.context}} </div>
                 </div>
+                </template> 
             </div>
         </template>
         <div v-if="this.supdata" >
