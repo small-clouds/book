@@ -1,26 +1,71 @@
 //需要看访问的参数
-var demo01 ={
+//面试题目录
+var demo01 = {
     title: "面试题总结",
     name: "",
-    data:[
-            {context:"JAVA面试题一部",url:"detail.html?data/question01.js&01"}
-        ]
+    data: [
+        { context: "JAVA面试题一部", url: "detail.html?data/question01.js&01" }
+    ]
 };
-var demo02={
-    title:"算法",
-    name:"",
-    data:[
-        {context:"算法基础",url:"detail.html?data/ALG01.js&01"}
+//算法目录
+var demo02 = {
+    title: "算法",
+    name: "",
+    data: [
+        { context: "算法基础", url: "detail.html?data/ALG01.js&01" }
     ]
 }
-var demo03={
-    title:"Mysql学习目录",
-    name:"Mysql学习目录",
-    data:[
-        {context:"Mysql基础",url:"Java/demo/demo16.html"},
-        {context:"常见思路 方法",url:"detail.html?data/sql01.js&01"},
-        {context:"那些年的sql语句",url:"data/doc/sql/demo01.sql"},
-        {context:"脚本 中国省市区",url:"data/doc/sql/china.sql"}
+//数据库目录
+var demo03 = {
+    title: "Mysql学习目录",
+    name: "Mysql学习目录",
+    data: [
+        { context: "Mysql基础", url: "Java/demo/demo16.html" },
+        { context: "常见思路 方法", url: "detail.html?data/sql01.js&01" },
+        { context: "那些年的sql语句", url: "data/doc/sql/demo01.sql" },
+        { context: "脚本 中国省市区", url: "data/doc/sql/china.sql" }
     ]
 }
-data=[demo01,demo02,demo03]
+//java目录
+var demo04 = {
+    title: "java学习目录",
+    name: "java学习目录",
+    data: [
+        { context: "基础知识回顾- 开发环境", url: "Java/demo/demo01.html" },
+        { context: "流程控制语句", url: "Java/demo/demo02.html" },
+        { context: "基本数据类型", url: "Java/demo/demo03.html" },
+        { context: "运算符/逻辑运算符/位运算符/标识符/分隔符", url: "Java/demo/demo04.html" },
+        { context: "变量 成员变量 局部变量 常量", url: "Java/demo/demo05.html" },
+        { context: "代码块 静态static 初始化代码块", url: "Java/demo/demo06.html" },
+        { context: "数组", url: "Java/demo/demo07.html" },
+        { context: "面向对象 类和对象", url: "Java/demo/demo08.html" },
+        { context: "函数/方法", url: "Java/demo/demo09.html" },
+        { context: "修饰符", url: "Java/demo/demo10.html" },
+        { context: "工具类---没有东西", url: "Java/demo/demo11.html" },
+        { context: "继承和接口 类和类之间的关系", url: "Java/demo/demo12.html" },
+        { context: "包装类 类型强转", url: "Java/demo/demo13.html" },
+        { context: "内部类 垃圾回收 异常", url: "Java/demo/demo14.html" },
+        { context: "Oracle数据库", url: "Java/demo/demo15.html" },
+        { context: "mysql数据库", url: "Java/demo/demo16.html" },
+        { context: "容器和集合", url: "Java/demo/demo17.html" },
+        { context: "JDBC 数据库连接 java database connect  和DBCP", url: "Java/demo/demo18.html" },
+        { context: "I/O流  input output stream", url: "Java/demo/demo19.html" },
+        { context: "多线程", url: "Java/demo/demo20.html" },
+        { context: "设计模式", url: "Java/demo/demo21.html" },
+        { context: "XML解析技术", url: "Java/demo/demo22.html" },
+        { context: "递归和数据结构", url: "Java/demo/demo23.html" },
+        { context: "算法总结", url: "Java/demo/demo24.html" },
+        { context: "经典题目", url: "Java/demo/demo25.html" },
+        { url: "Java/demo/demo35.html",context: "JAVAEE、myEclipse和Tomcat bs/cs" },
+        { url: "Java/demo/demo36.html",context: "Servlet" },
+        { url: "Java/demo/demo37.html",context: "请求方式、响应方式（重定向和转发）、中文乱码、上传下载" },
+        { url: "Java/demo/demo38.html",context: "MVC介绍" },
+        { url: "Java/demo/demo39.html",context: "JSP简介和JSTL" },
+        { url: "Java/demo/demo30.html",context: "会话跟踪技术Cookie / Session" },
+        { url: "Java/demo/demo31.html",context: "EL表达式log4j 日志" },
+        { url: "Java/demo/demo32.html",context: "ajax和json" },
+        { url: "Java/demo/demo33.html",context: "过滤器和监听器" }
+    ]
+}
+
+data = [demo01, demo02, demo03,demo04]
