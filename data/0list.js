@@ -68,4 +68,13 @@ var demo04 = {
     ]
 }
 
-data = [demo01, demo02, demo03, demo04]
+var demo05 = {
+    title: "文章收集",
+    name: "文章收集",
+    data: [
+        { url: "detail.html?data/article01.js&01", context: "鬼谷子全集" },
+        { url: "detail.html?data/article01.js&02", context: "左传部分" },
+        { url: "detail.html?data/article01.js&03", context: "现代文章" },
+    ]
+}
+data = [demo01, demo02, demo03, demo04,demo05]
