@@ -355,11 +355,58 @@ var demo08 = {
         ]
     }]
 }
-//没有
+//多线程
 var demo09 = {
-    title: "",
-    name: "",
-    data: []
+    title: "多线程",
+    name: "多线程",
+    data: [{
+        title: '进程/线程',
+        data: [
+            { context: '进程：系统运行程序的基本单位 有独立的内存空间和系统资源' },
+            { context: '线程：进程中执行运算的最小单位 处理机分配给线程 即真正在处理机上运行的是线程' },
+            { context: '创建线程对象 线程 分为主线程 和子线程 并行关系 最先启动的 为主线程 主线程 关闭 子线程 也可能成为主线程 并无明确的界限' },
+        ]
+    },{
+        title: '创建线程的方式',
+        data: [
+            { context: '继承Thread 类 重写run方法' },
+            { context: '实现Runnable 接口 实现run方法' },
+            { context: '创建线程对象  打点调用start();' },
+        ]
+    },{
+        title: '线程的状态与运行',
+        data: [
+            { context: '线程的四种状态 新生状态 -> start -> 可运行状态 -> ( 阻塞状态 ) run -> 死亡状态' },
+            { context: '阻塞原因 1.io流阻塞 2.人为睡眠 3.线程锁' },
+        ]
+    },{
+        title: '线程调度',
+        data: [
+            { context: 'join： 等待该线程终止的时间 ms a线程 调用b线程的join方法 a暂停 等待b执行啊无奈' },
+            { context: 'Yeild: 暂停 级别挺低的 暂停当前线程 执行其他线程' },
+            { context: 'Sleep: 挂起 有参数毫秒值 暂停 专业名词 挂起' },
+        ]
+    },{
+        title: '加锁(Synchronized)',
+        data: [
+            { context: '<span class="remark">可以放在 同步代码块上 放在这最好 串行化 范围越小越好</span>' },
+            { context: 'Synchronized(同步对象){  代码块 }' },
+        ]
+    },{
+        title: '线程安全的类',
+        data: [
+            { context: 'vector 效率较低 现在不建议用' },
+            { context: 'statck 栈 先进后出' },
+            { context: 'hashtabe' },
+            { context: 'enumeration 枚举' },
+        ]
+    },{
+        title: 'hashtable和hashmap的区别',
+        data: [
+            { context: '1 线程安全的 提供了同步机制' },
+            { context: '2 不是线程安全的 既不提供' },
+        ]
+    }]
 }
 //修饰符
 var demo10 = {
@@ -405,8 +452,11 @@ var demo10 = {
 var demo11 = {
     title: "类之间的关系",
     name: "类之间的关系",
-    supdata:[
-         { context: '<span class="remark">建议 多实现   少继承   因为继承只能有一个</span>' },
+    supdata: [
+        { context: '<span class="remark">建议 多实现   少继承   因为继承只能有一个</span>' },
+        { context: '注：<span class="remark"> 对于Object超类 只能与引用类型相容 不能和基本数据类型相融</span>' },
+        { context: '菱形运算符:   List&lt;Integer&gt; = new ArrayList&lt;&gt;();' },
+        { context: '泛型限制：一基本类型不能用在泛型参数；必须使用其包装类' },
     ],
     data: [{
         title: '继承(extends) 类和类之间的关系',
@@ -417,31 +467,31 @@ var demo11 = {
             { context: ' a instance b ; a是不是b的子类' },
             { context: '' },
         ]
-    },{
+    }, {
         title: '向上转型',
         data: [
             { context: 'Pet pet = new Dog(); 父类的变量 子类的 对象 就是多态' },
             { context: '注<span class="remark">不能使用子类特有的方法</span>' },
         ]
-    },{
+    }, {
         title: '泛化',
         data: [
             { context: '泛化 :把具体的对象看成类    例如 吧猫看成动物  本质就是 <span class="remark">向上转型</span>' },
         ]
-    },{
+    }, {
         title: '多态',
         data: [
             { context: '前期绑定  --静态绑定在编译器 就明确 父类对对象的绑定  就是静态绑定' },
             { context: '后期绑定  --动态绑定 在运行期给父类对象进行绑定的 叫做动态绑定	程序运行期  ' },
         ]
-    },{
+    }, {
         title: '接口(interface) 类与接口之间的关系叫做 实现',
         data: [
             { context: '接口就是完全抽象的类,不能写具体方法 abstract可省略' },
             { context: '注：<span class="remark">用implements实现</span>' },
             { context: '接口的属性 必须被 public static finnal 修饰 且 必须被赋值(可省略)' },
         ]
-    },{
+    }, {
         title: '抽象类(abstarct)',
         data: [
             { context: '注：<span class="remark">抽象类也是类 关系是继承</span>' },
@@ -450,35 +500,189 @@ var demo11 = {
             { context: '注：<span class="remark">抽象类 不能实例化对象 但是 可以向上转型到抽象类</span>' },
             { context: '抽象类 既能写 抽象方法也能写具体方法<span class="remark">抽象方法必须abstract修饰</span>' },
         ]
-    },{
+    }, {
         title: '抽象类和接口的异同点',
         data: [
             { context: '相同点' },
             { context: '抽象类和接口均包含抽象方法，类必须实现所有的抽象方法，否则是抽象类; 抽象类和接口都不能实例化，他们位于继承树的顶端，用来被其他类继承和实现' },
-            {context:'不同点'},
-            {context:'两者的区别主要体现在两方面：语法方面和设计理念方面'},
-            {context:'语法方面的区别是比较低层次的，非本质的，主要表现在：'},
-            {context:'接口中只能定义全局静态常量，不能定义变量。 接口中所有的方法都是全局抽象方法。接口中不能定义构造方法。使用implements来实现接口。'},
-            {context:'抽象类中可以定义常量和变量。抽象类中的非抽象方法可以有0个、1个或多个，甚至全部都是抽象方法。'},
-            {context:'抽象类中可以有构造方法，但不能用来实例化，而在子类实例化是执行，完成属于抽象类的初始化操作。。'},
-            {context:' 一个类只能有一个直接父类（可以是抽象类），但可以同时实现多个接口。一个类使用extends来继承抽象类，'},
-            {context:'二者的主要区别还是在设计理念上，'},
-            {context:'其决定了某些情况下到底使用抽象类还是接口。 抽象类体现了一种继承关系，目的是复用代码，抽象类中定义了各个子类的相同代码，可以认为父类是一个实现了部分功能的“中间产品”，而子类是“最终产品”。父类和子类之间必须存在“is-a”的关系，即父类和子类在概念本质上应该是相同的。'},
-            {context:'接口并不要求实现类和接口在概念本质上一致的，仅仅是实现了接口定义的约定或者能力而已。接口定义了“做什么”，而实现类负责完成“怎么做”，体现了功能（规范）和实现分离的原则。接口和实现之间可以认为是一种“has-a的关系”'},
-            {context:'的元素只能是引用类型，基本类型数据需要转换为对应包装类的对象才能放入集合。'},
+            { context: '不同点' },
+            { context: '两者的区别主要体现在两方面：语法方面和设计理念方面' },
+            { context: '语法方面的区别是比较低层次的，非本质的，主要表现在：' },
+            { context: '接口中只能定义全局静态常量，不能定义变量。 接口中所有的方法都是全局抽象方法。接口中不能定义构造方法。使用implements来实现接口。' },
+            { context: '抽象类中可以定义常量和变量。抽象类中的非抽象方法可以有0个、1个或多个，甚至全部都是抽象方法。' },
+            { context: '抽象类中可以有构造方法，但不能用来实例化，而在子类实例化是执行，完成属于抽象类的初始化操作。。' },
+            { context: ' 一个类只能有一个直接父类（可以是抽象类），但可以同时实现多个接口。一个类使用extends来继承抽象类，' },
+            { context: '二者的主要区别还是在设计理念上，' },
+            { context: '其决定了某些情况下到底使用抽象类还是接口。 抽象类体现了一种继承关系，目的是复用代码，抽象类中定义了各个子类的相同代码，可以认为父类是一个实现了部分功能的“中间产品”，而子类是“最终产品”。父类和子类之间必须存在“is-a”的关系，即父类和子类在概念本质上应该是相同的。' },
+            { context: '接口并不要求实现类和接口在概念本质上一致的，仅仅是实现了接口定义的约定或者能力而已。接口定义了“做什么”，而实现类负责完成“怎么做”，体现了功能（规范）和实现分离的原则。接口和实现之间可以认为是一种“has-a的关系”' },
+            { context: '的元素只能是引用类型，基本类型数据需要转换为对应包装类的对象才能放入集合。' },
         ]
-    },{
-        title: '',
+    }, {
+        title: '包装类的作用',
         data: [
-            
-            { context: '' },
+            { context: '包装类最主要的功能就是类型转换;可以调用上面的方法' },
+            { context: '注：<span class="remark">基本数据类型的包装类有一堆一堆的方法</span>' },
         ]
-    },{
-        title: '',
+    }, {
+        title: '基本数据类型---引用类型',
         data: [
-            
-            { context: '' },
+            { context: 'byte --> Byte' },
+            { context: 'short--> Short' },
+            { context: 'int--> Integer' },
+            { context: 'long--> Long' },
+            { context: 'float--> Float' },
+            { context: 'double--> Double' },
+            { context: 'char -->Character' },
+            { context: 'boolean -->Boolean' },
         ]
-    },]
+    }, {
+        title: '自动装箱与自动拆箱',
+        data: [
+            { context: '<span class="remark">jdk 1.5以后提供的</span>' },
+            { context: '自动装箱-->不用强制类型转化了 ； int ii = inte; ' },
+            { context: '自动拆箱 : Integer inte2 = ii;' },
+        ]
+    }]
 }
-data = [demo01, demo02, demo03, demo04, demo05, demo06, demo07, demo08, demo09, demo10, demo11]
+//容器和集合
+var demo12 = {
+    title: "容器和集合",
+    name: "容器和集合",
+    data: [{
+        title: '集合总纲',
+        data: [
+            { context: '<img src="data/images/demo17_01.png" alt="">' },
+        ]
+    }, {
+        title: '集合和数组',
+        data: [
+            { context: '定义： 集合 也成为容器 能存能取 它可以将系列元素组合' },
+            { context: '区别：数组中的元素可以是任何数据类型，包括基本类型和引用类型。集合中的元素只能是引用类型，基本类型数据需要转换为对应包装类的对象才能放入集合。' },
+        ]
+    }, {
+        title: 'List集合',
+        data: [
+            { context: '集合 都是线性表 一个居于 数组存储 一个基于链式存储' },
+            { context: ' 有序 不唯一（可重复）' },
+            { context: '使用集合的优点:长度可变,并且保存的数据类型不限定' },
+            { context: 'ArrayList: 底层就是数组 按照下标存储; 查询效率高 增删改慢 构造方法中 创建的是没有长度的  传参会默认10长度 然后以1.5倍增长  当让也可以创建20的长度  调用有参构造方法' },
+            { context: 'LinkedList: 底层是链式; 查询效率低 增删改快' },
+        ]
+    }, {
+        title: 'Set',
+        data: [
+            { context: '存储一组 无序 唯一(不重复)' },
+            { context: 'HashSet' },
+            { context: 'TreeSet 存放数据 只能存放一种具有比较大小能力的类型 如果不具有比较大小能力的数据 需要实现比较器接口(Comparable Comparator) compareTo方法 返回int值' },
+        ]
+    }, {
+        title: '迭代器 Iterator',
+        data: [
+            { context: 'Update 更新 迭代<span class="remark">功能 ： 遍历容器</span>' },
+            { context: 'hasNext()' },
+            { context: '使用 List  list1  =  new  ArrayList();' },
+            { context: 'list1.add("aaa");' },
+            { context: 'Iterator it = list1.iterator();  // 吧list交给了   interator' },
+            { context: 'while(it.hasNext()){  // 判断右边是否有值   有true ' },
+            { context: 'it.Next(); // 取值 移动游标' },
+            { context: '}' },
+        ]
+    }, {
+        title: 'Iterator 与 foreach 的区别',
+        data: [
+            { context: 'Foreach 必须明确容器中的类型 Iterator 不必知道容器类型' },
+            { context: 'Iterator 可以对容器元素进行操作 Foreach 不能操作元素' },
+            { context: ' 对于少量数据 使用for-each 效率高' },
+            { context: '容器数据较多 使用Iterator 效率高' },
+        ]
+    }, {
+        title: 'Map容器<span class="remark">Map 不是collection 的子接口 </span>',
+        data: [
+            { context: '存储一组成对的键－值对象，提供key（键）到value（值）的映射，通过key来索引' },
+            { context: 'key不允许重复 value允许重复 添加的对象将转换为Object类型' },
+            { context: 'Map取值的四种方式' },
+            { context: '<img src="data/images/demo17.png" alt="">' },
+        ]
+    }, {
+        title: 'Vector和ArrayList //HashMap和Hashtable',
+        data: [
+            { context: 'Vector和ArrayList实现原理相同，功能相同，都是长度可变的数组结构，很多情况下可以互用。' },
+            { context: '两者的主要区别如下： Vector是早期集合类，ArrayList是替代Vector的；Vector线程安全；ArrayList重速度轻安全，线程非安全，性能较高。' },
+            { context: 'HashMap和Hashtable实现原理相同，功能相同，底层都是哈希表结构，查询速度快，在很多情况下可以互用。' },
+            { context: '两者的主要区别如下：Hashtable是早期JDK提供，HashMap是新版JDK提供；Hashtable线程安全，性能较低，HashMap线程非安全，性能较高' },
+        ]
+    }, {
+        title: 'list集合的方法',
+        data: [
+            { context: 'ArrayList  l= new ArrayList();' },
+            { context: 'List aaaa = new ArrayList();' },
+            { context: 'l.add("aaa"); //添加' },
+            { context: 'System.out.println(l.size()); // 长度' },
+            { context: ' System.out.println(l.get(0)); //下标取值' },
+            { context: 'l.set(1,"尹栋力"); // 替换' },
+            { context: 'l.add(1,"尹栋力"); // 插入' },
+            { context: 'l.remove(1); //下标删除  下标优先级高' },
+            { context: 'l.remove("尹栋力"); //  移除 对象  ' },
+            { context: 'l.clear();// 清空' },
+            { context: 'l.isEmpty(); // 判断是否为空' },
+            { context: 'l.contains("aaa"); // 是否包含' },
+            { context: 'l.indexOf("aaa"); // 检索  取小标 否则 -1' },
+            { context: 'Object []  arr = l.toArray();// 转成数组' },
+            { context: '' },
+            { context: '' },
+            { context: '' },
+        ]
+    }, {
+        title: 'linkedlist集合的方法',
+        data: [
+            { context: 'LinkedList l = new LinkedList();' },
+            { context: 'l.getFirst();' },
+            { context: 'l.getLast();' },
+            { context: 'l.addFirst("aaa");' },
+            { context: 'l.addLast("enen");' },
+        ]
+    }, {
+        title: 'set 接口',
+        data: [
+            { context: 'Set set = new HashSet();' },
+            { context: 'set.add("aaa");' },
+            { context: 'set.add(null);  // 可以放空值' },
+            { context: '只能用  foreach的类型去取 无需唯一不重复  无序的  不可重复 上面两个aaa 只能打印出一个' },
+            { context: 'for (Object  o: set) {  System.out.println("这是什么"+o); }' },
+            { context: 'set.clear();' },
+            { context: 'set.isEmpty();' },
+            { context: 'set.contains("aaa");' },
+            { context: 'set.remove("aaa");' },
+            { context: 'set.size(); // 长度  一样的 只有一个位置' },
+
+            { context: 'TreeSet Tset  = new TreeSet();' },
+            { context: 'Tset.add("aaa"); //类型 需要和第一个一样//必须有 比较大小的能力  否则 没法村' },
+            { context: 'Tset.add("aaa");// 不重复 唯一' },
+            { context: 'for(Object o :Tset){System.out.println("Tset"+o);}' }
+        ]
+    }, {
+        title: 'Map 集合',
+        data: [
+            { context: 'Map  m = new HashMap();' },
+            { context: 'm.put("u3","张三");什么类型都可以放  包括自定义类型   值可以相同 键唯一' },
+            { context: 'System.out.println(m.get("u3"));' },
+            { context: 'm.containsKey("u2");' },
+            { context: 'm.containsValue("u1");' },
+            { context: 'Set s =m.entrySet(); //吧map 集合 转换为set容器   键值对 =  取值看set' },
+            { context: 'Set s = m.keySet(); //取键' },
+            { context: 'map的取值方式' },
+            { context: '第一种  通过set   转成set方式' },
+            { context: 'for(Object key : m.keySet()){   System.out.println(m.get(key));}' },
+            { context: '第二种： 转成set 使用迭代器' },
+            { context: 'Iterator it1 = (Iterator) m.entrySet().iterator();' },
+            { context: 'while(it1.hasNext()){ it.Next(); }' },
+            { context: '第三种 泛型 然后用entryset 定义类型 不让你填别的  用来规定类型的' },
+            { context: 'Map< String,String >  m1 = new HashMap< String,String >();  // 此处必须用' },
+            { context: ' m1.put("u3","张三");' },
+            { context: 'for(Entry< String,String >  entry : m1.entrySet() ){ entry.getKey()+":::"+entry.getValue() }' },
+            { context: '第四种 只能遍历value' },
+            { context: 'for(Object s : m1.values()){ System.out.println(s); }' },
+        ]
+    }]
+}
+data = [demo01, demo02, demo03, demo04, demo05, demo06, demo07, demo08, demo09, demo10, demo11, demo12]

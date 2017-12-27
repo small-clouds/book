@@ -20,7 +20,7 @@ var demo03 = {
     title: "Mysql学习目录",
     name: "Mysql学习目录",
     data: [
-        { context: "Mysql基础", url: "Java/demo/demo16.html" },
+        { context: "Mysql基础", url: "detail.html?data/sql01.js&02" },
         { context: "常见思路 方法", url: "detail.html?data/sql01.js&01" },
         { context: "那些年的sql语句", url: "data/doc/sql/demo01.sql" },
         { context: "脚本 中国省市区", url: "data/doc/sql/china.sql" }
@@ -41,20 +41,15 @@ var demo04 = {
         { url: "detail.html?data/java01.js&08", context: "面向对象 类和对象", },
         { url: "detail.html?data/java01.js&10", context: "修饰符", },
         { url: "detail.html?data/java01.js&11", context: "类之间的关系", },
-        { url: "detail.html?data/java01.js&13", context: "内部类 垃圾回收 异常", },
-        { url: "detail.html?data/java01.js&14", context: "容器和集合", },
-        { url: "detail.html?data/java01.js&15", context: "JDBC 数据库连接 java database connect  和DBCP", },
-        { url: "detail.html?data/java01.js&16", context: "I/O流", },
-        { url: "detail.html?data/java01.js&17", context: "多线程", },
-        { context: "继承和接口 类和类之间的关系", url: "Java/demo/demo12.html" },
-        { context: "包装类 类型强转", url: "Java/demo/demo13.html" },
+        //{ url: "detail.html?data/java01.js&11", context: "内部类 垃圾回收 异常", },
+        { url: "detail.html?data/java01.js&12", context: "容器和集合", },
+        //{ url: "detail.html?data/java01.js&15", context: "JDBC 数据库连接 java database connect  和DBCP", },
+       // { url: "detail.html?data/java01.js&16", context: "I/O流", },
+        { url: "detail.html?data/java01.js&09", context: "多线程", },
         { context: "内部类 垃圾回收 异常", url: "Java/demo/demo14.html" },
         { context: "Oracle数据库", url: "Java/demo/demo15.html" },
-        { context: "mysql数据库", url: "Java/demo/demo16.html" },
-        { context: "容器和集合", url: "Java/demo/demo17.html" },
         { context: "JDBC 数据库连接 java database connect  和DBCP", url: "Java/demo/demo18.html" },
         { context: "I/O流  input output stream", url: "Java/demo/demo19.html" },
-        { context: "多线程", url: "Java/demo/demo20.html" },
         { context: "设计模式", url: "Java/demo/demo21.html" },
         { context: "XML解析技术", url: "Java/demo/demo22.html" },
         { context: "递归和数据结构", url: "Java/demo/demo23.html" },
@@ -80,6 +75,7 @@ var demo05 = {
         { url: "detail.html?data/article01.js&02", context: "左传部分" },
         { url: "detail.html?data/article01.js&03", context: "现代文章" },
         { url: "detail.html?data/article01.js&04", context: "孙子兵法全集" },
+        { url: "detail.html?data/article01.js&05", context: "东周列国志部分" },
     ]
 }
 data = [demo01, demo02, demo03, demo04, demo05]

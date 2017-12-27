@@ -1,5 +1,5 @@
 package com.java.util;
-
+//Math.random()*(end - begin + 1) + begin   获取指定的的随机数
 public class BaseTools {
 	//date.getTime(); 时间转时间戳
 	//Date d = new Date(l);//时间戳转时间
