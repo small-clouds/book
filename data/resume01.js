@@ -16,7 +16,6 @@ var demo01 = {
             { context: '具备独立的学习能力、问题分析能力，能够独立调试解决问题。' },
         ]
     }, {
-
         title: "工作经历",
         data: [
             {
@@ -88,8 +87,9 @@ var demo01 = {
                     { context: '硬件环境：window' },
                     { context: '开发工具：eclipse、myeclipse、svn' },
                     { context: '项目技术：echarts jquery' },
-                    { context: '责任描述：' },
-                    { context: '项目简介：' },
+                    { context: '责任描述：负责就业专员模块 负责企业添加 岗位添加 学生面试和就业管理，以及学生去向，还包括对就业专员进行图表统计 各个方面' },
+                    { context: '项目简介：幽月花开管理平台，是一款帮助学生就业的管理平台，包括前台，教务，系统管理员 就业专员，企业hr等等；' },
+                    { context: '' },
                 ]
             }, {
                 title: '茶未来手机app的开发',
@@ -150,23 +150,42 @@ var demo01 = {
                 title: 'OA管理系统',
                 date: '2014/09 - 2015/02',
                 data: [
-                    { context: '软件环境：' },
-                    { context: '硬件环境' },
-                    { context: '开发工具：' },
+                    { context: '软件环境：tomcat服务器' },
+                    { context: '硬件环境：linux' },
+                    { context: '开发工具：eclipse，myeclipse' },
+                    { context: '项目技术：jquery、js、ajax、servlet、jsp' },
+                    { context: '责任描述：负责用户管理模块的权限设置包括新增用户 新增角色 新增菜单 以及对用户操作的监控和权限的赋予' },
+                    { context: '项目简介：建立内网用户管理平台系统; 包括行政管理，请假 出差 会议室管理，活动管理等等' },
+                ]
+            }, {
+                title: '保定铧钲电气、鸿钰多层板、锾海进出口贸易',
+                date: '2014/09 - 2015/02',
+                data: [
+                    { context: '软件环境：java、tomcat' },
+                    { context: '硬件环境：linux' },
+                    { context: '开发工具：notepad++、vscode、pickpick、ps' },
                     { context: '项目技术：' },
                     { context: '责任描述：' },
                     { context: '项目简介：' },
                 ]
-            }, {
-                title: '保定铧钲电气',
+            },{
+                title: '保定网商互通网络有限公司-web前端',
                 date: '2014/09 - 2015/02',
                 data: [
-                    { context: '软件环境：' },
-                    { context: '硬件环境' },
-                    { context: '开发工具：' },
-                    { context: '项目技术：' },
-                    { context: '责任描述：' },
-                    { context: '项目简介：' },
+                    { context: '软件环境：aspcms、dedecms' },
+                    { context: '硬件环境：window' },
+                    { context: '开发工具：notepad++、picpick' },
+                    { context: '项目技术：html+css+jquery' },
+                    { context: '责任描述：根据美工小样，为公司客户建立形象级网站' },
+                    { context: '项目简介：益康职业、康瑞门窗、保定野三坡住宿、康琪床垫等等' },
+                ]
+            },{
+                title: '保定网商互通网络有限公司-seo',
+                date: '2014/09 - 2015/02',
+                data: [
+                    { context: '项目技术：搜索引擎数据分析，关键词流量查询，网站权重' },
+                    { context: '责任描述：根据搜索引擎的关键词进行数据分析，为自己负责的项目提升权重' },
+                    { context: '项目简介：鸿玉川香麻辣烫，保定嘉利食品机械有限公司、伟通雕塑、明月纸业、保定徽园等等' },
                 ]
             },
         ]
