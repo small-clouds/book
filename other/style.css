@@ -16,3 +16,6 @@ div.main div div div{background:#eaeaea;}
 h2 span,h3 span{font-size:14px; font-weight:100;}
 
 /*background: RGB(238,246,255); #e2f2ff*/
+@media screen and (max-width: 300px) {
+
+}

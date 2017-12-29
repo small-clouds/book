@@ -1,0 +1,227 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+	<link rel="stylesheet" href="other/base.css" />
+	<script src='other/jquery.min.js'></script>
+	<script src='other/base.js'></script>
+	<script src='data/resume01.js'></script>
+
+	<title>尹栋力 - 个人简历</title>
+</head>
+
+<body onload="onloadvue()">
+	<header class='w1200'>
+		<h1 class='top'>尹栋力-个人简历</h1>
+		<h3>机遇只垂青于那些追求她的人</h3>
+		<span>兴趣(精通) -> 能力(找到平台) -> 就是价值</span>
+		<h2>基本信息</h2>
+		<div class='photo'><img src='data/images/myself.png'> </div>
+		<div>
+			<ul>
+				<li>性别：男 </li>
+				<li>手机：15030545985</li>
+				<li>户口：河北唐山</li>
+				<li>工作经验：四年互联网前端</li>
+				<li>出生日期：19900407;</li>
+				<li>现居住：北京</li>
+			</ul>
+		</div>
+	</header>
+	<div class='main w1200 ceshi' id="demoMain">
+		<template v-for="msg in data">
+			<h2>{{msg.title}}</h2>
+			<div class='none'>
+				<div v-for="msg1 in msg.data" v-html="msg1.context">{{msg1.context}}</div>
+				<template v-if="msg2.title" v-for="msg2 in msg.data">
+					<h3>{{msg2.title}}</h3>
+					<div class="none">
+						<div v-for="msg3 in msg2.data" v-html="msg3.context">{{msg3.context}} </div>
+					</div>
+				</template>
+			</div>
+		</template>
+		<div>
+			<h2>项目经验</h2>
+			<div class='none'>
+				<ul>
+					<li>
+						<h3>2017/09 - 2017/12 学生就业管理系统</h3>
+						<div class="none">
+							<p>开发环境：tomcat服务器 </p>
+							<p>开发工具：eclipse和myeclipse 使用spring springMVC 和mybatis</p>
+							<p>责任描述：负责就业专员模块 负责企业添加 岗位添加 学生面试和就业管理，以及学生去向，还包括对就业专员进行图表统计 各个方面</p>
+							<p>项目简介：学生就业管理系统平台，是一款帮助学生就业的管理平台，包括前台，教务，系统管理员 就业专员，企业hr等等
+							</p>
+						</div>
+					</li>
+					<li>
+						<h3>2017/06 - 2017/09 OA系统</h3>
+						<div class="none">
+							<p>开发环境：tomcat服务器 </p>
+							<p>开发工具：eclipse和myeclipse </p>
+							<p>责任描述：负责用户管理模块的权限设置包括新增用户 新增角色 新增菜单 以及对用户操作的监控和权限的赋予</p>
+							<p>项目简介：建立内网用户管理平台系统; 包括行政管理，请假 出差 会议室管理，活动管理等等</p>
+						</div>
+					</li>
+					<li>
+						<h3>2017/02 - 2017/06 北京茶未来网络科技有限公司</h3>
+						<div class="none">
+							<p>开发环境：php 硬件环境：阿里云服务器 </p>
+							<p>开发工具：微信，apicloud，h5 </p>
+							<p>责任描述：负责茶未来app的开发； 微信公众号的网页开发 公司网站的改版与bug修复； 能够调用支付宝和微信进行支付</p>
+							<p>项目简介：茶未来app是公司打造的关于茶的互联网平台，我负责微信端，与公司app的开发与建设</p>
+						</div>
+					</li>
+					<li>
+						<h3> 2016/08 - 2017/02 交通侠 </h3>
+						<div class="none">
+							<p> 开发环境：php </p>
+							<p> 开发工具：apicloud </p>
+							<p>责任描述：负责根据美工制作相应的交通侠的h5+css3的前端页面， 利用ajax与后台进行数据交互。 并添加有支付功能的完成 </p>
+							<p> 项目简介：</p>
+						</div>
+					</li>
+
+					<li>
+						<h3>2016/06 – 2017/02 交通侠官方网站 </h3>
+						<div class="none">
+							<p>软件环境：php </p>
+							<p>硬件环境：阿里服务器 </p>
+							<p>责任描述：负责网站的前端页面与结构。和后台管理的页面 </p>
+							<p>项目简介：交通侠的官方网站，并且有一套后台管理系统。我负责前端</p>
+
+						</div>
+					</li>
+
+					<li>
+						<h3>2016/02 - 2016/10 美食购购 </h3>
+						<div class="none">
+							<p>开发环境：hbuilder </p>
+							<p>责任描述：利用ajax技术与后台进行数据交互，在不跳转页面的情况下完成页面的修改与处理 负责网站的页面修改。 与网站的新加入的功能。 属于商城类型的网站。</p>
+							<p>项目简介：一款以餐饮为主题的商城网站，是公司完全独立自主的。我参与了后期的开发。与完成新增功能。包括购物车等等</p>
+						</div>
+					</li>
+					<li>
+						<h3>2015/02 - 2016/02 华钲电气官方网站 </h3>
+						<div class="none">
+							<p>开发环境：notepad++ </p>
+							<p>开发工具：dedecms</p>
+							<p>责任描述：负责公司网站建设，包括都搜索排名进行优化</p>
+							<p>项目简介：华钲电气官方网站建设，形象级网站只有一个后台管理系统</p>
+						</div>
+					</li>
+					<li>
+						<h3>2014/06 - 2015/02 网上互通有限公司 --程序员 </h3>
+						<div class="none">
+							<p>开发环境：notepad++ </p>
+							<p>开发工具：aspcms</p>
+							<p>责任描述：为客户建立形象级，不包括后期维护</p>
+							<p>项目简介：是一家外包公司，客户负责拉客户，我就是一个切图仔，感觉那时的我已经是一个程序员，但是还没有进入程序员的大门</p>
+						</div>
+					</li>
+					<li>
+						<h3>2014/02 - 2014/06 网上互通有限公司 --seo </h3>
+						<div class="none">
+							<p>开发环境：notepad++ </p>
+							<p>开发工具：aspcms</p>
+							<p>责任描述：在公司为企业</p>
+						</div>
+					</li>
+				</ul>
+
+			</div>
+		</div>
+
+
+
+
+	</div>
+
+	<footer>
+		<style>
+			.checkboxDiv label {
+				padding: 0 10px;
+			}
+		</style>
+		<div class="checkboxDiv none">
+			<p>选项 <label for=""><input type="checkbox" value="1">第一个</label><label for=""><input type="checkbox" value="2">第二个</label>
+				<label for=""><input type="checkbox" value="3">第三个</label><input class="Btn" type="button" value="全选"></p>
+		</div>
+		<div class="none">
+			cmr 个人信息 求职意向 工作经历 项目经验 教育经历 专业技能 92年以上的 
+			求职意向: java 开发工程师 包装 本科学历 + 三年经验
+			
+			个人信息 五年工作经验 现居住 北京 不要具体 工作年限 三年以上 2017年 之前 2017-12
+			求职意向 照抄 10000 -15000 工作经历 小型外包公司 20人以下 网上是查不到的 外地公司 北京的公司 虚的 或者 大型外包公司 
+			描述 负责项目的编码 调试 以及部署 外派到客户现场开发 外包公司 
+			银行进不去 首钢 extis
+			流水账号 中科软 14年以前毕业 可以真实学历 对于功能要具体到数字上 几个功能 
+			就业管理系统 主要是企业开发就业管理平台项目 整个项目基于mvc设计模式 利用springMvc spring mybatis 三个框架 实现的web项目
+			包含前台和后台两个部分 前台部分 主要为了帮助用户找到自己满意的工作 登录 注册 管理简历 查询岗位 后台部分 分为 系统管理员 教务管理 就业专员 企业hr 就业主管 系统管理员 对公司内部用户和角色权限 进行管理 mysql的dml和dql语句
+			队用户和角色惊醒管理 教务 对班级、 学员、 就业推荐分配进行管理 对学员面试进行回访 对学生分配就业专员 企业hr 对自己企业进行管理 修改企业信息 发布职位 和用户投递的简历进行管理 就业主管 对整个就业专员团队进行统计 来评比业绩
+			包括就业专员的学生统计 企业统计 就业情况统计 就业专员 负责对其企业和岗位进行管理 增删改查 还包括学员的就业情况信息 进行统计 也包括学生的面试和就业 ssm框架 MVC设计模式 jquery json ajax技术 echarts图表
+			myeclipse10 mysql5.5数据库 tomcat7.0 database modify language 基于mysql的dml和dql语句实现了的crud操作 crud 增加(Create)、读取查询(Retrieve)、更新(Update)和删除(Delete)
+
+		</div>
+	</footer>
+	<script src='other/vue.min.js'></script>
+	<script>
+		$('.ceshi').on('click', function (e) {
+			($(e.target)[0].tagName == 'H2' || $(e.target)[0].tagName == 'H3') ? $(e.target).next().toggle(500) : false;
+		})
+		$(".Btn").on("click", function () {
+			var a = $(this).parents("p").find("input[type='checkbox']");
+			if ($(this).val() == "全选") {
+				$(this).val("全不选");
+				for (var i = 0; i < a.length; i++) {
+					$(a).eq(i).prop("checked", true);
+					if ($(a).eq(i).prop("checked") == true) {
+						console.log($(a).eq(i).val());
+					}
+				}
+			} else {
+				$(this).val("全选");
+				for (var i = 0; i < a.length; i++) {
+					$(a).eq(i).prop("checked", false);
+				}
+			}
+		})
+		       /*
+        硬件 win linux android ios 
+        软件 tomcat jdk1.7 mysql 
+        工具 eclipse 
+        项目描述 springMVC spring mybatis jquery vue ajax echarts json html css js 
+        
+        北京幽月花开网络科技有限公司 2017/06-至今 全栈工程师 10000 
+        后台开发 学生就业管理平台 
+        
+        北京茶未来网络科技有限公司 2017/03 - 2017/06 
+        apicloud工程师 8000 主要手机端的混合开发  微信端和html5页面 
+        
+        保定博滢睿软件科技有限公司2016/02- 2017/02 java开发工程师 
+        4000 java后台开发 
+        交通侠app的后台开发 
+        美食购购的二次开发 
+        羊绒衫批发网站的二次开发 
+        项目经验 OA管理系统 
+
+        保定铧钲电气制造有限公司	2015/02 -2016/02 //08
+        前端工程师 3000 
+        铧钲电气 鸿钰多层板 锾海电气 三个部分的 
+        前端程序员 + 后台开发 
+        
+        保定网商互通网络科技有限公司 2014/09 - 2015/02 //13 2 
+        前端工程师 3000
+		前期网站编辑 seo 搜索引擎优化 
+        后期 前端程序员 
+        
+        项目 自己git的上线项目
+        
+        */
+	</script>
+</body>
+
+</html>

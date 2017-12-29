@@ -78,4 +78,15 @@ var demo05 = {
         { url: "detail.html?data/article01.js&05", context: "东周列国志部分" },
     ]
 }
-data = [demo01, demo02, demo03, demo04, demo05]
+//css学习目录
+var demo06={
+    title: "css学习目录",
+    name: "css学习目录",
+    data: [
+        { url: "detail.html?data/css01.js&01", context: "css基础知识" },
+        { url: "detail.html?data/css01.js&01", context: "单选框高度居中的六种方法" },
+        { url: "detail.html?data/css01.js&01", context: "css经典布局" },
+        { url: "detail.html?data/css01.js&01", context: "css学习框架图" },
+    ]
+}
+data = [demo01, demo02, demo03, demo04, demo05,demo06]

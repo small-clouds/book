@@ -3,10 +3,10 @@ var demo01 = {
     name: "",
     data: [
         { url: "Html/index.html", context: "Html学习内容", },
-        { url: "CSS/index.html", context: "Css学习内容", },
+        { url: "list.html?&06", context: "Css学习内容", },
         { url: "javascript/index.html", context: "JavaScript学习", },
         { url: "list.html?&04", context: "java教程", },
-        //{context:"个人简历",url:"resume/jl.html"},
+        {url:"resume.html",context:"个人简历",},
         { context: "php基础", url: "php/index.html" },
         { url: "frame/index.html", context: "框架修行" },
         { url: "package/index.html", context: "组件", },
