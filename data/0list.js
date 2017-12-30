@@ -84,9 +84,7 @@ var demo06={
     name: "css学习目录",
     data: [
         { url: "detail.html?data/css01.js&01", context: "css基础知识" },
-        { url: "detail.html?data/css01.js&01", context: "单选框高度居中的六种方法" },
-        { url: "detail.html?data/css01.js&01", context: "css经典布局" },
-        { url: "detail.html?data/css01.js&01", context: "css学习框架图" },
+        { url: "detail.html?data/css01.js&02", context: "常用css" },
     ]
 }
 data = [demo01, demo02, demo03, demo04, demo05,demo06]
