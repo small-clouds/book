@@ -366,33 +366,33 @@ var demo09 = {
             { context: '线程：进程中执行运算的最小单位 处理机分配给线程 即真正在处理机上运行的是线程' },
             { context: '创建线程对象 线程 分为主线程 和子线程 并行关系 最先启动的 为主线程 主线程 关闭 子线程 也可能成为主线程 并无明确的界限' },
         ]
-    },{
+    }, {
         title: '创建线程的方式',
         data: [
             { context: '继承Thread 类 重写run方法' },
             { context: '实现Runnable 接口 实现run方法' },
             { context: '创建线程对象  打点调用start();' },
         ]
-    },{
+    }, {
         title: '线程的状态与运行',
         data: [
             { context: '线程的四种状态 新生状态 -> start -> 可运行状态 -> ( 阻塞状态 ) run -> 死亡状态' },
             { context: '阻塞原因 1.io流阻塞 2.人为睡眠 3.线程锁' },
         ]
-    },{
+    }, {
         title: '线程调度',
         data: [
             { context: 'join： 等待该线程终止的时间 ms a线程 调用b线程的join方法 a暂停 等待b执行啊无奈' },
             { context: 'Yeild: 暂停 级别挺低的 暂停当前线程 执行其他线程' },
             { context: 'Sleep: 挂起 有参数毫秒值 暂停 专业名词 挂起' },
         ]
-    },{
+    }, {
         title: '加锁(Synchronized)',
         data: [
             { context: '<span class="remark">可以放在 同步代码块上 放在这最好 串行化 范围越小越好</span>' },
             { context: 'Synchronized(同步对象){  代码块 }' },
         ]
-    },{
+    }, {
         title: '线程安全的类',
         data: [
             { context: 'vector 效率较低 现在不建议用' },
@@ -400,7 +400,7 @@ var demo09 = {
             { context: 'hashtabe' },
             { context: 'enumeration 枚举' },
         ]
-    },{
+    }, {
         title: 'hashtable和hashmap的区别',
         data: [
             { context: '1 线程安全的 提供了同步机制' },
@@ -685,4 +685,351 @@ var demo12 = {
         ]
     }]
 }
-data = [demo01, demo02, demo03, demo04, demo05, demo06, demo07, demo08, demo09, demo10, demo11, demo12]
+//JAVAEE、myEclipse和Tomcat
+var demo13 = {
+    title: "JAVAEE、myEclipse和Tomcat",
+    name: "JAVAEE、myEclipse和Tomcat",
+    data: [{
+        title: 'JAVAEE',
+        data: [
+            { context: '十三种技术规范' },
+            { context: '<span class="remark">JDBC, JNDI, JSP, Java servlets, XML</span>,EJBs, RMI, JMS, Java IDL, JTS, JTA, JavaMail 和 JAF。' },
+        ]
+    }, {
+        title: 'java服务器分类 javaee服务器/web服务器',
+        data: [
+            {
+                title: "javaee服务器",
+                data: [
+                    { context: '13种技术规范全部实现的服务器叫做javaee服务器' },
+                    { context: 'WebLogic BEA 被Oracle收购 付费的' },
+                    { context: 'Websphere IBM （银行） 付费的' },
+                    { context: 'JBoss 免费的' },
+                    { context: 'GlassFish SUN' },
+                    { context: 'Oracle Application Server' },
+                    { context: 'Geronimo 免费的（实际上就是Websphere）' },
+                ]
+            },
+            {
+                title: "web服务器",
+                data: [
+                    { context: '实现十三种技术规范的部分要求的服务器叫做web服务器' },
+                    { context: '浏览器 谷歌(最绚丽的) firefox(火狐 最专业的) opera(最小巧的) ie(最恶心的) 6，8 兼容性 更新快' },
+                    { context: '<span class="remark">cs结构</span> 客户端与服务器' },
+                    { context: '用的少 因为需要下载和更新 更新慢 客户不喜欢更新 游戏 音乐盒 会涉及到cs结构' },
+                    { context: '常见的五种web服务器：' },
+                    { context: 'Tomcat：目前最为流行的Tomcat服务器是Apache-Jarkarta开源项目中的一个子项目，是一个小型、轻量级的支持JSP和Servlet 技术的Web服务器，也是初学者学习开发JSP应用的首选。' },
+                    { context: 'Resin：Resin是Caucho公司的产品，是一个非常流行的支持Servlet和JSP的服务器，速度非常快。Resin本身包含了一个支持HTML的Web服务器，这使它不仅可以显示动态内容，而且显示静态内容的能力也毫不逊色，因此许多网站都是使用Resin服务器构建。' },
+                    { context: 'JBoss：　JBoss是一个种遵从JavaEE规范的、开放源代码的、纯Java的EJB服务器，对于J2EE有很好的支持。JBoss采用JML API实现软件模块的集成与管理，其核心服务又是提供EJB服务器，不包含Servlet和JSP的Web容器，不过它可以和Tomcat完美结合' },
+                    { context: 'WebSphere：　WebSphere是IBM公司的产品，可进一步细分为 WebSphere Performance Pack、Cache Manager 和WebSphere Application Server等系列，其中WebSphere Application Server 是基于Java 的应用环境，可以运行于 Sun Solaris、Windows NT 等多种操作系统平台，用于建立、部署和管理Internet和Intranet Web应用程序。' },
+                    { context: 'WebLogic：　WebLogic 是BEA公司的产品，可进一步细分为 WebLogic Server、WebLogic Enterprise 和 WebLogic Portal 等系列，其中 WebLogic Server 的功能特别强大。WebLogic 支持企业级的、多层次的和完全分布式的Web应用，并且服务器的配置简单、界面友好。对于那些正在寻求能够提供Java平台所拥有的一切应用服务器的用户来说，WebLogic是一个十分理想的选择。' },
+                ]
+            },
+        ]
+    }, {
+        title: 'Tomcat',
+        data: [
+            { context: '验证tomcat是否完整 http://locathost:8080' },
+            { context: '开发过程中：一个项目 一个工作区 一个tomcat' },
+            { context: '每次修改后台代码都需要重启Tomcat？为什么' },
+            {
+                title: "启动tomcat的方式",
+                data: [
+                    { context: '双击startup.bat linux双击startup.sh//关闭双击shutdown.bat linux双击shutdown.sh' },
+                    { context: '在myeclipse里面点击启动' },
+                    { context: '在bin目录下 命令行 catalina start//关闭 catalina stop' },
+                ]
+            },
+            {
+                title: "Tomcat目录结构",
+                data: [
+                    { context: 'bin->tomcat命令' },
+                    { context: 'conf->配置文件' },
+                    { context: 'lib->存放jar包' },
+                    { context: 'logs->tomcat日志' },
+                    { context: 'temp->tomcat临时文件' },
+                    { context: 'webapps->tomcat部署项目的路径' },
+                    { context: 'work->tomcat存放二进制文件(.class)' },
+                    { context: 'bin->tomcat命令' },
+                ]
+            },
+            {
+                title: "conf文件重要内容",
+                data: [
+                    { context: 'context.xml <span class="remark">Tomcat项目中指定根目录web工程的根目录' },
+                    { context: 'WatchedResource WEB-INF/web.xml /WatchedResource' },
+                    { context: 'server.xml' },
+                    { context: ' 端口/协议/超时/重定向端口/编码格式' },
+                    { context: 'Connector port="8080" ' },
+                    { context: 'protocol="HTTP/1.1"' },
+                    { context: 'connectionTimeout="20000" ' },
+                    { context: 'redirectPort="8443"' },
+                    { context: ' URIEncoding="utf-8"/' },
+                    { context: 'Host<span class="remark">配置虚拟主机</span> ' },
+                    { context: 'web.xml 最重要的就是对后缀解析' },
+
+                ]
+            },
+        ]
+    }, {
+        title: 'myEclipse',
+        data: [
+            { context: '配置jdk Tomcat 还有jsp 在window->preference->直接搜索' },
+        ]
+    }, {
+        title: '新建简单的web流程',
+        data: [
+            { context: '在myeclipse-> new->web project' },
+            { context: 'webRoot/WEB-INF/web.xml <span class="remark">Servlet的核心配置文件</span>' },
+            { context: 'Url-pattern 访问路径' },
+            { context: 'Servlet-name 是标记 只要与 上面的 servlet 中的 servlet-name 一致即可只是用来找到处理类的 servlet-class 必须是全名称' },
+            { context: '在src下面新建servlet 会在核心配置文件生成配置 ' },
+            { context: '新建一个servlet mapping url 后缀加.do 目的是为了区分 POJO(project old java Object) mapping url是访问该servlet 的地址' },
+        ]
+    }, {
+        title: '部署项目的n种方式',
+        data: [
+            { context: '<span class="remark">复制的项目一定要更改文件的路径 否则报错</span>' },
+            { context: '向服务器webapps中放入web工程' },
+            { context: '部署时，将源代码编译成字节码文件放到 web-inf/classes下面' },
+            { context: '以上有两种方式<span class="remark">通过工具/手动向webapps放入项目</span>' },
+            { context: '将war包放入到webapps下/启动tomcat 启动的过程就是解压war包的过程' },
+            { context: 'jar并不算是一种部署项目的方式 但是能够实现' },
+        ]
+    }, {
+        title: '修改项目的访问路径',
+        data: [
+            { context: '复制过来的项目一定要修改访问路径' },
+            { context: '项目右键 properties 搜索web 第一个web更改路径' },
+        ]
+    }, {
+        title: 'jar包和war包',
+        data: [
+            { context: 'jar包：选择src目录 -> exprot ->java -> jar file' },
+            { context: 'war包：选择所有文件 ->exprot ->javaee ->war file' },
+        ]
+    }, {
+        title: '协议',
+        data: [
+            {
+                title: 'Http协议',
+                data: [
+                    { context: 'Hyper Text Transfer Protocal 超文本传输协议' },
+                    { context: '请求有 请求头和请求体' },
+                    { context: '响应有 响应头和响应体' },
+                    { context: '响应状态码' },
+                    { context: '200 成功' },
+                    { context: '302 重定向' },
+                    { context: '304 查找本地缓存' },
+                    { context: '404 请求资源不存在' },
+                    { context: '500 服务器端出错' },
+                ]
+            },
+        ]
+    }, {
+        title: '',
+        data: [
+            { context: '' },
+            { context: '' },
+        ]
+    }]
+}
+//关于java的内存泄漏
+var demo14 = {
+    title: "关于java的内存泄漏",
+    name: "关于java的内存泄漏",
+    data: [{
+        title: '什么是内存泄漏',
+        data: [
+            { context: '对象已经没有被应用程序使用，但是垃圾回收器没办法移除它们，因为还在被引用着。' },
+            { context: '未被引用对象会被垃圾回收器回收，而被引用的对象却不会。未被引用的对象当然是不再被使用的对象，因为没有对象再引用它。然而无用对象却不全是未被引用对象。其中还有被引用的。就是这种情况导致了内存泄漏。' },
+        ]
+    }, {
+        title: '为什么会发生内存泄漏',
+        data: [
+            { context: 'A对象引用B对象，A对象的生命周期比B对象的生命周期长的多。当B对象没有被应用程序使用之后，A对象仍然在引用着B对象。这样，垃圾回收器就没办法将B对象从内存中移除，从而导致内存问题，因为如果A引用更多这样的对象，那将有更多的未被引用对象存在，并消耗内存空间。' },
+            { context: 'B对象也可能会持有许多其他的对象，那这些对象同样也不会被垃圾回收器回收。所有这些没在使用的对象将持续的消耗之前分配的内存空间。' },
+        ]
+    }, {
+        title: '如何防止内存泄漏的发生',
+        data: [
+            { context: '特别注意一些像HashMap、ArrayList的集合对象，它们经常会引发内存泄漏。当它们被声明为<span class="remark">static</span>时，它们的生命周期就会和应用程序一样长。' },
+            { context: '特别注意事件监听和回调函数。当一个监听器在使用的时候被注册，但不再使用之后却未被反注册。' },
+            { context: '“如果一个类自己管理内存，那开发人员就得小心内存泄漏问题了。” 通常一些成员变量引用其他对象，初始化的时候需要置空。' },
+        ]
+    },]
+}
+//Servlet 生命周期和访问流程
+var demo15 = {
+    title: "Servlet 生命周期和访问流程",
+    name: "Servlet 生命周期和访问流程",
+    data: [{
+        title: 'Servelet',
+        data: [
+            { context: 'Servlet = servlet+applet 服务器端的小程序' },
+            { context: 'Servlet2.0支持配置方式 web.xml' },
+            { context: 'Servlet3.0以上版本支持注解方式 @Test @webServlet("/TestServlet.do") ' },
+            { context: '每一个servlet都会继承HttpServlet' },
+            { context: '并且会在web.xml下面形成对应的配置文件' },
+        ]
+    }, {
+        title: 'servlet继承实现关系',
+        data: [
+            { context: '每次创建servlet都会直接继承HttpServlet(抽象类) ->继承 GenericServlet(抽象类) ->实现 Servlet(抽象类)' },
+            { context: '子类的方法优先级比父级高' },
+            {
+                title: 'Servlet抽象类',
+                data: [
+                    { context: 'abstract init() 初始化' },
+                    { context: 'abstract getServletConfig() 获取对象' },
+                    { context: 'abstract service() 服务 核心方法' },
+                    { context: 'abstract getServletInfo() 获取信息的方法' },
+                    { context: 'abstract destroy() 销毁方法' },
+                ]
+            },
+            {
+                title: 'GenericServlet 抽象类',
+                data: [
+                    { context: 'destroy(){} 毛线没写' },
+                    { context: 'String getInitParameter(){} 获取初始化参数' },
+                    { context: 'Enumeration < String> getInitParameterNames(){} 获取初始化参数名称的方法' },
+                    { context: 'getServletConfig(){} 获取初始化对象的' },
+                    { context: 'ServletContext getServletContext(){} 获取上下文对象的方法' },
+                    { context: 'String getServletInfo(){return "";}' },
+                    { context: 'init() / init(ServletConfig config) 互为重载 初始化方法' },
+                ]
+            },
+        ]
+    }, {
+        title: 'servlet的一些方法',
+        data: [
+            { context: 'request.getParameter("username") 获取前台的username' },
+            { context: 'request.setAttribute("username", name); 向request添加键值对 供前台访问' },
+            { context: 'request.getRequestDispatcher("error.jsp").forward(request, response); 请求转发到error页面' },
+            { context: '<%=request.getAttribute("username") %> jsp页面获取后台发送的username' },
+            { context: 'response.sendRedirect("index.jsp"); 重定向到index.jsp' },
+        ]
+    }, {
+        title: '访问流程',
+        data: [
+            { context: '请求路径--> 匹配web.xml中的 url-pattern中的路径' },
+            { context: '就可以去servlet-name' },
+            { context: '找 servlet中的 servlet-name' },
+            { context: '拿到servlet-class中的 全名 全名' },
+            { context: '之后用映射的方式创建 HttpServlet h = class.forName()' },
+            { context: '打点调用方法 eg： h.doGet()' },
+        ]
+    }, {
+        title: 'Servlet的生命周期',
+        data: [
+            { context: '任何一个自定义的servlet都有直接父类 HttpServlet' },
+            { context: '当第一次访问的时候 服务器创建servlet有且只有一个 所以是单例模式' },
+            { context: '再次访问不会被创建 开启新的线程 每次访问都会调用service方法' },
+            { context: 'init() 初始化 第一次访问的时候被初始化 只有一次' },
+            { context: 'service() 来自父类的 每次访问都会被调用' },
+            { context: 'destroy() 只有服务器正常关闭前 会执行一次' },
+        ]
+    }, {
+        title: '有关对象',
+        data: [
+            {
+                title: 'ServletConfig（了解就好 获取配置信息的）',
+                data: [
+                    { context: 'ServletConfig sc= this.getServletConfig(); // 初始化对象' },
+                    { context: 'sc.getInitParameter("aaa"); //初始化参数' },
+                    { context: 'sc.getServletName() // 获取局部初始化参数名称' },
+                    { context: 'Enumeration e = sc.getInitParameterNames(); //获取局部初始化参数名称' },
+                    { context: 'while(e.hasMoreElements()){' },
+                    { context: 'e.nextElement()' },
+                    { context: '}' },
+                ]
+            }, {
+                title: 'ServletContext(重要) 获取上下文对象 作用域对象',
+                data: [
+                    { context: 'ServletContext st = this.getServletContext(); //初始化context对象' },
+                    { context: 'String path = st.getRealPath("upload"); //相对路径转绝对路径 （重要）' },
+                    { context: 'st.setAttribute("name","张三"); //全局容器 随着服务器一直存在 （重要）' },
+                    { context: 'st.getInitParameter("cloud");//获取全局初始化参数' },
+                    { context: 'Enumeration e = st.getInitParameterNames(); //获取所有初始化参数名称' },
+                    { context: 'while(e.hasMoreElements()){' },
+                    { context: 'e.nextElement()' },
+                    { context: '}' },
+                    { context: '最没用的' },
+                    { context: 'st.getMajorVersion() // 获取附加信息' },
+                    { context: 'st.getMinorVersion() // 获取附加信息' },
+                ]
+            },
+        ]
+    }, {
+        title: '作用域对象 HttpServletRequest对象；HttpServletResponse对象',
+        data: [
+            {
+                title: 'request 对象方法',
+                data: [
+                    { context: 'Servlet中请求中的所有内容，都会被封装成一个 HttpServletRequest request对象并作为 doGet 或 doPost的参数 (谁做的封装？--- 服务器)' },
+                    { context: '<span class="remark">以下内容必会</span>' },
+                    { context: 'String str = request.getQueryString(); // get请求携带数据问号参数 问号后面的字符串' },
+                    { context: 'String name = request.getParameter("name");// get参数/post参数' },
+                    { context: 'String[] aStr = request.getParameterValues("hobby"); // checkbox的values' },
+                    { context: 'request.setAttribute("username", name);' },
+                    { context: 'request.getRequestDispatcher("error.jsp").forward(request, response); 请求转发到error页面' },
+                    { context: '--------------------分割线-------------------------------' },
+                    { context: 'String userAhent = request.getHeader("user-Agent"); // 客户端品牌信息' },
+                    { context: 'String Referer =request.getHeader("Referer") ;// 得到的是请求来源 可以用来做防盗链' },
+                    { context: 'String method = request.getMethod(); //post/get' },
+                    { context: 'String contextpath = request.getContextPath();// 部署时的项目名称' },
+                    { context: 'String ServerName = request.getServerName(); // 服务器名称' },
+                    { context: 'String protocal = request.getProtocol(); // 获得协议 HTTP/1.1' },
+                    { context: 'int Serverport = request.getServerPort();//端口号' },
+                    { context: 'String uri = request.getRequestURI();// 统一资源定位符 /1208/RequestTest.do' },
+                    { context: 'StringBuffer url = request.getRequestURL();// 资源标识符 http://localhost:8080/1208/RequestTest.do' },
+                    { context: '//获取所有请求头的key' },
+                    { context: 'Enumeration e = request.getHeaderNames();//获取所有key' },
+                    { context: 'String ip =request.getRemoteAddr();//客户端ip地址 ' },
+                    { context: 'while(e.hasMoreElements()){' },
+                    { context: 'String name = (String)e.nextElement();' },
+                    { context: 'System.out.print(name);' },
+                    { context: '}' },
+                ]
+            }, {
+                title: 'response 对象方法',
+                data: [
+                    { context: 'Servlet中请求中的所有内容，都会被封装成一个 HttpServletResponse' },
+                    { context: 'response.sendRedirect("index.jsp"); //重定向' },
+                ]
+            },
+        ]
+    }]
+}
+//递归和数据结构
+var demo16 = {
+    title: "递归和数据结构",
+    name: "递归和数据结构",
+    data: [{
+        title: '递归调用',
+        data: [
+            { context: '定义： 自己调自己 直接或者间接的电泳自身' },
+            { context: '从功能上来说；所有的递归都能用循环来实现，有时候递归方便一点' },
+            { context: '从效率上来说，循环一般都是大于递归的' },
+            { context: '具体案例算法里面应该有详解' },
+            { context: '' },
+        ]
+    },{
+        title: '数据结构',
+        data: [
+            { context: '<span class="remark">我们了解的只是皮毛，也许皮毛都高估了自己</span>' },
+            { context: '存储在：栈 堆 内存中' },
+            { context: '内存分为 常量区。。。。' },
+            { context: '栈区(stack)  后进先出 创建一个对象的时候  会在堆区开辟一部分空间(暂时理解为堆内存) 当成为垃圾的时候  系统会回收这段空间' },
+            { context: '堆区(): 堆是Java虚拟机所管理的内存中最大的一块。堆是所有线程共享的一块区域，在虚拟机启动时创建。堆的唯一目的是存放对象实例，' },
+            { context: '栈（stack）：主要保存基本类型（或者叫内置类型）（char、byte、short、int、long、float、double、boolean）和对象的引用，数据可以共享，速度仅次于寄存器（register），快于堆。 ' },
+            { context: '堆（heap）：用于存储对象' },
+            { context: '  Java堆是垃圾收集器管理的主要区域，所以也称为“GC堆”。 所以Java堆还可细分为:新生代和老生代。' },
+            { context: '不过无论如何划分，都与存放内容无关，无论哪个区域，都是用来存放对象实例。' },
+            { context: '方法区（也叫：数据区，共享区，共享数据区） —— 存放全局变量，静态变量和字符串常量，和方法' },
+        ]
+    }]
+}
+data = [demo01, demo02,
+    demo03, demo04, demo05,
+    demo06, demo07, demo08, demo09, demo10, demo11, demo12, demo13, demo14, demo15, demo16]

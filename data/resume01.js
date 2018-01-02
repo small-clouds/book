@@ -99,8 +99,8 @@ var demo01 = {
                     { context: '硬件环境：android、ios' },
                     { context: '开发工具：apicloud、vscode、svn' },
                     { context: '项目技术：apicloud、html5、css3' },
-                    { context: '责任描述：' },
-                    { context: '项目简介：' },
+                    { context: '责任描述：负责公司的app的混合开发 利用apicloud进行二次开发app' },
+                    { context: '项目简介：一个不一样的茶礼商城，与线下茶券相配合，线上兑换各种茶品，茶水套餐的官方app' },
                 ]
             }, {
                 title: '茶未来响应式网站开发',
@@ -110,41 +110,41 @@ var demo01 = {
                     { context: '硬件环境：window' },
                     { context: '开发工具：vscode、Hbuilder、svn' },
                     { context: '项目技术：html5、css3、template.js、jquery' },
-                    { context: '责任描述：' },
-                    { context: '项目简介：' },
+                    { context: '责任描述：公司移动端和pc打通数据接口 利用响应式开发 来达到不同设备的访问' },
+                    { context: '项目简介：公司致力于打造北京茶未来的平台 需要多端合作' },
                 ]
             }, {
                 title: '交通侠app',
                 date: '2014/09 - 2015/02',
                 data: [
-                    { context: '软件环境：' },
-                    { context: '硬件环境' },
-                    { context: '开发工具：' },
-                    { context: '项目技术：' },
-                    { context: '责任描述：' },
-                    { context: '项目简介：' },
+                    { context: '软件环境：mysql5.5 jdk1.7 tomcat7' },
+                    { context: '硬件环境：window' },
+                    { context: '开发工具：eclipse，myeclipse' },
+                    { context: '项目技术：java' },
+                    { context: '责任描述：负责交通侠app数据管理 并学习apicloud来实现app端' },
+                    { context: '项目简介：交通侠app是一款交通管理应用软件，里面提供多项拥堵执法的交通实况，还能智能的规划路线，帮你节省时间，提早知道路况不好的交通状况，还能及时的避免不必要的危险状况。' },
                 ]
             }, {
                 title: '美食购购的二次开发',
                 date: '2014/09 - 2015/02',
                 data: [
-                    { context: '软件环境：' },
-                    { context: '硬件环境' },
-                    { context: '开发工具：' },
-                    { context: '项目技术：' },
-                    { context: '责任描述：' },
-                    { context: '项目简介：' },
+                    { context: '软件环境：java' },
+                    { context: '硬件环境：tomcat' },
+                    { context: '开发工具：eclipse，myeclipse' },
+                    { context: '项目技术：mvc设计模式 ajax、json、svn' },
+                    { context: '责任描述：负责公司台代码的编写 和功能的完善，菜品添加和公司添加 和账单系统' },
+                    { context: '项目简介：公司打造的保定美食平台，里面有保定美食的介绍，和保定店家的推荐' },
                 ]
             }, {
                 title: '羊绒衫批发网站的二次开发',
                 date: '2014/09 - 2015/02',
                 data: [
-                    { context: '软件环境：' },
-                    { context: '硬件环境' },
-                    { context: '开发工具：' },
-                    { context: '项目技术：' },
-                    { context: '责任描述：' },
-                    { context: '项目简介：' },
+                    { context: '软件环境：tomcat服务器、mysql jdk' },
+                    { context: '硬件环境：window' },
+                    { context: '开发工具：eclipse、myeclipse' },
+                    { context: '项目技术：ajax、json、svn ' },
+                    { context: '责任描述：负责网站的二次开发 ' },
+                    { context: '项目简介：公司临时接的项目，为羊绒衫开发平台 进行网站的二次开发' },
                 ]
             }, {
                 title: 'OA管理系统',
@@ -164,9 +164,9 @@ var demo01 = {
                     { context: '软件环境：java、tomcat' },
                     { context: '硬件环境：linux' },
                     { context: '开发工具：notepad++、vscode、pickpick、ps' },
-                    { context: '项目技术：' },
-                    { context: '责任描述：' },
-                    { context: '项目简介：' },
+                    { context: '项目技术：js、jquery、html、css、java' },
+                    { context: '责任描述：负责公司页面的编写 以后后期前后台代码的维护' },
+                    { context: '项目简介：铧钲电气 鸿钰和锾海公司官网的建设 公司自己的官方网站' },
                 ]
             },{
                 title: '保定网商互通网络有限公司-web前端',
