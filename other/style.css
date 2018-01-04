@@ -2,6 +2,8 @@
 ul,li{list-style: none;}
 a {color: #666; text-decoration: none;}
 body {padding: 20px;color: #000;}
+  /*  #cas{ width:100%;height:100%;}
+    #demoMain,#demoMain{position:absolute; top:0; width:100%;}*/
 .fl{float: left;}
 .fr {float: right;}
 .none {display: none;}

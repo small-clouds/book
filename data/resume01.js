@@ -19,7 +19,7 @@ var demo01 = {
         title: "工作经历",
         data: [
             {
-                title: '北京幽月花开网络科技有限公司',
+                title: '北京幽月花开软件科技有限公司',
                 date: '2017/06-至今',
                 data: [
                     { context: '职位：全栈工程师' },
@@ -38,7 +38,7 @@ var demo01 = {
                 ]
             }, {
                 title: '保定博滢睿软件科技有限公司',
-                date: '2016/02- 2017/02',
+                date: '2015/05- 2017/02',
                 data: [
                     { context: '职位：java工程师' },
                     { context: '薪资：4000元/月' },
@@ -47,7 +47,7 @@ var demo01 = {
                 ]
             }, {
                 title: '保定铧正电气制造有限公司 ',
-                date: '2015/02 -2016/02',
+                date: '2014/10 -2015/05',
                 data: [
                     { context: '职位：前端工程师' },
                     { context: '薪资：3000元/月' },
@@ -56,10 +56,10 @@ var demo01 = {
                 ]
             }, {
                 title: '保定网商互通网络科技有限公司 ',
-                date: '2014/09 - 2015/02',
+                date: '2014/05 - 2014/10',
                 data: [
                     { context: '职位：网站编辑/web前端' },
-                    { context: '薪资：3000元/月' },
+                    { context: '薪资：2000元/月' },
                     { context: '行业：互联网/电子商务' },
                     { context: '工作描述：前期负责公司所营项目的分发，管理教导新人的入职培训。 后期主要负责根据美工小样为客户建设网站' },
                 ]
@@ -69,7 +69,7 @@ var demo01 = {
         data: [
             {
                 title: '自己的git线上项目 ',
-                date: '2017/02 - 至今',
+                date: '2017/06 - 至今',
                 data: [
                     { context: '软件环境：github' },
                     { context: '硬件环境: linux' },
@@ -82,14 +82,14 @@ var demo01 = {
                 title: '幽月花开管理平台',
                 date: '2017/06 - 至今',
                 data: [
-                    { context: '公司：幽月花开' },
+                   // { context: '公司：幽月花开' },
                     { context: '软件环境：tomcat7.0 jdk1.7 mysql' },
                     { context: '硬件环境：window' },
                     { context: '开发工具：eclipse、myeclipse、svn' },
                     { context: '项目技术：echarts jquery' },
                     { context: '责任描述：负责就业专员模块 负责企业添加 岗位添加 学生面试和就业管理，以及学生去向，还包括对就业专员进行图表统计 各个方面' },
                     { context: '项目简介：幽月花开管理平台，是一款帮助学生就业的管理平台，包括前台，教务，系统管理员 就业专员，企业hr等等；' },
-                    { context: '' },
+                    //{ context: '为培训学校设计的一款学生管理软件，包括入学到就业分配的一系列流程为每一份员工分配学生包括学生统计' },
                 ]
             }, {
                 title: '茶未来手机app的开发',
@@ -115,7 +115,7 @@ var demo01 = {
                 ]
             }, {
                 title: '交通侠app',
-                date: '2014/09 - 2015/02',
+                date: '2016/06 - 2017/02',
                 data: [
                     { context: '软件环境：mysql5.5 jdk1.7 tomcat7' },
                     { context: '硬件环境：window' },
@@ -125,19 +125,8 @@ var demo01 = {
                     { context: '项目简介：交通侠app是一款交通管理应用软件，里面提供多项拥堵执法的交通实况，还能智能的规划路线，帮你节省时间，提早知道路况不好的交通状况，还能及时的避免不必要的危险状况。' },
                 ]
             }, {
-                title: '美食购购的二次开发',
-                date: '2014/09 - 2015/02',
-                data: [
-                    { context: '软件环境：java' },
-                    { context: '硬件环境：tomcat' },
-                    { context: '开发工具：eclipse，myeclipse' },
-                    { context: '项目技术：mvc设计模式 ajax、json、svn' },
-                    { context: '责任描述：负责公司台代码的编写 和功能的完善，菜品添加和公司添加 和账单系统' },
-                    { context: '项目简介：公司打造的保定美食平台，里面有保定美食的介绍，和保定店家的推荐' },
-                ]
-            }, {
                 title: '羊绒衫批发网站的二次开发',
-                date: '2014/09 - 2015/02',
+                date: '2016/02 - 2016/06',
                 data: [
                     { context: '软件环境：tomcat服务器、mysql jdk' },
                     { context: '硬件环境：window' },
@@ -147,8 +136,8 @@ var demo01 = {
                     { context: '项目简介：公司临时接的项目，为羊绒衫开发平台 进行网站的二次开发' },
                 ]
             }, {
-                title: 'OA管理系统',
-                date: '2014/09 - 2015/02',
+                title: '内部员工管理系统',
+                date: '2015/10 - 2016/02',
                 data: [
                     { context: '软件环境：tomcat服务器' },
                     { context: '硬件环境：linux' },
@@ -158,10 +147,21 @@ var demo01 = {
                     { context: '项目简介：建立内网用户管理平台系统; 包括行政管理，请假 出差 会议室管理，活动管理等等' },
                 ]
             }, {
-                title: '保定铧钲电气、鸿钰多层板、锾海进出口贸易',
-                date: '2014/09 - 2015/02',
+                title: '美食购购的二次开发',
+                date: '2015/05 - 2015/10',
                 data: [
-                    { context: '软件环境：java、tomcat' },
+                    { context: '软件环境：tomcat服务器' },
+                    { context: '硬件环境：window' },
+                    { context: '开发工具：eclipse，myeclipse' },
+                    { context: '项目技术：mvc设计模式 ajax、json、svn' },
+                    { context: '责任描述：负责公司台代码的编写 和功能的完善，菜品添加和公司添加 和账单系统' },
+                    { context: '项目简介：公司打造的保定美食平台，里面有保定美食的介绍，和保定店家的推荐' },
+                ]
+            },{
+                title: '保定铧钲电气、鸿钰多层板、锾海进出口贸易',
+                date: '2014/10 - 2015/05',
+                data: [
+                    { context: '软件环境：tomcat' },
                     { context: '硬件环境：linux' },
                     { context: '开发工具：notepad++、vscode、pickpick、ps' },
                     { context: '项目技术：js、jquery、html、css、java' },
@@ -170,7 +170,7 @@ var demo01 = {
                 ]
             },{
                 title: '保定网商互通网络有限公司-web前端',
-                date: '2014/09 - 2015/02',
+                date: '2014/05 - 2014/10',
                 data: [
                     { context: '软件环境：aspcms、dedecms' },
                     { context: '硬件环境：window' },
@@ -181,7 +181,7 @@ var demo01 = {
                 ]
             },{
                 title: '保定网商互通网络有限公司-seo',
-                date: '2014/09 - 2015/02',
+                date: '2014/05 - 2014/10',
                 data: [
                     { context: '项目技术：搜索引擎数据分析，关键词流量查询，网站权重' },
                     { context: '责任描述：根据搜索引擎的关键词进行数据分析，为自己负责的项目提升权重' },
@@ -258,3 +258,6 @@ var demo01 = {
     }]
 }
 data = [demo01]
+
+
+// 程序员的特性就是偷懒 当你偷懒的时候 你就进化
