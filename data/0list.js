@@ -85,4 +85,29 @@ var demo06={
         { url: "detail.html?data/css01.js&02", context: "常用css" },
     ]
 }
-data = [demo01, demo02, demo03, demo04, demo05,demo06]
+//php目录
+var demo07={
+    title: "php目录",
+    name: "php目录",
+    data: [
+        { url: "detail.html?data/php01.js&01", context: "数据类型" },
+        { url: "detail.html?data/php01.js&02", context: "运算符" },
+        { url: "php/demo/demo03.html", context: "流程控制和循环语句" },
+        { url: "php/demo/demo04.html", context: "函数/变量" },
+        { url: "php/demo/demo05.html", context: "位运算" },
+        { url: "php/demo/demo06.html", context: "数组 排序" },
+        { url: "php/demo/demo07.html", context: "类和对象" },
+        { url: "php/demo/demo08.html", context: "static关键字" },
+        { url: "php/demo/demo09.html", context: "面向对象编程的三大特性 封装继承多态 抽象类和接口" },
+        { url: "php/demo/demo11.html", context: "错误和异常处理" },
+        { url: "php/demo/demo12.html", context: "php流程时序图" },
+        { url: "php/demo/demo13.html", context: "http请求详解(从这)" },
+        { url: "php/demo/demo14.html", context: "mysql扩展库" },
+        { url: "php/demo/demo16.html", context: "预定义超全局数组 九大内置对象" },
+        { url: "php/demo/demo17.html", context: "cookie和session技术" },
+        { url: "php/demo/demo18.html", context: "php文件编程 I/O流" },
+        { url: "php/demo/demo19.html", context: "php绘图技术" },
+        { url: "php/demo/demo21.html", context: "php ajax技术" },
+    ]
+}
+data = [demo01, demo02, demo03, demo04, demo05,demo06,demo07]

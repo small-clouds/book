@@ -294,6 +294,207 @@ var demo01 = {
             { context: "存储过程是用户定义的一系列sql语句的集合，涉及特定表或其它对象的任务，用户可以调用存储过程，" },
             { context: "而函数通常是数据库已定义的方法，它接收参数并返回某种类型的值并且不涉及特定用户表。" }
         ]
+    }, {
+        title: "Class.forName的作用?为什么要用： ",
+        data: [
+            { context: "答：调用该访问返回一个以字符串指定类名的类的对象。" },
+        ]
+    }, {
+        title: "Jdo是什么： ",
+        data: [
+            { context: "JDO是Java对象持久化的新的规范，为java data object的简称,也是一个用于存取某种数据仓库中的对象的标准化API。" },
+            { context: "JDO提供了透明的对象存储，因此对开发人员来说，存储数据对象完全不需要额外的代码（如JDBC API的使用）。这些繁琐的例行工作已经转移到JDO产品提供商身上，使开发人员解脱出来，从而集中时间和精力在业务逻辑上。" },
+            { context: "另外，JDO很灵活，因为它可以在任何数据底层上运行。" },
+            { context: "JDBC只是面向关系数据库（RDBMS）JDO更通用，提供到任何数据底层的存储功能，比如关系数据库、文件、XML以及对象数据库（ODBMS）等等，使得应用可移植性更强。" },
+        ]
+    }, {
+        title: "事务是什么：ACID（原子性、一致性、隔离性和持久性）",
+        data: [
+            { context: "事务是作为一个逻辑单元执行的一系列操作，一个逻辑工作单元必须有四个属性，称为 ACID（原子性、一致性、隔离性和持久性）属性，只有这样才能成为一个事务：" },
+            { context: "原子性：事务必须是原子工作单元；对于其数据修改，要么全都执行，要么全都不执行。" },
+            { context: "一致性：事务在完成时，必须使所有的数据都保持一致状态。在相关数据库中，所有规则都必须应用于事务的修改，以保持所有数据的完整性。事务结束时，所有的内部数据结构（如 B 树索引或双向链表）都必须是正确的。" },
+            { context: "隔离性：由并发事务所作的修改必须与任何其它并发事务所作的修改隔离。事务查看数据时数据所处的状态，要么是另一并发事务修改它之前的状态，要么是另一事务修改它之后的状态，事务不会查看中间状态的数据。这称为可串行性，因为它能够重新装载起始数据，并且重播一系列事务，以使数据结束时的状态与原始事务执行的状态相同。" },
+            { context: "持久性：事务完成之后，它对于系统的影响是永久性的。该修改即使出现系统故障也将一直保持。" },
+        ]
+    }, {
+        title: "游标的作用？如何知道游标已经到了最后：",
+        data: [
+            { context: "游标用于定位结果集的行，通过判断全局变量@@FETCH_STATUS可以判断是否到了最后，通常此变量不等于0表示出错或到了最后。" },
+        ]
+    }, {
+        title: "触发器分为事前触发和事后触发，这两种触发有和区别。语句级触发和行级触发有何区别：",
+        data: [
+            { context: "事前触发器运行于触发事件发生之前，而事后触发器运行于触发事件发生之后。通常事前触发器可以获取事件之前和新的字段值。" },
+            { context: "语句级触发器可以在语句执行前或后执行，而行级触发在触发器所影响的每一行触发一次。" }
+        ]
+    }, {
+        title: "bean 实例的生命周期：",
+        data: [
+            { context: "对于Stateless Session Bean、Entity Bean、Message Driven Bean一般存在缓冲池管理，" },
+            { context: "而对于Entity Bean和Statefull Session Bean存在Cache管理，通常包含创建实例，设置上下文、创建EJB Object（create）、业务方法调用、remove等过程，" },
+            { context: "对于存在缓冲池管理的Bean，在create之后实例并不从内存清除，而是采用缓冲池调度机制不断重用实例，" },
+            { context: "而对于存在Cache管理的Bean则通过激活和去激活机制保持Bean的状态并限制内存中实例数量。" },
+        ]
+    }, {
+        title: "remote接口和home接口主要作用：",
+        data: [
+            { context: " remote接口定义了业务方法，用于EJB客户端调用业务方法" },
+            { context: " home接口是EJB工厂用于创建和移除查找EJB实例。" }
+        ]
+    }, {
+        title: "客服端调用EJB对象的几个基本步骤：",
+        data: [
+            { context: "一、  设置JNDI服务工厂以及JNDI服务地址系统属性。" },
+            { context: "二、  查找Home接口。" },
+            { context: "三、  从Home接口调用Create方法创建Remote接口。" },
+            { context: "四、  通过Remote接口调用其业务方法。" },
+        ]
+    }, {
+        title: "是否可以继承String类： ",
+        data: [
+            { context: "String类是final类故不可以继承。" },
+        ]
+    }, {
+        title: "面向对象的特征有哪些方面：",
+        data: [
+            { context: "抽象：抽象就是忽略一个主题中与当前目标无关的那些方面，以便更充分地注意与当前目标有关的方面。抽象并不打算了解全部问题，而只是选择其中的一部分，暂时不用部分细节。抽象包括两个方面，一是过程抽象，二是数据抽象。" },
+            { context: "继承：继承是一种联结类的层次模型，并且允许和鼓励类的重用，它提供了一种明确表述共性的方法。对象的一个新类可以从现有的类中派生，这个过程称为类继承。新类继承了原始类的特性，新类称为原始类的派生类（子类），而原始类称为新类的基类（父类）。派生类可以从它的基类那里继承方法和实例变量，并且类可以修改或增加新的方法使之更适合特殊的需要。" },
+            { context: "封装：封装是把过程和数据包围起来，对数据的访问只能通过已定义的界面。面向对象计算始于这个基本概念，即现实世界可以被描绘成一系列完全自治、封装的对象，这些对象通过一个受保护的接口访问其他对象。" },
+            { context: "多态性：多态性是指允许不同类的对象对同一消息作出响应。多态性包括参数化多态性和包含多态性。多态性语言具有灵活、抽象、行为共享、代码共享的优势，很好的解决了应用程序函数同名问题。" },
+        ]
+    }, {
+        title: "String是最基本的数据类型吗：",
+        data: [
+            { context: "基本数据类型包括byte、int、char、long、float、double、boolean和short。" },
+            { context: "java.lang.String类是final类型的，因此不可以继承这个类、不能修改这个类。为了提高效率节省空间，我们应该用StringBuffer类。" },
+        ]
+    }, {
+        title: "String 和StringBuffer的区别：",
+        data: [
+            { context: "JAVA平台提供了两个类：String和StringBuffer，它们可以储存和操作字符串，即包含多个字符的字符数据" },
+            { context: "这个String类提供了数值不可改变的字符串。" },
+            { context: "而这个StringBuffer类提供的字符串进行修改。当你知道字符数据要改变的时候你就可以使用StringBuffer。典型地，你可以使用StringBuffers来动态构造字符数据。" },
+        ]
+    }, {
+        title: "说出ArrayList,Vector, LinkedList的存储性能和特性：",
+        data: [
+            { context: "ArrayList和Vector都是使用数组方式存储数据，此数组元素数大于实际存储的数据以便增加和插入元素，它们都允许直接按序号索引元素，但是插入元素要涉及数组元素移动等内存操作，所以索引数据快而插入数据慢" },
+            { context: "Vector由于使用了synchronized方法（线程安全），通常性能上较ArrayList差，" },
+            { context: "而LinkedList使用双向链表实现存储，按序号索引数据需要进行前向或后向遍历，但是插入数据时只需要记录本项的前后项即可，所以插入速度较快。" },
+        ]
+    }, {
+        title: "同步和异步有何异同，在什么情况下分别使用他们？举例说明。",
+        data: [
+            { context: "如果数据将在线程间共享。例如正在写的数据以后可能被另一个线程读到，或者正在读的数据可能已经被另一个线程写过了，那么这些数据就是共享数据，必须进行同步存取。" },
+            { context: "当应用程序在对象上调用了一个需要花费很长时间来执行的方法，并且不希望让程序等待方法的返回时，就应该使用异步编程，在很多情况下采用异步途径往往更有效率。" }
+        ]
+    }, {
+        title: "heap和stack有什么区别：",
+        data: [
+            { context: "栈是一种线形集合，其添加和删除元素的操作应在同一段完成。栈按照后进先出的方式进行处理。" },
+            { context: "堆是栈的一个组成元素。" }
+        ]
+    }, {
+        title: "EJB与JAVA BEAN的区别:",
+        data: [
+            { context: "java Bean 是可复用的组件，对Java Bean并没有严格的规范，理论上讲，任何一个Java类都可以是一个Bean。" },
+            { context: "但通常情况下，由于Java Bean是被容器所创建（如Tomcat）的，所以Java Bean应具有一个无参的构造器，" },
+            { context: "另外，通常Java Bean还要实现Serializable接口用于实现Bean的持久性。" },
+            { context: "Java Bean实际上相当于微软COM模型中的本地进程内COM组件，它是不能被跨进程访问的。" },
+            { context: "Enterprise Java Bean 相当于DCOM，即分布式组件。它是基于Java的远程方法调用（RMI）技术的，所以EJB可以被远程访问（跨进程、跨计算机）。" },
+            { context: "但EJB必须被布署在诸如Webspere、WebLogic这样的容器中，EJB客户从不直接访问真正的EJB组件，而是通过其容器访问。" },
+            { context: "EJB容器是EJB组件的代理，EJB组件由容器所创建和管理。客户通过容器来访问真正的EJB组件。" },
+        ]
+    }, {
+        title: "Static Nested Class 和 Inner Class的不同:",
+        data: [
+            { context: "Static Nested Class是被声明为静态（static）的内部类，它可以不依赖于外部类实例被实例化。" },
+            { context: "而通常的内部类需要在外部类实例化后才能实例化。" }
+        ]
+    }, {
+        title: "",
+        data: [
+            { context: "" },
+            { context: "" }
+        ]
+    }, {
+        title: "",
+        data: [
+            { context: "" },
+            { context: "" }
+        ]
+    }, {
+        title: "",
+        data: [
+            { context: "" },
+            { context: "" }
+        ]
+    }, {
+        title: "",
+        data: [
+            { context: "" },
+            { context: "" }
+        ]
+    }, {
+        title: "",
+        data: [
+            { context: "" },
+            { context: "" }
+        ]
+    }, {
+        title: "",
+        data: [
+            { context: "" },
+            { context: "" }
+        ]
+    }, {
+        title: "",
+        data: [
+            { context: "" },
+            { context: "" }
+        ]
+    }, {
+        title: "",
+        data: [
+            { context: "" },
+            { context: "" }
+        ]
+    }, {
+        title: "",
+        data: [
+            { context: "" },
+            { context: "" }
+        ]
+    }, {
+        title: "",
+        data: [
+            { context: "" },
+            { context: "" }
+        ]
+    }, {
+        title: "",
+        data: [
+            { context: "" },
+            { context: "" }
+        ]
+    }, {
+        title: "",
+        data: [
+            { context: "" },
+            { context: "" }
+        ]
+    }, {
+        title: "",
+        data: [
+            { context: "" },
+            { context: "" }
+        ]
+    }, {
+        title: "",
+        data: [
+            { context: "" },
+            { context: "" }
+        ]
     }
     ]
 }
