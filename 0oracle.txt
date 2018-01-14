@@ -1,0 +1,399 @@
+﻿oracle 数据库学习文档
+IBM的一个分析员的论文   轮关系型数据库的发展
+
+IBM  thinkpad 
+联想只是收购了  thinkpads
+
+oracle  “神喻”希腊   甲骨文 中国  收购了sun公司
+
+oracle  和 mysql  sqlserver专业java不建议使用
+crm和erp 在中国没有很好的市场 但是是oracle的东西  
+
+云计算是建立在硬件的基础上  不在软件
+
+oracle数据库请准备 5G 的空间
+
+oracle 9i  是oracle 8i的稳定版本  目前用的最多  3cd的大小
+
+oracle 10g  基于网格计算推出的数据库   1cd大小   网格计算 很深的  清华博士后课程
+		这个应该多
+
+oracle 11g  oracle 10g的稳定版本  2G左右
+		课程是这个版本
+
+oracle 12c   c 云计算概念
+
+
+可以直接网上下载
+
+使用时免费的  即使你再项目中使用  不算你使用盗版   但是千万别出错  出错没人管你
+
+安装之前  把防火墙关闭  然后 360 卸载  
+
+创建数据库  软件只是一个平台 
+   创建和配置数据库   --软件安装完成之后会自动进入到一个新的数据库创建和配置位置 选这个
+
+选择服务器类 
+
+单实例数据库安装
+
+选择高级安装 
+
+语言提供两种  简体中文  英语
+
+选择企业版
+
+安装路径   d:/app/ 用户名
+
+用途 一般性事务处理方式
+
+全局数据库名   创建的数据库名    oracle服务标识符sid  和数据库名完全一致 sid是日后开发之中使用的服务编号  如果没有编号 程序将无法进行数据库连接
+
+配置选项
+字符集   utf-8 al32 utf8
+示例方案上  创建具有示例方案的数据库  出现相应的测试数据  
+
+方案口令  sys 超级管理员  system 普通管理员  
+
+安装前检查   有错 选择忽略 
+
+安装时 不要再键盘和鼠标做任何操作  安装完成 配置也完成了
+
+千万别点 确定 ****************************
+口令管理页面
+
+	sys  change_on_install 工作中不能使用这个密码
+	system manger
+	scott	tiger  此用户是非常经典用户  需要解锁
+	sh	sh	大数据用户   需要解锁
+
+确定   
+关闭
+
+修改服务   oracle服务改为手动
+
+oracle 开发 只有两个服务    
+Listerner  监听服务  必须打开  本机可以不启动
+oracleServiceOracle  oracleServiceSID
+
+开发学习  和管理学习  我们属于 开发学习
+
+卸载操作  
+
+情况一   正常安装卸载  
+	停掉所有服务
+	启动卸载程序
+	卸载完成之后 出现残留文件 和注册表  
+	进入安全模式 清理掉所有 oracle
+
+情况二 安装一半
+	安全模式  注册表
+	重装系统
+
+
+sqlplus 的基本命令
+	cmd -》 sqlplus   进入数据库
+
+	格式化命令
+	set linesize 300  设置每行显示数据的长度
+	set pagesize 30 设置每页线束数据
+	
+	调用记事本命令
+	ed 文件名	打开文件
+	@ 文件名  执行刚才写的  如果.sql 可省略
+	打开文件 必须输入文件全名称
+
+	*.sql  数据库脚本文件
+
+ 	切换用户
+	show user
+	conn sys/change_on_install  as sysdba
+
+	调用本机命令  可以直接调用 dos命令
+	dos   copy 源文件路径  目标文件路径
+	host copy 源文件路径  目标文件路径
+
+数据库的安装与卸载
+数据库中的四个主要用户 sys sytem  scott sh 
+sql的基本命令
+
+
+sql语法
+
+	简单查询  限定查询 查询排序操作的语法和使用
+	掌握单行函数的作用
+
+	soctt用户的主要数据表
+	四张数据表 和表结构
+
+	select * from tab  #查询用户下有几张表
+	desc 表  # 查询表结构语法
+	dept  部门表
+	deptno  两位数字  部门编号
+dname   varchar2 14 部门名称	
+loc varchar13  部门位置
+
+雇员表
+	empno  number4 雇员编号  四位数字 最多
+	ename  雇员姓名
+job 职位  一定会重复
+mgr 	领导编号
+hiredate  雇用日期  年月日 时分秒 没有毫秒
+sal number 7,2   基本工资  两位小数 5位整数
+comm number 7,2 佣金
+deptno 部门标号  与dept对应
+
+
+工资等级表 salgrade
+grade  number 等级编号
+losal  最低工资
+hisal   最高工资
+	
+工资表  bonus 
+ename  varchar2 10  雇员姓名
+job  职位
+sal 工资
+comm	佣金
+
+三张数据表 emp dept salgrade  只有bons 没有数据
+
+
+
+sql 简介
+ 结构查询语言 关系型数据库管理系统的标准语言
+	70年代  ibm研发出来的 统一数据的操作方式
+	oracle是世界上最早支持sql标准的大型数据库  只学习 标准sql  用也用只用标准sql
+	
+	sql 不方便 因为传统基于行列的数据表的存储结构不方便 
+nosql  not only sql   代表作 mongdb  nodejs  淘宝用的是  文档的方式进行存储的
+
+dml	实现数据库的查询dql 和更新操作  最麻烦的就是查询    重点
+ddl	数据定义语言  系统设计人员的需要对数据表的定义	重点
+
+
+dcl 数据控制语言  控制用户的操作权限  一般有dba 负责 基本不会涉及到
+
+
+
+简单查询  限定查询 多表查询 统计查询  四类查询
+
+
+
+	简单查询  重点
+		select [distinct] * | 列 [别名], 列 [别名]  -- 子句
+		from 表名称 [别名]				-- 子句
+			distinct 表示去掉重复数据  只能出现在select 字句之中 并紧跟在select之后
+					只有在所有列的数据都重复的情况下 才叫重复
+		
+		select * from emp;
+		select empno ,ename, job from emp
+		
+		在进行查询过程中 select 子句也可以进行各种数学计算  + - * /  回避中文
+		select empno, ename, sal*12 sal from emp
+
+		四则运算的过程中 也一定有自己的优先顺序，按照先乘除后加减的顺序完成的
+
+		以上都是基本操作
+		
+		oracle 新增的  ||   连接符  两组数据合并
+			select Firstname || lastname from emp;
+			select '姓名:' ||name,'年龄:' || age from emp;
+		字符串 用 单引号
+		别名不用任何修饰符
+		select 查询会直接显示
+
+		
+	限定查询   重点
+		
+		简单查询会查询一张数据表的所有数据 但是很多情况并不需要这么多
+		很多是狗旺旺都需哦针对于一些数据执行过滤 这样的查询就属于限定查询
+		操作语法 
+		select [distinct] * | 列 [别名], 列 [别名]  -- 子句  3.控制要显示的数据列
+		from 表名称 [别名]		  1. 确定数据来源
+		[where 条件(s)] 			2.根据限定条件 选择参与的数据行  控制行
+		123 执行顺序
+		
+		 操作符  
+		 
+			关系运算符    > < = >= <= <> != 两个不等于没有区别  全根据程序员习惯
+			范围运算符 	between .. and ；  in 字句 ； like字句；isnull 空判断
+			逻辑运算符  and （与） or（或） not(非)
+			
+		关系运算  
+			select * from emp where sal>2000
+			select * from emp where  sal<=1600
+			select * from emp where  ename='SMITH'
+				
+			在oracle 所有保存数据都是区分大小写的
+			
+			不等于
+			select * form emp job <> 'salesman'
+			select * form emp job != 'salesman'
+	
+		逻辑运算
+			在where 可以使用多个条件
+			 and 条件  and 条件 and 条件
+			 or 条件  or 条件 or 条件
+		
+			select * 
+			from emp 
+			where job ='saleman' 
+			and sal >1200	
+	 
+			not 取反   可以直接用不等于   效果一样   程序员习惯
+				select * from emp where not job != 'salesman' 
+				
+	
+		范围运算符
+			between  最小值  and 最大值  在计算过程中也会包含两个值得判断
+				所有关系运算符是不分数据类型的判断 
+				不管是字符串还是数字 都可以使用运算符进行判断
+				所以between and 也可以 字符串 数字 日期类型数据的操作
+				
+			select * from emp where hiredate between '01-1月-1981' and '31-12月-1981'
+				
+			select * from emp where sal between 1200 and 3000;
+		
+			空判断  is null ； 条件 is not null ； not  条件  is null
+			
+			null是一种特殊的数值 在标准解释来讲 空表示的是一个不确定的内容
+				
+			对于null的验证 不能使用传统的关系运算符
+		
+			select * from emp where comm is null
+			
+			数字的比较上  0 和null 是不一样的  null 不确定的数值  ***************************
+	
+		基数范围 in； not in
+			select * from emp where empno in(7369,7566,7839,8899)
+	
+			select * from emp where empno not in(7369,7566,7839,8899)
+	
+		in操作的问题  ***********特别注意*********
+			在使用not in里面包含了null时  所有条件都不会显示
+			在使用in里面包含了null时 没有问题
+				不满足的原因是数据库自身的额保护机制 避免大数据所带来的问题
+	
+		模糊查询  like
+			只适合小数据情况 不适合搜索引擎的搭建操作 是基于分词的操作原理实现
+		
+			_匹配任意一个字符
+			% 匹配0个 1个任意字符
+			
+			not like
+			
+			select * from emp  where ename like '_A%'; -- 查询第二位是a的所有雇员
+		
+			说明： 与之前的所有判断符号一样 可以针对各种数据类型进行判断
+				这种不受限制 只是用户直接执行的sql 而一些底层框架 会加上数据类型的判断
+				
+				在使用like 如果没有编写任何查询关键字 表示查询全部 可以帮我们节约一些代码
+		
+查询排序
+		如果希望 查询数据 可以以按照指定列由大到小 或者指定排序
+		select [distinct] * | 列 [别名], 列 [别名]  -- 子句  3.控制要显示的数据列
+		from 表名称 [别名]		  1. 确定数据来源
+		[where 条件(s)] 			2.根据限定条件 选择参与的数据行  控制行
+		[order by 字段 [asc | desc] ,字段 [asc | desc]]   4.数据排序
+		
+		在以上的语法之中 order by 永恒在最后一行 在select之后执行 
+		 select 可以使用select 子句的别名  重要****
+		 
+		 order by 
+		 asc  升序 默认
+		 desc 降序 必须用户指定
+		
+		select * from emp order by sal desc
+		
+		select * from emp order by  sal desc , hiredate asc
+		
+		按照年薪排序
+		select * , sal*12 income order by income
+	
+	基本语法结束了 
+		
+		
+		
+ 总结  
+	oracle 的三个主要用户   
+		不仅要记住 还要记住密码
+			sys
+			system
+			scott tigger
+			大数据用户  sh  测试性能
+	sqlplus 的基本命令
+	已经给出的语法  一定要记住
+		知道字句的作用
+		from 数据源 where 行筛选 select 列筛选  order by 排序
+	
+
+	预习  单行函数  多表查询 分组统计查询 子查询
+		
+单行函数  背
+多表查询
+分组统计查询 
+子查询
+
+单行函数 重点 ******************
+	就是完成某一个功能　　
+	将字母变成大写　提供的非常多　上万
+	字符串函数
+	
+	数字函数　
+	
+	日期函数　
+	转换函数
+	通用函数
+	所有单行函数记忆的时候都要求清楚单行函数名称　　返回值类型　接受参数数据
+	
+		
+	字符串函数
+		主要对字符串数据出　
+		　转大写　upper(字符串 | 数据列)
+		  转小写　lower(字符串 | 数据列)
+		  dual 虚表
+		 验证函数
+		  
+		 select lower(ename) from emp  在列上使用
+	
+	
+	
+visual foxpro  
+fixpro
+access
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
