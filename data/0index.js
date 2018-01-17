@@ -6,7 +6,7 @@ var demo01 = {
         { url: "list.html?&06", context: "Css学习内容", },
         { url: "javascript/index.html", context: "JavaScript学习", },
         { url: "list.html?&04", context: "java教程", },
-        { url: "resume.html", context: "个人简历", },
+        // { url: "resume.html", context: "个人简历", },
         { url: "list.html?&07", context: "php基础", },
         { url: "frame/index.html", context: "框架修行" },
         { url: "package/index.html", context: "组件", },

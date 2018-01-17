@@ -78,6 +78,15 @@
             <div>注：<span class="remark">dml操作的时候要注意提交 commit</span></div>
             <div>注：<span class="remark">方法 ：增insert 删delte 改update 查select</span></div>
         </div>
+         <h2>$和#的区别</h2>
+        <div class="none">           
+            <div> 1. #将传入的数据都当成一个字符串，会对自动传入的数据加一个双引号。如：order by #user_id#，如果传入的值是111,那么解析成sql时的值为order by "111", 如果传入的值是id，则解析成的sql为order by "id".</div>
+            <div>2. $将传入的数据直接显示生成在sql中。如：order by $user_id$，如果传入的值是111,那么解析成sql时的值为order by user_id,  如果传入的值是id，则解析成的sql为order by id.</div>
+            <div>3. #方式能够很大程度防止sql注入。</div>
+            <div>4.$方式无法防止Sql注入。</div>
+            <div>5.$方式一般用于传入数据库对象，例如传入表名.</div>
+            <div>6.一般能用#的就别用$.</div>
+        </div>
     </div>
 </body>
 
