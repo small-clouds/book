@@ -355,8 +355,9 @@ dcl 数据控制语言  控制用户的操作权限  一般有dba 负责 基本�
 		 验证函数
 		  
 		 select lower(ename) from emp  在列上使用
-	
-	
+		 
+	419289671
+
 	
 visual foxpro  
 fixpro

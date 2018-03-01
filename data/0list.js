@@ -24,7 +24,8 @@ var demo03 = {
         { context: "常见思路 方法", url: "detail.html?data/sql01.js&01" },
         { context: "数据库优化方案", url: "detail.html?data/sql01.js&03" },
         { context: "那些年的sql语句", url: "data/doc/sql/demo01.sql" },
-        { context: "脚本 中国省市区", url: "data/doc/sql/china.sql" }
+        { context: "脚本 中国省市区", url: "data/doc/sql/china.sql" },
+        { context: "高并发处理方案", url: "detail.html?data/sql01.js&04" },
     ]
 }
 //java目录
