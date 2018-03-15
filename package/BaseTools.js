@@ -109,3 +109,39 @@ y_arr1.forEach(function(x){
 })
 console.log(target);
 console.timeEnd(2)
+
+
+	
+// 重构数据结构
+var test = [1, 2, 3, 4];
+
+var result = test.map((item, index) => {
+    if (index % 2 === 0) {
+        return [item, test[index + 1]]
+    }
+}).filter(item=>item!==undefined);
+    
+//关于浏览器缓存的应用  基本上 Ie8 以上都支持  特别是h5 和css3 所以基本不考虑兼容问题
+if(!window.localStorage){
+    alert("浏览器支持localstorage");
+}else{
+    var storage=window.localStorage;
+    //写入a字段
+    storage["a"]=1;
+    //写入b字段
+    storage.a=1;
+    //写入c字段
+    storage.setItem("c",3);
+    console.log(typeof storage["a"]);
+    console.log(typeof storage["b"]);
+    console.log(typeof storage["c"]);
+    //第一种方法读取
+    var a=storage.a;
+    console.log(a);
+    //第二种方法读取
+    var b=storage["b"];
+    console.log(b);
+    //第三种方法读取
+    var c=storage.getItem("c");
+    console.log(c);
+}

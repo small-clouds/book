@@ -102,6 +102,21 @@
                 <p>原因：本地分支和远程分支的链接关系没有创建</p>
                 <p>方案：git branch --set-upstream branch-name origin/branch-name  创建本地分支与远程分支关联关联</p>
             </div>
+            <h3>stash pull rebase的讨论</h3>
+            <div class="none">
+                <p>// 	 先 git stash。然后 git pull。然后 git stash pop （更好一点的是 git stash apply stash@{0}）</p>
+                <p> // 如果你是在开发过程中，base 更新。那更好的方式其实是 rebase，不是 pull</p>
+                <p>  // 比如，master branch 是这样。a -> b -> c</p>
+                <p> // 你开发的 branch，从 c 创建出来，是这样：a -> b -> c -> g</p>
+                <p> // 这时候 master 更新：a -> b -> c -> d</p>
+                <p>  // 那么如果你 pull，你所在的 branch 就会是 a -> b -> c -> g -> d'</p>
+                <p> // 如果你 rebase，你所在的 branch 就会是 a -> b -> c -> d -> g'</p>
+                <p>  // 显然，rebase 更符合实际情况</p>
+                <p>  // (其中 g 是你的改动。</p>
+                <p>   // 以后不pull</p>
+                <p>  // 要看情况的。只是常见的是这种。既然最后都是合并到 master，那你应该 rebase。但如果你是把别人分支改动应用到自己 branch（比如他的 branch 和你并行开发，而且他不打算 merge 到 master），</p>     
+                <p>  //以及你们有共同 ancestor （祖先），那你可以用 pull。虽然这种情况用 cherry-pick 也是可以的</p>
+            </div>
         </div>
     </div>
 
