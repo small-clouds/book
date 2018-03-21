@@ -129,6 +129,14 @@ var demo03 = {
             { context: 'boolean-->Boolean' },
             { context: '两个值 true /false' }
         ]
+    },{
+        title: "枚举 Enum",
+        data: [
+            { context: ' public enum ArchivingStatus{ALREADY,  //已归档 UNFILED //未归档} //枚举出所有可能的值 基本数据类型' },
+            { context: '1. 枚举值是常量，不是变量。不能在程序中用赋值语句再对它赋值。' },
+            { context: ' 还应该说明的是枚举元素不是字符常量也不是字符串常量，使用时不要加单、双引号' },
+           
+        ]
     }]
 }
 //运算符

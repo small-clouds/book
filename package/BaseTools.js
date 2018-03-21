@@ -114,7 +114,6 @@ console.timeEnd(2)
 	
 // 重构数据结构
 var test = [1, 2, 3, 4];
-
 var result = test.map((item, index) => {
     if (index % 2 === 0) {
         return [item, test[index + 1]]
@@ -145,3 +144,38 @@ if(!window.localStorage){
     var c=storage.getItem("c");
     console.log(c);
 }
+//依然数据重构
+
+var  data4=[{"name":"aaa"},{"name":"bbb"},{"name":'ccc'},{"name":'beqa'},{"name":'bert'},{"name":'ffff'}]
+let data3=  data4.reduce((accum,current)=>{
+  let initial=current.name[0];
+  if(!accum[initial]) accum[initial]=[]
+  accum[initial].push(current);
+  return accum;
+},{})
+console.log(data3)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
