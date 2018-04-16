@@ -13,7 +13,8 @@ var demo01 = {
         { url: "list.html?&03", context: "Mysql教程", },
         { url: "list.html?&05", context: "文章纪录", },
         { url: "list.html?&02", context: "算法", },
-        { url: "list.html?&01", context: "面试题总结", }
+        { url: "list.html?&01", context: "面试题总结", },
+        { url: "list.html?&08", context: "简谱记录", }
     ]
 };
 data = [demo01]

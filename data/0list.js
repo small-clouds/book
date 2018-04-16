@@ -111,4 +111,11 @@ var demo07={
         { url: "php/demo/demo21.html", context: "php ajax技术" },
     ]
 }
-data = [demo01, demo02, demo03, demo04, demo05,demo06,demo07]
+var demo08={
+    title: "php目录",
+    name: "php目录",
+    data: [
+         { url: "detail.html?data/jianpu01.js&01", context: "A" },
+    ],
+}
+data = [demo01, demo02, demo03, demo04, demo05,demo06,demo07,demo08]
