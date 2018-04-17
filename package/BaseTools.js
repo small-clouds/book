@@ -25,8 +25,11 @@ var BaseTools = {
 		return res;
 	}
 }
-
-
+//去重
+function unique(arr) {
+    const res = new Map();
+    return arr.filter((a) => !res.has(a.toString()) && res.set(a.toString(), 1))
+}
 
 var y_arr1=[
     {'name':'ceshi1','c_name':'测试','Ename':'ceshizi11','C_Ename':'测试子11','value':'yyy11'},
@@ -155,6 +158,9 @@ let data3=  data4.reduce((accum,current)=>{
 },{})
 console.log(data3)
 
+
+//原生控制css
+// obj.style[attr] = "css"
 
 
 
