@@ -1,0 +1,107 @@
+springDataJpa  学习目录
+
+orm框架  object resoprot  mapping   面向对象的设计
+
+
+jpa 层级分类
+	repository  顶层接口  空接口
+	CrudResitory  顶层子接口  实现crud 操作的基本单元			继承
+	PagingAndSortingRepository  crud子接口  实现分页和排序功能的接口	继承
+	JpaResitory PASR子接口 实现了批量操作的功能  				继承
+	
+	JpaSpecificationExecutor 用来做复杂查询的接口   与上面并无继承关系 辅助接口
+	
+	
+
+Jpa注解
+
+	@Entity   实体类注解
+	@Table	表名注解
+	
+	@Id 主键注解
+	@GeneratedValue 自增
+
+	@AutoWired  自动装配
+
+
+常用方法
+	delete 删除或者批量删除
+	findAll 查找所有
+	findOne 查找单个
+	save 保存单个或者批量保存    并不一定 立即刷新
+	saveAndFlush 保存并刷新到数据库
+
+
+	
+	更新的时候 先插回 update
+	判断 new是否为空 
+	赋值给 update 然后 save
+
+条件查询
+	
+	基于方法名解析的概念
+		jpa支持接口规范方法名查询 如果在接口定义的查询方法符合他的命名规则 就可以不用写实现
+		要点一 方法名需要在接口中设定
+		要点二 必须符合一定的命名规范	
+
+		命名规范
+			find[全局修饰]By[实体属性名称][限定词][连接词][其他实体属性]OrderBy[排序属性][排序方向]
+
+	
+			Distinct 唯一性  全局修饰 非必须  Top 前几条  First
+
+			
+
+			限定词和连接词 统称 关键词  And Or
+			关键词： IsNUll 
+				IsNotNull 
+				Like 
+				NotLike 
+				Containing In NotIn LgnoreCase Between Equals LessThan
+				GreaterThan After Before
+
+				排序方向  Asc Desc
+				连接词 And Or
+	
+	select * from user where phone  like "136%" and address like "路" limit 0,2;
+	
+	List<User> findTop2ByPhoneStartWithAndAddressContaining(String phone,String Address)	
+		
+	方法名构造方法
+	目前支持的关键词
+
+
+	嵌套实体方法命名规则
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
