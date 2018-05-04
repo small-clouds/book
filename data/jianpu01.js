@@ -24,7 +24,7 @@ var demo01 = {
             { context: '<a href="' + urlposition + '城里的月光.jpg">城里的月光</a>' },
             { context: '<a href="' + urlposition + '初见.jpg">初见</a>' },
             { context: '<a href="' + urlposition + '成都.jpg">成都</a>' },
-             { context: '<a href="' + urlposition + '穿越时空的思念.jpg">穿越时空的思念</a>' },
+            { context: '<a href="' + urlposition + '穿越时空的思念.jpg">穿越时空的思念</a>' },
         ]
     }, {
         title: "D开头的简谱",
@@ -90,41 +90,41 @@ var demo01 = {
         data: [
             { context: '<a href="' + urlposition + '女儿情.jpg">女儿情</a>' },
             { context: '<a href="' + urlposition + '男儿无泪.jpg">男儿无泪</a>' },
-             { context: '<a href="' + urlposition + '你.jpg">你</a>' },
+            { context: '<a href="' + urlposition + '你.jpg">你</a>' },
         ]
-    },  {
+    }, {
         title: "P开头的简谱",
         data: [
             { context: '<a href="' + urlposition + '琵琶语.jpg">琵琶语</a>' },
         ]
-    },{
+    }, {
         title: "Q开头的简谱",
         data: [
             { context: '<a href="' + urlposition + '倾国倾城.jpg">倾国倾城</a>' },
-             { context: '<a href="' + urlposition + '青花瓷.jpg">青花瓷</a>' },
+            { context: '<a href="' + urlposition + '青花瓷.jpg">青花瓷</a>' },
         ]
-    },  {
+    }, {
         title: "R开头的简谱",
         data: [
             { context: '<a href="' + urlposition + '让我们荡起双桨.jpg">让我们荡起双桨</a>' },
-           { context: '<a href="' + urlposition + '人间情多.jpg">人间情多</a>' },
+            { context: '<a href="' + urlposition + '人间情多.jpg">人间情多</a>' },
             { context: '<a href="' + urlposition + '任逍遥.jpg">任逍遥</a>' },
         ]
-    },{
+    }, {
         title: "S开头的简谱",
         data: [
             { context: '<a href="' + urlposition + '上海滩.jpg">上海滩</a>' },
             { context: '<a href="' + urlposition + '神话.jpg">神话</a>' },
-             { context: '<a href="' + urlposition + '山里红.jpg">山里红</a>' },
+            { context: '<a href="' + urlposition + '山里红.jpg">山里红</a>' },
             { context: '<a href="' + urlposition + '少林寺.jpg">少林寺-日出嵩山奥</a>' },
-             { context: '<a href="' + urlposition + '送别.jpg">送别</a>' },
+            { context: '<a href="' + urlposition + '送别.jpg">送别</a>' },
         ]
     }, {
         title: "T开头的简谱",
         data: [
             { context: '<a href="' + urlposition + '铁血丹心.jpg">铁血丹心</a>' },
-             { context: '<a href="' + urlposition + '天空之城.jpg">天空之城</a>' },
-              { context: '<a href="' + urlposition + '天意.jpg">天意</a>' },
+            { context: '<a href="' + urlposition + '天空之城.jpg">天空之城</a>' },
+            { context: '<a href="' + urlposition + '天意.jpg">天意</a>' },
         ]
     },
     {
@@ -134,7 +134,9 @@ var demo01 = {
             { context: '<a href="' + urlposition + '忘了我.jpg">忘了我</a>' },
             { context: '<a href="' + urlposition + '枉凝眉.jpg">枉凝眉</a>' },
             { context: '<a href="' + urlposition + '卧龙吟.jpg">卧龙吟</a>' },
-              { context: '<a href="' + urlposition + '我只在乎你.jpg">我只在乎你</a>' },
+            { context: '<a href="' + urlposition + '我只在乎你.jpg">我只在乎你</a>' },
+            { context: '<a href="' + urlposition + '我的祖国.jpg">我的祖国</a>' },
+
         ]
     }, {
         title: "X开头的简谱",
@@ -147,10 +149,10 @@ var demo01 = {
             { context: '<a href="' + urlposition + '雪花女神龙.jpg">雪花女神龙</a>' },
             { context: '<a href="' + urlposition + '潇洒走一回.jpg">潇洒走一回</a>' },
             { context: '<a href="' + urlposition + '雪中情.jpg">雪中情</a>' },
-             { context: '<a href="' + urlposition + '乡间的小路.jpg">乡间的小路</a>' },
-              { context: '<a href="' + urlposition + '逍遥叹.jpg">逍遥叹</a>' },
-              { context: '<a href="' + urlposition + '小城故事.jpg">小城故事</a>' },
-              { context: '<a href="' + urlposition + '星月神话.jpg">星月神话</a>' },
+            { context: '<a href="' + urlposition + '乡间的小路.jpg">乡间的小路</a>' },
+            { context: '<a href="' + urlposition + '逍遥叹.jpg">逍遥叹</a>' },
+            { context: '<a href="' + urlposition + '小城故事.jpg">小城故事</a>' },
+            { context: '<a href="' + urlposition + '星月神话.jpg">星月神话</a>' },
         ]
     },
     {
@@ -160,8 +162,8 @@ var demo01 = {
             { context: '<a href="' + urlposition + '有所思.jpg">有所思</a>' },
             { context: '<a href="' + urlposition + '虞美人.jpg">虞美人</a>' },
             { context: '<a href="' + urlposition + '云水禅心.jpg">云水禅心</a>' },
-             { context: '<a href="' + urlposition + '英雄的黎明.jpg">英雄的黎明</a>' },
-              { context: '<a href="' + urlposition + '隐形的翅膀.jpg">隐形的翅膀</a>' },
+            { context: '<a href="' + urlposition + '英雄的黎明.jpg">英雄的黎明</a>' },
+            { context: '<a href="' + urlposition + '隐形的翅膀.jpg">隐形的翅膀</a>' },
 
         ]
     }, {
