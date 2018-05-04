@@ -55,14 +55,14 @@ var demo01 = {
         data: [
             { context: '<a href="' + urlposition + '旧梦不须记.jpg">旧梦不须记</a>' },
             { context: '<a href="' + urlposition + '久别的人.jpg">久别的人</a>' },
-            { context: '<a href="' + urlposition + '军港之夜.gif">军港之夜</a>' },
+            { context: '<a href="' + urlposition + '军港之夜.jpg">军港之夜</a>' },
             { context: '<a href="' + urlposition + '今天.jpg">今天</a>' },
             { context: '<a href="' + urlposition + '江山无限.jpg">江山无限</a>' },
         ]
     }, {
         title: "K开头的简谱",
         data: [
-            { context: '<a href="' + urlposition + '康定情歌.gif">康定情歌</a>' },
+            { context: '<a href="' + urlposition + '康定情歌.jpg">康定情歌</a>' },
         ]
     }, {
         title: "L开头的简谱",
