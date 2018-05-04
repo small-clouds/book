@@ -1,144 +1,186 @@
 //A开头的简谱
+var urlposition = "data/images/jianpu/"
 var demo01 = {
-    title: "分类A",
-    name: "A开头的江浦",
+    title: "千曲晓声",
+    name: "A开头的简谱",
     data: [{
-        title: "基本数据类型-字符串(String)",
+        title: "A开头的简谱",
         data: [
-            { context: '字符串声明有两种方式 单引号和双引号' },
-            { context: '字符串的拼接用的是   . ' },
-            { context: '单引号 按照字符串输出 单引号系统不做复杂的转义 单引号变量反应更快' },
-            { context: '双引号 把变量解析出来 可以利用转义字符进行 对$转义' },
-            { context: '转义字符 \\ 可以解决使用特殊符号问题' },
-            { context: '特殊的\\n(换行) \\r(回车) \\t(制表) \\v(竖直方向) \\f(换页) \\$(美元标记)' },
-            {
-                title: '函数',
-                data: [
-                    { context: 'Strlen($str) 返回字符串字节数  utf8中文占三个  gbk2个' },
-                    { context: 'mb_strlen($str,"utf-8") 返回字符串的个数' },
-                    { context: 'strpos($str,search,int) 查找字符串位置函数 从int开始查找 search字符串 第一次出现的位置' },
-                    { context: 'stripos($str,search,int) 查找字符串位置函数 从int开始查找 search字符串 最后一次出现的位置' },
-                ]
-            },
+            { context: '<a href="' + urlposition + '爱江山更爱美人.jpg">爱江山更爱美人</a>' },
+            { context: '<a href="' + urlposition + '敖包相会.jpg">敖包相会</a>' },
         ]
     }, {
-        title: "基本数据类型-整型(int)",
+        title: "B开头的简谱",
         data: [
-            { context: '整型值可以 二进制(0b) 八进制(0) 十进制 十六进制(0x) 所有的整型都是有符号的 +-' },
-            { context: '最大值PHP_INT_MAX  最小值 PHP_INT_MIN 超过这个值 被解释称 float' },
-            { context: '运算符能够自动对类型进行转换' },
+            { context: '<a href="' + urlposition + '北国之春.jpg">北国之春</a>' },
+            { context: '<a href="' + urlposition + '把悲伤留给自己.jpg">把悲伤留给自己</a>' },
+            { context: '<a href="' + urlposition + '白狐.jpg">白狐</a>' },
         ]
     }, {
-        title: "基本数据类型-浮点型(float,double)",
+        title: "C开头的简谱",
         data: [
-            { context: '<span class="remark">永远也不要相信浮点数的精度</span>' },
-            { context: '精度： 从左边开始 非0实数 14位数字 具体保留多少位 不知道' },
-            { context: '双精度(double) 1位符号 11位指数 52位小数 8字节64位' },
-            { context: '单精度(float) 1位符号 8位指数 23位小数 4字节32位' },
+            { context: '<a href="' + urlposition + '沧海一声笑.jpg">沧海一声笑</a>' },
+            { context: '<a href="' + urlposition + '城里的月光.jpg">城里的月光</a>' },
+            { context: '<a href="' + urlposition + '初见.jpg">初见</a>' },
+            { context: '<a href="' + urlposition + '成都.jpg">成都</a>' },
+             { context: '<a href="' + urlposition + '穿越时空的思念.jpg">穿越时空的思念</a>' },
         ]
     }, {
-        title: "基本数据类型-布尔(boolean)",
+        title: "D开头的简谱",
         data: [
-            { context: '布尔值有两个值  true/false 且不区分大小写' },
-            { context: '通常运算符返回的boolean会被传递给控制流程' },
-            { context: '被认为false的值： false(boolean)；0(int)；0.0(float)；""(String) "0"(String)；Array()空；null； 空标记对象' },
+            { context: '<a href="' + urlposition + '单身情歌.jpg">单身情歌</a>' },
+            { context: '<a href="' + urlposition + '大海.jpg">大海</a>' },
+            { context: '<a href="' + urlposition + '独角戏.jpg">独角戏</a>' },
         ]
     }, {
-        title: "复合数据类型",
+        title: "F开头的简谱",
         data: [
-            { context: '数组：数组能够在单独的变量名中存储一个或多个值。 分为索引，关联，多维数组' },
-            { context: '对象：每个类的定义都以关键字 class 开头，后面跟着类名，后面跟着一对花括号，里面包含有类的属性与方法的定义一个类可以包含有属于自己的常量，变量（称为“属性”）以及函数（称为“方法”）' },
+            { context: '<a href="' + urlposition + '飞雪玉花.jpg">飞雪玉花</a>' },
         ]
     }, {
-        title: "特殊的数据类型-空值(null)/资源(resource)",
+        title: "G开头的简谱",
         data: [
-            { context: 'null:空值顾名思义，表示没有为该变量设置任何值。另外，空值（null）不区分大小写，null 和 NULL 效果是一样的。' },
-            { context: 'null的三种情况：没有赋值; 被赋值为 null; 被 unset() 函数处理过的变量' },
-            { context: '资源是由专门的函数来建立和使用的，它是一种特殊的数据类型，并由程序员分配。在使用资源时，要及时的释放不需要的资源，如果忘记释放资源，系统自动启动垃圾回收机制，避免内存消耗殆尽。' },
+            { context: '<a href="' + urlposition + '故乡的原风景.jpg">故乡的原风景</a>' },
+            { context: '<a href="' + urlposition + '敢问路在何方.jpg">敢问路在何方</a>' },
+            { context: '<a href="' + urlposition + '国歌.jpg">国歌</a>' },
         ]
-    },]
-}
-/**
- 千曲晓声
+    }, {
+        title: "H开头的简谱",
+        data: [
+            { context: '<a href="' + urlposition + '海阔天空.jpg">海阔天空</a>' },
+        ]
+    }, {
+        title: "J开头的简谱",
+        data: [
+            { context: '<a href="' + urlposition + '旧梦不须记.jpg">旧梦不须记</a>' },
+            { context: '<a href="' + urlposition + '久别的人.jpg">久别的人</a>' },
+            { context: '<a href="' + urlposition + '军港之夜.gif">军港之夜</a>' },
+        ]
+    }, {
+        title: "K开头的简谱",
+        data: [
+            { context: '<a href="' + urlposition + '康定情歌.gif">康定情歌</a>' },
+        ]
+    }, {
+        title: "L开头的简谱",
+        data: [
+            { context: '<a href="' + urlposition + '乱红.jpg">乱红</a>' },
+            { context: '<a href="' + urlposition + '另一种乡愁.jpg">另一种乡愁</a>' },
+            { context: '<a href="' + urlposition + '历史的天空.jpg">历史的天空</a>' },
+            { context: '<a href="' + urlposition + '两两相忘.jpg">两两相忘</a>' },
+            { context: '<a href="' + urlposition + '两只老虎.jpg">两只老虎</a>' },
+            { context: '<a href="' + urlposition + '留什么给你.jpg">留什么给你</a>' },
+            { context: '<a href="' + urlposition + '绿野仙踪.jpg">绿野仙踪</a>' },
+        ]
+    }, {
+        title: "M开头的简谱",
+        data: [
+            { context: '<a href="' + urlposition + '梅花泪.jpg">梅花泪</a>' },
+            { context: '<a href="' + urlposition + '梦里水乡.jpg">梦里水乡</a>' },
+            { context: '<a href="' + urlposition + '梅花三弄.jpg">梅花三弄</a>' },
+            { context: '<a href="' + urlposition + '美人吟.jpg">美人吟</a>' },
+            { context: '<a href="' + urlposition + '明月千里寄相思.jpg">明月千里寄相思</a>' },
+            { context: '<a href="' + urlposition + '莫失莫忘.jpg">莫失莫忘</a>' },
+        ]
+    }, {
+        title: "N开头的简谱",
+        data: [
+            { context: '<a href="' + urlposition + '女儿情.jpg">女儿情</a>' },
+            { context: '<a href="' + urlposition + '男儿无泪.jpg">男儿无泪</a>' },
+             { context: '<a href="' + urlposition + '你.jpg">你</a>' },
+        ]
+    },  {
+        title: "P开头的简谱",
+        data: [
+            { context: '<a href="' + urlposition + '琵琶语.jpg">琵琶语</a>' },
+        ]
+    },{
+        title: "Q开头的简谱",
+        data: [
+            { context: '<a href="' + urlposition + '倾国倾城.jpg">倾国倾城</a>' },
+             { context: '<a href="' + urlposition + '青花瓷.jpg">青花瓷</a>' },
+        ]
+    },  {
+        title: "R开头的简谱",
+        data: [
+            { context: '<a href="' + urlposition + '让我们荡起双桨.jpg">让我们荡起双桨</a>' },
+           { context: '<a href="' + urlposition + '人间情多.jpg">人间情多</a>' },
+            { context: '<a href="' + urlposition + '任逍遥.jpg">任逍遥</a>' },
+        ]
+    },{
+        title: "S开头的简谱",
+        data: [
+            { context: '<a href="' + urlposition + '上海滩.jpg">上海滩</a>' },
+            { context: '<a href="' + urlposition + '神话.jpg">神话</a>' },
+             { context: '<a href="' + urlposition + '山里红.jpg">山里红</a>' },
+            { context: '<a href="' + urlposition + '少林寺.jpg">少林寺-日出嵩山奥</a>' },
+             { context: '<a href="' + urlposition + '送别.jpg">送别</a>' },
+        ]
+    }, {
+        title: "T开头的简谱",
+        data: [
+            { context: '<a href="' + urlposition + '铁血丹心.jpg">铁血丹心</a>' },
+             { context: '<a href="' + urlposition + '天空之城.jpg">天空之城</a>' },
+              { context: '<a href="' + urlposition + '天意.jpg">天意</a>' },
+        ]
+    },
+    {
+        title: "W开头的简谱",
+        data: [
+            { context: '<a href="' + urlposition + '问情.jpg">问情</a>' },
+            { context: '<a href="' + urlposition + '忘了我.jpg">忘了我</a>' },
+            { context: '<a href="' + urlposition + '枉凝眉.jpg">枉凝眉</a>' },
+            { context: '<a href="' + urlposition + '卧龙吟.jpg">卧龙吟</a>' },
+              { context: '<a href="' + urlposition + '我只在乎你.jpg">我只在乎你</a>' },
+        ]
+    }, {
+        title: "X开头的简谱",
+        data: [
+            { context: '<a href="' + urlposition + '笑红尘.jpg">笑红尘</a>' },
+            { context: '<a href="' + urlposition + '相思.jpg">相思</a>' },
+            { context: '<a href="' + urlposition + '小李飞刀.jpg">小李飞刀</a>' },
+            { context: '<a href="' + urlposition + '向天再借五百年.jpg">向天再借五百年</a>' },
+            { context: '<a href="' + urlposition + '仙剑问情.jpg">仙剑问情</a>' },
+            { context: '<a href="' + urlposition + '雪花女神龙.jpg">雪花女神龙</a>' },
+            { context: '<a href="' + urlposition + '潇洒走一回.jpg">潇洒走一回</a>' },
+            { context: '<a href="' + urlposition + '雪中情.jpg">雪中情</a>' },
+             { context: '<a href="' + urlposition + '乡间的小路.jpg">乡间的小路</a>' },
+              { context: '<a href="' + urlposition + '逍遥叹.jpg">逍遥叹</a>' },
+              { context: '<a href="' + urlposition + '小城故事.jpg">小城故事</a>' },
+              { context: '<a href="' + urlposition + '星月神话.jpg">星月神话</a>' },
+        ]
+    },
+    {
+        title: "Y开头的简谱",
+        data: [
+            { context: '<a href="' + urlposition + '雨碎江南.jpg">雨碎江南</a>' },
+            { context: '<a href="' + urlposition + '有所思.jpg">有所思</a>' },
+            { context: '<a href="' + urlposition + '虞美人.jpg">虞美人</a>' },
+            { context: '<a href="' + urlposition + '云水禅心.jpg">云水禅心</a>' },
+             { context: '<a href="' + urlposition + '英雄的黎明.jpg">英雄的黎明</a>' },
+              { context: '<a href="' + urlposition + '隐形的翅膀.jpg">隐形的翅膀</a>' },
 
-那些好听的而不会的
-难念的经
-偏偏喜欢你
-飘雪（陈慧娴）
-精忠报国
-暖暖
-弹起我心爱的土琵琶
-A
-爱江山更爱美人
-敖包相会
-B
-北国之春
-把悲伤留给自己
-白狐
-C
-沧海一声笑
-城里的月光
-初见
-成都
-D
-单身情歌
-大海
-E
-F
-飞雪玉花
-G
-故乡的原风景
-敢问路在何方
-国歌
-H
-海阔天空
-I
-J
-旧梦不须记
-久别的人
-K
-L
-卧龙吟
-乱红
-另一种乡愁
-M
-梅花泪
-梦里水乡
-N
-女儿情
-男儿无泪
-O
-P
-Q
-倾国倾城
-R
-S
-上海滩
-神话
-T
-铁血丹心
-U
-V
-W
-问清
-忘了我
-枉凝眉
-X
-笑红尘
-相思
-小李飞刀
-向天再借五百年
-仙剑问情
-雪花女神龙
-潇洒走一回
-雪中情
-Y
-雨碎江南
-有所思
-虞美人
-Z
-追风的女儿
-丈夫歌
-追梦人
- */
-//data = [demo01]
+        ]
+    }, {
+        title: "Z开头的简谱",
+        data: [
+            { context: '<a href="' + urlposition + '追风的女儿.jpg">追风的女儿</a>' },
+            { context: '<a href="' + urlposition + '丈夫歌.jpg">丈夫歌</a>' },
+            { context: '<a href="' + urlposition + '追梦人.jpg">追梦人</a>' },
+
+        ]
+    }, {
+        title: "其他",
+        data: [
+            { context: '<a href="' + urlposition + '难念的经.jpg">难念的经</a>' },
+            { context: '<a href="' + urlposition + '偏偏喜欢你.jpg">偏偏喜欢你</a>' },
+            { context: '<a href="' + urlposition + '飘雪（陈慧娴）.jpg">飘雪（陈慧娴）</a>' },
+            { context: '<a href="' + urlposition + '精忠报国.jpg">精忠报国</a>' },
+            { context: '<a href="' + urlposition + '暖暖.jpg">暖暖</a>' },
+            { context: '<a href="' + urlposition + '弹起我心爱的土琵琶.jpg">弹起我心爱的土琵琶</a>' },
+
+        ]
+    },
+    ]
+}
+data = [demo01]

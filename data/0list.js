@@ -112,8 +112,8 @@ var demo07={
     ]
 }
 var demo08={
-    title: "php目录",
-    name: "php目录",
+    title: "简谱",
+    name: "简谱目录",
     data: [
          { url: "detail.html?data/jianpu01.js&01", context: "A" },
     ],
