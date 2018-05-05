@@ -190,7 +190,7 @@ var demo01 = {
             { context: '<a href="' + urlposition + '雨蝶.jpg">雨蝶</a>' },
             { context: '<a href="' + urlposition + '友谊地久天长.jpg">友谊地久天长</a>' },
             { context: '<a href="' + urlposition + '隐形的翅膀.jpg">隐形的翅膀</a>' },
-            { context: '<a href="' + urlposition + '一次就好.jpg">一次就好 缺</a>' },
+            { context: '<a href="' + urlposition + '一次就好.jpg">一次就好</a>' },
             { context: '<a href="' + urlposition + '勇气.jpg">勇气</a>' },
         ]
     }, {
