@@ -177,6 +177,7 @@ var demo01 = {
             { context: '<a href="' + urlposition + '星月神话.jpg">星月神话</a>' },
             { context: '<a href="' + urlposition + '新贵妃醉酒.jpg">新贵妃醉酒</a>' },
             { context: '<a href="' + urlposition + '笑傲江湖曲-琴箫合奏.jpg">笑傲江湖曲-琴箫合奏</a>' },
+             { context: '<a href="' + urlposition + '小芳.jpg">小芳</a>' },
         ]
     },
     {
