@@ -194,4 +194,7 @@ public class TestUsers {
 	public void Main13(){}
 	public void Main14(){}
 	public void Main15(){}
+// mybatis 利用接口注入
+
+
 }
