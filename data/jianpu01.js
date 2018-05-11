@@ -49,6 +49,7 @@ var demo01 = {
         title: "H开头的简谱",
         data: [
             { context: '<a href="' + urlposition + '海阔天空.jpg">海阔天空</a>' },
+            { context: '<a href="' + urlposition + '好春光.jpg">好春光</a>' },
         ]
     }, {
         title: "J开头的简谱",
@@ -98,6 +99,7 @@ var demo01 = {
             { context: '<a href="' + urlposition + '男儿无泪.jpg">男儿无泪</a>' },
             { context: '<a href="' + urlposition + '你.jpg">你</a>' },
             { context: '<a href="' + urlposition + '你的眼神.jpg">你的眼神</a>' },
+            { context: '<a href="' + urlposition + '你的样子.jpg">你的样子</a>' },
         ]
     }, {
         title: "P开头的简谱",
@@ -177,7 +179,7 @@ var demo01 = {
             { context: '<a href="' + urlposition + '星月神话.jpg">星月神话</a>' },
             { context: '<a href="' + urlposition + '新贵妃醉酒.jpg">新贵妃醉酒</a>' },
             { context: '<a href="' + urlposition + '笑傲江湖曲-琴箫合奏.jpg">笑傲江湖曲-琴箫合奏</a>' },
-             { context: '<a href="' + urlposition + '小芳.jpg">小芳</a>' },
+            { context: '<a href="' + urlposition + '小芳.jpg">小芳</a>' },
         ]
     },
     {
