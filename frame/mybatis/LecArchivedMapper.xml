@@ -1,0 +1,464 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper
+	namespace="net.parim.spark.unicom.console.lecturer.manage.repository.mybatis.LecArchivedMapper">
+<sql id="page_limit">
+		<if test="null != page">
+		     limit #{page.offset}, #{page.pageSize}
+		</if>
+	</sql>
+	<resultMap id="LecArchivedMap"
+		type="net.parim.spark.learning.resources.entity.Teacher">
+		<id column="id" property="id" />
+		<collection property="categoryInfo" column="id" select="LecArcLecCate"></collection>
+	</resultMap>
+
+    <select id="LecArcLecCate" resultMap="leccategoryinfoMap">
+        select * from
+        lrn_lec_category_ref where teacher_id =#{id}
+    </select>
+
+
+
+
+
+    <resultMap id="LecTeacherListMap"
+               type="net.parim.spark.learning.resources.entity.Teacher">
+        <id column="id" property="id" />
+		<association column="user_group_id" property="userGroup" select="LecArcLecCateInfoUsergroup"/>
+		<collection property="categoryInfo" column="id" select="LecArcLecCate_zhy"></collection>
+    </resultMap>
+
+    <select id="LecArcLecCate_zhy" resultMap="leccategoryinfoMap">
+        select * from
+        lrn_lec_category_ref lcr where lcr.teacher_id =#{id} AND lcr.archiving_status = "UNFILED" and (lcr.`status` = "ADOPT" or lcr.`status` = "NEXTADOPT"  or lcr.`status` is null)
+    </select>
+
+
+    <resultMap id="LecAuthTeacherListMap"
+               type="net.parim.spark.learning.resources.entity.Teacher">
+        <id column="id" property="id" />
+        <collection property="categoryInfo" column="id" select="LecArcAuthLecCate_zhy"></collection>
+    </resultMap>
+
+    <select id="LecArcAuthLecCate_zhy" resultMap="leccategoryinfoMap">
+        select * from
+        lrn_lec_category_ref lcr where lcr.teacher_id =#{id} AND lcr.archiving_status = "UNFILED" and lcr.`status` = "NEXTWAIT"
+    </select>
+    
+    
+    <!-- 教辅 -->
+    
+     <resultMap id="LecJCTeacherListMap"
+               type="net.parim.spark.learning.resources.entity.Teacher">
+        <id column="id" property="id" />
+        <collection property="categoryInfo" column="id" select="LecJCAuthLecCate_zhy"></collection>
+    </resultMap>
+
+    <select id="LecJCAuthLecCate_zhy" resultMap="leccategoryinfoMap">
+        select * from
+        lrn_lec_category_ref lcr where lcr.teacher_id =#{id} AND lcr.archiving_status = "UNFILED" and lcr.`status` = "WAIT"
+    </select>
+
+
+
+    <select id="findLectherArchived" resultMap="LecArchivedMap">
+        SELECT lt.* from
+        lrn_teacher lt,lrn_lec_category_ref lcr where lt.id = lcr.teacher_id
+        and lcr.archiving_status="ARCHIVED" GROUP BY (lt.id)
+
+    </select>
+
+
+
+
+	<resultMap id="leccategoryinfoMap"
+		type="net.parim.spark.learning.resources.entity.LecCategoryInfo">
+		<association column="category_id" property="category"
+			select="LecArcLecCateInfoCate" />
+		<association column="user_group_id" property="userGroup"
+			select="LecArcLecCateInfoUsergroup" />
+	</resultMap>
+
+
+	<select id="LecArcLecCateInfoUsergroup" resultType="net.parim.spark.core.system.entity.UserGroup">
+		select
+		id,name from sys_user_group where id = #{user_group_id}
+	</select>
+	<select id="LecArcLecCateInfoCate"
+		resultType="net.parim.spark.learning.resources.entity.LecCategory">
+		select * from lec_category where id =#{category_id}
+	</select>
+
+
+	<!-- 升级版的查询所有归档讲师 -->
+	<select id="findAllAreadyFileLecture" resultMap="LecArchivedMap">
+		SELECT lt.* from lrn_teacher lt,(
+			select lr.teacher_id 
+				from lrn_lec_category_ref  lr 
+				where  
+				archiving_status ="ALREADY"  
+				GROUP BY lr.teacher_id)eg
+
+			where lt.id=eg.teacher_id
+		<include refid="page_limit"></include>
+	</select>
+<!-- 升级版的查询所有归档讲师数量 -->
+<select id="findAllAreadyFileLectureCount" resultType="java.lang.Long">
+SELECT count(lt.id) from lrn_teacher lt,(
+select lr.teacher_id from lrn_lec_category_ref  lr where  archiving_status ="ALREADY"  GROUP BY lr.teacher_id)eg
+where lt.id=eg.teacher_id
+	</select>
+	
+	<!-- 升级版讲师申请列表 -->
+	<select id="getApplyList_y" resultMap="LecArchivedMap">
+		SELECT
+			lt.*
+		FROM
+			lrn_teacher lt,
+			(
+				SELECT
+					teacher_id
+				FROM
+					lrn_lec_category_ref
+				WHERE
+					STATUS = "WAIT"
+				GROUP BY
+					teacher_id
+			) eg
+		WHERE
+	eg.teacher_id = lt.id 
+	<if test="null != dataRule">
+         and lt.group_id in
+         (<include refid="permission.userDataRuleSubQuery"></include>)
+     </if>
+	<if test="null != teacher.name">
+        and lt.name like concat('%',lower(#{teacher.name}),'%')
+    </if>
+	<include refid="page_limit"></include>
+	</select>
+	<!-- 升级版讲师申请数量 -->
+	<select id="getApplyCount_y"  resultType="java.lang.Long">
+	select count(em.id) from (
+	SELECT
+			lt.*
+		FROM
+			lrn_teacher lt,
+			(
+				SELECT
+					teacher_id
+				FROM
+					lrn_lec_category_ref
+				WHERE
+					STATUS = "WAIT"
+				GROUP BY
+					teacher_id
+			) eg
+		WHERE
+	eg.teacher_id = lt.id
+	<if test="null != dataRule">
+         and lt.group_id in
+         (<include refid="permission.userDataRuleSubQuery"></include>)
+     </if>
+	
+	<if test="null != teacher.name">
+        and lt.name like concat('%',lower(#{teacher.name}),'%')
+    </if>)em
+	</select>
+
+
+
+	<!-- 升级版认证列表 -->
+	<select id="getAUTHList_h" resultMap="LecAuthTeacherListMap">
+        SELECT DISTINCT
+        lt.*
+        FROM
+        lrn_teacher lt,
+        lrn_lec_category_ref lf
+        <where>
+
+            1=1
+
+            <if test="null != dataRule">
+                and lt.group_id in
+                (<include refid="permission.userDataRuleSubQuery"></include>)
+            </if>
+
+            and lt.id  =  lf.teacher_id
+            and (lf.status = "NEXTWAIT")
+            and lt.teacher_type !="TEMPORARYLECTURERDATA"
+            and lf.archiving_status !="ALREADY"
+            and lt.is_deleted = 0
+
+            <if test="null != teacher.site.id">
+                and lt.site_id = #{teacher.site.id}
+            </if>
+
+            <if test="null != teacher.name">
+                and lt.name like concat('%',lower(#{teacher.name}),'%')
+            </if>
+
+            order by last_modified_date
+
+            <include refid = "page_limit" ></include >
+        </where>
+
+	</select>
+
+	<!-- 升级版讲师申请数量 -->
+	<select id="getAuthCount_h"  resultType="java.lang.Long">
+        select count(*) from (
+        SELECT DISTINCT
+        lt.*
+        FROM
+        lrn_teacher lt,
+        lrn_lec_category_ref lf
+        <where>
+            1=1
+            <if test="null != dataRule">
+                and lt.group_id in
+                (<include refid="permission.userDataRuleSubQuery"></include>)
+            </if>
+
+            and lt.id  =  lf.teacher_id
+            and (lf.status = "NEXTWAIT")
+            and lf.archiving_status !="ALREADY"
+            and lt.teacher_type !="TEMPORARYLECTURERDATA"
+
+            and lt.is_deleted = 0
+
+            <if test="null != teacher.site.id">
+                and lt.site_id = #{teacher.site.id}
+            </if>
+
+            <if test="null != teacher.name">
+                and lt.name like concat('%',lower(#{teacher.name}),'%')
+            </if>
+
+        </where>
+        )em
+
+	</select>
+
+
+	<!-- 升级版讲师列表 -->
+	<select id="getTeacherList_h" resultMap="LecTeacherListMap">
+		SELECT DISTINCT
+		lt.* , lt.group_id as user_group_id
+		FROM
+		lrn_teacher lt,
+		lrn_lec_category_ref lf
+		<where>
+
+			1=1
+
+			<if test="null != dataRule">
+				and lt.group_id in
+				(<include refid="permission.userDataRuleSubQuery"></include>)
+			</if>
+
+			and lt.id  =  lf.teacher_id
+			and (lf.status = "ADOPT"  or  lf.status = "NEXTADOPT" )
+			and lt.teacher_type !="TEMPORARYLECTURERDATA"
+			and lf.archiving_status !="ALREADY"
+			and lt.is_deleted = 0
+
+			<if test="null != teacher.site.id">
+				and lt.site_id = #{teacher.site.id}
+			</if>
+
+			<if test=" null != teacher.userGroup and null != teacher.userGroup.id">
+				and lt.group_id = #{teacher.userGroup.id}
+			</if>
+
+
+			<if test="null != teacher.name">
+				and lt.name like concat('%',lower(#{teacher.name}),'%')
+			</if>
+
+			order by last_modified_date
+
+			<include refid = "page_limit" ></include >
+		</where>
+
+	</select>
+
+	<!-- 升级版讲师列表数量 -->
+	<select id="getTeacherCount_h"  resultType="java.lang.Long">
+		select count(*) from (
+		SELECT DISTINCT
+		lt.*
+		FROM
+		lrn_teacher lt,
+		lrn_lec_category_ref lf
+		<where>
+			1=1
+			<if test="null != dataRule">
+				and lt.group_id in
+				(<include refid="permission.userDataRuleSubQuery"></include>)
+			</if>
+
+			and lt.id  =  lf.teacher_id
+			and (lf.status = "ADOPT"  or  lf.status = "NEXTADOPT" )
+			and lf.archiving_status !="ALREADY"
+			and lt.teacher_type !="TEMPORARYLECTURERDATA"
+
+			and lt.is_deleted = 0
+
+			<if test="null != teacher.site.id">
+				and lt.site_id = #{teacher.site.id}
+			</if>
+
+			<if test=" null != teacher.userGroup and null != teacher.userGroup.id">
+				and lt.group_id = #{teacher.userGroup.id}
+			</if>
+
+			<if test="null != teacher.name">
+				and lt.name like concat('%',lower(#{teacher.name}),'%')
+			</if>
+
+		</where>
+		)em
+
+
+	</select>
+
+
+
+	<!-- 升级版推荐讲师列表 -->
+	<select id="getTeacherList_ch" resultMap="LecTeacherListMap">
+		SELECT DISTINCT
+		lt.*
+		FROM
+		lrn_teacher lt,
+		lrn_lec_category_ref lf
+		<where>
+
+			1=1
+
+			<if test="null != dataRule">
+				and lt.group_id in
+				(<include refid="permission.userDataRuleSubQuery"></include>)
+			</if>
+
+			and lt.id  =  lf.teacher_id
+			and (lf.status = "ADOPT"  or  lf.status = "NEXTADOPT" )
+			and lt.teacher_type !="TEMPORARYLECTURERDATA"
+			and lf.archiving_status !="ALREADY"
+			and lt.is_deleted = 0
+
+			<if test="null != teacher.site.id">
+				and lt.site_id = #{teacher.site.id}
+			</if>
+
+			<if test="null != teacher.name">
+				and lt.name like concat('%',lower(#{teacher.name}),'%')
+			</if>
+
+            and lt.is_recommend  = 0
+
+			order by last_modified_date
+
+			<include refid = "page_limit" ></include >
+		</where>
+
+	</select>
+
+
+    <!-- 升级版讲师推荐数量 -->
+    <select id="getTeacherCount_ch"  resultType="java.lang.Long">
+        select count(*) from (
+        SELECT DISTINCT
+        lt.*
+        FROM
+        lrn_teacher lt,
+        lrn_lec_category_ref lf
+        <where>
+            1=1
+            <if test="null != dataRule">
+                and lt.group_id in
+                (<include refid="permission.userDataRuleSubQuery"></include>)
+            </if>
+
+            and lt.id  =  lf.teacher_id
+            and (lf.status = "ADOPT"  or  lf.status = "NEXTADOPT" )
+            and lf.archiving_status !="ALREADY"
+            and lt.teacher_type !="TEMPORARYLECTURERDATA"
+
+            and lt.is_deleted = 0
+
+            and lt.is_recommend  = 0
+
+            <if test="null != teacher.site.id">
+                and lt.site_id = #{teacher.site.id}
+            </if>
+
+            <if test="null != teacher.name">
+                and lt.name like concat('%',lower(#{teacher.name}),'%')
+            </if>
+
+        </where>
+        )em
+
+
+    </select>
+
+
+
+
+	<!-- 教辅权限列表 -->
+	<select id="getAUTHList_jf" resultMap="LecJCTeacherListMap">
+		SELECT DISTINCT
+		lt.*
+		FROM
+		lrn_teacher lt,
+		lrn_lec_category_ref lf
+		<where>
+
+			1=1
+
+			<if test="null != user_group_id">
+				and lf.user_group_id = #{user_group_id}
+			</if>
+
+			and lt.id  =  lf.teacher_id
+			and (lf.status = "WAIT")
+			and lt.teacher_type !="TEMPORARYLECTURERDATA"
+			and lf.archiving_status !="ALREADY"
+			and lt.is_deleted = 0
+
+			order by last_modified_date
+
+			<include refid = "page_limit" ></include >
+		</where>
+
+	</select>
+
+
+	<!-- 教辅数量 -->
+	<select id="getAuthCount_jf"  resultType="java.lang.Long">
+		select count(*) from (
+		SELECT DISTINCT
+		lt.*
+		FROM
+		lrn_teacher lt,
+		lrn_lec_category_ref lf
+		<where>
+			1=1
+			<if test="null != user_group_id">
+				and lf.user_group_id = #{user_group_id}
+			</if>
+
+			and lt.id  =  lf.teacher_id
+			and (lf.status = "WAIT")
+			and lf.archiving_status !="ALREADY"
+			and lt.teacher_type !="TEMPORARYLECTURERDATA"
+			and lt.is_deleted = 0
+
+		</where>
+		)em
+
+	</select>
+
+
+</mapper>

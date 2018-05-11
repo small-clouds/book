@@ -16,6 +16,7 @@
 		select * from users
 		<where>
 			<if test=" loginname !=null and loginname !='' ">and  loginname like "%"#{loginname}"%"</if>
+			<if test=" loginname !=null and loginname !='' ">and  loginname like concat('%',lower(#{loginname}),'%')</if>
 			<if test="user_name !=null and user_name !=''"> and user_name like "%"#{user_name}"%"</if>
 			<if test="user_age !=null and user_age !=''"> and user_age=#{user_age}</if>
 			<if test="user_sex !=null and user_sex !=''"> and user_sex=#{user_sex}</if>

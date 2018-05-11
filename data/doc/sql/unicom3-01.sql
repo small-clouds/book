@@ -1,0 +1,432 @@
+﻿select * from lec_template where status ="ENABLE"
+-- update 
+-- 	lrn_lec_category_ref lf
+-- 		set lf.user_group_id =
+-- 			(select lt.group_id from lrn_teacher lt where lf.teacher_id=lt.id ) 
+-- 		where lf.user_group_id is null and lf.teacher_id=1007
+--  
+-- 
+--  UPDATE lrn_lec_category_ref lf
+-- JOIN lrn_teacher lt ON lt.id = lf.teacher_id
+-- SET lf.user_group_id = lt.group_id
+-- WHERE lf.user_group_id IS NULL and lf.teacher_id=1007
+-- 
+-- 
+-- 
+-- 
+-- 
+-- update a
+-- set a.latesprice = 
+-- (select b.amount from t_temp b where b.conNo = a.conNumber)
+-- where a.conNumber in (select b.conNo from t_temp b )
+
+
+#2
+-- SELECT
+-- 			lt.*
+-- 		FROM
+-- 			lrn_teacher lt,
+-- 			(
+-- 				SELECT
+-- 					teacher_id
+-- 				FROM
+-- 					lrn_lec_category_ref
+-- 				WHERE
+-- 					STATUS = "ADOPT"
+-- 				GROUP BY
+-- 					teacher_id
+-- 			) eg
+-- 		WHERE
+-- 	eg.teacher_id = lt.id 
+
+
+
+-- update lrn_lec_category_ref SET archiving_status = "UNFILED"
+
+-- SELECT  * from lrn_teacher where id =21064068
+-- 
+-- 
+-- SELECT * from lrn_lec_category_ref
+-- 
+-- select * from lrn_teacher where name ="尹栋力"
+-- 
+-- -- update  lrn_teacher_training_experience set years=50, hour=50 ,honor ="neneneen" where id =89
+-- 
+-- select * from lrn_teacher_training_experience
+
+-- SELECT a.* from sort_group a   
+--             left JOIN sort_group b  
+--             on a.gp = b.gp and a.sort < b.sort  
+-- where b.sort is null  
+
+
+
+-- 
+-- SELECT
+-- 				lt.* ,lt.group_id as user_group_id
+-- 			FROM
+-- 			lrn_teacher lt,
+-- 			lrn_lec_category_ref lcr
+-- 		WHERE
+-- 		lt.is_deleted=0 
+-- 		and lcr.is_deleted =0 
+-- 		and lt.id = lcr.teacher_id 
+-- and lcr.archiving_status ="UNFILED"
+-- and (lcr.status="ADOPT" or lcr.status = "NEXTADOPT")
+-- 
+-- GROUP BY lt.id
+-- 
+-- SELECT lt.* ,lt.group_id as user_group_id 
+-- FROM 
+-- lrn_teacher lt, lrn_lec_category_ref lcr WHERE 
+-- lt.is_deleted=0 and lcr.is_deleted =0 and lt.id = lcr.teacher_id 
+-- and lcr.archiving_status ="UNFILED" 
+-- and (lcr.status="ADOPT" or lcr.status = "NEXTADOPT") and 
+-- lt.name like "%尹栋力%" 
+-- GROUP BY lt.id
+-- 
+-- SELECT * from lrn_lec_category_ref where teacher_id = 21064068
+-- 
+-- select count(eg.id) from (
+-- 	
+-- 		SELECT
+-- 				lt.id,lt.name
+-- 			FROM
+-- 			lrn_teacher lt,
+-- 			lrn_lec_category_ref lcr
+-- 		WHERE
+-- 		lt.is_deleted=0 
+-- 		and lcr.is_deleted =0 
+-- 		and lt.id = lcr.teacher_id  
+-- 
+--  			and lt.name like  "%张%"
+-- 		
+-- 		GROUP BY lt.id
+-- 	) eg
+-- 
+-- 
+-- 
+-- 
+-- 	SELECT
+-- 				lt.* ,lt.group_id as user_group_id
+-- 			FROM
+-- 			lrn_teacher lt,
+-- 			lrn_lec_category_ref lcr
+-- 		WHERE
+-- 		lt.is_deleted=0 
+-- 		and lcr.is_deleted =0 
+-- 		and lt.id = lcr.teacher_id  
+-- 
+--  			-- and lcr.category_id in (${m.lcr_categotyID})
+-- 
+-- -- 			and lcr.user_group_id = #{m.lcr_userGroupId}
+-- 		
+-- 
+--  			and lt.name like  "%程伟%"
+-- 
+-- 
+-- 
+-- getLectureCenterList_y
+-- 
+-- 
+-- 
+-- 
+-- 
+-- select lt.id ,lt.name,  llcr.category_id  ,llcr.user_group_id from lrn_lec_category_ref llcr,lrn_teacher lt where lt.id=llcr.teacher_id  and llcr.user_group_id=11325301
+-- 
+-- select id, name from lec_category where id = 1021
+-- 
+-- 
+-- SELECT  id,name ,parent_id ,user_group_id from lec_category where parent_id =4   and user_group_id =11325301
+-- SELECT  id,name ,parent_id ,user_group_id from lec_category where parent_id =33151208   and user_group_id =11325301
+-- SELECT  id,name ,parent_id ,user_group_id from lec_category where parent_id =2   and user_group_id =11325301
+-- SELECT  id,name ,parent_id ,user_group_id from lec_category where parent_id =3   and user_group_id =11325301
+-- select id  from lec_category where parent_id = 2  and user_group_id =14057307
+-- 
+-- 
+-- 
+-- 
+-- 
+-- 
+-- 
+-- 
+-- -- 所属单位 的一级级别
+-- select * from lec_category where  user_group_id is null or user_group_id =  11325301 
+-- 
+-- -- 查讲师
+-- -- 二级级别呢
+-- SELECT * from lrn_lec_category_ref where user_group_id=11325301 and category_id =(
+-- select parent_id from lec_category where id = 1027
+-- )  or category_id =1027
+-- 
+-- 
+-- -- 如果是一级级别就这样查就行
+-- SELECT * from lrn_lec_category_ref where   category_id in (
+-- 	select id from lec_category where parent_id = 2 and user_group_id= 11392008
+-- )
+-- 
+-- 
+-- select * from lrn_teacher where  id =785
+-- 
+-- 
+-- SELECT
+-- 			lt.*
+-- 		FROM
+-- 			lrn_teacher lt,
+-- 			(
+-- 				SELECT
+-- 					*
+-- 				FROM
+-- 					lrn_lec_category_ref
+-- 				WHERE
+-- 					STATUS = "WAIT"  and teacher_id =21022152
+-- 				GROUP BY
+-- 					teacher_id
+-- 			) eg
+-- 		WHERE
+-- 	eg.teacher_id = lt.id 
+-- 
+-- SELECT
+-- 			lt.*
+-- 		FROM
+-- 			lrn_teacher lt,
+-- 			(
+-- 				SELECT
+-- 					teacher_id
+-- 				FROM
+-- 					lrn_lec_category_ref
+-- 				WHERE
+-- 					STATUS = "WAIT"
+-- 				GROUP BY
+-- 					teacher_id
+-- 			) eg
+-- 		WHERE
+-- 	eg.teacher_id = lt.id 
+-- 
+-- 
+-- 
+-- SELECT
+-- 	lt.*
+-- FROM
+-- 	lrn_teacher lt,
+-- 	lrn_lec_category_ref llcr
+-- WHERE
+-- 	llcr.teacher_id = lt.id 
+--  and 
+-- 	llcr.category_id = 1021
+-- and llcr.user_group_id = 11325322
+-- and lt.teacher_type= "INTERNAL"
+-- 
+-- SELECT lt.* FROM lrn_teacher lt, lrn_lec_category_ref lcr WHERE lt.is_deleted=0 and lcr.is_deleted =0 and lt.id = lcr.teacher_id and lt.name like concat("%","尹","%") 
+-- 
+-- SELECT lt.* FROM lrn_teacher lt
+-- 
+-- and lt.name like '%尹栋力%'
+-- 
+-- GROUP BY lt.id  limit 0,4
+-- 
+-- select count(eg.id) from (
+-- 
+-- SELECT
+-- 				lt.id
+-- 			FROM
+-- 			lrn_teacher lt,
+-- 			lrn_lec_category_ref lcr
+-- 		WHERE
+-- 		lt.is_deleted=0 
+-- 		and lcr.is_deleted =0 
+-- 		and lt.id = lcr.teacher_id 
+--  ) eg
+
+
+#SELECT
+	-- 			lt.*
+	-- 		FROM
+	-- 				lrn_lec_category_ref l,
+	-- 				lrn_teacher lt
+	-- 		WHERE
+	-- 				l.teacher_id = lt.id
+	-- 				AND l.teacher_id NOT IN (
+	-- 		SELECT
+	-- 		ll.teacher_id
+	-- 		FROM
+	-- 		lrn_lec_category_ref ll
+	-- 		WHERE
+	-- 		archiving_status = "UNFILED"
+	-- 		AND ll.teacher_id IS NOT NULL
+	-- 		GROUP BY
+	-- 		ll.teacher_id
+	-- 		)
+	-- 		GROUP BY
+	-- 		l.teacher_id
+	-- 
+	-- select  * from sys_user where username ="yindongli"
+	-- 
+	-- select * from lrn_teacher where id = "21064068"
+	-- SELECT
+	-- 	lt.*
+	-- FROM
+	-- 	lrn_teacher lt,
+	-- 	(
+	-- 		SELECT
+	-- 			teacher_id
+	-- 		FROM
+	-- 			lrn_lec_category_ref
+	-- 		WHERE
+	-- 			STATUS = "WAIT"
+	-- 		GROUP BY
+	-- 			teacher_id
+	-- 	) eg
+	-- WHERE
+	-- 	eg.teacher_id = lt.id -- 已归档   查询所有未归档的讲师 
+	-- select  * from lrn_lec_category_ref  where id =358
+	-- -- update 	lrn_lec_category_ref  set archiving_status ="UNFILED" 
+	-- SELECT count(lt.id) from lrn_teacher lt,(
+	-- 
+	-- select lr.teacher_id from lrn_lec_category_ref  lr where  archiving_status ="ALREADY"  GROUP BY lr.teacher_id)eg
+	-- 
+	-- where lt.id=eg.teacher_id
+	-- select count(eg.id) from (
+	-- select * from (
+	-- 	SELECT
+	-- 				lt.id
+	-- 			FROM
+	-- 					lrn_lec_category_ref l,
+	-- 					lrn_teacher lt
+	-- 			WHERE
+	-- 					l.teacher_id = lt.id
+	-- 					AND l.teacher_id NOT IN (
+	-- 							SELECT
+	-- 							ll.teacher_id
+	-- 							FROM
+	-- 							lrn_lec_category_ref ll
+	-- 							WHERE
+	-- 							archiving_status = "UNFILED"
+	-- 							AND ll.teacher_id IS NOT NULL
+	-- 							GROUP BY
+	-- 							ll.teacher_id
+	-- 					)
+	-- 			GROUP BY
+	-- 			l.teacher_id)en ,lrn_lec_category_ref lr where lr.teacher_id =en.id
+	-- 
+	-- 
+	-- SELECT
+	-- 	lt.*
+	-- FROM
+	-- 	lrn_lec_category_ref l,
+	-- 	lrn_teacher lt
+	-- WHERE
+	-- 	l.teacher_id = lt.id
+	-- AND l.teacher_id NOT IN (
+	-- 	SELECT
+	-- 		ll.teacher_id
+	-- 	FROM
+	-- 		lrn_lec_category_ref ll
+	-- 	WHERE
+	-- 		archiving_status = "UNFILED"
+	-- 	AND ll.teacher_id IS NOT NULL
+	-- 	GROUP BY
+	-- 		ll.teacher_id
+	-- )
+	-- GROUP BY
+	-- 	l.teacher_id -- select * from lrn_lec_category_ref  where archiving_status="ALREADY"
+	#update  lrn_unicom_teacher set name="测试" where id = 1
+	#update  lrn_unicom_teacher set name="测试" where id = 1
+	#select * from lrn_unicom_teacher where id =1
+	#select * from lrn_unicom_teacher
+	#update  lrn_teacher set archiving_status='ALREADY' where id in (47,48,49)
+	#<foreach collection="courseType" item="itemList" open="(" separator="," close=")">  
+	#{ids} 
+	#select * from lec_category c where c.parent_id = 43 and c.is_deleted = 0   order by c.sort_id asc
+	--  SELECT
+	--  	x.id,
+	--  	x.created_date,
+	-- 	x.STATUS,
+	-- 	x.category_id ,x.created_by,
+	--  	cate.name,
+	--  	x.is_deleted
+	--  FROM
+	-- 	lrn_lec_category_ref x,
+	-- 	lec_category cate 
+	-- WHERE
+	-- 	x.category_id = cate.id 
+	-- 	and x.created_by = 2;
+	-- 
+	-- SELECT
+	-- 	x.id,
+	-- 	x.created_date,
+	-- 	x.STATUS,
+	-- 	x.category_id ,x.created_by,
+	-- 	cate.name,
+	-- 	x.is_deleted,
+	-- cate.id,
+	--  cate.name,
+	--  t.name
+	-- FROM
+	-- 	lrn_lec_category_ref x,
+	-- 	lec_category cate ,
+	-- 	lrn_teacher t 
+	-- WHERE
+	-- 	x.category_id = cate.id    and x.unicom_teacher_id is not null AND x.id=40
+	-- 
+	-- select * from lrn_unicom_teacher 
+	-- select count(eg.id) from (
+	-- 	select lt.*
+	-- 		from 
+	-- 			lrn_teacher lt, lrn_lec_category_ref llcr 
+	-- 		where 
+	-- 			lt.is_deleted =0 
+	-- 			and lt.id= llcr.teacher_id 
+	-- 			and llcr.status in ('OVERDUE','NEXTWAIT','NEXTADOPT','NEXTREFUSE')  
+	--  GROUP BY (lt.id)
+	-- ) eg	
+	-- 	select id,name from user_group where id = 11351134
+	-- select lut.* from    lrn_unicom_teacher  lut, lrn_lec_category_ref llcr   where    lut.is_deleted =0      and llcr.status ='WAIT'         GROUP BY (lut.id)
+	-- select user_group_id from sys_user where id=14998851
+	-- select lut.*,lut.user_group_id group_id from 
+	-- 		lrn_unicom_teacher  lut, lrn_lec_category_ref llcr 
+	-- 	where 
+	-- 		lut.is_deleted =0
+	-- 		
+	-- 		and llcr.status ='WAIT'
+	-- 
+	-- 		GROUP BY (lut.id)
+	-- select *,llcr.user_group_id group_id   from lrn_lec_category_ref llcr  
+	-- 	where
+	-- 		llcr.unicom_teacher_id =3
+	-- 		
+	-- 		ORDER BY llcr.status = 'WAIT' desc
+	/*
+
+SELECT
+x.id,
+x.created_date as "createdDte",
+x.STATUS,
+x.category_id as "category.id",x.created_by as "createdBy.id",
+cate.name as "category.name",
+x.is_deleted
+FROM
+lrn_lec_category_ref x,
+lec_category cate ,
+lrn_teacher t
+WHERE
+x.category_id = cate.id 
+and x.created_by = t.user_id
+and x.unicom_teacher_id is not null
+and t.id =1
+*/
+	-- select  * , lt.id as 'category.teacher_id'  from lrn_teacher lt, lrn_lec_category_ref llcr  where  lt.id=llcr.teacher_id and llcr.status in ('WAIT','RESUFE')
+	-- select *  from lrn_lec_category_ref llcr  where llcr.teacher_id =1 and llcr.status in ('WAIT','RESUFE')
+	-- 
+	-- SELECT a.*,b.* FROM lrn_teacher a INNER JOIN lrn_lec_category_ref b on a.id = b.teacher_id
+	-- AND b.status in ('WAIT','RESUFE')
+	-- select * from lrn_teacher lt, lrn_lec_category_ref llcr  where  lt.id=llcr.teacher_id and llcr.status in ("WAIT")
+	--  select lt.* from lrn_teacher lt, lrn_lec_category_ref llcr where lt.id= llcr.teacher_id and llcr.status in ('OVERDUE','NEXTWAIT','NEXTADOPT','NEXTREFUSE') 
+	-- GROUP BY (lt.id)
+	-- select *  from lrn_lec_category_ref llcr  where llcr.teacher_id =3 and llcr.status in ('OVERDUE','NEXTWAIT','NEXTADOPT','NEXTREFUSE')
+	-- select * from lec_category where id =63
+	-- select *  from lrn_lec_category_ref llcr  where llcr.teacher_id =3 and llcr.status in ('OVERDUE','NEXTWAIT','NEXTADOPT','NEXTREFUSE') 
+	-- update  lrn_lec_category_ref set archiving_status ='ARCHIVED'   where id in (582,583)
+	-- SELECT lt.* from lrn_teacher lt,lrn_lec_category_ref  lcr where lt.id = lcr.teacher_id and lcr.archiving_status="ARCHIVED"  GROUP BY (lt.id)
+	-- SELECT lt.* from lrn_teacher lt,lrn_lec_category_ref  lcr where lt.id = lcr.teacher_id and lcr.archiving_status="ARCHIVED" GROUP BY (lt.id)
+	-- select * from lrn_course_teacher
