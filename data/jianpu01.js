@@ -33,6 +33,7 @@ var demo01 = {
             { context: '<a href="' + urlposition + '大海.jpg">大海</a>' },
             { context: '<a href="' + urlposition + '独角戏.jpg">独角戏</a>' },
             { context: '<a href="' + urlposition + '当.jpg">当</a>' },
+            { context: '<a href="' + urlposition + '断桥残雪.jpg">断桥残雪</a>' },
         ]
     }, {
         title: "F开头的简谱",
