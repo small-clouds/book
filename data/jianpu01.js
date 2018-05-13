@@ -118,6 +118,7 @@ var demo01 = {
             { context: '<a href="' + urlposition + '青花瓷.jpg">青花瓷</a>' },
             { context: '<a href="' + urlposition + '千千阙歌.jpg">千千阙歌</a>' },
             { context: '<a href="' + urlposition + '青青河边草.jpg">青青河边草</a>' },
+            { context: '<a href="' + urlposition + '清明雨上.jpg">清明雨上</a>' },
         ]
     }, {
         title: "R开头的简谱",
