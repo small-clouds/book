@@ -215,6 +215,7 @@ var demo01 = {
             { context: '<a href="' + urlposition + '知道不知道.jpg">知道不知道</a>' },
             { context: '<a href="' + urlposition + '醉相思.jpg">醉相思</a>' },
             { context: '<a href="' + urlposition + '真心英雄.jpg">真心英雄</a>' },
+            { context: '<a href="' + urlposition + '真的好想你.jpg">真的好想你</a>' },
         ]
     }, {
         title: "其他",
