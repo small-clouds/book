@@ -199,6 +199,7 @@ var demo01 = {
             { context: '<a href="' + urlposition + '隐形的翅膀.jpg">隐形的翅膀</a>' },
             { context: '<a href="' + urlposition + '一次就好.jpg">一次就好</a>' },
             { context: '<a href="' + urlposition + '勇气.jpg">勇气</a>' },
+            { context: '<a href="' + urlposition + '月亮代表我的心.jpg">月亮代表我的心</a>' },
         ]
     }, {
         title: "Z开头的简谱",
