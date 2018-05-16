@@ -46,12 +46,14 @@ var demo01 = {
             { context: '<a href="' + urlposition + '故乡的原风景.jpg">故乡的原风景</a>' },
             { context: '<a href="' + urlposition + '敢问路在何方.jpg">敢问路在何方</a>' },
             { context: '<a href="' + urlposition + '国歌.jpg">国歌</a>' },
+            { context: '<a href="' + urlposition + '滚滚长江东逝水.jpg">滚滚长江东逝水</a>' },
         ]
     }, {
         title: "H开头的简谱",
         data: [
             { context: '<a href="' + urlposition + '海阔天空.jpg">海阔天空</a>' },
             { context: '<a href="' + urlposition + '好春光.jpg">好春光</a>' },
+            { context: '<a href="' + urlposition + '后来.jpg">后来</a>' },
         ]
     }, {
         title: "J开头的简谱",
@@ -62,6 +64,7 @@ var demo01 = {
             { context: '<a href="' + urlposition + '今天.jpg">今天</a>' },
             { context: '<a href="' + urlposition + '江山无限.jpg">江山无限</a>' },
              { context: '<a href="' + urlposition + '今天是你的生日.jpg">今天是你的生日</a>' },
+              { context: '<a href="' + urlposition + '江上行.jpg">江上行</a>' },
         ]
     }, {
         title: "K开头的简谱",
@@ -93,6 +96,7 @@ var demo01 = {
             { context: '<a href="' + urlposition + '莫失莫忘.jpg">莫失莫忘</a>' },
             { context: '<a href="' + urlposition + '漫步人生路.jpg">漫步人生路</a>' },
             { context: '<a href="' + urlposition + '牧羊曲.jpg">牧羊曲</a>' },
+            { context: '<a href="' + urlposition + '民得平安天下安.jpg">民得平安天下安</a>' },
         ]
     }, {
         title: "N开头的简谱",
@@ -217,6 +221,7 @@ var demo01 = {
             { context: '<a href="' + urlposition + '醉相思.jpg">醉相思</a>' },
             { context: '<a href="' + urlposition + '真心英雄.jpg">真心英雄</a>' },
             { context: '<a href="' + urlposition + '真的好想你.jpg">真的好想你</a>' },
+            { context: '<a href="' + urlposition + '昨日重现.jpg">昨日重现</a>' },
         ]
     }, {
         title: "其他",
