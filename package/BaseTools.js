@@ -161,6 +161,12 @@ console.log(data3)
 
 //原生控制css
 // obj.style[attr] = "css"
+data={}
+
+let data = {
+      ...this.data,
+      userGroupId: this.userGroupId
+    };
 
 
 
