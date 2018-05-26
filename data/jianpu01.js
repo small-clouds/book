@@ -63,8 +63,8 @@ var demo01 = {
             { context: '<a href="' + urlposition + '军港之夜.jpg">军港之夜</a>' },
             { context: '<a href="' + urlposition + '今天.jpg">今天</a>' },
             { context: '<a href="' + urlposition + '江山无限.jpg">江山无限</a>' },
-             { context: '<a href="' + urlposition + '今天是你的生日.jpg">今天是你的生日</a>' },
-              { context: '<a href="' + urlposition + '江上行.jpg">江上行</a>' },
+            { context: '<a href="' + urlposition + '今天是你的生日.jpg">今天是你的生日</a>' },
+            { context: '<a href="' + urlposition + '江上行.jpg">江上行</a>' },
         ]
     }, {
         title: "K开头的简谱",
@@ -152,6 +152,7 @@ var demo01 = {
             { context: '<a href="' + urlposition + '弹起我心爱的土琵琶.jpg">弹起我心爱的土琵琶</a>' },
             { context: '<a href="' + urlposition + '天涯.jpg">天涯</a>' },
             { context: '<a href="' + urlposition + '童年.jpg">童年</a>' },
+            { context: '<a href="' + urlposition + '涛声依旧.jpg">涛声依旧</a>' },
         ]
     },
     {
@@ -245,7 +246,7 @@ var demo01 = {
 //     for(var j=0;j<demo01.data[i].data.length;j++){
 //    num++
 //     }
- 
+
 // }
 // console.log(num)
 data = [demo01]
