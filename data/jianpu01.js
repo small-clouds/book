@@ -141,6 +141,7 @@ var demo01 = {
             { context: '<a href="' + urlposition + '市集.jpg">市集</a>' },
             { context: '<a href="' + urlposition + '闪亮的日子.jpg">闪亮的日子</a>' },
             { context: '<a href="' + urlposition + '水手.jpg">水手</a>' },
+            { context: '<a href="' + urlposition + '少年壮志不言愁.jpg">少年壮志不言愁</a>' },
         ]
     }, {
         title: "T开头的简谱",
