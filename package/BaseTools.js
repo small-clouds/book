@@ -168,6 +168,24 @@ let data = {
       userGroupId: this.userGroupId
     };
 
+// 数组 中文排序
+    // accum[initial].sort(
+    //     (param1, param2) => {
+    //       return param1.name.localeCompare(param2.name,"zh");
+    //     }
+    //   )
+
+    // 循环对象
+    var Statistics_Website_logo ={
+                     'Website_logo_title':'学而思',
+                     'Website_logo_Theme':'教育行业',
+                     'Website_logo_Company':'好未来'
+           };
+         
+        for (var Key in Statistics_Website_logo){
+              console.log(Key+'='+Statistics_Website_logo[Key]+'')
+            }
+
 
 
 

@@ -84,6 +84,8 @@ jpa  高级查询
 		
 	
 
+ @Formula("(select cx.child_count from sys_category_tree_xref cx " + "where cx.distance = 0 and cx.child_id = id)")
+ 
 
 
 
