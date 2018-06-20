@@ -247,12 +247,21 @@ return querySheBaoRenYuanRepository.findAll(specification, pageable);
 
 
 
+//注解 指定多附件上传
+    @OneToMany(cascade = CascadeType.ALL)
+    @JoinTable(name = "info_train_briefing_doc_xref", joinColumns = @JoinColumn(nullable = false, name = "breif_id", referencedColumnName = "id"), inverseJoinColumns = @JoinColumn(name = "document_info_id", referencedColumnName = "id"))
+    private List<DocumentInfo> documentInfos;
 
 
+//注解 用sql查数量的
+  @Formula("(select sum(ldi.downloads) from lib_document_info ldi where ldi.id in (select ec.document_info_id from info_external_course ec where "
+            + " ec.external_training_id = id))")
+    private Long downloadCount;
 
-
-
-
+//指定关系
+	@OneToOne
+    @JoinColumn(name = "user_id")
+    private User user;		// 关联账号
 
 
 
