@@ -214,6 +214,7 @@ var demo01 = {
             { context: '<a href="' + urlposition + '勇气.jpg">勇气</a>' },
             { context: '<a href="' + urlposition + '月亮代表我的心.jpg">月亮代表我的心</a>' },
             { context: '<a href="' + urlposition + '用心良苦.jpg">用心良苦</a>' },
+            { context: '<a href="' + urlposition + '怨苍天变了心.jpg">怨苍天变了心</a>' },
         ]
     }, {
         title: "Z开头的简谱",

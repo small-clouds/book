@@ -1,0 +1,14 @@
+https://blog.csdn.net/u010450065/article/details/42639375  好用文档地址
+
+
+
+命令文档
+
+C:\work\tools\selenium-remote-control-1.0.3\selenium-server-1.0.3  这个文件下 
+启动命令    java -jar selenium-server.jar   
+
+
+
+
+一.安装Selenium Server服务器.
+二.使用特定语言的客户端驱动,来创建一个编译工程.   （java）
