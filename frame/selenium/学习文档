@@ -1,6 +1,6 @@
 https://blog.csdn.net/u010450065/article/details/42639375  好用文档地址
 
-
+http://selenium-release.storage.googleapis.com/index.html   jar 下载地址
 
 命令文档
 
@@ -8,6 +8,17 @@ C:\work\tools\selenium-remote-control-1.0.3\selenium-server-1.0.3  这个文件�
 启动命令    java -jar selenium-server.jar   
 
 
+//这个问题属于报异常 不往下执行  所以按照异常处理
+if(!handle.equals(str)){
+    WebDriver driver2 = driver.switchTo().window(str);
+    Thread.sleep(3000);
+    try {
+        assertEquals(docTitle,driver2.getTitle(),"文档详情测试");
+    } finally  {
+        driver2.close();
+        driver.switchTo().window(handle);
+    }
+}
 
 
 一.安装Selenium Server服务器.

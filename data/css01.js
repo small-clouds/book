@@ -72,4 +72,10 @@ var demo02 = {
     },]
 }
 
+//强制换行
+/***
+ word-break:break-all; 
+word-wrap:break-word; 
+ */
+
 data = [demo01, demo02]
