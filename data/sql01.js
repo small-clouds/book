@@ -277,4 +277,14 @@ var demo04 = {
             ]
     }]
 }
-data = [demo01, demo02, demo03, demo04]
+var demo05 ={
+    title: "mysql explain查看sql语句的执行计划",
+    name: "mysql explain查看sql语句的执行计划",
+    data: [{
+        title: "mysql explain查看sql语句的执行计划",
+        data: [
+            { context: 'https://blog.csdn.net/lululove19870526/article/details/78065560?locationNum=2&fps=1' }
+        ]
+    }]
+}
+data = [demo01, demo02, demo03, demo04,demo05]
