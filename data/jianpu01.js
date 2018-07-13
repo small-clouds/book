@@ -197,6 +197,7 @@ var demo01 = {
             { context: '<a href="' + urlposition + '小芳.jpg">小芳</a>' },
             { context: '<a href="' + urlposition + '星星点灯.jpg">星星点灯</a>' },
             { context: '<a href="' + urlposition + '相思风雨中.jpg">相思风雨中</a>' },
+            { context: '<a href="' + urlposition + '小仙女.jpg">小仙女</a>' },
         ]
     },
     {
