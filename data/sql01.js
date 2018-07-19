@@ -61,6 +61,8 @@ var demo02 = {
             { context: '设置编码：Latin1是ISO-8859-1的别名(支持中文) 选择utf8吧国际中文编码(<span class="remark">用这个对这个熟</span>)' },
             { context: '设置密码：不多说' },
             { context: '安装成功：不成功请看下面的文章' },
+            { context: '免安装版： https://blog.csdn.net/q98842674/article/details/12094777' },
+            
         ]
     }, {
         title: "数据库的卸载",
