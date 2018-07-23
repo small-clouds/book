@@ -47,6 +47,7 @@ var demo01 = {
             { context: '<a href="' + urlposition + '敢问路在何方.jpg">敢问路在何方</a>' },
             { context: '<a href="' + urlposition + '国歌.jpg">国歌</a>' },
             { context: '<a href="' + urlposition + '滚滚长江东逝水.jpg">滚滚长江东逝水</a>' },
+            { context: '<a href="' + urlposition + '孤星独吟.jpg">孤星独吟</a>' },
         ]
     }, {
         title: "H开头的简谱",
