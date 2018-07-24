@@ -66,6 +66,7 @@ var demo01 = {
             { context: '<a href="' + urlposition + '江山无限.jpg">江山无限</a>' },
             { context: '<a href="' + urlposition + '今天是你的生日.jpg">今天是你的生日</a>' },
             { context: '<a href="' + urlposition + '江上行.jpg">江上行</a>' },
+            { context: '<a href="' + urlposition + '今生你作伴.jpg">今生你作伴</a>' },
         ]
     }, {
         title: "K开头的简谱",
@@ -201,7 +202,7 @@ var demo01 = {
             { context: '<a href="' + urlposition + '小仙女.jpg">小仙女</a>' },
             { context: '<a href="' + urlposition + '笑看风云.jpg">笑看风云</a>' },
             { context: '<a href="' + urlposition + '相思西游记后传.jpg">相思--西游记后传</a>' },
-            
+            { context: '<a href="' + urlposition + '想起.jpg">想起</a>' },
         ]
     },
     {
@@ -220,6 +221,7 @@ var demo01 = {
             { context: '<a href="' + urlposition + '月亮代表我的心.jpg">月亮代表我的心</a>' },
             { context: '<a href="' + urlposition + '用心良苦.jpg">用心良苦</a>' },
             { context: '<a href="' + urlposition + '怨苍天变了心.jpg">怨苍天变了心</a>' },
+            { context: '<a href="' + urlposition + '一直很安静.jpg">一直很安静</a>' },
         ]
     }, {
         title: "Z开头的简谱",
@@ -238,6 +240,7 @@ var demo01 = {
             { context: '<a href="' + urlposition + '真心英雄.jpg">真心英雄</a>' },
             { context: '<a href="' + urlposition + '真的好想你.jpg">真的好想你</a>' },
             { context: '<a href="' + urlposition + '昨日重现.jpg">昨日重现</a>' },
+            { context: '<a href="' + urlposition + '醉拳.jpg">醉拳</a>' },
         ]
     }, {
         title: "其他",
