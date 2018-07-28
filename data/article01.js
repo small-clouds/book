@@ -422,4 +422,22 @@ var demo07 = {
     }]
 }
 
-data = [demo01,demo02,demo03,demo04,demo05,demo06,demo07]
+var demo08 = {  
+    title: "致红楼",
+    name: "曹雪芹和红楼梦",
+    data: [{
+        title: "西山陋室一碗粥",
+        data: [
+            { context: "想当年西山陋室一碗粥" },
+            { context: "滋养的岂止是一部红楼" },
+            { context: "卖书的因你尝了甜头" },
+            { context: "写文的因你评了教授" },
+            { context: "无业的靠你立了机构" },
+            { context: "经营的拿你酿了烧酒" },
+            { context: "聪明的把你化了旅游......" },
+            { context: "先生的遗产好似不尽长江滚滚流，溯源头只是西山陋室一碗粥" },
+        ]
+    }]
+}
+
+data = [demo01,demo02,demo03,demo04,demo05,demo06,demo07,demo08]

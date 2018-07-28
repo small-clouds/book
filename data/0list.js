@@ -75,6 +75,9 @@ var demo05 = {
         { url: "detail.html?data/article01.js&03", context: "现代文章" },
         { url: "detail.html?data/article01.js&04", context: "孙子兵法全集" },
         { url: "detail.html?data/article01.js&05", context: "东周列国志部分" },
+        { url: "detail.html?data/article01.js&05", context: "笑傲江湖" },
+        { url: "detail.html?data/article01.js&05", context: "孤星独吟" },
+        { url: "detail.html?data/article01.js&05", context: "致红楼" },
     ]
 }
 //css学习目录
