@@ -25,6 +25,7 @@ var demo01 = {
             { context: '<a href="' + urlposition + '初见.jpg">初见</a>' },
             { context: '<a href="' + urlposition + '成都.jpg">成都</a>' },
             { context: '<a href="' + urlposition + '穿越时空的思念.jpg">穿越时空的思念</a>' },
+            { context: '<a href="' + urlposition + '曾经最美.jpg">曾经最美</a>' },
         ]
     }, {
         title: "D开头的简谱",
@@ -84,7 +85,7 @@ var demo01 = {
             { context: '<a href="' + urlposition + '来生缘.jpg">来生缘</a>' },
             { context: '<a href="' + urlposition + '两两相忘.jpg">两两相忘</a>' },
             { context: '<a href="' + urlposition + '两只老虎.jpg">两只老虎</a>' },
-            { context: '<a href="' + urlposition + '留什么给你.jpg">留什么给你 （暂缺）</a>' },
+            { context: '<a href="' + urlposition + '留什么给你.jpg">留什么给你</a>' },
             { context: '<a href="' + urlposition + '绿野仙踪.jpg">绿野仙踪</a>' },
         ]
     }, {
@@ -118,6 +119,7 @@ var demo01 = {
             { context: '<a href="' + urlposition + '琵琶语.jpg">琵琶语</a>' },
             { context: '<a href="' + urlposition + '朋友别哭.jpg">朋友别哭</a>' },
             { context: '<a href="' + urlposition + '飘摇.jpg">飘摇</a>' },
+            { context: '<a href="' + urlposition + '飘雪.jpg">飘雪</a>' },
         ]
     }, {
         title: "Q开头的简谱",
@@ -159,6 +161,7 @@ var demo01 = {
             { context: '<a href="' + urlposition + '天涯.jpg">天涯</a>' },
             { context: '<a href="' + urlposition + '童年.jpg">童年</a>' },
             { context: '<a href="' + urlposition + '涛声依旧.jpg">涛声依旧</a>' },
+            { context: '<a href="' + urlposition + '天下第一.jpg">天下第一</a>' },
         ]
     },
     {
@@ -248,7 +251,6 @@ var demo01 = {
         title: "其他",
         data: [
             { context: '<a href="' + urlposition + '偏偏喜欢你.jpg">偏偏喜欢你</a>' },
-            { context: '<a href="' + urlposition + '飘雪（陈慧娴）.jpg">飘雪（陈慧娴）</a>' },
             { context: '<a href="' + urlposition + '暖暖.jpg">暖暖</a>' },
 
         ]
