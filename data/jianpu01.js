@@ -149,6 +149,7 @@ var demo01 = {
             { context: '<a href="' + urlposition + '水手.jpg">水手</a>' },
             { context: '<a href="' + urlposition + '少年壮志不言愁.jpg">少年壮志不言愁</a>' },
             { context: '<a href="' + urlposition + '三大纪律八项注意.jpg">三大纪律八项注意</a>' },
+            { context: '<a href="' + urlposition + '双侠.jpg">双侠</a>' },
         ]
     }, {
         title: "T开头的简谱",

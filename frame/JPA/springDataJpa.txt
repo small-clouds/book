@@ -252,6 +252,10 @@ return querySheBaoRenYuanRepository.findAll(specification, pageable);
     @JoinTable(name = "info_train_briefing_doc_xref", joinColumns = @JoinColumn(nullable = false, name = "breif_id", referencedColumnName = "id"), inverseJoinColumns = @JoinColumn(name = "document_info_id", referencedColumnName = "id"))
     private List<DocumentInfo> documentInfos;
 
+	https://www.cnblogs.com/zqyanywn/p/7753564.html // 实体类注解  指定表与表之间的继承关系注解
+
+	https://blog.csdn.net/lamb7758/article/details/54135572  // 字段上的注解
+
 
 //注解 用sql查数量的
   @Formula("(select sum(ldi.downloads) from lib_document_info ldi where ldi.id in (select ec.document_info_id from info_external_course ec where "
