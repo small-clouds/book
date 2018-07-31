@@ -5,13 +5,13 @@ var demo01 = {
     data: [{
         title: "doc命令集合",
         data: [
-            { context: ' 查看端口号 ：  netstat -aon|findstr 8085' },
+            { context: ' 查看端口号 ---  netstat -aon|findstr 8085' },
             { context: '' },
         ]
     },{
         title: "git命令集合",
         data: [
-            { context: '回退版本  git reset --hard HEAD^ ' },
+            { context: '回退版本 ---   git reset --hard HEAD^ ' },
             { context: '' },
         ]
     }
