@@ -15,12 +15,12 @@ header h2,div.main h2{margin:5px 0px;background:#a7cbff;font-size:18px;font-fami
 div.main h3{background:#e2f2ff;margin:5px 0px;cursor:pointer; font-size:16px;}
 div.main div div div{background:#eaeaea;}
 .photo {height: 100px;float: right;overflow: hidden}
-.photo img {height: 120%;-webkit-transition: all 1s;}
-.photo:hover img {-webkit-transform: rotate(360deg) scale(1.2);}
+.photo img {height: 120%;transition: all 1s;-webkit-transition: all 1s;}
+.photo:hover img {transform: rotate(360deg) scale(1.2);-webkit-transform: rotate(360deg) scale(1.2);}
 
 
 /*目录*/
-.stageTitle{ text-align: center; font-size:16px;font-style: }
+.stageTitle{ text-align: center; font-size:16px; }
 .Stage_ul{font-size:12px;}
 .Stage_ul li{ margin:5px 5px; background:#4fc3b9;}
 .Stage_ul li:hover{ background:#5a8831;}
