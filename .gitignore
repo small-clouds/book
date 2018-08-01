@@ -13,7 +13,7 @@ src/main/resources/application.properties
 spark-core/common/**/application.properties
 # eclipse project files
 other/base.css
-index.html
+test.html
 # idea project files
 *.iml
 *.ipr
