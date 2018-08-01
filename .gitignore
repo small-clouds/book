@@ -1,0 +1,25 @@
+.idea
+.DS_Store
+.gradle
+**/build/
+src/doc/dictionary/data_dictionary.md
+src/doc/dictionary/data_dictionary*.md
+
+# exclude ignore pdfjs
+!**/pdfjs/build/
+
+config/application.properties
+src/main/resources/application.properties
+spark-core/common/**/application.properties
+# eclipse project files
+other/base.css
+
+# idea project files
+*.iml
+*.ipr
+*.iws
+**/out
+
+#vscode
+.vscode
+/bin/
