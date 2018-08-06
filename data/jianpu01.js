@@ -138,6 +138,7 @@ var demo01 = {
             { context: '<a href="' + urlposition + '让我们荡起双桨.jpg">让我们荡起双桨</a>' },
             { context: '<a href="' + urlposition + '人间情多.jpg">人间情多</a>' },
             { context: '<a href="' + urlposition + '任逍遥.jpg">任逍遥</a>' },
+            { context: '<a href="' + urlposition + '人在旅途.jpg">人在旅途</a>' },
         ]
     }, {
         title: "S开头的简谱",
@@ -250,6 +251,7 @@ var demo01 = {
             { context: '<a href="' + urlposition + '真的好想你.jpg">真的好想你</a>' },
             { context: '<a href="' + urlposition + '昨日重现.jpg">昨日重现</a>' },
             { context: '<a href="' + urlposition + '醉拳.jpg">醉拳</a>' },
+            { context: '<a href="' + urlposition + '摘下满天星.jpg">摘下满天星</a>' },
         ]
     }, {
         title: "其他",
