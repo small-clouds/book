@@ -393,7 +393,7 @@ var demo06 = {
     title: "笑傲江湖",
     name: "笑傲江湖",
     data: [{
-        title: "",
+        title: "笑傲江湖",
         data: [
             { context: " 天下风云出我辈，一入江湖岁月催， " },
             { context: " 皇图霸业谈笑中，不胜人生一场醉。  " },
@@ -439,7 +439,7 @@ var demo08 = {
         ]
     }]
 }
-var demo08 = {  
+var demo09 = {  
     title: "与朱元思书",
     name: "与朱元思书",
     data: [{
