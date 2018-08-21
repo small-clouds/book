@@ -80,6 +80,7 @@ var demo05 = {
         { url: "detail.html?data/article01.js&08", context: "致红楼" },
         { url: "detail.html?data/article01.js&09", context: "与朱元思书" },
         { url: "detail.html?data/article01.js&10", context: "英文签名" },
+        
     ]
 }
 //css学习目录
