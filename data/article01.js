@@ -451,5 +451,28 @@ var demo09 = {
         ]
     }]
 }
+var demo10 = {  
+    title: "英文签名",
+    name: "英文签名",
+    data: [{
+        title: "英文签名1",
+        data: [
+            { context: "Dare, and the world always yields" },
+            { context: "大胆挑战，世界总会让步" },
+        ]
+    },{
+        title: "英文签名2",
+        data: [
+            { context: "it is beautiful day.do not let it get away" },
+            { context: "今天如此美好，不要白白浪费" },
+        ]
+    },{
+        title: "英文签名2",
+        data: [
+            { context: "it is up to you to give life a meaning" },
+            { context: "生命的意义由你自己来赋予" },
+        ]
+    }]
+}
 
-data = [demo01,demo02,demo03,demo04,demo05,demo06,demo07,demo08,demo09]
+data = [demo01,demo02,demo03,demo04,demo05,demo06,demo07,demo08,demo09,demo10]
