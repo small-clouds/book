@@ -232,6 +232,7 @@ var demo01 = {
             { context: '<a href="' + urlposition + '一直很安静.jpg">一直很安静</a>' },
             { context: '<a href="' + urlposition + '英雄谁属.jpg">英雄谁属</a>' },
             { context: '<a href="' + urlposition + '一剪梅.jpg">一剪梅</a>' },
+            { context: '<a href="' + urlposition + '一生爱你千百回.jpg">一生爱你千百回</a>' },
         ]
     }, {
         title: "Z开头的简谱",
