@@ -75,12 +75,9 @@ var demo05 = {
         { url: "detail.html?data/article01.js&03", context: "现代文章" },
         { url: "detail.html?data/article01.js&04", context: "孙子兵法全集" },
         { url: "detail.html?data/article01.js&05", context: "东周列国志部分" },
-        { url: "detail.html?data/article01.js&06", context: "笑傲江湖" },
-        { url: "detail.html?data/article01.js&07", context: "孤星独吟" },
-        { url: "detail.html?data/article01.js&08", context: "致红楼" },
-        { url: "detail.html?data/article01.js&09", context: "与朱元思书" },
-        { url: "detail.html?data/article01.js&10", context: "英文签名" },
-        
+        { url: "detail.html?data/article01.js&06", context: "古典文学" },
+        { url: "detail.html?data/article01.js&07", context: "英文签名" },
+
     ]
 }
 //css学习目录
