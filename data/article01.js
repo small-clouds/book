@@ -482,6 +482,39 @@ var demo07 = {
             { context: "it is up to you to give life a meaning" },
             { context: "生命的意义由你自己来赋予" },
         ]
+    }, {
+        title: "英文签名3",
+        data: [
+            { context: "tomrrow is always fresh, with no mistakes in it yet" },
+            { context: "明日永远新鲜如初，纤尘不染" },
+        ]
+    }, {
+        title: "On time 准时",
+        data: [
+            { context: "New York is 3 hours ahead of California,纽约时间比加州时间早三个小时" },
+            { context: "but it does not make Callifornia slow,但加州时间并没有变慢" },
+            { context: "Someone graduated at tje age of 22，有人22岁毕业了" },
+            { context: "but waited 5 years before securing a good job,但等了五年才找到好的工作" },
+            { context: "Someone became a CEO at 25,有人25岁就当上了CEO" },
+            { context: "and died at 50, 却在50岁去世" },
+            { context: "While another became a CEO at 50,也有人迟到50岁才当上CEO" },
+            { context: "and lived to 90 years,然后活到了90岁" },
+            { context: "Someone is still single ，有人依然单身" },
+            { context: "While someone else got married,同时也有人已婚" },
+            { context: "Obama retires at 55，奥巴马55岁就退休，" },
+            { context: "but Trump starts at 70,川普70岁才开始当总统" },
+            { context: "Absoutely everyone in this world works based on their Time Zone,世上每个人本来就有自己的发展时区" },
+            { context: "People around you might seem to go ahead of you,身边有些人看似走在你前面" },
+            { context: "some might seem to be behind you,也有人看似走在你后面" },
+            { context: "BUt everyone is running their own race, in their own time,但其实每个人在自己的市区有自己的步程" },
+            { context: "don’t envy them or mock them ，不用嫉妒或嘲笑他们" },
+            { context: "they are in their time zone,and you are in yours,他们都在自己的失去里，你也是" },
+            { context: "Life is about waiting for the right moment to act,生命就是等待正确的行动时机" },
+            { context: "So,Relax 所以,放轻松。" },
+            { context: "You're not late 你没有落后" },
+            { context: "you're not early 你没有领先" },
+            { context: "you are very much on time ,and in your time zone destiny set up for you,在命运为你安排的属于自己的时区里，一切都准时" },
+        ]
     }]
 }
 
