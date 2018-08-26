@@ -458,6 +458,34 @@ var demo06 = {
         data: [
             { context: "江南好，风景旧曾谙。日出江花红胜火，春来江水绿如蓝。能不忆江南？" },
         ]
+    }, {
+        title: "国标二十四式太极拳口诀",
+        data: [
+            { context: "1.起式" },
+            { context: "2.左右野马分鬃" },
+            { context: "3.白鹤亮翅" },
+            { context: "4.左右搂膝拗步" },
+            { context: "5.手挥琵琶" },
+            { context: "6.左右倒卷肱" },
+            { context: "7.左拦雀尾" },
+            { context: "8.右拦雀尾" },
+            { context: "9.单鞭" },
+            { context: "10.云手" },
+            { context: "11.单鞭" },
+            { context: "12.高探马" },
+            { context: "13.右蹬脚" },
+            { context: "14.双峰贯耳" },
+            { context: "15.转身左蹬脚" },
+            { context: "16.左下式独立" },
+            { context: "17.右下式独立" },
+            { context: "18.左右穿梭" },
+            { context: "19.海底针" },
+            { context: "20.闪通臂" },
+            { context: "21.转身搬拦捶" },
+            { context: "22.如封似闭" },
+            { context: "23.十字手" },
+            { context: "24.收式" },
+        ]
     }
     ]
 }
@@ -466,28 +494,22 @@ var demo07 = {
     title: "英文签名",
     name: "英文签名",
     data: [{
-        title: "英文签名1",
+        title: "一句英文签名",
         data: [
             { context: "Dare, and the world always yields" },
             { context: "大胆挑战，世界总会让步" },
-        ]
-    }, {
-        title: "英文签名2",
-        data: [
             { context: "it is beautiful day.do not let it get away" },
             { context: "今天如此美好，不要白白浪费" },
-        ]
-    }, {
-        title: "英文签名2",
-        data: [
             { context: "it is up to you to give life a meaning" },
             { context: "生命的意义由你自己来赋予" },
-        ]
-    }, {
-        title: "英文签名3",
-        data: [
             { context: "tomrrow is always fresh, with no mistakes in it yet" },
             { context: "明日永远新鲜如初，纤尘不染" },
+            { context: "Any time spent being unhappy is wasted" },
+            { context: "任何不快乐的时光都是浪费" },
+            { context: "like so many things,it is not what is outside, but what is inside that counts" },
+            { context: "许多事物都是如此，外表看起来虽不起眼，但是内在却惊为天人" },
+            { context: "" },
+            { context: "" },
         ]
     }, {
         title: "On time 准时",
