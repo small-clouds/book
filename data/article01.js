@@ -510,6 +510,8 @@ var demo07 = {
             { context: "许多事物都是如此，外表看起来虽不起眼，但是内在却惊为天人" },
             { context: "Today's special moments are tomorrow's menories" },
             { context: "今天的特别时刻，将会成为明天的美好回忆" },
+            { context: "Creativity is intelligence having fun" },
+            { context: "创意是智慧在找乐子" },
             { context: "" },
             { context: "" },
         ]
