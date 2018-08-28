@@ -89,6 +89,7 @@ var demo01 = {
             { context: '<a href="' + urlposition + '两只老虎.jpg">两只老虎</a>' },
             { context: '<a href="' + urlposition + '留什么给你.jpg">留什么给你</a>' },
             { context: '<a href="' + urlposition + '绿野仙踪.jpg">绿野仙踪</a>' },
+            { context: '<a href="' + urlposition + '两只蝴蝶.jpg">两只蝴蝶</a>' },
         ]
     }, {
         title: "M开头的简谱",
