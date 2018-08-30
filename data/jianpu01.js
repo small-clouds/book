@@ -105,6 +105,7 @@ var demo01 = {
             { context: '<a href="' + urlposition + '漫步人生路.jpg">漫步人生路</a>' },
             { context: '<a href="' + urlposition + '牧羊曲.jpg">牧羊曲</a>' },
             { context: '<a href="' + urlposition + '民得平安天下安.jpg">民得平安天下安</a>' },
+            { context: '<a href="' + urlposition + '毛主席的话儿记心上.jpg">毛主席的话儿记心上</a>' },
         ]
     }, {
         title: "N开头的简谱",
