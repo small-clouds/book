@@ -512,6 +512,8 @@ var demo07 = {
             { context: "今天的特别时刻，将会成为明天的美好回忆" },
             { context: "Creativity is intelligence having fun" },
             { context: "创意是智慧在找乐子" },
+            { context: "You are strong because you are imperfect.you are wise because you have doubts" },
+            { context: "因为不完美，所以才强大。因为有疑虑，所以才睿智" },
             { context: "" },
             { context: "" },
         ]
