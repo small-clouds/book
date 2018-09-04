@@ -6,7 +6,7 @@ var demo01 = {
         title: "doc命令集合",
         data: [
             { context: ' 查看端口号 ---  netstat -aon|findstr 8085' },
-            { context: '' },
+            { context: '强制杀死某个进程  ---  taskkill -PID <进程号> -F' },
         ]
     },{
         title: "git命令集合",
