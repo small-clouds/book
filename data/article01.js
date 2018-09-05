@@ -496,6 +496,16 @@ var demo07 = {
     data: [{
         title: "一句英文签名",
         data: [
+            { context: "" },
+            { context: "" },
+            { context: "Beauty is how you feel inside,and it reflects in your eyes" },
+            { context: "美是一种内心的感觉，并反映在你的眼睛里" },
+            { context: "What's comming will come, and we'll meet it when it does" },
+            { context: "该来的总会来，我们只要迎接即可" },
+            { context: "Without new experiences,something inside of us sleeps" },
+            { context: "没有新乡的经历，我们内心的某些东西就会沉睡" },
+            { context: "Just because someone stumbles and loses their path,doesn't mean they're lost forever." },
+            { context: "人偶尔会失足、迷失方向，但不等于会永远迷失下去" },
             { context: "Dare, and the world always yields" },
             { context: "大胆挑战，世界总会让步" },
             { context: "it is beautiful day.do not let it get away" },
@@ -514,8 +524,6 @@ var demo07 = {
             { context: "创意是智慧在找乐子" },
             { context: "You are strong because you are imperfect.you are wise because you have doubts" },
             { context: "因为不完美，所以才强大。因为有疑虑，所以才睿智" },
-            { context: "" },
-            { context: "" },
         ]
     }, {
         title: "On time 准时",
