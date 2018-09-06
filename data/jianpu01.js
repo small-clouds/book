@@ -257,6 +257,7 @@ var demo01 = {
             { context: '<a href="' + urlposition + '昨日重现.jpg">昨日重现</a>' },
             { context: '<a href="' + urlposition + '醉拳.jpg">醉拳</a>' },
             { context: '<a href="' + urlposition + '摘下满天星.jpg">摘下满天星</a>' },
+            { context: '<a href="' + urlposition + '醉梦前尘.jpg">醉梦前尘</a>' },
         ]
     }, {
         title: "其他",
