@@ -16,6 +16,7 @@ var demo01 = {
         { url: "list.html?&01", context: "面试题总结", },
         { url: "detail.html?data/jianpu01.js&01", context: "千曲晓声", },
         { url: "detail.html?data/doc01.js&01", context: "命令集合", },
+        //尹栋力	个人	冀ICP备15030473号-1	一直旅行的云	
     ]
 };
 data = [demo01]
