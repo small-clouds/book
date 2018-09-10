@@ -12,7 +12,7 @@ var demo01 = {
         title: "git命令集合",
         data: [
             { context: '回退版本 ---   git reset --hard HEAD^ ' },
-            { context: '' },
+            { context: '合并dev到当前分支上 git merge dev' },
         ]
     }
     ]
