@@ -14,7 +14,14 @@ var demo01 = {
             { context: '回退版本 ---   git reset --hard HEAD^ ' },
             { context: '' },
         ]
-    }
+    },{
+        title: "魔方公式",
+        data: [
+            { context: '小鱼 --- (R’U2R)U(R’UR)' },
+            { context: '顶角 --- (RB’RF2) (R’BRF2) R2' },
+            { context: '顶棱 --- RU’RURURU’R’U’R2' },
+        ]
+    },
     ]
 }
 data = [demo01]

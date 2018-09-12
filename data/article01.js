@@ -514,6 +514,12 @@ var demo07 = {
         data: [
             { context: "" },
             { context: "" },
+            { context: "Success is not forever and failure isn't fatal" },
+            { context: "没有永远的成功，亦无致命的失败" },
+            { context: "The very essence of romance is uncertainty" },
+            { context: "浪漫的精髓就在于它充满种种可能" },
+            { context: "The key to winning is poise under stress" },
+            { context: "获胜的关键是在压力下依旧保持镇静" },
             { context: "Beauty is how you feel inside,and it reflects in your eyes" },
             { context: "美是一种内心的感觉，并反映在你的眼睛里" },
             { context: "What's comming will come, and we'll meet it when it does" },
