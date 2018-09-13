@@ -514,6 +514,10 @@ var demo07 = {
         data: [
             { context: "" },
             { context: "" },
+            { context: "" },
+            { context: "" },
+            { context: "Great men are not born great; they grow great" },
+            { context: "伟大的人 并非生来如此，是经历造就了他们的伟大" },
             { context: "Success is not forever and failure isn't fatal" },
             { context: "没有永远的成功，亦无致命的失败" },
             { context: "The very essence of romance is uncertainty" },
