@@ -514,8 +514,8 @@ var demo07 = {
         data: [
             { context: "" },
             { context: "" },
-            { context: "" },
-            { context: "" },
+            { context: "Doubt kills more dreams than failure ever will" },
+            { context: "比起失败，怀疑自己会扼杀更多的梦想" },
             { context: "Great men are not born great; they grow great" },
             { context: "伟大的人 并非生来如此，是经历造就了他们的伟大" },
             { context: "Success is not forever and failure isn't fatal" },
