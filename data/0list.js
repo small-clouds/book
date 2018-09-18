@@ -77,7 +77,7 @@ var demo05 = {
         { url: "detail.html?data/article01.js&05", context: "东周列国志部分" },
         { url: "detail.html?data/article01.js&06", context: "古典文学" },
         { url: "detail.html?data/article01.js&07", context: "英文签名" },
-        { url: "detail.html?data/article01.js&07", context: "中文签名" },
+        { url: "detail.html?data/article01.js&08", context: "中文签名" },
 
     ]
 }
