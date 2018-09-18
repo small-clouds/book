@@ -514,6 +514,12 @@ var demo07 = {
         data: [
             { context: "" },
             { context: "" },
+            { context: "Never look back unless you are planning to go that way" },
+            { context: "永远不要回头，除非你想走回头路" },
+            { context: "Beauty is found within" },
+            { context: "美源自内心" },
+            { context: "We grow fearless when we do the things we fear" },
+            { context: "做自己畏惧的事，会让我们变的无所畏惧" },
             { context: "Doubt kills more dreams than failure ever will" },
             { context: "比起失败，怀疑自己会扼杀更多的梦想" },
             { context: "Great men are not born great; they grow great" },
