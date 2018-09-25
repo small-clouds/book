@@ -514,6 +514,8 @@ var demo07 = {
         data: [
             { context: "" },
             { context: "" },
+            { context: "May the best if your todays be the worst of your tomorrows" },
+            { context: "愿你的明天只会过得比今天更好" },
             { context: "For being different,it's easy,But to be unique ,it's complicated thing" },
             { context: "与众不同很简单，独一无二却不容易" },
             { context: "i love you as no love on earth is wrought;i love you now and love you evermore" },
@@ -622,6 +624,9 @@ var demo08 = {
         data: [
             { context: "机遇只垂青于那些追求她的人" },
             { context: "盖世人读书，第一要有志，第二要有识，第三要有恒。有志则不甘为下流；有识则知学问无尽，不敢以一得自足，如河伯之观海，如井蛙之窥天，皆无识者也；有恒则断无不成之事。" },
+            { context: "" },
+            { context: "" },
+            { context: "生气1小时＝熬夜6小时，所以啊，好好吃饭，好好睡觉，好好挣钱，好好花钱，不为不值得的人生气，不为不值得的事失眠，既然活着就好好活着，每分钟都为自己活着。" },
             { context: "人所缺乏的不是才干而是志向，不是成功的能力而是勤劳的意志" },
             { context: "我以为别人尊重我，是因为我很优秀；后来才明白，别人尊重我，是因为别人很优秀" },
             { context: "坚持的本身，就是一种不易" },
