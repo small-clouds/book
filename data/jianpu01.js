@@ -59,6 +59,7 @@ var demo01 = {
             { context: '<a href="' + urlposition + '海阔天空.jpg">海阔天空</a>' },
             { context: '<a href="' + urlposition + '好春光.jpg">好春光</a>' },
             { context: '<a href="' + urlposition + '后来.jpg">后来</a>' },
+            { context: '<a href="' + urlposition + '回梦游仙.jpg">回梦游仙</a>' },
         ]
     }, {
         title: "J开头的简谱",
