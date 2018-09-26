@@ -514,6 +514,8 @@ var demo07 = {
         data: [
             { context: "" },
             { context: "" },
+            { context: "Knowing is not enough,we must apply. Willing is not enough, we must do" },
+            { context: "光知道不够，得学会运用，光有决心不行，得付出行动。" },
             { context: "May the best if your todays be the worst of your tomorrows" },
             { context: "愿你的明天只会过得比今天更好" },
             { context: "For being different,it's easy,But to be unique ,it's complicated thing" },
