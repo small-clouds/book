@@ -60,6 +60,7 @@ var demo01 = {
             { context: '<a href="' + urlposition + '好春光.jpg">好春光</a>' },
             { context: '<a href="' + urlposition + '后来.jpg">后来</a>' },
             { context: '<a href="' + urlposition + '回梦游仙.jpg">回梦游仙</a>' },
+            { context: '<a href="' + urlposition + '红马鞍.jpg">红马鞍</a>' },
         ]
     }, {
         title: "J开头的简谱",
@@ -260,6 +261,7 @@ var demo01 = {
             { context: '<a href="' + urlposition + '摘下满天星.jpg">摘下满天星</a>' },
             { context: '<a href="' + urlposition + '醉梦前尘.jpg">醉梦前尘</a>' },
             { context: '<a href="' + urlposition + '在那遥远的地方.jpg">在那遥远的地方</a>' },
+            { context: '<a href="' + urlposition + '走过咖啡屋.jpg">走过咖啡屋</a>' },
         ]
     }, {
         title: "其他",
