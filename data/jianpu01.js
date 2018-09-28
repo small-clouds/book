@@ -43,6 +43,7 @@ var demo01 = {
         title: "F开头的简谱",
         data: [
             { context: '<a href="' + urlposition + '飞雪玉花.jpg">飞雪玉花</a>' },
+            { context: '<a href="' + urlposition + '芙蓉愿.jpg">芙蓉愿</a>' },
         ]
     }, {
         title: "G开头的简谱",
