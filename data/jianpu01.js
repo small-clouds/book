@@ -176,6 +176,7 @@ var demo01 = {
             { context: '<a href="' + urlposition + '童年.jpg">童年</a>' },
             { context: '<a href="' + urlposition + '涛声依旧.jpg">涛声依旧</a>' },
             { context: '<a href="' + urlposition + '天下第一.jpg">天下第一</a>' },
+            { context: '<a href="' + urlposition + '天仙子.jpg">天仙子</a>' },
         ]
     },
     {
@@ -267,6 +268,7 @@ var demo01 = {
             { context: '<a href="' + urlposition + '醉梦前尘.jpg">醉梦前尘</a>' },
             { context: '<a href="' + urlposition + '在那遥远的地方.jpg">在那遥远的地方</a>' },
             { context: '<a href="' + urlposition + '走过咖啡屋.jpg">走过咖啡屋</a>' },
+            { context: '<a href="' + urlposition + '纵横江湖.jpg">纵横江湖</a>' },
         ]
     }, {
         title: "其他",
