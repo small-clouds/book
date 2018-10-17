@@ -29,6 +29,7 @@ var demo01 = {
             { context: '<a href="' + urlposition + '彩云追月.jpg">彩云追月</a>' },
             { context: '<a href="' + urlposition + '长歌一曲.jpg">长歌一曲</a>' },
             { context: '<a href="' + urlposition + '痴情冢.jpg">痴情冢</a>' },
+            { context: '<a href="' + urlposition + '长相依.jpg">长相依</a>' },
         ]
     }, {
         title: "D开头的简谱",
