@@ -131,6 +131,7 @@ var demo01 = {
             { context: '<a href="' + urlposition + '朋友别哭.jpg">朋友别哭</a>' },
             { context: '<a href="' + urlposition + '飘摇.jpg">飘摇</a>' },
             { context: '<a href="' + urlposition + '飘雪.jpg">飘雪</a>' },
+            { context: '<a href="' + urlposition + '萍聚.jpg">萍聚</a>' },
         ]
     }, {
         title: "Q开头的简谱",
