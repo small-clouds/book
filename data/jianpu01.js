@@ -39,6 +39,7 @@ var demo01 = {
             { context: '<a href="' + urlposition + '独角戏.jpg">独角戏</a>' },
             { context: '<a href="' + urlposition + '当.jpg">当</a>' },
             { context: '<a href="' + urlposition + '断桥残雪.jpg">断桥残雪</a>' },
+            { context: '<a href="' + urlposition + '大约在冬季.jpg">大约在冬季</a>' },
         ]
     }, {
         title: "F开头的简谱",
