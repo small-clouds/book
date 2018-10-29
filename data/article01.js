@@ -533,6 +533,8 @@ var demo07 = {
     data: [{
         title: "一句英文签名",
         data: [
+            { context: "Opportunity favors only those who pursue her." },
+            { context: "机遇只垂青远些追求她的人" },
             { context: "" },
             { context: "" },
             { context: "whatever you believe with feeling becomes your reality" },
@@ -677,7 +679,7 @@ var demo08 = {
     data: [{
         title: "经典短句集一",
         data: [
-            { context: "机遇只垂青于那些追求她的人" },
+            { context: "机遇只垂青于那些追求她的人 Opportunity favors only those who pursue her." },
             { context: "盖世人读书，第一要有志，第二要有识，第三要有恒。有志则不甘为下流；有识则知学问无尽，不敢以一得自足，如河伯之观海，如井蛙之窥天，皆无识者也；有恒则断无不成之事。" },
             { context: "我们到了尴尬的年纪，此时谈爱已晚，谈死尚早，和年轻人谈经历太幼稚，和老人们谈人生太肤浅，想出去放纵一下又觉得喧嚣难忍，想一个人静静又心有不甘。想任性点，人家说你要成熟；想沉默些，人家说你装清高；想时尚点，人家说你有点妖；想朴素些，人家说你有点老。刚想消极放弃，却发现上有老，下有小" },
             { context: "" },
