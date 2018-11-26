@@ -173,6 +173,7 @@ var demo01 = {
             { context: '<a href="' + urlposition + '双侠.jpg">双侠</a>' },
             { context: '<a href="' + urlposition + '世界由我创造.jpg">世界由我创造</a>' },
             { context: '<a href="' + urlposition + '顺流逆流.jpg">顺流逆流</a>' },
+            { context: '<a href="' + urlposition + '盛夏的果实.jpg">盛夏的果实</a>' },
         ]
     }, {
         title: "T开头的简谱",
