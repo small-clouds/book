@@ -557,7 +557,7 @@ var demo07 = {
             { context: "" },
             { context: "" },
             { context: "whatever you believe with feeling becomes your reality" },
-            { context: "无论什么只要法子心底的坚信，都能成真" },//10.29
+            { context: "无论什么只要发自心底的坚信，都能成真" },//10.29
             { context: "Mortal body; thmeless souls" },
             { context: "肉体可以老区，但灵魂不朽" },
             { context: "Kindness is more important than wisdom , and the recognition of this is the beginning of wisdom" },

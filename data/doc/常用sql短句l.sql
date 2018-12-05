@@ -7,6 +7,34 @@
 	INSERT INTO Persons (LastName, Address) VALUES ('Wilson', 'Champs-Elysees')
 	DELETE FROM Person WHERE LastName = 'Wilson' 
 	
+--where if 语句
+			SELECT
+			t.*, t.teacher_type
+		FROM
+			lrn_teacher t
+		LEFT JOIN sys_user su on su.id = t.user_id
+		WHERE
+		IF (
+			t.teacher_type = "INTERNAL",
+			su.user_group_id IN (
+				SELECT
+					id
+				FROM
+					sys_user_group
+				WHERE
+					id_path LIKE concat('%', lower('11392008'), '%')
+			)
+		,
+			t.group_id IN (
+				SELECT
+					id
+				FROM
+					sys_user_group
+				WHERE
+					id_path LIKE concat('%', lower('11392008'), '%')
+			)
+		)
+	
 公共
 	<sql id="charge">  </sql>
 	<include refid="AbrsCommonMapper.ABRS_COMMON_USER"></include>  
@@ -220,6 +248,10 @@ initForm赋值
  */
  ***************************   html     ********************************
  /*
+ 
+ 权限操作
+	*spkAuthzIf="{hasPermission: 'RESOURCE:TEACHER_LIB:ADD'}"   html中加入这个 
+ 
  类型转换
 	 <ng-template cuiColTpl="startDates" let-row="row">
 		{{row.startDate | date: 'yyyy-MM-dd HH:mm:ss' }}

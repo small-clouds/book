@@ -21,7 +21,8 @@ var demo01 = {
             { context: '回退版本 ---   git reset --hard HEAD^ ' },
             { context: '合并dev到当前分支上 git merge dev' },
         ]
-    }, {
+    },{}, //  ctrl + k      ctrl + 0 ； 编辑器 vscode 折叠代码
+     {
         title: "何谓之无名",
         data: [
             { context: '8888888517418544' },
