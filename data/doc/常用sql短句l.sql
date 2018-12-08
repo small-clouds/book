@@ -7,6 +7,34 @@
 	INSERT INTO Persons (LastName, Address) VALUES ('Wilson', 'Champs-Elysees')
 	DELETE FROM Person WHERE LastName = 'Wilson' 
 	
+--where if 语句
+			SELECT
+			t.*, t.teacher_type
+		FROM
+			lrn_teacher t
+		LEFT JOIN sys_user su on su.id = t.user_id
+		WHERE
+		IF (
+			t.teacher_type = "INTERNAL",
+			su.user_group_id IN (
+				SELECT
+					id
+				FROM
+					sys_user_group
+				WHERE
+					id_path LIKE concat('%', lower('11392008'), '%')
+			)
+		,
+			t.group_id IN (
+				SELECT
+					id
+				FROM
+					sys_user_group
+				WHERE
+					id_path LIKE concat('%', lower('11392008'), '%')
+			)
+		)
+	
 公共
 	<sql id="charge">  </sql>
 	<include refid="AbrsCommonMapper.ABRS_COMMON_USER"></include>  
@@ -135,8 +163,8 @@ jpa继承
 /*					   
 
 		private route: ActivatedRoute,
-		private message: NzMessageService,
 		private router:Router,
+		private message: NzMessageService,
 		private modal: NzModalService,
 获取路由参数		
 		this.route.params.subscribe(
@@ -147,6 +175,7 @@ jpa继承
 		)
 排序	
 		{ title: '名称/编码', tpl: 'col2-1', showSort: true, sortKey: 'name' }, 
+		{ title: '培训内容', data: 'trainingContent',style:{'max-width':'200px','width':'200px'}, styleClass: 'text-center' },
 分页参数
 		let params= {
 		  ...this.searchBy,
@@ -154,6 +183,8 @@ jpa继承
 		 size: page ? page.size : '10',
 		   params['sort'] = typeof page.sort === 'string' ? page.sort : ''; 
 		}
+		
+		let param = FormDataUtil.searchParamFilter(params); // 过滤为空数据
 回调参数		
 		@Output() save: EventEmitter<any> = new EventEmitter();
 		this.closeModal.emit();
@@ -217,6 +248,10 @@ initForm赋值
  */
  ***************************   html     ********************************
  /*
+ 
+ 权限操作
+	*spkAuthzIf="{hasPermission: 'RESOURCE:TEACHER_LIB:ADD'}"   html中加入这个 
+ 
  类型转换
 	 <ng-template cuiColTpl="startDates" let-row="row">
 		{{row.startDate | date: 'yyyy-MM-dd HH:mm:ss' }}
@@ -279,6 +314,15 @@ initForm赋值
 选择组织	
 	<spk-user-group-select (ngModelChange)="logSelectGroup($event)" formControlName="userGroup"></spk-user-group-select>
 	<spk-user-group-select (ngModelChange)="logSelectGroup($event)" name="userGroup"></spk-user-group-select>
+	 <spk-user-group-select formControlName="managerGroup" mode="single" [permission]="['EXAM:PAPER:ADD']"></spk-user-group-select>
+	
+	按钮
+	 <spk-user-group-select #ugLookup  style="display: inline-block;" [autoClear]="true"
+        (selectOk)="logSelectGroup($event)">
+        <ng-template #echoTpl>
+          <button type="button" class="btn btn-outline-primary" (click)="ugLookup.openLookup()">添加组织</button>
+        </ng-template>
+      </spk-user-group-select>
 	
 选择用户
 	<spk-user-lookup formControlName="leaders" placeholder="请选择班级负责人" ></spk-user-lookup>
@@ -317,6 +361,13 @@ nzInput
 	word-break:break-all;   英文断行
 	text-overflow:ellipsis;overflow:hidden;  // 超出显示省略号
 	white-space:nowrap; //强制不换行
+	
+	
+class 名字
+	text-secondary  蓝
+	text-info	绿
+	text-danger	灰
+	text-success	红
  */
  
  
