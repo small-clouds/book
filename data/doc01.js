@@ -20,9 +20,7 @@ var demo01 = {
 
             /**
              关机：
-
-
-             	
+                	
 	docer   
 	nginx  -- 反向代理
 	
@@ -38,7 +36,7 @@ var demo01 = {
 
     devops
     
-    
+
 
 
 　　shutdown -h now  #立刻关机重启，工作中常用
