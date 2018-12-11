@@ -20,7 +20,7 @@ var demo01 = {
 
             /**
              关机：
-                	
+
 	docer   
 	nginx  -- 反向代理
 	
@@ -90,6 +90,28 @@ var demo01 = {
             { context: '顶棱 --- RU’RURURU’R’U’R2' },
         ]
     },
+
+    /**
+     * 
+     * * docker 遇到的坑
+     * 
+      Error:   No package docker-io available
+     ：sudo yum install epel-release ，之后再执行：sudo yum install docker
+     * 
+     
+     Error: Cannot retrieve metalink for repository: epel. Please verify its path and try again
+        处理很简单，修改文件“/etc/yum.repos.d/epel.repo”， 将baseurl的注释取消， mirrorlist注释掉。即可。
+        原文：https://blog.csdn.net/edwzhang/article/details/41251015 
+
+
+    心烦  直接下载源安装 
+    yum install https://get.docker.com/rpm/1.7.1/centos-6/RPMS/x86_64/docker-engine-1.7.1-1.el6.x86_64.rpm
+
+    CentOS 6安装docker 报docker dead but pid file exists
+    $ yum update -y device-mapper-libs
+
+
+     */
     ]
 }
 data = [demo01]
