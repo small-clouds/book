@@ -80,7 +80,7 @@
 	<if test="tp.endDate != null">
 		and tp.end_date  &lt; #{tp.endDate}
 	</if>
-
+	
 */
 *******************************  Controller  ********
 /*
@@ -95,6 +95,11 @@
 	Type type = new TypeToken<List<KnowledgeReplyDto>>() {
 	}.getType();
 	return ModelMapperUtils.map(rePage, type, pageable);
+	
+controller modelMapper静态
+	private final static ModelMapper modelMapper = new ModelMapper();
+	
+	
 返回实体
 	return ModelMapperUtils.map(knowledge2, KnowledgeDto.class);
 注解

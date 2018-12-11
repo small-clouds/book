@@ -55,6 +55,24 @@ var demo01 = {
 
             /**
              关机：
+                	
+	docer   
+	nginx  -- 反向代理
+	
+	tocat
+	tocat 多个应用服务器 
+	
+	mogodb
+	redis
+	
+	activemq
+
+	zokkeper
+
+    devops
+    
+
+
 
 　　shutdown -h now  #立刻关机重启，工作中常用
 
