@@ -14,9 +14,44 @@ var demo01 = {
         data: [
             { context: '创建或者编辑某文件 --- vi  ' },
             { context: '退出编辑 ---esc : exit /wq ' },
+            { context: 'vim有三种模式 普通模式  编辑模式(i) 命令行模式(:) 另外两种 esc 都能退回到普通模式上面  ---esc : exit /wq ' },
             { context: '切换root用户  -- su [root] [回车 输入密码 ]' },
             { context: '切换普通用户  -- su linux [回车 输入密码 ]' },
             { context: '关机  -- shutdown -h now' },
+            { context: '创建文件夹-- mkdir [也可以指定位置/文件夹名称]' },
+            { context: '重命名文件夹/文件-- mv [dirname] [newName]' },
+            { context: '移动文件夹---  mv /a /b/c  [将a目录移动到b目录并且 命名为c]' },
+            { context: '删除文件夹/文件---  rm -rf    [将a目录移动到b目录并且 命名为c]' },
+            { context: '复制文件夹/文件---  cp  /a /b/c   [将a目录复制到b目录并且 命名为c]' },
+            { context: '解压文件--  tar -xvf [文件名.tar.gz]' },
+            { context: '重启防火墙-- service iptables restart' },
+            { context: '查看开放的端口-- service iptables status' },
+            { context: '' },
+/**
+ * .tar 解包 tar xvf filename.tar
+.tar 打包 tar cvf filename.tar dirname
+.gz 解压1 gunzip filename.gz
+.gz 解压2 gzip -d filename.gz
+.gz 压缩 gzip filename
+.tar.gz 和 .tgz 解压 tar zxvf filename.tar.gz
+.tar.gz 和 .tgz 压缩 tar zcvf filename.tar.gz dirname
+.bz2 解压1 bzip2 -d filename.bz2
+.bz2 解压2 bunzip2 filename.bz2
+.bz2 压缩 bzip2 -z filename
+.tar.bz2 解压 tar jxvf filename.tar.bz2
+.tar.bz2 压缩 tar jcvf filename.tar.bz2 dirname
+.bz 解压1 bzip2 -d filename.bz
+.bz 解压2 bunzip2 filename.bz
+.tar.bz 解压 tar jxvf filename.tar.bz
+.z 解压 uncompress filename.z
+.z 压缩 compress filename
+.tar.z 解压 tar zxvf filename.tar.z
+.tar.z 压缩 tar zcvf filename.tar.z dirname
+.zip 解压 unzip filename.zip
+.zip 压缩 zip filename.zip dirname
+.rar 解压 rar x filename.rar
+.rar 压缩 rar a filename.rar dirname
+ */           
 
             /**
              关机：
