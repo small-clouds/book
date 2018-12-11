@@ -26,7 +26,15 @@ var demo01 = {
             { context: '解压文件--  tar -xvf [文件名.tar.gz]' },
             { context: '重启防火墙-- service iptables restart' },
             { context: '查看开放的端口-- service iptables status' },
+            { context: 'ubuntu64 重启网络服务 -- service network-managet restart' },
+            { context: 'ubuntu64 ifconfig --  sudo apt-get install net-tools' },
+            { context: 'ubuntu64 远程无法联接 --  sudo apt-get install openssh-server' },
+            { context: 'ubuntu64 查看 ssh是否启动  -- ps -e | grep ssh   (只有ssh-agent表示还没启动 / 显示sshd则说明已启动成功)' },
+            { context: 'ubuntu64 启动 ssh  --- /etc/init.d/ssh start' },
+            { context: 'ubuntu64 启动 ssh  --- 编辑  /etc/ssh/sshd_config  (PermitRootLogin -yes)' },
+            { context: 'ubuntu64 重启 ssh --  sudo /etc/init.d/ssh restart ' },
             { context: '' },
+            { context: '忘记root密码  https://blog.csdn.net/weixin_37909391/article/details/80691601' },
 /**
  * .tar 解包 tar xvf filename.tar
 .tar 打包 tar cvf filename.tar dirname
