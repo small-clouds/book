@@ -33,7 +33,7 @@ var demo01 = {
             { context: 'ubuntu64 启动 ssh  --- /etc/init.d/ssh start' },
             { context: 'ubuntu64 启动 ssh  --- 编辑  /etc/ssh/sshd_config  (PermitRootLogin -yes)' },
             { context: 'ubuntu64 重启 ssh --  sudo /etc/init.d/ssh restart ' },
-            { context: '' },
+            { context: 'ubuntu64 下载文件  --  wget [url]' },
             { context: '忘记root密码  https://blog.csdn.net/weixin_37909391/article/details/80691601' },
 /**
  * .tar 解包 tar xvf filename.tar
@@ -153,6 +153,18 @@ var demo01 = {
     CentOS 6安装docker 报docker dead but pid file exists
     $ yum update -y device-mapper-libs
 
+
+    ubutun 安装docker
+
+    apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys D8576A8BA88D21E9
+
+
+    那些遇到的坑 
+
+    curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -   这里出错
+    安装gpg的时候 找不到 文件  可以先下载  
+    wget  https://download.docker.com/linux/ubuntu/gpg
+    sudo apt-key add 【gpg[下载的文件目录]】
 
      */
     ]

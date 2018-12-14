@@ -8,6 +8,7 @@ var demo01 = {
         data: [
             { context: '<a href="' + urlposition + '爱江山更爱美人.jpg">爱江山更爱美人</a>' },
             { context: '<a href="' + urlposition + '敖包相会.jpg">敖包相会</a>' },
+            { context: '<a href="' + urlposition + '爱不释手.jpg">爱不释手</a>' },
         ]
     }, {
         title: "B开头的简谱",
