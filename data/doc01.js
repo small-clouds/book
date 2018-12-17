@@ -17,7 +17,8 @@ var demo01 = {
             { context: 'vim有三种模式 普通模式  编辑模式(i) 命令行模式(:) 另外两种 esc 都能退回到普通模式上面  ---esc : exit /wq ' },
             { context: '切换root用户  -- su [root] [回车 输入密码 ]' },
             { context: '切换普通用户  -- su linux [回车 输入密码 ]' },
-            { context: '关机  -- shutdown -h now' },
+            { context: '关机  -- shutdown -h now  / init 0  / half  / power off' },
+            { context: '重启  -- init 6 /  shutdown –r now  / reboot ' },
             { context: '创建文件夹-- mkdir [也可以指定位置/文件夹名称]' },
             { context: '重命名文件夹/文件-- mv [dirname] [newName]' },
             { context: '移动文件夹---  mv /a /b/c  [将a目录移动到b目录并且 命名为c]' },
@@ -34,6 +35,8 @@ var demo01 = {
             { context: 'ubuntu64 启动 ssh  --- 编辑  /etc/ssh/sshd_config  (PermitRootLogin -yes)' },
             { context: 'ubuntu64 重启 ssh --  sudo /etc/init.d/ssh restart ' },
             { context: 'ubuntu64 下载文件  --  wget [url]' },
+            { context: ' systemctl 命令 详解 systemctl stop/start docker' },
+            { context: 'ps/find详解 ps -A/ef | grep nginx  / find /[filename] -name "*searchName*" ' },
             { context: '忘记root密码  https://blog.csdn.net/weixin_37909391/article/details/80691601' },
 /**
  * .tar 解包 tar xvf filename.tar
