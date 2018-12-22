@@ -35,6 +35,7 @@ var demo01 = {
             { context: 'ubuntu64 重启 ssh --  sudo /etc/init.d/ssh restart ' },
             { context: 'ubuntu64 下载文件  --  wget [url]' },
             { context: '忘记root密码  https://blog.csdn.net/weixin_37909391/article/details/80691601' },
+            { context: '返回上一次所在目录 -- cd - ' },
 /**
  * .tar 解包 tar xvf filename.tar
 .tar 打包 tar cvf filename.tar dirname
@@ -123,7 +124,7 @@ var demo01 = {
      {
         title: "何谓之无名",
         data: [
-            { context: '8888888517418544' },
+            { context: '8888888517418544'/*密码身份证后六位*/ },
         ]
     }, {
         title: "魔方公式",
