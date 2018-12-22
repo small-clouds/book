@@ -142,6 +142,7 @@ jpa继承
 	
 	@Entity
 	@Table(name = "regulations")
+	@Table(name = "lrn_offering_enrollment", uniqueConstraints = {@UniqueConstraint(columnNames={"offering_id", "user_id"})})
 	@DynamicInsert
 实体继承
 	extends Repairable
