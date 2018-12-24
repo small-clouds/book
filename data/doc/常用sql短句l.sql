@@ -135,6 +135,8 @@ controller modelMapper静态
 /*
 jpa继承
 	 extends SupportRepository<KnowledgeCollection,Long>
+	 
+	
 */
 
 *****************************    实体entity  **********************
@@ -151,6 +153,12 @@ jpa继承
 	@OneToMany(cascade = CascadeType.ALL)
     @JoinTable(name = "regulations_doc_xref", joinColumns = @JoinColumn(nullable = false, name = "regulation_id", referencedColumnName = "id"), inverseJoinColumns = @JoinColumn(name = "document_id", referencedColumnName = "id"))
     private List<DocumentInfo> attachements;
+	
+	
+	
+	@ManyToMany(fetch = FetchType.LAZY, cascade = CascadeType.MERGE)
+    @JoinTable(name = "lrn_course_teacher", joinColumns = @JoinColumn(name = "course_id", nullable = false, updatable = false, foreignKey = @ForeignKey(name = "none", value = ConstraintMode.NO_CONSTRAINT)), inverseJoinColumns = @JoinColumn(name = "teacher_id", nullable = false, updatable = false, foreignKey = @ForeignKey(name = "none", value = ConstraintMode.NO_CONSTRAINT)), uniqueConstraints = {
+            @UniqueConstraint(columnNames = { "course_id", "teacher_id" }) })
 	
 属性注解
 	@ColumnDefault("UNCOMPLETE")
