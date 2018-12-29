@@ -1,11 +1,27 @@
 
-
+llhwvybubmbxjjdj
 ***********************   Mapper.xml *************************
 /*
 增改删
 	UPDATE Person SET FirstName = 'Fred' WHERE LastName = 'Wilson' 
 	INSERT INTO Persons (LastName, Address) VALUES ('Wilson', 'Champs-Elysees')
 	DELETE FROM Person WHERE LastName = 'Wilson' 
+
+mysql 时间、时间戳、字符串之间的相互转换
+	https://www.cnblogs.com/smileFL/p/8473245.html   
+	
+不同实体之间转义
+
+	显示 结果	描述	实体名称	实体编号
+		空格	&nbsp;	&#160;
+	<	小于号	&lt;	&#60;
+	>	大于号	&gt;	&#62;
+	&	和号	&amp;	&#38;
+	"	引号	&quot;	&#34;
+	'	撇号 	&apos; (IE不支持)	&#39;
+	￠	分	&cent;	&#162;
+	€	欧元	&euro
+	
 	
 --where if 语句
 			SELECT
@@ -75,11 +91,36 @@
 		
 	两个时间和两个时间比较
 	<if test="tp.startDate != null">
-		and tp.start_date &gt;  #{tp.startDate}
+		and tp.start_date &gt;  #{tp.startDate}  
 	</if>
 	<if test="tp.endDate != null">
-		and tp.end_date  &lt; #{tp.endDate}
+		and tp.end_date  &lt; #{tp.endDate}     小于号
 	</if>
+	
+建表 各种类型
+	https://www.cnblogs.com/widows/p/7137184.html
+	
+	create table taraining_plan_edu(
+		id int primary key auto_increment,
+		name varchar(18),
+		start_date datetime,  #时间类型
+		end_date datetime ,
+		descript varchar(255),
+		plan_type varchar(18),
+		progress varchar(18)
+	);
+	
+mysql 复制插入数据  平表
+	replace INTO taraining_plan_edu ( name,start_date,end_date,descript,plan_type,progress,id,is_deleted)
+	(select tp.name,tp.start_date,tp.end_date,tp.descript,tp.plan_type,
+	concat_ws("/",
+	(select count(1) ws1 from training_plan_unit tpu where tpu.training_plan_id = tp.id and  tpu.is_report="REPORTED" and tpu.is_deleted =0),
+	(select count(1) ws2 from training_plan_unit tpu where tpu.training_plan_id = tp.id and  tpu.is_deleted = 0))  -- 8/9
+	 progress ,
+	tp.id id ,tp.is_deleted
+	from training_plan tp  
+	where DATE_FORMAT(tp.last_modified_date, '%Y-%m-%d') >= DATE_SUB(CURDATE(), INTERVAL 1 DAY)
+	)
 	
 */
 *******************************  Controller  ********
