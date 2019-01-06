@@ -70,14 +70,15 @@ var demo05 = {
     title: "文章收集",
     name: "文章收集",
     data: [
-        { url: "detail.html?data/article01.js&01", context: "鬼谷子全集" },
-        { url: "detail.html?data/article01.js&02", context: "左传部分" },
-        { url: "detail.html?data/article01.js&03", context: "现代文章" },
-        { url: "detail.html?data/article01.js&04", context: "孙子兵法全集" },
-        { url: "detail.html?data/article01.js&05", context: "东周列国志部分" },
-        { url: "detail.html?data/article01.js&06", context: "古典文学" },
-        { url: "detail.html?data/article01.js&07", context: "英文签名" },
-        { url: "detail.html?data/article01.js&08", context: "中文签名" },
+        { url: "detail.html?data/doc/article/GuiGuZi.js&01", context: "鬼谷子全集" },
+        { url: "detail.html?data/doc/article/ZuoZhuan.js&01", context: "左传部分" },
+        { url: "detail.html?data/doc/article/ShiJi.js&01", context: "史记部分" },
+        { url: "detail.html?data/doc/article/ContemporaryLiterture.js&01", context: "现代文章" },
+        { url: "detail.html?data/doc/article/SunZiBingFa.js&01", context: "孙子兵法全集" },
+        { url: "detail.html?data/doc/article/DongZhouLieGuoZhi.js&01", context: "东周列国志部分" },
+        { url: "detail.html?data/doc/article/ClassicalLiterture.js&01", context: "古典文学" },
+        { url: "detail.html?data/doc/article/EnglishSignature.js&01", context: "英文签名" },
+        { url: "detail.html?data/doc/article/ChineseSignature.js&01", context: "中文签名" },
 
     ]
 }
