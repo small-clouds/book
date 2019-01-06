@@ -26,7 +26,6 @@
     <h1>{{title}}</h1>
     <template v-for="msg in data">
         <div><a :href=msg.url>{{msg.context}}</a></div>
-		
     </template>
     </div>
     <!--<div class="pop">弹出frame</div> 
@@ -35,9 +34,3 @@
 </html>
 <script type="text/javascript" src="other/vue.min.js"></script>
 <script type="text/javascript" src="data/0index.js"></script>
-
-<script>
-    $.post("http://unicom3.qimooc.net/api/login",{username:"system",password:"888888"},function(result){
-       console.log(result);
-    });
-</script>
