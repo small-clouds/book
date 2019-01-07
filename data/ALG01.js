@@ -86,3 +86,6 @@ var demo01 = {
 }
 
 data=[demo01]
+function loadData(){
+    return data;
+}

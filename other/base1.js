@@ -13,7 +13,8 @@ var loadJs = function (src) {
     script.src = src;
     document.head.appendChild(script);
 }
-loadJs(file);
+// loadJs(file);
+var newData =[]
 function onloadvue() {
 
     var app1 = new Vue({
@@ -23,10 +24,21 @@ function onloadvue() {
             demo: "index"
         },
         methods: {
-            openlist: function (enlargeAmount) {
+            openlist: function (enlargeAmount,file) {
                 console.log(enlargeAmount);
+                // to do this.data 重写数据
+                this.loadJs("data/ALG01.js")
+                this.data.data = newData;
+                //点开详情页面
                 this.demo = enlargeAmount;
-            }
+            },
+            loadJs: function(file){
+                console.log(file)
+                var script = document.createElement("script");
+                script.src = file;
+                document.body.appendChild(script);
+                newData = loadData();
+            },
         }
     });
     //下拉选框
