@@ -1,8 +1,8 @@
 
 // /import { Home } from './report-school.html';
 
-const Foo = { template: '#counter-template' }
-const Bar = { template: '<div>bar</div>' }
+const Foo = { template: '#foo-template' }
+const Bar = { template: '#bar-template' }
 const User = {
     template: '<div>User {{ $route.params.id }}</div>'
   }
@@ -12,7 +12,7 @@ const User = {
 // 或者，只是一个组件配置对象。
 // 我们晚点再讨论嵌套路由。
 const routes = [
-  { path: '/foo', component: Foo, },
+  { path: '/foo', component: Foo, }, // 点击的时候并不重新加载模版
   { path: '/bar', component: Bar }
 ]
 
