@@ -3,8 +3,6 @@ var file = "";
 var i = 0;//
 var data = [];
 
-var demo = "index"
-
 if (url.indexOf("?") != -1) {
     var url1 = url.substr(1).split("&");
     file = url1[0] + "?" + Math.random()
@@ -17,17 +15,19 @@ var loadJs = function (src) {
 }
 loadJs(file);
 function onloadvue() {
+
     var app1 = new Vue({
         el: '#demoMain',
-        data: data[i]
-    });
-    var app2 = new Vue({
-        el: '#listMain',
-        data: data[i]
-    });
-    var app3 = new Vue({
-        el: '#detailMain',
-        data: data[i]
+        data: {
+            data: data[i],
+            demo: "index"
+        },
+        methods: {
+            openlist: function (enlargeAmount) {
+                console.log(enlargeAmount);
+                this.demo = enlargeAmount;
+            }
+        }
     });
     //下拉选框
     $('.demoMain').on('click', function (e) {
@@ -40,19 +40,12 @@ function onloadvue() {
     $('.ceshi').on('click', function (e) {
         ($(e.target)[0].tagName == 'H2' || $(e.target)[0].tagName == 'H3') ? $(e.target).next().toggle(500) : false;
     });
-   // cav();
+    // cav();
 }
 //下拉选框
-    $('.demoMain').on('click', function (e) {
-        ($(e.target)[0].tagName == 'H2' || $(e.target)[0].tagName == 'H3') ? $(e.target).next().toggle(500) : false;
-    })
-
-   function openlist(e){
-       console.log(e)
-      this.demo = e;
-      console.log(this.demo)
-      onloadvue();
-   }
+$('.demoMain').on('click', function (e) {
+    ($(e.target)[0].tagName == 'H2' || $(e.target)[0].tagName == 'H3') ? $(e.target).next().toggle(500) : false;
+})
 
 /*
 var demo ={
