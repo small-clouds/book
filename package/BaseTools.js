@@ -156,7 +156,7 @@ let data3=  data4.reduce((accum,current)=>{
   accum[initial].push(current);
   return accum;
 },{})
-console.log(data3)
+console.log("data3",data3)
 
 
 //原生控制css
@@ -186,6 +186,15 @@ let data = {
               console.log(Key+'='+Statistics_Website_logo[Key]+'')
             }
 
+
+//数组对象去重 
+var  demo5=[{"name":"aaa"},{"name":"bbb"},{"name":'ccc'},{"name":'beqa'},{"name":'bert'},{"name":'ffff'},{"name":'aaa'},{"name":'ffff'}]
+var obj = {};
+var demo = demo5.reduce((item, next)=> {
+    obj[next.name] ? '' : obj[next.name] = true && item.push(next);
+    return item;
+}, []);
+  console.log("data3",demo)
 
 
 

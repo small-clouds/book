@@ -7,6 +7,9 @@ llhwvybubmbxjjdj
 	INSERT INTO Persons (LastName, Address) VALUES ('Wilson', 'Champs-Elysees')
 	DELETE FROM Person WHERE LastName = 'Wilson' 
 
+list数组的值用，分割成字符串
+	select  group_concat(sc.name )  post from lrn_user_post lup left JOIN sys_category sc on lup.category_id  = sc.id
+	
 mysql 时间、时间戳、字符串之间的相互转换
 	https://www.cnblogs.com/smileFL/p/8473245.html   
 	
