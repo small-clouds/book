@@ -195,6 +195,45 @@ var demo = demo5.reduce((item, next)=> {
     return item;
 }, []);
   console.log("data3",demo)
+//普通数组去重
+let arr = [1,2,3,2,1]
+arr = Array.from(new Set(arr)) // [1,2,3]
+
+/**
+ * 
+以前我们写都是先乘以一个10的n次方这样的数，然后加完了在除以
+算出来的就没有这种浮点数了
+n 是多少
+我发你2个函数你看看啊，我们之前写的
+//加法函数
+    function accAdd(arg1, arg2) {
+        var r1, r2, m;
+        try { r1 = arg1.toString().split(".")[1].length } catch (e) { r1 = 0 }
+        try { r2 = arg2.toString().split(".")[1].length } catch (e) { r2 = 0 }
+        m = Math.pow(10, Math.max(r1, r2));
+        //return (arg1*m+arg2*m)/m
+		console.log(m);
+        return accDiv((accMul(arg1, m) + accMul(arg2, m)), m)
+    }
+
+    // 除法函数
+    function accDiv(arg1, arg2) {
+        var t1 = 0,
+            t2 = 0,
+            r1, r2;
+        try { t1 = arg1.toString().split(".")[1].length } catch (e) {}
+        try { t2 = arg2.toString().split(".")[1].length } catch (e) {}
+        with(Math) {
+            r1 = Number(arg1.toString().replace(".", ""))
+            r2 = Number(arg2.toString().replace(".", ""))
+            return (r1 / r2) * pow(10, t2 - t1);
+        }
+    }
+你调用一下
+ console.log(accAdd(0.1,0.7));
+ */
+
+
 
 
 
