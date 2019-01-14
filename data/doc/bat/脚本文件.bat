@@ -1,19 +1,19 @@
 :: @echo off
 :: cd c:/work/learn-web/console-web
 :: git pull
-:: echo "ºóÌ¨pull³É¹¦"
+:: echo "åå°pullæˆåŠŸ"
 :: cd c:/work/learn-web/learner-web
 :: git pull
-:: echo "Ñ§Ô±¶Ëpull³É¹¦"
+:: echo "å­¦å‘˜ç«¯pullæˆåŠŸ"
 :: cd c:/work/parim/parim-spark
 :: git pull
-:: echo "·şÎñ¶Ëpull³É¹¦"
+:: echo "æœåŠ¡ç«¯pullæˆåŠŸ"
 
-:: echo "Çå¿ÕÄ¿Â¼ Æô¶¯parim-sparkÈÈ²¿Êğ"
+:: echo "æ¸…ç©ºç›®å½• å¯åŠ¨parim-sparkçƒ­éƒ¨ç½²"
 :: pause
-rem Æô¶¯ÈÈ²¿Êğ
+rem å¯åŠ¨çƒ­éƒ¨ç½²
 cd e:/work/tongMing/project/JrebelLicenseServerforJava
 mvn exec:java -Dexec.mainClass="com.vvvtimes.server.MainServer"
-:: echo "Æô¶¯selenium"
+:: echo "å¯åŠ¨selenium"
 :: cd c:/work/tools/selenium-remote-control-1.0.3/selenium-server-1.0.3
 :: java -jar selenium-server.jar 
