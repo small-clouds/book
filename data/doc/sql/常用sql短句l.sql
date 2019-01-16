@@ -1,4 +1,6 @@
 
+******   一段程序的复杂度 是由当初设计的复杂度决定的   只有更简洁的代码 逻辑才会更清楚 越到后期 越能体现代码简介 容易理解的必要性  一段上百行逻辑的代码 即使效率在高  恐怕也没有多少程序员想去修改它
+
 llhwvybubmbxjjdj
 ***********************   Mapper.xml *************************
 /*
@@ -8,7 +10,26 @@ llhwvybubmbxjjdj
 	DELETE FROM Person WHERE LastName = 'Wilson' 
 
 list数组的值用，分割成字符串
+数据横排的一种方式
 	select  group_concat(sc.name )  post from lrn_user_post lup left JOIN sys_category sc on lup.category_id  = sc.id
+	
+-- 数据横排
+	select t1.user_id,t1.s_period,t1.s_count ,t2.l_network_period,t2.l_network_count,t3.l_other_period,t3.l_other_count  from 
+		(select  spea.user_id , sum(spea.period) s_period , count(1) s_count 
+		from short_plan_enrol_approval spea 
+			 INNER JOIN post_plan pp on spea.post_plan_id = pp.id 
+		where spea.plan_type ="SHORTTERM" and spea.state ="ADOPT" and (pp.complete_date   is null or  pp.complete_date is not null ) and ( pp.start_date is null or  pp.start_date is not null  )  GROUP BY spea.user_id   ) t1 ,
+		(
+		select  spea.user_id , sum(spea.period) l_network_period ,count(1) l_network_count from short_plan_enrol_approval spea 
+			 INNER JOIN post_plan pp on spea.post_plan_id = pp.id 
+		where spea.plan_type ="LONGTRERM" and pp.training_mode ="网络培训" and spea.state ="ADOPT" and (pp.complete_date   is null or  pp.complete_date is not null ) and ( pp.start_date is null or  pp.start_date is not null  )GROUP BY spea.user_id) t2, 
+		(
+		select  spea.user_id , sum(spea.period) l_other_period , count(1) l_other_count from short_plan_enrol_approval spea 
+			 INNER JOIN post_plan pp on spea.post_plan_id = pp.id 
+		where spea.plan_type ="LONGTRERM" and pp.training_mode !="网络培训"  and spea.state ="ADOPT" and (pp.complete_date   is null or  pp.complete_date is not null ) and ( pp.start_date is null or  pp.start_date is not null  )  GROUP BY spea.user_id) t3
+
+		where t1.user_id=t2.user_id and t2.user_id =t3.user_id and  t3.user_id = 100000 
+
 	
 mysql 时间、时间戳、字符串之间的相互转换
 	https://www.cnblogs.com/smileFL/p/8473245.html   
@@ -364,7 +385,7 @@ initForm赋值
 	</nz-tabset>
 	
 选择框组件
-	 <nz-select name="language" [nzPlaceHolder]="'默认语言'" [nzAllowClear]="true"  [(ngModel)]="searchBy.type">
+	 <nz-select name="language" [nzPlaceHolder]="'默认语言'" [nzAllowClear]="true"  [(ngModel)]="searchBy.type" (ngModelChange)="search()"   [nzAllowClear]="false">
 		<nz-option *ngFor="let item of _languages" [nzLabel]="item.label" [nzValue]="item.value" [nzDisabled]="item.disabled">
 		</nz-option>
 	</nz-select>
