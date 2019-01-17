@@ -82,6 +82,7 @@ var demo01 = {
             { context: '<a href="' + urlposition + '今生你作伴.jpg">今生你作伴</a>' },
             { context: '<a href="' + urlposition + '江湖笑.jpg">江湖笑</a>' },
             { context: '<a href="' + urlposition + '江南梦.jpg">江南梦</a>' },
+            { context: '<a href="' + urlposition + '精忠报国.jpg">精忠报国</a>' },
         ]
     }, {
         title: "K开头的简谱",
