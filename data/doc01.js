@@ -12,6 +12,7 @@ var demo01 = {
     }, {
         title: "linux命令集合",
         data: [
+            { context: 'ssh方式连接服务器   ssh ydl@127.0.0.1  ' },
             { context: '创建或者编辑某文件 --- vi  ' },
             { context: '退出编辑 ---esc : exit /wq ' },
             { context: 'vim有三种模式 普通模式  编辑模式(i) 命令行模式(:) 另外两种 esc 都能退回到普通模式上面  ---esc : exit /wq ' },
@@ -77,7 +78,7 @@ var demo01 = {
 -v $PWD/data:/var/lib/mysql ：将主机当前目录下的data目录挂载到容器的 /var/lib/mysql 。
 -e MYSQL_ROOT_PASSWORD=123456：初始化 root 用户的密码。
 
-
+docker start mymysql  运行容器
 
 docker
 
