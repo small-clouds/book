@@ -30,6 +30,8 @@ list数组的值用，分割成字符串
 
 		where t1.user_id=t2.user_id and t2.user_id =t3.user_id and  t3.user_id = 100000 
 
+mysql中的视图 
+		https://www.cnblogs.com/chenpi/p/5133648.html
 	
 mysql 时间、时间戳、字符串之间的相互转换
 	https://www.cnblogs.com/smileFL/p/8473245.html   

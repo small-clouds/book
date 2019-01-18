@@ -289,4 +289,14 @@ var demo05 ={
         ]
     }]
 }
-data = [demo01, demo02, demo03, demo04,demo05]
+var demo06 ={
+    title: "mysql 视图",
+    name: "mysql 视图",
+    data: [{
+        title: "mysql 视图",
+        data: [
+            { context: 'https://www.cnblogs.com/chenpi/p/5133648.html' }
+        ]
+    }]
+}
+data = [demo01, demo02, demo03, demo04,demo05,demo06]

@@ -26,6 +26,8 @@ var demo03 = {
         { context: "那些年的sql语句", url: "data/doc/sql/demo01.sql" },
         { context: "脚本 中国省市区", url: "data/doc/sql/china.sql" },
         { context: "高并发处理方案", url: "detail.html?data/sql01.js&04" },
+        { context: "explain查看sql语句的执行计划", url: "detail.html?data/sql01.js&05" },
+        { context: "视图", url: "detail.html?data/sql01.js&06" },
     ]
 }
 //java目录
