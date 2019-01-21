@@ -261,6 +261,7 @@ var demo01 = {
             { context: '<a href="' + urlposition + '一剪梅.jpg">一剪梅</a>' },
             { context: '<a href="' + urlposition + '一生爱你千百回.jpg">一生爱你千百回</a>' },
             { context: '<a href="' + urlposition + '遇上你是我的缘.jpg">遇上你是我的缘</a>' },
+            { context: '<a href="' + urlposition + '沂蒙山小调.jpg">沂蒙山小调</a>' },
         ]
     }, {
         title: "Z开头的简谱",

@@ -165,6 +165,7 @@ docker rmi [imageId]
         data: [
             { context: '回退版本 ---   git reset --hard HEAD^ ' },
             { context: '合并dev到当前分支上 git merge dev' },
+            { context: '查看日志 git log --author="<log出来的author 复制 >"' },
         ]
     },{}, //  ctrl + k      ctrl + 0 ； 编辑器 vscode 折叠代码
      {
