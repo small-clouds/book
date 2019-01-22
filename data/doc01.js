@@ -106,6 +106,9 @@ docker volume prune
 
 删除镜像
 docker rmi [imageId]
+
+
+docker system prune -a   清理 所有未运行的镜像   
  */           
 
             /**
@@ -213,6 +216,9 @@ docker rmi [imageId]
     安装gpg的时候 找不到 文件  可以先下载  
     wget  https://download.docker.com/linux/ubuntu/gpg
     sudo apt-key add 【gpg[下载的文件目录]】
+
+
+     docker exec -it mynginx1 bash
 
      */
     ]
