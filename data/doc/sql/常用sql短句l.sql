@@ -254,6 +254,15 @@ jpa继承
 			  this.trainingPlanUnitId = params["id"];
 			}
 		)
+路由传参		
+		 <div class="knowing-content-bottom-bd clearfix" [routerLink]="['/knowing/knowing-detail/'+row?.id]" [queryParams]="{ type:'collection' }"></div>
+		 this.route.queryParams.subscribe(
+		  (params: Params) => {
+			if(params.type=="collection"){
+			  this.collectType = false;
+			}
+		}
+		)
 排序	
 		{ title: '名称/编码', tpl: 'col2-1', showSort: true, sortKey: 'name' }, 
 		{ title: '培训内容', data: 'trainingContent',style:{'max-width':'200px','width':'200px'}, styleClass: 'text-center' },
