@@ -247,14 +247,15 @@ jpa继承
 		private router:Router,
 		private message: NzMessageService,
 		private modal: NzModalService,
-获取路由参数		
+获取路由参数		-- 路由配置中的
+		<div class="knowing-content-bottom-bd clearfix" *ngFor="let item of dataList" [routerLink]="['/knowing/knowing-detail/'+item.id]"></div>
 		this.route.params.subscribe(
 		  (params: Params) => {
 			console.log(params)
 			  this.trainingPlanUnitId = params["id"];
 			}
 		)
-路由传参		
+路由传参		--普通参数
 		 <div class="knowing-content-bottom-bd clearfix" [routerLink]="['/knowing/knowing-detail/'+row?.id]" [queryParams]="{ type:'collection' }"></div>
 		 this.route.queryParams.subscribe(
 		  (params: Params) => {
