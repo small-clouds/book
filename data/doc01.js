@@ -36,80 +36,82 @@ var demo01 = {
             { context: 'ubuntu64 启动 ssh  --- 编辑  /etc/ssh/sshd_config  (PermitRootLogin -yes)' },
             { context: 'ubuntu64 重启 ssh --  sudo /etc/init.d/ssh restart ' },
             { context: 'ubuntu64 下载文件  --  wget [url]' },
+            { context: "刚刚装的ubuntu64 没有ssh或者22 没开放1  sudo apt-get install openssh-server" },
+            { context: "刚刚装的ubuntu64 没有ssh或者22 没开放2 sudo apt-get install openssh-server openssh-client" },
             { context: ' systemctl 命令 详解 systemctl stop/start docker' },
             { context: 'ps/find详解 ps -A/ef | grep nginx  / find /[filename] -name "*searchName*" ' },
             { context: '忘记root密码  https://blog.csdn.net/weixin_37909391/article/details/80691601' },
             { context: '返回上一次所在目录 -- cd - ' },
-/**
- * .tar 解包 tar xvf filename.tar
-.tar 打包 tar cvf filename.tar dirname
-.gz 解压1 gunzip filename.gz
-.gz 解压2 gzip -d filename.gz
-.gz 压缩 gzip filename
-.tar.gz 和 .tgz 解压 tar zxvf filename.tar.gz
-.tar.gz 和 .tgz 压缩 tar zcvf filename.tar.gz dirname
-.bz2 解压1 bzip2 -d filename.bz2
-.bz2 解压2 bunzip2 filename.bz2
-.bz2 压缩 bzip2 -z filename
-.tar.bz2 解压 tar jxvf filename.tar.bz2
-.tar.bz2 压缩 tar jcvf filename.tar.bz2 dirname
-.bz 解压1 bzip2 -d filename.bz
-.bz 解压2 bunzip2 filename.bz
-.tar.bz 解压 tar jxvf filename.tar.bz
-.z 解压 uncompress filename.z
-.z 压缩 compress filename
-.tar.z 解压 tar zxvf filename.tar.z
-.tar.z 压缩 tar zcvf filename.tar.z dirname
-.zip 解压 unzip filename.zip
-.zip 压缩 zip filename.zip dirname
-.rar 解压 rar x filename.rar
-.rar 压缩 rar a filename.rar dirname
-
-
-
-
-
- docker 运行mysql 数据库  
- docker run -p 3306:3306 --name mymysql -v $PWD/conf:/etc/mysql/conf.d -v $PWD/logs:/logs -v $PWD/data:/var/lib/mysql -e MYSQL_ROOT_PASSWORD=123456 -d mysql:5.6
-
--p 3306:3306：将容器的 3306 端口映射到主机的 3306 端口。
--v -v $PWD/conf:/etc/mysql/conf.d：将主机当前目录下的 conf/my.cnf 挂载到容器的 /etc/mysql/my.cnf。
--v $PWD/logs:/logs：将主机当前目录下的 logs 目录挂载到容器的 /logs。
--v $PWD/data:/var/lib/mysql ：将主机当前目录下的data目录挂载到容器的 /var/lib/mysql 。
--e MYSQL_ROOT_PASSWORD=123456：初始化 root 用户的密码。
-
-docker start mymysql  运行容器
-
-docker
-
-删除所有已经停止的容器 docker rm $(docker ps -a -q)
-杀死所有正在运行的容器
-docker kill $(docker ps -a -q)
-
-删除所有已经停止的容器
-docker rm $(docker ps -a -q)
-
- 删除所有未打 dangling 标签的镜像
-docker rmi $(docker images -q -f dangling=true)
-
-删除所有镜像
-docker rmi $(docker images -q)
-
-强制删除镜像名称中包含“doss-api”的镜像
-docker rmi --force $(docker images | grep doss-api | awk '{print $3}')
-
-删除所有未使用数据
-docker system prune
-
-只删除未使用的volumes
-docker volume prune
-
-删除镜像
-docker rmi [imageId]
-
-
-docker system prune -a   清理 所有未运行的镜像   
- */           
+            /**
+             * .tar 解包 tar xvf filename.tar
+            .tar 打包 tar cvf filename.tar dirname
+            .gz 解压1 gunzip filename.gz
+            .gz 解压2 gzip -d filename.gz
+            .gz 压缩 gzip filename
+            .tar.gz 和 .tgz 解压 tar zxvf filename.tar.gz
+            .tar.gz 和 .tgz 压缩 tar zcvf filename.tar.gz dirname
+            .bz2 解压1 bzip2 -d filename.bz2
+            .bz2 解压2 bunzip2 filename.bz2
+            .bz2 压缩 bzip2 -z filename
+            .tar.bz2 解压 tar jxvf filename.tar.bz2
+            .tar.bz2 压缩 tar jcvf filename.tar.bz2 dirname
+            .bz 解压1 bzip2 -d filename.bz
+            .bz 解压2 bunzip2 filename.bz
+            .tar.bz 解压 tar jxvf filename.tar.bz
+            .z 解压 uncompress filename.z
+            .z 压缩 compress filename
+            .tar.z 解压 tar zxvf filename.tar.z
+            .tar.z 压缩 tar zcvf filename.tar.z dirname
+            .zip 解压 unzip filename.zip
+            .zip 压缩 zip filename.zip dirname
+            .rar 解压 rar x filename.rar
+            .rar 压缩 rar a filename.rar dirname
+            
+            
+            
+            
+            
+             docker 运行mysql 数据库  
+             docker run -p 3306:3306 --name mymysql -v $PWD/conf:/etc/mysql/conf.d -v $PWD/logs:/logs -v $PWD/data:/var/lib/mysql -e MYSQL_ROOT_PASSWORD=123456 -d mysql:5.6
+            
+            -p 3306:3306：将容器的 3306 端口映射到主机的 3306 端口。
+            -v -v $PWD/conf:/etc/mysql/conf.d：将主机当前目录下的 conf/my.cnf 挂载到容器的 /etc/mysql/my.cnf。
+            -v $PWD/logs:/logs：将主机当前目录下的 logs 目录挂载到容器的 /logs。
+            -v $PWD/data:/var/lib/mysql ：将主机当前目录下的data目录挂载到容器的 /var/lib/mysql 。
+            -e MYSQL_ROOT_PASSWORD=123456：初始化 root 用户的密码。
+            
+            docker start mymysql  运行容器
+            
+            docker
+            
+            删除所有已经停止的容器 docker rm $(docker ps -a -q)
+            杀死所有正在运行的容器
+            docker kill $(docker ps -a -q)
+            
+            删除所有已经停止的容器
+            docker rm $(docker ps -a -q)
+            
+             删除所有未打 dangling 标签的镜像
+            docker rmi $(docker images -q -f dangling=true)
+            
+            删除所有镜像
+            docker rmi $(docker images -q)
+            
+            强制删除镜像名称中包含“doss-api”的镜像
+            docker rmi --force $(docker images | grep doss-api | awk '{print $3}')
+            
+            删除所有未使用数据
+            docker system prune
+            
+            只删除未使用的volumes
+            docker volume prune
+            
+            删除镜像
+            docker rmi [imageId]
+            
+            
+            docker system prune -a   清理 所有未运行的镜像   
+             */
 
             /**
              关机：
@@ -170,8 +172,8 @@ docker system prune -a   清理 所有未运行的镜像
             { context: '合并dev到当前分支上 git merge dev' },
             { context: '查看日志 git log --author="<log出来的author 复制 >"' },
         ]
-    },{}, //  ctrl + k      ctrl + 0 ； 编辑器 vscode 折叠代码
-     {
+    }, {}, //  ctrl + k      ctrl + 0 ； 编辑器 vscode 折叠代码
+    {
         title: "何谓之无名",
         data: [
             { context: '8888888517418544'/*密码身份证后六位*/ },
@@ -185,42 +187,42 @@ docker system prune -a   清理 所有未运行的镜像
         ]
     },
 
-    /**
-     * 
-     * * docker 遇到的坑
-     * 
-      Error:   No package docker-io available
-     ：sudo yum install epel-release ，之后再执行：sudo yum install docker
-     * 
-     
-     Error: Cannot retrieve metalink for repository: epel. Please verify its path and try again
-        处理很简单，修改文件“/etc/yum.repos.d/epel.repo”， 将baseurl的注释取消， mirrorlist注释掉。即可。
-        原文：https://blog.csdn.net/edwzhang/article/details/41251015 
-
-
-    心烦  直接下载源安装 
-    yum install https://get.docker.com/rpm/1.7.1/centos-6/RPMS/x86_64/docker-engine-1.7.1-1.el6.x86_64.rpm
-
-    CentOS 6安装docker 报docker dead but pid file exists
-    $ yum update -y device-mapper-libs
-
-
-    ubutun 安装docker
-
-    apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys D8576A8BA88D21E9
-
-
-    那些遇到的坑 
-
-    curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -   这里出错
-    安装gpg的时候 找不到 文件  可以先下载  
-    wget  https://download.docker.com/linux/ubuntu/gpg
-    sudo apt-key add 【gpg[下载的文件目录]】
-
-
-     docker exec -it mynginx1 bash
-
-     */
+        /**
+         * 
+         * * docker 遇到的坑
+         * 
+          Error:   No package docker-io available
+         ：sudo yum install epel-release ，之后再执行：sudo yum install docker
+         * 
+         
+         Error: Cannot retrieve metalink for repository: epel. Please verify its path and try again
+            处理很简单，修改文件“/etc/yum.repos.d/epel.repo”， 将baseurl的注释取消， mirrorlist注释掉。即可。
+            原文：https://blog.csdn.net/edwzhang/article/details/41251015 
+    
+    
+        心烦  直接下载源安装 
+        yum install https://get.docker.com/rpm/1.7.1/centos-6/RPMS/x86_64/docker-engine-1.7.1-1.el6.x86_64.rpm
+    
+        CentOS 6安装docker 报docker dead but pid file exists
+        $ yum update -y device-mapper-libs
+    
+    
+        ubutun 安装docker
+    
+        apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys D8576A8BA88D21E9
+    
+    
+        那些遇到的坑 
+    
+        curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -   这里出错
+        安装gpg的时候 找不到 文件  可以先下载  
+        wget  https://download.docker.com/linux/ubuntu/gpg
+        sudo apt-key add 【gpg[下载的文件目录]】
+    
+    
+         docker exec -it mynginx1 bash
+    
+         */
     ]
 }
 data = [demo01]
