@@ -42,6 +42,7 @@ var demo01 = {
             { context: '<a href="' + urlposition + '当.jpg">当</a>' },
             { context: '<a href="' + urlposition + '断桥残雪.jpg">断桥残雪</a>' },
             { context: '<a href="' + urlposition + '大约在冬季.jpg">大约在冬季</a>' },
+            { context: '<a href="' + urlposition + '东风志.jpg">东风志</a>' },
         ]
     }, {
         title: "F开头的简谱",
@@ -123,6 +124,7 @@ var demo01 = {
             { context: '<a href="' + urlposition + '毛主席的话儿记心上.jpg">毛主席的话儿记心上</a>' },
             { context: '<a href="' + urlposition + '梦醒时分.jpg">梦醒时分</a>' },
             { context: '<a href="' + urlposition + '梦中的蝴蝶.jpg">梦中的蝴蝶</a>' },
+            { context: '<a href="' + urlposition + '茉莉花.jpg">茉莉花</a>' },
         ]
     }, {
         title: "N开头的简谱",
