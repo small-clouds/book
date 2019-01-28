@@ -214,6 +214,7 @@ var demo01 = {
             { context: '<a href="' + urlposition + '舞女泪.jpg">舞女泪</a>' },
             { context: '<a href="' + urlposition + '我和草原有个约定.jpg">我和草原有个约定</a>' },
             { context: '<a href="' + urlposition + '万里长城永不倒.jpg">万里长城永不倒</a>' },
+            { context: '<a href="' + urlposition + '往事只能回味.jpg">往事只能回味</a>' },
         ]
     }, {
         title: "X开头的简谱",
