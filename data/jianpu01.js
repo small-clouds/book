@@ -106,6 +106,7 @@ var demo01 = {
             { context: '<a href="' + urlposition + '两只蝴蝶.jpg">两只蝴蝶</a>' },
             { context: '<a href="' + urlposition + '来生愿做一朵莲.jpg">来生愿做一朵莲</a>' },
             { context: '<a href="' + urlposition + '恋曲1990.jpg">恋曲1990</a>' },
+            { context: '<a href="' + urlposition + '恋人心.jpg">恋人心</a>' },
         ]
     }, {
         title: "M开头的简谱",
