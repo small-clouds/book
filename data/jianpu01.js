@@ -303,6 +303,13 @@ var demo01 = {
             { context: '<a href="' + urlposition + '暖暖.jpg">暖暖</a>' },
 
         ]
+    }, {
+        title: "笛子相关知识",
+        data: [
+            { context: '新手选笛子 较音是哪几个 所有音' },
+            { context: '<a href="' + urlposition + '暖暖.jpg">暖暖</a>' },
+
+        ]
     },
     ]
 }
