@@ -469,6 +469,41 @@ class 名字
 */
  
  
+ 
+ *******************************gradle 项目创建  子项目 那些踩过的坑 **************************************************************
+ 
+ -- 一定要相信自己 逻辑与代码都没有问题  错的 不过是那些 需要注意的地方  更是那些 项目本身没有刷新过来  ***代码是没有问题的***  
+-- ***代码是没有问题的***    ***代码是没有问题的***
+ -- 全是项目的锅
+ /*
+
+ 第一步 创建项目 
+	 settings.gradle  创建项目
+		include 'spark-icbc:icbc-provider'
+		include 'spark-icbc:icbc-console'
+		include 'spark-icbc:icbc-learner'
+		
+	build.gradle   // 为了接口的
+		compile project(':spark-icbc:icbc-console')
+		compile project(':spark-icbc:icbc-learner')
+	
+ 第二步 项目依赖
+	build.gradle   // icbc-console
+		compile project(':spark-icbc:icbc-provider')
+	build.gradle   // icbc-learner
+		compile project(':spark-icbc:icbc-provider')
+
+		
+	写完之后 已经不知道  gradle build  ||   install  ||   cleanEcl ecl  
+	
+	******最重要的  重新引入项目 删除 workspace
+	
+创建项目包
+	不再java resouce 中    gradle cleanEcl ecl  不行的话 重启 eclipse
+ */
+ 
+ 
+ 
  *******************************    打包命令     ************************
 /*
  gradle clean :build -Denv=prod
@@ -502,6 +537,8 @@ gradle clean :build -Denv=prod
 	java -jar selenium-server.jar 
 
 */
+
+
 
 
 
