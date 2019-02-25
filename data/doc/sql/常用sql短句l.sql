@@ -349,7 +349,34 @@ initForm赋值
 	</ng-template>
 	
 时间组件		
-	<nz-datepicker [nzShowTime]="true" formControlName="startDate" style="width:100%;" [nzFormat]="'YYYY-MM-DD HH:mm:ss'"></nz-datepicker>
+	<nz-datepicker [nzShowTime]="true" formControlName="startDate"  (ngModelChange)="onStartChange($event)"  [nzDisabledDate]="_disabledStartDate" style="width:100%;" [nzFormat]="'YYYY-MM-DD HH:mm:ss'"></nz-datepicker>
+	
+	_startDate = null;
+   _endDate = null;
+
+  onStartChange(date: Date): void {
+    this._startDate = date;
+  }
+
+  onEndChange(date: Date): void {
+    this._endDate = date;
+  }
+ 
+ _disabledStartDate = (startValue) => {
+    // this.yearplan.endDate = new Date(this.yearplan.endDate)
+    if (!startValue || !this._endDate) {
+      return false;
+    }
+    return startValue.getTime() >= this._endDate.getTime();
+  };
+
+  _disabledEndDate = (endValue) => {
+    // this.yearplan.startDate = new Date(this.yearplan.startDate)
+    if (!endValue || !this._startDate) {
+      return false;
+    }
+    return endValue.getTime() <= this._startDate.getTime();
+  };
 日期选择框
 	<nz-datepicker [nzShowTime]="true" [nzMode]="'month'" formControlName="trainingDate" style="width:100%;" [nzFormat]="'MM月'"></nz-datepicker>
 列表组件
