@@ -2,6 +2,7 @@
 ******   一段程序的复杂度 是由当初设计的复杂度决定的   只有更简洁的代码 逻辑才会更清楚 越到后期 越能体现代码简介 容易理解的必要性  一段上百行逻辑的代码 即使效率在高  恐怕也没有多少程序员想去修改它
 
 llhwvybubmbxjjdj
+mbpigzyqbjugbaed
 ***********************   Mapper.xml *************************
 /*
 增改删
@@ -237,6 +238,14 @@ jpa继承
 导入注解
 	@ExcelImportConfig(startLine=4) // 实体注解
 	@ExcelImportCol(nullable=false,colIndex=2)  //属性注解
+	
+	
+	
+四个属性dto的
+	private UserDto createdBy;
+	private Date createdDate;
+	private UserDto lastModifiedBy;
+	private Date lastModifiedDate;
 */
 
 
