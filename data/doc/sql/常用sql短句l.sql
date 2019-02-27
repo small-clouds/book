@@ -388,6 +388,10 @@ initForm赋值
   };
 日期选择框
 	<nz-datepicker [nzShowTime]="true" [nzMode]="'month'" formControlName="trainingDate" style="width:100%;" [nzFormat]="'MM月'"></nz-datepicker>
+	
+数字验证
+	 <nz-input-number formControlName="trainPeopleNum" [nzMin]="0" [nzStep]="1"></nz-input-number>
+	 
 列表组件
 	<cui-data-table #dataTable [columns]="columns" [data]="trainingPlan?.content" [pagination]="trainingPlan"
             selectType="checkbox" [(selection)]="selection" (reload)="loadData($event)" [loading]="loading">
