@@ -209,11 +209,23 @@ jpa继承
 
 *****************************    实体entity  **********************
 /*
-	
+表注解
 	@Entity
 	@Table(name = "regulations")
 	@Table(name = "lrn_offering_enrollment", uniqueConstraints = {@UniqueConstraint(columnNames={"offering_id", "user_id"})})
 	@DynamicInsert
+	
+属性注解
+	@ColumnDefault("UNCOMPLETE")
+	@Transient
+	@Formula("(select count(kr.id) from knowledge_reply kr where kr.knowledge_id = id and kr.replied_target is null and kr.is_deleted = 0)")
+	@ManyToOne
+	@JoinColumn(name="last_replied_by")
+	@QueryLike()
+
+导入注解
+	@ExcelImportConfig(startLine=4) // 实体注解
+	@ExcelImportCol(nullable=false,colIndex=2)  //属性注解
 实体继承
 	extends Repairable
 
@@ -227,19 +239,6 @@ jpa继承
 	@ManyToMany(fetch = FetchType.LAZY, cascade = CascadeType.MERGE)
     @JoinTable(name = "lrn_course_teacher", joinColumns = @JoinColumn(name = "course_id", nullable = false, updatable = false, foreignKey = @ForeignKey(name = "none", value = ConstraintMode.NO_CONSTRAINT)), inverseJoinColumns = @JoinColumn(name = "teacher_id", nullable = false, updatable = false, foreignKey = @ForeignKey(name = "none", value = ConstraintMode.NO_CONSTRAINT)), uniqueConstraints = {
             @UniqueConstraint(columnNames = { "course_id", "teacher_id" }) })
-	
-属性注解
-	@ColumnDefault("UNCOMPLETE")
-	@Transient
-	@Formula("(select count(kr.id) from knowledge_reply kr where kr.knowledge_id = id and kr.replied_target is null and kr.is_deleted = 0)")
-	@ManyToOne
-	@JoinColumn(name="last_replied_by")
-	@QueryLike()
-导入注解
-	@ExcelImportConfig(startLine=4) // 实体注解
-	@ExcelImportCol(nullable=false,colIndex=2)  //属性注解
-	
-	
 	
 四个属性dto的
 	private UserDto createdBy;
@@ -257,7 +256,7 @@ jpa继承
 		private message: NzMessageService,
 		private modal: NzModalService,
 获取路由参数		-- 路由配置中的
-		<div class="knowing-content-bottom-bd clearfix" *ngFor="let item of dataList" [routerLink]="['/knowing/knowing-detail/'+item.id]"></div>
+		<div class="knowing-content-bottom-bd clearfix" *ngFor="let item of dataList ;let i =index " [routerLink]="['/knowing/knowing-detail/'+item.id]"></div>
 		this.route.params.subscribe(
 		  (params: Params) => {
 			console.log(params)
@@ -438,7 +437,7 @@ initForm赋值
 	
 选择框组件
 	 <nz-select name="language" [nzPlaceHolder]="'默认语言'" [nzAllowClear]="true"  [(ngModel)]="searchBy.type" (ngModelChange)="search()"   [nzAllowClear]="false">
-		<nz-option *ngFor="let item of _languages" [nzLabel]="item.label" [nzValue]="item.value" [nzDisabled]="item.disabled">
+		<nz-option *ngFor="let item of _languages;let i =index" [nzLabel]="item.label" [nzValue]="item.value" [nzDisabled]="item.disabled">
 		</nz-option>
 	</nz-select>
 	
