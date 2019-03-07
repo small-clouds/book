@@ -81,7 +81,7 @@ var demo05 = {
         { url: "detail.html?data/doc/article/ClassicalLiterture.js&01", context: "古典文学" },
         { url: "detail.html?data/doc/article/EnglishSignature.js&01", context: "英文签名" },
         { url: "detail.html?data/doc/article/ChineseSignature.js&01", context: "中文签名" },
-
+        { url: "detail.html?data/doc/article/EnglishRoots.js&01", context: "英语词根" },
     ]
 }
 //css学习目录
