@@ -344,6 +344,22 @@ initForm赋值
                 );
               }
             });
+			
+组织名称按照规则显示全程
+			 pressPaths(namePath) {
+    if (namePath) {
+      let name = namePath.split(',')
+      if (name.length > 2) {
+        name.splice(0, 2)
+        if (name.length > 1) {
+          name.splice(1)
+        }
+      } else {
+        name.splice(0, 1)
+      }
+      return name.join(' / ');
+    }
+  }
  */
  ***************************   html     ********************************
  /*
