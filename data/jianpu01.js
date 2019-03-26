@@ -139,6 +139,7 @@ var demo01 = {
             { context: '<a href="' + urlposition + '你的眼神.jpg">你的眼神</a>' },
             { context: '<a href="' + urlposition + '你的样子.jpg">你的样子</a>' },
             { context: '<a href="' + urlposition + '女人花.jpg">女人花</a>' },
+            { context: '<a href="' + urlposition + '男儿当自强.jpg">男儿当自强</a>' },
         ]
     }, {
         title: "P开头的简谱",

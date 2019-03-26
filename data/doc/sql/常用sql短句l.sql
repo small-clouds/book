@@ -290,6 +290,7 @@ jpa继承
 		
 js方法 --移除数组元素
 		this.leftData.splice(index,1);     //index 为索引
+		this.leftData.splice(5,0，{});   //指定位置添加一个对象
 		
 验证组件		
 		name: [m.name, [Validators.required, Validators.maxLength(20)]],
