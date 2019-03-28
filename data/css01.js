@@ -72,10 +72,16 @@ var demo02 = {
     },]
 }
 
-//强制换行
 /***
+ //强制换行
  word-break:break-all; 
 word-wrap:break-word; 
+
+
+//溢出省略号
+    overflow:hidden;
+    text-overflow:ellipsis;
+    white-space:nowrap
  */
 
 data = [demo01, demo02]
