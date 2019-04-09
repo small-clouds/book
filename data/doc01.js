@@ -43,8 +43,9 @@ var demo01 = {
             { context: ' systemctl 命令 详解 systemctl stop/start docker' },
             { context: 'ps/find详解 ps -A/ef | grep nginx  / find /[filename] -name "*searchName*" ' },
             { context: '忘记root密码  https://blog.csdn.net/weixin_37909391/article/details/80691601' },
-            {context:"su: Authentication failure问题 因为没有设置过密码 sudo passwd root"},
+            { context:"su: Authentication failure问题 因为没有设置过密码 sudo passwd root"},
             { context: '返回上一次所在目录 -- cd - ' },
+            { context: '查看文件所占大小  当前目录 下的一级目录 --  du -h -d 1  ' },
             
             /**
              * .tar 解包 tar xvf filename.tar
