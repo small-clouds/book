@@ -14,7 +14,7 @@ var demo = {
             { context: "" },
             { context: "" },
             { context: "" },
-            { context: "The simples and most effective way for creation is to observe people and matters around you " },
+            { context: "The simples and most effective way for creation is to observe people and matters around you " }, //2019.0404
             { context: "创造的最简单和最有效的方式是观察周围的人和事物" },
             { context: "You must not let anyone define your limits because of where you come from. Your only limit is your soul" },
             { context: "不要让别人以出身判断你的能力。唯一限制你的只有你的内心." },

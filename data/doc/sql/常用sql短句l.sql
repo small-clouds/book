@@ -279,8 +279,9 @@ jpa继承
 		let params= {
 		  ...this.searchBy,
 		  page: page ? page.number : 0,
-		 size: page ? page.size : '10',
-		   params['sort'] = typeof page.sort === 'string' ? page.sort : ''; 
+		  size: page ? page.size : '10',
+		  params['sort'] = typeof page.sort === 'string' ? page.sort : ''; 
+		  sort:["tlastModifiedDate,DESC","usergroupId,ASC"]   // 多字段排序  
 		}
 		
 		let param = FormDataUtil.searchParamFilter(params); // 过滤为空数据
