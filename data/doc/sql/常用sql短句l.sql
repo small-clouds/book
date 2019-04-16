@@ -170,6 +170,8 @@ controller modelMapper静态
 	
 返回实体
 	return ModelMapperUtils.map(knowledge2, KnowledgeDto.class);
+	
+
 注解
 	@RestController
 	@RequestMapping(value = "/api/postPlanAction")
@@ -190,6 +192,42 @@ controller modelMapper静态
 		and o.user_group_id in
 		(<include refid="permission.userDataRuleSubQuery"></include> )
 	</if>-->
+	
+	
+文件导出
+	@Autowired
+	ApplicationProperties applicationProperties;
+	
+	@GetMapping(value = "download")
+	public void downloadExcel(@PageableDefault Pageable pageable, ExamStatusCommonParams examStatusCommonParams,
+			HttpServletRequest request, HttpServletResponse response) {
+		String fileName;
+		pageable = null;
+		if(examStatusCommonParams.getExcelTpye().equals("status")){
+			fileName = "考试情况统计-" + DateTimeUtils.getCurrentDate().getTime() + ".xlsx";
+		}else if(examStatusCommonParams.getExcelTpye().equals("examDetail")){
+			fileName = "考试详情统计-" + DateTimeUtils.getCurrentDate().getTime() + ".xlsx";
+		}else if(examStatusCommonParams.getExcelTpye().equals("question")){
+			fileName = "试题答题情况统计-" + DateTimeUtils.getCurrentDate().getTime() + ".xlsx";
+		}else{
+			fileName = "考试成绩统计-" + DateTimeUtils.getCurrentDate().getTime() + ".xlsx";
+		}
+		
+		String path = applicationProperties.getTemporaryDir() + "/" + fileName;
+		try {
+			examStatusService.createExcelFile(examStatusCommonParams, pageable, path);
+			FileUtil.downLoadFile(request, response, path, fileName);
+
+		} catch (IOException e) {
+			logger.error(e.getMessage(), e);
+			throw new BusinessException("操作文件出现错误，请尝试重新执行导出");
+		} catch (Exception e) {
+			logger.error(e.getMessage(), e);
+			throw new BusinessException(e.getMessage());
+		} finally {
+			FileUtils.deleteQuietly(new File(path));
+		}
+	}
 	
 */
 **************************  Service   ***********************************

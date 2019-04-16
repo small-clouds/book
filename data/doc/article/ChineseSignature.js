@@ -6,6 +6,13 @@ var demo = {
         data: [
             { context: "机遇只垂青于那些追求她的人 Opportunity favors only those who pursue her." },
             { context: "盖世人读书，第一要有志，第二要有识，第三要有恒。有志则不甘为下流；有识则知学问无尽，不敢以一得自足，如河伯之观海，如井蛙之窥天，皆无识者也；有恒则断无不成之事。" },
+            { context: "扬在脸上的自信、长在心里的善良、融进血液的骨气、刻在生命里的坚强！" },
+            { context: "" },
+            { context: "" },
+            { context: "" },
+            { context: "" },
+            { context: "" },
+            { context: "" },
             { context: "" },
             { context: "" },
             { context: "" },
