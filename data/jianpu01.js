@@ -303,6 +303,7 @@ var demo01 = {
             { context: '<a href="' + urlposition + '纵横江湖.jpg">纵横江湖</a>' },
             { context: '<a href="' + urlposition + '最美的情缘.jpg">最美的情缘</a>' },
             { context: '<a href="' + urlposition + '英雄赞歌.jpg">英雄赞歌</a>' },
+            { context: '<a href="' + urlposition + '最远的你是我最近的爱.jpg">最远的你是我最近的爱</a>' },
         ]
     }, {
         title: "其他",
