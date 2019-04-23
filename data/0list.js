@@ -77,6 +77,7 @@ var demo05 = {
         { url: "detail.html?data/doc/article/ShiJi.js&01", context: "史记部分" },
         { url: "detail.html?data/doc/article/ContemporaryLiterture.js&01", context: "现代文章" },
         { url: "detail.html?data/doc/article/SunZiBingFa.js&01", context: "孙子兵法全集" },
+        { url: "detail.html?data/doc/article/SanShiLiuJi.js&01", context: "三十六计" },
         { url: "detail.html?data/doc/article/DongZhouLieGuoZhi.js&01", context: "东周列国志部分" },
         { url: "detail.html?data/doc/article/ZiZhiTongJian.js&01", context: "资治通鉴" },
         { url: "detail.html?data/doc/article/ClassicalLiterture.js&01", context: "古典文学" },
