@@ -36,10 +36,8 @@
    function returnData(obj){
         var data={};
         for(var key  in obj){
-            if(obj[key] instanceof Array ){
-                // data.key = []
+            if(obj[key] instanceof Array ){         
                 for(var i=0;i<obj[key].length;i++ ){
-                    // data.key[i]={}
                     for(var k  in obj[key][i]){
                         var keyn = key+"["+i+"]."+k;
                         data[keyn] = obj[key][i][k]
@@ -50,7 +48,6 @@
             }
 
         }
-        console.log(data)
         return data;
     }
 
