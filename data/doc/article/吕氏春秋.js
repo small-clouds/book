@@ -18,4 +18,4 @@ let demo = {
         ]
     },]
 }
-data =[demo]
+data = [demo]
