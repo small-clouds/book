@@ -87,6 +87,7 @@ let demo = {
     },]
 }
 
+data=[demo];
 
 
 
