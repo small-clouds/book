@@ -6,6 +6,11 @@
 	, @RequestParam(value = "length", defaultValue = AppConstants.PAGE_SIZE) int length
 	
 	PageHelper.startPage(start / length + 1 , length);
+	
+用户权限
+	 and ia.AUDIT_ROLE in (
+              select AUDIT_ROLE from base_user_audit_role where USER_ID=#{userId}
+            )
 */
 
 
@@ -25,6 +30,16 @@
 	data-rule-number="true" data-msg-number="请填写数字!" 
 	data-rule-min="0" data-msg-min="不能小于0!" 
 	data-rule-rangelength="[8,50]" data-msg-rangelength="新密码长度必须介于8和50之间"
+	
+	data-rule-number="true" data-msg-number="请填写数字!"
+	data-rule-min="0" data-msg-min="不能小于0!"
+
+返回按钮
+	<button type="button" class="btn btn-danger btn-sm" data-dismiss="modal" id="btnBack"><i class="fa fa-reply"></i> 返回</button>
+	//返回
+	$("#btnBack").click(function() {
+		history.go(-1);
+	});
 */
 
 
@@ -49,5 +64,5 @@ ajax提交
 		}
 	})
 	
-	
+
 */
