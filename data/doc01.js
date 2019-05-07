@@ -176,6 +176,8 @@ var demo01 = {
             { context: '回退版本 ---   git reset --hard HEAD^ ' },
             { context: '合并dev到当前分支上 git merge dev' },
             { context: '查看日志 git log --author="<log出来的author 复制 >"' },
+            { context: '443错误 由于设置了代理 git config --global [--unset] http.proxy' },
+            
         ]
     }, {}, //  ctrl + k      ctrl + 0 ； 编辑器 vscode 折叠代码
     {
