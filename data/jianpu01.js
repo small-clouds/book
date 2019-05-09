@@ -192,6 +192,8 @@ var demo01 = {
             { context: '<a href="' + urlposition + '顺流逆流.jpg">顺流逆流</a>' },
             { context: '<a href="' + urlposition + '盛夏的果实.jpg">盛夏的果实</a>' },
             { context: '<a href="' + urlposition + '似是故人来.jpg">似是故人来</a>' },
+            { context: '<a href="' + urlposition + '手纸～拝启1.jpg">手纸～拝启 十五の君</a>' },
+            { context: '<a href="' + urlposition + '手纸～拝启2.jpg">手纸～拝启 十五の君</a>' },
         ]
     }, {
         title: "T开头的简谱",
