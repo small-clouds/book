@@ -184,6 +184,41 @@ var demo = {
             { context: "" },
             { context: "" },
         ]
-    }]
-}
+    }, {
+        title: "错误 - 郑愁予",
+        name:"错误-郑愁予",
+        data: [
+            { context: "我打江南走过" },
+            { context: "那等在季节里的容颜如莲花的开落" },
+            { context: "东风不来，三月的柳絮不飞" },
+            { context: "你的心如小小寂寞的城" },
+            { context: "恰若青石的街道向晚" },
+            { context: "跫音不响，三月的春帷不揭" },
+            { context: "你的心是小小的窗扉紧掩" },
+            { context: "我达达的马蹄是美丽的错误" },
+            { context: "我不是归人，是个过客……" },
+            { context: "" },
+            { context: "" },]
+    }, {
+        title: "面朝大海，春暖花开 - 海子",
+        name:"面朝大海，春暖花开- 海子",
+        data: [
+            { context: "从明天起，做一个幸福的人" },
+            { context: "喂马，劈柴，周游世界" },
+            { context: "从明天起，关心粮食和蔬菜" },
+            { context: "我有一所房子，面朝大海，春暖花开" },
+            { context: "从明天起，和每一个亲人通信" },
+            { context: "告诉他们我的幸福" },
+            { context: "那幸福的闪电告诉我的" },
+            { context: "我将告诉每一个人" },
+            { context: "给每一条河每一座山取一个温暖的名字" },
+            { context: "陌生人，我也为你祝福" },
+            { context: "愿你有一个灿烂的前程" },
+            { context: "愿你有情人终成眷属" },
+            { context: "愿你在尘世获得幸福" },
+            { context: "我只愿面朝大海，春暖花开" },
+            { context: "" },
+            { context: "" },]
+    }
+    ]}
 data = [demo]
