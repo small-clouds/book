@@ -11,6 +11,42 @@
 	 and ia.AUDIT_ROLE in (
               select AUDIT_ROLE from base_user_audit_role where USER_ID=#{userId}
             )
+			
+list 判空	
+	<if test="list.size() > 0">
+	  _claimreview.id in
+	  <foreach item="item" index="index" collection="list" open="(" separator="," close=")">  
+		#{item}
+	  </foreach>
+	</if>
+ 
+BigDecimal比较大小
+		BigDecimal a = new BigDecimal (101);
+		BigDecimal b = new BigDecimal (111);
+		 
+		//使用compareTo方法比较
+		//注意：a、b均不能为null，否则会报空指针
+
+		if(a.compareTo(b) == -1){
+			System.out.println("a小于b");
+		}
+		 
+		if(a.compareTo(b) == 0){
+			System.out.println("a等于b");
+		}
+		 
+		if(a.compareTo(b) == 1){
+			System.out.println("a大于b");
+		}
+		 
+		if(a.compareTo(b) > -1){
+			System.out.println("a大于等于b");
+		}
+		 
+		if(a.compareTo(b) < 1){
+			System.out.println("a小于等于b");
+		}
+
 */
 
 
