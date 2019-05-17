@@ -9,6 +9,7 @@ var demo01 = {
             { context: '<a href="' + urlposition + '爱江山更爱美人.jpg">爱江山更爱美人</a>' },
             { context: '<a href="' + urlposition + '敖包相会.jpg">敖包相会</a>' },
             { context: '<a href="' + urlposition + '爱不释手.jpg">爱不释手</a>' },
+            { context: '<a href="' + urlposition + '爱拼才会赢.jpg">爱拼才会赢</a>' },
         ]
     }, {
         title: "B开头的简谱",
@@ -194,6 +195,8 @@ var demo01 = {
             { context: '<a href="' + urlposition + '似是故人来.jpg">似是故人来</a>' },
             { context: '<a href="' + urlposition + '手纸～拝启1.jpg">手纸～拝启 十五の君</a>' },
             { context: '<a href="' + urlposition + '手纸～拝启2.jpg">手纸～拝启 十五の君</a>' },
+            { context: '<a href="' + urlposition + '世界第一等.jpg">世界第一等</a>' },
+            
         ]
     }, {
         title: "T开头的简谱",
