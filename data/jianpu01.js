@@ -283,6 +283,7 @@ var demo01 = {
             { context: '<a href="' + urlposition + '遇上你是我的缘.jpg">遇上你是我的缘</a>' },
             { context: '<a href="' + urlposition + '沂蒙山小调.jpg">沂蒙山小调</a>' },
             { context: '<a href="' + urlposition + '月光下的凤尾竹.jpg">月光下的凤尾竹</a>' },
+            { context: '<a href="' + urlposition + '渔舟唱晚.jpg">渔舟唱晚（天气预报）</a>' },
         ]
     }, {
         title: "Z开头的简谱",
