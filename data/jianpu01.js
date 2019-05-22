@@ -54,6 +54,7 @@ var demo01 = {
             { context: '<a href="' + urlposition + '芙蓉愿.jpg">芙蓉愿</a>' },
             { context: '<a href="' + urlposition + '风的季节.jpg">风的季节</a>' },
             { context: '<a href="' + urlposition + '风筝误.jpg">风筝误</a>' },
+            { context: '<a href="' + urlposition + '风居住的街道.jpg">风居住的街道</a>' },
         ]
     }, {
         title: "G开头的简谱",
@@ -197,7 +198,7 @@ var demo01 = {
             { context: '<a href="' + urlposition + '手纸～拝启1.jpg">手纸～拝启 十五の君</a>' },
             { context: '<a href="' + urlposition + '手纸～拝启2.jpg">手纸～拝启 十五の君</a>' },
             { context: '<a href="' + urlposition + '世界第一等.jpg">世界第一等</a>' },
-            
+            { context: '<a href="' + urlposition + '世间始终你好.jpg">世间始终你好</a>' },
         ]
     }, {
         title: "T开头的简谱",
