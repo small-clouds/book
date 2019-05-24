@@ -263,6 +263,7 @@ var demo01 = {
             { context: '<a href="' + urlposition + '相思西游记后传.jpg">相思--西游记后传</a>' },
             { context: '<a href="' + urlposition + '想起.jpg">想起</a>' },
             { context: '<a href="' + urlposition + '夕阳之歌.jpg">夕阳之歌</a>' },
+            { context: '<a href="' + urlposition + '小看戏.jpg">小看戏</a>' },
         ]
     },
     {
