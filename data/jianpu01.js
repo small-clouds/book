@@ -134,6 +134,7 @@ var demo01 = {
             { context: '<a href="' + urlposition + '梦中的蝴蝶.jpg">梦中的蝴蝶</a>' },
             { context: '<a href="' + urlposition + '茉莉花.jpg">茉莉花</a>' },
             { context: '<a href="' + urlposition + '明月几时有.jpg">明月几时有</a>' },
+            { context: '<a href="' + urlposition + '美丽的草原我的家.jpg">美丽的草原我的家</a>' },
         ]
     }, {
         title: "N开头的简谱",
