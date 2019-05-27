@@ -19,6 +19,7 @@ var demo01 = {
             { context: '<a href="' + urlposition + '白狐.jpg">白狐</a>' },
             { context: '<a href="' + urlposition + '百姓心中自有你.jpg">百姓心中自有你</a>' },
             { context: '<a href="' + urlposition + '背包.jpg">背包</a>' },
+            { context: '<a href="' + urlposition + '不装饰你的梦.jpg">不装饰你的梦</a>' },
         ]
     }, {
         title: "C开头的简谱",
