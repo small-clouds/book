@@ -99,6 +99,11 @@ ajax提交
 			$.modal.msgError("提交失败！");
 		}
 	})
-	
+确认数量验证
+	 var inputList = $("input.resnumber");
+        if(inputList==null || inputList.length==0){
+            $.modal.msgError("请至少填写一条出库确认单明细信息!") ;
+            return ;
+        }	
 
 */
