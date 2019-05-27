@@ -134,6 +134,7 @@ var demo01 = {
             { context: '<a href="' + urlposition + '梦中的蝴蝶.jpg">梦中的蝴蝶</a>' },
             { context: '<a href="' + urlposition + '茉莉花.jpg">茉莉花</a>' },
             { context: '<a href="' + urlposition + '明月几时有.jpg">明月几时有</a>' },
+            { context: '<a href="' + urlposition + '美丽的草原我的家.jpg">美丽的草原我的家</a>' },
         ]
     }, {
         title: "N开头的简谱",
@@ -290,6 +291,7 @@ var demo01 = {
             { context: '<a href="' + urlposition + '沂蒙山小调.jpg">沂蒙山小调</a>' },
             { context: '<a href="' + urlposition + '月光下的凤尾竹.jpg">月光下的凤尾竹</a>' },
             { context: '<a href="' + urlposition + '渔舟唱晚.jpg">渔舟唱晚（天气预报）</a>' },
+            { context: '<a href="' + urlposition + '扬鞭催马运粮忙.jpg">扬鞭催马运粮忙</a>' },
         ]
     }, {
         title: "Z开头的简谱",
