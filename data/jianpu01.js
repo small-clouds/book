@@ -21,6 +21,7 @@ var demo01 = {
             { context: '<a href="' + urlposition + '背包.jpg">背包</a>' },
             { context: '<a href="' + urlposition + '不装饰你的梦.jpg">不装饰你的梦</a>' },
             { context: '<a href="' + urlposition + '笔记.jpg">笔记</a>' },
+            { context: '<a href="' + urlposition + '半壶纱.jpg">半壶纱</a>' },
         ]
     }, {
         title: "C开头的简谱",
@@ -172,6 +173,7 @@ var demo01 = {
             { context: '<a href="' + urlposition + '千年风雅.jpg">千年风雅</a>' },
             { context: '<a href="' + urlposition + '千本樱.jpg">千本樱</a>' },
             { context: '<a href="' + urlposition + '清明上河图.jpg">清明上河图</a>' },
+            { context: '<a href="' + urlposition + '祈祷.jpg">祈祷</a>' },
         ]
     }, {
         title: "R开头的简谱",
@@ -267,6 +269,7 @@ var demo01 = {
             { context: '<a href="' + urlposition + '想起.jpg">想起</a>' },
             { context: '<a href="' + urlposition + '夕阳之歌.jpg">夕阳之歌</a>' },
             { context: '<a href="' + urlposition + '小看戏.jpg">小看戏</a>' },
+            { context: '<a href="' + urlposition + '心愿.jpg">心愿</a>' },
         ]
     },
     {
