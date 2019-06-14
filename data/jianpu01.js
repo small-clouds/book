@@ -22,6 +22,7 @@ var demo01 = {
             { context: '<a href="' + urlposition + '不装饰你的梦.jpg">不装饰你的梦</a>' },
             { context: '<a href="' + urlposition + '笔记.jpg">笔记</a>' },
             { context: '<a href="' + urlposition + '半壶纱.jpg">半壶纱</a>' },
+            { context: '<a href="' + urlposition + '不再犹豫.jpg">不再犹豫</a>' },
         ]
     }, {
         title: "C开头的简谱",
@@ -79,6 +80,7 @@ var demo01 = {
             { context: '<a href="' + urlposition + '海浪.jpg">海浪</a>' },
             { context: '<a href="' + urlposition + '红颜旧.jpg">红颜旧</a>' },
             { context: '<a href="' + urlposition + '鸿雁.jpg">鸿雁</a>' },
+            { context: '<a href="' + urlposition + '好汉歌.jpg">好汉歌</a>' },
         ]
     }, {
         title: "J开头的简谱",
@@ -117,6 +119,7 @@ var demo01 = {
             { context: '<a href="' + urlposition + '来生愿做一朵莲.jpg">来生愿做一朵莲</a>' },
             { context: '<a href="' + urlposition + '恋曲1990.jpg">恋曲1990</a>' },
             { context: '<a href="' + urlposition + '恋人心.jpg">恋人心</a>' },
+            { context: '<a href="' + urlposition + '梁祝.jpg">梁祝</a>' },
         ]
     }, {
         title: "M开头的简谱",
@@ -325,6 +328,7 @@ var demo01 = {
             { context: '<a href="' + urlposition + '英雄赞歌.jpg">英雄赞歌</a>' },
             { context: '<a href="' + urlposition + '最远的你是我最近的爱.jpg">最远的你是我最近的爱</a>' },
             { context: '<a href="' + urlposition + '张三的歌.jpg">张三的歌</a>' },
+            { context: '<a href="' + urlposition + '再回首.jpg">再回首</a>' },
         ]
     }, {
         title: "其他",
