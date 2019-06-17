@@ -120,6 +120,7 @@ var demo01 = {
             { context: '<a href="' + urlposition + '恋曲1990.jpg">恋曲1990</a>' },
             { context: '<a href="' + urlposition + '恋人心.jpg">恋人心</a>' },
             { context: '<a href="' + urlposition + '梁祝.jpg">梁祝</a>' },
+            { context: '<a href="' + urlposition + '礼仪之邦.jpg">礼仪之邦</a>' },
         ]
     }, {
         title: "M开头的简谱",
