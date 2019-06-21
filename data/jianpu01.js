@@ -332,6 +332,7 @@ var demo01 = {
             { context: '<a href="' + urlposition + '最远的你是我最近的爱.jpg">最远的你是我最近的爱</a>' },
             { context: '<a href="' + urlposition + '张三的歌.jpg">张三的歌</a>' },
             { context: '<a href="' + urlposition + '再回首.jpg">再回首</a>' },
+            { context: '<a href="' + urlposition + '最浪漫的事.jpg">最浪漫的事</a>' },
         ]
     }, {
         title: "其他",
