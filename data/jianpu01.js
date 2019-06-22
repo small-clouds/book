@@ -50,6 +50,7 @@ var demo01 = {
             { context: '<a href="' + urlposition + '大约在冬季.jpg">大约在冬季</a>' },
             { context: '<a href="' + urlposition + '东风志.jpg">东风志</a>' },
             { context: '<a href="' + urlposition + '刀剑如梦.jpg">刀剑如梦</a>' },
+            { context: '<a href="' + urlposition + '杜十娘.jpg">杜十娘</a>' },
         ]
     }, {
         title: "F开头的简谱",
