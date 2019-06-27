@@ -99,6 +99,7 @@ var demo01 = {
             { context: '<a href="' + urlposition + '江南梦.jpg">江南梦</a>' },
             { context: '<a href="' + urlposition + '精忠报国.jpg">精忠报国</a>' },
             { context: '<a href="' + urlposition + '金蛇狂舞.jpg">金蛇狂舞</a>' },
+            { context: '<a href="' + urlposition + '九九艳阳天.jpg">九九艳阳天</a>' },
         ]
     }, {
         title: "K开头的简谱",
