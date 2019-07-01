@@ -212,6 +212,7 @@ var demo01 = {
             { context: '<a href="' + urlposition + '手纸～拝启2.jpg">手纸～拝启 十五の君</a>' },
             { context: '<a href="' + urlposition + '世界第一等.jpg">世界第一等</a>' },
             { context: '<a href="' + urlposition + '世间始终你好.jpg">世间始终你好</a>' },
+            { context: '<a href="' + urlposition + '十送红军.jpg">十送红军</a>' },
         ]
     }, {
         title: "T开头的简谱",
@@ -248,6 +249,7 @@ var demo01 = {
             { context: '<a href="' + urlposition + '我和我的祖国.jpg">我和我的祖国</a>' },
             { context: '<a href="' + urlposition + '我心永恒.jpg">我心永恒</a>' },
             { context: '<a href="' + urlposition + '晚秋.jpg">晚秋</a>' },
+            { context: '<a href="' + urlposition + '我的未来不是梦.jpg">我的未来不是梦</a>' },
         ]
     }, {
         title: "X开头的简谱",
