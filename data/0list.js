@@ -77,16 +77,20 @@ var demo05 = {
         { url: "detail.html?data/doc/article/ShiJi.js&01", context: "史记部分" },
         { url: "detail.html?data/doc/article/ContemporaryLiterture.js&01", context: "现代文章" },
         { url: "detail.html?data/doc/article/SunZiBingFa.js&01", context: "孙子兵法全集" },
+        { url: "detail.html?data/doc/article/SanShiLiuJi.js&01", context: "三十六计" },
         { url: "detail.html?data/doc/article/DongZhouLieGuoZhi.js&01", context: "东周列国志部分" },
         { url: "detail.html?data/doc/article/ZiZhiTongJian.js&01", context: "资治通鉴" },
         { url: "detail.html?data/doc/article/ClassicalLiterture.js&01", context: "古典文学" },
         { url: "detail.html?data/doc/article/EnglishSignature.js&01", context: "英文签名" },
         { url: "detail.html?data/doc/article/ChineseSignature.js&01", context: "中文签名" },
         { url: "detail.html?data/doc/article/EnglishRoots.js&01", context: "英语词根" },
+        { url: "detail.html?data/doc/article/春秋战国真有趣.js&01", context: "春秋战国真有趣" },
+        { url: "detail.html?data/doc/article/吕氏春秋.js&01", context: "吕氏春秋" },
+        { url: "detail.html?data/doc/article/乌合之众.js&01", context: "乌合之众" },
     ]
 }
 //css学习目录
-var demo06={
+var demo06 = {
     title: "css学习目录",
     name: "css学习目录",
     data: [
@@ -95,7 +99,7 @@ var demo06={
     ]
 }
 //php目录
-var demo07={
+var demo07 = {
     title: "php目录",
     name: "php目录",
     data: [
@@ -120,11 +124,11 @@ var demo07={
     ]
 }
 // 未用
-var demo08={
+var demo08 = {
     title: "简谱",
     name: "简谱目录",
     data: [
-         { url: "detail.html?data/jianpu01.js&01", context: "A" },
+        { url: "detail.html?data/jianpu01.js&01", context: "A" },
     ],
 }
-data = [demo01, demo02, demo03, demo04, demo05,demo06,demo07]
+data = [demo01, demo02, demo03, demo04, demo05, demo06, demo07]
