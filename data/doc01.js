@@ -175,9 +175,15 @@ var demo01 = {
         data: [
             { context: '回退版本 ---   git reset --hard HEAD^ ' },
             { context: '合并dev到当前分支上 git merge dev' },
-            { context: '查看日志 git log --author="<log出来的author 复制 >"' },
             { context: '443错误 由于设置了代理 git config --global [--unset] http.proxy' },
-            
+            { context: '查看日志 git log --author="<log出来的author 复制 >"' },
+            { context: "查看日志 只显示改动文件 git log --name-status"},
+            { context: "查看日志 绘制线索图 git log --graph"},
+            { context: "查看日志 通过用户搜索 git log --author yourname"},
+            { context: "查看日志 通过关键字搜索 git log --grep keywords"},
+            { context: "查看日志 通过文件名搜索 git log -p -- RELEASE-NOTE.md   【--后面跟的是完整的文件名的相对地址】 "},
+            { context: "通过组合使用--auther、--grep、-p这几个参数，几乎能满足大部分检索需求了。"},
+            { context: ""},
         ]
     }, {}, //  ctrl + k      ctrl + 0 ； 编辑器 vscode 折叠代码
     {

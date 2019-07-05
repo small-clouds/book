@@ -561,6 +561,9 @@ class 名字
 /*
 	(@RequestBody List<Long> ids)      				ts    return this.http.post(`${this.url}/approval/isRiding`, ids)
 	(@RequestParam(name="ids") List<Long> ids)		ts	  return this.http.delete(`${this.url}/del/approval`,  { params: { ids: ids } })
+	
+	
+	git log --name-status   只查看日志文件改动的命令
 */
  
  
@@ -594,7 +597,16 @@ class 名字
 	******最重要的  重新引入项目 删除 workspace
 	
 创建项目包
-	不再java resouce 中    gradle cleanEcl ecl  不行的话 重启 eclipse
+	不再java resouce 中    gradle cleanEcl ecl  不行的话 重启 eclipse‘’‘
+	
+	
+启动项目 
+	安装 springboot 安装gradleship
+	net.parim.spark.SparkApplication
+	
+前端项目启动   有点坑啊
+	console-web 需要 Angular CLI version 1.1.1.  npm install -g @angular/cli@1.1.1    npm start
+	spark-app  需要 Angular CLI version 6.0.8.  ng serve learner-web 
  */
  
  
@@ -608,6 +620,7 @@ gradle clean :build -Denv=prod
 
 后台服务器启动命令
 启动命令：进入 ~/docker/unicom-dev 后执行 docker-compose restart spark
+
 
 
 脚本.bat
