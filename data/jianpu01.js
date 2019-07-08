@@ -72,6 +72,7 @@ var demo01 = {
             { context: '<a href="' + urlposition + '滚滚长江东逝水.jpg">滚滚长江东逝水</a>' },
             { context: '<a href="' + urlposition + '孤星独吟.jpg">孤星独吟</a>' },
             { context: '<a href="' + urlposition + '歌声与微笑.jpg">歌声与微笑</a>' },
+            { context: '<a href="' + urlposition + '滚滚红尘.jpg">滚滚红尘</a>' },
         ]
     }, {
         title: "H开头的简谱",
