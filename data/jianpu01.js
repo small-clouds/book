@@ -219,6 +219,7 @@ var demo01 = {
             { context: '<a href="' + urlposition + '世界第一等.jpg">世界第一等</a>' },
             { context: '<a href="' + urlposition + '世间始终你好.jpg">世间始终你好</a>' },
             { context: '<a href="' + urlposition + '十送红军.jpg">十送红军</a>' },
+            { context: '<a href="' + urlposition + '杀破狼.jpg">杀破狼</a>' },
         ]
     }, {
         title: "T开头的简谱",
