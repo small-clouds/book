@@ -348,6 +348,7 @@ var demo01 = {
             { context: '<a href="' + urlposition + '最浪漫的事.jpg">最浪漫的事</a>' },
             { context: '<a href="' + urlposition + '知心爱人.jpg">知心爱人</a>' },
             { context: '<a href="' + urlposition + '祝你平安.jpg">祝你平安</a>' },
+            { context: '<a href="' + urlposition + '最初的梦想.jpg">最初的梦想</a>' },
         ]
     }, {
         title: "其他",
