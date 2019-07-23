@@ -257,6 +257,7 @@ var demo01 = {
             { context: '<a href="' + urlposition + '我心永恒.jpg">我心永恒</a>' },
             { context: '<a href="' + urlposition + '晚秋.jpg">晚秋</a>' },
             { context: '<a href="' + urlposition + '我的未来不是梦.jpg">我的未来不是梦</a>' },
+            { context: '<a href="' + urlposition + '雾里看花.jpg">雾里看花</a>' },
         ]
     }, {
         title: "X开头的简谱",
@@ -349,6 +350,7 @@ var demo01 = {
             { context: '<a href="' + urlposition + '知心爱人.jpg">知心爱人</a>' },
             { context: '<a href="' + urlposition + '祝你平安.jpg">祝你平安</a>' },
             { context: '<a href="' + urlposition + '最初的梦想.jpg">最初的梦想</a>' },
+            { context: '<a href="' + urlposition + '真心真意过一生.jpg">真心真意过一生</a>' },
         ]
     }, {
         title: "其他",
