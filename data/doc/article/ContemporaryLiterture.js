@@ -269,6 +269,26 @@ var demo = {
             { context: "" },
             { context: "" },
         ]
-    },
+    },{
+        title: "《夏天的太阳》 -- 海子",
+        name:"《夏天的太阳》",
+        data: [
+            { context: "夏天， 如果这条街没有鞋匠" },
+            { context: "我就打赤脚" },
+            { context: "站到太阳下看太阳" },
+            { context: "我想到在白天出生的孩子" },
+            { context: "一定是出于故意" },
+            { context: "你来人间一趟" },
+            { context: "你要看看太阳" },
+            { context: "和你的心上人" },
+            { context: "一起走在街上" },
+            { context: "了解她，也要了解太阳" },
+            { context: "（一组健康的工人，正午抽着纸烟）" },
+            { context: "夏天的太阳" },
+            { context: "太阳，当年基督入世" },
+            { context: "他也在这阳光下长大" },
+            { context: "" },
+            { context: "" },]
+    } ,
     ]}
 data = [demo]
