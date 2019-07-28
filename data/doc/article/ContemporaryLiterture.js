@@ -289,6 +289,26 @@ var demo = {
             { context: "他也在这阳光下长大" },
             { context: "" },
             { context: "" },]
-    } ,
+    } ,{
+        title: "《长相思》 -- 冷眉语",
+        name:"《长相思》 -- 特别关注8月",
+        data: [
+            { context: "我深爱这些词牌" },
+            { context: "字词间辽远的意境 ——————" },
+            { context: "孤独时自由而宽大的出口，" },
+            { context: "许多人等在哪里" },
+            { context: "过象形的灞桥" },
+            { context: "折会意的古柳" },
+            { context: "绕开现代繁华" },
+            { context: "简化成今生的弯月" },
+            { context: "爱恨交加的月亮。" },
+            { context: "我不敢想你" },
+            { context: "一想，窗棂就将你切割" },
+            { context: "一想，你就顺着苦涩的青藤瓜分了天下" },
+            { context: "那滞留在宋朝的波浪" },
+            { context: "那被键盘敲往来世的低吼" },
+            { context: "惊醒死去的人" },
+            { context: "" },]
+    }
     ]}
 data = [demo]
