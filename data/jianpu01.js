@@ -237,6 +237,7 @@ var demo01 = {
             { context: '<a href="' + urlposition + '天下第一.jpg">天下第一</a>' },
             { context: '<a href="' + urlposition + '天仙子.jpg">天仙子</a>' },
             { context: '<a href="' + urlposition + '同一首歌.jpg">同一首歌</a>' },
+            { context: '<a href="' + urlposition + '天路.jpg">天路</a>' },
         ]
     },
     {
