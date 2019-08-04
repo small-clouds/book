@@ -355,6 +355,7 @@ var demo01 = {
             { context: '<a target="_blank"   href="' + urlposition + '祝你平安.jpg">祝你平安</a>' },
             { context: '<a target="_blank"   href="' + urlposition + '最初的梦想.jpg">最初的梦想</a>' },
             { context: '<a target="_blank"   href="' + urlposition + '真心真意过一生.jpg">真心真意过一生</a>' },
+            { context: '<a target="_blank"   href="' + urlposition + '壮志在我胸.jpg">壮志在我胸</a>' },
         ]
     }, {
         title: "其他",
