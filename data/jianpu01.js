@@ -191,6 +191,7 @@ var demo01 = {
             { context: '<a target="_blank"   href="' + urlposition + '千本樱.jpg">千本樱</a>' },
             { context: '<a target="_blank"   href="' + urlposition + '清明上河图.jpg">清明上河图</a>' },
             { context: '<a target="_blank"   href="' + urlposition + '祈祷.jpg">祈祷</a>' },
+            { context: '<a target="_blank"   href="' + urlposition + '青花.jpg">青花</a>' },
         ]
     }, {
         title: "R开头的简谱",
