@@ -157,6 +157,7 @@ mysql 复制插入数据  平表
 	@RequestParam(name = "ids") Long[] ids   // {params:{ids:ids}}
 	@PageableDefault(size = 10, sort = "lastModifiedDate", direction = Direction.DESC)Pageable pageable
 	@CurrentUser() UserToken userToken
+	@RequestParam(name="major.id",required=false) Long majorId
 	
 返回分页
 	Page<KnowledgeReply> rePage = knowledgeReplyService.getKnowledgeReplyPage(knowledge,pageable);

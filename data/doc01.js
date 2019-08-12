@@ -185,7 +185,10 @@ var demo01 = {
             { context: "通过组合使用--auther、--grep、-p这几个参数，几乎能满足大部分检索需求了。"},
             { context: ""},
         ]
-    }, {}, //  ctrl + k      ctrl + 0 ； 编辑器 vscode 折叠代码
+    }, {title: "angular 命令集合",
+    data: [
+        { context: 'npm i @angular-devkit/schematics@0.0.45 @angular/cli --no-save   angular cli 创建文件报错' },
+    ]}, //  ctrl + k      ctrl + 0 ； 编辑器 vscode 折叠代码
     {
         title: "何谓之无名",
         data: [
@@ -199,7 +202,7 @@ var demo01 = {
             { context: '顶棱 --- RU’RURURU’R’U’R2' },
         ]
     },
-
+    // 
         /**
          * 
          * * docker 遇到的坑
