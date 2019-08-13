@@ -252,8 +252,8 @@ jpa继承
 	@Entity
 	@Table(name = "regulations")
 	@Table(name = "lrn_offering_enrollment", uniqueConstraints = {@UniqueConstraint(columnNames={"offering_id", "user_id"})})
-	@DynamicInsert
-	
+	@DynamicInsert Hibernate: insert into Cat (cat_name, id) values (?, ?)   反之 Hibernate: insert into Cat (create_time, update_time, cat_name, id) values (?, ?, ?, ?)
+	@DynamicUpdate Hibernate: update Cat set update_time=? where id=?  反之  Hibernate: update Cat set update_time=?, cat_name=? where id=?
 属性注解
 	@ColumnDefault("UNCOMPLETE")
 	@Transient
@@ -262,8 +262,8 @@ jpa继承
 	@JoinColumn(name="last_replied_by")
 	@QueryLike()
 	
-	@ManyToMany(cascade = CascadeType.PERSIST)   需要更新  具体查查吧  恨到概率在这些注解上出错
-	@ManyToOne(fetch = FetchType.LAZY)
+	@ManyToMany(cascade = CascadeType.PERSIST)   级联更新  具体查查吧  很大概率在这些注解上出错
+	@ManyToOne(fetch = FetchType.LAZY)			需要懒加载
 	
 导入注解
 	@ExcelImportConfig(startLine=4) // 实体注解
