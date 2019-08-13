@@ -261,7 +261,10 @@ jpa继承
 	@ManyToOne
 	@JoinColumn(name="last_replied_by")
 	@QueryLike()
-
+	
+	@ManyToMany(cascade = CascadeType.PERSIST)   需要更新  具体查查吧  恨到概率在这些注解上出错
+	@ManyToOne(fetch = FetchType.LAZY)
+	
 导入注解
 	@ExcelImportConfig(startLine=4) // 实体注解
 	@ExcelImportCol(nullable=false,colIndex=2)  //属性注解
