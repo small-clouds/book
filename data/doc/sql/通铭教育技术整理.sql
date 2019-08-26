@@ -545,6 +545,21 @@ nzInput
 小竖线	
 		<span nz-table-divider></span>
 	 <div class="dropdown-divider"></div>  小横线
+发布弹出
+	  <ng-template cuiColTpl="isPutout" let-row="row">
+        <div>
+            <nz-popconfirm *ngIf="row.isPutout=='1'" [nzTitle]="'确定要取消发布吗？'" (nzOnConfirm)="ifPublishExam(row,row.examId,false)">
+                <a nz-popconfirm class="text-success">已发布 </a>
+            </nz-popconfirm>
+            <nz-popconfirm *ngIf="row.isPutout=='0'" [nzTitle]="'确定要发布吗？'" (nzOnConfirm)="ifPublishExam(row,row.examId,true)">
+                    <a nz-popconfirm class="text-secondary">未发布 </a>
+            </nz-popconfirm>
+        </div>
+        <ng-template #elseBlock>
+            <a *ngIf="row.isPutout=='0'" class="text-secondary">未发布</a>
+            <a *ngIf="row.isPutout=='1'" class="text-success">已发布</a>
+        </ng-template>
+      </ng-template>
  */
  *************************      css    *****************************
  /*
