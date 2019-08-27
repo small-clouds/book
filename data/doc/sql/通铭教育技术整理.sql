@@ -337,7 +337,41 @@ js方法 --移除数组元素
 		
 验证组件		
 		name: [m.name, [Validators.required, Validators.maxLength(20)]],
+		phoneNumber: ['', [Validators.required, Validators.pattern(this.phonePattern)]],
+		endDate: [this.examDetail.endDate || '', [Validators.required, this.confirmEndDateValidator]],
 		
+		 <div nz-form-explain *ngIf="validateForm.controls.endDate.dirty&&validateForm.controls.endDate.hasError('error')">结束时间不能小于开始时间！!</div>
+		  // 时间验证方法
+		  confirmEndDateValidator = (control: FormControl): { [s: string]: boolean } => {
+			let controls = this.validateForm && this.validateForm.controls;
+			if (controls) {
+			  const startTime = moment(controls[`startDate`].value).unix();
+			  const enrollEnd = moment(controls[`enrollEnd`].value).unix();
+			  if (control.value) {
+				if (startTime > moment(control.value).unix()) {
+				  this.validateForm.get(`startDate`).setValue(null);
+				  this.message.error('结束时间不能小于开始时间！');
+				  return;
+				}
+				if (enrollEnd) {
+				  if (moment(enrollEnd).unix() > moment(control.value).unix()) {
+					if ( typeof enrollEnd == 'number') {
+					  this.validateForm.get(`enrollEnd`).setValue(null);
+					  this.message.error('报名结束时间不能大于考试截止时间');
+					  return
+					}
+				  }
+				}
+				if (controls.enrollStart) {
+				  if (moment(controls.enrollStart.value).unix() > moment(control.value).unix()) {
+					this.validateForm.get(`enrollStart`).setValue(null);
+					this.message.error('报名开始时间不能大于考试截止时间');
+					return
+				  }
+				}
+			  }
+			}
+		  }
 		 <div nz-form-control [nzValidateStatus]="getFormControl('name')" nz-col [nzSm]="14" [nzXs]="24" nzHasFeedback>
 			<nz-input [nzSize]="'large'" formControlName="name" [nzId]="'name'" [nzPlaceHolder]="'请控制字符在20个以内'"></nz-input>
 			<div nz-form-explain *ngIf="getFormControl('name').dirty&&getFormControl('name').hasError('required')">评估名称必填!</div>
