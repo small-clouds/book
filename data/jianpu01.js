@@ -92,6 +92,7 @@ var demo01 = {
             { context: '<a target="_blank"   href="' + urlposition + '好大一棵树.jpg">好大一棵树</a>' },
             { context: '<a target="_blank"   href="' + urlposition + '挥着翅膀的女孩.jpg">挥着翅膀的女孩</a>' },
             { context: '<a target="_blank"   href="' + urlposition + '红叶舞秋山.jpg">红叶舞秋山</a>' },
+            { context: '<a target="_blank"   href="' + urlposition + '红尘清歌.jpg">红尘清歌</a>' },
         ]
     }, {
         title: "J开头的简谱",

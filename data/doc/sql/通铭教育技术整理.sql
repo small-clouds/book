@@ -536,7 +536,7 @@ initForm赋值
 	</nz-select>
 	
 选择组织	
-	<spk-user-group-select (ngModelChange)="logSelectGroup($event)" formControlName="userGroup"></spk-user-group-select>
+	<spk-user-group-select (selectOk)="logSelectGroup($event)" formControlName="userGroup"></spk-user-group-select> selectOk  选中之后 change 选择前的值
 	<spk-user-group-select (ngModelChange)="logSelectGroup($event)" name="userGroup"></spk-user-group-select>
 	 <spk-user-group-select formControlName="managerGroup" mode="single" [permission]="['EXAM:PAPER:ADD']"></spk-user-group-select>
 	
