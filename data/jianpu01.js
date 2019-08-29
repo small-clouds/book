@@ -296,6 +296,7 @@ var demo01 = {
             { context: '<a target="_blank"   href="' + urlposition + '夕阳之歌.jpg">夕阳之歌</a>' },
             { context: '<a target="_blank"   href="' + urlposition + '小看戏.jpg">小看戏</a>' },
             { context: '<a target="_blank"   href="' + urlposition + '心愿.jpg">心愿</a>' },
+            { context: '<a target="_blank"   href="' + urlposition + '惜别的海岸.jpg">惜别的海岸</a>' },
         ]
     },
     {
