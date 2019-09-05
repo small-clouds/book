@@ -252,6 +252,7 @@ jpa继承
 	@Entity
 	@Table(name = "regulations")
 	@Table(name = "lrn_offering_enrollment", uniqueConstraints = {@UniqueConstraint(columnNames={"offering_id", "user_id"})})
+	@Inheritance(strategy = InheritanceType.JOINED)  //继承映射
 	@DynamicInsert Hibernate: insert into Cat (cat_name, id) values (?, ?)   反之 Hibernate: insert into Cat (create_time, update_time, cat_name, id) values (?, ?, ?, ?)
 	@DynamicUpdate Hibernate: update Cat set update_time=? where id=?  反之  Hibernate: update Cat set update_time=?, cat_name=? where id=?
 属性注解
@@ -264,6 +265,11 @@ jpa继承
 	
 	@ManyToMany(cascade = CascadeType.PERSIST)   级联更新  具体查查吧  很大概率在这些注解上出错
 	@ManyToOne(fetch = FetchType.LAZY)			需要懒加载
+	
+	@OneToMany(mappedBy="material",cascade=CascadeType.ALL,fetch=FetchType.LAZY)
+	在one-to-many注解配置： @OneToMany (mappedBy = "Articles"),mappedBy指向的是要关联的属性，而不是要关联的类，
+        如果这样配置，hibernate则会找com.wangzhe.model.Keyword类下面的Articles 属性。但实际上没有这个属性，就会报上面的异常
+   方法：指定到实际关联的属性：即：@OneToMany (mappedBy = "articles ")
 	
 导入注解
 	@ExcelImportConfig(startLine=4) // 实体注解
