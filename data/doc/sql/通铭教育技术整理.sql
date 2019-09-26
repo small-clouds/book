@@ -262,7 +262,8 @@ jpa继承
 	@ManyToOne
 	@JoinColumn(name="last_replied_by")
 	@QueryLike()
-	
+	@Lob
+	@Column(length = 500)
 	@ManyToMany(cascade = CascadeType.PERSIST)   级联更新  具体查查吧  很大概率在这些注解上出错
 	@ManyToOne(fetch = FetchType.LAZY)			需要懒加载
 	
