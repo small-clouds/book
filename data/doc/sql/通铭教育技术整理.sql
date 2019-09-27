@@ -264,7 +264,9 @@ jpa继承
 	@QueryLike()
 	@Lob
 	@Column(length = 500)
-	@ManyToMany(cascade = CascadeType.PERSIST)   级联更新  具体查查吧  很大概率在这些注解上出错
+	@ManyToMany(cascade = CascadeType.PERSIST)   级联更新  具体查查吧  很大概率在这些注
+	
+	解上出错
 	@ManyToOne(fetch = FetchType.LAZY)			需要懒加载
 	
 	@OneToMany(mappedBy="material",cascade=CascadeType.ALL,fetch=FetchType.LAZY)
