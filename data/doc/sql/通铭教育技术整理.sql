@@ -10,6 +10,13 @@ mbpigzyqbjugbaed
 	INSERT INTO Persons (LastName, Address) VALUES ('Wilson', 'Champs-Elysees')
 	DELETE FROM Person WHERE LastName = 'Wilson' 
 
+批量插入
+	insert into sys_role_privilege (privilege_id,role_id)
+	select p.id as privilege_id,
+	(select min(id) from sys_role r where r.role_type = 'SYSTRM') as role_id
+	from sys_privilege p where p.id not in 
+	(select rp.privilege_id form sys_role_privilege rp where rp.role_id = (select min(id) from sys_role r where r.role_type ='SYSTEM' ))
+	
 list数组的值用，分割成字符串
 数据横排的一种方式
 	select  group_concat(sc.name )  post from lrn_user_post lup left JOIN sys_category sc on lup.category_id  = sc.id
