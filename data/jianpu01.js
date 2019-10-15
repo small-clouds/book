@@ -157,6 +157,7 @@ var demo01 = {
             { context: '<a target="_blank"   href="' + urlposition + '明月几时有.jpg">明月几时有</a>' },
             { context: '<a target="_blank"   href="' + urlposition + '美丽的草原我的家.jpg">美丽的草原我的家</a>' },
             { context: '<a target="_blank"   href="' + urlposition + '梦驼铃.jpg">梦驼铃</a>' },
+            { context: '<a target="_blank"   href="' + urlposition + '明月天涯.jpg">明月天涯</a>' },
         ]
     }, {
         title: "N开头的简谱",
