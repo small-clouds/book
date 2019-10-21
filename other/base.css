@@ -1,7 +1,7 @@
 * { margin: 0px;padding: 0px;}
 ul,li{list-style: none;}
 a{text-decoration: none;}
-body,html{font-size:14px;height:100%; font-family: "cursive"}      
+body,html{font-size:14px;height:100%; font-family: cursive}      
 .none { display: none;}
 span.remark{color:red}
 .fl{float: left;}
