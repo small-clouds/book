@@ -268,6 +268,7 @@ var demo01 = {
             { context: '<a target="_blank"   href="' + urlposition + '晚秋.jpg">晚秋</a>' },
             { context: '<a target="_blank"   href="' + urlposition + '我的未来不是梦.jpg">我的未来不是梦</a>' },
             { context: '<a target="_blank"   href="' + urlposition + '雾里看花.jpg">雾里看花</a>' },
+            { context: '<a target="_blank"   href="' + urlposition + '舞女.jpg">舞女</a>' },
         ]
     }, {
         title: "X开头的简谱",
@@ -300,6 +301,7 @@ var demo01 = {
             { context: '<a target="_blank"   href="' + urlposition + '小看戏.jpg">小看戏</a>' },
             { context: '<a target="_blank"   href="' + urlposition + '心愿.jpg">心愿</a>' },
             { context: '<a target="_blank"   href="' + urlposition + '惜别的海岸.jpg">惜别的海岸</a>' },
+            { context: '<a target="_blank"   href="' + urlposition + '雪千寻.jpg">雪千寻</a>' },
         ]
     },
     {
