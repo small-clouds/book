@@ -112,6 +112,7 @@ var demo01 = {
             { context: '<a target="_blank"   href="' + urlposition + '金蛇狂舞.jpg">金蛇狂舞</a>' },
             { context: '<a target="_blank"   href="' + urlposition + '九九艳阳天.jpg">九九艳阳天</a>' },
             { context: '<a target="_blank"   href="' + urlposition + '剑啸江湖.jpg">剑啸江湖</a>' },
+            { context: '<a target="_blank"   href="' + urlposition + '锦鲤抄.jpg">锦鲤抄</a>' },
         ]
     }, {
         title: "K开头的简谱",
