@@ -76,6 +76,7 @@ var demo01 = {
             { context: '<a target="_blank"   href="' + urlposition + '孤星独吟.jpg">孤星独吟</a>' },
             { context: '<a target="_blank"   href="' + urlposition + '歌声与微笑.jpg">歌声与微笑</a>' },
             { context: '<a target="_blank"   href="' + urlposition + '滚滚红尘.jpg">滚滚红尘</a>' },
+            { context: '<a target="_blank"   href="' + urlposition + '光辉岁月.jpg">光辉岁月</a>' },
         ]
     }, {
         title: "H开头的简谱",
