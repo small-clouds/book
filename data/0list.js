@@ -4,7 +4,14 @@ var demo01 = {
     title: "面试题总结",
     name: "",
     data: [
-        { context: "JAVA面试题一部", url: "detail.html?data/question01.js&01" }
+        { context: "JAVA面试题一部", url: "detail.html?data/question01.js&01" },
+        { context: "JAVA面试题--spring", url: "detail.html?data/question02.js&01" },
+        { context: "JAVA面试题--java", url: "detail.html?data/question02.js&02" },
+        { context: "JAVA面试题--并发", url: "detail.html?data/question02.js&03" },
+        { context: "JAVA面试题--mybatis", url: "detail.html?data/question02.js&04" },
+        { context: "JAVA面试题--redis", url: "detail.html?data/question02.js&05" },
+        { context: "JAVA面试题--MQ", url: "detail.html?data/question02.js&06" },
+        { context: "JAVA面试题--其他", url: "detail.html?data/question02.js&07" },
     ]
 };
 //算法目录
