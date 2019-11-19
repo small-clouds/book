@@ -9,7 +9,7 @@ mbpigzyqbjugbaed
 	UPDATE Person SET FirstName = 'Fred' WHERE LastName = 'Wilson' 
 	INSERT INTO Persons (LastName, Address) VALUES ('Wilson', 'Champs-Elysees')
 	DELETE FROM Person WHERE LastName = 'Wilson' 
-	alter table lib_document change column category_id BIGINT(20) (not) null; // 更新表字段 是否为nullnull
+	alter table lib_document change column category_id category_id BIGINT(20) (not) null; // 更新表字段 是否为nullnull
 批量插入
 	insert into sys_role_privilege (privilege_id,role_id)
 	select p.id as privilege_id,
