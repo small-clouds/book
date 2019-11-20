@@ -305,6 +305,7 @@ var demo01 = {
             { context: '<a target="_blank"   href="' + urlposition + '心愿.jpg">心愿</a>' },
             { context: '<a target="_blank"   href="' + urlposition + '惜别的海岸.jpg">惜别的海岸</a>' },
             { context: '<a target="_blank"   href="' + urlposition + '雪千寻.jpg">雪千寻</a>' },
+            { context: '<a target="_blank"   href="' + urlposition + '潇湘子.jpg">潇湘子</a>' },
         ]
     },
     {
