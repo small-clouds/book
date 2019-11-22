@@ -1,5 +1,7 @@
 //A开头的简谱
 var urlposition = "data/images/jianpu/"
+
+
 var demo01 = {
     title: "千曲晓声",
     name: "A开头的简谱",
@@ -306,7 +308,6 @@ var demo01 = {
             { context: '<a target="_blank"   href="' + urlposition + '惜别的海岸.jpg">惜别的海岸</a>' },
             { context: '<a target="_blank"   href="' + urlposition + '雪千寻.jpg">雪千寻</a>' },
             { context: '<a target="_blank"   href="' + urlposition + '潇湘子.jpg">潇湘子</a>' },
-            { context: '<a target="_blank"   href="' + urlposition + '笑八仙.jpg">笑八仙</a>' },
         ]
     },
     {
