@@ -184,6 +184,24 @@ var demo01 = {
             { context: "查看日志 通过文件名搜索 git log -p -- RELEASE-NOTE.md   【--后面跟的是完整的文件名的相对地址】 "},
             { context: "通过组合使用--auther、--grep、-p这几个参数，几乎能满足大部分检索需求了。"},
             { context: ""},
+
+// 查看分支：git branch
+// 创建分支：git branch <name>
+// 切换分支：git checkout <name>
+// 在本地创建和远程分支对应的分支：git checkout -b branch-name origin/branch-name
+// 创建+切换分支：git checkout -b <name>
+// 合并某分支到当前分支：git merge <name>
+// 删除分支：git branch -d <name>
+// 把本地修改的文件添加到提交列表中：git add .
+// 提交本地更新文件：git commit -m <describe>
+// 撤销上次提交的记录：git reset --soft HEAD^
+// 撤销到某一个版本号：git reset --hard e38a8100f2ba53549e9da4bff449afaaeba01e3b
+// 从本地推送分支到服务器远端仓库(推送自己的修改到服务器)：git push origin <branch-name>
+// 从远程抓取分支：git pull
+// 查看远程库信息：git remote -v
+// 查看commit提交记录日志：git log
+
+
         ]
     }, {title: "angular 命令集合",
     data: [
