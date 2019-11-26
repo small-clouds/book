@@ -232,6 +232,7 @@ var demo01 = {
             { context: '<a target="_blank"   href="' + urlposition + '十送红军.jpg">十送红军</a>' },
             { context: '<a target="_blank"   href="' + urlposition + '杀破狼.jpg">杀破狼</a>' },
             { context: '<a target="_blank"   href="' + urlposition + '水月.jpg">水月</a>' },
+            { context: '<a target="_blank"   href="' + urlposition + '神话情话.jpg">神话情话</a>' },
         ]
     }, {
         title: "T开头的简谱",
