@@ -98,6 +98,7 @@ var demo05 = {
         { url: "detail.html?data/doc/article/道德经.js&01", context: "道德经" },
         { url: "detail.html?data/doc/article/诗经.js&01", context: "诗经" },
         { url: "detail.html?data/doc/article/周易口诀.js&01", context: "周易口诀" },
+        // { url: "detail.html?data/doc/article/梅花易数.js&01", context: "梅花易数" },
     ]
 }
 //css学习目录
