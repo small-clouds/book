@@ -65,6 +65,7 @@ var demo01 = {
             { context: '<a target="_blank"   href="' + urlposition + '风的季节.jpg">风的季节</a>' },
             { context: '<a target="_blank"   href="' + urlposition + '风筝误.jpg">风筝误</a>' },
             { context: '<a target="_blank"   href="' + urlposition + '风居住的街道.jpg">风居住的街道</a>' },
+            { context: '<a target="_blank"   href="' + urlposition + '风月令.jpg">风月令</a>' },
         ]
     }, {
         title: "G开头的简谱",
