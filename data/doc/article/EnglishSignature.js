@@ -8,11 +8,11 @@ var demo = {
             { context: "机遇只垂青远些追求她的人" },
             { context: "Life is what? Get busy living or get busy dying. -- <电影 肖申克的救赎  >" },
             { context: "生活是什么，要么忙着死，要么忙着活" },
-            { context: "" },
             { context: "Take what you need. Treasure what you take." },
             { context: "选你所需，珍你所选" },
             { context: "When the world says, \"Give up!\" Hope whispers, “Try it one more time." },
             { context: "当全世界都在说“放弃”的时候，希望却在耳边轻轻地说：“再试一次吧”！" },
+            { context: "" },
             { context: "" },
             { context: "" },
             { context: "If you've got a talent,protect it." },//20191213
