@@ -65,6 +65,7 @@ var demo01 = {
             { context: '<a target="_blank"   href="' + urlposition + '风的季节.jpg">风的季节</a>' },
             { context: '<a target="_blank"   href="' + urlposition + '风筝误.jpg">风筝误</a>' },
             { context: '<a target="_blank"   href="' + urlposition + '风居住的街道.jpg">风居住的街道</a>' },
+            { context: '<a target="_blank"   href="' + urlposition + '风月令.jpg">风月令</a>' },
         ]
     }, {
         title: "G开头的简谱",
@@ -173,6 +174,7 @@ var demo01 = {
             { context: '<a target="_blank"   href="' + urlposition + '你的样子.jpg">你的样子</a>' },
             { context: '<a target="_blank"   href="' + urlposition + '女人花.jpg">女人花</a>' },
             { context: '<a target="_blank"   href="' + urlposition + '男儿当自强.jpg">男儿当自强</a>' },
+            { context: '<a target="_blank"   href="' + urlposition + '挪威的森林.jpg">挪威的森林</a>' },
         ]
     }, {
         title: "P开头的简谱",
@@ -232,6 +234,7 @@ var demo01 = {
             { context: '<a target="_blank"   href="' + urlposition + '十送红军.jpg">十送红军</a>' },
             { context: '<a target="_blank"   href="' + urlposition + '杀破狼.jpg">杀破狼</a>' },
             { context: '<a target="_blank"   href="' + urlposition + '水月.jpg">水月</a>' },
+            { context: '<a target="_blank"   href="' + urlposition + '神话情话.jpg">神话情话</a>' },
         ]
     }, {
         title: "T开头的简谱",
