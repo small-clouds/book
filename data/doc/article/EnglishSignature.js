@@ -12,8 +12,8 @@ var demo = {
             { context: "选你所需，珍你所选" },
             { context: "When the world says, \"Give up!\" Hope whispers, “Try it one more time." },
             { context: "当全世界都在说“放弃”的时候，希望却在耳边轻轻地说：“再试一次吧”！" },
-            { context: "" },
-            { context: "" },
+            { context: "From meet to leave, I owe myself a lot, don't owe you anything.  " },
+            { context: "从相遇到离开，我欠自己良多，不欠你分毫" },
             { context: "" },
             { context: "If you've got a talent,protect it." },//20191213
             { context: "如果你有天赋，要去保护它。" },

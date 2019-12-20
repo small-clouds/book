@@ -5,49 +5,108 @@ var demo01 = {
     data: [{
         title: "1、ioc和aop的原理说一下",
         data: [
-            { context: "" },
+            { context: "IoC（Inversion of Control）就是由容器控制程序之间的关系，而非传统实现中，由程序代码直接操控。这也就是所谓“控制反转”的概念所在。控制权由应用代码中转到了外部容器，控制权的转移是所谓反转。IoC还有另外一个名字——“依赖注入（Dependency Injection）”。从名字上理解，所谓依赖注入，即组件之间的依赖关系由容器在运行期决定，形象地说，即由容器动态地将某种依赖关系注入到组件之中" },
+            { context: "IoC是近年来兴起的一种思想，不仅仅是编程思想。主要是协调各组件间相互的依赖关系，同时大大提高了组件的可移植性，组件的重用机会也变得更多。在传统的实现中，由程序内部代码来控制程序之间的关系。我们经常使用new关键字来实现两组键间关系的组合，这种实现的方式会造成组件之间耦合(一个好的设计，不但要实现代码重用，还要将组件间关系解耦)。IoC很好的解决了该问题，它将实现组件间关系从程序内部提到外部容器来管理。也就是说由容器在运行期将组件间的某种依赖关系动态的注入组件中。控制程序间关系的实现交给了外部的容器来完成。" },
+            { context: "依赖查找：容器提供回调接口和上下文环境给组件。EJB和Apache Avalon都是使用这种方式。    " },
+            { context: "依赖注入：组件不做定位查询，只是提供普通的Java方法让容器去决定依赖关系。容器全权负责组件的装配，它会把符合依赖关系的对象通过JavaBean属性或者构造子传递给需要的对象" },
+            { context: "AOP为Aspect Oriented Programming的缩写，意为：面向切面编程，可以通过预编译方式和运行期动态代理实现在不修改源代码的情况下给程序动态统一添加功能的一种技术。" },
+            { context: "AOP主要应用于日志记录，性能统计，安全控制,事务处理等方面。" },
+            { context: "实现原理：一是采用动态代理技术，利用截取消息的方式，对该消息进行装饰，以取代原有对象行为的执行；二是采用静态植入的方式，引入特定的语法创建“方面”，从而使得编译器可以在编译期间织入有关“方面”的代码，属于静态代理；" },
         ]
     }, {
         title: "2、spring中的过滤器和拦截器有什么区别，你是如何理解的",
         data: [
-            { context: "" },
-            { context: "" }
+            { context: "Spring的拦截器与Servlet的Filter都是AOP编程思想的体现，都能实现权限价差，日志记录。" },
+            { context: "适用范围不同：过滤器Filter是Servlet规范规定的，只能用于Web程序中，而拦截器既可以用于web程序，也可以用于Application中。" },
+            { context: "规范不同：过滤器Filter是在Servlet规范中定义的，是Servlet支持的，而拦截器是在Spring容器内的。是Spring框架支持的。" },
+            { context: "使用的资源不同：同其他的代码块一样，拦截器也是一个Spring的组件，归Spring管理，配置在Spring文件中，因此能使用Spring只里的任何资源，对象。例如Service对象，数据源，事务管理，通过IOC得注入到拦截器即可，而Filter则不能。" },
+            { context: "深度不同：过滤器Filter在只在Servlet前后起作用。而拦截器能够深入到方法前后，异常抛出前后，因此拦截器的使用具有更大的弹性。所以在Spring构架的程序中。要优先使用拦截器。" },
         ]
     }, {
         title: "3、spring boot 有什么你使用比较好的特性，或者说为什么使用spring boot",
         data: [
+            { context: "能够快速创建基于Spring的应用程序；" },
+            { context: "能够直接使用java的main方法启动内嵌的Tomcat，Jetty服务器运行Spring boot程序，不需要部署war包文件；" },
+            { context: "提供约定的starter POM来简化来简化Maven配置，让Maven配置变得简单；" },
+            { context: "根据项目的maven依赖配置，Spring boot自动配置Spring,SpringMVC等其它开源框架；" },
+            { context: "自动管理依赖，自带应用监控；" },
+            { context: "支持关系数据库和非关系数据库；" },
+            { context: "支持各种IED，如IntelliJ IDEA、NetBeans；" },
             { context: "" },
-            { context: "" }
         ]
     }, {
         title: "4、spring cloud 和dubbo的区别是什么",
         data: [
+            { context: "Dubbo和Spring Cloud并不是完全的竞争关系，两者所解决的问题域不一样：Dubbo的定位始终是一款RPC框架，而Spring Cloud的目的是微服务架构下的一站式解决方案。" },
             { context: "" },
-            { context: "" }
         ]
     }, {
         title: "5、beanFactory 和ApplicationContext有什么区别",
         data: [
+            { context: "BeanFactory：是Spring里面最低层的接口，提供了最简单的容器的功能，只提供了实例化对象和拿对象的功能；" },
+            { context: "ApplicationContext：应用上下文，继承BeanFactory接口，它是Spring的一个更高级的容器，提供了更多的有用的功能；" },
+            { context: "BeanFactory：BeanFactory在启动的时候不会去实例化Bean，中有从容器中拿Bean的时候才会去实例化；" },
+            { context: "ApplicationContext：ApplicationContext在启动的时候就把所有的Bean全部实例化了。它还可以为Bean配置lazy-init=true来让Bean延迟实例化； " },
+            { context: "延迟实例化的优点：（BeanFactory）应用启动的时候占用资源很少；对资源要求较高的应用，比较有优势；" },
+            { context: "不延迟实例化的优点： （ApplicationContext）" },
+            { context: "1. 所有的Bean在启动的时候都加载，系统运行的速度快； " },
+            { context: "2. 在启动的时候所有的Bean都加载了，我们就能在系统启动的时候，尽早的发现系统中的配置问题 " },
+            { context: "3. 建议web应用，在启动的时候就把所有的Bean都加载了。（把费时的操作放到系统启动中完成" },
             { context: "" },
-            { context: "" }
+            { context: "" },
         ]
     }, {
         title: "6、spring事务的传播机制说一下",
         data: [
-            { context: "" },
-            { context: "" }
+            { context: "可通过spring配置或注解来设置  @Transactional(propagation=Propagation.REQUIRED) " },
+            { context: "REQUIRED（默认）：支持使用当前事务，如果当前事务不存在，创建一个新事务。" },
+            { context: "SUPPORTS：支持使用当前事务，如果当前事务不存在，则不使用事务。" },
+            { context: "MANDATORY：中文翻译为强制，支持使用当前事务，如果当前事务不存在，则抛出Exception。" },
+            { context: "REQUIRES_NEW：创建一个新事务，如果当前事务存在，把当前事务挂起。" },
+            { context: "NOT_SUPPORTED：无事务执行，如果当前事务存在，把当前事务挂起。" },
+            { context: "NEVER：无事务执行，如果当前有事务则抛出Exception。" },
+            { context: "NESTED：嵌套事务，如果当前事务存在，那么在嵌套的事务中执行。如果当前事务不存在，则表现跟REQUIRED一样。" },
+            { context: "四种隔离级别  @Transactional(isolation = Isolation.READ_UNCOMMITTED)" },
+            { context: "事务隔离级别	脏读	不可重复读	幻读" },
+            { context: "读未提交(Read-Uncommitted)	是	是	是" },
+            { context: "不可重复读(Read-Committed)	否	是	是" },
+            { context: "可重复读(Repeatable-Read)	否	否	是" },
+            { context: "串行化(Serializable)	否	否	否" },
+            { context: "1、脏读：事务A读取了事务B更新的数据，然后B回滚操作，那么A读取到的数据是脏数据" },
+            { context: "2、不可重复读：事务 A 多次读取同一数据，事务 B 在事务A多次读取的过程中，对数据作了更新并提交，导致事务A多次读取同一数据时，结果 不一致。" },
+            { context: "3、幻读：系统管理员A将数据库中所有学生的成绩从具体分数改为ABCDE等级，但是系统管理员B就在这个时候插入了一条具体分数的记录，当系统管理员A改结束后发现还有一条记录没有改过来，就好像发生了幻觉一样，这就叫幻读。" },
+            { context: "小结：不可重复读的和幻读很容易混淆，不可重复读侧重于修改，幻读侧重于新增或删除。解决不可重复读的问题只需锁住满足条件的行，解决幻读需要锁表" },
         ]
     }, {
         title: "7、spring 常用的注解有哪些",
         data: [
+            { context: "1.@RestController  	@RequestMapping(value = \"add\", method = RequestMethod.PUT)" },
+            { context: "@PathVariable && @RequestParam(name=\"ids\") List<Long> ids" },
             { context: "" },
-            { context: "" }
+            { context: "3. @Resource和@Autowired  @Resource和@Autowired都是做bean的注入时使用，其实@Resource并不是Spring的注解，它的包是javax.annotation.Resource，需要导入，但是Spring支持该注解的注入。" },
+            { context: "4、@PathVariable" },
+            { context: "@ResponseBody　" },
+            { context: "@service" },
+            { context: "@component 把普通pojo实例化到spring容器中，相当于配置文件中的<bean id=\"\" class=\" \" />" },
+            { context: "" },
         ]
     }, {
         title: "8、spring加载文件的顺序是什么",
         data: [
-            { context: "" },
-            { context: "" }
+            { context: "1.1 springboot启动会扫描一下位置的application.properties或者application.yml作为默认的配置文件   ---加载的优先级顺序是从上向下加载，并且所有的文件都会被加载，高优先级的内容会覆盖底优先级的内容，形成互补配置" },
+            { context: "外部配置文件加载位置" },
+            { context: "1.命令行参数" },
+            { context: "2.来自java:comp/env的JNDI属性" },
+            { context: "3.Java系统属性（System.getProperties()）" },
+            { context: "4.操作系统环境变量" },
+            { context: "5.RandomValuePropertySource配置的random.*属性值  ;由jar包外向jar包内进行寻找； 优先加载带proﬁle" },
+            { context: "6.jar包外部的application-{proﬁle}.properties或application.yml(带spring.proﬁle)配置文件" },
+            { context: "7.jar包内部的application-{proﬁle}.properties或application.yml(带spring.proﬁle)配置文件  -- 再来加载不带proﬁle" },
+            { context: "8.jar包外部的application.properties或application.yml(不带spring.proﬁle)配置文件" },
+            { context: "9.jar包内部的application.properties或application.yml(不带spring.proﬁle)配置文件" },
+            { context: "10.@Conﬁguration注解类上的@PropertySource" },
+            { context: "11.通过SpringApplication.setDefaultProperties指定的默认属性" },
+            { context: "所有支持的配置加载来源；" },
         ]
     },
     ]
@@ -57,39 +116,92 @@ var demo02 = {
     title: "JAVA面试题--java",
     name: "春哥总结的",
     data: [{
-        title: "1、java集合有哪些（List；Map；Set）？hashMap和ArrayList的源码是否看过？ConcurentHashMap使用过吗？如果处理并发的。",
+        title: "1、java集合有哪些（List；Map；Set）？hashMap和ArrayList的源码是否看过？ConcurentHashMap使用过吗？如何处理并发的。",
         data: [
+            { context: "List一个是存储单列数据的集合，Map另一个是存储键和值这样的双列数据的集合，List中存储的数据是有顺序，并且允许重复；Map中存储的数据是没有顺序的，其键是不能重复的，它的值是可以有重复的。Set集合的特点:不能存储相同的元素。" },
+            { context: "" },
+            { context: "hashMap和hashtable和ConcurentHashMap 原理什么的https://www.cnblogs.com/heyonggang/p/9112731.html" },
+            { context: "" },
+            { context: "" },
+            { context: "" },
+            { context: "" },
+            { context: "" },
             { context: "" },
         ]
     }, {
         title: "2、抽象类和接口的区别是什么？",
         data: [
+            { context: "他们都不能实例化对象，都可以包含抽象方法，而且抽象方法必须被继承的类全部实现。" },
+            { context: "1、抽象类和接口都不能直接实例化，如果要实例化，抽象类变量必须指向实现所有抽象方法的子类对象，接口变量必须指向实现所有接口方法的类对象。" },
+            { context: "2、抽象类要被子类继承，接口要被类实现。" },
+            { context: "3、接口只能做方法申明，抽象类中可以做方法申明，也可以做方法实现" },
+            { context: "4、接口里定义的变量只能是公共的静态的常量，抽象类中的变量是普通变量。" },
+            { context: "5、抽象类里的抽象方法必须全部被子类所实现，如果子类不能全部实现父类抽象方法，那么该子类只能是抽象类。同样，一个实现接口的时候，如不能全部实现接口方法，那么该类也只能为抽象类。" },
+            { context: "6、抽象方法只能申明，不能实现，接口是设计的结果" },
+            { context: "7、抽象类里可以没有抽象方法" },
+            { context: "8、如果一个类里有抽象方法，那么这个类只能是抽象类" },
+            { context: "9、抽象方法要被实现，所以不能是静态的，也不能是私有的。" },
+            { context: "10、接口可继承接口，并可多继承接口，但类只能单根继承。" },
             { context: "" },
-            { context: "" }
+            { context: "" },
         ]
     }, {
         title: "3、synchronize和lock区别，底层实现原理？",
         data: [
+            { context: "1、synchronized 是Java内置的关键字，使用后会自动释放锁，-- Lock是java.util.concurrent.Locks 包下的一个接口，必须要手动释放。特别是在发生异常时，需要在 finally 块中进行手动释放，否则会发生死锁行为" },
+            { context: "2、Lock可响应中断，而synchronized 不能响应中断，并且Lock提供了更丰富的方法实现；" },
+            { context: "3、synchronized 是非公平锁，即不能保证等待锁线程的顺序，Lock的实现 ReentrantLock 可通过实例化true or false 的构造参数实现公平锁和非公平锁，默认为非公平锁[ReentrantLock是唯一实现了Lock接口的类，并且ReentrantLock提供了更多的方法]" },
+            { context: "5、synchronized无法判断是否获取锁的状态，Lock可以判断是否获取到锁；" },
+            { context: "6、Lock锁适合大量同步的代码的同步问题，synchronized锁适合代码少量的同步问题。" },
+            { context: "7、都是可重入锁：在执行对象中所有同步方法不用再次获得锁" },
+            { context: "8、synchronized是一个悲观锁，Lock是一个乐观锁（底层基于volatile和cas实现），" },
+            { context: "二、底层实现" },
+            { context: "1、synchronznized映射成字节码指令就是增加两个指令：monitorenter、monitorexit，" },
+            { context: "当一条线程执行时遇到monitorenter指令时，它会尝试去获得锁，如果获得锁，那么所计数器+1（为什么要加1，因为它是可重入锁，可根据这个琐计数器判断锁状态），如果没有获得锁，那么阻塞，" },
+            { context: "当它遇到一个monitoerexit时，琐计数器会-1，当计数器为0时，就释放锁" },
+            { context: "（tips：节码中出现的两个monitoerexit指令的原因是：一个正常执行-1，令一个异常时执行，这两个用goto的方式只执行一个）" },
+            { context: "2、Lock底层则基于volatile和cas实现" },
             { context: "" },
-            { context: "" }
+            { context: "" },
         ]
     }, {
         title: "4、设计模式用过哪些，能写一下单例模式的实现吗？",
         data: [
-            { context: "" },
-            { context: "" }
+            { context: "设计模式是世界上各种各样程序员用来解决特定设计问题的尝试和测试的方法。设计模式是代码可用性的延伸。" },
+            { context: "总共23种，分为三大类：创建型，结构型，行为型" },
+            { context: "我只记得其中常用的6、7种，分别是：" },
+            { context: "创建型（工厂、工厂方法、抽象工厂、单例）" },
+            { context: "结构型（包装、适配器，组合，代理）" },
+            { context: "行为（观察者，模版，策略）" },
+            { context: "工厂模式：工厂模式是一种经常被使用到的模式，根据工厂模式实现的类可以根据提供的数据生成一组类中某一个类的实例，通常这一组类有一个公共的抽象父类并且实现了相同的方法，但是这些方法针对不同的数据进行了不同的操作。首先需要定义一个基类，该类的子类通过不同的方法实现了基类中的方法。然后需要定义一个工厂类，工厂类可以根据条件生成不同的子类实例。当得到子类的实例后，开发人员可以调用基类中的方法而不必考虑到底返回的是哪一个子类的实例。" },
         ]
     }, {
         title: "5、线程池用过吗？如何启动线程，是否看过源码？",
         data: [
+            { context: "<a href='https://www.cnblogs.com/javazhiyin/p/10605511.html'>详情</a> " },
+            { context: "如何创建使用线程池?" },
+            { context: "1.创建一个定长线程池，可控制线程最大并发数，超出的线程会在队列中等待。" },
+            { context: "2.(JDK8新增)会根据所需的并发数来动态创建和关闭线程。能够合理的使用CPU进行对任务进行并发操作，所以适合使用在很耗时的任务。" },
+            { context: "3.创建一个可缓存的线程池,可灵活回收空闲线程，若无可回收，则新建线程。" },
+            { context: "4.创建一个单线程的线程池。" },
+            { context: "5.创建一个定长线程池，支持定时及周期性任务执行。" },
             { context: "" },
-            { context: "" }
+            { context: "" },
+            { context: "" },
+            { context: "" },
+            { context: "" },
+            { context: "" },
         ]
     }, {
         title: "6、java锁都有哪些？偏向锁、轻量级锁，重量级锁是什么。公平锁和非公平锁又是什么",
         data: [
-            { context: "" },
-            { context: "" }
+            { context: "<a href='https://blog.csdn.net/zqz_zqz/article/details/70233767'>原文链接</a>  " },
+            { context: "重量级锁Synchronized  Synchronized是非公平锁。[ Synchronized在线程进入ContentionList时，等待的线程会先尝试自旋获取锁，如果获取不到就进入ContentionList，这明显对于已经进入队列的线程是不公平的，还有一个不公平的事情就是自旋获取锁的线程还可能直接抢占OnDeck线程的锁资源。]" },
+            { context: "偏向锁，顾名思义，它会偏向于第一个访问锁的线程，如果在运行过程中，同步锁只有一个线程访问，不存在多线程争用的情况，则线程是不需要触发同步的，这种情况下，就会给线程加一个偏向锁。 " },
+            { context: "轻量级锁是由偏向所升级来的，偏向锁运行在一个线程进入同步块的情况下，当第二个线程加入锁争用的时候，偏向锁就会升级为轻量级锁； " },
+            { context: "不过要知道java并发包里很多锁默认的策略都是非公平的，也就是可能后来的线程先加锁，先来的线程后加锁。" },
+            { context: "而一般情况下，非公平的策略都没什么大问题，但是大家要对这个策略做到心里有数，在开发的时候，需要自己来考虑和权衡是要用公平策略还是非公平策略。" },
+            { context: "CAS ： 在计算机科学中，比较和交换（Conmpare And Swap）是用于实现多线程同步的原子指令。" },
         ]
     }
     ]
@@ -155,36 +267,36 @@ var demo05 = {
         data: [
             { context: "" },
         ]
-    },{
+    }, {
         title: "2、redis的内存淘汰策略都有哪些？",
         data: [
             { context: "" },
         ]
-    }, 
+    },
     {
         title: "3、redis持久化机制都有哪些（RDB和AOF）",
         data: [
             { context: "" },
         ]
-    }, 
+    },
     {
         title: "4、redis主从",
         data: [
             { context: "" },
         ]
-    }, 
+    },
     {
         title: "5、rdis分布式锁怎么实现、",
         data: [
             { context: "" },
         ]
-    }, 
+    },
     {
         title: "6、什么是缓存穿透？什么是缓存雪崩？",
         data: [
             { context: "" },
         ]
-    }, 
+    },
     ]
 }
 //春哥总结的面试题目-MQ
@@ -201,7 +313,7 @@ var demo06 = {
         data: [
             { context: "" },
         ]
-    }, 
+    },
     ]
 }
 //春哥总结的面试题目-其他
@@ -223,14 +335,14 @@ var demo07 = {
         data: [
             { context: "" },
         ]
-    },  {
+    }, {
         title: "4、虚拟机参数调整过什么",
         data: [
             { context: "" },
         ]
-    }, 
+    },
     ]
 }
 
 
-data = [demo01, demo02, demo03, demo04, demo05, demo06,demo07];
+data = [demo01, demo02, demo03, demo04, demo05, demo06, demo07];
