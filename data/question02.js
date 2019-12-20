@@ -196,6 +196,7 @@ var demo02 = {
         title: "6、java锁都有哪些？偏向锁、轻量级锁，重量级锁是什么。公平锁和非公平锁又是什么",
         data: [
             { context: "<a href='https://blog.csdn.net/zqz_zqz/article/details/70233767'>原文链接</a>  " },
+            { context: "<a href='https://www.douban.com/note/713452249/'>公平锁和非公平锁</a>" },
             { context: "重量级锁Synchronized  Synchronized是非公平锁。[ Synchronized在线程进入ContentionList时，等待的线程会先尝试自旋获取锁，如果获取不到就进入ContentionList，这明显对于已经进入队列的线程是不公平的，还有一个不公平的事情就是自旋获取锁的线程还可能直接抢占OnDeck线程的锁资源。]" },
             { context: "偏向锁，顾名思义，它会偏向于第一个访问锁的线程，如果在运行过程中，同步锁只有一个线程访问，不存在多线程争用的情况，则线程是不需要触发同步的，这种情况下，就会给线程加一个偏向锁。 " },
             { context: "轻量级锁是由偏向所升级来的，偏向锁运行在一个线程进入同步块的情况下，当第二个线程加入锁争用的时候，偏向锁就会升级为轻量级锁； " },
@@ -210,50 +211,86 @@ var demo02 = {
 var demo03 = {
     title: "JAVA面试题--并发",
     name: "春哥总结的",
-    data: [{
-        title: "1、ThredLocal用过吗？底层实现原理是怎样的",
-        data: [
-            { context: "" },
-            { context: "" }
-        ]
-    }, {
-        title: "2、CAS知道吗？ABA问题怎么解决的？JUC包下的类都用过哪些",
-        data: [
-            { context: "" },
-            { context: "" }
-        ]
-    },
-    ]
+    data: [
+        {
+            title: "1、ThreadLocal用过吗？底层实现原理是怎样的",
+            data: [
+                { context: "<a href='https://www.jianshu.com/p/3c5d7f09dfbd'>ThreadLocal</a>" },
+                { context: "总结 算是底层吧" },
+                { context: "对于某一ThreadLocal来讲，他的索引值i是确定的，在不同线程之间访问时访问的是不同的table数组的同一位置即都为table[i]，只不过这个不同线程之间的table是独立的。" },
+                { context: "对于同一线程的不同ThreadLocal来讲，这些ThreadLocal实例共享一个table数组，然后每个ThreadLocal实例在table中的索引i是不同的。" },
+                { context: "特性" },
+                { context: "ThreadLocal和Synchronized都是为了解决多线程中相同变量的访问冲突问题，不同的点是" },
+                { context: "Synchronized是通过线程等待，牺牲时间来解决访问冲突" },
+                { context: "ThreadLocal是通过每个线程单独一份存储空间，牺牲空间来解决冲突，并且相比于Synchronized，ThreadLocal具有线程隔离的效果，只有在线程内才能获取到对应的值，线程外则不能访问到想要的值。" },
+                { context: "正因为ThreadLocal的线程隔离特性，使他的应用场景相对来说更为特殊一些。在android中Looper、ActivityThread以及AMS中都用到了ThreadLocal。当某些数据是以线程为作用域并且不同线程具有不同的数据副本的时候，就可以考虑采用ThreadLocal。" },
+                { context: "ThreadLocal实现主要涉及Thread，ThreadLocal，ThreadLocalMap这三个类。" }
+            ]
+        }, {
+            title: "2、CAS知道吗？ABA问题怎么解决的？JUC包下的类都用过哪些",
+            data: [
+                { context: "<a href='https://www.cnblogs.com/Tiancheng-Duan/p/11528504.html'>CAS和ABA</a>" },
+                { context: "CAS ： 在计算机科学中，比较和交换（Conmpare And Swap）是用于实现多线程同步的原子指令。" },
+                { context: "JUC就是jdk并发包【目录简称】" },
+                { context: "有些文章或代码中提到通过CAS执行多个变量的原子操作，其实本质并不是针对多个变量，而是针对这些变量的集合或者总的对象的Reference操作的。" },
+                { context: "ABA问题的本质就是由于对多线程下CAS流程控制的缺乏，而导致的信息缺失。表现出来的就是由于缺乏必要信息，而产生了隐患" },
+                { context: "解决方案 - 用我的话说呢，就是通过引入版本号，了解到线程执行操作时，是否有别的线程做了类似ABA的事情，从而使得本线程的CAS操作重新执行。" },
+            ]
+        }, {
+            title: "3.Java高并发处理总结",
+            data: [
+                { context: "1 代码层面： <a href='https://blog.csdn.net/zhousenshan/article/details/82502616/'>锁优化措施</a>、尽量简化事务和减少事务" },
+                { context: "2 应用层面：缓存 队列 限流 熔断 " },
+                { context: "3 数据库层面： 分库分表 读写分离" },
+                { context: "4 服务器，用空间换时间" },
+                { context: "" },
+                { context: "" },
+            ]
+        },]
 }
 //春哥总结的面试题目-mybatis
 var demo04 = {
     title: "JAVA面试题--mybatis",
     name: "春哥总结的",
     data: [{
+        //一般数据库的优化是，先优化一些查询操作，然后优化业务的逻辑，或者加入缓存，最后不行再用集群，最后再分库分表。https://www.jianshu.com/p/2d8ff87d030c
         title: "1、Mybatis插件有了解过吗",
         data: [
-            { context: "" },
-            { context: "" }
+            { context: "mybatis插件就是对ParameterHandler、ResultSetHandler、StatementHandler、Executor这四个接口上的方法进行拦截，利用JDK动态代理机制，为这些接口的实现类创建代理对象，在执行方法时，先去执行代理对象的方法，从而执行自己编写的拦截逻辑，" },
+            { context: "设计模式：代理模式、责任链模式；" },
+            { context: "软件思想：AOP编程思想，降低模块间的耦合度，使业务模块更加独立；" },
         ]
     }, {
         title: "2、实现原理能说一下嘛",
         data: [
-            { context: "" },
+            { context: "通常的Mapper接口我们都没有实现的方法却可以使用，是为什么呢？答案很简单 动态代理" },
             { context: "" }
         ]
     },
     {
         title: "3、一级缓存和二级缓存说一下",
         data: [
+            { context: "<a href='https://blog.csdn.net/llziseweiqiu/article/details/79413130'>一级缓存和二级缓存</a>" },
+            { context: "一级缓存基于sqlSession默认开启,在操作数据库时需要构造SqlSession对象，在对象中有一个HashMap用于存储缓存数据。不同的SqlSession之间的缓存数据区域是互相不影响的。" },
+            { context: "一级缓存的作用域是SqlSession范围的，当在同一个sqlSession中执行两次相同的sql语句时，第一次执行完毕会将数据库中查询的数据写到缓存（内存）" },
+            { context: "二级缓存是mapper级别的缓存。使用二级缓存时，多个SqlSession使用同一个Mapper的sql语句去操作数据库，得到的数据会存在二级缓存区域，它同样是使用HashMap进行数据存储。相比一级缓存SqlSession，二级缓存的范围更大，多个Sqlsession可以共用二级缓存，二级缓存是跨SqlSession的。" },
+            { context: "二级缓存的作用域是mapper的同一个namespace。不同的sqlSession两次执行相同的namespace下的sql语句，且向sql中传递的参数也相同，即最终执行相同的sql语句，则第一次执行完毕会将数据库中查询的数据写到缓存，第二次查询会从缓存中获取数据，不再去底层数据库查询，从而提高效率。" },
             { context: "" },
-            { context: "" }
+            { context: "" },
+            { context: "" },
+            { context: "" },
         ]
     },
     {
         title: "4、#{}和${} 的区别是什么",
         data: [
+            { context: "#将传入的数据都当成一个字符串，会对自动传入的数据加一个双引号。$将传入的数据直接显示生成在sql中。" },
             { context: "" },
-            { context: "" }
+            { context: "#方式能够很大程度防止sql注入。$方式无法防止Sql注入。" },
+            { context: "$方式一般用于传入数据库对象，例如传入表名. 一般能用#的就别用$." },
+            { context: "MyBatis排序时使用order by 动态参数时需要注意，用$而不是#" },
+            { context: "" },
+            { context: "" },
         ]
     },
     ]
