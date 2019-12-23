@@ -302,6 +302,10 @@ var demo05 = {
     data: [{
         title: "1、你们公司用redis是做什么的，基本类型知道多少",
         data: [
+            { context: "String Hash List Set Sorted set pub/sub Transactions" },
+            { context: "" },
+            { context: "" },
+            { context: "" },
             { context: "" },
         ]
     }, {
@@ -346,7 +350,7 @@ var demo06 = {
             { context: "" },
         ]
     }, {
-        title: "2、MQ的消息如何顺序之行的",
+        title: "2、MQ的消息如何顺序执行的",
         data: [
             { context: "" },
         ]
