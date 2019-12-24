@@ -303,20 +303,32 @@ var demo05 = {
         title: "1、你们公司用redis是做什么的，基本类型知道多少",
         data: [
             { context: "String Hash List Set Sorted set pub/sub Transactions" },
-            { context: "" },
-            { context: "" },
+            { context: "少量数据存储，高速读写访问。此类产品通过数据全部in-momery 的方式来保证高速访问，同时提供数据落地的功能，实际这正是Redis最主要的适用场景。" },
             { context: "" },
             { context: "" },
         ]
     }, {
         title: "2、redis的内存淘汰策略都有哪些？",
         data: [
-            { context: "" },
+            { context: "主要分为为LRU淘汰、TTL淘汰、随机淘汰" },
+            { context: "1. volatile-lru：从设置过期时间的数据集(server.db[i].expires)中挑选出最近最少使用的数据淘汰。" },
+            { context: "2. volatile-ttl：从设置过期时间的数据集(server.db[i].expires)中挑选将要过期的数据淘汰，ttl值越大越优先被淘汰。" },
+            { context: "3. volatile-random：从已设置过期时间的数据集(server.db[i].expires)中任意选择数据淘汰。" },
+            { context: "4. allkeys-lru：从数据集(server.db[i].dict)中挑选最近最少使用的数据淘汰，该策略要淘汰的key面向的是全体key集合，而非过期的key集合。" },
+            { context: "5. allkeys-random：从数据集(server.db[i].dict)中选择任意数据淘汰。" },
+            { context: "6. no-enviction：禁止驱逐数据，也就是当内存不足以容纳新入数据时，新写入操作就会报错，请求可以继续进行，线上任务也不能持续进行，采用no-enviction策略可以保证数据不被丢失，这也是系统默认的一种淘汰策略。" },
         ]
     },
     {
         title: "3、redis持久化机制都有哪些（RDB和AOF）",
         data: [
+            { context: "RDB 有两种选择，一种是手动执行持久化数据命令来让redis进行一次数据快照，另一种则是根据你所配置的配置文件 的 策略，达到策略的某些条件时来自动持久化数据" },
+            { context: "AOF,append only file。你所执行的每一条指令，都会被记录到appendonly.aof文件中。但事实上，并不会立即将命令写入到硬盘文件中，而是写入到硬盘缓存，在接下来的策略中，配置多久来从硬盘缓存写入到硬盘文件。所以在一定程度一定条件下，还是会有数据丢失，不过你可以大大减少数据损失。" },
+            { context: "RDB每次进行快照方式会重新记录整个数据集的所有信息。RDB在恢复数据时更快，可以最大化redis性能，子进程对父进程无任何性能影响。" },
+            { context: "AOF有序的记录了redis的命令操作。意外情况下数据丢失甚少。他不断地对aof文件添加操作日志记录，你可能会说，这样的文件得多么庞大呀。是的，的确会变得庞大，但redis会有优化的策略，" },
+            { context: "" },
+            { context: "" },
+            { context: "" },
             { context: "" },
         ]
     },
@@ -327,14 +339,23 @@ var demo05 = {
         ]
     },
     {
-        title: "5、rdis分布式锁怎么实现、",
+        title: "5、redis分布式锁怎么实现、",
         data: [
+            { context: "1. 数据库乐观锁；2. 基于Redis的分布式锁；3. 基于ZooKeeper的分布式锁。" },
+            { context: "和java的锁差不多  不过就是语言不一样罢了" },
+            { context: "" },
+            { context: "" },
+            { context: "" },
+            { context: "" },
             { context: "" },
         ]
     },
     {
         title: "6、什么是缓存穿透？什么是缓存雪崩？",
         data: [
+            { context: "<a href=\"https://baijiahao.baidu.com/s?id=1619572269435584821&wfr=spider&for=pc\">解释的好形象</a>" },
+            { context: "" },
+            { context: "" },
             { context: "" },
         ]
     },
