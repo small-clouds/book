@@ -357,6 +357,8 @@ js方法 --移除数组元素
 
 路由守卫 不更新页面更改连接地址
 		this.router.navigateByUrl("/course;gradleId="+this.curId);
+新页面打开地址
+		this.router.navigate(['/home'], { replaceUrl: true });
 		
 验证组件		
 		name: [m.name, [Validators.required, Validators.maxLength(20)]],
@@ -682,6 +684,7 @@ class 名字
 	
 前端项目启动   有点坑啊
 	console-web 需要 Angular CLI version 1.1.1.  npm install -g @angular/cli@1.1.1    npm start
+	npm start -- --port=4202
 	spark-app  需要 Angular CLI version 6.0.8.  ng serve learner-web 
  */
  

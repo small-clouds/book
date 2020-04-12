@@ -14,6 +14,7 @@ var demo01 = {
         data: [
             { context: 'ssh方式连接服务器   ssh ydl@127.0.0.1  ' },
             { context: '创建或者编辑某文件 --- vi  ' },
+            { context: '实时查看文件内容 --- tail -f -n 100  [文件名] ' },
             { context: '退出编辑 ---esc : exit /wq ' },
             { context: 'vim有三种模式 普通模式  编辑模式(i) 命令行模式(:) 另外两种 esc 都能退回到普通模式上面  ---esc : exit /wq ' },
             { context: '切换root用户  -- su [root] [回车 输入密码 ]' },
