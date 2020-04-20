@@ -26,6 +26,7 @@ var demo01 = {
             { context: '<a target="_blank"   href="' + urlposition + '不再犹豫.jpg">不再犹豫</a>' },
             { context: '<a target="_blank"   href="' + urlposition + '被遗忘的时光.jpg">被遗忘的时光</a>' },
             { context: '<a target="_blank"   href="' + urlposition + '拜无忧.jpg">拜无忧</a>' },
+            { context: '<a target="_blank"   href="' + urlposition + '不谓侠.jpg">不谓侠</a>' },
         ]
     }, {
         title: "C开头的简谱",
