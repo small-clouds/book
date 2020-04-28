@@ -7,6 +7,12 @@ mbpigzyqbjugbaed
 /*
 增改删
 	UPDATE Person SET FirstName = 'Fred' WHERE LastName = 'Wilson' 
+	
+	update table_a a join table_b b on a.xx=b.xx
+	set a.xx=要变更的值
+	where b.xx=条件值
+
+
 	INSERT INTO Persons (LastName, Address) VALUES ('Wilson', 'Champs-Elysees')
 	DELETE FROM Person WHERE LastName = 'Wilson' 
 	alter table lib_document change column category_id category_id BIGINT(20) (not) null; // 更新表字段 是否为nullnull
