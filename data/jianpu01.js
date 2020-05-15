@@ -57,6 +57,7 @@ var demo01 = {
             { context: '<a target="_blank"   href="' + urlposition + '刀剑如梦.jpg">刀剑如梦</a>' },
             { context: '<a target="_blank"   href="' + urlposition + '杜十娘.jpg">杜十娘</a>' },
             { context: '<a target="_blank"   href="' + urlposition + '丁香花.jpg">丁香花</a>' },
+            { context: '<a target="_blank"   href="' + urlposition + '当年情.jpg">当年情</a>' },
         ]
     }, {
         title: "F开头的简谱",
@@ -163,6 +164,7 @@ var demo01 = {
             { context: '<a target="_blank"   href="' + urlposition + '美丽的草原我的家.jpg">美丽的草原我的家</a>' },
             { context: '<a target="_blank"   href="' + urlposition + '梦驼铃.jpg">梦驼铃</a>' },
             { context: '<a target="_blank"   href="' + urlposition + '明月天涯.jpg">明月天涯</a>' },
+            { context: '<a target="_blank"   href="' + urlposition + '明月夜.jpg">明月夜</a>' },
         ]
     }, {
         title: "N开头的简谱",
@@ -376,6 +378,7 @@ var demo01 = {
             { context: '<a target="_blank"   href="' + urlposition + '最初的梦想.jpg">最初的梦想</a>' },
             { context: '<a target="_blank"   href="' + urlposition + '真心真意过一生.jpg">真心真意过一生</a>' },
             { context: '<a target="_blank"   href="' + urlposition + '壮志在我胸.jpg">壮志在我胸</a>' },
+            { context: '<a target="_blank"   href="' + urlposition + '最真的梦.jpg">最真的梦</a>' },
         ]
     }, {
         title: "其他",
