@@ -254,6 +254,7 @@ var demo01 = {
             { context: '<a target="_blank"   href="' + urlposition + '天仙子.jpg">天仙子</a>' },
             { context: '<a target="_blank"   href="' + urlposition + '同一首歌.jpg">同一首歌</a>' },
             { context: '<a target="_blank"   href="' + urlposition + '天路.jpg">天路</a>' },
+            { context: '<a target="_blank"   href="' + urlposition + '同桌的你.jpg">同桌的你</a>' },
         ]
     },
     {
@@ -343,6 +344,7 @@ var demo01 = {
             { context: '<a target="_blank"   href="' + urlposition + '一个师傅三徒弟.jpg">一个师傅三徒弟</a>' },
             { context: '<a target="_blank"   href="' + urlposition + '烟花易冷.jpg">烟花易冷</a>' },
             { context: '<a target="_blank"   href="' + urlposition + '一曲红尘.jpg">一曲红尘</a>' },
+            { context: '<a target="_blank"   href="' + urlposition + '友谊之光.jpg">友谊之光</a>' },
         ]
     }, {
         title: "Z开头的简谱",
