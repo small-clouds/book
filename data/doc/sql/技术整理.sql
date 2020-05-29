@@ -248,7 +248,18 @@ controller modelMapper静态
 /*
 	extends BaseService<KnowledgeCollection,Long,KnowledgeCollectionRepository>
 	
+返回分页
 	return new PageImpl<>(speaList, pageable, total);
+
+service 手动增加排序
+	List<Sort.order> orders = new ArrayList<>();
+	orders.add(new Sort(new Sort.Order(Sort.Direction,"createdDate")));
+	orders.add(new Sort(new Sort.Order(Sort.Direction,"isTop")));
+	pageable = new PageRequest(pageabe.getPageNumber(),pageable.getPageSize(),orders)
+service 手动增加排序
+	Sort sort = new Sort(new Sort.Order(Sort.Direction,"createdDate"));
+	Sort sort1 = pageable.getSort().and(sort);
+	pageable = new PageRequest(pageabe.getPageNumber(),pageable.getPageSize(),sort1);
 */
 
 *******************************     jpa    ********************
