@@ -381,6 +381,7 @@ var demo01 = {
             { context: '<a target="_blank"   href="' + urlposition + '真心真意过一生.jpg">真心真意过一生</a>' },
             { context: '<a target="_blank"   href="' + urlposition + '壮志在我胸.jpg">壮志在我胸</a>' },
             { context: '<a target="_blank"   href="' + urlposition + '最真的梦.jpg">最真的梦</a>' },
+            { context: '<a target="_blank"   href="' + urlposition + '醉仙美.jpg">醉仙美</a>' },
         ]
     }, {
         title: "其他",
