@@ -161,7 +161,11 @@ mysql 复制插入数据  平表
 	from training_plan tp  
 	where DATE_FORMAT(tp.last_modified_date, '%Y-%m-%d') >= DATE_SUB(CURDATE(), INTERVAL 1 DAY)
 	)
-	
+@i 用法  24小时60分每分数据源
+	select * from 
+	(select @m:=@m+1 num1 from (select @m:=-1) nums,sys_user limit 0,24)e,
+	(select @i:=@i+1 num2 from (select @i:=-1) nums,sys_user limit 0,60)f
+	ORDER BY e.num1,f.num2
 */
 *******************************  Controller  ********
 /*
