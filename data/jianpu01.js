@@ -1,5 +1,42 @@
 //A开头的简谱
 var urlposition = "data/images/jianpu/"
+var data = {
+    "A":[
+        {name:"爱江山更爱美人",key:"未知"},
+        {name:"敖包相会",key:"未知"},
+        {name:"爱不释手",key:"未知"},
+        {name:"爱拼才会赢",key:"未知"},
+        {name:"阿里山的姑娘",key:"未知"},
+    ],
+    "B":[
+
+    ],
+    "C":[],
+    "D":[],
+    "E":[],
+    "F":[],
+    "G":[],
+    "H":[],
+    "I":[],
+    "J":[],
+    "K":[],
+    "L":[],
+    "M":[],
+    "N":[],
+    "O":[],
+    "P":[],
+    "Q":[],
+    "R":[],
+    "S":[],
+    "T":[],
+    "U":[],
+    "V":[],
+    "W":[],
+    "X":[],
+    "Y":[],
+    "Z":[],
+}
+
 var demo01 = {
     title: "千曲晓声",
     name: "A开头的简谱",
@@ -165,6 +202,7 @@ var demo01 = {
             { context: '<a target="_blank"   href="' + urlposition + '梦驼铃.jpg">梦驼铃</a>' },
             { context: '<a target="_blank"   href="' + urlposition + '明月天涯.jpg">明月天涯</a>' },
             { context: '<a target="_blank"   href="' + urlposition + '明月夜.jpg">明月夜</a>' },
+            { context: '<a target="_blank"   href="' + urlposition + '梦醒时分.jpg">梦醒时分</a>' },
         ]
     }, {
         title: "N开头的简谱",
