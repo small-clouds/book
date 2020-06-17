@@ -383,6 +383,7 @@ var demo01 = {
             { context: '<a target="_blank"   href="' + urlposition + '烟花易冷.jpg">烟花易冷</a>' },
             { context: '<a target="_blank"   href="' + urlposition + '一曲红尘.jpg">一曲红尘</a>' },
             { context: '<a target="_blank"   href="' + urlposition + '友谊之光.jpg">友谊之光</a>' },
+            { context: '<a target="_blank"   href="' + urlposition + '一曲相思.jpg">一曲相思</a>' },
         ]
     }, {
         title: "Z开头的简谱",
