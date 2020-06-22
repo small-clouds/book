@@ -181,7 +181,7 @@ var demo01 = {
             { context: '---<a target="_blank"   href="' + urlposition + '女人花.jpg">女人花</a>' },
             { context: '---<a target="_blank"   href="' + urlposition + '男儿当自强.jpg">男儿当自强</a>' },
             { context: '---<a target="_blank"   href="' + urlposition + '挪威的森林.jpg">挪威的森林</a>' },
-        ]---
+        ]
     }, {
         title: "P开头的简谱",
         data: [
@@ -211,10 +211,11 @@ var demo01 = {
     }, {
         title: "R开头的简谱",
         data: [
-            { context: '---<a target="_blank"   href="' + urlposition + '让我们荡起双桨.jpg">让我们荡起双桨</a>' },
-            { context: '---<a target="_blank"   href="' + urlposition + '人间情多.jpg">人间情多</a>' },
-            { context: '---<a target="_blank"   href="' + urlposition + '任逍遥.jpg">任逍遥</a>' },
-            { context: '---<a target="_blank"   href="' + urlposition + '人在旅途.jpg">人在旅途</a>' },
+            { context: 'bE--<a target="_blank"   href="' + urlposition + '让我们荡起双桨.jpg">让我们荡起双桨</a>' },
+            { context: 'bE--<a target="_blank"   href="' + urlposition + '任逍遥.jpg">任逍遥</a>' },
+            { context: 'bE--<a target="_blank"   href="' + urlposition + '人在旅途.jpg">人在旅途</a>' },
+            { context: 'A---<a target="_blank"   href="' + urlposition + '人间情多.jpg">人间情多</a>' },
+            { context: 'C---<a target="_blank"   href="' + urlposition + '人间不值得.jpg">人间不值得</a>' },
         ]
     }, {
         title: "S开头的简谱",
