@@ -210,7 +210,7 @@ var demo01 = {
             { context: '<a target="_blank"   href="' + urlposition + '美丽的草原我的家.jpg">美丽的草原我的家</a>' },
             { context: '<a target="_blank"   href="' + urlposition + '女儿情.jpg">女儿情</a>' },
             { context: '<a target="_blank"   href="' + urlposition + '你的眼神.jpg">你的眼神</a>' },
-        
+        ]
     }, {
         title: "#F调的简谱",
         data: [
