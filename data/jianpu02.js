@@ -222,7 +222,7 @@ var demo01 = {
             { context: '<a target="_blank"   href="' + urlposition + '女人花.jpg">女人花</a>' },
         ]
     }, {
-        title: "G调的简谱",
+        title: "G调的简谱(D作2)",
         data: [
             { context: '<a target="_blank"   href="' + urlposition + '不再犹豫.jpg">不再犹豫</a>' },
             { context: '<a target="_blank"   href="' + urlposition + '被遗忘的时光.jpg">被遗忘的时光</a>' },
@@ -290,7 +290,7 @@ var demo01 = {
             { context: '<a target="_blank"   href="' + urlposition + '明月夜.jpg">明月夜</a>' },
         ]
     }, {
-        title: "A调的简谱",
+        title: "A调的简谱(E做2)",
         data: [
             { context: '<a target="_blank"   href="' + urlposition + '沧海一声笑.jpg">沧海一声笑</a>' },
             { context: '<a target="_blank"   href="' + urlposition + '曾经最美.jpg">曾经最美</a>' },
