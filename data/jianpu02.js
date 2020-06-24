@@ -147,7 +147,6 @@ var demo01 = {
         data: [
             { context: '<a target="_blank"   href="' + urlposition + '阿里山的姑娘.jpg">阿里山的姑娘</a>' },
             { context: '<a target="_blank"   href="' + urlposition + '单身情歌.jpg"单身情歌</a>' },
-            { context: '<a target="_blank"   href="' + urlposition + '风的季节.jpg">风的季节</a>' },
             { context: '<a target="_blank"   href="' + urlposition + '光辉岁月.jpg">光辉岁月</a>' },
             { context: '<a target="_blank"   href="' + urlposition + '琵琶语.jpg">琵琶语</a>' },
             { context: '<a target="_blank"   href="' + urlposition + '千千阙歌.jpg">千千阙歌</a>' },
@@ -275,6 +274,7 @@ var demo01 = {
     }, {
         title: "bA调的简谱",
         data: [
+            { context: '<a target="_blank"   href="' + urlposition + '风的季节.jpg">风的季节</a>' },
             { context: '<a target="_blank"   href="' + urlposition + '爱江山更爱美人.jpg">爱江山更爱美人</a>' },
             { context: '<a target="_blank"   href="' + urlposition + '风筝误.jpg">风筝误</a>' },
             { context: '<a target="_blank"   href="' + urlposition + '萍聚.jpg">萍聚</a>' },
