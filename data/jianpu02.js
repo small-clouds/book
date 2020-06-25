@@ -223,6 +223,7 @@ var demo01 = {
     }, {
         title: "G调的简谱(D作2)",
         data: [
+            { context: '<a target="_blank"   href="' + urlposition + '爱江山更爱美人.jpg">爱江山更爱美人</a>' },
             { context: '<a target="_blank"   href="' + urlposition + '不再犹豫.jpg">不再犹豫</a>' },
             { context: '<a target="_blank"   href="' + urlposition + '被遗忘的时光.jpg">被遗忘的时光</a>' },
             { context: '<a target="_blank"   href="' + urlposition + '不谓侠.jpg">不谓侠</a>' },
@@ -275,7 +276,6 @@ var demo01 = {
         title: "bA调的简谱",
         data: [
             { context: '<a target="_blank"   href="' + urlposition + '风的季节.jpg">风的季节</a>' },
-            { context: '<a target="_blank"   href="' + urlposition + '爱江山更爱美人.jpg">爱江山更爱美人</a>' },
             { context: '<a target="_blank"   href="' + urlposition + '风筝误.jpg">风筝误</a>' },
             { context: '<a target="_blank"   href="' + urlposition + '萍聚.jpg">萍聚</a>' },
             { context: '<a target="_blank"   href="' + urlposition + '世界由我创造.jpg">世界由我创造</a>' },
