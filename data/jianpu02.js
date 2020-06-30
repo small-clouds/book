@@ -370,6 +370,8 @@ var demo01 = {
     }, {
         title: "知识总结",
         data: [
+            { context: '<input type="text" class="findname" /><span onclick="findName()">搜索</span>' },
+            { context: '<span onclick="findName(2222)">新手选笛子 较音是哪几个 所有音</span>' },
             { context: '<a target="_blank"   href="' + urlposition + '笔记.jpg">转调表 无</a>' },
         ]
     }
@@ -384,3 +386,6 @@ var demo01 = {
 // }
 // console.log(num)
 data = [demo01]
+function findName(str){
+    console.log($(".findname").val())
+}

@@ -406,7 +406,7 @@ var demo01 = {
     }, {
         title: "笛子相关知识",
         data: [
-            { context: '新手选笛子 较音是哪几个 所有音' },
+            { context: '<span>新手选笛子 较音是哪几个 所有音</span>' },
             { context: '<a target="_blank"   href="' + urlposition + '暖暖.jpg">暖暖</a>' },
 
         ]
@@ -422,3 +422,7 @@ var demo01 = {
 // }
 // console.log(num)
 data = [demo01]
+
+function findName(str){
+    console.log(data);
+}
