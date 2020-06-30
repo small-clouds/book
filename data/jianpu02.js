@@ -170,6 +170,7 @@ var demo01 = {
     }, {
         title: "F调的简谱",
         data: [
+            { context: '<a target="_blank"   href="' + urlposition + '人生何处不相逢.jpg">人生何处不相逢</a>' },
             { context: '<a target="_blank"   href="' + urlposition + '敖包相会.jpg">敖包相会</a>' },
             { context: '<a target="_blank"   href="' + urlposition + '彩云追月.jpg">彩云追月</a>' },
             { context: '<a target="_blank"   href="' + urlposition + '痴情冢.jpg">痴情冢</a>' },
@@ -213,6 +214,8 @@ var demo01 = {
     }, {
         title: "#F调的简谱",
         data: [
+            { context: '<a target="_blank"   href="' + urlposition + '左手指月.jpg">左手指月</a>' },
+            { context: '<a target="_blank"   href="' + urlposition + '未闻花名.jpg">未闻花名</a>' },
             { context: '<a target="_blank"   href="' + urlposition + '拜无忧.jpg">拜无忧</a>' },
             { context: '<a target="_blank"   href="' + urlposition + '刹那芳华曲.jpg">刹那芳华曲</a>' },
             { context: '<a target="_blank"   href="' + urlposition + '红尘清歌.jpg">红尘清歌</a>' },
@@ -275,6 +278,7 @@ var demo01 = {
     }, {
         title: "bA调的简谱",
         data: [
+            { context: '<a target="_blank"   href="' + urlposition + '辞九门的回忆.jpg">辞九门的回忆</a>' },
             { context: '<a target="_blank"   href="' + urlposition + '风的季节.jpg">风的季节</a>' },
             { context: '<a target="_blank"   href="' + urlposition + '风筝误.jpg">风筝误</a>' },
             { context: '<a target="_blank"   href="' + urlposition + '萍聚.jpg">萍聚</a>' },
@@ -319,6 +323,7 @@ var demo01 = {
     }, {
         title: "bB调的简谱",
         data: [
+            { context: '<a target="_blank"   href="' + urlposition + '太多.jpg">太多</a>' },
             { context: '<a target="_blank"   href="' + urlposition + '爱不释手.jpg">爱不释手</a>' },
             { context: '<a target="_blank"   href="' + urlposition + '北国之春.jpg">北国之春</a>' },
             { context: '<a target="_blank"   href="' + urlposition + '穿越时空的思念.jpg">穿越时空的思念</a>' },
@@ -353,6 +358,7 @@ var demo01 = {
     }, {
         title: "B调的简谱",
         data: [
+            { context: '<a target="_blank"   href="' + urlposition + '风中有朵雨做的云.jpg">风中有朵雨做的云</a>' },
             { context: '<a target="_blank"   href="' + urlposition + '笔记.jpg">笔记</a>' },
             { context: '<a target="_blank"   href="' + urlposition + '长歌一曲.jpg">长歌一曲</a>' },
             { context: '<a target="_blank"   href="' + urlposition + '好大一棵树.jpg">好大一棵树</a>' },
