@@ -6,6 +6,13 @@ var demo01 = {
     title: "千曲晓声",
     name: "按照调性",
     data: [{
+        title: "知识总结",
+        data: [
+            { context: '<input type="text" class="findname" /><span onclick="findName()">搜索</span>' },
+            { context: '<span onclick="findName(2222)">新手选笛子 较音是哪几个 所有音</span>' },
+            { context: '<a target="_blank"   href="' + urlposition + '笔记.jpg">转调表 无</a>' },
+        ]
+    },{
         title: "C调的简谱",
         data: [
             { context: '<a target="_blank"   href="' + urlposition + '爱拼才会赢.jpg">爱拼才会赢</a>' },
@@ -367,15 +374,7 @@ var demo01 = {
             { context: '<a target="_blank"   href="' + urlposition + '我和草原有个约定.jpg">我和草原有个约定</a>' },
             { context: '<a target="_blank"   href="' + urlposition + '醉梦前尘.jpg">醉梦前尘</a>' },
         ]
-    }, {
-        title: "知识总结",
-        data: [
-            { context: '<input type="text" class="findname" /><span onclick="findName()">搜索</span>' },
-            { context: '<span onclick="findName(2222)">新手选笛子 较音是哪几个 所有音</span>' },
-            { context: '<a target="_blank"   href="' + urlposition + '笔记.jpg">转调表 无</a>' },
-        ]
-    }
-    ]
+    }]
 }
 // var num = 0
 // for(var i=0;i<demo01.data.length;i++){
@@ -387,5 +386,15 @@ var demo01 = {
 // console.log(num)
 data = [demo01]
 function findName(str){
-    console.log($(".findname").val())
+    var title = $(".findname").val()
+    for(var i=1;i<demo01.data.length;i++){
+        var aaa = demo01.data[i].data
+        aaa.forEach(e => {
+            console.log(e.context)
+            if(e.context.indexOf(title) > 0){
+                demo01.data[0].data.push(e);
+            }
+        });
+       
+    }
 }
