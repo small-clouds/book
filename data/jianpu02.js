@@ -390,7 +390,7 @@ function findName(str){
     for(var i=1;i<demo01.data.length;i++){
         var aaa = demo01.data[i].data
         aaa.forEach(e => {
-            console.log(e.context)
+            // console.log(e.context)
             if(e.context.indexOf(title) > 0){
                 demo01.data[0].data.push(e);
             }
