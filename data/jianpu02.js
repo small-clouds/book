@@ -15,7 +15,7 @@ var demo01 = {
     },{
         title: "C调的简谱",
         data: [
-            { context: '<a target="_blank"   href="' + urlposition + '爱拼才会赢.jpg">爱拼才会赢</a>' },
+            { context: '<a target="_blank"   href="' + urlposition + '爱拼才会赢.jpg" page="301">爱拼才会赢</a>' },
             { context: '<a target="_blank"   href="' + urlposition + '半壶纱.jpg">半壶纱</a>' },
             { context: '<a target="_blank"   href="' + urlposition + '成都.jpg">成都</a>' },
             { context: '<a target="_blank"   href="' + urlposition + '长相依.jpg">长相依</a>' },
@@ -25,7 +25,6 @@ var demo01 = {
             { context: '<a target="_blank"   href="' + urlposition + '人间不值得.jpg">人间不值得</a>' },
             { context: '<a target="_blank"   href="' + urlposition + '朋友别哭.jpg">朋友别哭</a>' },
             { context: '<a target="_blank"   href="' + urlposition + '飘摇.jpg">飘摇</a>' },
-            { context: '<a target="_blank"   href="' + urlposition + '人间不值得.jpg">人间不值得</a>' },
             { context: '<a target="_blank"   href="' + urlposition + '顺流逆流.jpg">顺流逆流</a>' },
             { context: '<a target="_blank"   href="' + urlposition + '盛夏的果实.jpg">盛夏的果实</a>' },
             { context: '<a target="_blank"   href="' + urlposition + '似是故人来.jpg">似是故人来</a>' },
@@ -87,7 +86,7 @@ var demo01 = {
         title: "D调的简谱",
         data: [
             { context: '<a target="_blank"   href="' + urlposition + '把悲伤留给自己.jpg">把悲伤留给自己</a>' },
-            { context: '<a target="_blank"   href="' + urlposition + '白狐.jpg">白狐</a>' },
+            { context: '<a target="_blank"   href="' + urlposition + '白狐.jpg"  page="298">白狐</a>' },
             { context: '<a target="_blank"   href="' + urlposition + '敢问路在何方.jpg">敢问路在何方</a>' },
             { context: '<a target="_blank"   href="' + urlposition + '飘雪.jpg">飘雪</a>' },
             { context: '<a target="_blank"   href="' + urlposition + '水手.jpg">水手</a>' },
@@ -119,6 +118,7 @@ var demo01 = {
             { context: '<a target="_blank"   href="' + urlposition + '美人吟.jpg">美人吟</a>' },
             { context: '<a target="_blank"   href="' + urlposition + '茉莉花.jpg">茉莉花</a>' },
             { context: '<a target="_blank"   href="' + urlposition + '你的样子.jpg">你的样子</a>' },
+            { context: '<a target="_blank"   href="' + urlposition + '倩女幽魂.jpg">倩女幽魂</a>' },
         ]
     }, {
         title: "bE调的简谱",
