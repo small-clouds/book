@@ -60,6 +60,7 @@ var demo01 = {
             { context: '286-<a target="_blank"   href="' + urlposition + '成都.jpg">成都</a>' },
             { context: '298-<a target="_blank"   href="' + urlposition + '半壶纱.jpg">半壶纱</a>' },
             { context: '304-<a target="_blank"   href="' + urlposition + '爱拼才会赢.jpg" page="301">爱拼才会赢</a>' },
+            { context: '000-<a target="_blank"   href="' + urlposition + '真的爱你.jpg" page="301">真的爱你</a>' },
         ]
     }, {
         title: "#C调的简谱",
@@ -227,6 +228,7 @@ var demo01 = {
             { context: '245-<a target="_blank"   href="' + urlposition + '红尘清歌.jpg">红尘清歌</a>' },
             { context: '287-<a target="_blank"   href="' + urlposition + '刹那芳华曲.jpg">刹那芳华曲</a>' },
             { context: '299-<a target="_blank"   href="' + urlposition + '拜无忧.jpg">拜无忧</a>' },
+            { context: '000-<a target="_blank"   href="' + urlposition + '祝你一路顺风.jpg">祝你一路顺风</a>' },
         ]
     }, {
         title: "G调的简谱(D作2)",
@@ -323,6 +325,7 @@ var demo01 = {
             { context: '277-<a target="_blank"   href="' + urlposition + '大约在冬季.jpg">大约在冬季</a>' },
             { context: '288-<a target="_blank"   href="' + urlposition + '曾经最美.jpg">曾经最美</a>' },
             { context: '289-<a target="_blank"   href="' + urlposition + '沧海一声笑.jpg">沧海一声笑</a>' },
+            { context: '000-<a target="_blank"   href="' + urlposition + '看我跃马扬鞭.jpg">看我跃马扬鞭</a>' },
         ]
     }, {
         title: "bB调的简谱",
