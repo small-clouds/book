@@ -361,6 +361,7 @@ var demo01 = {
             { context: '282-<a target="_blank"   href="' + urlposition + '穿越时空的思念.jpg">穿越时空的思念</a>' },
             { context: '297-<a target="_blank"   href="' + urlposition + '北国之春.jpg">北国之春</a>' },
             { context: '306-<a target="_blank"   href="' + urlposition + '爱不释手.jpg">爱不释手</a>' },
+            { context: '311-<a target="_blank"   href="' + urlposition + '月亮惹的祸.jpg">月亮惹的祸</a>' },
         ]
     }, {
         title: "B调的简谱",
