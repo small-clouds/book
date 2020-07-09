@@ -120,6 +120,7 @@ var demo01 = {
             { context: '259-<a target="_blank"   href="' + urlposition + '敢问路在何方.jpg">敢问路在何方</a>' },
             { context: '301-<a target="_blank"   href="' + urlposition + '白狐.jpg"  page="298">白狐</a>' },
             { context: '302-<a target="_blank"   href="' + urlposition + '把悲伤留给自己.jpg">把悲伤留给自己</a>' },
+            { context: '312-<a target="_blank"   href="' + urlposition + '漫漫前路.jpg">漫漫前路</a>' },
         ]
     }, {
         title: "bE调的简谱",
