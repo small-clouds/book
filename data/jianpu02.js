@@ -281,6 +281,7 @@ var demo01 = {
             { context: '295-<a target="_blank"   href="' + urlposition + '被遗忘的时光.jpg">被遗忘的时光</a>' },
             { context: '296-<a target="_blank"   href="' + urlposition + '背包.jpg">背包</a>' },
             { context: '305-<a target="_blank"   href="' + urlposition + '爱江山更爱美人.jpg">爱江山更爱美人</a>' },
+            { context: '313-<a target="_blank"   href="' + urlposition + '故事就是故事.jpg">故事就是故事</a>' },
         ]
     }, {
         title: "bA调的简谱",
