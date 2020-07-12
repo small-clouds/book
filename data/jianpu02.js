@@ -171,7 +171,7 @@ var demo01 = {
             { context: '192-<a target="_blank"   href="' + urlposition + '明月千里寄相思.jpg">明月千里寄相思</a>' },
             { context: '193-<a target="_blank"   href="' + urlposition + '明月几时有.jpg">明月几时有</a>' },
             { context: '255-<a target="_blank"   href="' + urlposition + '光辉岁月.jpg">光辉岁月</a>' },
-            { context: '276-<a target="_blank"   href="' + urlposition + '单身情歌.jpg"单身情歌</a>' },
+            { context: '276-<a target="_blank"   href="' + urlposition + '单身情歌.jpg">单身情歌</a>' },
             { context: '307-<a target="_blank"   href="' + urlposition + '阿里山的姑娘.jpg">阿里山的姑娘</a>' },
         ]
     }, {
