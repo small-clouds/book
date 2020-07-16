@@ -13,9 +13,9 @@ var demo01 = {
             { context: '<a target="_blank"   href="' + urlposition + '笔记.jpg">转调表 无</a>' },
         ]
     },{
-        title: "C调的简谱",
+        title: "C调的简谱 310",
         data: [
-            { context: '004-<a target="_blank"   href="' + urlposition + '醉仙美.jpg">醉仙美</a><span onclick="openImg(this)">展示图片</span>' },
+            { context: '004-<a target="_blank"   href="' + urlposition + '醉仙美.jpg">醉仙美</a>' },
             { context: '010-<a target="_blank"   href="' + urlposition + '最浪漫的事.jpg">最浪漫的事</a>' },
             { context: '028-<a target="_blank"   href="' + urlposition + '长相依.jpg">长相依</a>' },
             { context: '036-<a target="_blank"   href="' + urlposition + '云水禅心.jpg">云水禅心</a>' },
@@ -63,7 +63,7 @@ var demo01 = {
             { context: '310-<a target="_blank"   href="' + urlposition + '真的爱你.jpg" page="301">真的爱你</a>' },
         ]
     }, {
-        title: "#C调的简谱",
+        title: "#C调的简谱 260",
         data: [
             { context: '161-<a target="_blank"   href="' + urlposition + '倾国倾城.jpg">倾国倾城</a>' },
             { context: '205-<a target="_blank"   href="' + urlposition + '漫步人生路.jpg">漫步人生路</a>' },
@@ -72,7 +72,7 @@ var demo01 = {
             { context: '260-<a target="_blank"   href="' + urlposition + '芙蓉愿.jpg">芙蓉愿</a>' },
         ]
     }, {
-        title: "bD调的简谱",
+        title: "bD调的简谱 278",
         data: [
             { context: '037-<a target="_blank"   href="' + urlposition + '月亮代表我的心.jpg">月亮代表我的心</a>' },
             { context: '042-<a target="_blank"   href="' + urlposition + '雨蝶.jpg">雨蝶</a>' },
@@ -84,7 +84,7 @@ var demo01 = {
             { context: '278-<a target="_blank"   href="' + urlposition + '大鱼.jpg">大鱼</a>' },
         ]
     }, {
-        title: "D调的简谱",
+        title: "D调的简谱 312",
         data: [
             { context: '017-<a target="_blank"   href="' + urlposition + '祝你平安.jpg">祝你平安</a>' },
             { context: '022-<a target="_blank"   href="' + urlposition + '知道不知道.jpg">知道不知道</a>' },
@@ -123,7 +123,7 @@ var demo01 = {
             { context: '312-<a target="_blank"   href="' + urlposition + '漫漫前路.jpg">漫漫前路</a>' },
         ]
     }, {
-        title: "bE调的简谱",
+        title: "bE调的简谱 300",
         data: [
             { context: '016-<a target="_blank"   href="' + urlposition + '壮志在我胸.jpg">壮志在我胸</a>' },
             { context: '050-<a target="_blank"   href="' + urlposition + '英雄赞歌.jpg">英雄赞歌</a>' },
@@ -149,7 +149,7 @@ var demo01 = {
             { context: '300-<a target="_blank"   href="' + urlposition + '百姓心中自有你.jpg">百姓心中自有你</a>' },
         ]
     }, {
-        title: "E调的简谱",
+        title: "E调的简谱 307",
         data: [
             { context: '014-<a target="_blank"   href="' + urlposition + '追梦人.jpg">追梦人</a>' },
             { context: '020-<a target="_blank"   href="' + urlposition + '中国人.jpg">中国人</a>' },
@@ -157,7 +157,7 @@ var demo01 = {
             { context: '051-<a target="_blank"   href="' + urlposition + '英雄谁属.jpg">英雄谁属</a>' },
             { context: '068-<a target="_blank"   href="' + urlposition + '星星点灯.jpg">星星点灯</a>' },
             { context: '073-<a target="_blank"   href="' + urlposition + '笑看风云.jpg">笑看风云</a>' },
-            { context: '084-<a target="_blank"   href="' + urlposition + '逍遥叹.jpg">逍遥叹</a><span onclick="openImg(this)">展示图片</span>' },
+            { context: '084-<a target="_blank"   href="' + urlposition + '逍遥叹.jpg">逍遥叹</a>' },
             { context: '089-<a target="_blank"   href="' + urlposition + '相思.jpg">相思</a>' },
             { context: '092-<a target="_blank"   href="' + urlposition + '惜别的海岸.jpg">惜别的海岸</a>' },
             { context: '114-<a target="_blank"   href="' + urlposition + '枉凝眉.jpg">枉凝眉</a>' },
@@ -175,7 +175,7 @@ var demo01 = {
             { context: '307-<a target="_blank"   href="' + urlposition + '阿里山的姑娘.jpg">阿里山的姑娘</a>' },
         ]
     }, {
-        title: "F调的简谱",
+        title: "F调的简谱 315",
         data: [
             { context: '002-<a target="_blank"   href="' + urlposition + '昨日重现.jpg">昨日重现</a>' },
             { context: '003-<a target="_blank"   href="' + urlposition + '醉相思.jpg">醉相思</a>' },
@@ -220,7 +220,7 @@ var demo01 = {
             { context: '315-<a target="_blank"   href="' + urlposition + '潮湿的心.jpg">潮湿的心</a>' },
         ]
     }, {
-        title: "#F调的简谱",
+        title: "#F调的简谱 308",
         data: [
             { context: '001-<a target="_blank"   href="' + urlposition + '左手指月.jpg">左手指月</a>' },
             { context: '057-<a target="_blank"   href="' + urlposition + '一曲相思.jpg">一曲相思</a>' },
@@ -233,7 +233,7 @@ var demo01 = {
             { context: '308-<a target="_blank"   href="' + urlposition + '祝你一路顺风.jpg">祝你一路顺风</a>' },
         ]
     }, {
-        title: "G调的简谱(D作2)",
+        title: "G调的简谱(D作2) 313",
         data: [
             { context: '013-<a target="_blank"   href="' + urlposition + '纵横江湖.jpg">纵横江湖</a>' },
             { context: '019-<a target="_blank"   href="' + urlposition + '中华民谣.jpg">中华民谣</a>' },
@@ -285,7 +285,7 @@ var demo01 = {
             { context: '313-<a target="_blank"   href="' + urlposition + '故事就是故事.jpg">故事就是故事</a>' },
         ]
     }, {
-        title: "bA调的简谱",
+        title: "bA调的简谱 316",
         data: [
             { context: '018-<a target="_blank"   href="' + urlposition + '祝福.jpg">祝福</a>' },
             { context: '075-<a target="_blank"   href="' + urlposition + '笑八仙.jpg">笑八仙</a>' },
@@ -304,7 +304,7 @@ var demo01 = {
             { context: '316-<a target="_blank"   href="' + urlposition + '西海情歌.jpg">西海情歌</a>' },
         ]
     }, {
-        title: "A调的简谱(E做2)",
+        title: "A调的简谱(E做2) 309",
         data: [
             { context: '005-<a target="_blank"   href="' + urlposition + '醉拳.jpg">醉拳</a>' },
             { context: '015-<a target="_blank"   href="' + urlposition + '追风的女儿.jpg">追风的女儿</a>' },
@@ -332,7 +332,7 @@ var demo01 = {
             { context: '309-<a target="_blank"   href="' + urlposition + '看我跃马扬鞭.jpg">看我跃马扬鞭</a>' },
         ]
     }, {
-        title: "bB调的简谱",
+        title: "bB调的简谱 314",
         data: [
             { context: '009-<a target="_blank"   href="' + urlposition + '最美的情缘.jpg">最美的情缘</a>' },
             { context: '011-<a target="_blank"   href="' + urlposition + '最初的梦想.jpg">最初的梦想</a>' },
@@ -354,7 +354,7 @@ var demo01 = {
             { context: '144-<a target="_blank"   href="' + urlposition + '神话情话.jpg">神话情话</a>' },
             { context: '160-<a target="_blank"   href="' + urlposition + '清明上河图.jpg">清明上河图</a>' },
             { context: '167-<a target="_blank"   href="' + urlposition + '千年风雅.jpg">千年风雅</a>' },
-            { context: '196-<a target="_blank"   href="' + urlposition + '梦中的蝴蝶.jpg">梦中的蝴蝶</a><span onclick="openImg(this)">展示图片</span>' },
+            { context: '196-<a target="_blank"   href="' + urlposition + '梦中的蝴蝶.jpg">梦中的蝴蝶</a>' },
             { context: '208-<a target="_blank"   href="' + urlposition + '留什么给你.jpg">留什么给你</a>' },
             { context: '216-<a target="_blank"   href="' + urlposition + '历史的天空.jpg">历史的天空</a>' },  
             { context: '225-<a target="_blank"   href="' + urlposition + '九月九的酒.jpg">九月九的酒</a>' },
@@ -369,7 +369,7 @@ var demo01 = {
             { context: '314-<a target="_blank"   href="' + urlposition + '我们站在雨中.jpg">我们站在雨中</a>' },
         ]
     }, {
-        title: "B调的简谱",
+        title: "B调的简谱 294",
         data: [
             { context: '006-<a target="_blank"   href="' + urlposition + '醉梦前尘.jpg">醉梦前尘</a>' },
             { context: '029-<a target="_blank"   href="' + urlposition + '长歌一曲.jpg">长歌一曲</a>' },
