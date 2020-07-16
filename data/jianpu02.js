@@ -123,7 +123,7 @@ var demo01 = {
             { context: '312-<a target="_blank"   href="' + urlposition + '漫漫前路.jpg">漫漫前路</a>' },
         ]
     }, {
-        title: "bE调的简谱 300",
+        title: "bE调的简谱 317",
         data: [
             { context: '016-<a target="_blank"   href="' + urlposition + '壮志在我胸.jpg">壮志在我胸</a>' },
             { context: '050-<a target="_blank"   href="' + urlposition + '英雄赞歌.jpg">英雄赞歌</a>' },
@@ -147,6 +147,7 @@ var demo01 = {
             { context: '283-<a target="_blank"   href="' + urlposition + '初见.jpg">初见</a>' },
             { context: '291-<a target="_blank"   href="' + urlposition + '不装饰你的梦.jpg">不装饰你的梦</a>' },
             { context: '300-<a target="_blank"   href="' + urlposition + '百姓心中自有你.jpg">百姓心中自有你</a>' },
+            { context: '317-<a target="_blank"   href="' + urlposition + '关山酒.jpg">关山酒</a>' },
         ]
     }, {
         title: "E调的简谱 307",
