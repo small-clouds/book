@@ -15,7 +15,7 @@ var demo01 = {
     },{
         title: "C调的简谱",
         data: [
-            { context: '004-<a target="_blank"   href="' + urlposition + '醉仙美.jpg">醉仙美</a>' },
+            { context: '004-<a target="_blank"   href="' + urlposition + '醉仙美.jpg">醉仙美</a><span onclick="openImg(this)">展示图片</span>' },
             { context: '010-<a target="_blank"   href="' + urlposition + '最浪漫的事.jpg">最浪漫的事</a>' },
             { context: '028-<a target="_blank"   href="' + urlposition + '长相依.jpg">长相依</a>' },
             { context: '036-<a target="_blank"   href="' + urlposition + '云水禅心.jpg">云水禅心</a>' },
@@ -50,7 +50,7 @@ var demo01 = {
             { context: '219-<a target="_blank"   href="' + urlposition + '来生愿做一朵莲.jpg">来生愿做一朵莲</a>' },
             { context: '222-<a target="_blank"   href="' + urlposition + '军港之夜.jpg">军港之夜</a>' },
             { context: '223-<a target="_blank"   href="' + urlposition + '旧梦不须记.jpg">旧梦不须记</a>' },
-            { context: '226<a target="_blank"   href="' + urlposition + '九九艳阳天.jpg">九九艳阳天</a>' },
+            { context: '226-<a target="_blank"   href="' + urlposition + '九九艳阳天.jpg">九九艳阳天</a>' },
             { context: '230-<a target="_blank"   href="' + urlposition + '今天是你的生日.jpg">今天是你的生日</a>' },
             { context: '233-<a target="_blank"   href="' + urlposition + '江上行.jpg">江上行</a>' },
             { context: '235-<a target="_blank"   href="' + urlposition + '江南梦.jpg">江南梦</a>' },
@@ -354,7 +354,7 @@ var demo01 = {
             { context: '144-<a target="_blank"   href="' + urlposition + '神话情话.jpg">神话情话</a>' },
             { context: '160-<a target="_blank"   href="' + urlposition + '清明上河图.jpg">清明上河图</a>' },
             { context: '167-<a target="_blank"   href="' + urlposition + '千年风雅.jpg">千年风雅</a>' },
-            { context: '196-<a target="_blank"   href="' + urlposition + '梦中的蝴蝶.jpg">梦中的蝴蝶</a>' },
+            { context: '196-<a target="_blank"   href="' + urlposition + '梦中的蝴蝶.jpg">梦中的蝴蝶</a><span onclick="openImg(this)">展示图片</span>' },
             { context: '208-<a target="_blank"   href="' + urlposition + '留什么给你.jpg">留什么给你</a>' },
             { context: '216-<a target="_blank"   href="' + urlposition + '历史的天空.jpg">历史的天空</a>' },  
             { context: '225-<a target="_blank"   href="' + urlposition + '九月九的酒.jpg">九月九的酒</a>' },
@@ -403,4 +403,14 @@ function findName(str){
         });
        
     }
+}
+
+function openImg(e){
+    var imgUrl = $(e).parent("div").children("a").attr("href");
+    var imgmark = '<img src="'+imgUrl+'" style="max-width:100%;position: fixed;top: 0px;right: 0px;" onclick="closeImg(this)">';
+    $("body").append(imgmark);               
+}
+
+function closeImg(e){
+    $(e).remove();
 }
