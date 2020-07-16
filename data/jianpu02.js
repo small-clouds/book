@@ -157,7 +157,7 @@ var demo01 = {
             { context: '051-<a target="_blank"   href="' + urlposition + '英雄谁属.jpg">英雄谁属</a>' },
             { context: '068-<a target="_blank"   href="' + urlposition + '星星点灯.jpg">星星点灯</a>' },
             { context: '073-<a target="_blank"   href="' + urlposition + '笑看风云.jpg">笑看风云</a>' },
-            { context: '084-<a target="_blank"   href="' + urlposition + '逍遥叹.jpg">逍遥叹</a>' },
+            { context: '084-<a target="_blank"   href="' + urlposition + '逍遥叹.jpg">逍遥叹</a><span onclick="openImg(this)">展示图片</span>' },
             { context: '089-<a target="_blank"   href="' + urlposition + '相思.jpg">相思</a>' },
             { context: '092-<a target="_blank"   href="' + urlposition + '惜别的海岸.jpg">惜别的海岸</a>' },
             { context: '114-<a target="_blank"   href="' + urlposition + '枉凝眉.jpg">枉凝眉</a>' },
@@ -407,8 +407,11 @@ function findName(str){
 
 function openImg(e){
     var imgUrl = $(e).parent("div").children("a").attr("href");
-    var imgmark = '<img src="'+imgUrl+'" style="max-width:100%;position: fixed;top: 0px;right: 0px;" onclick="closeImg(this)">';
-    $("body").append(imgmark);               
+    var imgmark = '<img src="'+imgUrl+'" style="max-width:100%;">';
+    var div1 = '<div  style="max-width:100%;position: fixed;top: 0px;right: 0px; overflow-y:auto; height: 100%;"  onclick="closeImg(this)">'+imgmark+' </div>'
+    
+   
+    $("body").append(div1);               
 }
 
 function closeImg(e){
