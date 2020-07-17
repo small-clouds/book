@@ -307,8 +307,9 @@ var demo01 = {
             { context: '316-<a target="_blank"   href="' + urlposition + '西海情歌.jpg">西海情歌</a>' },
         ]
     }, {
-        title: "A调的简谱(E做2) 309",
+        title: "A调的简谱(E做2) 320",
         data: [
+            { context: '320-<a target="_blank"   href="' + urlposition + '外婆的澎湖湾.jpg">外婆的澎湖湾</a>' },
             { context: '005-<a target="_blank"   href="' + urlposition + '醉拳.jpg">醉拳</a>' },
             { context: '015-<a target="_blank"   href="' + urlposition + '追风的女儿.jpg">追风的女儿</a>' },
             { context: '033-<a target="_blank"   href="' + urlposition + '在那遥远的地方.jpg">在那遥远的地方</a>' },
