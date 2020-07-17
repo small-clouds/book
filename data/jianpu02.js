@@ -150,8 +150,9 @@ var demo01 = {
             { context: '317-<a target="_blank"   href="' + urlposition + '关山酒.jpg">关山酒</a>' },
         ]
     }, {
-        title: "E调的简谱 307",
+        title: "E调的简谱 318",
         data: [
+            { context: '318-<a target="_blank"   href="' + urlposition + '三生缘.jpg">三生缘</a>' },
             { context: '014-<a target="_blank"   href="' + urlposition + '追梦人.jpg">追梦人</a>' },
             { context: '020-<a target="_blank"   href="' + urlposition + '中国人.jpg">中国人</a>' },
             { context: '026-<a target="_blank"   href="' + urlposition + '珍惜.jpg">珍惜</a>' },
@@ -174,7 +175,6 @@ var demo01 = {
             { context: '255-<a target="_blank"   href="' + urlposition + '光辉岁月.jpg">光辉岁月</a>' },
             { context: '276-<a target="_blank"   href="' + urlposition + '单身情歌.jpg">单身情歌</a>' },
             { context: '307-<a target="_blank"   href="' + urlposition + '阿里山的姑娘.jpg">阿里山的姑娘</a>' },
-            { context: '000-<a target="_blank"   href="' + urlposition + '三生缘.jpg">三生缘</a>' },
         ]
     }, {
         title: "F调的简谱 315",
