@@ -178,8 +178,9 @@ var demo01 = {
             { context: '307-<a target="_blank"   href="' + urlposition + '阿里山的姑娘.jpg">阿里山的姑娘</a>' },
         ]
     }, {
-        title: "F调的简谱 315",
+        title: "F调的简谱 321",
         data: [
+            { context: '321-<a target="_blank"   href="' + urlposition + '伤心太平洋.jpg">伤心太平洋</a>' },
             { context: '002-<a target="_blank"   href="' + urlposition + '昨日重现.jpg">昨日重现</a>' },
             { context: '003-<a target="_blank"   href="' + urlposition + '醉相思.jpg">醉相思</a>' },
             { context: '007-<a target="_blank"   href="' + urlposition + '最真的梦.jpg">最真的梦</a>' },
