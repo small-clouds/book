@@ -125,6 +125,7 @@ var demo01 = {
     }, {
         title: "bE调的简谱 317",
         data: [
+            { context: '317-<a target="_blank"   href="' + urlposition + '关山酒.jpg">关山酒</a>' },
             { context: '016-<a target="_blank"   href="' + urlposition + '壮志在我胸.jpg">壮志在我胸</a>' },
             { context: '050-<a target="_blank"   href="' + urlposition + '英雄赞歌.jpg">英雄赞歌</a>' },
             { context: '082-<a target="_blank"   href="' + urlposition + '潇湘子.jpg">潇湘子</a>' },
@@ -147,11 +148,11 @@ var demo01 = {
             { context: '283-<a target="_blank"   href="' + urlposition + '初见.jpg">初见</a>' },
             { context: '291-<a target="_blank"   href="' + urlposition + '不装饰你的梦.jpg">不装饰你的梦</a>' },
             { context: '300-<a target="_blank"   href="' + urlposition + '百姓心中自有你.jpg">百姓心中自有你</a>' },
-            { context: '317-<a target="_blank"   href="' + urlposition + '关山酒.jpg">关山酒</a>' },
         ]
     }, {
-        title: "E调的简谱 318",
+        title: "E调的简谱 319",
         data: [
+            { context: '319-<a target="_blank"   href="' + urlposition + '母亲.jpg">母亲</a>' },
             { context: '318-<a target="_blank"   href="' + urlposition + '三生缘.jpg">三生缘</a>' },
             { context: '014-<a target="_blank"   href="' + urlposition + '追梦人.jpg">追梦人</a>' },
             { context: '020-<a target="_blank"   href="' + urlposition + '中国人.jpg">中国人</a>' },
