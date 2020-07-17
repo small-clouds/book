@@ -224,8 +224,9 @@ var demo01 = {
             { context: '315-<a target="_blank"   href="' + urlposition + '潮湿的心.jpg">潮湿的心</a>' },
         ]
     }, {
-        title: "#F调的简谱 308",
+        title: "#F调的简谱 323",
         data: [
+            { context: '323-<a target="_blank"   href="' + urlposition + '323-今生最爱.jpg">今生最爱</a>' },
             { context: '001-<a target="_blank"   href="' + urlposition + '左手指月.jpg">左手指月</a>' },
             { context: '057-<a target="_blank"   href="' + urlposition + '一曲相思.jpg">一曲相思</a>' },
             { context: '108-<a target="_blank"   href="' + urlposition + '未闻花名.jpg">未闻花名</a>' },
@@ -237,8 +238,9 @@ var demo01 = {
             { context: '308-<a target="_blank"   href="' + urlposition + '祝你一路顺风.jpg">祝你一路顺风</a>' },
         ]
     }, {
-        title: "G调的简谱(D作2) 313",
+        title: "G调的简谱(D作2) 322",
         data: [
+            { context: '322-<a target="_blank"   href="' + urlposition + '322-你是我一生最爱的人.jpg">你是我一生最爱的人</a>' },
             { context: '013-<a target="_blank"   href="' + urlposition + '纵横江湖.jpg">纵横江湖</a>' },
             { context: '019-<a target="_blank"   href="' + urlposition + '中华民谣.jpg">中华民谣</a>' },
             { context: '024-<a target="_blank"   href="' + urlposition + '真心英雄.jpg">真心英雄</a>' },
