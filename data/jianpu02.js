@@ -173,6 +173,7 @@ var demo01 = {
             { context: '255-<a target="_blank"   href="' + urlposition + '光辉岁月.jpg">光辉岁月</a>' },
             { context: '276-<a target="_blank"   href="' + urlposition + '单身情歌.jpg">单身情歌</a>' },
             { context: '307-<a target="_blank"   href="' + urlposition + '阿里山的姑娘.jpg">阿里山的姑娘</a>' },
+            { context: '000-<a target="_blank"   href="' + urlposition + '三生缘.jpg">三生缘</a>' },
         ]
     }, {
         title: "F调的简谱",
