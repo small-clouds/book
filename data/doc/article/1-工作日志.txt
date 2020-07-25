@@ -1,3 +1,17 @@
+20200410
+    资料创建单位，创建时间，资料描述这几个我问谁？
+
+统计几个SQL：
+   1、（钱鸿昀）一段时间内（输入开始、结束时间），用户学习课程信息过程表（查attempt表）：字段：用户名、所在单位（例：总部/上海分行/业务部）、课程名称、课程所属单位、学习时间
+   2、（张义）一段时间内（输入开始、结束时间），用户学习培训班情况：字段：用户名、所在单位（例：总部/上海分行/业务部）、培训班名称、培训班主办单位、学习时间
+   3、（钱鸿昀）一段时间内（输入开始、结束时间），用户学习专区情况：字段：用户名、所在单位（例：总部/上海分行/业务部）、专区名称、专区所在单位、学习时间
+   4、（钱鸿昀）一段时间内（输入开始、结束时间），用户学习案例情况：字段：用户名、所在单位（例：总部/上海分行/业务部）、案例名称、案例所在单位、学习时间
+   5、（尹栋力）一段时间内（输入开始、结束时间），用户学习教材情况：字段：用户名、所在单位（例：总部/上海分行/业务部）、教材名称、教材所在单位、学习时间
+
+
+20200331 工行项目组
+    权限和角色管理增加逻辑删除
+        最大的收获就是倒退了底层的权限代码  有些细节还需要在看看  甚至能获取的线程和注解相关的关系
 20200303
     >1国会项目
         上午搞了半天登录还有配置文件，他们的和我们原来的不一样，处理方式，所以以后要对自己自信点。
@@ -53,6 +67,150 @@
     上午写了微信登录文档的开头，下午去忙了别的事情。
     我觉得比工作重要的事情
 
+2020031100
+    站点配置
+        公众号配置
+        微信配置
+    3点小功能清楚  备注
+        明确接口  输入输出
+        登录增加扫码切换的
+
+    手机端写出来
+        学员个人信息
+    微信oauth2授权的中转url /api/open/sso/wechat/wxmp/oauth  ModelAndView
+    微信oauth2授权回调API，微信服务器负责重定向到此   /api/open/sso/wechat/wxmp/oauth/callback  code 微信回传的令牌   ModelAndView
+    绑定  /api/open/sso/wechat/wxmp/oauth/bind  username password bindKey（密钥，redis内绑定流程的key,value为用户微信信息）
+    注册并绑定  /wxmp/oauth/regbind   username password bindKey（密钥，redis内绑定流程的key,value为用户微信信息）
+
+    http://sparkdev.qimooc.net/console/api/open/sso/wechat/wxmp/oauth  这个链接生成二维码  scope 获取不到
+
+    http://sparkdev.qimooc.net/console/api/open/sso/wechat/wxmp/oauth/getkey  没问题   
+
+    http://sparkdev.qimooc.net/api/open/sso/wechat/wxmp/oauth/callback  缺少code
+
+    http://sparkdev.qimooc.net/console/api/open/sso/wechat   
+
+    https://open.weixin.qq.com/connect/oauth2/authorize?appid=wx633240329617d11b&redirect_uri=http://sparkdev.qimooc.net&response_type=code&scope=snsapi_userinfo&state=STATE#wechat_redirect
+
+    https://open.weixin.qq.com/connect/oauth2/authorize?appid=wx633240329617d11b&redirect_uri=http://sparkdev.qimooc.net/api/open/sso/wechat/wxmp/oauth/callback&response_type=code&scope=snsapi_userinfo&state=STATE#wechat_redirect
+
+    /wxmp/oauth
+
+https://open.weixin.qq.com/connect/oauth2/authorize?appid=wx633240329617d11b&redirect_uri=http://sparkdev.qimooc.net/api/open/sso/wechat/wxmp/oauth/callback&response_type=code&scope=snsapi_userinfo&state=STATE#wechat_redirect
+
+
+https://open.weixin.qq.com/connect/oauth2/authorize?appid=wx633240329617d11b&redirect_uri=http://sparkdev.qimooc.net/api/open/sso/wechat/wxmp/oauth/callback&response_type=code&scope=snsapi_base&state=STATE#wechat_redirect
+
+snsapi_base
+snsapi_userinfo
+
+
+https://open.weixin.qq.com/connect/oauth2/authorize?appid=wx633240329617d11b&redirect_uri=http://sparkdev.qimooc.net/api/open/sso/wechat/wxmp/oauth&response_type=code&scope=snsapi_userinfo&state=STATE#wechat_redirect
+
+    AppID  wx633240329617d11b
+    AppSecret f830cafce3bf51ba59563745f5d1a7ad
+    openid  oDXbosl0Mr6JHquAwlC_06aJj7aE
+    开放平台
+    open@qimooc.com
+    parim712
+
+    AppID： wxfb7dab412d8ffb5d
+    AppSecret：d565efa87b7e44209acafda0dcc092f3
+
+
+https://open.weixin.qq.com/connect/qrconnect?appid=wx7e50d0efb453012c&redirect_uri=http://www.qimooc.com&response_type=code&scope=snsapi_login&state=STATE#wechat_redirect
+
+
+1. ssh parim@59.110.242.25，此为跳板机，也是Nginx转发服务器
+2. 登录服务器后执行当前目录下的./toapp2.sh，或执行ssh root@172.16.2.163，密码为Parim&1058
+3. 登录163服务器后，到parim用户su - parim
+4. emqx docker环境的docker-compose文件位于：
+/data/docker/container/emqx
+
+ 219.238.175.162
+
+公司跳板机
+ssh  parim@intra.parim.net
+password ：  Ubi_1058
+
+产品项目
+192.168.0.11 parim manager1 
+~/docker/spark-dev-[oracle/mysql]
+
+https://api.weixin.qq.com/sns/oauth2/access_token?appid=wxf474cb2ffa07e7bf&secret=6e5811b462a64e719e92e0162c893f28&code=011gAsjs1HjMpk0gB6js19phjs1gAsjO&grant_type=authorization_code
+
+企慕课堂
+AppID：wx26e4294a424c76e2
+ https://open.weixin.qq.com/connect/qrconnect?appid=wx26e4294a424c76e2&redirect_uri=http://www.qimooc.com/&response_type=code&scope=snsapi_login&state=STATE#wechat_redirect 
+
+
+
+ https://api.weixin.qq.com/cgi-bin/token?grant_type=client_credential&appid=wx633240329617d11b&secret=f830cafce3bf51ba59563745f5d1a7ad
+浏览器唤起微信客户端跳转指定链接
+ <html>
+<a href="javascript:window.location.href='weixin://'">javascript:window.location.href='weixin://' </a>
+<a href="weixin://">weixin:// </a>
+<p><a href="weixin://dl/businessWebview/link/?appid=appid&url=baidu.com">test </a></p>
+</html>
+
+
+20200320
+    能用的连接整理
+
+    
+
+    产品项目地址
+        192.168.0.11 parim manager1 
+        ~/docker/spark-dev-[oracle/mysql]
+
+    公众号信息
+        AppID  wx633240329617d11b
+        AppSecret f830cafce3bf51ba59563745f5d1a7ad
+        openid  oDXbosl0Mr6JHquAwlC_06aJj7aE
+        
+        https://open.weixin.qq.com/connect/oauth2/authorize?appid=wx633240329617d11b&redirect_uri=http://sparkdev.qimooc.net/api/open/sso/wechat/wxmp/oauth&response_type=code&scope=snsapi_userinfo&state=STATE#wechat_redirect   二维码   001
+    开放平台
+        open@qimooc.com
+        parim712
+
+        企慕课堂
+            AppID：wx26e4294a424c76e2
+            https://open.weixin.qq.com/connect/qrconnect?appid=wx26e4294a424c76e2&redirect_uri=http://www.qimooc.com/&response_type=code&scope=snsapi_login&state=STATE#wechat_redirect 
+
+20200330
+工行笔记本电脑密码    --- Wbzywfh2020
+自己电脑ip  83.10.59.46   dccb-wbyindl  Wbzywfh2020
+
+paas测试：远程桌面：83.25.142.119  用户名/密码：dccb-masx/masixuan2222
+
+@旅行的云 栋力，义哥在通知公告的新闻图片里做了个手机端的banner管理，你把这功能拿出来，放到菜单栏“手机端管理”的“banner管理”下，权限再改下，新权限问@ H～y 
+
+@旅行的云 ，还有个功能，角色管理、授权管理，做个假删功能
+没有唯一约束随便填 ，有的话删除的时候在字段后面加个_uuid
+
+1.工行取电脑，连接工行电脑  100%
+2.手机端banner迁移， 100%
+3.授权和角色管理逻辑删除   20%
+
+
 
 ***************机遇只垂青于那些追求她的人******************************************************
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
