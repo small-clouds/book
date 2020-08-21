@@ -23,7 +23,7 @@
 -- and student.st_name like  "%王%" 
 -- select * from student inner join employment on student.st_id =employment.student_id where student.isdel=1 and employment.empstatus =1
 -- select * from student where isdel=1 and (select count(*) from interview where interview.student_id = student.st_id and isdel=1) = 3 
-#select * from student inner join employment on student.st_id =employment.student_id where student.isdel=1 and (select count(*) from interview where interview.student_id = student.st_id and isdel=1) <= 3 
+# select * from student inner join employment on student.st_id =employment.student_id where student.isdel=1 and (select count(*) from interview where interview.student_id = student.st_id and isdel=1) <= 3 
 -- select count(*) from interview where interview.student_id = student.st_id and isdel=1)
 -- select count(*) from interview  where  isdel=1
 -- select * from employment where em_time BETWEEN  "2017-11-01" and "2017-11-31"  ORDER BY salary DESC limit 0,4

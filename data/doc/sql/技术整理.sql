@@ -44,6 +44,16 @@ list数组的值用，分割成字符串
 
 		where t1.user_id=t2.user_id and t2.user_id =t3.user_id and  t3.user_id = 100000 
 
+leftjoin 依然能够过滤
+	select ltd.* from lrn_teacher_attention lta 
+	INNER JOIN lrn_teacher_dynamic ltd on lta.teacher_id = ltd.teacher_id 
+	LEFT JOIN lrn_course lc on lc.id = ltd.source_id and ltd.source_type ="COURSE"
+	LEFT JOIN lec_category lcate on lcate.id = ltd.source_id and ltd.source_type ="CATEGORY"
+	where  lta.user_id = 182  -- 查询条件
+	and (ltd.source_type !="COURSE" or ( lc.is_published=1 and lc.is_deleted=0 and lc.is_archived = 0  ))  -- 过滤条件
+
+
+and ltd.source_type in ("COURSE")
 mysql中的视图 
 		https://www.cnblogs.com/chenpi/p/5133648.html
 	
@@ -166,6 +176,17 @@ mysql 复制插入数据  平表
 	(select @m:=@m+1 num1 from (select @m:=-1) nums,sys_user limit 0,24)e,
 	(select @i:=@i+1 num2 from (select @i:=-1) nums,sys_user limit 0,60)f
 	ORDER BY e.num1,f.num2
+
+-- 240min以内的数据
+SELECT * FROM lrn_teacher_dynamic WHERE created_date  > (CURRENT_TIMESTAMP - INTERVAL 240 MINUTE)
+
+list判空
+	<if test="list.size() > 0">
+	  _claimreview.id in
+	  <foreach item="item" index="index" collection="list" open="(" separator="," close=")">  
+		#{item}
+	  </foreach>
+	</if>
 */
 *******************************  Controller  ********
 /*
