@@ -1,6 +1,6 @@
 //A开头的简谱
 var urlposition = "jianpu.html?src=data/images/jianpu/"
-var urlposition = "data/images/jianpu/"
+// var urlposition = "data/images/jianpu/"
 
 var demo01 = {
     title: "千曲晓声",
