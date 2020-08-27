@@ -65,6 +65,7 @@ var demo01 = {
     }, {
         title: "#C调的简谱 260",
         data: [
+            { context: '000-<a target="_blank"   href="' + urlposition + '缘.jpg">缘</a>' },
             { context: '161-<a target="_blank"   href="' + urlposition + '倾国倾城.jpg">倾国倾城</a>' },
             { context: '205-<a target="_blank"   href="' + urlposition + '漫步人生路.jpg">漫步人生路</a>' },
             { context: '244-<a target="_blank"   href="' + urlposition + '红马鞍.jpg">红马鞍</a>' },
