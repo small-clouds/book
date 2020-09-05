@@ -15,6 +15,7 @@ var demo01 = {
     },{
         title: "C调的简谱 310",
         data: [
+            { context: '000-<a target="_blank"   href="' + urlposition + '春泥.jpg">春泥</a>' },
             { context: '004-<a target="_blank"   href="' + urlposition + '醉仙美.jpg">醉仙美</a>' },
             { context: '010-<a target="_blank"   href="' + urlposition + '最浪漫的事.jpg">最浪漫的事</a>' },
             { context: '028-<a target="_blank"   href="' + urlposition + '长相依.jpg">长相依</a>' },
@@ -385,6 +386,7 @@ var demo01 = {
     }, {
         title: "B调的简谱 324",
         data: [
+            { context: '000-<a target="_blank"   href="' + urlposition + '赤伶.jpg">赤伶</a>' },
             { context: '324-<a target="_blank"   href="' + urlposition + 'Lemon.png">Lemon</a>' },
             { context: '006-<a target="_blank"   href="' + urlposition + '醉梦前尘.jpg">醉梦前尘</a>' },
             { context: '029-<a target="_blank"   href="' + urlposition + '长歌一曲.jpg">长歌一曲</a>' },
