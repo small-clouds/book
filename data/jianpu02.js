@@ -13,9 +13,10 @@ var demo01 = {
             { context: '<a target="_blank"   href="' + urlposition + '笔记.jpg">转调表 无</a>' },
         ]
     },{
-        title: "C调的简谱 310",
+        title: "C调的简谱 331",
         data: [
-            { context: '000-<a target="_blank"   href="' + urlposition + '春泥.jpg">春泥</a>' },
+            { context: '331-<a target="_blank"   href="' + urlposition + '纷飞.jpg">纷飞</a>' },
+            { context: '330-<a target="_blank"   href="' + urlposition + '春泥.jpg">春泥</a>' },
             { context: '004-<a target="_blank"   href="' + urlposition + '醉仙美.jpg">醉仙美</a>' },
             { context: '010-<a target="_blank"   href="' + urlposition + '最浪漫的事.jpg">最浪漫的事</a>' },
             { context: '028-<a target="_blank"   href="' + urlposition + '长相依.jpg">长相依</a>' },
@@ -64,9 +65,9 @@ var demo01 = {
             { context: '310-<a target="_blank"   href="' + urlposition + '真的爱你.jpg" page="301">真的爱你</a>' },
         ]
     }, {
-        title: "#C调的简谱 260",
+        title: "#C调的简谱 332",
         data: [
-            { context: '000-<a target="_blank"   href="' + urlposition + '缘.jpg">缘</a>' },
+            { context: '332-<a target="_blank"   href="' + urlposition + '缘.jpg">缘</a>' },
             { context: '161-<a target="_blank"   href="' + urlposition + '倾国倾城.jpg">倾国倾城</a>' },
             { context: '205-<a target="_blank"   href="' + urlposition + '漫步人生路.jpg">漫步人生路</a>' },
             { context: '244-<a target="_blank"   href="' + urlposition + '红马鞍.jpg">红马鞍</a>' },
@@ -384,9 +385,9 @@ var demo01 = {
             { context: '314-<a target="_blank"   href="' + urlposition + '我们站在雨中.jpg">我们站在雨中</a>' },
         ]
     }, {
-        title: "B调的简谱 324",
+        title: "B调的简谱 333",
         data: [
-            { context: '000-<a target="_blank"   href="' + urlposition + '赤伶.jpg">赤伶</a>' },
+            { context: '333-<a target="_blank"   href="' + urlposition + '赤伶.jpg">赤伶</a>' },
             { context: '324-<a target="_blank"   href="' + urlposition + 'Lemon.png">Lemon</a>' },
             { context: '006-<a target="_blank"   href="' + urlposition + '醉梦前尘.jpg">醉梦前尘</a>' },
             { context: '029-<a target="_blank"   href="' + urlposition + '长歌一曲.jpg">长歌一曲</a>' },
