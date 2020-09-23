@@ -783,6 +783,7 @@ gradle clean :build -Denv=prod
 从远程抓取分支：git pull
 查看远程库信息：git remote -v
 查看commit提交记录日志：git log
+复制本地库到test  git clone D:/work/tongMing/project/unicom/console-web D:/study/test
 ######################################
 
 ----------------未整理 -------------start------
