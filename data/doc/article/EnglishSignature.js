@@ -16,6 +16,8 @@ var demo = {
             { context: "从相遇到离开，我欠自己良多，不欠你分毫" },
             { context: "" },
             { context: "" },
+            // One part of wisdom is knowing what you don't need anymore and letting it go.
+// 有种智慧是知道自己不再需要什么，然后学会放手。
             { context: "I'm not telling you it is going to be easy,I'm telling you it's going to be worth it." },//20200730
             { context: "我不会告诉你这个过程很容易，我只会说，这一切都是值得的。" },
             { context: "Keep a little fire burning;however small,however hidden." },

@@ -5,6 +5,11 @@ llhwvybubmbxjjdj
 mbpigzyqbjugbaed
 ***********************   Mapper.xml *************************
 /*
+批量删除表
+	1.整出删除语句
+	SELECT  CONCAT('drop table ',table_name,'; ')  FROM information_schema.columns where table_name like 'tmp\_%' group by table_name;
+	2.复制语句在删除
+	
 增改删
 	UPDATE Person SET FirstName = 'Fred' WHERE LastName = 'Wilson' 
 	
@@ -465,7 +470,10 @@ initForm赋值
 			  }
 			}
 		  }
-		  
+时间增加24小时 
+		this.endDate = new Date(this.endDate.toDateString() + " 23:59:59");
+时间去尾		   
+		this.getFormControl('expertStartDate').setValue(moment(moment(this.validateForm.value.expertStartDate).format('YYYY-MM-DD'))['_d']);
 批量操作
 	    if (!this.selection || this.selection.length == 0) {
 			this.message.error("请选择要删除的组织!");
@@ -722,12 +730,16 @@ class 名字
 	
 启动项目 
 	安装 springboot 安装gradleship
+	parim-spark.main
 	net.parim.spark.SparkApplication
 	
+	./gradlew run
+	gradle run
 前端项目启动   有点坑啊
 	console-web 需要 Angular CLI version 1.1.1.  npm install -g @angular/cli@1.1.1    npm start
 	npm start -- --port=4202
 	spark-app  需要 Angular CLI version 6.0.8.  ng serve learner-web 
+
  */
  
  
@@ -784,6 +796,7 @@ gradle clean :build -Denv=prod
 查看远程库信息：git remote -v
 查看commit提交记录日志：git log
 复制本地库到test  git clone D:/work/tongMing/project/unicom/console-web D:/study/test
+进行分支信息更新 git fetch -ap 
 ######################################
 
 ----------------未整理 -------------start------
@@ -913,7 +926,7 @@ ajax提交
 *************         gradle命令集合	
 gradle cleanEcl ecl  	编译命令每次pull代码都应该编译一下
 gradle run 	运行命令
-	
+./gradlew run
 	
 关于程序要先编译在导入项目	
 	
