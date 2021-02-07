@@ -10,6 +10,22 @@ mbpigzyqbjugbaed
 	SELECT  CONCAT('drop table ',table_name,'; ')  FROM information_schema.columns where table_name like 'tmp\_%' group by table_name;
 	2.复制语句在删除
 	
+天数和月数之前的数据
+		select  DATE_SUB(DATE_SUB(curdate(),INTERVAL 1 DAY),INTERVAL 30 DAY) ;
+		SELECT DATE_FORMAT(DATE_ADD(NOW(), INTERVAL - 2 MONTH),"%Y%m%01") AS MONTH ;
+EXISTS语句
+	SELECT
+		it.user_id
+		, it.reg_type
+		, bc.offering_id
+		, it.term_date "reg_date"
+		FROM
+		tmp_busi_class_user_reg_condition_user_and_group_info_total it, bas_offering bc
+		where 
+		it.offering_id = bc.offering_id 
+		and not EXISTS (select * from busi_offering_user_reg bour where bour.user_id = it.user_id and bour.offering_id = bc.offering_id) 
+		;
+
 增改删
 	UPDATE Person SET FirstName = 'Fred' WHERE LastName = 'Wilson' 
 	
@@ -195,6 +211,22 @@ list判空
 */
 *******************************  Controller  ********
 /*
+
+扫描接口  TypeMapNameAspect
+
+	//接口地址
+	http://localhost:8085/swagger-ui.html
+	//接口注解
+	TrainingClassLearnerApi
+	//实体注解
+	@ApiModelProperty("培训班名称") 
+	//工具类
+	SystemSwaggerUIConfig
+
+
+
+
+
 获取参数
 	@PathVariable("id") Long id
 	@RequestParam(name = "ids") Long[] ids   // {params:{ids:ids}}
@@ -354,12 +386,21 @@ jpa继承
 
 
 *********************************   ts   ***********************
-/*					   
+/*			
 
+	
 		private route: ActivatedRoute,
 		private router:Router,
 		private message: NzMessageService,
 		private modal: NzModalService,
+
+换成服务器的链接地址
+		"/api": {
+	        "target": "http://unicom3.qimooc.net",
+	        "secure": false,
+	        "changeOrigin": true
+	    },
+
 获取路由参数		-- 路由配置中的
 		<div class="knowing-content-bottom-bd clearfix" *ngFor="let item of dataList ;let i =index " [routerLink]="['/knowing/knowing-detail/'+item.id]"></div>
 		this.route.params.subscribe(
