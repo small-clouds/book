@@ -788,6 +788,10 @@ class 名字
  *******************************    打包命令     ************************
 /*
  gradle clean :build -Denv=prod
+
+ 打包命令  gradle clean :build -Denv=dev
+         gradle clean -Denv=pq :war
+
  
 gradle -Denv=prod clean mkZip -x test -x javadoc
 gradle clean :build -Denv=prod
