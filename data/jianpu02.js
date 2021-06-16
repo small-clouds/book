@@ -158,7 +158,7 @@ var demo01 = {
     }, {
         title: "E调的简谱 334",
         data: [
-            { context: '334-<a target="_blank"   href="' + urlposition + '誓要入刀山.png">誓要入刀山</a>' },
+            { context: '334-<a target="_blank"   href="' + urlposition + '誓要入刀山.jpg">誓要入刀山</a>' },
             { context: '325-<a target="_blank"   href="' + urlposition + '万古生香.png">万古生香</a>' },
             { context: '319-<a target="_blank"   href="' + urlposition + '母亲.jpg">母亲</a>' },
             { context: '318-<a target="_blank"   href="' + urlposition + '三生缘.jpg">三生缘</a>' },
