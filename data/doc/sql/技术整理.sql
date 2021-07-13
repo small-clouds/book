@@ -857,6 +857,13 @@ git patch补丁包
 	$ git add FIXED_FILES
 	$ git am --resolved
 
+git 错误总结与解决方案
+ 一、
+	问题 fatal: unable to access 'https://github.com/small-clouds/book.git/': OpenSSL SSL_connect: SSL_ERROR_SYSCALL in connection to github.com:443
+	解决  git config --global --add remote.origin.proxy ""
+
+
+
 
 ######################################
 
