@@ -559,7 +559,8 @@ initForm赋值
  /*
  
  权限操作
-	*spkAuthzIf="{hasPermission: 'RESOURCE:TEACHER_LIB:ADD'}"   html中加入这个 
+	*spkAuthzIf="{hasPermission: 'RESOURCE:TEACHER_LIB:ADD'}"   html中加入这个 单个权限
+	*spkAuthzIf="{hasAnyPermission: ['APP:VERSION:PUBLISH', 'APP:VERSION:REMOVE']}"   -- 复合权限控制
  
  类型转换
 	 <ng-template cuiColTpl="startDates" let-row="row">
@@ -832,9 +833,8 @@ gradle clean :build -Denv=prod
 创建+切换分支：git checkout -b <name>
 合并某分支到当前分支：git merge <name>
 删除分支：git branch -d <name>
-把本地修改的文件添加到提交列表中：git add .
-提交本地更新文件：git commit -m <describe>
 撤销上次提交的记录：git reset --soft HEAD^
+撤销上次提交的记录 git reset --hard HEAD^
 撤销到某一个版本号：git reset --hard e38a8100f2ba53549e9da4bff449afaaeba01e3b
 从本地推送分支到服务器远端仓库(推送自己的修改到服务器)：git push origin <branch-name>
 从远程抓取分支：git pull
@@ -842,6 +842,22 @@ gradle clean :build -Denv=prod
 查看commit提交记录日志：git log
 复制本地库到test  git clone D:/work/tongMing/project/unicom/console-web D:/study/test
 进行分支信息更新 git fetch -ap 
+
+
+git patch补丁包
+    git format-patch -M master  --  git master之后的所有提交打补丁 生成补丁包
+    git am patch/*.patch	*/	 -- 执行补丁一次性打入 三个项目错了俩
+    git am --abort  -- 放弃am的信息
+
+	基于am失败，所以有手动打补丁的方法  ************补丁重要**********
+    $ git apply PATCH --reject      -- 手动方便快捷，可操作性高，主要都是自己看得懂的东西
+
+	$ edit edit edit
+	（译注：根据.rej文件手动解决所有冲突）
+	$ git add FIXED_FILES
+	$ git am --resolved
+
+
 ######################################
 
 ----------------未整理 -------------start------
@@ -972,7 +988,10 @@ ajax提交
 gradle cleanEcl ecl  	编译命令每次pull代码都应该编译一下
 gradle run 	运行命令
 ./gradlew run
-	
+
+gradle clean :build -Denv=dev  打包
+gradlew otm check  oralce和mysql之间
+ 	
 关于程序要先编译在导入项目	
 	
 	
@@ -1037,4 +1056,12 @@ mainTyle必须写	net.parim.spark.SparkApplication
 	
 关于置顶有排序加是否  无排序加最后更新时间
 负值置顶   0 隐藏   正值排序
-	
+
+
+docker-compose 命令集合 
+docker-compose exec nginx nginx -s reload     nginx 重启
+docker-compose down 卸载
+docker-compose up -d 安装
+docker-compose start app 启动应用
+docker-compose restart app 重启应用
+
