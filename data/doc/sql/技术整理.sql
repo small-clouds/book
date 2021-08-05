@@ -862,7 +862,8 @@ git 错误总结与解决方案
 	问题 fatal: unable to access 'https://github.com/small-clouds/book.git/': OpenSSL SSL_connect: SSL_ERROR_SYSCALL in connection to github.com:443
 	解决  git config --global --add remote.origin.proxy ""
 
-
+二、failed,curl 56 OpenSSL SSL_read: SSL_ERROR_SYSCALL, errno 10054  
+	解决 git config --global http.sslVerify "false"
 
 
 ######################################
