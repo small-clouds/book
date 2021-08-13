@@ -1,13 +1,196 @@
 # 打开文件test.txt  
 # a+ 在末尾追加内容
 import keyword;
+import module1;
+
+# ---------------------------------------------------------- 20210813 start 
+
+# *****************文件读写 *************************
+file = open("module1.py","r",encoding='utf-8');
+print(file.readlines());
+# file.write(""); # 写文件 需要通过文件打开方式  a 是追加 w 重写 r只读
+
+file.close();
+
+
+# *****************模块 *************************
+# module1.fn();
+
+# 模块安装 
+    # pip install  模块名
+
+# ---------------------------------------------------------- 20210811 start 
+
+# *****************类和对象 *************************
+# class Student:
+#     # 属性
+#     name = "张三";
+#     age = 18;
+#     # 实例方法
+#     def fn1(self):
+#         print("实例方法 fn1");
+#     #静态方法
+#     @staticmethod
+#     def statidfn():
+#         print("静态方法 statiscFn");
+#     # 类方法
+#     @classmethod
+#     def classfn(cls):
+#         print("我是类方法");
+
+#     def _init_(self,name,age):
+#         self.name = name;
+#         self.age = age;
+
+
+# stu = Student();
+# print(stu.name);
+# stu.fn1();
+    
+# *****************函数 *************************
+
+# 函数默认值参数 b
+# def fun2(a,b=10):
+#     return a,b;
+
+# 函数可以返回多个参数，参数类型为 元组
+# def fun1():
+#     a = [1,2,3,4,5];
+#     b = [7,8,9,0,1];
+#     return a,b;
+
+# def fn(a,b):
+#     return a+b;
+
+# print(fn(2,5));
+# print(fn(b=20,a=10));  # √ 
+
+# print(fun1()); 
+
+
+# ---------------------------------------------------------- 20210809 start 
+
+# *****************字符串常用操作*************************
+# s = "hello,world";
+# print(s.split(","));
+
+# # 格式化字符串
+# # %
+# print('我是%s,今年%d岁。' % ("张三",20));
+# # {}
+# print("我是{0},今年{1}岁。 --- {0}".format("张三",20))
+# # {name}
+# name = "张三"
+# print(f"我是{name}, --- {name}")
+
+
+# *****************集合*************************
+# s = set(range(10));
+# s1={2,3,5,6,7,7,89}; # 直接去重
+# print(s,">>>",s1); 
+
+# print(set("python"));
+
+
+# *****************集合 关系*************************
+# s2 = {10,20,30,40};
+# s3 = {20,30,40,50};
+# print(s2 & s3); # 求交集
+# print(s2 | s3); # 求并集
+# print(s2 - s3)# 求差集  s1不同于啥的部分
+# print(s2 ^ s3)# 求对称差集  s1不同于啥的部分
+
+# *****************集合 操作*************************
+# set1 = set("python");
+
+# # 判断
+# print("n" in set1);
+# print("m" not in set1);
+
+# # 新增
+# set1.add("m");
+# set1.update({"q","w"}); #集合
+# set1.update(["1","2"]); #列表
+# set1.update(("3","5")); # 元组
+# print(set1);
+
+# # 删除
+# set1.remove("2");
+# set1.discard("2"); # 不会抛异常
+# set1.pop(); # 删除任意一元素   -- 随机 不需要参数
+# set1.clear(); # 清空
+# print(set1);
+
+
+
+
+# *****************元组 tuple*************************
+# t = ("java","python",90) ; 
+# t1= ("java",); # 单元组也需要加   , 不加就是字符串
+# t3 = "java","python",90 ; # 括号可省略
+# print(t);
+# print(t[0]);
+# t2 = tuple(("java","namess"))
+
+# *****************元组遍历*************************
+# print(t[0]);
+
+# for item in t :
+#     print(item);
+
+
+# *****************字典*************************
+# dct = {"name": "张三","age":18}; # 字典定义 其实就是对象
+
+# **************字典生成式**********************
+# lst1 = ["name","age","sex"];
+# lst2 = ["张三",18,"male"];
+
+# d = { item:price for item,price in zip(lst1,lst2) };
+# print(d);
+
+# **************字典遍历**********************
+# for item in dct:
+#     print(item,">>>>" ,dct[item]);
+
+
+# ****************常用操作一*************************************
+# print(dct["name"]);
+# print(dct.get("age"));
+
+# print(dct.get("age",99));   # 打印age不存在提供默认值
+# print(dct.get("sex","male")); 
+
+# *******************字典键的判断*************************
+
+# print("age" in dct);
+# print("age" not in dct );
+
+# del dct["name"]; # 删除键
+# dct.clear(); # 清空
+
+# dct["sex"] = "male"; # 新增 
+# print(dct);
+
+# *******************获取字典键*****************************
+# print(dct.keys(),type(dct.keys()));  
+# print(list(dct.keys()));# 所有键转成list
+
+# print(dct.keys(),type(dct.values()));  
+# print(list(dct.values()));# 所有键转成list
+
+# # 元组
+# print(dct.items());
+# print(list(dct.items())); # 列表元组类型
+# ---------------------------------------------------------- 20210809 end 
+
 
 # ---------------------------------------------------------- 20210805 start 
 
 
 # ******************序列生成式****************************************
-lst = [i for i in range(1,10)];
-print(lst);
+# lst = [i for i in range(1,10)];
+# print(lst);
 
 # ******************列表排序****************************************
 # lst = [2,5,7,1,56,32,1324]

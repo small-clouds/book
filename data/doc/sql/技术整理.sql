@@ -1075,3 +1075,11 @@ docker-compose up -d 安装
 docker-compose start app 启动应用
 docker-compose restart app 重启应用
 
+
+vscode基本设置
+	1.设置大小写转换	File -> Preference -> keyboard -> transform to
+
+
+
+ts 报错
+	Tslint 关闭这个增加配置 "defaultSeverity": "none",
