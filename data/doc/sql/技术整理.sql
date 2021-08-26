@@ -842,7 +842,7 @@ gradle clean :build -Denv=prod
 查看commit提交记录日志：git log
 复制本地库到test  git clone D:/work/tongMing/project/unicom/console-web D:/study/test
 进行分支信息更新 git fetch -ap 
-
+本地新分支推送到远程  git push --set-upstream origin newprod   
 
 git patch补丁包
     git format-patch -M master  --  git master之后的所有提交打补丁 生成补丁包
@@ -850,7 +850,7 @@ git patch补丁包
     git am --abort  -- 放弃am的信息
 
 	基于am失败，所以有手动打补丁的方法  ************补丁重要**********
-    $ git apply PATCH --reject      -- 手动方便快捷，可操作性高，主要都是自己看得懂的东西
+    $ git apply  --reject [包名]     -- 手动方便快捷，可操作性高，主要都是自己看得懂的东西
 
 	$ edit edit edit
 	（译注：根据.rej文件手动解决所有冲突）

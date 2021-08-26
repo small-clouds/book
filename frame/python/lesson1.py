@@ -2,15 +2,40 @@
 # a+ 在末尾追加内容
 import keyword;
 import module1;
+import os;
+
+# ---------------------------------------------------------- 20210816 start 
+
+# 获取当前目录下面的所有文件
+path = os.getcwd(); # 获取当前目录
+lst = os.listdir(path);  # 当前目录下的所有文件
+for filename in lst:     # 循环文件
+    if filename.endswith(".py"):  # 判断文件结尾
+        print(filename);       # 打印
+
+
+# 遍历当前文件下面的所有子文件和文件夹
+print("-------------------------");
+lst_files = os.walk(path);   # 遍历指定目录下的所有文件和文件夹
+for dirpath,dirname,filename in lst_files:
+    # print(dirpath); # 打印目录
+    # print(dirname); # 打印文件夹名 数组
+    # print(filename); # 打印文件名  数组
+    # print("------------------");
+    for dir in dirname:
+        print(dirpath,dir);
+        print(os.path.join(dirpath,dir)); # 
+
+
 
 # ---------------------------------------------------------- 20210813 start 
 
 # *****************文件读写 *************************
-file = open("module1.py","r",encoding='utf-8');
-print(file.readlines());
-# file.write(""); # 写文件 需要通过文件打开方式  a 是追加 w 重写 r只读
+# file = open("module1.py","r",encoding='utf-8');
+# print(file.readlines());
+# # file.write(""); # 写文件 需要通过文件打开方式  a 是追加 w 重写 r只读
 
-file.close();
+# file.close();
 
 
 # *****************模块 *************************
