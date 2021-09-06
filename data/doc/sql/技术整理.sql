@@ -868,6 +868,7 @@ git 错误总结与解决方案
 	解决 git config --global http.sslVerify "false"
 
 
+git remote set-url origin https://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@github.com/small-clouds/book.git
 ######################################
 
 ----------------未整理 -------------start------
