@@ -13,8 +13,9 @@ var demo01 = {
             { context: '<a target="_blank"   href="' + urlposition + '笔记.jpg">转调表 无</a>' },
         ]
     },{
-        title: "C调的简谱 331",
+        title: "C调的简谱 335",
         data: [
+            { context: '335-<a target="_blank"   href="' + urlposition + '偷功.jpg">偷功</a>' },
             { context: '331-<a target="_blank"   href="' + urlposition + '纷飞.jpg">纷飞</a>' },
             { context: '330-<a target="_blank"   href="' + urlposition + '春泥.jpg">春泥</a>' },
             { context: '004-<a target="_blank"   href="' + urlposition + '醉仙美.jpg">醉仙美</a>' },
