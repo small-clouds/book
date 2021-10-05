@@ -863,12 +863,14 @@ git 错误总结与解决方案
 	解决
 		方案一： git config --global --add remote.origin.proxy ""
 		方案二： git config --global --unset http.proxy 这个好用
-
+		方案三：
+			git config --global http.proxy
+			git config --global --unset http.proxy
 二、failed,curl 56 OpenSSL SSL_read: SSL_ERROR_SYSCALL, errno 10054  
 	解决 git config --global http.sslVerify "false"
 
 
-git remote set-url origin https://password@github.com/small-clouds/book.git
+git remote set-url origin https://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@github.com/small-clouds/book.git
 
 ######################################
 
