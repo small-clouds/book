@@ -870,7 +870,7 @@ git 错误总结与解决方案
 	解决 git config --global http.sslVerify "false"
 
 
-git remote set-url origin https://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@github.com/small-clouds/book.git
+git remote set-url origin https://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@github.com/small-clouds/book.git
 
 ######################################
 

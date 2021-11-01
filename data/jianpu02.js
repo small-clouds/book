@@ -249,8 +249,9 @@ var demo01 = {
             { context: '308-<a target="_blank"   href="' + urlposition + '祝你一路顺风.jpg">祝你一路顺风</a>' },
         ]
     }, {
-        title: "G调的简谱(D作2) 329",
+        title: "G调的简谱(D作2) 338",
         data: [
+            { context: '338-<a target="_blank"   href="' + urlposition + '童话.jpg">童话</a>' },
             { context: '329-<a target="_blank"   href="' + urlposition + '雨一直下.jpg">雨一直下</a>' },
             { context: '327-<a target="_blank"   href="' + urlposition + '吻别.jpg">吻别</a>' },
             { context: '322-<a target="_blank"   href="' + urlposition + '你是我一生最爱的人.jpg">你是我一生最爱的人</a>' },
