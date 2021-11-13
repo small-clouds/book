@@ -305,8 +305,9 @@ var demo01 = {
             { context: '313-<a target="_blank"   href="' + urlposition + '故事就是故事.jpg">故事就是故事</a>' },
         ]
     }, {
-        title: "bA调的简谱 316",
+        title: "bA调的简谱 339",
         data: [
+            { context: '339-<a target="_blank"   href="' + urlposition + '曾经我想一了百了.jpg">曾经我想一了百了</a>' },
             { context: '018-<a target="_blank"   href="' + urlposition + '祝福.jpg">祝福</a>' },
             { context: '075-<a target="_blank"   href="' + urlposition + '笑八仙.jpg">笑八仙</a>' },
             { context: '124-<a target="_blank"   href="' + urlposition + '天下第一.jpg">天下第一</a>' },
