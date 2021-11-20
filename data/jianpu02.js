@@ -161,7 +161,7 @@ var demo01 = {
     }, {
         title: "E调的简谱 340",
         data: [
-            { context: '340-<a target="_blank"   href="' + urlposition + '突然的自我.jpg">突然的自我</a>' },
+            { context: '340-<a target="_blank"   href="' + urlposition + '突然地自我.jpg">突然的自我</a>' },
             { context: '334-<a target="_blank"   href="' + urlposition + '誓要入刀山.jpg">誓要入刀山</a>' },
             { context: '325-<a target="_blank"   href="' + urlposition + '万古生香.png">万古生香</a>' },
             { context: '319-<a target="_blank"   href="' + urlposition + '母亲.jpg">母亲</a>' },
