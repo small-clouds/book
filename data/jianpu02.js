@@ -13,8 +13,9 @@ var demo01 = {
             { context: '<a target="_blank"   href="' + urlposition + '笔记.jpg">转调表 无</a>' },
         ]
     },{
-        title: "C调的简谱 335",
+        title: "C调的简谱 341",
         data: [
+            { context: '341-<a target="_blank"   href="' + urlposition + '老男孩.jpg">老男孩</a>' },
             { context: '335-<a target="_blank"   href="' + urlposition + '偷功.jpg">偷功</a>' },
             { context: '331-<a target="_blank"   href="' + urlposition + '纷飞.jpg">纷飞</a>' },
             { context: '330-<a target="_blank"   href="' + urlposition + '春泥.jpg">春泥</a>' },
@@ -392,8 +393,9 @@ var demo01 = {
             { context: '314-<a target="_blank"   href="' + urlposition + '我们站在雨中.jpg">我们站在雨中</a>' },
         ]
     }, {
-        title: "B调的简谱 333",
+        title: "B调的简谱 342",
         data: [
+            { context: '342-<a target="_blank"   href="' + urlposition + '无虑.jpg">无虑</a>' },
             { context: '333-<a target="_blank"   href="' + urlposition + '赤伶.jpg">赤伶</a>' },
             { context: '324-<a target="_blank"   href="' + urlposition + 'Lemon.png">Lemon</a>' },
             { context: '006-<a target="_blank"   href="' + urlposition + '醉梦前尘.jpg">醉梦前尘</a>' },
