@@ -383,8 +383,37 @@ jpa继承
 	private UserDto lastModifiedBy;
 	private Date lastModifiedDate;
 */
+*********************************   util 工具方法   ***********************
+/**
+1.map转对象
+		ExamType examType = new ExamType();
+        BeanUtils.populate(examType,map);
+
+		
+2.str转对象
+	examType = gson.fromJson(str, examType.getClass())
 
 
+3.按照行读取文件
+       String path = "D:/work/chengjishangbao.txt";
+            File file = new File(path);
+            InputStreamReader inputReader = new InputStreamReader(new FileInputStream(file));
+            BufferedReader bf = new BufferedReader(inputReader);
+            // 按行读取字符串
+            String str;
+            while ((str = bf.readLine()) != null) {
+                Gson gson = new Gson();
+                ExamType examType = new ExamType();
+                examType = gson.fromJson(str, examType.getClass());
+                System.out.println(">>>>>>>>>>>>>>>>"+examType.toString());
+                arrayList.add(examType);
+            }
+            bf.close();
+            inputReader.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+*/
 *********************************   ts   ***********************
 /*			
 
