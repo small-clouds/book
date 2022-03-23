@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <link rel="stylesheet" href="../../other/base.css" />
+    <title>java第二阶段学习-过滤器和监听器</title>
+</head>
+
+<body>
+    <h1>过滤器和监听器</h1>
+    <div class="demoMain">
+        <h2>过滤器</h2>
+        <div class="none">
+             <div>注：<span class="remark">从上往下依次执行</span></div>
+              <div>注：<span class="remark">只要访问就执行 看url pattern配置  什么都能经过 /*  *.do *.jsp</span></div>
+              <div>注：<span class="remark">过滤器链</span></div>
+            <div>
+<pre>   
+    web.xml文件配置  
+&lt;filter&gt;
+    &lt;filter-name&gt;LoginFilter&lt;/filter-name&gt;
+    &lt;filter-class&gt;com.cloud.fileter.LoginFilter&lt;/filter-class&gt;
+&lt;/filter&gt;
+    &lt;filter-mapping&gt;
+    &lt;filter-name>LoginFilter&lt;/filter-name&gt;
+&lt;url-pattern&gt;*.do&lt;/url-pattern&gt;
+&lt;/filter-mapping&gt;
+  一个普通的java类
+public class LoginFilter  implements Filter{  //实现 Filter接口 
+
+	public void doFilter(ServletRequest request, ServletResponse response,
+			FilterChain FC) throws IOException, ServletException {
+	System.out.println("这是一个过滤器   doFilter");
+if(.....){
+	FC.doFilter(request, response); // 放行
+}else{
+    跳转。。。。。。
+}
+	}
+
+  </pre>
+
+            </div>
+           
+        </div>
+        <h2>监听器</h2>
+        <div class="none">
+            <div><span class="remark">8大内置监听器</span></div>
+            <div>用法 在想要监听的对象里面实现 HttpSessionBinglistener接口 实现两个方法  这样对象与session进行绑定时就能够监听</div>
+            <div>
+                <pre>
+// 绑定
+public void valueBound(HttpSessionBindingEvent arg0) {
+    System.out.println("session Binding ...  ");
+}
+
+// 解绑
+public void valueUnbound(HttpSessionBindingEvent arg0) {
+    System.out.println("session UNBinding ...  ");
+}
+   </pre>
+
+            </div>
+
+        </div>
+       
+    </div>
+</body>
+
+</html>
+<script src='../../other/jquery.min.js'></script>
+<script src='../../other/base.js'></script>

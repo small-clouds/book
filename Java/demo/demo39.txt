@@ -1,0 +1,109 @@
+﻿自定义标签：
+
+	什么是标签 :
+		html
+		jsp
+		c
+		fmt
+		fn
+		
+	如何制作自定义标签:
+		
+	原理:根据标签找到指定位置的tld文件 根据配置找到相应的处理类 输出处理类中实现的内容
+	
+	制作:
+	
+	1.首先建立处理类 该类必须继承 SimpleTagSupport 并实现 doTag方法
+		 并获取页面输出流 通过流的方式 向页面输出
+		 
+		a)//获取向页面输出的流
+		JspWriter jw = getJspContext().getOut();
+		b)JspWriter jw = this.PageContext.getOut();
+		
+		
+		StringWriter sw = new StringWriter();
+		//获取标签体内容
+		getJspBody().invoke(sw);
+		
+		//获取属性名 可以与标签的属性名不同 但是get方法必须后的名字必须 与标签属性名一致
+		String message;
+		
+		
+		
+		//向页面输出信息
+		jw.print("helo");
+		jw.print(sw.toString());
+		jw.print(message);
+	
+	2.在WEB-INF下做tld文件 其中编写标签格式与内容
+		<?xml version="1.0" encoding="utf-8" ?>
+		<taglib>
+		<!-- 标签库版本 -->
+		  <tlib-version>1.0</tlib-version>
+		<!-- jsp自定义标签API版本声明 -->
+		  <jsp-version>1.2</jsp-version>
+		<!-- 	前缀 -->
+		  <short-name>c</short-name>
+		  
+		<!--   声明标签 -->
+		  <tag>
+		<!--   声明标签名 -->
+			<name>mytag</name>
+		<!--   	指定标签处理类 -->
+			<tag-class>com.tag.MyTag</tag-class>
+		<!--   	设置是否存在标签体 empty表示没有标签体    -->
+			<body-content>empty</body-content>
+		<!--   	设置是否存在标签体 empty表示没有标签体    -->
+		<!--	<body-content>scriptless</body-content>	  -->
+				
+		<attribute>
+			<name>var</name>
+			<required>false</required>
+			<!-- 是否可以使用表达式 -->
+			<rtexprvalue>false</rtexprvalue>
+			<type>boolean</type>
+		</attribute>
+			
+		  </tag>
+
+		</taglib>
+	
+	3.在jsp页面上引入自定义标签 并使用
+		a)引入
+		b)<my:mytag/>
+
+	
+	
+	二、在web.xml中配置标签库
+		web.xml
+	<jsp-config>
+		<taglib>
+			<taglib-uri>/mytaglib</taglib-uri>
+			<taglib-location>/WEB-INF/mytag.tld</taglib-location>
+		</taglib>
+	</jsp-config>
+	
+		jsp中引入
+		<%@taglib prefix="my" uri="/mytaglib" %>
+
+	三、标签缓冲池
+		在tomcat4.1版本后 默认开启标签缓冲池，所以执行完标签后，不会再执行
+		release()方法; 
+		jspDestory()方法后才释放该对象；
+		标签和参数都相同的标签只会存在一个实例对象，参数不同的实例不同，
+		eg.
+			<ss:u user=""/>
+			<ss:u />
+			创建两个对象
+			
+	四、关闭自定义标签缓冲池
+		tomcat\conf\web.xml中设置
+		<init-param>
+			<param-name>enablePooling</param-name>
+			<param-value>false</param-value>
+		</init-param>
+		
+-------------------------------------------------------------------------	
+
+
+	

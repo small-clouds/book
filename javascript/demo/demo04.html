@@ -1,0 +1,129 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title></title>
+	<script src='../../other/jquery.min.js'></script>
+</head>
+<body>
+
+	<ul>
+		<li class="li1">
+			<input type="checkbox"  class="SelectAll"  value="全选" />  <label for="3">菜系管理</label><br>
+			<input type="checkbox" class="subcheck"  value="1" />  <label for="4">菜系增加</label></span>
+			<input type="checkbox" class="subcheck"  value="2" />  <label for="5">菜系编辑</label></span>
+			<input type="checkbox" class="subcheck"  value="3"/>  <label for="6">菜系列表</label></span>
+			<input type="checkbox" class="subcheck"  value="4" />  <label for="7">菜系删除</label></span> 
+		</li>
+		
+		<li class="li2">
+			<input type="checkbox"  class="SelectAll"  value="全选" />  <label for="3">菜系管理二</label><br>
+			<input type="checkbox" class="subcheck"  value="1"/>  <label for="4">菜系增加二</label></span>
+			<input type="checkbox" class="subcheck"  value="2"/>  <label for="5">菜系编辑二</label></span>
+			<input type="checkbox" class="subcheck"  value="3"/>  <label for="6">菜系列表二</label></span>
+			<input type="checkbox" class="subcheck"  value="4" />  <label for="7">菜系删除二</label></span> 
+		</li>
+		<li class="li3">
+			<input type="checkbox"  class="SelectAll"  value="全选" />  <label for="3">菜系管理</label><br>
+			<input type="checkbox" class="subcheck"  value="1" />  <label for="4">菜系增加</label></span>
+			<input type="checkbox" class="subcheck"  value="2" />  <label for="5">菜系编辑</label></span>
+			<input type="checkbox" class="subcheck"  value="3"/>  <label for="6">菜系列表</label></span>
+			<input type="checkbox" class="subcheck"  value="4" />  <label for="7">菜系删除</label></span> 
+		</li>
+		
+		<li class="li4">
+			<input type="checkbox"  class="SelectAll"  value="全选" />  <label for="3">菜系管理二</label><br>
+			<input type="checkbox" class="subcheck"  value="1"/>  <label for="4">菜系增加二</label></span>
+			<input type="checkbox" class="subcheck"  value="2"/>  <label for="5">菜系编辑二</label></span>
+			<input type="checkbox" class="subcheck"  value="3"/>  <label for="6">菜系列表二</label></span>
+			<input type="checkbox" class="subcheck"  value="4" />  <label for="7">菜系删除二</label></span> 
+		</li>
+		<li class="li5">
+			<input type="checkbox"  class="SelectAll"  value="全选" />  <label for="3">菜系管理</label><br>
+			<input type="checkbox" class="subcheck"  value="1" />  <label for="4">菜系增加</label></span>
+			<input type="checkbox" class="subcheck"  value="2" />  <label for="5">菜系编辑</label></span>
+			<input type="checkbox" class="subcheck"  value="3"/>  <label for="6">菜系列表</label></span>
+			<input type="checkbox" class="subcheck"  value="4" />  <label for="7">菜系删除</label></span> 
+		</li>
+			
+	
+		<li class="li6">
+			<input type="checkbox"  class="SelectAll"  value="全选" />  <label for="3">菜系管理二</label><br> 
+			<input type="checkbox" class="subcheck"  value="1"/>  <label for="4">菜系增加二</label></span>  
+			<input type="checkbox" class="subcheck"  value="2"/>  <label for="5">菜系编辑二</label></span>
+			<input type="checkbox" class="subcheck"  value="3"/>  <label for="6">菜系列表二</label></span>
+			<input type="checkbox" class="subcheck"  value="4" />  <label for="7">菜系删除二</label></span> 
+		</li>	
+	<ul>
+	
+	<script type="text/javascript"  >
+	    //复选框事件  
+    //全选、取消全选的事件  
+	$(".SelectAll").on("click", function(){
+		 if ($(this).prop("checked")){  
+           $(this).siblings(".subcheck").prop("checked", true);  
+        } else {  
+            $(this).siblings(".subcheck").prop("checked", false);  
+        }  
+	}); 
+	
+//反选怎么出不来了啊
+	$(".subcheck").on("click", function(){
+			var checkedsub = $(this).siblings("input[type='checkbox'][class='subcheck']:checked").length ; //获取被选中的个数
+			//$(":checkbox:checked")获取的都是被钩上的checkbox
+			//var a =$(this).siblings(":checkbox:checked").length
+			//alert(a);
+			
+			
+			if($(this).prop("checked")){    //判断点选事件  此时有两个值 一个为true  另一个为false
+				$(this).siblings(".SelectAll").prop("checked", true);  
+			 }else{
+				 if(checkedsub == 0){
+					 $(this).siblings(".SelectAll").prop("checked", false);  
+				 }
+			 }
+		});
+/*主要就是checkbox属性的应用  
+***prop为点选 选择的时候为true  反选的时候 为false
+***$("input[type='checkbox'][class='subcheck']:checked")   获取选中的的所有input
+*/
+
+/*  最近新写的 感觉比原来的好
+//权限选择时候的JS
+function selectAll(param) {
+    var obj = document.getElementById(param).getElementsByTagName('input');
+    var obj1 = document.getElementById('h' + param);
+    for (i = 0; i < obj.length; i++)
+    {
+        obj[i].checked = obj1.checked;
+    }
+}
+			   
+	
+	
+ $(".input").on("click",function(){           
+   var checked = $(this).parents("tr:first").find("input[type='checkbox']:checked").length
+   if($(this).prop("checked")){          
+	   $(this).parents("tr:first").find("input:first").attr("checked", true);
+	}else{
+		if(checked == 1){
+			$(this).parents("tr:first").find("input:first").attr("checked", false);   
+		}                                                                                                                 
+	}                                                                                                               
+})		
+
+
+
+
+*/
+	
+	</script>
+	</body>
+	</html>
+	
+	
+	
+	
+	
+	
+	
+	

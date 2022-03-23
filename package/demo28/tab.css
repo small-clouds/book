@@ -1,0 +1,92 @@
+ /*Asgard CardProgram Css Start*/ 
+        #itemsPanel,#itemsPanel li 
+        { 
+            margin:0; 
+            padding:0; 
+            list-style:none; 
+            /*for close location*/ 
+            position:relative;     
+        } 
+        /*Clear Float：Referrence-->http://www.blueidea.com/tech/web/2005/3065.asp*/ 
+        /*There is defect:the attribute-content hold one line place.*/ 
+        ul:after 
+        { 
+            content: ".";  
+            display: block; 
+            height: 0;  
+            clear: both;  
+            visibility: hidden; 
+        } 
+        #cardContent 
+        { 
+            height:auto; 
+            min-height:300px; 
+            border:2px solid #cccccc; 
+            clear:both; 
+        } 
+        #itemsPanel li 
+        { 
+            display:block; 
+            width:130px; 
+            height:25px; 
+            float:left; 
+            cursor:pointer; 
+            overflow:hidden; 
+        } 
+        #cardFrame 
+        { 
+            width:100%;height:100%;border:1px solid #ffffff;margin:0; 
+        } 
+        .active 
+        {             
+            background:url('http://www.jb51.net//upload/20070928200415937.jpg') 0 0 no-repeat; 
+        }         
+        .default 
+        { 
+            background:url('http://www.jb51.net//upload/20070928200415937.jpg') 0 -25px no-repeat; 
+        } 
+        .title 
+        { 
+            font-size:10pt; 
+            font-weight:bold; 
+            line-height:2; 
+            padding-left:10px; 
+            display:block; 
+            width:105px; 
+            height:25px; 
+        } 
+        li .close 
+        {             
+            position:absolute; 
+            top:9px; 
+            left:115px; 
+            display:block; 
+            width:10px; 
+            height:10px; 
+            overflow:hidden; 
+        } 
+        .active .close 
+        { 
+            background:url('http://bbs.blueidea.com/attachments/2007/8/20/20070820_b3321ab700a7e293b3ceJODnkLUsGEhy.jpg') 0 -50px no-repeat; 
+        } 
+        .default .title 
+        { 
+            color:#999999; 
+        } 
+        .active .title 
+        { 
+            color:#000000; 
+        } 
+        .active .close:hover 
+        { 
+            background:url('http://bbs.blueidea.com/attachments/2007/8/20/20070820_b3321ab700a7e293b3ceJODnkLUsGEhy.jpg') -10px -50px no-repeat; 
+        } 
+        .default .close 
+        { 
+            background:url('http://bbs.blueidea.com/attachments/2007/8/20/20070820_b3321ab700a7e293b3ceJODnkLUsGEhy.jpg') -20px -50px no-repeat; 
+        } 
+        .default .close:hover 
+        { 
+            background:url('http://bbs.blueidea.com/attachments/2007/8/20/20070820_b3321ab700a7e293b3ceJODnkLUsGEhy.jpg') -30px -50px no-repeat; 
+        } 
+        /*Asgard CardProgram Css End*/ 

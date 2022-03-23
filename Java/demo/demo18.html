@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <link rel="stylesheet" href="../../other/base.css" />
+    <title>java第一阶段学习 JDBC</title>
+</head>
+
+<body>
+    <h1>JDBC(java database connectivity) java数据库连接技术</h1>
+    <div class="demoMain">
+        <h2>JDBC流程</h2>
+        <div class="none">
+            <div>加载数据驱动Class.forname(driver) 最好静态加载</div>
+            <div>获取连接Connection conn </div>
+            <div>打开通道 Statement st /PreparedStatement ps</div>
+            <div>获取结果集 ResultSet rs </div>
+            <div>对结果集数据进行操作</div>
+            <div><span class="remark">关闭连接</span></div>
+        </div>
+        <h2>JDBC状态通道 展示</h2>
+        <div class="none">
+            <div><span class="remark"> 注意拼接sql语句的字符串</span></div>
+            <div>
+                <pre>
+List< Users > list = new ArrayList< Users >();
+String sql1 = "select * from users where id =1";
+// 数据库连接属性
+String URL = "jdbc:mysql://127.0.0.1:3307/test";
+String USERNAME = "root";
+String PASSWORD = "1234";
+String DRIVER = "com.mysql.jdbc.Driver";
+// 数据库连接池属性
+Connection conn = null;
+Statement st = null;
+ResultSet rs = null;
+try {
+    Class.forName(DRIVER);// 加载驱动
+    conn = DriverManager.getConnection(URL, USERNAME, PASSWORD); // 获取连接
+    st = conn.createStatement();
+    rs = st.executeQuery(sql1);
+    while (rs.next()) {
+        Users u = new Users();
+        u.setId(rs.getInt("id"));
+        u.setName(rs.getString("name"));
+        u.setBrith(rs.getDate("brith"));
+        u.setSalary(rs.getDouble("salary"));
+        u.setRemark(rs.getString("remark"));
+        list.add(u);
+    }
+    for (Users u : list) {
+        System.out.println(u.getId() + " " + u.getName() + " "
+                + u.getBrith());
+    }
+    // -----查完-------------增删改
+    // 开始--------------------------------------------
+    String sql2 = "update users set  name='达华' where id =1"; // 改
+    // String sql2
+    // ="insert into users values (2,'尹栋力','2017-09-19',8000,'备注')";// 增
+    // String sql2 ="delete from users where id = 6388";
+    st.executeUpdate(sql2);
+    // ------改完
+    // -----------------------------------------------------------------
+} catch (ClassNotFoundException e) {
+    // TODO Auto-generated catch block
+    e.printStackTrace();
+} catch (SQLException e) {
+    try {
+        if (rs != null)
+            rs.close();
+        if (st != null)
+            st.close();
+        if (conn != null)
+            conn.close();
+    } catch (SQLException e1) {
+        // TODO Auto-generated catch block
+        e1.printStackTrace();
+    }
+    e.printStackTrace();
+} 
+                </pre>
+            </div>
+        </div>
+        <h2>JDBC预装态通道 展示</h2>
+        <div class="none">
+            <div><span class="remark">预装态通道需要用sql语句打开</span></div>
+
+            <div>
+                <pre>
+ List< Object> list = new ArrayList< Object>();
+List< Users> list1 = new ArrayList< Users>();
+// 获取数据库连接属性
+String URL = "jdbc:mysql://127.0.0.1:3307/test";
+String USERNAME = "root";
+String PASSWORD = "1234";
+String DRIVER = "com.mysql.jdbc.Driver";
+// 数据库连接池属性
+Connection conn = null;
+PreparedStatement ps = null;
+ResultSet rs = null;
+try {
+    Class.forName(DRIVER);// 加载驱动
+    conn = DriverManager.getConnection(URL, USERNAME, PASSWORD);
+    // String sql1 = "update users set name=? where id =? ";
+    String sql1 = "insert into users values(null,?,?,?,?)";
+    // //String sql1 = "delete from users where id =1";
+    list.add("达华1号");
+    list.add(1);
+    ps = conn.prepareStatement(sql1); // 打开通道 ****通道需要sql语句打开
+    // 绑定问号参数
+    ps.setObject(1, "尹栋力");
+    ps.setObject(2, "2017-09-08");
+    ps.setObject(3, 1000);
+    ps.setObject(4, "备注");
+    ps.executeUpdate();
+    // --------增删改结束----------查开始--------------------
+    String sql2 = "select * from users where id >? and id<? ";
+    ps = conn.prepareStatement(sql2); // 打开通道 ***每次打开的都是不同的通道
+    ps.setObject(1, 6);
+    ps.setObject(2, 16);
+    rs = ps.executeQuery();
+    while (rs.next()) {
+        Users u = new Users();
+        u.setId(rs.getInt("id"));
+        u.setName(rs.getString("name"));
+        u.setBrith(rs.getDate("brith"));
+        u.setSalary(rs.getDouble("salary"));
+        u.setRemark(rs.getString("remark"));
+        list1.add(u);
+    }
+    for (Users u : list1) {
+        System.out.println("信息是" + u.getId() + "\t" + u.getName()
+                + "\t" + u.getBrith() + "\t" + u.getSalary() + "\t"
+                + u.getRemark());
+    }
+} catch (ClassNotFoundException e) {
+    e.printStackTrace();
+} catch (SQLException e) {
+    // TODO Auto-generated catch block
+    e.printStackTrace();
+} finally {
+    try { // 关闭连接
+        if (rs != null)
+            rs.close();
+        if (ps != null)
+            ps.close();
+        if (conn != null)
+            conn.close();
+    } catch (SQLException e) {
+        // TODO Auto-generated catch block
+        e.printStackTrace();
+    }
+}
+                </pre>
+            </div>
+            <div><span class="remark">问号参数可以用方法拼接</span></div>
+            <div>
+                <pre>
+public void bind(List< Object> params){
+    for (int i = 0; i < params.size(); i++) {
+        try {
+            ps.setObject(i+1, params.get(i));
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+}
+                 </pre>
+            </div>
+        </div>
+        <h2>DBCP 数据库连接池 DataBase Connection Poll</h2>
+        <div class="none">
+            <div>存在意义 为了代替jdbc</div>
+            <div><span class="remark">步骤</span></div>
+            <div>1.倒包 2个 commons-pool1.5.6 / commons-dbcp1.4</div>
+            <div>2.dao层 创建dbcp的连接池对象 </div>
+            <div>static BasicDataSource bds = new BasicDataSource();// 创建对象</div>
+            <div>static{  </div>
+            <div> bds.setDriverClassName(DRIVER);</div>
+            <div> bds.setUsername(USERNAME);</div>
+            <div> bds.setUrl(URL);</div>
+            <div> bds.setPassword(PASSWORD);</div>
+            <div> }</div>
+            <div> conn =bds.getConnection();// dbcp获取conn  </div>
+            <div>   <span class="remark">以下内容和jdbc一样</span></div>
+        </div>
+    </div>
+</body>
+
+</html>
+<script src='../../other/jquery.min.js'></script>
+<script src='../../other/base.js'></script>

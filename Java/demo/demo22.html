@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <link rel="stylesheet" href="../../other/base.css" />
+    <title>java第一阶段学习 XMl解析技术</title>
+</head>
+
+<body>
+    <h1>XMl解析技术</h1>
+    <div class="demoMain">
+        <h2>基础知识</h2>
+        <div class="none">
+            <div>XML是 可扩展性标记语言</div>
+            <div> 作用 <span class="remark">做配置文件 存储数据</span></div>
+            <div>命名规范 可以包含字母数字；不能有特殊字符； .除外 不能数字开头； 不能用字母xml； 不能含空格</div>
+        </div>
+        <h2>dom4j对XML文件增删改</h2>
+        <div class="none">
+            <div>
+                <pre>
+try {
+    // 创建解析器对象
+    SAXReader reader = new SAXReader();
+    // 获取解析的文件
+    Document doc = reader.read("src/config.xml");
+    // 通过文档对象获取根标签
+    Element root = doc.getRootElement();
+    // 在根节点下面加一个 alipy的标签
+    root.addElement("alipay").addElement("name").setText("cloud"); // 增
+    root.element("alipay").addElement("password").setText("password"); // 改
+
+    OutputFormat format = OutputFormat.createPrettyPrint();
+    format.setEncoding("utf-8");
+    XMLWriter writer = new XMLWriter(new FileWriter("src/config.xml"),
+            format);
+    writer.write(doc);
+    writer.close();
+} catch (DocumentException | IOException e) {
+    e.printStackTrace();
+}
+                </pre>
+            </div>
+        </div>
+        <h2>dom4j对XML文件查</h2>
+        <div class="none">
+            <div>
+                <pre>
+try {
+    // 创建解析器对象
+    SAXReader reader = new SAXReader();
+    // 获取解析的文件
+    Document doc = reader.read("src/config.xml");
+    // 通过文档对象获取根标签
+    Element root = doc.getRootElement();
+    List< Element> l = root.elements("mysql");
+    String sname = root.element("mysql").element("url").getText();
+    System.out.println("你是我想要的url----" + sname);
+    for (Element e : l) {
+        System.out.println(e.element("url").getText());
+        System.out.println(e.element("username").getText());
+        System.out.println(e.element("password").getText());
+        System.out.println(e.element("driver").getText());
+    }
+} catch (DocumentException e) {
+    // TODO Auto-generated catch block
+    e.printStackTrace();
+}
+                </pre>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
+<script src='../../other/jquery.min.js'></script>
+<script src='../../other/base.js'></script>

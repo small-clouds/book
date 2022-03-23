@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+
+	<!-- 引入资源文件 -->
+	<properties resource="dbconfig.properties"></properties>
+
+	<!-- <typeAliases> -->
+	<!-- <typeAlias alias="User" type="org.zrgk.entity.User" /> -->
+	<!-- </typeAliases> -->
+
+	<typeAliases>
+		<package name="com.cloud.bean"></package>
+	</typeAliases>
+
+	<!-- development 开发模式 work 工作模式 -->
+
+	<environments default="development">
+		<environment id="development">
+			<transactionManager type="JDBC" />
+			<!-- MANAGED -->
+			<dataSource type="POOLED">
+				<property name="driver" value="${driverClass}" />
+				<property name="url" value="${url}" />
+				<property name="username" value="${username}" />
+				<property name="password" value="${password}" />
+			</dataSource>
+		</environment>
+	</environments>
+	<!-- 映射信息 相当于引入资源 -->
+	<mappers>
+		<mapper resource="com/cloud/dao/UsersMapper.xml" />
+		<mapper resource="com/cloud/dao/UserMapper.xml" />
+		<mapper resource="com/cloud/dao/RoleMapper.xml" />
+	</mappers>
+</configuration>

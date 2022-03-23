@@ -1,0 +1,22 @@
+//常用注解和方法
+
+@Test
+(enabled=false)   //忽略此方法
+(timeOut=500)     //方法超时信息
+(priority = 0)    //方法执行顺序
+
+
+selenium.selectWindow("");
+selenium.selectFrame("");
+
+
+Reporter.log("打印报告");   方法下面  报告
+
+涉及问题 
+
+        mouseEnter   不支持这个方法
+        富文本编辑器 无法写入文字 
+        上传文件    无法上传
+
+
+中文乱码问题  查看更改编码方式  utf-8  暂时性解决

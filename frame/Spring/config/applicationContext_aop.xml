@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+	<!-- 面向切面编程 -->
+	<!-- aspetJ的方式 高于联盟的方式 -->
+	
+		
+	<!-- AOP联盟的方式 倒包 并不在核心包里面  -->
+	<!-- 好处 关流  关闭资源  可以写到 after  加载资源的时候 可以放到before 这样 全部都到了配置里面  写一次就够了 -->
+		<!-- 创建两个对象 -->
+	<bean id="aspect" class="com.zrgk.test.Aspect"></bean> <!-- 切面对象 -->
+	<bean id="target" class="com.zrgk.test.Target"></bean><!--目标对象 -->
+	<!--  目标代理  引入包 一定要是这个 -->
+	<bean id="targetProxy" class="org.springframework.aop.framework.ProxyFactoryBean">
+		<property name="target" ref="target"></property> <!-- 目标类 -->
+		<property name="interceptorNames"> <!-- 拦截器   -->
+			<list>
+				<value>aspect</value> <!-- 目前有一个 -->
+			</list>
+		</property>
+		<property name="interfaces">  <!-- 接口文件 -->
+			<list>
+				<value>com.zrgk.test.iTarget</value>
+			</list>
+		</property>
+	</bean>
+</beans>

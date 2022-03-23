@@ -1,0 +1,74 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <link rel="stylesheet" href="../../other/base.css" />
+    <title>SpringMVC</title>
+</head>
+<style>
+    .color {
+        color: red;
+        font-size: 12px;
+    }
+</style>
+
+<body>
+    <h1>SpringMvc框架</h1>
+    <div class="demoMain">
+        <h2>简介</h2>
+        <div class="none">
+            <div>Spring SpringMvc框架是Spring提供的一个强大而灵活的web框架。借助于注解Spring Mvc提供了几乎是POJO的开发模式使得控制器开发和测试更加简单。</div>
+            <div>控制器一般不直接处理请求，而是将其委托给Spring上下文中的其他bean，通过Spring的依赖注入功能</div>
+            <div>Spring MVC主要由DispatcherServlet、处理器映射、处理器(控制器)、视图解析器、视图组成。</div>
+            <div>处理器映射：选择使用那个控制器来处理请求</div>
+            <div>视图解析器：选择结果应该如何渲染</div>
+            <div>通过以上两点，Spring MVC保证了如何选择控制处理请求和如何选择视图展现输出之间的松耦合</div>
+            <div>用controler替代了servlet</div>
+        </div>
+        <h2>运行原理</h2>
+        <div class="none">
+            <div>(1) Http请求：在web.xml拦截 客户端将请求提交到DispatcherServlet。 </div>
+            <div>(2) 寻找处理器：由DispatcherServlet控制器查询一个或多个HandlerMapping，找到处理请求的Controller。 </div>
+            <div>(3) 调用处理器：DispatcherServlet将请求提交到Controller。 </div>
+            <div>(4)(5)调用业务处理和返回结果：Controller调用业务逻辑处理后，返回ModelAndView。 </div>
+            <div>(6)(7)处理视图映射并返回模型： DispatcherServlet查询一个或多个ViewResoler视图解析器，找到ModelAndView指定的视图。</div>
+            <div>(8) Http响应：视图负责将结果显示到客户端。</div>
+            <div><img src="config/springMvc_1.png" alt="springmvc运行原理"></div>
+        </div>
+        <h2>Mvc注解方式配置</h2>
+        <div class="none">
+            <div>倒包一堆</div>
+            <div><a href="config/web.xml" target="_blank">web.xml</a>在配置中设置applicationContex.xml的路径充当拦截器的作用和配置方式一样</div>
+            <div><a href="config/applicationContext_c.xml" target="_blank">applicationContext.xml</a>主要是开启注解功能、配置试图解析器</div>
+        </div>
+        <h2>Mvc注解方式使用</h2>
+        <div class="none">
+            <div>功能介绍</div>
+            <div>获取数据，自动装对象，返回页面，存session，异常处理，(单/多)文件上传，返回json，集合</div>
+            <div><a href="java/LoginController_c.java" target="_blank">LoginContraller.java</a>控制器注解使用 请求与相应 上传与json 数据接收和返回</div>
+            <div><a href="java/Users.java" target="_blank">Users</a>实体类(主要为了装对象)</div>
+            <div><a href="jsp/login.jsp" target="_blank">login</a>页面</div>
+        </div>
+        <h2>Spring MVC的配置方式配置</h2>
+        <div class="none">
+            <div>倒包一堆</div>
+            <div><a href="config/web.xml" target="_blank">web.xml</a> 在配置中设置applicationContex.xml的路径充当拦截器的作用</div>
+            <div><a href="config/applicationContext.xml" target="_blank">applicationContext.xml</a> SpringMVC的核心配置解析器</div>
+        </div>
+        <h2>Spring MVC的配置方式使用</h2>
+        <div class="none">
+            <div><a href="java/LoginController.java" target="_blank">LoginController.java</a>控制器 <span class="remark">实现</span>implements Controller -》 public ModelAndView handleRequest()的方法</div>
+            <div><a href="jsp/login.jsp" target="_blank">login.jsp</a>页面</div>
+        </div>
+        <h2>拦截器配置</h2>
+        <div class="none">
+            <div><a href="lanJieQi.txt"  target="_blank">拦截器文档</div>
+        </div>
+    </div>
+</body>
+
+</html>
+<script src='../../other/jquery.min.js'></script>
+<script src='../../other/base.js'></script>

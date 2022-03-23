@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <link rel="stylesheet" href="../../other/base.css" />
+    <title>phpstudy-- 面向对象编程的三大特性 封装继承多态 抽象类和接口</title>
+</head>
+
+<body>
+    <h1>面向对象编程的三大特性 封装继承多态 抽象类和接口</h1>
+
+    <div class="demoMain">
+        <h2>面向对象基本知识</h2>
+        <div class="none">
+            <div>面向对象(OOP):他能使代码更加简洁 易于维护并且具有更强的可重性</div>
+            <div>访问控制修饰符 public protected private 可以修饰方法和属性</div>
+        </div>
+        <h2>封装</h2>
+        <div class="none">
+            <div>封装性就是把对象的属性和行为结合成一个独立的单位</div>
+            <div>封装一个类需要两部 1. 私有化一个类 2. 用set和gei做出读取赋值的操作</div>
+            <div>优点：隐藏类的事项细节，可以方便加入逻辑控制性，限制对属性的不合理操作。便于修改增强代码的可维护性</div>
+            <div>一般来说：私有化更符合现实逻辑 预定义两种函数来进行获取和赋值操作，</div>
+            <div>_get通常是获取域的值 _set通常是设置域的值 _call调用对象中不存在的方法时，就会产生错误call()这个方法是来处理这种情况的</div>
+        </div>
+        <h2>继承</h2>
+        <div class="none">
+            <div>B类对象拥有A类的全部属性与行为，称作B对A类的继承</div>
+            <div>假如一个类从多个类中继承了属性与服务称为多继承；继承类为子类；被继承类为父类</div>
+            <div>在PHP中只有单继承，但一个类类可以被多个类继承，但是一个子类只能有一个父类，但是允许关联继承，通过继承可以简化类的定义</div>
+            <div>extends 声明继承关系 </div>
+            <div>外部访问对子类是有效的；子类与父类的属性与方法；子类继承了父类的所有内容，但父类在private部分不能直接访问；</div>
+            <div>子类中新增加的属性和方法是对父类的扩展； 子类中定义与父类同名的属性是对父类属性的覆盖，同名的方法也是对父类方法的覆盖</div>
+            <div>instanceof 操作符用于检测对象实例是否属于某一个类的类型 属于true 不属于false</div>
+            <div>使用 ： 父类名 :: 方法名（） parent :: 方法名（）</div>
+            <div>我们希望 某个类的方法不能被重写  final function abc(){} 但是是可以被继承的  </div>
+
+        </div>
+        <h2>多态</h2>
+        <div class="none">
+            <div> 多态 重写是多态的基础</div>
+            <div>子类方法不能缩小父类的访问权限 子类的访问范围 》= 父类的访问范围 </div>
+            <div> private 不能成为覆盖 因为 都继承不下来 都没下来 如何来的覆盖</div>
+            <div>在父类中定义的属性或行为被子类继承之后 可以具有不同的数据类型或表现出不同的行为，这是的同一个属性或行为在父类及其各个子类中具有不同的语义</div>
+            <div>就是说同一种方法在子类与父类中执行的结果不同</div>
+        </div>
+        <h2>抽象类 abstract 和抽象方法</h2>
+        <div class="none">
+            <div>抽象类天生就是被当作父类的，天生就是要被继承的</div>
+            <div>用abstract 修饰的方法 就是抽象方法 就不能够被实现 只能让子类去实现 </div>
+            <div>抽象类不能被实例化，一个抽象类中必须有一个抽象方法，当好似抽象类中可以定义动态函数</div>
+        </div>
+        <h2>接口 interface 实现 implements</h2>
+        <div class="none">
+            <div>接口不允许有任何的方法</div>
+            <div>接口实现了 高内聚 低耦合 的特点 </div>
+            <div>当一个类实现了一个接口之后，他要覆盖接口的所有方法，接口只能声明常量，接口的方法必须定义为public否则无法实现；接口与接口的关系为继承</div>
+            <div> 细节 </div>
+            <div> 接口绝对不能实例化 不能new出来 抽象类都不能实例化</div>
+            <div> 接口的所有方法 都不能有方法体</div>
+            <div> 一个类可以实现多个接口 但是需要 , 间隔</div>
+            <div> 接口 可以有属性 但是必须是常量const A=90 常量 没有$符号 默认是public 最好也是公开的 私有的肯定不对 保护也无意义</div>
+            <div> 接口的方法 必须是public的 默认就是public； 不能是 protected 更不能是private</div>
+            <div> 接口可以继承接口 不能继承类 接口可以多重继承接口 继承 继承 继承 接口 接口 接口</div>
+            <div> 总结上条 实现的类 要实现的所有的接口 继承的 和本身的。</div>
+        </div>
+    </div>
+</body>
+
+</html>
+<script src='../../other/jquery.min.js'></script>
+<script src='../../other/base.js'></script>

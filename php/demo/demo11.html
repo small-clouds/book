@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <link rel="stylesheet" href="../../other/base.css" />
+    <title>phpstudy-- 错误和异常处理</title>
+</head>
+
+<body>
+    <h1>错误和异常处理</h1>
+
+    <div class="demoMain">
+        <h2>处理方式介绍</h2>
+        <div class="none">
+            <div>//第一种 die("文件不存在") 等价于 exit(); </div>
+            <div>//第二种 自定义处理器 处理的是系统错误</div>
+            <div> //第三种 错误触发器 处理逻辑错误</div>
+        </div>
+        <h2>触发器</h2>
+        <div class="none">
+            <div>
+                <pre>
+$age = 180;
+if ($age > 120) {
+    trigger_error("年龄过大"); //处理逻辑错误 调用系统默认的方式  同时需要指定错误级别  默认notice
+//  trigger_error("年龄过大",E_USER_WARNING);  设置方法 和 自定义处理器一样  差不多 大概
+}
+//   set_error_handler("myError",E_USER_WARNING); 三种 E_USER_WARING E_USER_NOTICE
+//自定义处理器 一下是代码
+//  function myError($errNo,$errMsg){
+//      echo "错误号$errNo+错误信息$errMsg";
+//   }
+//   // 设置处理函数
+//   set_error_handler("myError",E_WARNING);
+//   $f79 = fopen("aaa.txt","r");
+//
+//         文件和文件夹 在系统里面是同一个东西
+//$f79 = fopen("aaa.txt","r");  // 只读方式打开aaa.txt  报错 但是程序继续执行
+// php 如何对异常处理
+file_exists("aaa.txt") or die("文件不存在 ");
+if (file_exists("aaa.txt")) {  // 检查文件是否存在  相对路径  
+    $f79 = fopen("aaa.txt", "r");
+} else {
+    echo "文件不存在";
+    die;
+}
+
+</pre>
+            </div>
+        </div>
+        <h2>错误日志保存</h2>
+        <div class="none">
+            <div> // error_log()</div>
+            <div>echo time(); // 秒1970 1 1 0 0 0 到现在的秒数</div>
+            <div> echo date("Y-m-d G-i-s");</div>
+            <div> $f79 = fopen("aaa.txt", "r"); </div>
+            <div> // 保存错误信息</div>
+
+            <div>/ 错误日志相关</div>
+            <div>date_default_timezone_set("PRC"); // 设置中国时区</div>
+
+            <div> function myError($errNo, $errMsg) {</div>
+            <div> $err_info = "错误号$errNo+错误信息$errMsg";</div>
+            <div> error_log("【" . date("Y-m-d G:i:s") . "】" . $err_info . "\r\n", 3, "myError.txt"); //属于自定义错误函数的方法</div>
+            <div>}</div>
+
+            <div> // 设置处理函数</div>
+            <div>set_error_handler("myError", E_WARNING);</div>
+        </div>
+        <h2>异常处理try{.....}catch(){...}</h2>
+        <div class="none">
+            <div>// 语法</div>
+            <div> // try{}catch(Exception e){} //两种方式 自己真的处理 二 自己不处理 将其抛出 catch 捕获 expception 异常</div>
+            <div> //可以很好的控制异常 开发大量使用 很好 异常抛出后 不会继续执行代码了</div>
+            <div>//如果异常抛出 但是没有捕获 则会提示 uncatch的异常 </div>
+            <div> // 当捕获到异常时 可以处理 也可以不处理 </div>
+            <div> //也可以自定义异常类</div>
+            <div>//catch 捕获异常 取决于 throw 抛出异常</div>
+        </div>
+    </div>
+</body>
+
+</html>
+<script src='../../other/jquery.min.js'></script>
+<script src='../../other/base.js'></script>

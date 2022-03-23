@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>分页内容</title>
+</head>
+
+
+<body>
+   <div>分页内容分析</div>
+   必须字段<br>
+     currPage; // 当前页<br>
+     pageCount; // 每页显示多少条<br>
+	 totalCount; // 总条数<br>
+	 totalPages; // 总页数<br>
+
+     pageNum; // 每页需要显示的页码数量 例如五页  总页数大于5的时候 为5 否则为 总页数<br>
+     pageStart //显示的时候的起始页  总页数小于5的时候 起始页为1  大于5&&当前页大于2  起始页为 当前页-2 当当前页大于总页数-2 起始页为 总页数-4<br>
+
+     pagelist // 用来装当前页的所有数据
+
+<!--<ul >  
+    <li class="first-child" v-bind:class={'active':pages.curPage==1}><a href="javascript:void(0)" v-on:click="selectpage(1)">首页</a></li>
+    <li  v-bind:class={'active':pages.curPage==1}><a href="javascript:void(0)" v-on:click="selectpage(pages.curPage-1)">上一页</a></li>
+
+    <li v-for="index in pages.pageShowNum" v-bind:class={'active':pages.curPage==pages.pageStart+index-1}>
+        <a href="javascript:void(0)" v-on:click="selectpage(pages.pageStart+index-1)" v-if="pages.curPage!=pages.pageStart+index-1 &&pages.pageStart+index-1<=pages.totalPages">{{pages.pageStart+index-1}}</a>
+        <span  v-if="pages.curPage==pages.pageStart+index-1 ">{{pages.curPage}}</span>           
+    </li>                            
+    <li v-bind:class={'active':pages.curPage==pages.totalPages}><a  href="javascript:void(0)" v-on:click="selectpage(pages.curPage+1)" >下一页</a></li>
+    <li v-bind:class={'active':pages.curPage==pages.totalPages}><a href="javascript:void(0)" v-on:click="selectpage(pages.totalPages)" >末页</a></li>
+    <li><span>共{{pages.totalCount}}条数据</span></li>
+    <li><span>共{{pages.totalPages}}页</span></li>
+</ul>-->
+<!--
+function makePage(obj) { //制作分页
+//当前页 每页条数 总条数  总页数
+    console.log(obj.currPage + " " + obj.pageCount + " " + obj.totalCount + " " + obj.totalPages); 
+    //循环次数
+    userVue.pages.pageShowNum = obj.totalPages > 5 ? 5 : obj.totalPages;
+    //总条数
+    userVue.pages.totalCount = obj.totalCount;
+    //总页数
+    userVue.pages.totalPages = obj.totalPages;
+    //当前页
+    userVue.pages.curPage = obj.currPage;
+    //起始页
+    userVue.pages.pageStart = 1;
+    if (obj.totalPages > 5 && obj.currPage > 2) {
+        userVue.pages.pageStart = obj.currPage - 2;
+        if (obj.currPage > obj.totalPages - 2) {
+            userVue.pages.pageStart = obj.totalPages - 4;
+        }
+    }
+    //结束页
+    userVue.pages.pageEnd = obj.totalPages;
+    if (obj.currPage + 2 < obj.totalPages) {
+        userVue.pages.pageEnd = obj.currPage + 2;
+    }
+}-->
+
+</body>
+</html>

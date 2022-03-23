@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.cloud.dao.UsersMapper.xml">
+	<!--查询语句 -->
+	<select id="findUserById" parameterType="string" resultType="Users">
+		select * from users where id = #{id}
+	</select>
+	<!-- 查询所有用户 -->
+	<select id="findUserAll" resultType="Users">
+		select * from users where
+		deluser_state=0
+	</select>
+	<!-- 带条件查询 包括模糊查询 和分类查询 -->
+	<select id="findUserAll1" resultType="Users" parameterType="Users">
+		select * from users
+		<where>
+			<if test=" loginname !=null and loginname !='' ">and  loginname like "%"#{loginname}"%"</if>
+			<if test=" loginname !=null and loginname !='' ">and  loginname like concat('%',lower(#{loginname}),'%')</if>
+			<if test="user_name !=null and user_name !=''"> and user_name like "%"#{user_name}"%"</if>
+			<if test="user_age !=null and user_age !=''"> and user_age=#{user_age}</if>
+			<if test="user_sex !=null and user_sex !=''"> and user_sex=#{user_sex}</if>
+			<if test="roleid !=null and roleid !=''"> and roleid=#{roleid}</if>
+			<if test="user_state !=null and user_state !=''"> and user_state=#{user_state}</if>
+			<if test="deluser_state !=null and deluser_state !=''"> and deluser_state=#{deluser_state}</if>
+		</where>
+	</select>
+	<!-- 带分页 条件 的 模糊查询 -->
+	<select id="findUserAll2" resultType="Users" parameterType="map">
+		select * from users 
+		<where>
+			<include refid="sqlconditions"></include>
+		</where>
+		<![CDATA[
+			limit #{begin},#{count} 
+		]]>
+	</select>
+	<!-- 查询总条数 -->
+	<select id="getTotalCount" parameterType="Users" resultType="int">
+		select count(*)  from users
+		<where>
+			<include refid="sqlcondition"></include>
+		</where>
+	</select>
+	<!--sql 语句的条件  map u用的-->
+	<sql id="sqlconditions">
+			<if test=" u.loginname !=null and u.loginname !='' ">and  loginname like "%"#{u.loginname}"%"</if>
+			<if test="u.user_name !=null and u.user_name !=''"> and user_name like "%"#{u.user_name}"%"</if>
+			<if test="u.user_age !=null and u.user_age !=''"> and user_age=#{u.user_age}</if>
+			<if test="u.user_sex !=null and u.user_sex !=''"> and user_sex=#{u.user_sex}</if>
+			<if test="u.roleid !=null and u.roleid !=''"> and roleid=#{u.roleid}</if>
+			<if test="u.user_state !=null and u.user_state !=''"> and user_state=#{u.user_state}</if>
+			<if test="u.deluser_state !=null and u.deluser_state !=''"> and deluser_state=#{u.deluser_state}</if>
+	</sql>
+	<!--user用的  -->
+	<sql id="sqlcondition">
+			<if test=" loginname !=null and loginname !='' ">and  loginname like "%"#{loginname}"%"</if>
+			<if test="user_name !=null and user_name !=''"> and user_name like "%"#{user_name}"%"</if>
+			<if test="user_age !=null and user_age !=''"> and user_age=#{user_age}</if>
+			<if test="user_sex !=null and user_sex !=''"> and user_sex=#{user_sex}</if>
+			<if test="roleid !=null and roleid !=''"> and roleid=#{roleid}</if>
+			<if test="user_state !=null and user_state !=''"> and user_state=#{user_state}</if>
+			<if test="deluser_state !=null and deluser_state !=''"> and deluser_state=#{deluser_state}</if>
+	</sql>
+	
+	<!-- 添加一个用户 -->
+	<insert id="addUser" parameterType="Users">
+		insert into users  values(null,#{loginname},#{password},#{user_name},#{user_idcard},#{user_age},#{user_phone},#{user_sex},#{roleid},#{user_image},#{user_state},#{deluser_state})
+	</insert>
+	<!--Map 类型的添加用户  -->
+	<insert id="addUserMap" parameterType="map">
+		insert into users  values(null,#{loginname},#{password},#{user_name},#{user_idcard},#{user_age},#{user_phone},#{user_sex},#{roleid},#{user_image},#{user_state},#{deluser_state})
+	</insert>
+	<!-- 动态sql的修改 -->
+	<update id="updateUser" parameterType="Users">
+		update users set
+		<if test="loginname !=null and loginname!=''">loginname = #{loginname} ,</if>
+		<if test=" user_name!=null and user_name !=''">user_name=#{user_name},</if>
+		<if test=" user_idcard!=null and  user_idcard!=''">user_idcard=#{user_idcard},</if>
+		<if test="user_age !=null and user_age !=''">user_age=#{user_age},</if>
+		<if test="user_phone !=null and user_phone !=''">user_phone=#{user_phone},</if>
+		<if test="user_sex !=null and user_sex !=''">user_sex=#{user_sex},	</if>
+		<if test="roleid !=null and roleid !=''">roleid=#{roleid},</if>
+		<if test=" user_image!=null and user_image !=''">	user_image=#{user_image},</if>
+		<if test="user_state !=null and user_state  !=''">	user_state=#{user_state},</if>
+		<if test="deluser_state !=null and deluser_state  !=''">deluser_state=#{deluser_state},</if>
+		<if test="password!=null and password!=''">password = #{password} ,	</if>
+		id =#{id} where id = #{id}
+	</update>
+
+	<!-- 批量删除  list -->
+	<delete id="deleteList"  parameterType="list">
+		delete from users where id in
+		<foreach collection="list" index="index" item ="item" open="(" separator="," close=")">#{item}</foreach>
+	</delete>
+	<!-- 批量删除  array -->
+	<delete id="deleteArray" >
+	delete from users where id in
+	<foreach collection="array" index="index" item ="item" open="(" separator="," close=")">#{item}</foreach>
+	</delete>
+	<!-- 二次查询  -->
+	<resultMap type="Users" id="users_role">
+		<id  column="id" property="id"/>
+		<association column="roleid"  property="role" select="Rolebyroleid"></association>
+	</resultMap>
+	<select id="selectUsersRoleByUsers" parameterType="Users" resultMap="users_role">
+		select * from users where id=#{id}
+	</select>
+	<select id="Rolebyroleid" parameterType="string" resultType="Role">
+		select * from role where role_id=#{roleid}
+	</select>
+	<!-- 二次查询 -->
+	<!-- 两表连查 -->
+	<resultMap type="Users" id="UsersRole">
+		<id  column="id" property="id"/>
+		<result column="loginname" property="loginname" />
+		<association property="role" javaType="Role">
+			<id column="role_id" property="role_id"/>
+			<result column="role_name" property="role_name"/>
+		</association>
+	</resultMap>
+	<select id="selectUsersRoleWithUser"  parameterType="Users"   resultMap="UsersRole">
+		select * from users inner join role on users.roleid=role.role_id where users.id=#{id}
+	</select>
+	<!-- 两表连查 -->
+</mapper>

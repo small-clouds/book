@@ -1,0 +1,103 @@
+<!DOCTYPE>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>价格循环的 订单也</title>
+<meta name="keywords" content="" >
+<meta name="description" content="">
+<meta name="viewport" content="width=device-width, initial-scale=1"> 
+<script src='../../other/jquery.min.js'></script>
+</head>
+<body>
+	<div class="par">
+<p>
+	选择<input class="select" type="checkbox" value="1">  
+	单价：<span class="danjia">1</span>  
+	数量：<span class="jian">-</span><input class="shuliang" value="1" type="text"><span class="jia">+</span>  
+	价格:<span class="zongjia">1</span>
+</p>
+<p>选择<input class="select" type="checkbox" value="2">  单价：<span class="danjia">2</span>  数量：<span class="jian">-</span><input class="shuliang" value="1" type="text"><span class="jia">+</span>  价格:<span class="zongjia">2</span></p>
+<p>选择<input class="select" type="checkbox" value="3">  单价：<span class="danjia">3</span>  数量：<span class="jian">-</span><input class="shuliang" value="1" type="text"><span class="jia">+</span>  价格:<span class="zongjia">3</span></p>
+<p>选择<input class="select" type="checkbox" value="4">  单价：<span class="danjia">4</span>  数量：<span class="jian">-</span><input class="shuliang" value="1" type="text"><span class="jia">+</span>  价格:<span class="zongjia">4</span></p>
+<p>选择<input class="select" type="checkbox" value="5">  单价：<span class="danjia">5</span>  数量：<span class="jian">-</span><input class="shuliang" value="1" type="text"><span class="jia">+</span>  价格:<span class="zongjia">5</span></p>
+<p>选择<input class="select" type="checkbox" value="6">  单价：<span class="danjia">6</span>  数量：<span class="jian">-</span><input class="shuliang" value="1" type="text"><span class="jia">+</span>  价格:<span class="zongjia">6</span></p>
+<p>选择<input class="select" type="checkbox" value="7">  单价：<span class="danjia">7</span>  数量：<span class="jian">-</span><input class="shuliang" value="1" type="text"><span class="jia">+</span>  价格:<span class="zongjia">7</span></p>
+总价格：<span class="zongjiage"></span>
+</div>
+<script type="text/javascript">
+function zongJiaGe(){
+	var zongshu = 0;
+		var select = $(".select");	
+		for(var i =0; i < select.length; i++){
+			if(select[i].checked == true){
+				var a =select[i];
+				var selectPrice = $(a).parents("p").find(".zongjia");//取出选中的总价  这是3个值		
+				for(var j =0; j < selectPrice.length; j++){
+						var jiagezongshu =selectPrice[j].innerHTML;						
+						zongshu += parseInt(jiagezongshu);							
+				}													
+			}					
+		}
+			$(".zongjiage").html(zongshu);	
+}
+	$(".select").click(function(){
+			zongJiaGe();	
+	});		
+		/*加号是增加*/
+		$(".jia").click(function(){	
+			var shuliang = $(this).siblings(".shuliang").val();  //获取数量
+			var danjia =$(this).siblings(".danjia").html(); 	//获取  单价		
+			shuliang =parseInt(shuliang) + 1;			//点击的时候数量  +1
+			$(this).siblings(".shuliang").val(shuliang); 
+			$(this).siblings(".zongjia").html((parseInt(shuliang))*(parseInt(danjia)));
+			zongJiaGe();	
+		});
+		
+		/*减号是减少*/
+		$(".jian").click(function(){			
+			var danjia =$(this).siblings(".danjia").html(); 
+			var shuliang = $(this).siblings(".shuliang").val();
+			shuliang =parseInt(shuliang) - 1;
+			$(this).siblings(".shuliang").val(shuliang);
+			$(this).siblings(".zongjia").html((parseInt(shuliang))*(parseInt(danjia)));	
+			if(shuliang < 0){
+			 	$(this).siblings(".shuliang").val(0);
+				$(this).siblings(".zongjia").html(0)
+			}				
+			zongJiaGe();		
+		});
+		
+		/*失去焦点的时候 以为着写完数字了*/
+		$(".shuliang").blur(function(){
+			var danjia =$(this).siblings(".danjia").html(); 
+			var shuliang = $(this).val();
+			$(this).siblings(".zongjia").html((parseInt(shuliang))*(parseInt(danjia)));		
+			zongJiaGe();		
+		});	
+</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,131 @@
+ * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box
+    }
+    
+
+    table,
+    td,
+    th {
+        border-collapse: collapse;
+        border-spacing: 0
+    }
+    
+    table {
+        width: 100%
+    }
+    
+    td,
+    th {
+        border: 1px solid #bcbcbc;
+        padding: 5px 10px
+    }
+    
+    th {
+        background: #42b983;
+        font-size: 1.2rem;
+        font-weight: 400;
+        color: #fff;
+        cursor: pointer
+    }
+    
+    tr:nth-of-type(odd) {
+        background: #fff
+    }
+    
+    tr:nth-of-type(even) {
+        background: #eee
+    }
+    
+    fieldset {
+        border: 1px solid #BCBCBC;
+        padding: 15px;
+    }
+ 
+    
+
+
+    button {
+        outline: none;
+        padding: 5px 8px;
+        color: #fff;
+        border: 1px solid #BCBCBC;
+        border-radius: 3px;
+        background-color: #009A61;
+        cursor: pointer;
+    }
+    
+    button:hover {
+        opacity: 0.8;
+    }
+    
+    #app9 {
+        margin: 0 auto;
+        max-width: 640px;
+        font-size: 12px;
+    }
+    
+    #app9 .form-group {
+        margin: 10px;
+    }
+    
+    #app9 .form-group>label {
+        display: inline-block;
+        width: 10rem;
+        text-align: right;
+    }
+    
+    #app9 .text-center {
+        text-align: center;
+    }
+    
+    #app9 .pagination {
+        display: inline-block;
+        padding-left: 0;
+        margin: 21px 0;
+        border-radius: 3px;
+    }
+    
+    #app9 .pagination>li {
+        display: inline;
+    }
+    
+    #app9 .pagination>li>a {
+        position: relative;
+        float: left;
+        padding: 6px 12px;
+        line-height: 1.5;
+        text-decoration: none;
+        color: #009a61;
+        background-color: #fff;
+        border: 1px solid #ddd;
+        margin-left: -1px;
+        list-style: none;
+    }
+    
+    #app9 .pagination>li>a:hover {
+        background-color: #eee;
+    }
+    
+    #app9 .pagination .active {
+        color: #fff;
+        background-color: #009a61;
+        border-left: none;
+        border-right: none;
+    }
+    
+    #app9 .pagination .active:hover {
+        background: #009a61;
+        cursor: default;
+    }
+    
+    #app9 .pagination>li:first-child>a .p {
+        border-bottom-left-radius: 3px;
+        border-top-left-radius: 3px;
+    }
+    
+    #app9 .pagination>li:last-child>a {
+        border-bottom-right-radius: 3px;
+        border-top-right-radius: 3px;
+    }

@@ -1,0 +1,92 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <link rel="stylesheet" href="../../other/base.css">
+    <title>Jquery框架</title>
+</head>
+
+<body>
+    <h1>Jquery框架</h1>
+    <div><span class="remark">第一步 引入Jquery</span> </div>
+    <div class="demoMain">
+        <h2>选择器</h2>
+        <div class="none">
+            <div>$ 标签选择器 id选择器 类选择器 后代选择器 子标签选择器> 直接兄弟+ 后兄弟~ </div>
+            <div> $("li:nth-child(1)").html() </div>
+            <div> $("li:first-child").html() </div>
+            <div>通配符 $("div > *")</div>
+            <div>属性选择器 $("p[class]") 有class取到</div>
+            <div>$("input[name=^aa]")以aa开头 $("input[name=$aa]")以aa结尾</div>
+            <div>alert($("a[href=hehe]").html())</div>
+            <div>alert($(":text").val()) type为text的input</div>
+            <div>alert($(":checked").val()) 所有被选中 alert($(":selected").val()) 被选取的</div>
+            <div>odd even 奇数偶数 $("li:odd")奇数</div>
+            <div>$("li:eq(1)")</div>
+            <div>$("li:contains(6)") li标签包含6的</div>
+        </div>
+        <!--<div> <a href="hehe">哈哈</a></div>-->
+        <h2>dom方法</h2>
+        <div class="none">
+            <h3>查找dom</h3>
+            <div class="none">
+                <div>.fileter() 过滤器 ifilter(funciton(){ })</div>
+                <div>.eq()</div>
+                <div>.find()</div>
+                <div>.parents()</div>
+                <div>.siblings()</div>
+                <div>.is() 判断标签是不是某种标签 $("ul").click(function(e){ e.target.is("li") $(e.target).remove()}</div>
+                <div>.addClass() .removeClass()</div>
+            </div>
+            <h3>dom操作</h3>
+            <div class="none">
+                <div>.attr()</div>
+                <div>.removeAttr()</div>
+                <div>.css("background","#000")</div>
+                <div>.prepend() 在父元素之前 添加内容</div>
+                <div>.append() 在父元素之后添加</div>
+                <div>.after() .before() 在当前元素</div>
+                <div>.empty() 清空内容</div>
+                <div>.remove() 移除元素</div>
+            </div>
+            <h3>事件</h3>
+            <div class="none">
+                <div>.bind("事件名"，function(){})</div>
+                <div>.bind("事件",{'msg':'hello'},function(e){ console.log(e.data.msg)})</div>
+                <div>.triger()触发器</div>
+                <div>mouseover</div>
+                <div>click</div>
+                <div>$(function(){ //onload })</div>
+                <div>$().ready(function(){ })</div>
+                <div>$(document).ready(function(){ })</div>
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+        </div>
+        <h2>foreach</h2>
+        <div class="none">
+            <div>$.each([1,2,3,4],function(key,value){ console.log(key+":"+value)})</div>
+        </div>
+        <h2>ajax封装</h2>
+        <div class="none">
+            <div>$.get( "url.do", { "username": "zhangsan", "pwd": "12345" }, function (data) { console.log(data); })
+            </div>
+            <div>$.post( "url.do", { "username": "zhangsan", "pwd": "12345" }, function (data) { console.log(data); })
+            </div>
+            <div> var obj = eval('('+str+')') //js方式</div>
+            <div> var obj =$.parseJSON(str) // jquery的方式</div>
+        </div>
+        <h2>验证框架</h2>
+        <div class="none">
+            <div></div>
+        </div>
+    </div>
+</body>
+
+</html>
+<script type="text/javascript" src='../../other/jquery.min.js'></script>
+<script type="text/javascript" src='../../other/base.js'></script>
+<script type="text/javascript" src='js.js'></script>

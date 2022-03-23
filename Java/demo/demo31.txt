@@ -1,0 +1,264 @@
+﻿
+    EL 表达式  expression language     JSTL 标签库 C标签 fmt fn
+	
+	J2EE   servlet    jsp
+	 
+	1.3      2.3     1.2
+	1.4      2.4     2.0 (EL)
+	5.0      2.5     2.1
+	6.0      3.0     2.2   
+	 
+	
+	4 个作用域对象：
+	
+	     1 访问作用的值  (pageContext  request  session  application)
+ 
+             setAttribute(key,value)
+
+		语法:
+			${}
+			 
+         ${作用域的key值}  ---- 根据key 获得value
+		 
+		    按照 pageContext request session application 的作用域从小到大的顺序查找 对应的key 
+			
+			     找到为止  如果找不到 返回 "" (getAttribute("") 找不到时 返回null)
+
+			建议使用 作用域对象 调用 效率高 原因不用去其他作用域 逐个检索
+        
+		使用el取作用域中的值时，可以指定从哪个作用域中查找
+		
+		 ${pageScope.key}
+		 ${requestScope.}
+		 ${sessionScope.}
+		 ${applicationScope.}
+		 
+		 
+		 作用域中存放的是对象类型的数据 可以使用el直接访问对象的属性值
+		 
+		 request.setAttribute("user",user);
+		 
+		 ${requestScope.user.id }			--- getAttribute();
+         ${requestScope.user.name }
+         ${requestScope.user.age }
+         ${requestScope.user.birthday }
+		 
+		 EL表达式中request.getAttr
+		 
+		 id name age birthday 并不能说是 user的属性 而是 跟 对应的属性的get方法有关
+		 如果属性没有相应的get方法 则
+		 javax.el.PropertyNotFoundException: Property 'id' not readable on type User
+
+
+    EL表达式也可以访问集合类型（list map  数组）的对象
+	
+	   *****但EL 没有遍历集合的能力*****
+	   
+	   当 属性名  或   key值中有特殊字符时， 
+	   可以使用${requestScope.map['aaa-bbb'] } 获取
+
+    2 做数学运算(******)
+	
+	  ${5+3}
+			算术运算符 比较运算符 一定要放在${}里面 放外面叫展现
+			${requestScope.aa > bb}
+
+    3 使用EL表达式操作 常用的web 对象    11个内置对象
+		******
+	    pageScope
+		requestScope  
+		sessionScope
+		application 
+		 ------------------------------用来访问作用域中值
+		 
+		param   ----------------------   request.getParameter("");
+		paramValues ------------------   request.getParameterValues("")
+		
+		转发和重定向是可以传？参数的(*****)
+		//request.getRequestDispatcher("5.jsp?name=wangwu").forward(request, response);
+		response.sendRedirect("5.jsp?name=wangwu");
+		
+	注意:request 不是EL表达式的内置对象(*****)
+		pageContext 
+		             ${pageContext.request.method}
+                     ${pageContext.request.contextPath }
+                     ${pageContext.session.creationTime }
+                     ${pageContext.servletContext.serverInfo }
+					
+		initParam   用来获得全局初始化参数	
+					${initParam.aaa }
+
+        header        用来获取请求头部信息	 -----  request.getHeader("User-Agent")
+                      ${header['User-Agent']}
+     			  
+		headerValues   request.getHeaders("") --- 用来获得 header中一个key对应多个value的情况
+		
+		
+        cookie    ${cookie.cookie的name值.name}
+		          ${cookie.cookie的name值.value}
+
+		          ${cookie.aaa.name } ---- ${cookie.aaa.value }
+			
+	4 用来访问java类中的方法 (以后讲)  
+
+---------------------------------------------------------------------------------------
+
+    JSTL    Jsp Standard Tag Library   Jsp 标准标签库
+	
+	     版本 ：  1.0   J2EE 1.3 以前  -----   JSTL中不能使用EL表达式
+		 
+		          1.1   J2EE1.3
+				  
+				  1.2  
+				  
+			 jar包  ---- JavaEE5.0 的项目 不需要导入jstl的jar包了	
+
+
+        c  --- core 核心标签库
+        fmt
+        fn
+		
+		xml
+		sql
+		
+		
+	在jsp中使用jstl标签库  需要在页面中导入
+
+    <@taglib  prefix="" uri="" %>	
+	<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+	
+	C标签：
+	
+	     <c:if>  只能做if判断   没有if else 结构
+		        
+		     <c:if test="${}">
+			     如果test中的结果是true   c:if中夹含的代码就会被执行
+			 
+			 </c:if>
+		 
+		 <c:forEach items="要遍历的集合结构" var="给集合中的每个元素起名字" varStatus="">
+		   
+		     items : 要遍历的集合   要用${}
+			 var   : 给集合中的每个元素起名字 -- 循环一次取出的元素 赋给这个值
+		     varStatus：做序号  varStatus="num"
+			  
+			                    num.index   --- 从0开始
+								num.count ----  从1开始
+								num.first ----
+								num.last ----
+								num.even ----
+								num.odd ----
+			            
+		     begin:  从几开始
+             end     到几结束
+             step    步长			 
+			
+		 <c:choose>  -------- switch
+		     <c:when>
+			 <c:when>
+			 <c:when>
+			 ...
+		     <c:otherwise>
+		 </c:choose>
+		 
+		 
+		  <c:choose> 
+		     <c:when test="${requestScope.user.sex=='男'}">
+			     <input type="radio" value="男" name="sex" checked="checked" />男 
+				 <input type="radio" value="女" name="sex" />女
+			 </c:when>
+			 
+			 
+		     <c:otherwise>
+			     <input type="radio" value="男" name="sex" />男 
+				 <input type="radio" value="女" name="sex" checked="checked" />女
+			 </c:otherwise>
+		 </c:choose>
+		 
+		
+    <c:set>
+	     var      属性名
+		 
+		 value    属性值
+
+         scope    放在哪个作用域   默认是当前页面  page request session		 
+
+
+    <c:out value="${}" default="">//取不到时 就会用默认值
+
+	<c:catch var="e">
+          <%
+              int x = 10/0;
+           %>
+    </c:catch>  
+	    
+	${e}	
+		
+				相对路径 			绝对路径 工程名
+	<c:import url="/index.jsp" context="/1229jstl"></c:import> 用来在页面中导入其他资源
+      类似于  <jsp:include page="" />   动态包含
+
+
+    <c:url  value="/aaa.jsp" context="/1229jstl"></c:url>  
+	
+    <c:redirect context="/1229jstl" url="/error.jsp"></c:redirect> 重定向	
+		
+		分割字符串
+       <c:forTokens items="aaa#bbb#ccc" delims="#" var="s">		
+          ${s }
+       </c:forTokens>	
+		
+	 param标签：与有路径的标签一起使用.向其他页面传递参数
+					* name		:参数名
+					* value		:参数值
+					
+				 <c:url>
+				    <c:param></c:param>
+				 </c:url>
+				 
+				  <c:redirect>
+				    <c:param></c:param>
+				 </c:redirect>	
+		
+		
+		 request.setAttribute("user",user)
+		 request.getRequestDispatcher("sss.jsp").forward(request,response);
+		 // 转发时 ，可以使用request.setAttribute方式带值到下一个资源
+		
+		 重定向是不能带对象 到下一个资源 ，只能带数字或字符串
+		 response.sendRedirect("sss.jsp?name=zrgk");
+		 
+		 
+			<c:remove>标签：从某一个范围内删除一个变量。语法格式如下：
+             <c:remove var=”” scope=””/>
+           例如：
+             <c:remove var=”user” scope=”session”/>
+
+		 
+	----------------------------------------------------------------------------------
+   
+     fmt format
+
+    <fmt:formatNumber value="0.24" type="percent"></fmt:formatNumber>
+    <fmt:formatNumber value="0.24" type="currency"></fmt:formatNumber>	
+		
+    <fmt:formatDate value="${requestScope.date }" pattern="yyyy-MM-dd hh:mm:ss" />
+	
+	
+	jstl中最常用的标签：
+	
+	  <c:if >  <c:forEach>  <c:choose> <c:when> <c:otherwise>  <c:set>
+	  <fmt:formatDate>
+	
+	
+--------------------------------------------------------------------------------------	
+	 fn   function(函数)
+	 
+	 基本都是对字符串处理的函数
+	 
+	 使用:${fn:contains("abc","a")}
+		
+	 
+----------------------------------------------------------------------------------	 
+	 
+	 

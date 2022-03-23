@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <link rel="stylesheet" href="../../other/base.css" />
+    <title>java第一阶段学习 内部类 垃圾回收 异常</title>
+</head>
+
+<body>
+    <h1>内部类 垃圾回收 异常</h1>
+
+    <div class="demoMain">
+        <h2>垃圾回收</h2>
+        <div class="none">
+            <div>垃圾： 没有指针 引用的对象 叫做垃圾 万物皆对象</div>
+            <div>垃圾回收线程(守护线程):遇到作用域结尾时 通知清理 {} 作用域</div>
+            <div>finalize 回收 System.gc(); 通知 会去执行finalize</div>
+        </div>
+        <h2>内部类 --反正我没搞懂分为四种<span class="remark">目的 隐藏类文件</span></h2>
+        <div class="none">
+            <h3>静态内部类 static 不能修饰根类</h3>
+            <div class="none">
+                    <div>
+                        <pre>
+    public class A{
+        static private int num =1;
+        static class B{
+        }
+    }
+
+    调用:   A.B a = new A.B(); 
+    </pre>
+                    </div>
+                </div>
+                <h3>成员内部类</h3>
+                <div class="none">
+                    <div>
+                        <pre>
+    public class A{
+            private int num =1;
+            public	class B{
+                System.out.print(num);
+            }
+    }
+    调用:  
+        A a = new A(); 
+        A.B b = a.new  B(); 
+    </pre>
+
+                    </div>
+                </div>
+                <h3>方法内部类</h3>
+                <div class="none">
+
+                    <div>注：<span class="remark">方法内的 内部类访问时  必须final 修饰 </span></div>
+                    <div>
+                        <pre>
+    public class A{
+        private int num =1; 
+        public void aMethod(){
+            final int num2 = 2; //方法内的 内部类访问时  必须final 修饰 
+            public	class B{
+                System.out.print(num);
+                public void bMethod(){
+                        System.out.print(num);
+                }
+            }
+        调用 必须 在这创建
+        B  b = new B();
+        b.bMethod()
+        }
+    }
+    </pre>
+                        <div>方法一结束 类就消失了</div>
+                    </div>
+                </div>
+                <h3>匿名内部类</h3>
+                <div class="none">
+                    <div>
+                        <pre>
+    public  class  A{
+        public void run(){
+            System.out.print("run .........");
+        }
+    }
+    调用 :  A  a = new A(){
+        public void run(){
+            System.out.print("run .........");
+        }
+    };
+                        </pre>
+                </div>
+                <div>注：<span class="remark">a.run();   就相当于重写了方法</span></div>
+            </div>
+        </div>
+        <h2>异常(exception)</h2>
+        <div class="none">
+            <div>异常特点   一旦发生 程序终止</div>
+            <div>常见异常 ;空指针异常(NullPointerException);下标越界异常()</div>
+            <div>异常分类：</div>
+            <div>上抛异常:一直上抛 就报错了</div>
+            <div>捕获异常try..catch..finally...；</div>
+            <div>自定义异常:  必须自己封装异常类 必须继承 异常类 基本上是 Excepition</div>
+        </div>
+    </div>
+</body>
+
+</html>
+<script src='../../other/jquery.min.js'></script>
+<script src='../../other/base.js'></script>

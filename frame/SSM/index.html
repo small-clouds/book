@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <link rel="stylesheet" href="../../other/base.css" />
+    <title>SSM整合</title>
+</head>
+<style>
+    .color {
+        color: red;
+        font-size: 12px;
+    }
+</style>
+
+<body>
+    <h1>SSM整合</h1>
+    <div class="demoMain">
+        <h2>简介</h2>
+        <div class="none">
+            <div>SSM(Spring SpringMVC Mybatis)三大框架之间的整合；明白点就是在一个项目中一起使用</div>
+            <div>框架的使用是很简单的事情，困难的是理解其思想这样对自己编程水平有帮助；反过来如果不会用那也是纸上谈兵</div>
+            <div>先技术在思想的想法也是没错的</div>
+        </div>
+        <h2>SSM三大框架学习文档</h2>
+        <div class="none">
+            <div><a href="../Spring/index.html" target="_blank">Spring</a> </div>
+            <div><a href="../SpringMVC/index.html" target="_blank">SpringMVC</a> </div>
+            <div><a href="../Mybatis/index.html" target="_blank">Mybatis</a> </div>
+        </div>
+        <h2>SSM配置方式整合(原理性内容)</h2>
+        <div class="none">
+            <div>这次严格按照MVC的模式来进行配置案例</div>
+            <h3>SSM xml配置信息</h3>
+            <div class="none">
+                <div>1.建立项目</div>
+                <div>2.引入jar包<a href="SSM.jar.txt" target="_blank">jar功能对照表</a></div>
+                <div>3.springMVC总体配置文件<a href="config/web.xml" target="_blank">web.xml</a>(SpringMVC的配置文件(过滤)和编码过滤器)</div>
+                <div>4.封装实体类<a href="java/Users.java" target="_blank">Users</a></div>
+                <div>5.编写控制器<a href="java/LoginController.java" target="_blank">LoginController</a>实现controller接口</div>
+                <div>6.搭建架构 controller service(UsersService UserssviceImpl) mapper(UsersMapper) bean util </div>
+                <div>7.springMVC映射配置文件<a href="config/applicationContext.xml" target="_blank">applicationContext.xml</a>层级关系 并引入mybatis配置信息</div>
+                <div>8.mybatis配置文件<a href="config/applicationContext_mybatis.xml" target="_blank">applicationContext_mybatis</a>配置外部资源/和数据库信息
+                    ioc和aop(具体是springMVC干的 具体不知道)</div>
+                <div>9.配置数据库连接池信息<a href="config/dbconfig.properties" target="_blank">dbconfig.properties</a></div>
+                <div>10.Users的dao层Mapper的配置文件<a href="config/UsersMapper.xml" target="_blank">UsersMapper.xml</a> </div>
+                <div>11.配置完成，请看下面如何使用</div>
+                <div>注：<span>顺序并非一定的，可以自行调节 但是有问题需要自己找不能丢</span></div>
+            </div>
+            <h3>SSM配置方式的业务流程</h3>
+            <div class="none">
+                <div>1.用户在登录页面<a href="jsp/login.jsp" target="_blank">login.jsp</a>登录访问login.do</div>
+                <div>2.login.do被<a href="config/web.xml" target="_blank">web.xml</a>拦截加载配置文件又是创建对象又是连接数据库</div>
+                <div>3.访问到了控制层<a href="java/LoginController.java" target="_blank">LoginController</a>自动执行handleRequest 利用自动装配的方式创建service对象</div>
+                <div>4.调用业务层Service <a href="java/UsersService.java" target="_blank">UsersService</a>的login方法</div>
+                <div>5.在业务层UsersService的实现类<a href="java/UsersServiceImpl.java" target="_blank">UsersServiceImpl</a>创建了UsersMapper接口</div>
+                <div>6.<a href="java/UsersMapper.java" target="_blank">UsersMapper</a>接口就会在xml文件中找login方法</div>
+                <div>7.配置信息会扫描<a href="config/UsersMapper.xml" target="_blank">UsersMapper.xml</a>下面的login方法执行sql语句</div>
+                <div>8.结果会一路返回 执行完毕</div>
+                <div>注：<span class="remark">在业务层实现类(serviceImpl)只能创建dao层接口同名的属性 private UsersMapper UsersMapper</span></div>
+                <div>注：<span class="remark">dao层接口没有实现类 会直接调用对应的xml中的id方法   </span></div>
+            </div>
+        </div>
+        <h2>SSM注解方式整合(工作中用的)</h2>
+        <div class="none">
+            <div>这次严格按照MVC的模式来进行配置案例</div>
+            <div>1.建立项目---一样</div>
+            <div>2.引入jar包<a href="SSM.jar.txt" target="_blank">jar功能对照表---一样</a></div>
+            <div>3.springMVC总体配置文件<a href="config/web.xml" target="_blank">web.xml</a>(SpringMVC的配置文件(过滤)和编码过滤器)---一样</div>
+            <div>4.封装实体类<a href="java/Users.java" target="_blank">Users</a></div>
+            <div>5.springMVC映射配置文件<a href="config/applicationContext_c.xml" target="_blank">applicationContext_c.xml</a>层级关系在其中把所有配置全部写在这里</div>
+            <div>6.搭建架构 controller service(UsersService UserssviceImpl) mapper(UsersMapper) bean util </div>
+            <div>7.编写控制器<a href="java/LoginController_c.java" target="_blank">LoginController_c</a>在类名上面注解<span class="remark">@Controller</span></div>
+            <div>8.控制器里面写方法 方法名上加上<span class="remark">@RequestMapping("login.do")</span>调用业务层方法</div>
+            <div>9.编写业务层在业务层<a href="java/UsersService_c.java">UsersService_c</a>的实体类<a href="java/UsersServiceImpl_c.java">UsersServiceImpl_c</a>的类名上面注解
+                <span  class="remark">@Service</span>
+            </div>
+            <div>5.在业务层的实现类UsersServiceImpl_c创建了UsersMapper接口对象利用@Autowired自动装配</div>
+            <div>6.<a href="java/UsersMapper.java" target="_blank">UsersMapper</a>接口 扫描xml中的login方法</div>
+            <div>7.配置信息会扫描<a href="config/UsersMapper.xml" target="_blank">UsersMapper.xml</a>下面的login方法执行sql语句</div>
+            <div>8.结果会一路返回 执行完毕</div>
+            <div>注：<span class="remark">在使用@ModelAttribute时 前台那么必须和实体类属性一致 </span></div>
+            <div>注：<span class="remark">@Service，@Controller所需要的包在配置文件<a href="config/applicationContext_c.xml" target="_blank">applicationContext_c.xml</a>中有体现context:component-scan</span></div>
+            <div>注：<span class="remark">@SessionAttributes("user") user不能与实体类名重复</span></div>
+        </div>
+    </div>
+</body>
+
+</html>
+<script src='../../other/jquery.min.js'></script>
+<script src='../../other/base.js'></script>

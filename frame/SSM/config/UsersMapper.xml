@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.zrgk.mapper.UsersMapper">
+
+	<resultMap type="Users" id="UserResultMap">
+		<id column="id" property="id"/>
+		<result column="name" property="name"/>
+		<result column="brith" property="brith"/>
+		<result column="salary" property="salary"/>
+		<result column="remark" property="remark"/>
+		<result column="password" property="password"/>
+	</resultMap>
+	
+	<select id="login" parameterType="Users" resultMap="UserResultMap">
+		select * from users where id=#{id} and password=#{password}
+	</select>
+</mapper>    

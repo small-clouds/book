@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <link rel="stylesheet" href="../../other/base.css" />
+    <title>java第二阶段学习-ajax和json</title>
+</head>
+
+<body>
+    <h1>ajax和json</h1>
+    <div class="demoMain">
+        <h2>原生ajax</h2>
+        <div class="none">
+            <div>Asynchronous Javascript And XML</div>
+            <h3>POST</h3>
+            <div class="none">
+                <div>var xhr = new XMLHttpRequest();// 创建对象 </div>
+                <div> xhr.open("post", "AjaxTest.do",true);//提交方式</div>
+                <div> xhr.setRequestHeader("Content-Type","application/x-www-form-urlencoded");<span class="remark">这个是多的</span></div>
+                <div> xhr.send("username=" + username+ "&pwd=" + pwd ); // //发送数据 </div>
+                <div> xhr.onreadystatechange = function() { // 回调函数</div>
+                <div> if (xhr.readyState == 4) {</div>
+                <div> // 0未初始化调用open之前 1请求已提出 send之前 2 请求发送 3 请求处理 4 请求完成</div>
+                <div> var str = xhr.responseText;</div>
+            </div>
+            <h3>GET</h3>
+            <div class="none">
+                <div>
+                    <div>var xhr = new XMLHttpRequest();// 创建对象 </div>
+                    <div> xhr.open("get", "AjaxTest.do?username=" + username + "&pwd=" + pwd, true);//提交方式 </div>
+                    <div> xhr.send(null); <span class="remark">// get 请求为null //发送数据</span> </div>
+                    <div> xhr.onreadystatechange = function() { // 回调函数</div>
+                    <div> if (xhr.readyState == 4) {</div>
+                    <div> // 0未初始化调用open之前 1请求已提出 send之前 2 请求发送 3 请求处理 4 请求完成</div>
+                    <div> var str = xhr.responseText;</div>
+                </div>
+            </div>
+        </div>
+        <h2>json</h2>
+        <div class="none">
+            <div>json倒包 6个 轻量级的数据传输</div>
+            <div>四步</div>
+            <div><span class="remark">后台</span></div>
+            <div>List&lt;User&gt; list = new ArrayList&lt;User&gt;();</div>
+            <div>list.add(u1);</div>
+            <div>list.add(u2);</div>
+            <div> list.add(u3);</div>
+            <div> // json 格式</div>
+            <div> PrintWriter out = response.getWriter();</div>
+            <div> JSONObject json = new JSONObject();</div>
+            <div> json.put("list", JSONArray.fromObject(list));</div>
+            <div> out.print(json.toString()); // 在向前台传 </div>
+            <div><span class="remark">前台</span></div>
+            <div> var str = xhr.responseText; // 获取对象</div>
+            <div> var obj = eval("("+str+")");// 对对象转成json</div>
+            <div> console.log(obj.list); //可以打印了</div>
+        </div>
+    </div>
+
+</body>
+
+</html>
+<script src='../../other/jquery.min.js'></script>
+<script src='../../other/base.js'></script>

@@ -1,0 +1,130 @@
+<html> 
+<head> 
+    <title>有待改进  --   点击关闭的时候</title> 
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<link type="text/css" href="tab.css" rel="stylesheet" />
+<style> 
+ul,li { 
+	margin:0; 
+	padding:0; 
+	list-style:none; 
+	/*for close location*/ 
+	position:relative;     
+} 
+li { 
+	display:block; 
+	width:130px; 
+	height:25px; 
+	float:left; 
+	cursor:pointer; 	overflow:hidden; 
+} 
+span { 	font-size:10pt; 	color:#22b5d9; 	font-weight:bold; 	display:block; } 
+#asgardCard li { font-size:10pt; font-weight:bold; color:#22b5d9; border:1px solid #22b5d9; 	margin:10px; 	text-align:center; 	line-height:1.5; } 
+</style> 
+</head> 
+<body> 
+<span>1.代码效果示例：</span> 
+<ul>     
+    <li class="active"> 
+        <nobr class="title">Kiss</nobr> 
+        <a href="#nogo" class="close" title="关闭"></a> 
+    </li> 
+    <li class="default"> 
+        <nobr class="title">Andy</nobr> 
+        <a href="#nogo" class="close" title="关闭"></a> 
+    </li>     
+</ul> 
+<p /> 
+<span>注：以上代码为DOM动态组织的代码参考<span> 
+<p style="clear:both;"/> </p> 
+<span>2.点击下表，更换内容</span> 
+<ul class="asgardCard"> 
+	<li>网站首页<a href="http://www.cloudsblog.top"></a></li> 
+	<li>demo1<a href="http://www.cloudsblog.top/uploads/demo/demo1"></a></li> 
+	<li>demo2<a href="http://www.cloudsblog.top/uploads/demo/demo2"></a></li> 
+	<li>demo3<a href="http://www.cloudsblog.top/uploads/demo/demo3"></a></li> 
+	<li>demo4<a href="http://www.cloudsblog.top/uploads/demo/demo4"></a></li> 
+</ul> 
+<p style="clear:both;"/> 
+<span>3.以下为动态创建：</span> 
+<div> 
+    <ul id="itemsPanel"> 
+    </ul> 
+    <div id="cardContent"> 
+    <iframe id="cardFrame"> 
+    </iframe> 
+    </div> 
+</div> 
+</body> 
+<script type="text/javascript" src="../../other/jquery.min.js"></script>
+<script type="text/javascript" src="tab.js"></script>
+<script> 
+/*
+var jQ = jQuery.noConflict();
+var count = 0;
+
+function attachExampleEvent() {
+    jQ('.asgardCard').on('click','li',exampleClickListener);
+} 
+function exampleClickListener(e) { 
+    e=e || window.event; 
+    var source=e.target || e.srcElement; 
+	var href=jQ(source).find('a').attr('href');
+    var title = jQ(source).text();
+    itemsPanel.addItem(new Asgard.CardProgram.Item("'"+count+"-",title,href,false)); //id title url flag
+    count++;
+} 
+var itemsPanel=null; 
+function exampleStartMethod(){ 
+    attachExampleEvent(); 
+    if(itemsPanel==null) 
+        itemsPanel=new Asgard.CardProgram.ItemsPanel("itemsPanel","cardFrame"); 
+		itemsPanel.addItem(new Asgard.CardProgram.Item("index","百度","http://www.baidu.com",true));     
+} 
+window.onload=exampleStartMethod; 
+
+
+*/
+    var jQ = jQuery.noConflict();
+    var count = 0;
+    function attachExampleEvent() {        
+        jQ('.asgardCard').on('click', 'li', exampleClickListener);
+    }
+    function exampleClickListener(e) {
+        e = e || window.event;
+        var source = e.target || e.srcElement;
+        var href = jQ(source).find('a').attr('href');
+        var title = jQ(source).text();
+        var liTitle =jQ(".title");
+        for(var a =0 ; a < liTitle.length; a++){      
+            if(liTitle[a].innerHTML === title){     
+                var b = liTitle[a];  
+                jQ(b).parents("li:first").siblings("li").removeClass("active");
+                jQ(b).parents("li:first").removeClass("default");
+                jQ(b).parents("li:first").siblings("li").addClass("default");               
+                jQ(b).parents("li:first").addClass("active");  
+                var ifram = jQ(b).parents(".right").find("#cardFrame");
+                jQ(ifram).attr("src",href);
+                return false;
+            }
+        }       
+        if(count > 10){
+            count = 0; 
+        }else{
+            itemsPanel.addItem(new Asgard.CardProgram.Item(count + "-", title, href, false)); //新加的id   title url flag 
+            count++;
+        }        
+    }
+    var itemsPanel = null;
+    function exampleStartMethod() {
+        attachExampleEvent();
+        if (itemsPanel == null)
+            itemsPanel = new Asgard.CardProgram.ItemsPanel("itemsPanel", "cardFrame");
+        itemsPanel.addItem(new Asgard.CardProgram.Item("index", "欢迎页", "/admin/index/main", true));
+    }
+    window.onload = exampleStartMethod;
+
+
+
+</script> 
+</html>

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <link rel="stylesheet" href="other/base.css">
+    <title>一直旅行的云 -- 机遇只垂青于那些追求她的人</title>
+    <script type="text/javascript" src='other/jquery.min.js'></script>
+    <script type="text/javascript" src="other/base1.js"></script>
+
+</head>
+<style>
+    *,#cas,#demoMain{margin:0px;padding:0px;}
+    a{text-decoration: none; color:#9B30FF;}
+    h1 {text-align: center;font-size: 14px;}
+    div.list > div{background:#98F5FF; margin:5px; padding:2px;}
+    div.list > div> a { font-weight: bold;}l
+    div.pop_w{ width:50%; display: none; position: absolute; top:20%; left:25%; z-index: 1; background: #fff;}
+    #cas{ width:100%;height:100%;}
+    #demoMain{position:absolute; top:0; width:100%;}
+</style>
+
+<body onload="onloadvue()">
+    <!--<canvas id="cas"></canvas>-->
+    <div class="list" id="demoMain">
+        目录：主目录-> 二级目录 ->三级目录
+        <!-- index view start -->
+        <div v-if="demo == 'index'">
+            <h1>{{data.title}}</h1>
+            <template v-for="msg in data.data">
+                <!-- :href=msg.url -->
+                <div><a href="javascript:void(0)" @click="openlist('list',msg.url)">{{msg.context}}</a></div>
+            </template>
+        </div>
+        <!-- list view start -->
+        <div v-if="demo == 'list'">
+            <ul class="Stage_ul">
+                <h1 class="stageTitle">{{data.title}} -- {{demo}}</h1>
+                <template v-for="msg in data.data">
+                    <li>
+                        <h3> <a @click="openlist('detail')">{{msg.context}}</a></h3>
+                    </li>
+                </template>
+            </ul>
+            <script type="text/javascript" src="data/0list.js"></script>
+        </div>
+        <!-- detail view start -->
+        <div class="demoMain" v-if="demo == 'detail'">
+            <h1 class="stageTitle">{{data.title}}</h1>
+            <template v-for="msg in data">
+                <h2>{{msg.title}}</h2>
+                <div class="none">
+                    <!-- v-html="msg1.context"-->
+                    <template v-for="msg1 in msg.data">
+                        <div v-if="msg1.concode">{{msg1.context}}</div>
+                        <div v-else="msg1.concode" v-html="msg1.context">{{msg1.context}}</div>
+                    </template>
+                    <template v-if="msg1.title" v-for="msg1 in msg.data">
+                        <h3>{{msg1.title}}</h3>
+                        <div class="none">
+                            <div v-for="msg3 in msg1.data" v-html="msg3.context">{{msg3.context}} </div>
+                        </div>
+                    </template>
+                </div>
+            </template>
+            <div v-if="this.supdata">
+                <div v-for="msg in supdata" v-html="msg.context">{{msg.context}}</div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
+<script type="text/javascript" src="other/vue.min.js"></script>
+<script type="text/javascript" src="data/0index.js"></script>

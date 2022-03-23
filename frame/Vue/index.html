@@ -1,0 +1,108 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <link rel="stylesheet" href="style.css">
+    <title>javascript</title>
+</head>
+<style>
+    .color {
+        color: red;
+        font-size: 12px;
+    }
+</style>
+
+<body>
+    <div id="app">
+        <input type="text" v-model="message">{{message}}
+        <div><input type="text" v-model="name"><span class="color" v-if="name.length<6">请输入用户名</span></div>
+        <ul>
+            <li v-for="(study,index) in arr1"> {{index}} --{{study.text}} </li>
+        </ul>
+        <div>------------------------分割线------------------------------------------------</div>
+        <ul>
+            <template v-for="(study,index) in arr1">
+                <li>{{study.text}} -- {{index}} </li>
+                <li>××××××××××××××××××分割模板××××××××××××××××××××××××</li>
+            </template>
+        </ul>
+    </div>
+    <div id="app2">
+        <span v-bind:title="message">鼠标悬停此处查看动态绑定的提示信息</span>
+    </div>
+    <div id="app5">
+        <p>{{message}}</p>
+        <input type="button" value="逆转消息" v-on:click="reverseMessage">
+    </div>
+    <div id="app7">
+        <ol>
+            <todo-item v-for="item in grocerylist" v-bind:todo="item" v-bind:key="item.id">
+
+            </todo-item>
+        </ol>
+    </div>
+    <div id="app8">
+        <div> 时间： {{ message }}------{{ aaaa }} </div>
+        <div> <input v-model="aaaa" class='message'></div>
+        <div>{{ reversedMessage() }}</div>
+        <div><input type="button" v-on:click="greet(aaaa)" value='vueButton'></div>
+        <div>
+            <ul>
+                <li v-for="item in cityList" style='border:1px solid #ccc;'>
+                    省名称： {{ item }}
+                </li>
+            </ul>
+        </div>
+
+    </div>
+    <div id="app9">
+        <fieldset>
+            <legend>
+                Create New Person
+            </legend>
+            <div class="form-group">
+                <label>Name:</label>
+                <input type="text" v-model="newPerson.name" />
+            </div>
+            <div class="form-group">
+                <label>Age:</label>
+                <input type="text" v-model="newPerson.age" />
+            </div>
+            <div class="form-group">
+                <label>Sex:</label>
+                <select v-model="newPerson.sex">
+          <option value="Male">Male</option>
+          <option value="Female">Female</option>
+        </select>
+            </div>
+            <div class="form-group">
+                <label></label>
+                <button @click="createPerson">Create</button>
+            </div>
+        </fieldset>
+        <table>
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Age</th>
+                    <th>Sex</th>
+                    <th>Delete</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr v-for="(person,index) in people">
+                    <td>{{ person.name }}</td>
+                    <td>{{ person.age }}</td>
+                    <td>{{ person.sex }}</td>
+                    <td :class="'text-center'"><button @click="deletePerson(index)">Delete</button></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</body>
+
+</html>
+<script type="text/javascript" src='vue.min.js'></script>
+<script type="text/javascript" src='js.js'></script>

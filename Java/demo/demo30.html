@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <link rel="stylesheet" href="../../other/base.css" />
+    <title>java第二阶段学习-会话跟踪技术Cookie / Session</title>
+</head>
+
+<body>
+    <h1>会话跟踪技术Cookie / Session</h1>
+    <div class="demoMain">
+        <h2>会话跟踪技术简介 会话和会话跟踪</h2>
+        <div class="none">
+            <div>什么是一次会话 从打开浏览器发送请求 开始 一直到关闭浏览器 </div>
+            <div>为什么要有会话跟踪？ 因为HTTP协议是无状态协议 FTP(有状态)</div>
+        </div>
+        <h2>COOKIE(客户端技术)</h2>
+        <div class="none">
+            <div>服务器端创建Cookie对象 通过响应带给客户端</div>
+            <h3>cookie的使用</h3>
+            <div class="none">
+                <div>
+                    <pre>
+//1、创建cookie
+Cookie c = new Cookie("username","zhangsan");
+Cookie c2 = new Cookie("pwd","123");
+//获取
+c.getName()
+c.getValue()
+//4、持久化
+c.setMaxAge(60*60*24*7);
+
+//2、将cookie对象加入到 response
+response.addCookie(c);
+response.addCookie(c2);
+
+//3、转发
+//		request.getRequestDispatcher("cookie.jsp").forward(request, response);
+		response.sendRedirect("cookie.jsp");
+//获取  jsp页面获取
+< %
+		Cookie[] c = request.getCookies();
+		if(c!=null){
+			for(int i = 0;i< c.length;i++){
+				if("username".equals(c[i].getName())){
+					%>
+					<%=c[i].getValue() %>
+					<%
+					break;
+				}
+			}
+		}
+	 % >
+//设置cookie路径
+c.setPath("http://www.baidu.com"); 设置Cookie的有效路径
+只有访问http://www.baidu.com路径时才会带有这个Cookie
+
+访问  http://map.baidu.com 时不会带有这个Cookie
+
+c.setDomain("http://www.baidu.com") 
+那么访问  http://map.baidu.com   也会带有这个Cookie
+        </pre>
+                </div>
+            </div>
+            <h3>查看持久化cookie的保存路径</h3>
+            <div class="none">
+                <div>IE： C:\Users\Administrator\AppData\Roaming\Microsoft\Windows\Cookies</div>
+                <div> Firefox： 工具---选项---隐私---使用自定义历史设置里面查看 </div>
+            </div>
+        </div>
+        <h2>SESSION(服务端技术)</h2>
+        <div class="none">
+            <div>创建session：HttpSession s= Request.getSession();/Request.getSession();</div>
+            <div>存储session：s.setAttribute("name","value");</div>
+            <div>取值：s.getAttribute("name");</div>
+            <div>移除：s.removeAttribute("name");</div>
+            <div><span class="remark">基于一次会话：</span></div>
+            <div>1.当关闭浏览器相当于被销毁/</div>
+            <div>2. 当浏览器关闭 存储JsessionID的 cookie被销毁 所以找不到存储键值对的session</div>
+            <div><span class="remark">session的生命周期</span></div>
+            <div>i. Session是服务器端对象 由服务器管理 当request.getSession()时创建session对象，</div>
+            <div> 销毁： 1. 非正常关闭 a) 当服务器正常关闭时，服务器会将session对象以文件的形式序列化到磁盘上；当再次启动服务器时，会将文件反序列化到内存中，上次存储的session对象还原</div>
+            <div>2. Session的生命周期到时， 默认是30分钟 修改session对象的生命周期 在tomcat 的 web.xml -》session-config session-timeout</div>
+            <div>清空session对象：s.invalidate();</div>
+        </div>
+        <h2>java后台作用域对象</h2>
+        <div class="none">
+            <div> // Request： 基于一次请求</div>
+            <div> // Session： 基于一次会话</div>
+            <div> // servletContext: 基于一次服务 服务器启动 就创建 服务器关闭销毁 与服务器共存亡</div>
+            <div> <span class="remark">使用作用域对象 能用小范围的 就不用大范围的</span></div>
+        </div>
+    </div>
+</body>
+
+</html>
+<script src='../../other/jquery.min.js'></script>
+<script src='../../other/base.js'></script>

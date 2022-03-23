@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <link rel="stylesheet" href="other/base.css" />
+    <script src='other/jquery.min.js'></script>
+    <script src='other/base.js'></script>
+    <title>机遇只垂青于那些追求她的人</title>
+</head>
+
+<body onload="onloadvue()">
+    <div class="demoMain" id="demoMain">
+        <h1 class="stageTitle">{{title}}</h1>
+        <template v-for="msg in data">
+            <h2>{{msg.title}}</h2>
+            <div class="none">
+                <!-- v-html="msg1.context"-->
+                <template  v-for="msg1 in msg.data">
+                    <div v-if="msg1.concode" >{{msg1.context}}</div>
+                    <div v-else="msg1.concode" v-html="msg1.context" >{{msg1.context}}</div>
+                </template>
+                <template v-if="msg1.title" v-for="msg1 in msg.data">
+                    <h3>{{msg1.title}}</h3>
+                    <div class="none">
+                        <div v-for="msg3 in msg1.data" v-html="msg3.context">{{msg3.context}} </div>
+                    </div>
+                </template>
+            </div>
+        </template>
+        <div v-if="this.supdata">
+            <div v-for="msg in supdata" v-html="msg.context">{{msg.context}}</div>
+        </div>
+    </div>
+</body>
+
+</html>
+<script src='other/vue.min.js'></script>

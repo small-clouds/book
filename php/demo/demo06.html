@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <link rel="stylesheet" href="../../other/base.css" />
+    <title>phpstudy-- 数组 排序</title>
+</head>
+
+<body>
+    <h1>数组 排序</h1>
+
+    <div class="demoMain">
+        <h2>数组array()</h2>
+        <div class="none">
+            <h3>定义方式</h3>
+            <div class="none">
+                <div>数组能够在单一变量名中存储许多值，并且您能够通过引用下标号来访问某个值。</div>
+                <div>$a=array(1,2,4,5,6); (1)</div>
+                <div>$a[0]=0;$a[1]=1;$a[2]=2;$a[3]=3;(2)</div>
+                <div>$a=array(key1=>value1,key2=>value2,key3=>value3); (3)</div>
+                <div>$a[key1]=value1; $a[key2]=value2; (4)</div>
+                <div>$data = ['start_time' => '123', 'end_time' =>'456' ]; (5) (5.4以上) </div>
+            </div>
+            <h3>分类</h3>
+            <div class="none">
+                <div>索引数组： 带有数字索引的数组 定义方式1</div>
+                <div>关联数组： 带有指定键的数组</div>
+                <div>多维数组： 包含一个或多个数组的数组</div>
+            </div>
+            <h3>常用的函数</h3>
+            <div class="none">
+                <div>count() : 获取数组的长度 </div>
+                <div>is_array($arr) ：判断是不是数组</div>
+                <div>print_r($arr) var_dump($arr)能打印数组 和数组类型</div>
+                <div> $arr=explode(" ",$str)对字符串拆分成数组 $str="1 2 3 4 5 6 7"</div>
+                <div> unset() 可以销毁某个变量 其余地址不变 不会重新建立索引</div>
+                <div>for循环遍历索引数组for($x=0;$x&lt; count($arr);$x++) {</div>
+                <div>foreach遍历关联数组 foreach($age as $k=>$v) { </div>
+            </div>
+        </div>
+        <h2>排序</h2>
+        <div class="none">
+            <h3>冒泡排序</h3>
+            <div class="none">
+                <div>
+                    <pre>
+function bubbleSort(&$myarr){
+     $temp=0;
+     $flag=false;
+     for($i=0;$i< count($myarr)-1;$i++){
+         for($j=0;$j< count($myarr)-1-$i;$j++){
+             if($myarr[$j]>$myarr[$j+1]){
+                   $temp=$myarr[$j];
+                $myarr[$j]=$myarr[$j+1];
+                $myarr[$j+1]=$temp;
+                $flag = true;
+             }
+         }
+         if(!$flag){
+             break;
+         }
+         $flag=false;
+     }
+ }                        
+                    </pre>
+                </div>
+            </div>
+            <h3>选择排序</h3>
+            <div class="none">
+                <div>
+                    <pre>
+function selectSort(&$arr){
+    $temp=0;
+    for($i=0;$i< count($arr)-1 ;$i++){
+      $minVal=$arr[$i];
+      $minIndex =$i;
+      for($j=$i+1;$j< count($arr);$j++){
+          if($minVal>$arr[$j]){
+              $minVal=$arr[$j];
+              $minIndex =$j;
+          }
+      }
+      $temp = $arr[$i];
+      $arr[$i]=$arr[$minIndex];
+      $arr[$minIndex]=$temp;
+    }
+}
+                    </pre>
+                </div>
+            </div>
+            <h3>插入排序</h3>
+            <div class="none">
+                <div>
+                    <pre>
+function insertSort(&$arr){
+    //默认$arr[0]是有序的
+    for($i=1;$i< count($arr);$i++){
+        $inserVal =$arr[$i]; //带插入
+        $inserIndex =$i-1; //待插入位置（和这个位置比较）
+        //还没有找到时代那个的位置
+            //前面还有位置&&比前面那个是小的  所有还需要和前面比
+        while($inserIndex>=0&&$inserVal<$arr[$inserIndex]){
+            //最小值了&&  比前面那个小
+            $arr[$inserIndex+1]=$arr[$inserIndex];  //王后面挪一位
+            $inserIndex--; //继续合前面位置比较
+        }
+        $arr[$inserIndex+1]=$inserVal; //插入 如果适当位置就不用了  
+    }
+}
+                    </pre>
+                </div>
+            </div>
+            <h3>快速排序 时间短 内存占用高 时间短 啥事就办了 综合效率并不高 <span class="remark">暂缺</span></h3>
+            <div class="none"></div>
+        </div>
+        <h2>查找</h2>
+        <div class="none">
+            <h3>顺序查找</h3>
+            <div class="none">
+                <div>就是for循环加if判断一个一个找</div>
+            </div>
+            <h3>二分查找</h3>
+            <div class="none">
+                <div>
+                    <pre>
+function binarySearch(&$arr,$findVal,$leftIndex,$rightIndex){
+    if($leftIndex >$rightIndex){
+        echo "找不到这个数";
+        return;
+    }
+    $middleIndex =round(($leftIndex+$rightIndex)/2);
+    if($findVal > $arr[$middleIndex]){
+        binarySearch($arr,$findVal,$middleIndex+1,$rightIndex);
+    }else if($findVal < $arr[$middleIndex]){
+        binarySearch($arr,$findVal,$leftIndex,$middleIndex-1);
+    }else{
+        echo "找到了该数字 下标为$middleIndex";
+    }
+}
+                    </pre>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
+<script src='../../other/jquery.min.js'></script>
+<script src='../../other/base.js'></script>

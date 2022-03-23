@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <link rel="stylesheet" href="other/base.css">
+    <title>一直旅行的云 -- 机遇只垂青于那些追求她的人</title>
+    <script type="text/javascript" src='other/jquery.min.js'></script>
+    <script type="text/javascript" src="other/base.js"></script>
+</head>
+<style>
+    *,#cas,#demoMain{margin:0px;padding:0px;}
+    a{text-decoration: none; color:#9B30FF;}
+    h1 {text-align: center;font-size: 14px;}
+    div.list > div{background:#98F5FF; margin:5px; padding:2px;}
+    div.list > div> a { font-weight: bold;}l
+    div.pop_w{ width:50%; display: none; position: absolute; top:20%; left:25%; z-index: 1; background: #fff;}
+    #cas{ width:100%;height:100%;}
+    #demoMain{position:absolute; top:0; width:100%;}
+</style>
+
+<body onload="onloadvue()">
+    <!--<canvas id="cas"></canvas>-->
+    <div class="list" id="demoMain">   
+    <h1>{{title}}</h1>
+    <template v-for="msg in data">
+        <div><a :href=msg.url>{{msg.context}}</a></div>
+    </template>
+    </div>
+    <!--<div class="pop">弹出frame</div> 
+    <div class="pop_w none"><iframe src="list.html" frameborder="0" class="true" style="width:100%;"></iframe></div>-->
+
+<!--
+
+   function returnData(obj){
+        var data={};
+        for(var key  in obj){
+            if(obj[key] instanceof Array ){         
+                for(var i=0;i<obj[key].length;i++ ){
+                    for(var k  in obj[key][i]){
+                        var keyn = key+"["+i+"]."+k;
+                        data[keyn] = obj[key][i][k]
+                    }
+                }
+            }else{
+                data[key] = obj[key];
+            }
+
+        }
+        return data;
+    }
+
+-->
+
+<a href="tel:15030545985">15030545985</a>
+
+
+</body>
+</html>
+<script type="text/javascript" src="other/vue.min.js"></script>
+<script type="text/javascript" src="data/0index.js"></script>

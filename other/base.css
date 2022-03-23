@@ -1,0 +1,51 @@
+@font-face { 
+    font-family: cursive; /*这里是说明调用来的字体名字*/ 
+    src: url(‘font-family/cursivewriting/CURSHT__.TTF’); /*这里是字体文件路径*/ }
+* { margin: 0px;padding: 0px;}
+ul,li{list-style: none;}
+a{text-decoration: none;}
+body,html{font-size:14px;height:100%;}      /*font-family: cursive*/
+.none { display: none;}
+span.remark{color:red}
+.fl{float: left;}
+.fr {float: right;}
+.top{text-align: center; font-size:16px;}
+.w1200{max-width:1200px; margin:auto;}
+ /*#cas{ width:100%;height:100%;}
+ #demoMain{position:absolute; top:0; width:100%;}*/
+
+header h2,div.main h2{margin:5px 0px;background:#a7cbff;font-size:18px;font-family: Arial, Helvetica, sans-serif; cursor:pointer;}
+div.main h3{background:#e2f2ff;margin:5px 0px;cursor:pointer; font-size:16px;}
+div.main div div div{background:#eaeaea;}
+.photo {height: 100px;float: right;overflow: hidden}
+.photo img {height: 120%;transition: all 1s;-webkit-transition: all 1s;}
+.photo:hover img {transform: rotate(360deg) scale(1.2);-webkit-transform: rotate(360deg) scale(1.2);}
+
+
+/*目录*/
+.stageTitle{ text-align: center; font-size:16px; }
+.Stage_ul{font-size:12px;}
+.Stage_ul li{ margin:5px 5px; background:#4fc3b9;}
+.Stage_ul li:hover{ background:#5a8831;}
+.Stage_ul li a{ color:#000;}
+/*内容*/
+h1{text-align:center;font-size:14px;}
+.demoMain {max-width:1200px; margin:auto; }
+.demoMain >div{ margin:0em 2em;}
+.demoMain >div >div{ text-indent: 2em;}
+.demoMain h2{
+    font-size:16px;
+    text-indent:2em;
+    background:#9ff;
+    margin:5px 0px;
+}
+.demoMain h3{
+    font-size:14px;
+    background:#00F5FF;
+    margin:3px 0px;
+    
+}
+.demoMain div div img{max-width:100%}
+
+
+

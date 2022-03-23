@@ -1,0 +1,286 @@
+<!DOCTYPE>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Eatery 乐享美食 就在这！</title>
+<meta name="keywords" content="" >
+<meta name="description" content="">
+<meta name="viewport" content="width=device-width, initial-scale=1"> 
+<link rel="stylesheet" type="text/css"  href="CSS/style.css"/>
+<link rel="stylesheet" type="text/css"  href="CSS/mstyle.css"/>
+<link rel="stylesheet" type="text/css"  href="CSS/slider.css"/>
+<script type="text/javascript" src="js/jquery.1.8.3.js"></script>  
+<script type="text/javascript" src="js/slider.js"></script>
+
+<script type="text/javascript">
+alert(document.body.clientWidth);
+</script>
+
+</head>
+<body>
+<div id="header">
+	<div class="top">
+			<a href=""><img src="images/logo.png"></a>
+			<img src="images/index_top_con.png">
+			<div class="set_index fr">
+				<a href="">设为首页</a>
+				<a href="">加入收藏</a>
+			</div>
+	</div>
+	<nav id="nav">
+		<ul class="nav">
+			<li><a href="">首页</br><span>HOME</span></a></li>
+			<li><a href="">关于我们<span>ABOUTUS</span></a></li>
+			<li><a href="">产品中心<span>PRODUCTUS</span></a></li>
+			<li><a href="">成功案例<span>PRODUCTUS</span></a></li>
+			<li><a href="">人才招聘<span>PRODUCTUS</span></a></li>
+			<li><a href="">联系我们<span>PRODUCTUS</span></a></li>
+		</ul>
+	</nav>
+</div>
+<div id="banner_index">
+	<div id="banner_tabs" class="flexslider">
+	<ul class="slides">
+		<li>
+			<a title="" target="_blank" href="#">
+				<img src="images/banner_index.jpg">
+			</a>
+		</li>
+		<li>
+			<a title="" href="#">
+				<img src="images/banner_index.jpg">
+			</a>
+		</li>
+		<li>
+			<a title="" href="#">
+				<img  alt=""  src="images/banner_index.jpg">
+			</a>
+		</li>
+	</ul>
+<div style="clear:both;"></div>
+	<ol id="bannerCtrl" class="flex-control-nav flex-control-paging">
+		<li><a>1</a></li>
+		<li><a>2</a></li>
+		<li><a>2</a></li>
+	</ol>
+</div>
+
+<script type="text/javascript">
+$(function() {
+	var bannerSlider = new Slider($('#banner_tabs'), {
+		time: 5000,
+		delay: 400,
+		event: 'hover',
+		auto: true,
+		mode: 'fade',
+		controller: $('#bannerCtrl'),
+		activeControllerCls: 'active'
+	});
+	$('#banner_tabs .flex-prev').click(function() {
+		bannerSlider.prev()
+	});
+	$('#banner_tabs .flex-next').click(function() {
+		bannerSlider.next()
+	});
+})
+</script>
+
+
+
+</div>
+
+
+
+
+<div id="aboutus_index">
+	<div class="aboutus_index">
+		<div class="aboutus_index_left fl">
+			<h2>公司简介 Company Profile</h2>
+			<p>
+			15晚会调查记者老K：面对的工作压力确实太大了，我说一个最简单的例子
+			，从去年我进入组一开始，我媳妇儿和我孩子我家人，只知道我在晚会组，只
+			知道我出差到某一个城市，但是他们从来不知道我在干什么，因为我不敢跟他们讲
+			，我怕他们担心。危险是无处不在的，因为在这种环境下你要，改头换面，改名换姓，
+			跟自己毫不关心的一个人的生活，和工作的时候，你会压力非常大，而且你会时刻面临
+			着不知不觉暴露自己的可能性。
+			</p>
+			<a href="#">查看更多</a>
+		</div>
+		<div class="aboutus_index_img fr">
+			<img src="images/about_index.png">
+		</div>
+		<div style="clear:both"></div>
+	</div>
+	
+</div>
+<div id="service_index">
+	<ul class="service_index">
+		<li>
+			<img src="images/index_webmake.png"><br>
+			<h2><a href="">网站建设</a></h2>
+			<h3><a href="">Website</a></h3>
+			<p style="width:200px; margin:auto;">企业网站制作、高端网站建设、<br>
+			门户网站建设、大型门户平台开发</p>
+		</li>
+		<li>
+			<img src="images/index_webmake_1.png"><br>
+			<h2><a href="">网站建设</a></h2>
+			<h3><a href="">Website</a></h3>
+			企业网站制作、高端网站建设、<br>
+			门户网站建设、大型门户平台开发<br>
+		</li>
+		<li>
+			<img src="images/index_webmake_1.png"><br>
+			<h2><a href="">网站建设</a></h2>
+			<h3><a href="">Website</a></h3>
+			企业网站制作、高端网站建设、<br>
+			门户网站建设、大型门户平台开发<br>
+		</li>
+		<li>
+			<img src="images/index_webmake_1.png"><br>
+			<h2><a href="">网站建设</a></h2>
+			<h3><a href="">Website</a></h3>
+			企业网站制作、高端网站建设、<br>
+			门户网站建设、大型门户平台开发<br>
+		</li>
+	</ul>
+	<div style="clear:both"></div>
+</div>
+<div id="case_index">
+	<h2>经典成功案例</h2>
+	<p>Product Case</p>
+	<ul class="case_index">
+		<li>
+			<img src="images/15.jpg"><br>
+			<h2>全程无忧网站建设设计
+			abcdefghighajkdfhweui</h2>
+		</li>
+		<li>
+			<img src="images/15.jpg"><br>
+			<h2>全程无忧网站建设设计
+			abcdefghighajkdfhweui</h2>
+		</li>
+		<li>
+			<img src="images/index_case.jpg"><br>
+			<h2>全程无忧网站建设设计
+			abcdefghighajkdfhweui</h2>
+		</li>
+		<li>
+			<img src="images/index_case.jpg"><br>
+			<h2>全程无忧网站建设设计
+			abcdefghighajkdfhweui</h2>
+		</li>
+	</ul>
+	
+	<p style="float:none;"><a href=""><img src="images/index_more.png"></a></p>
+</div>
+<div id="news_index">
+	<h2>  </h2>
+	<ul class="news_index">
+		<li>
+			<div class="news_index_li">
+			<img src="images/index_news.png"><br>
+				<div class="news_index_left fl">
+					09-07<br>
+					&nbsp;2016
+				</div>
+				<div class="news_index_right fr">
+					<h2>全程无忧网站建设设计</h2>
+					<p>
+						从去年我进入组一开始，我媳妇儿和我孩子我家人，只知道我在晚会组，只
+						知道我
+					</p>			
+				</div>
+			</div>
+		</li>
+		<li>
+			<div class="news_index_li">	
+			<img src="images/index_news.png"><br>
+			<div class="news_index_left fl">
+				09-07<br>
+				&nbsp;2016
+				</div>
+			<div class="news_index_right fr">
+				<h2>全程无忧网站建设设计</h2>
+				<p>
+					从去年我进入组一开始，我媳妇儿和我孩子我家人，只知道我在晚会组，只
+					知道我
+				</p>			
+			</div>
+			</div>
+		</li>
+		<li>
+			<div class="news_index_li">
+			<img src="images/index_news.png"><br>
+			<div class="news_index_left fl">
+				09-07<br>
+			&nbsp;2016
+			</div>
+			<div class="news_index_right fr">
+				<h2>全程无忧网站建设设计</h2>
+				<p>
+					从去年我进入组一开始，我媳妇儿和我孩子我家人，只知道我在晚会组，只
+					知道我
+				</p>			
+			</div>
+			</div>
+		</li>
+	</ul>
+	<div style="clear:both;"></div>
+</div>
+<div id="footer">
+	<div class="footer_top">
+		<div class="footer_top_content">
+			<div class="footer_code fl">
+				<img src="images/footer_code.jpg">
+				<p class="focus">微信关注</p>
+			</div>
+			<p class="footer_name">博瑞硬软件科技有限公司</p>
+			<p><span>地 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;址：</span>保定市复兴路创业中心三楼</p>
+			<p><span>联系电话：</span>0312-4506616</p>
+			<p><span></span>0312-4506616</p>
+			<p><span>资讯邮箱：</span>16853110100@qq.com</p>
+			<p><span>咨询 QQ：</span>1685311100 <img src="images/qq_talk.png" style="vertical-align:middle;"></p>
+		</div>
+	</div>
+	<div class="foot_bottom">
+		<div class="link fl">
+			<a href="">联系我们 |</a>
+			<a href="">招贤纳士 |</a>
+			<a href="">网站导航 |</a> 
+			<a href="">意见反馈</a>
+		</div>
+		<p class="copyright fr">
+			保定博瀛睿软件科技版权所有 冀ICP证030173号 
+		</p>
+	</div>
+</div>
+
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

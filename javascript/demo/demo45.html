@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>算法 </title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <script src='../../other/jquery.min.js'></script>
+</head>
+
+<body>
+</body>
+<script>   
+    var a={"status":1,"info":[{"tel":[111111111,2222222222],"title":"康众汽配连锁","lnglats":"115.461972;38.842094","id":"9","imagename":"58534b48ba6a6.jpg","address":"建国路裕丰汽配城","intro":"主要生产销售 微型汽车配件、 北斗星原车件、 钣金件、 外装饰件、 内饰件、刹车系统、发动机系统、全呈等","distance":3028}]} 
+// if(a.info) 只要这个存在那么 下面的东西顶多就是undefind  
+	if(a.status==1){
+        for (var i in a.info) {
+            for(var x = 0; x < a.info[i].tel.length; x++){
+                console.log(a.info[i].tel[x])
+            }
+        }
+    }
+//算法 斐波拉契数列  1 2 3 5 8 13 21 34
+function abc(num){
+    if(num<2){
+        return num;
+    }else{
+        return abc(num-1)+ abc(num-2);
+    }
+}
+function fibonacci( n ){
+        return ( n < 2 ) ? 1 : fibonacci( n-1 ) + fibonacci( n-2 );
+    }
+//阶乘 1 2 6  24 120 720
+function abcd(num){
+    if(num==1){
+        return num;
+    }else{
+        return num*abcd(num-1);
+    }
+}
+// 时间戳转成时间
+function new_Date() {
+		var a = arguments[0];
+		var date = new Date(a);
+		var Y = date.getFullYear() + '-';
+		M = (date.getMonth() + 1 < 10 ? '0' + (date.getMonth() + 1) : date.getMonth() + 1) + '-';
+		D = (date.getDate() < 10 ? '0' + date.getDate() : date.getDate()) + ' ';
+		h = (date.getHours() < 10 ? '0' + date.getHours() : date.getHours()) + ':';
+		m = (date.getMinutes() < 10 ? '0' + date.getMinutes() : date.getMinutes()) + ':';
+		s = (date.getSeconds() < 10 ? '0' + date.getSeconds() : date.getSeconds());
+		var time_new_xu = Y + M + D + h + m + s;
+		return time_new_xu;
+	}
+    
+console.log(abcd(6)) 
+
+//汉字编码 的互相转换
+document.write(encodeURI("http://www.w3school.com.cn/汉字文字？?/")+ "<br />")
+document.write(encodeURI("http://www.w3school.com.cn/My first/")+ "<br />")
+document.write(decodeURI("http://www.w3school.com.cn/%E6%B1%89%E5%AD%97%E6%96%87%E5%AD%97%EF%BC%9F?")+ "<br />")
+document.write(encodeURI(",/?:@&=+$#"))
+
+
+// json字符串转成json数组
+  var a='{"status":1,"info":[{"tel":[111111111,2222222222],"title":"康众汽配连锁","lnglats":"115.461972;38.842094","id":"9","imagename":"58534b48ba6a6.jpg","address":"建国路裕丰汽配城","intro":"主要生产销售 微型汽车配件、 北斗星原车件、 钣金件、 外装饰件、 内饰件、刹车系统、发动机系统、全呈等","distance":3028}]}'
+  var arrParse = JSON.parse(a); //json 
+
+// 对象什么的很好玩的
+ var grade='a';
+    var score={
+        'a':90,
+        'b':80,
+        'c':70,
+        'd':60
+    }[grade]
+    console.log(score)
+
+    console.log(score.grade)
+
+    </script>
+
+</html>

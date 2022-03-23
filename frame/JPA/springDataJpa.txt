@@ -1,0 +1,278 @@
+﻿springDataJpa  学习目录
+
+orm框架  object resoprot  mapping   面向对象的设计
+
+
+jpa 层级分类
+	repository  顶层接口  空接口
+	CrudResitory  顶层子接口  实现crud 操作的基本单元			继承
+	PagingAndSortingRepository  crud子接口  实现分页和排序功能的接口	继承
+	JpaResitory PASR子接口 实现了批量操作的功能  				继承
+	
+	JpaSpecificationExecutor 用来做复杂查询的接口   与上面并无继承关系 辅助接口
+	
+	
+
+Jpa注解
+
+	@Entity   实体类注解
+	@Table	表名注解
+	
+	@Id 主键注解
+	@GeneratedValue 自增
+
+	@AutoWired  自动装配
+
+
+常用方法
+	delete 删除或者批量删除
+	findAll 查找所有
+	findOne 查找单个
+	save 保存单个或者批量保存    并不一定 立即刷新
+	saveAndFlush 保存并刷新到数据库
+
+
+	
+	更新的时候 先插回 update
+	判断 new是否为空 
+	赋值给 update 然后 save
+
+条件查询
+	
+	基于方法名解析的概念
+		jpa支持接口规范方法名查询 如果在接口定义的查询方法符合他的命名规则 就可以不用写实现
+		要点一 方法名需要在接口中设定
+		要点二 必须符合一定的命名规范	
+
+		命名规范
+			find[全局修饰]By[实体属性名称][限定词][连接词][其他实体属性]OrderBy[排序属性][排序方向]
+
+	
+			Distinct 唯一性  全局修饰 非必须  Top 前几条  First
+
+			
+
+			限定词和连接词 统称 关键词  And Or
+			关键词： IsNUll 
+				IsNotNull 
+				Like 
+				NotLike 
+				Containing In NotIn LgnoreCase Between Equals LessThan
+				GreaterThan After Before
+
+				排序方向  Asc Desc
+				连接词 And Or
+	
+	select * from user where phone  like "136%" and address like "路" limit 0,2;
+	
+	List<User> findTop2ByPhoneStartWithAndAddressContaining(String phone,String Address)	
+		
+	方法名构造方法
+	目前支持的关键词
+
+
+	嵌套实体方法命名规则
+
+jpa  高级查询
+
+	使用 Criteria 查询
+	JpaSpeciicationExecutor 接口
+	@query 和@NamedQuery使用
+	
+	
+	使用 Criteria 查询
+		
+	
+
+ @Formula("(select cx.child_count from sys_category_tree_xref cx " + "where cx.distance = 0 and cx.child_id = id)")
+ 
+
+
+
+
+
+
+Jpa示例代码
+	
+	
+	 public void testJpaSpeciationExecutor( Pageable pageRequest){  
+	        int pageNo=0;  
+	        int pageSize=5;  
+	        //Page pageRequest=new Page();  
+	        //通常使用Specification 的匿名内部类，  
+	        Specification<LecNotice> specification=new Specification<LecNotice>() {  
+	  
+	        /* 
+	         * @param root:代表的查询的实体类 
+	         * @param query：可以从中得到Root对象，即告知JPA Criteria查询要查询哪一个实体类， 
+	         * 还可以来添加查询条件，还可以结合EntityManager对象得到最终查询的TypedQuery 对象 
+	         * @Param cb:criteriabuildre对象，用于创建Criteria相关的对象工程，当然可以从中获取到predicate类型 
+	         * @return:代表一个查询条件 
+	         */  
+	            @Override  
+	            public Predicate toPredicate(Root<LecNotice> root,  
+	                    CriteriaQuery<?> query, CriteriaBuilder cb) {  
+//	              Path path=root.get("id");  
+//	              Predicate predicate=cb.gt(path, 5);  
+	                  
+	                Predicate p1=cb.like(root.get("id").as(String.class), "%"+"1"+"%");  
+	                Predicate p2=cb.equal(root.get("lastName").as(String.class), "sd");  
+	                Predicate p3=cb.like(root.get("email").as(String.class), "%s%");  
+//	              构建组合的Predicate示例：  
+	                Predicate p = cb.and(p3,cb.or(p1,p2));  
+	                  
+	                return p;  
+	            }  
+	              
+	        };  
+	          
+	        Page<LecNotice> page=repository.findAll(specification,pageRequest);  
+	      
+	        System.out.println("总记录数"+page.getTotalElements());  
+	        System.out.println("当前第几页"+page.getNumber());  
+	        System.out.println("总页数"+page.getTotalPages());  
+	        System.out.println("当前页面的List"+page.getContent());  
+	        System.out.println("当前页面的记录数"+page.getNumberOfElements());  
+	    }  
+
+	注： 	Predicate predicate2 = cb.equal(root.get("isPublished"), 1);  可以不用加类型 看数据是啥样的
+
+
+
+
+public Page<SheBaoRenYuan> queryManualIncrease(ParentPage<SheBaoRenYuan> page) {
+    
+Sort sort=new Sort(Sort.Direction.DESC, "zhuJian");
+    
+Specification<SheBaoRenYuan> specification = new Specification<SheBaoRenYuan>() {
+        
+@Override
+        
+public Predicate toPredicate(Root<SheBaoRenYuan> mol, CriteriaQuery<?> query, CriteriaBuilder criteriaBuilder) {
+           
+ List<Predicate> lstPredicates = new ArrayList<Predicate>();
+            
+Path<String> _companty = mol.get("xingMing");
+            
+Path<String> _compantyOne = mol.get("xingBieMaZhi");
+            
+Path<String> _compantyThree = mol.get("minZuMaZhi");
+            
+Path<String> _compantyFour = mol.get("shenFenZhengHao");
+            
+Path<Long> _compantyFive = mol.get("danWeiWaiJian");
+            
+Path<Long> _compantySix = mol.get("buMenWaiJian");
+            
+Path<String> _compantySeven = mol.get("zengJianYuanZhuangTai");
+            
+//姓名
+            
+if(!"".equals(page.getCondition().getXingMing())&&page.getCondition().getXingMing()!=null){
+                
+lstPredicates.add(criteriaBuilder.like(_companty, "%"+page.getCondition().getXingMing()+"%"));
+           
+ }
+
+            
+//性别
+            
+if(!"".equals(page.getCondition().getXingBieMaZhi())&&page.getCondition().getXingBieMaZhi()!=null){
+
+    lstPredicates.add(criteriaBuilder.equal(_compantyOne, page.getCondition().getXingBieMaZhi()));
+  
+       }
+           
+ //民族
+            
+if(!"".equals(page.getCondition().getMinZuMaZhi())&&page.getCondition().getMinZuMaZhi()!=null){
+      
+    lstPredicates.add(criteriaBuilder.equal(_compantyThree, page.getCondition().getMinZuMaZhi()));
+ 
+           }
+            
+//身份证
+            
+if(!"".equals(page.getCondition().getShenFenZhengHao())&&page.getCondition().getShenFenZhengHao()!=null){
+  
+    lstPredicates.add(criteriaBuilder.like(_compantyFour, "%"+page.getCondition().getShenFenZhengHao()+"%"));
+
+            }
+            
+//单位
+        
+if(!"".equals(page.getCondition().getDanWeiWaiJian())&&page.getCondition().getDanWeiWaiJian()!=null){
+  
+    lstPredicates.add(criteriaBuilder.equal(_compantyFive, page.getCondition().getDanWeiWaiJian()));
+ 
+       }
+        
+//部门
+        
+if(!"".equals(page.getCondition().getBuMenWaiJian())&&page.getCondition().getBuMenWaiJian()!=null){
+   
+     lstPredicates.add(criteriaBuilder.equal(_compantySix, page.getCondition().getBuMenWaiJian()));
+    
+    }
+        
+// 增减员状态
+        
+lstPredicates.add(criteriaBuilder.notEqual(_compantySeven,"jianYuan"));
+
+       
+
+Predicate[] predicates = new Predicate[lstPredicates.size()];
+        
+predicates = lstPredicates.toArray(predicates);
+        
+return criteriaBuilder.and(predicates);
+    
+}
+};
+
+if("".equals(page.getSize())||page.getSize()==0){
+    
+page.setSize(20);
+
+}
+
+
+Pageable pageable = new PageRequest(page.getNumber()-1, page.getSize(), sort);
+
+
+return querySheBaoRenYuanRepository.findAll(specification, pageable);
+
+
+
+
+
+
+//注解 指定多附件上传
+    @OneToMany(cascade = CascadeType.ALL)
+    @JoinTable(name = "info_train_briefing_doc_xref", joinColumns = @JoinColumn(nullable = false, name = "breif_id", referencedColumnName = "id"), inverseJoinColumns = @JoinColumn(name = "document_info_id", referencedColumnName = "id"))
+    private List<DocumentInfo> documentInfos;
+
+	https://www.cnblogs.com/zqyanywn/p/7753564.html // 实体类注解  指定表与表之间的继承关系注解
+
+	https://blog.csdn.net/lamb7758/article/details/54135572  // 字段上的注解
+
+
+//注解 用sql查数量的
+  @Formula("(select sum(ldi.downloads) from lib_document_info ldi where ldi.id in (select ec.document_info_id from info_external_course ec where "
+            + " ec.external_training_id = id))")
+    private Long downloadCount;
+
+//指定关系
+	@OneToOne
+    @JoinColumn(name = "user_id")
+    private User user;		// 关联账号
+
+
+// 定时任务
+	@Scheduled(cron = "0 0/1 * * * ?")
+    public void timerToNow(){
+        System.out.println("now time:" + new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(new Date()));
+    }
+
+
+

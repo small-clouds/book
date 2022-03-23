@@ -1,0 +1,100 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <link rel="stylesheet" href="../../other/base.css" />
+    <title>myBatis</title>
+</head>
+<style>
+    .color {
+        color: red;
+        font-size: 12px;
+    }
+</style>
+
+<body>
+    <h1>myBatis</h1>
+    <div class="demoMain">
+        <h2>实例---讲师中心</h2>
+        <div class="none">
+            
+            <div>  <a href="LecArchivedMapper.java">java接口注入</a> <a href="LecArchivedMapper.xml">xml文件</a> </div>
+        </div>
+        <h2>简介</h2>
+        <div class="none">
+            <div>mybatis：是一个介于Java的持久层框架，包括SQL Maps和Data Access Objects(DAO)</div>
+            <div>mybatis：是支持普通sql查询，存储过程和高级映射的优秀持久层框架，消除了几乎所有的JDBC代码和参数的手工设置以及结果集的检索</div>
+            <div>使用简单的XML或注解用于配置和原始映射，将接口和Java的普通对象映射成数据库中的记录</div>
+        </div>
+        <h2>原理</h2>
+        <div class="none">
+            <div>每一个mybatis应用程序主要都是使用SqlSessionFactory实例的一个SqlSessionFactory实例可以通过SqlSessionFactoryBuilder获得，SqlSessionFactoryBuilder可以从一个xml配置文件或者一个预定义的配置类的实例获得
+            </div>
+            <div>用xml文件配置SqlSessionFactory是实例是非常简单的事情。推荐在这个配置中使用类路径资源，但你可以使用任何reader实例，包括用文件路径或者file：//开头url创建实例</div>
+        </div>
+        <h2>总体流程</h2>
+        <div class="none">
+            <h3>加载配置并初始化</h3>
+            <div class="none">
+                <div>触发条件：加载配置文件</div>
+                <div>将SQL的配置信息加载成为一个MappedStatement对象，存储在内存中</div>
+            </div>
+            <h3>接受调用请求</h3>
+            <div class="none">
+                <div>触发条件：调用Mybatis提供的API</div>
+                <div>传入参数：将Sql的is和传入参数对象</div>
+                <div>处理过程：将请求传递给下层的请求处理层进行处理</div>
+            </div>
+            <h3>处理操作请求</h3>
+            <div class="none">
+                <div>触发条件：APi接口层传递请求过来</div>
+                <div>传入参数：将sql的id和传入参数对象</div>
+                <div>处理过程:</div>
+                <div> 1.根据sql的id查找对应的MappedStatement对象</div>
+                <div> 2.根据传入参数对象解析MappedStatement对象，得到最终要执行的sql和执行传入的参数</div>
+                <div> 3.获取数据库连接根据得到的最终sql语句和执行传入参数到数据库执行并得到结果</div>
+                <div> 4.根据MappedStatement对象中的结果映射配置对得到的执行结果惊醒转换处理，并得到最终的处理结果。</div>
+                <div> 5.释放连接资源</div>
+                <div> 6.返回处理结果将最终的处理结果放回</div>
+            </div>
+        </div>
+        <h2>mybatis配置</h2>
+        <div class="none">
+            <div><a href="config/configuration.xml" target="_blank">configuration.xml</a></div>
+            <div><a href="dbconfig.properties" target="_blank">dbconfig.properties数据库配置信息</a></div>
+        </div>
+        <h2>方法操作-xml Sql语句mapper.xml</h2>
+        <div class="none">
+            <div><a href="config/UsersMapper.xml" target="_blank">单表增删改查</a></div>
+            <div><a href="config/UsersMapper1.xml" target="_blank">连查单个对象</a></div>
+            <div><a href="config/RoleMapper.xml" target="_blank">连查获取集合</a></div>
+            <div>注：<span class="remark">增删改查用的标签不一样</span></div>
+            <div>注：<span class="remark">连查的时候返回的resultMap 单条查的时候返回的是resultType</span></div>
+            <div>注：<span class="remark">连查注意association(返回对象)和collection(返回集合)的区别</span></div>
+            <div>注：<span class="remark">连接查询注意ofType 和javaType的区别</span></div>
+            <div>注：<span class="remark">resultMap也能解决数据库了名和实体类列名不一致的问题</span></div>
+        </div>
+        <h2>使用方法</h2>
+        <div class="none">
+            <div><a href="java/MybatisUtil.java" target="_blank">sqlsession工具类 </a></div>
+            <div><a href="java/TestUsers.java" target="_blank">基本包括所有的使用方法</a></div>
+            <div>注：<span class="remark">dml操作的时候要注意提交 commit</span></div>
+            <div>注：<span class="remark">方法 ：增insert 删delte 改update 查select</span></div>
+        </div>
+         <h2>$和#的区别</h2>
+        <div class="none">           
+            <div> 1. #将传入的数据都当成一个字符串，会对自动传入的数据加一个双引号。如：order by #user_id#，如果传入的值是111,那么解析成sql时的值为order by "111", 如果传入的值是id，则解析成的sql为order by "id".</div>
+            <div>2. $将传入的数据直接显示生成在sql中。如：order by $user_id$，如果传入的值是111,那么解析成sql时的值为order by user_id,  如果传入的值是id，则解析成的sql为order by id.</div>
+            <div>3. #方式能够很大程度防止sql注入。</div>
+            <div>4.$方式无法防止Sql注入。</div>
+            <div>5.$方式一般用于传入数据库对象，例如传入表名.</div>
+            <div>6.一般能用#的就别用$.</div>
+        </div>
+    </div>
+</body>
+
+</html>
+<script src='../../other/jquery.min.js'></script>
+<script src='../../other/base.js'></script>

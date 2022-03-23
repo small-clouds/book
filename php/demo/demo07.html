@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <link rel="stylesheet" href="../../other/base.css" />
+    <title>phpstudy-- 类和对象</title>
+</head>
+
+<body>
+    <h1>类和对象</h1>
+    <div class="demoMain">
+        <h2>类和对象</h2>
+        <div class="none">
+            <div>堆区 对象基本都放在这里 栈区 基本数据类型差不多都放在这里</div>
+            <div>// 如果给一个函数传递一个对象 实际上传递的是一个地址。</div>
+            <div>//函数执行完毕 函数在栈区弄的空间已经没有了 </div>
+            <div>//类是抽象的代表一类事物</div>
+            <div>//对象是及具体的 是类的一个具体事例</div>
+            <div>//类是对象的模板 对象是类的一个个体实例</div>
+            <div> //cat.class.php 专门定义类的文件</div>
+        </div>
+        <h2>类变量和类方法</h2>
+        <div class="none">
+            <div>
+                <pre>
+class Cat { ///定义一个类名
+    public $name;
+    public $color;
+    public $age;
+    public function speak() {
+                echo "喵喵";
+            }
+}
+$cat1 = new Cat();  
+$cat1->color = "白色";
+$cat1->speak();
+</pre>
+            </div>
+        </div>
+        <h2>构造方法</h2>
+        <div class="none">
+            <div> // 构造方法 没有返回值 被系统自动调用的；</div>
+            <div>// 在创建对象的时候 就已经执行构造方法了</div>
+            <div>// $this ###调用的就是一个地址### 谁调用 就是谁的地址 只能在类里面调用 和对象绑定的 离开对象 也就离开了地址</div>
+            <div>// 注意事项 本质可以理解就是这个对象的地址</div>
+            <div>// 那个对象调用 就是那个对象的地址</div>
+            <div>// this不能在类外面使用</div>
+            <div>只有在执行的时候 才执行 构造方法 也就是 创建对象的时候</div>
+            <div>public function __construct(){}</div>
+        </div>
+        <h2>析构方法</h2>
+        <div class="none">
+            <div>// 析构方法 </div>
+            <div>// 主要用于 释放资源 释放数据库的连接 图片资源 等等 或者销毁莫一个对象 </div>
+            <div>// 也会自动调用该函数</div>
+            <div>// 先创建的对象最后被销毁 先入先出 压栈 设计的问题有点多 想想 枪压子弹</div>
+            <div>// 程序退出的时候 执行 程序进程结束的时候</div>
+            <div>// 当一个对象成为垃圾对象的时候 没有任何变量应用他的时候 该对象的析构函数会立即处理 六十八将 二十五分钟 </div>
+            <div>// 主要是 释放资源 不是销毁对象本身 </div>
+        </div>
+    </div>
+</body>
+
+</html>
+<script src='../../other/jquery.min.js'></script>
+<script src='../../other/base.js'></script>

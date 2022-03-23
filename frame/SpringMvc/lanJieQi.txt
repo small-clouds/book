@@ -1,0 +1,40 @@
+﻿SpringMVC:
+
+     拦截器(springMVC中的拦截器拦截控制器(controller))
+	 
+	     自定义拦截器的两种方式:
+		 
+		   *1 实现 HandlerInterceptor 接口
+		   
+		      //在目标Controller执行之前执行
+	            public boolean preHandle(HttpServletRequest arg0, HttpServletResponse arg1,Object arg2) throws Exception { 
+		    return true; // 放行
+		     //Controller之后，生成视图之前执行
+	           public void postHandle(HttpServletRequest arg0, HttpServletResponse arg1,
+			  Object arg2, ModelAndView arg3) throws Exception
+			  	  
+			 // 最后执行
+	        public void afterCompletion(HttpServletRequest arg0,
+			HttpServletResponse arg1, Object arg2, Exception arg3)
+			throws Exception { 
+			
+			
+			   * 拦截器声明完要在配置文件中配置
+			   
+			  <mvc:interceptors>  
+			<!-- 	  使用bean定义一个Interceptor， -->
+			<!-- 	  直接定义在mvc:interceptors根下面的Interceptor将拦截所有的请求    -->
+			<!-- 	  <bean class="com.zrgk.interceptor.MyInterceptor" />   -->
+					<mvc:interceptor>  
+						 <mvc:mapping path="/LoginAction.do"/>  
+						 <!-- 定义在mvc:interceptor下面的表示是对特定的请求才进行拦截的 path被 class拦截 class需要实现三个方法-->  
+						 <bean class="com.zrgk.interceptor.MyInterceptor"/>  
+					</mvc:interceptor>  
+			  </mvc:interceptors> 
+	  
+	  
+	       *2 继承 HandlerInterceptorAdapter ---> 可以指定覆盖哪个方法 (说明HandlerInterceptorAdapter 实现了HandlerInterceptor接口)
+	  
+记住 多实现 少继承
+	  
+	  

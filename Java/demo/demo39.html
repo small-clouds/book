@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <link rel="stylesheet" href="../../other/base.css" />
+    <title>java第二阶段学习-JSP</title>
+</head>
+
+<body>
+    <h1>JSP</h1>
+    <div class="demoMain">
+        <h2>定义</h2>
+        <div class="none">
+            <div>JAVA SERVER PAGE 是java服务端页面 其动态语法部分完全是java规范</div>
+            <div>是一种动态网页编程技术</div>
+        </div>
+        <h2>JSP和Servlet的异同</h2>
+        <div class="none">
+            <div> 1 JSP和Servlet都是动态资源 -- JSP最后也是会被编程成Servlet</div>
+            <div> 2 编程Servlet是在编写程序代码 而编写jsp时更多感觉是在编写HTML页面 </div>
+            <div> 3 存放的位置不同 servlet 放在src下/ jsp放在webroot下 </div>
+            <div> 4 访问方式不同 Servlet需要 在web.xml中配置 而jsp可以直接访问</div>
+            <div><span class="remark">从本质上来说，JSP就是Servlet 只是在编写 和 存放的位置上 是不同的</span></div>
+        </div>
+        <h2>jsp访问流程</h2>
+        <div class="none">
+            <div>JSP 是在第一次访问这个jsp是 会被服务器的jsp引擎（软件模块）编译成一个 jsp文件名_jsp.java的文件</div>
+            <div>(当然 .java文件还会被 编译成 .class文件)--- 文件保存在Tomcat的work目录下</div>
+        </div>
+        <h2>JSP中嵌入java代码</h2>
+        <div class="none">
+            <div>
+                < %! %> 声明标签 声明的变量和方法将会成为 jsp编译成的Servlet 的<span class="remark">成员变量方法</span><span class="remark">声明标签，一般不用</span>                    </div>
+            <div>
+                < % %> 局部变量 脚本标签中写的内容将会出现在 service方法中</div>
+            <div>
+                < %=%> 赋值标签 out.print(); 赋值标签中的内容将会显示在页面上
+            </div>
+        </div>
+        <h2>Jsp的指令性标签</h2>
+        <div class="none">
+            <h3>
+                <%@page %>
+            </h3>
+            <div class="none">
+                <div>language="java" 用来说明jsp中嵌入的是什么语言的代码 ，目前位置只能填java</div>
+                <div>import="java.util.*" 导包 默认已经导入了 java.util.*</div>
+                <div>pageEncoding="UTF-8" 一个是jsp页面使用什么编码，告诉浏览器用什么编码方式查看</div>
+                <div>autoFlush="true" 是否自动刷新</div>
+                <div>buffer="8kb" 缓存区大小 (输出流缓冲区大小)</div>
+                <div>errorPage="error.jsp" 跳转到错误页面的 </div>
+                <div>isErrorPage="true" 定义当前页面是错误页面</div>
+                <div> session="true" 设置jsp中是否获取session</div>
+            </div>
+
+            <h3>
+                <%@taglib prefix="前缀" uri="地址" %> : 用来导入标签库 <span class="remark">最常用的c标签</span></h3>
+            <div class="none">
+                <div>c：标签</div>
+            </div>
+            <h3>
+                <%@include file="" %> ：用来包含页面 (在一个jsp中包含其他jsp)</h3>
+            <div class="none">
+                <div> 所谓静态包含，是指两个页面会被服务器编译成一个 .java文件 破坏了生成的html文档的结构</div>
+                <div>
+                    < base href="" /> 给页面上的所有超链接添加一个前缀
+                </div>
+            </div>
+        </div>
+        <h2>Jsp的注释</h2>
+        <div class="none">
+            <div>&lt;!-- --&gt; html风格的注释</div>
+            <div>java风格 // /* */ 用来注释页面上的 java代码</div>
+            <div>
+                <%-- --%> jsp风格的注释 --> 在查看页面源文件是不能看到这个注释 安全性更高</div>
+        </div>
+        <h2>Jsp的内置对象/和作用域对象</h2>
+        <div class="none">
+            <div><span class="remark">红色标出的就是JSP的作用域对象 4个</span></div>
+            <div> page Object ---- this</div>
+            <div><span class="remark">pageContext</span> PageContext(JSP的上下文对象)</div>
+            &nbsp;&nbsp;&nbsp;&nbsp; 获取其他8大内置对象 /  作为作用域对象
+            <div><span class="remark">request</span>  HttpServletRequest</div>
+            <div> <span class="remark">session</span> HttpSession</div>
+            <div><span class="remark">application</span>  ServletContext</div>
+            <div> response HttpServletResponse</div>
+            <div> out JspWriter ----- extends Writer<br> 
+            &nbsp;&nbsp;&nbsp;&nbsp;JspWriter 和 PrintWriter 都是缓冲流 JspWriter 写出的东西，是先写到 PrintWriter 的缓存区中 再由PrintWriter
+                统一向外输出
+            </div>
+            <div> config ServletConfig</div>
+            <div> exception Throwable只有页面出现异常的时候才会出现</div>
+            <div><span class="remark">使用方法：</span>setAtribute /  getAttribute / removeAttribute</div>
+            <div>当时有EL 表达是取值的时候  &&  作用域对象 的key值相同的时候   优先去作用域范围小的</div>
+        </div>
+        <h2>Jsp动作标签</h2>
+        <div class="none">
+            <div>jsp:forward ：向前进跳转的意思</div>
+            <div>jsp:param：跳转时带参数<span class="remark">必须包含在在forward里面</span>  获取：request.getParamter("bbb"); </div>
+            <div>jsp:include 动态包含 </div>
+            <div>&nbsp;&nbsp;&nbsp;&nbsp;1.	静态包含 叫做编译器包含，多个jsp页面会被编译成一个java文件</div>
+			<div>&nbsp;&nbsp;&nbsp;&nbsp;2.	动态包含 叫做运行期包含，每个jsp页面各自编译 在运行时，组合在一起</div>
+            <div>jsp:useBean</div>
+            <div>jsp:setProperty</div>
+            <div>jsp:getProperty</div>
+        </div>
+        <h2>JSTL 标签库 C标签 fmt fn(Jsp Standard Tag Library Jsp 标准标签库)</h2>
+        <div class="none">
+            <div>JavaEE5.0 的项目 不需要导入jstl的jar包了</div>
+            <h3>c --- core 核心标签库</h3>
+            <div class="none">
+                <div>页面导入 前提条件
+                    <@taglib prefix="" uri="" %>-----------------
+                        <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+                </div>
+                <div><span class="remark">c标签</span></div>
+                <div>
+                    < c:if> 只能做if判断 没有if else 结构 <span class="remark">标签成对出现</span></div>
+                <div>
+                    < c:if test="${}">
+                        如果test中的结果是true c:if中夹含的代码就会被执行
+                        < /c:if>
+                </div>
+                <div>
+                    < c:forEach items="要遍历的集合结构" var="给集合中的每个元素起名字" varStatus="">
+                </div>
+                <div> items : 要遍历的集合 要用${} </div>
+                <div>var : 给集合中的每个元素起名字 -- 循环一次取出的元素 赋给这个值 </div>
+                <div>varStatus：做序号 varStatus="num" num.index --- 从0开始</div>
+                <div>
+                    < c:choose> -------- switch
+                        < c:when>
+                            < c:when>
+                                < c:when>
+                                    ...
+                                    < c:otherwise>
+                                        < /c:choose>
+
+
+                                            <c:choose>
+                                                <c:when test="${requestScope.user.sex=='男'}">
+                                                    <input type="radio" value="男" name="sex" checked="checked" />男
+                                                    <input type="radio" value="女" name="sex" />女
+                                                </c:when>
+
+
+                                                <c:otherwise>
+                                                    <input type="radio" value="男" name="sex" />男
+                                                    <input type="radio" value="女" name="sex" checked="checked" />女
+                                                </c:otherwise>
+                                            </c:choose>
+                </div>
+                <div>常用标签jstl中最常用的标签： < c:if>
+                        < c:forEach>
+                            < c:choose>
+                                < c:when> < c:otherwise>
+                                        < c:set>
+                                            < fmt:formatDate>
+                </div>
+            </div>
+        </div>
+        <h2>jsp自定义标签</h2>
+        <div class="none">
+          <a href="demo39.txt">jsp自定义标签详情</a>
+        </div>
+    </div>
+</body>
+
+</html>
+<script src='../../other/jquery.min.js'></script>
+<script src='../../other/base.js'></script>

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <link rel="stylesheet" href="../../other/base.css" />
+    <title>phpstudy-- php绘图技术</title>
+</head>
+
+<body>
+    <h1>php绘图技术</h1>
+    <div class="demoMain">
+        <h2>绘图技术未整理</h2>
+        <div class="none">
+           <div> 
+               <pre>
+
+                   echo "第一三零讲 饼状图  ";
+        //分析 花扇形   没有问题 在image.php里面
+//         $im1 = imagecreatetruecolor(400,300);
+//         $color=imagecolorallocate($im1,255,255,255);
+//         imagefill($im1, 0, 0, $color);
+//         $red = imagecolorallocate($im1,255,0,0);
+//         $blue= imagecolorallocate($im1,0,255,0);
+//         $green= imagecolorallocate($im1,0,0,255);
+//         imagefilledarc($im1,100,50,100,50,0,35,$red,IMG_ARC_PIE);
+//         imagefilledarc($im1,100,50,100,50,35,70,$blue,IMG_ARC_PIE);
+//         imagefilledarc($im1,100,50,100,50,70,360,$green,IMG_ARC_PIE);
+//         header("content-type: image/png");
+//         imagepng($im1);
+//         imagedestroy($im1);
+        
+        echo "第一二九讲 绘图核心技术";
+            //前提条件
+        //启动GD库 php.ini  启动图像库  gd   然后重启apcha 加载动态库ini里面的东西
+        //$im = imagecreatetruecolor("宽"，"高")  //创建画布 默认黑色
+        //$red = imagecolorallocate($im,"R","G","B");
+        //imageelipse($im,"中心x","中心y","width","height".$red);//画圆
+        //imageline($im,"x","y","x长"，"y高",$red);直线
+        //imagerectangle($im,"左上x","左上y","宽","高",$red)//矩形
+        //imagefilledrectangle($im,"左上x","左上y","宽","高",$red);//填充矩形 实心的
+        //imagearc($im,150,150,100,100,起点3点钟,终点角度,$red)//弧线
+        //imagefilledarc($im,150,150,100,100,起点3点钟,终点角度,$red,饼状图)扇形 IMG_ARC_PIE
+        ////拷贝图片  在画布上 添加图片
+        //$srcImage = imagecreatefromgif(url); 加载图片
+        //imagecopy($im,$srcImage,0,0,0,0,206,71); 中心 中心  原图片的横纵坐标 画布的很总坐标
+        
+        //写字
+        //imagettftext($im,20,10,50,50,$red,"font","helloworld") 字体大小  角度 位置x 位置y  颜色 字体只能服务端有的 字符
+        ////输出
+        //header("content-type:image/png")
+        //imagepng($im);
+        //销毁
+        //imagedestory($im)
+        
+        echo "第一二六讲 绘图技术步骤 报表简介 像素 坐标原点";
+        //绘图基本原理和步骤
+        // 创建画布  
+        // 绘制需要的各种图形 GD库  绘图用的函数 圆 直线 弧形 扇形。。。。。
+        // 输出图像到网页 或者  另存为
+        // 销毁该图片  释放内存
+        // 
+        // 常用图片的格式 
+        // gif  jpg/jpeg  png bmp少了
+        // 总结  gif 压缩率比较高 只能显示256色 丰富多彩搞不定 可能造成色彩丢失 优点显示动画
+        // jpg/jpeg 图片的压缩率也很高 有损压缩 可以用较小的文件来显示 网页用的比较多
+        // png 综合上两种的优势  不能显示动画 高保真的
+        // 
+        // 怎么选择 动画 gif无压力  png压缩到极致在传送 并且还高保真
+        // jpg 
+        // 
+        //像素 800×600  一行800点  600行  分辨率  共有  480000个像素 并不是长度单位
+        // 报表  报告 表格 以表格的形式报告</pre></div>
+        </div>
+    </div>
+</body>
+</html>
+<script src='../../other/jquery.min.js'></script>
+<script src='../../other/base.js'></script>
