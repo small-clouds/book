@@ -89,8 +89,10 @@ var demo01 = {
             { context: '278-<a target="_blank"   href="' + urlposition + '大鱼.jpg">大鱼</a>' },
         ]
     }, {
-        title: "D调的简谱 337",
+        title: "D调的简谱 343",
         data: [
+            
+            { context: '343-<a target="_blank"   href="' + urlposition + '天也不懂情.png">天也不懂情</a>' },
             { context: '337-<a target="_blank"   href="' + urlposition + '这一拜.jpg">这一拜</a>' },
             { context: '336-<a target="_blank"   href="' + urlposition + '淯水吟.jpg">淯水吟</a>' },
             { context: '328-<a target="_blank"   href="' + urlposition + '问为何2.jpg">问为何</a>' },
