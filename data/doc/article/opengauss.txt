@@ -1,0 +1,97 @@
+#链接数据库
+gsql -d st -p 5432
+
+gsql -d postgres
+
+gsql
+# 查看所有数据库
+\l
+# 查看所有用户
+\du
+# 切换当前数据库
+\c {database}
+# 查看当前数据库所有表
+\dt
+# 查看指定表信息
+\dt {table}
+# 退出gsql命令行
+\q
+# 执行文件
+\i /opt/test.sql
+
+
+#!/bin/bash
+DATABASE=mydatabase
+for sqlfile in /path/to/sql/files/*.sql; do
+  echo "Executing $sqlfile"
+  gsql -d $DATABASE -v ON_ERROR_STOP=1 -f "$sqlfile"
+done
+
+gsql -d st -v ON_ERROR_STOP=1 -f test.sql
+
+gs_ctl restart -D /opt/opengauss/data/single_node
+
+
+useradd opengauss 
+passwd opengauss
+chown -R newowner folder
+
+tar -jxf openGauss-x.x.x-openEuler-64bit.tar.bz2 -C /opt/software/openGauss
+
+sh install.sh  -w "1qaz@WSX" &&source ~/.bashrc
+
+On systemwide basis, the maximum number of SEMMNI is not correct. the current SEMMNI value is: 128. Please check it.
+The required value should be greater than 321. You can modify it in file '/etc/sysctl.conf'.
+
+[root@oracle77 app]# vi /etc/sysctl.conf
+kernel.sem = 250 85000 250 330
+
+sysctl -p
+
+
+-bash: ulimit: open files: cannot modify limit: Operation not permitted
+vim /etc/security/limits.conf
+
+smis soft nproc 16384
+smis hard nproc 16384
+smis soft nofile 65536
+smis hard nofile 65536
+smis soft memlock 4000000
+smis hard memlock 4000000
+
+重启数据库
+gs_ctl restart -D /opt/opengauss/data/single_node/
+
+
+ps ux | grep gaussdb
+gs_ctl query -D /opt/software/openGauss/data/single_node
+
+iptables -I INPUT -p tcp --dport 5432 -j ACCEPT
+iptables -I INPUT -p tcp --dport 3306 -j ACCEPT
+
+/sbin/iptables -L -n
+iptables restart
+地址 211.159.224.104:5432
+数据库名  postgres
+ 用户名    dboper
+密码 dboper@123
+
+链接数据库
+gsql -d postgres -p 5432’
+添加用户
+CREATE USER dboper WITH PASSWORD "dboper@123";
+赋予权限
+alter role dboper sysadmin;
+修改密码
+ALTER ROLE gauss PASSWORD 'Test#2468';
+删除用户
+DROP USER dboper;
+修改密码
+alter user dboper identified by 'dboper@123'
+
+
+
+mvn install:install-file -Dfile=OpenGaussJDBC.jar -DgroupId=org.opengauss -DartifactId=opengauss-jdbc -Dversion=42.3.8 -Dpackaging=jar
+
+
+
