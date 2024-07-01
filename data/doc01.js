@@ -263,3 +263,64 @@ var demo01 = {
 data = [demo01]
 
 // 链接: https://pan.baidu.com/s/1Nms7zp492AYzRLJz4yJmkQ 提取码: b393
+
+
+/**
+ * tar zxvf nginx-1.20.1.tar.gz
+cd nginx-1.20.1
+ 
+# 编译安装Nginx
+./configure –prefix=/nginx/local/nginx
+make
+sudo make install
+ 
+# 启动Nginx
+sudo /usr/local/nginx/sbin/nginx
+
+
+
+检查nginx依赖
+gcc -v   https://gcc.gnu.org/releases.html  它是一个能够编译多种语言的编译器。最开始 gcc 是作为 C 语言的编译器（GNU C Compiler），现在除了 C 语言，还支持 C++、java、Pascal 等语言，gcc 还支持多种硬件平台。
+rpm -qa pcre    http://www.pcre.org/  https://sourceforge.net/projects/pcre/files/pcre/8.45/ 是一个正则表达式库，提供了与 Perl 语言兼容的正则表达式功能。它被广泛用于各种编程语言和软件中，用于处理字符串匹配、搜索、替换等操作。
+yum list installed | grep zlib*   https://zlib.net/zlib-1.3.1.tar.gz
+rpm -qa openssl openssl-devel   https://www.openssl.org/source/old/fips/index.html  OpenSSL 是一种开源命令行工具，通常用于生成私钥，创建 CSR，安装 SSL / TLS 证书以及标识证书信息等等
+
+pcre-config --version
+
+
+-- 开始安装  
+wget http://nginx.org/download/nginx-0.8.33.tar.gz
+tar -zxvf nginx-0.8.33.tar.gz
+cd nginx-0.8.33
+./configure –prefix=/nginx/local/nginx
+
+安装Nginx时报错
+
+./configure: error: the HTTP rewrite module requires the PCRE library.
+
+安装pcre-devel解决问题
+yum -y install pcre-devel
+
+错误提示：./configure: error: the HTTP cache module requires md5 functions
+from OpenSSL library. You can either disable the module by using
+–without-http-cache option, or install the OpenSSL library into the system,
+or build the OpenSSL library statically from the source with nginx by using
+–with-http_ssl_module –with-openssl= options.
+
+解决办法：
+
+yum -y install openssl openssl-devel
+
+总结：
+
+yum -y install pcre-devel openssl openssl-devel
+
+./configure –prefix=/usr/local/nginx
+
+make
+
+make install
+
+
+ * 
+ */
