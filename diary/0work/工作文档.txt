@@ -12,14 +12,24 @@ JSONObject jsonRoot = JSON.parseObject(jsonData);
 JSONArray arrayJson = JSONObject.parseArray(jsonData);
 JSONObject jsonObject = arrayJson.getJSONObject(i);
 
+
+20240829
+
 20240827
+资产管理项目截止日期 11.15
 优先处理角色权限问题
+角色权限
+数据权限  
+角色和数据权限 两天
+十月份 大概会搬 搬到通州去
 
 20240826
  库房信息、设备信息、备件信息、品牌信息-刘玉同，
  资产类型、供应商信息-王峰，
  实物入库-设备收货单、实物入库-尹栋力。
  栋力先沟确认通清楚行信实现技术方案。
+
+
 
 20240815
 	帮助雨桐启动项目
