@@ -1,0 +1,27 @@
+
+JSONObject jsonRoot = JSON.parseObject(jsonData);
+JSONArray arrayJson = JSONObject.parseArray(jsonData);
+ JSONObject jsonObject = arrayJson.getJSONObject(i);
+
+Date date = new Date();
+SimpleDateFormat sdf = new SimpleDateFormat("/yyyy/MM/dd/HHmmss/");
+String formattedDate = sdf.format(date);
+
+Random random = new Random();
+// 生成一个三位随机数（100到999之间）
+int randomNumber = 100 + random.nextInt(900);
+
+UUID.randomUUID().toString()
+entity.setNoticeIdentify(UUID.randomUUID().toString());
+
+
+
+
+
+
+
+
+mysql 索引相关
+CREATE INDEX index_team_id ON p_process (team_id);
+ALTER TABLE p_process ADD INDEX index_team_id (team_id);
+ALTER TABLE p_process DROP INDEX index_team_id;
