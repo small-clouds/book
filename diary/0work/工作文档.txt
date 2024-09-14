@@ -7,7 +7,6 @@ password02!
 ftp 地址  22.16.228.52
 10204929
 
-<<<<<<< HEAD:data/doc/article/工作文档.txt
 20240808
 qrtz_cron_triggers;
 qrtz_triggers;
@@ -34,7 +33,6 @@ WorkProcessController
 	您有一条新的流程发布审批任务【流程名称-待审批】， 请及时处理。
 
 20240803
-=======
 
 JSONObject jsonRoot = JSON.parseObject(jsonData);
 JSONArray arrayJson = JSONObject.parseArray(jsonData);
@@ -71,7 +69,6 @@ JSONObject jsonObject = arrayJson.getJSONObject(i);
 20240812
 中行低开项目
 项目部署启动，创建初始化数据库，
->>>>>>> ff2b43de0f47755bb6eda80f667b55c42294e463:diary/0work/工作文档.txt
 需求审批 
  待评估
   头寸管理RPA业务需求  需求名称
