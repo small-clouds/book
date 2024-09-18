@@ -7,6 +7,32 @@ password02!
 ftp 地址  22.16.228.52
 10204929
 
+20240808
+qrtz_cron_triggers;
+qrtz_triggers;
+qrtz_job_details;
+
+
+20240806
+	邮件选择判断条件
+	自动工单创建判断
+任务执行的入口阶段 
+
+WorkProcessController
+	execOnce(立即执行任务)
+	execTask(定时启动)
+		RunnerTaskService  doRunTask(Async)  里面有before 和after 
+			IRunner doRunning
+				IsaRunner  doRunning
+
+
+
+20240805
+	处理需求报表，需求总量数据差值问题
+	处理消息通知，发送邮件工具类
+	您有一条新的流程发布审批任务【流程名称-待审批】， 请及时处理。
+
+20240803
 
 JSONObject jsonRoot = JSON.parseObject(jsonData);
 JSONArray arrayJson = JSONObject.parseArray(jsonData);
@@ -90,7 +116,7 @@ JSONObject jsonObject = arrayJson.getJSONObject(i);
                xx用户回退了【流程优化工单】，工单编号【76894273593572】，请及时处理。
 
 流程发布审批新增通知
-               您有一条新的流程发布审批任务， 请及时处理。
+               您有一条新的流程发布审批任务【流程名称-流程编号】， 请及时处理。
 
 流程发布审批提醒通知
                您有4条流程发布审批任务待处理， 其中有2条已超过24小时，请及时处理。
