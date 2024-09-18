@@ -12,6 +12,9 @@ JSONObject jsonRoot = JSON.parseObject(jsonData);
 JSONArray arrayJson = JSONObject.parseArray(jsonData);
 JSONObject jsonObject = arrayJson.getJSONObject(i);
 
+20240902
+电子设备申请 -> 办结之后 将数据同步到库表中
+出库的时候 选择这条单子办理出库
 
 20240829
 
