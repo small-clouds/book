@@ -7,11 +7,21 @@ password02!
 ftp 地址  22.16.228.52
 10204929
 
-20240920
+rpa123ABC@.   Admin000000
 
+20241008
+lc_h_resource_content 
+lc_resource_content 
+lc_runtime_resource
+
+
+20240926
+ 国庆节之后 跟踪一下 行信的进度 ☆☆☆☆☆☆☆☆
+
+
+20240920
 22.19.127.20  E0-4F-43-E9-DF-5F
 22.19.127.18  E0-4F-43-E9-DC-B0
-
 22.19.127.19  E0-4F-43-E9-DD-18
 22.19.127.33  88:ae:dd:52:36:e6
 22.19.127.36  88-AE-DD-52-1C-94
@@ -27,6 +37,8 @@ ftp 地址  22.16.228.52
 qrtz_cron_triggers;
 qrtz_triggers;
 qrtz_job_details;
+
+
 
 
 20240806
