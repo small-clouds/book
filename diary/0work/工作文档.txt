@@ -7,7 +7,13 @@ password02!
 ftp 地址  22.16.228.52
 10204929
 
-rpa123ABC@.   Admin000000
+1886867 
+2169136
+3551014
+
+rpa123ABC@.   Admin000000 Admin111111 Password01!
+
+角色里面新增  领导角色  加一个领导日结菜单权限
 
 20241008
 lc_h_resource_content 
