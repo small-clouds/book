@@ -10,7 +10,7 @@ ftp 地址  22.16.228.52
 1886867 
 2169136
 3551014
-wangchangxing password02!  对
+wangchangxing password01!  对
 zhangyingdong password02!  对
 yangxuan p@ssword02! 对
 yingdongli password02！
