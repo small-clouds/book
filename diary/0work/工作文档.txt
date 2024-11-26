@@ -12,20 +12,31 @@ ftp 地址  22.16.228.52
 3551014
 wangchangxing password01!  对
 zhangyingdong password02!  对
-yangxuan p@ssword02! 对
+yangxuan p@ssword01! 对
 yingdongli password02！
-
+lishushu password02！
 rpa123ABC@.   Admin000000 Admin111111 Password01!
+
 
 麗:
 行信测试账号6074842（张聪），1274995（孙嘉雯） 
 麗:
 测试环境登录行信的密码都是Bocbj12＄
 
+
 盘库  
+打印配送单
+盘库下载文件
+发送消息  审批日志  
+
 行信
 操作日志
-看来得做到周记了
+20241118
+继续修改逻辑  找到所有账务经办，复核人  找到所有实物经办 复核人
+
+配送单打印   
+不让编辑但是需要填人员
+
 20241115
 周三测试，周四反馈的测试结果，周五继续修改
 上周就开始了提交测试，但是张老师不在
