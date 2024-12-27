@@ -1,4 +1,7 @@
 
+20241227
+
+
 
 20241224
 修改普元框架开发文档 
@@ -11,11 +14,10 @@
 		流程开发
 		定制化接口
 	上线部署
+	开发手册
+	其它问题汇总
 		
 	
-
-
-
 这两个不知道哪个正确，到时候试试就行
 spring.resources.static-locations=file:static/ 
 spring.resources.static-locations=classpath:/META-INF/static/
