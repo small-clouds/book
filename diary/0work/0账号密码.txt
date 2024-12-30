@@ -5,5 +5,27 @@ ydl/!QAZ2wsx
  
 服务器信息
 120.26.170.28  root/Aa111111!!
-数据库密码
+数据库密码 行内
 22.16.228.136:8000 kfgldb  kfgluser/h6wT#N8X
+
+
+// 账号密码
+
+5086375 // Password01@
+Password06!
+password02!
+ftp 地址  22.16.228.52
+10204929
+
+1886867 
+2169136
+3551014
+wangchangxing password01!  对
+zhangyingdong password02!  对
+yangxuan p@ssword01! 对
+yingdongli password02！
+lishushu password02！
+rpa123ABC@.   Admin000000 Admin111111 Password01!
+
+公司数据库信息
+192.168.20.251:3306 root/rpa123!@#.

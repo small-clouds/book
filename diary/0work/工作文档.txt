@@ -1,24 +1,28 @@
 
-// 账号密码
-
-5086375 // Password01@
-Password06!
-password02!
-ftp 地址  22.16.228.52
-10204929
-
-1886867 
-2169136
-3551014
-wangchangxing password01!  对
-zhangyingdong password02!  对
-yangxuan p@ssword01! 对
-yingdongli password02！
-lishushu password02！
-rpa123ABC@.   Admin000000 Admin111111 Password01!
+20241227
 
 
-麗:
+
+20241224
+修改普元框架开发文档 
+按照
+	基础开发  
+		前端
+		后端
+	定制化开发
+		中间件，定时任务
+		流程开发
+		定制化接口
+	上线部署
+	开发手册
+	其它问题汇总
+		
+	
+这两个不知道哪个正确，到时候试试就行
+spring.resources.static-locations=file:static/ 
+spring.resources.static-locations=classpath:/META-INF/static/
+20241223
+麗
 行信测试账号6074842（张聪），1274995（孙嘉雯） 
 麗:
 测试环境登录行信的密码都是Bocbj12＄
