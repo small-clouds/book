@@ -1,3 +1,15 @@
+20250226
+    新协同- 漏洞bug 
+        patch -p1 < patch.2022.mp4.txt
+
+
+        升级nginx
+        tar -zxvf nginx-1.26.3.tar.gz
+        cd nginx-1.26.3
+
+        ./configure --prefix=/opt/nginx/nginx-1.26.2 --conf-path=/opt/nginx/nginx-1.26.2/nginxconf --without-ngx_http_mp4_module
+
+        make && make install
 20250117
     库房业务进行了测试，反馈了一些bug修改中
 
