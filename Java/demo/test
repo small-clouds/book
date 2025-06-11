@@ -1,0 +1,166 @@
+import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
+import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
+import org.apache.commons.net.ftp.FTP;
+import org.apache.commons.net.ftp.FTPClient;
+import org.apache.commons.net.ftp.FTPReply;
+import java.io.*;
+import java.nio.charset.StandardCharsets;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
+import java.util.List;
+import java.util.zip.GZIPOutputStream;
+
+public class DataExportService {
+
+    // FTP配置（建议从配置文件读取）
+    private static final String FTP_SERVER = "ftp.example.com";
+    private static final int FTP_PORT = 21;
+    private static final String FTP_USER = "your-username";
+    private static final String FTP_PASSWORD = "your-password";
+    private static final String FTP_UPLOAD_PATH = "/export/data/"; // 自定义上传路径
+
+    /**
+     * 主流程：数据导出 -> 压缩 -> 上传FTP
+     */
+    public void exportDataToFtp() throws Exception {
+        // 1. 生成无后缀数据文件
+        String dataFileName = generateDataFile();
+        
+        // 2. 压缩为.gz文件
+        String gzFileName = compressToGz(dataFileName);
+        
+        // 3. 上传到FTP服务器
+        uploadToFtp(gzFileName);
+        
+        // 清理临时文件（可选）
+        cleanUpTempFiles(dataFileName, gzFileName);
+    }
+
+    /**
+     * 生成无后缀数据文件（流式处理大数据）
+     */
+    private String generateDataFile() throws IOException {
+        String fileName = "project_data_" + 
+            LocalDateTime.now().format(DateTimeFormatter.ofPattern("yyyyMMdd_HHmmss")); // 自定义文件名
+        String filePath = System.getProperty("user.dir") + File.separator + fileName; // 当前目录生成文件
+        
+        try (BufferedWriter writer = new BufferedWriter(
+            new OutputStreamWriter(
+                new FileOutputStream(filePath), 
+                StandardCharsets.UTF_8
+            )
+        )) {
+            // 分页查询数据（兼容大数据，假设Entity为ProjectEntity）
+            int pageNum = 1;
+            int pageSize = 1000; // 可调整分页大小
+            QueryWrapper<ProjectEntity> queryWrapper = new QueryWrapper<>();
+            Page<ProjectEntity> page = new Page<>(pageNum, pageSize);
+            
+            do {
+                page = projectMapper.selectPage(page, queryWrapper); // MyBatis-Plus分页查询
+                List<ProjectEntity> dataList = page.getRecords();
+                
+                for (ProjectEntity entity : dataList) {
+                    // 按指定格式拼接数据（注意转义字符处理）
+                    String line = String.join("\u0001|\u0001",
+                        entity.getProjectCategory(),
+                        entity.getLeaderId(),
+                        entity.getSystemLaunchTime().format(DateTimeFormatter.ISO_DATE),
+                        entity.getDevelopmentTeam(),
+                        entity.getDevelopmentMethod(),
+                        entity.getContactPerson(),
+                        entity.getContactPhone(),
+                        entity.getDataStatus(),
+                        entity.getProjectId()
+                    ) + "\u0001|"; // 结尾添加分隔符
+                    
+                    writer.write(line);
+                    writer.newLine(); // 换行符
+                }
+                
+                pageNum = page.getCurrent() + 1; // 下一页
+            } while (page.getRecords().size() == pageSize); // 循环直到无更多数据
+        }
+        
+        return filePath;
+    }
+
+    /**
+     * 压缩文件为.gz格式
+     */
+    private String compressToGz(String sourcePath) throws IOException {
+        String gzPath = sourcePath + ".gz";
+        try (
+            FileInputStream fis = new FileInputStream(sourcePath);
+            GZIPOutputStream gzos = new GZIPOutputStream(new FileOutputStream(gzPath))
+        ) {
+            byte[] buffer = new byte[1024];
+            int len;
+            while ((len = fis.read(buffer)) != -1) {
+                gzos.write(buffer, 0, len);
+            }
+        }
+        return gzPath;
+    }
+
+    /**
+     * 上传文件到FTP服务器
+     */
+    private void uploadToFtp(String filePath) throws IOException {
+        FTPClient ftpClient = new FTPClient();
+        try {
+            // 连接FTP服务器
+            ftpClient.connect(FTP_SERVER, FTP_PORT);
+            if (!FTPReply.isPositiveCompletion(ftpClient.getReplyCode())) {
+                throw new IOException("FTP连接失败");
+            }
+            
+            // 登录
+            if (!ftpClient.login(FTP_USER, FTP_PASSWORD)) {
+                throw new IOException("FTP登录失败");
+            }
+            
+            // 设置传输模式
+            ftpClient.setFileType(FTP.BINARY_FILE_TYPE);
+            ftpClient.enterLocalPassiveMode(); // 被动模式（适应大多数服务器）
+            
+            // 创建上传目录（如果不存在）
+            if (!ftpClient.changeWorkingDirectory(FTP_UPLOAD_PATH)) {
+                if (!ftpClient.makeDirectory(FTP_UPLOAD_PATH)) {
+                    throw new IOException("创建FTP目录失败");
+                }
+            }
+            
+            // 上传文件（使用流传输）
+            String fileName = filePath.substring(filePath.lastIndexOf(File.separator) + 1);
+            try (FileInputStream fis = new FileInputStream(filePath)) {
+                if (!ftpClient.storeFile(fileName, fis)) {
+                    throw new IOException("FTP文件上传失败");
+                }
+            }
+            
+            System.out.println("FTP上传成功：" + fileName);
+        } finally {
+            // 关闭连接
+            if (ftpClient.isConnected()) {
+                ftpClient.logout();
+                ftpClient.disconnect();
+            }
+        }
+    }
+
+    /**
+     * 清理临时文件（可选）
+     */
+    private void cleanUpTempFiles(String... paths) {
+        for (String path : paths) {
+            File file = new File(path);
+            if (file.exists() && !file.delete()) {
+                System.err.println("警告：无法删除临时文件：" + path);
+            }
+        }
+    }
+
+    // 假设MyBatis-Plus的Mapper接口（需自行注入）
+    private ProjectMapper projectMapper; // 需通过Spring注入
+}
